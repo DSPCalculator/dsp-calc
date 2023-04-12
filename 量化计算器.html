@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+戴森球计划量化计算器
+
+<head>
+    <meta charset="UTF-8">
+    <title>戴森球计划量化计算器</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./Scripts/jquery.min.2.1.4.js"></script>
+    <script src="./Scripts/jquery.cookie.min.1.4.1.js"></script>
+    <script src="./Scripts/vue.min.2.5.16.js"></script>
+    <script src="./Scripts/script.js"></script>
+</head>
+
+<body>
+    <div>
+        <button id="saveData" onclick="saveData()">保存游戏数据</button>
+        <button id="loadData" onclick="loadData()">读取游戏数据</button>
+        <button id="saveScheme" onclick="saveScheme()">保存生产策略</button>
+        <button id="loadScheme" onclick="loadScheme()">加载生产策略</button>
+        <button id="loadScheme" onclick="clearData()">清空数据缓存</button>
+    </div><!--本地数据相关按钮-->
+    <div>
+        <p id="是否自喷涂"><button onclick="if_proliferate_itself(0)">自喷涂?</button>Yes!</p>
+        <datalist id="item_list"></datalist>
+        <script>
+            init_item_list();
+        </script>
+        所需物品: <input list="item_list" size="5" id="needs_item" value="传送带" />
+        所需产能: <input type="text" size="6" id="needs_amount" value="60" />个/min
+        <button id="添加需求" onclick="addNeeds()">添加需求</button>
+        显示精度: <input id="显示精度" size="5" type="number" onchange="changeFixedNum()" value="6"/>
+        <p id="批量预设"></p>
+        <p id="resetNeeds"></p>
+        <p id="原矿化列表"></p>
+        <p id="totalNeeds">需求列表：</p>
+        <datalist id="recipe_list"></datalist>
+        <datalist id="pro_num_list"></datalist>
+        <datalist id="pro_mode_list"></datalist>
+        <datalist id="factory_list"></datalist>
+        <script>
+            init_recipe_list();
+            init_pro_num_list();
+            init_pro_mode_list();
+            init_factory_list();
+            batch_setting_init();
+        </script>
+    </div>
+    <table>总计产能需求：
+        <thead>
+            <tr>
+                <th>操作</th>
+                <th>目标物品</th>
+                <th>分钟需求量</th>
+                <th>所需工厂数</th>
+                <th>配方选取</th>
+                <th>合成时原料喷涂点数</th>
+                <th>增产模式选择</th>
+                <th>工厂类型选择</th>
+            </tr>
+        </thead>
+        <tbody id="result">
+        </tbody>
+    </table>
+    <table>多余产物：
+        <thead>
+            <th>物品名</th>
+            <th>分钟冗余量</th>
+        </thead>
+        <tbody id="surplus_list">
+        </tbody>
+    </table>
+</body>
+
+</html>
