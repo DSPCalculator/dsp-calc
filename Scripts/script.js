@@ -2632,7 +2632,6 @@ var scheme_data = {
                 change_result_row_for_item(i);
                 add_side_products_in_other_row(i);
             }
-            console.log(total_item_dict);
             for(var i  in total_item_dict){
                 if(total_item_dict[i] < 1e-6){
                     document.getElementById("row_of_" + i).remove();
@@ -2911,7 +2910,7 @@ var scheme_data = {
             // console.log(model);
             var results = solver.Solve(model);
             //求解线性规划，解得满足需求时每个item对应的item_graph的执行次数
-            // console.log(results);
+            console.log(results);
             var lp_cost = 0;
             if ("result" in results) {
                 lp_cost = results["result"];
@@ -2949,7 +2948,7 @@ var scheme_data = {
                 result_dict[item] = 0;//将原矿化过的线规相关物品置为0，之后用线规结果的历史产出填补
             }
             for (var item in results) {
-                result_dict[item] = Number(result_dict) + results[item];
+                result_dict[item] = Number(result_dict[item]) + results[item];
                 for (var material in item_graph[item]["原料"]) {
                     if (!(material in lp_item_dict)) {
                         if (material in result_dict) {
