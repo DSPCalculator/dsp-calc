@@ -2220,6 +2220,10 @@ var scheme_data = {
         calculate();
     }//批量更改配方使用的增产剂的等级
 
+    function ChangeBuildingLayer(building){
+        stackable_buildings[building] = document.getElementById("").value;
+    }
+
 }//这里是前端按钮调用的布局相关的函数
 
 
@@ -2259,6 +2263,14 @@ var scheme_data = {
                 "<option value=\"2\" label = \"加速\"\/>";
             document.getElementById("批量预设").innerHTML = str;
         }//初始化批量预设
+
+        function building_stack_init(){
+            var str = "建筑层数:";
+            for(var building in stackable_buildings){
+                str += building + ":<input id=\"stack_of_" + building + "\" type=\"number\" value=\"" + stackable_buildings[building] +"\"onChange=\"ChangeBuildingLayer(&#34" + building + "&#34)\">";
+            }
+            document.getElementById("建筑层数").innerHTML = str;
+        }
 
         function init_pro_num_list() {
             var str = "";
@@ -2776,10 +2788,14 @@ var scheme_data = {
                     building_count_per_yield /= scheme_data.mining_rate["伊卡洛斯手速"];
                 }
             }//毫无意义，只是我想这么干
-            cost = Number(cost) + building_count_per_yield * scheme_data.cost_weight["占地"] * building_info["占地"];//计算占地造成的成本=单位产能建筑数*占地成本权重*建筑占地
+            var layer_count = 1;
+            if(building_info["名称"] in stackable_buildings){
+                layer_count = stackable_buildings[building_info["名称"]];
+            }
+            cost = Number(cost) + building_count_per_yield * scheme_data.cost_weight["占地"] * building_info["占地"] / layer_count;//计算占地造成的成本=单位产能建筑数*占地成本权重*建筑占地
             cost = Number(cost) + building_count_per_yield * scheme_data.cost_weight["电力"] * building_info["耗能"] * game_data.proliferate_effect[scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"]]["耗电倍率"];
             //计算耗电造成的成本 = 单位产能建筑数 * 耗电成本权重 * 建筑耗电 * 喷涂影响
-            cost = Number(cost) + building_count_per_yield * (0 * scheme_data.cost_weight["建筑成本"]["分拣器"] + scheme_data.cost_weight["建筑成本"][building_info["名称"]]);
+            cost = Number(cost) + building_count_per_yield * (0 * scheme_data.cost_weight["建筑成本"]["分拣器"] / layer_count + scheme_data.cost_weight["建筑成本"][building_info["名称"]]);
             //建筑产生的成本 = 单位产能建筑数*(每个结构中分拣器数量*分拣器成本 + 生产建筑成本)，分拣器成本那块，说是分拣器，但实际上可以是任何一个针对各种配方独立成本的系数
             return cost;
         }//计算一个物品的成本，用于各种各样的线性规划
@@ -3070,6 +3086,7 @@ var scheme_data = {
 {//初始化以及主要逻辑
     var needs_list = {};
     var mineralize_list = {};//原矿化列表，代表忽视哪些物品的原料
+    var stackable_buildings = {"研究站" : 15};
     var item_data = get_item_data(); {/*
     通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，
     键值为此物品在计算器中的id与用于生产此物品的配方在配方表中的序号
