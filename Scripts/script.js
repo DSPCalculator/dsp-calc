@@ -6,7 +6,7 @@
         QQ:653524123
         github:https://github.com/makuwa8992
         bilibili:https://space.bilibili.com/16051534
-    功能实现(ToDo):
+    功能实现(TODO):
         前端基础布局与前后端必要的交互 √
         更好的前端布局
         比递归累加原料更为准确的循环产线计算结果 √
@@ -2105,7 +2105,7 @@ var scheme_data = {
             document.getElementById("resetNeeds").innerHTML = "<button id=\"all\" onclick=\"resetNeeds(&#34all&#34)\">清空所有需求</button>" + "<br />";
         }//如果一开始没有物品，那就加一个以前清楚的按钮，有物品必有按钮，就不用加了
         if (!(needs_item in needs_list)) {
-            needs_list[needs_item] = needs_amount;
+            needs_list[needs_item] =  Number(needs_amount);
         }
         else {
             needs_list[needs_item] = Number(needs_list[needs_item]) + Number(needs_amount);
@@ -2459,10 +2459,10 @@ var scheme_data = {
                 for (var material in item_graph[item]["原料"]) {
                     item_graph[item]["原料"][material] /= produce_rate;
                 }
+                item_graph[item]["产出倍率"] /= game_data.recipe_data[recipe_id]["时间"];
                 if (item in item_graph[item]["原料"]) {
                     var self_used = 1 / (1 - item_graph[item]["原料"][item]);
                     item_graph[item]["产出倍率"] /= self_used;
-                    item_graph[item]["产出倍率"] /= game_data.recipe_data[recipe_id]["时间"];
                     item_graph[item]["自消耗"] = self_used - 1;
                     delete item_graph[item]["原料"][item];
                     for (var material in item_graph[item]["原料"]) {
@@ -2849,7 +2849,7 @@ var scheme_data = {
                     "<th>" + lp_surplus_list[i] + "</th></tr>"; //分钟冗余
             }
             document.getElementById("surplus_list").innerHTML = str;
-        }
+        }//显示多余产出
 
         function mineralize(item) {
             mineralize_list[item] = JSON.parse(JSON.stringify(item_graph[item]));
@@ -2949,11 +2949,11 @@ var scheme_data = {
                 result_dict[item] = 0;//将原矿化过的线规相关物品置为0，之后用线规结果的历史产出填补
             }
             for (var item in results) {
-                result_dict[item] += results[item];
+                result_dict[item] = Number(result_dict) + results[item];
                 for (var material in item_graph[item]["原料"]) {
                     if (!(material in lp_item_dict)) {
                         if (material in result_dict) {
-                            result_dict[material] += results[item] * item_graph[item]["原料"][material];
+                            result_dict[material] = Number(result_dict[material]) +  results[item] * item_graph[item]["原料"][material];
                         }
                         else {
                             result_dict[material] = results[item] * item_graph[item]["原料"][material];
@@ -2961,7 +2961,7 @@ var scheme_data = {
                         for (var sub_material in item_price[material]["原料"]) {
                             if (!(sub_material in lp_item_dict)) {
                                 if (sub_material in result_dict) {
-                                    result_dict[sub_material] += results[item] * item_graph[item]["原料"][material] * item_price[material]["原料"][sub_material];
+                                    result_dict[sub_material] = Number(result_dict[sub_material]) + results[item] * item_graph[item]["原料"][material] * item_price[material]["原料"][sub_material];
                                 }
                                 else {
                                     result_dict[sub_material] = results[item] * item_graph[item]["原料"][material] * item_price[material]["原料"][sub_material];
@@ -2997,7 +2997,7 @@ var scheme_data = {
         item_price = get_item_price();
         for (var item in needs_list) {
             if (item in result_dict) {
-                result_dict[item] += needs_list[item];
+                result_dict[item] = Number(result_dict[item]) + needs_list[item];
             }
             else {
                 result_dict[item] = needs_list[item];
@@ -3060,43 +3060,10 @@ var scheme_data = {
                 }
             }
         }//将循环关键物品的总需求放入线性规划相关物品表
-        var lp_cost = get_linear_programming_list();
-        // for (var item in lp_result_dict) {
-        //     if (item == "最终成本") {
-        //         lp_cost = lp_result_dict["最终成本"];
-        //     }
-        //     else {
-        //         if (lp_result_dict[item] >= 0) {
-        //             if (item in result_dict) {
-        //                 result_dict[item] = Number(result_dict[item]) + lp_result_dict[item];
-        //             }
-        //             else {
-        //                 result_dict[item] = lp_result_dict[item];
-        //             }
-        //         }
-        //         else {
-        //             lp_surplus_list[item] = - lp_result_dict[item];
-        //         }
-        //     }
-        // }
-
-        //导入线性规划需求表根据物品成本中相关因素进行线性规划
-        /*
-            具体形式为:找到导入的线规物品的次级原料的成本,因为线规物品都是原矿化过的,所以在次级原料成本中递归的线规物品后就会停止递归.
-            取出属于线规物品的部分,然后每个不等式左端是涉及的各个配方每次执行时对此的物品消耗量与生成量,消耗为负,生成为正,右端是这个物品的需求目标,左式需≥右式
-            未知量为每个配方的执行次数,系数为每个配方对这个物品的影响,解为最终每个配方的执行次数
-            目标函数暂定为最低成本,成本由item_price得到
-            得到每一个配方的执行次数后,根据执行次数计算线规物品的总计生产量
-            再通过配方执行次数算出外部输入的非线规物品的数量的不包含线规物品的累计历史产出
-            将上述线规物品的生产总量和非线规物品的累计历史产出加到结果列表中即可
-        */
+        var lp_cost = get_linear_programming_list();//线规最终目标函数成本，在考虑要不要显示
         show_result_dict();
         show_surplus_list();
-    }//通过item_price计算可递归物品成本，并将不可递归物品作为参数输入线性规划函数求解出这个物品配方的执行次数，将各配方执行次数乘上对应历史产出物品后加到输出表中
-
-
-
-
+    }//计算主要逻辑框架
 
 }//这里是script内部调用用到的主要逻辑需要的函数
 
