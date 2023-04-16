@@ -1,0 +1,42 @@
+{
+  "name": "javascript-lp-solver",
+  "description": "Easy to use, JSON oriented Linear Programming and Mixed Int. Programming Solver",
+  "version": "0.4.24",
+  "private": false,
+  "authors": [
+    "Justin W. Wolcott <justin.w.wolcott@gmail.com>"
+  ],
+  "contributors": [
+    "Brice Chevalier <bchevalier@wizcorp.jp>",
+    "Loïc Venerosy <lvenerosy@wizcorp.jp>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JWally/jsLPSolver"
+  },
+  "main": "./src/main",
+  "types": "./types/main.d.ts",
+  "devDependencies": {
+    "benchmark": "*",
+    "grunt": "*",
+    "grunt-browserify": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-jsbeautifier": "*",
+    "grunt-mocha-test": "*",
+    "mocha": "*"
+  },
+  "keywords": [
+    "Linear",
+    "Programming",
+    "Integer",
+    "Programming",
+    "Solver",
+    "Linear Programming",
+    "Linear Optimization",
+    "Simplex",
+    "Mixed Integer Optimization",
+    "Mixed Integer Programming"
+  ],
+  "license": "Unlicense"
+}
