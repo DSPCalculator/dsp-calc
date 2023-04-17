@@ -2592,11 +2592,7 @@ var scheme_data = {
             function get_factory_number(amount, item) {
                 var recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
                 var scheme_for_recipe = scheme_data.scheme_for_recipe[recipe_id];
-                var self_cost = 0;
-                if (item_graph[item]["自消耗"]) {
-                    self_cost = item_graph[item]["自消耗"];
-                }
-                var factory_per_yield = (1 + self_cost) / item_graph[item]["产出倍率"] / game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["倍率"];
+                var factory_per_yield = 1 / item_graph[item]["产出倍率"] / game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["倍率"];
                 var offset = 0;
                 offset = 0.49994 * 0.1 ** fixed_num;//未显示的部分进一法取整
                 return amount / 60 * factory_per_yield + offset;
