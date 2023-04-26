@@ -2509,6 +2509,7 @@ var scheme_data = {
                             if (product in item_graph[item]["原料"]) {
                                 if (Math.min(game_data.recipe_data[recipe_id]["产物"][product] / (game_data.recipe_data[recipe_id]["产物"][item] - self_cost), item_graph[item]["原料"][product]) == item_graph[item]["原料"][product]) {
                                     item_graph[item]["副产物"][product] = game_data.recipe_data[recipe_id]["产物"][product] / (game_data.recipe_data[recipe_id]["产物"][item] - self_cost) - item_graph[item]["原料"][product];
+                                    item_graph[item]["原料"][product] = 0;
                                     if (product in side_item_dict) {
                                         side_item_dict[product][item] = 0;
                                     }
@@ -2959,6 +2960,7 @@ var scheme_data = {
             // console.log(model);
             var results = solver.Solve(model);
             //求解线性规划，解得满足需求时每个item对应的item_graph的执行次数
+            console.log(model);
             console.log(results);
             var lp_cost = 0;
             if ("result" in results) {
@@ -2979,7 +2981,7 @@ var scheme_data = {
             }//无界判断
             var lp_products = {};
             for (var item in model.constraints) {
-                lp_products[item] = -model.constraints[item]["min"];
+                lp_products[item] = (-1) * model.constraints[item]["min"];
             }//记录多余物品，如果是缺失物品为负
             for (var recipe in results) {
                 for (var item in model.variables[recipe]) {
