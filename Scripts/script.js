@@ -2105,7 +2105,7 @@ var scheme_data = {
             document.getElementById("resetNeeds").innerHTML = "<button id=\"all\" onclick=\"resetNeeds(&#34all&#34)\">清空所有需求</button>" + "<br />";
         }//如果一开始没有物品，那就加一个以前清楚的按钮，有物品必有按钮，就不用加了
         if (!(needs_item in needs_list)) {
-            needs_list[needs_item] =  Number(needs_amount);
+            needs_list[needs_item] = Number(needs_amount);
         }
         else {
             needs_list[needs_item] = Number(needs_list[needs_item]) + Number(needs_amount);
@@ -2128,7 +2128,7 @@ var scheme_data = {
         }
     }//更改需求
 
-    function changeNeeds(item){
+    function changeNeeds(item) {
         var num = document.getElementById("needs_of_" + item).value;
         if (item in needs_list) {
             needs_list[item] = num;
@@ -2138,7 +2138,7 @@ var scheme_data = {
     }
     function loadData() {
         var data_of_game = JSON.parse(localStorage.getItem('game_data'));
-        if(data_of_game){
+        if (data_of_game) {
             game_data = JSON.parse(localStorage.getItem('game_data'));
             item_data = get_item_data();
         }
@@ -2155,7 +2155,7 @@ var scheme_data = {
 
     function loadScheme() {
         var scheme = JSON.parse(localStorage.getItem('scheme_data'));
-        if(scheme){
+        if (scheme) {
             scheme_data = JSON.parse(localStorage.getItem('scheme_data'));
         }
         calculate();
@@ -2234,7 +2234,7 @@ var scheme_data = {
         calculate();
     }//批量更改配方使用的增产剂的等级
 
-    function ChangeBuildingLayer(building){
+    function ChangeBuildingLayer(building) {
         stackable_buildings[building] = document.getElementById("").value;
     }
 
@@ -2278,10 +2278,10 @@ var scheme_data = {
             document.getElementById("批量预设").innerHTML = str;
         }//初始化批量预设
 
-        function building_stack_init(){
+        function building_stack_init() {
             var str = "建筑层数:";
-            for(var building in stackable_buildings){
-                str += building + ":<input id=\"stack_of_" + building + "\" type=\"number\" value=\"" + stackable_buildings[building] +"\"onChange=\"ChangeBuildingLayer(&#34" + building + "&#34)\">";
+            for (var building in stackable_buildings) {
+                str += building + ":<input id=\"stack_of_" + building + "\" type=\"number\" value=\"" + stackable_buildings[building] + "\"onChange=\"ChangeBuildingLayer(&#34" + building + "&#34)\">";
             }
             document.getElementById("建筑层数").innerHTML = str;
         }
@@ -2418,8 +2418,8 @@ var scheme_data = {
         function show_needs_list() {
             var str = "需求列表：<br />";
             for (var i in needs_list) {
-                str += i + ":<input type=\"text\" size=\"6\" value=\"" + needs_list[i] + "\" "+"id=\"needs_of_"+ i +"\" onchange=\"changeNeeds(&#34" + i + "&#34)\">个/min"
-                +"<button id=\"" + i + "需求" + "\" onclick=\"resetNeeds(&#34" + i + "&#34)\">清空需求</button><br />";
+                str += i + ":<input type=\"text\" size=\"6\" value=\"" + needs_list[i] + "\" " + "id=\"needs_of_" + i + "\" onchange=\"changeNeeds(&#34" + i + "&#34)\">个/min"
+                    + "<button id=\"" + i + "需求" + "\" onclick=\"resetNeeds(&#34" + i + "&#34)\">清空需求</button><br />";
             }
             document.getElementById("totalNeeds").innerHTML = str;
         }//展示需求列表
@@ -2613,14 +2613,17 @@ var scheme_data = {
                 var offset = 0;
                 offset = 0.49994 * 0.1 ** fixed_num;//未显示的部分进一法取整
                 var build_number = amount / 60 * factory_per_yield + offset;
-                if(game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"] in building_list){
-                    building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]] = Number(building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]]) + Math.ceil(build_number);
+                if (Math.ceil(build_number - 0.5 * 0.1 ** fixed_num) != 0) {
+                    if (game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"] in building_list) {
+                        building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]] = Number(building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]]) + Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
+                    }
+                    else {
+                        building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]] = Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
+                    }
                 }
-                else{
-                    building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]] = Math.ceil(build_number);
-                }
+                console.log(building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]]);
                 var e_cost = build_number * game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["耗能"];
-                if(scheme_for_recipe["增产模式"] != 0 && scheme_for_recipe["喷涂点数"] != 0){
+                if (scheme_for_recipe["增产模式"] != 0 && scheme_for_recipe["喷涂点数"] != 0) {
                     e_cost *= game_data.proliferate_effect[scheme_for_recipe["喷涂点数"]]["耗电倍率"];
                 }
                 energy_cost = Number(energy_cost) + e_cost;
@@ -2642,20 +2645,21 @@ var scheme_data = {
                 }
                 return Number(amount) + offset;
             }
-            function add_side_products_in_other_row(item){
+            function add_side_products_in_other_row(item) {
                 var item_num = result_dict[item];
-                for(var side_products in item_graph[item]["副产物"]){
-                    document.getElementById("num_of_"+side_products).insertAdjacentHTML("beforeend","<br>+"+(item_num * item_graph[item]["副产物"][side_products]) +"(来自"+ item +")");
+                for (var side_products in item_graph[item]["副产物"]) {
+                    document.getElementById("num_of_" + side_products).insertAdjacentHTML("beforeend", "<br>+" + (item_num * item_graph[item]["副产物"][side_products]) + "(来自" + item + ")");
                     total_item_dict[side_products] += item_num * item_graph[item]["副产物"][side_products];
                 }
             }
             for (var i in result_dict) {
                 var recipe_id = item_data[i][scheme_data.item_recipe_choices[i]];
-                str += "<tr id=\"row_of_"+ i +"\"><th><a href=\"Javascript:mineralize(&#34" + i + "&#34)\">视为原矿</a></th>" + //操作
+                var factory_number = get_factory_number(result_dict[i], i).toFixed(fixed_num);
+                str += "<tr id=\"row_of_" + i + "\"><th><a href=\"Javascript:mineralize(&#34" + i + "&#34)\">视为原矿</a></th>" + //操作
                     "<th>" + i + "</th>" +  //目标物品
                     "<th id=\"num_of_" + i + "\">" + get_gross_output(result_dict[i], i).toFixed(fixed_num) + "</th>" +  //分钟毛产出
-                    "<th><p id=\"factory_counts_of_" + i + "\" value=\"" + get_factory_number(result_dict[i], i).toFixed(fixed_num) + "\">" + game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"] +
-                    " * " + get_factory_number(result_dict[i], i).toFixed(fixed_num) + is_mineralized(i) + "</p></th>" +  //所需工厂*数目
+                    "<th><p id=\"factory_counts_of_" + i + "\" value=\"" + factory_number + "\">" + game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"] +
+                    " * " + factory_number + is_mineralized(i) + "</p></th>" +  //所需工厂*数目
                     "<th><select id=\"recipe_for_" + i + "\" onChange=\"ChangeRecipeOf(&#34" + i + "&#34)\"></select></th>" + // 所选配方
                     "<th><select id=\"pro_num_for_" + i + "\" onChange=\"ChangeSchemeOf(&#34" + i + "&#34)\"></select></th>" + //所选增产剂
                     "<th><select id=\"pro_mode_for_" + i + "\" onChange=\"ChangeSchemeOf(&#34" + i + "&#34)\"></select></th>" + //所选增产模式
@@ -2669,17 +2673,17 @@ var scheme_data = {
                 change_result_row_for_item(i);
                 add_side_products_in_other_row(i);
             }
-            for(var i  in total_item_dict){
-                if(total_item_dict[i] < 1e-6){
+            for (var i in total_item_dict) {
+                if (total_item_dict[i] < 1e-6) {
                     document.getElementById("row_of_" + i).remove();
                 }
             }
             var building_str = "";
-            for(var building in building_list){
-                building_str += building + ":" + building_list[building]+"</br>";
+            for (var building in building_list) {
+                building_str += building + ":" + building_list[building] + "</br>";
             }
-            document.getElementById("建筑统计").innerHTML=building_str;
-            document.getElementById("耗电统计").innerHTML="预估电力需求下限："+energy_cost+" MW";
+            document.getElementById("建筑统计").innerHTML = building_str;
+            document.getElementById("耗电统计").innerHTML = "预估电力需求下限：" + energy_cost + " MW";
         }//展示结果
 
         function recipe_to_html(recipe) {
@@ -2819,7 +2823,7 @@ var scheme_data = {
                 }
             }//毫无意义，只是我想这么干
             var layer_count = 1;
-            if(building_info["名称"] in stackable_buildings){
+            if (building_info["名称"] in stackable_buildings) {
                 layer_count = stackable_buildings[building_info["名称"]];
             }
             cost = Number(cost) + building_count_per_yield * scheme_data.cost_weight["占地"] * building_info["占地"] / layer_count;//计算占地造成的成本=单位产能建筑数*占地成本权重*建筑占地
@@ -2998,7 +3002,7 @@ var scheme_data = {
                 for (var material in item_graph[item]["原料"]) {
                     if (!(material in lp_item_dict)) {
                         if (material in result_dict) {
-                            result_dict[material] = Number(result_dict[material]) +  results[item] * item_graph[item]["原料"][material];
+                            result_dict[material] = Number(result_dict[material]) + results[item] * item_graph[item]["原料"][material];
                         }
                         else {
                             result_dict[material] = results[item] * item_graph[item]["原料"][material];
@@ -3116,7 +3120,7 @@ var scheme_data = {
 {//初始化以及主要逻辑
     var needs_list = {};
     var mineralize_list = {};//原矿化列表，代表忽视哪些物品的原料
-    var stackable_buildings = {"研究站" : 15};
+    var stackable_buildings = { "研究站": 15 };
     var item_data = get_item_data(); {/*
     通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，
     键值为此物品在计算器中的id与用于生产此物品的配方在配方表中的序号
