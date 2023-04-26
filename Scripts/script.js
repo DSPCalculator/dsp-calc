@@ -2126,8 +2126,16 @@ var scheme_data = {
         if (Object.keys(needs_list).length == 0) {
             document.getElementById("resetNeeds").innerHTML = "";
         }
-    }//删除需求
+    }//更改需求
 
+    function changeNeeds(item){
+        var num = document.getElementById("needs_of_" + item).value;
+        if (item in needs_list) {
+            needs_list[item] = num;
+        }
+        show_needs_list();
+        calculate();
+    }
     function loadData() {
         game_data = JSON.parse(localStorage.getItem('game_data'));
         item_data = get_item_data();
@@ -2404,7 +2412,8 @@ var scheme_data = {
         function show_needs_list() {
             var str = "需求列表：<br />";
             for (var i in needs_list) {
-                str += i + ":" + needs_list[i] + "/min<button id=\"" + i + "需求" + "\" onclick=\"resetNeeds(&#34" + i + "&#34)\">清空需求</button>" + "<br />";
+                str += i + ":<input type=\"text\" size=\"6\" value=\"" + needs_list[i] + "\" "+"id=\"needs_of_"+ i +"\" onchange=\"changeNeeds(&#34" + i + "&#34)\">个/min"
+                +"<button id=\"" + i + "需求" + "\" onclick=\"resetNeeds(&#34" + i + "&#34)\">清空需求</button><br />";
             }
             document.getElementById("totalNeeds").innerHTML = str;
         }//展示需求列表
