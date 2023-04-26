@@ -11,7 +11,7 @@
 
 还有许多铺好了路但是还没完善的功能，在此就不一一细说了
 
-具体思路可见：https://www.bilibili.com/read/readlist/rl630834中涉及量化计算器的部分
+具体思路可见：https://www.bilibili.com/read/readlist/rl630834 中涉及量化计算器的部分
 
 PS：本人在此之前从未写过html和JavaScript程序，这个计算器算是边摸着石头过河边写的，或许在代码风格上有许多让人高血压的地方，如果有人愿意优化我也很欢迎
 
