@@ -2137,8 +2137,11 @@ var scheme_data = {
         calculate();
     }
     function loadData() {
-        game_data = JSON.parse(localStorage.getItem('game_data'));
-        item_data = get_item_data();
+        var data_of_game = JSON.parse(localStorage.getItem('game_data'));
+        if(data_of_game){
+            game_data = JSON.parse(localStorage.getItem('game_data'));
+            item_data = get_item_data();
+        }
         calculate();
     }//读取游戏数据
 
@@ -2151,7 +2154,10 @@ var scheme_data = {
     }//保存生产策略
 
     function loadScheme() {
-        scheme_data = JSON.parse(localStorage.getItem('scheme_data'));
+        var scheme = JSON.parse(localStorage.getItem('scheme_data'));
+        if(scheme){
+            scheme_data = JSON.parse(localStorage.getItem('scheme_data'));
+        }
         calculate();
     }//读取生产策略
 
