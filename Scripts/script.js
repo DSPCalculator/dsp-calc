@@ -2218,10 +2218,10 @@ var scheme_data = {
     function BatchChangeProMode() {
         var pro_mode = document.getElementById("batch_setting_pro_mode").value;
         for (var i = 0; i < game_data.recipe_data.length; i++) {
-            if (pro_mode && !(pro_mode & game_data.recipe_data[i]["增产"])) {
+            if (pro_mode != 0 && !(pro_mode & game_data.recipe_data[i]["增产"])) {
                 continue;
             }
-            scheme_data.scheme_for_recipe[i]["增产模式"] = pro_mode;
+            scheme_data.scheme_for_recipe[i]["增产模式"] = Number(pro_mode);
         }
         calculate();
     }//批量更改增产剂使用模式
