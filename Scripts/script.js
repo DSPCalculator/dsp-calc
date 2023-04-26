@@ -2604,6 +2604,8 @@ var scheme_data = {
 
         function show_result_dict() {
             var str = "";
+            energy_cost = 0;
+            building_list = {};
             function get_factory_number(amount, item) {
                 var recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
                 var scheme_for_recipe = scheme_data.scheme_for_recipe[recipe_id];
