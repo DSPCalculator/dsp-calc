@@ -28,10 +28,11 @@
         <script>
             init_item_list();
         </script>
-        所需物品: <input list="item_list" size="5" id="needs_item" value="宇宙矩阵" />
+        所需物品: <input list="item_list" size="5" id="needs_item" value="传送带" />
         所需产能: <input type="text" size="6" id="needs_amount" value="60" />个/min
         <button id="添加需求" onclick="addNeeds()">添加需求</button>
         显示精度: <input id="显示精度" size="5" type="number" onchange="changeFixedNum()" value="6"/>
+        <p id="建筑层数"></p>
         <p id="批量预设"></p>
         <p id="resetNeeds"></p>
         <p id="原矿化列表"></p>
@@ -46,6 +47,7 @@
             init_pro_mode_list();
             init_factory_list();
             batch_setting_init();
+            building_stack_init();
         </script>
     </div>
     <table>总计产能需求：
@@ -72,6 +74,16 @@
         <tbody id="surplus_list">
         </tbody>
     </table>
+    <div>
+        <p>相关链接：</p>
+        <a href="https://gitee.com/shi-sang/DSP_calculator" target="_blank" title="点击可跳转至源码网址">网页源码</a>
+        <br>
+        <a href="https://www.bilibili.com/read/readlist/rl630834" target="_blank" title="点击可跳转专栏">量化计算器逻辑</a>
+        <br>
+        <a href="https://space.bilibili.com/16051534" target="_blank" title="作者bilibili空间">联系作者 QQ:653524123</a>
+        <br>
+        <a href="https://github.com/makuwa8992/DSP_web_quantizing_calculator" target="_blank" title="跳转至github">github仓库源码</a>
+    </div>
 </body>
 
 </html>
