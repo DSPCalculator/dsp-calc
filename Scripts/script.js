@@ -2610,7 +2610,19 @@ var scheme_data = {
                 var factory_per_yield = 1 / item_graph[item]["产出倍率"] / game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["倍率"];
                 var offset = 0;
                 offset = 0.49994 * 0.1 ** fixed_num;//未显示的部分进一法取整
-                return amount / 60 * factory_per_yield + offset;
+                var build_number = amount / 60 * factory_per_yield + offset;
+                if(game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"] in building_list){
+                    building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]] = Number(building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]]) + Math.ceil(build_number);
+                }
+                else{
+                    building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]] = Math.ceil(build_number);
+                }
+                var e_cost = build_number * game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["耗能"];
+                if(scheme_for_recipe["增产模式"] != 0 && scheme_for_recipe["喷涂点数"] != 0){
+                    e_cost *= game_data.proliferate_effect[scheme_for_recipe["喷涂点数"]]["耗电倍率"];
+                }
+                energy_cost = Number(energy_cost) + e_cost;
+                return build_number;
             }
             function is_mineralized(item) {
                 if (item in mineralize_list) {
@@ -2660,7 +2672,12 @@ var scheme_data = {
                     document.getElementById("row_of_" + i).remove();
                 }
             }
-
+            var building_str = "";
+            for(var building in building_list){
+                building_str += building + ":" + building_list[building]+"</br>";
+            }
+            document.getElementById("建筑统计").innerHTML=building_str;
+            document.getElementById("耗电统计").innerHTML="预估电力需求下限："+energy_cost+" MW";
         }//展示结果
 
         function recipe_to_html(recipe) {
@@ -3119,6 +3136,8 @@ var scheme_data = {
     var key_item_list = [];
     var item_list = [];
     var item_price = {};
+    var building_list = {};
+    var energy_cost = 0;
     build_item_list();
     item_price = get_item_price();
 }//主要逻辑
