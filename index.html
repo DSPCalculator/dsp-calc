@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 戴森球计划量化计算器(若版本与gitee中的版本对不上就按ctrl+f5刷新)
-计算器版本: v0.2.0(最新版本可在底部源码链接的源代码仓库中查看，或者按ctrl+f5刷新以后没有变化就说明是最新版本)
+计算器版本: v0.2.1(最新版本可在底部源码链接的源代码仓库中查看,或者按ctrl+f5刷新以后没有变化就说明是最新版本)
 <head>
     <meta charset="UTF-8">
     <title>戴森球计划量化计算器</title>
@@ -33,6 +33,7 @@
         <button id="添加需求" onclick="addNeeds()">增加需求</button>
         显示精度: <input id="显示精度" size="5" type="number" onchange="changeFixedNum()" value="6"/>
         <p id="建筑层数"></p>
+        采矿参数:<p id="采矿参数"></p>
         <p id="批量预设"></p>
         <p id="resetNeeds"></p>
         <p id="原矿化列表"></p>
@@ -48,6 +49,7 @@
             init_factory_list();
             batch_setting_init();
             building_stack_init();
+            show_mining_setting();
         </script>
     </div>
     <table>总计产能需求：

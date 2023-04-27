@@ -2235,7 +2235,13 @@ var scheme_data = {
     }//批量更改配方使用的增产剂的等级
 
     function ChangeBuildingLayer(building) {
-        stackable_buildings[building] = document.getElementById("").value;
+        stackable_buildings[building] = document.getElementById("stack_of_"+building).value;
+        calculate();
+    }
+
+    function changeMiningRate(i){
+        scheme_data.mining_rate[i] = Number(document.getElementById("mining_rate_"+i).value);
+        calculate();
     }
 
 }//这里是前端按钮调用的布局相关的函数
@@ -2251,6 +2257,14 @@ var scheme_data = {
             multi_sources = {};
             item_graph = build_item_graph();
         }//在用户一通瞎几把操作后在需要的时候初始化
+
+        function show_mining_setting(){
+            var str = "";
+            for(var i in scheme_data.mining_rate){
+                str += i + ":<input type=\"text\" size=\"6\" id=\"mining_rate_"+i+"\" value=\""+ scheme_data.mining_rate[i] +"\" onchange=\"changeMiningRate(&#34"+ i +"&#34)\"/>";
+            }
+            document.getElementById("采矿参数").innerHTML = str;
+        }
 
         function batch_setting_init() {
             var str = "批量预设：";
@@ -2547,6 +2561,36 @@ var scheme_data = {
                         }
                     }
                 }//此配方有自身无法消耗的副产物时
+                var factory_type = game_data.recipe_data[recipe_id]['设施'];
+                var building_info = game_data.factory_data[factory_type][scheme_data.scheme_for_recipe[recipe_id]["建筑"]];
+                if (factory_type == "采矿设备" || factory_type == "抽水设备" || factory_type == "抽油设备" || factory_type == "巨星采集") {
+                    item_graph[item]["产出倍率"] *= scheme_data.mining_rate["科技面板倍率"];
+                    if (building_info["名称"] == "采矿机") {
+                        item_graph[item]["产出倍率"] *= scheme_data.mining_rate["小矿机覆盖矿脉数"];
+                    }
+                    else if (building_info["名称"] == "大型采矿机") {
+                        item_graph[item]["产出倍率"] *= scheme_data.mining_rate["大矿机覆盖矿脉数"];
+                    }
+                    else if (building_info["名称"] == "原油萃取站") {
+                        item_graph[item]["产出倍率"] *= scheme_data.mining_rate["油井期望面板"];
+                    }
+                    else if (building_info["名称"] == "轨道采集器") {
+                        if (item == "氢") {
+                            item_graph[item]["产出倍率"] *= scheme_data.mining_rate["巨星氢面板"];
+                        }
+                        else if (item == "重氢") {
+                            item_graph[item]["产出倍率"] *= scheme_data.mining_rate["巨星重氢面板"];
+                        }
+                        else if (item == "可燃冰") {
+                            item_graph[item]["产出倍率"] *= scheme_data.mining_rate["巨星可燃冰面板"];
+                        }
+                    }
+                }//采矿设备需算上科技加成
+                else if (factory_type == "轻型工业机甲") {
+                    if (building_info["名称"] == "伊卡洛斯") {
+                        item_graph[item]["产出倍率"] *= scheme_data.mining_rate["伊卡洛斯手速"];
+                    }
+                }//毫无意义，只是我想这么干
             }
             return item_graph;
         }//根据配方设定完善产物关系图与多来源产物表
@@ -2792,36 +2836,7 @@ var scheme_data = {
             }
             var recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
             var building_info = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]];
-            var factory_type = game_data.recipe_data[recipe_id]["设施"];
             var building_count_per_yield = 1 / item_graph[item]["产出倍率"] / building_info["倍率"];
-            if (factory_type == "采矿设备" || factory_type == "抽水设备" || factory_type == "抽油设备" || factory_type == "巨星采集") {
-                building_count_per_yield /= scheme_data.mining_rate["科技面板倍率"];
-                if (building_info["名称"] == "采矿机") {
-                    building_count_per_yield /= scheme_data.mining_rate["小矿机覆盖矿脉数"];
-                }
-                else if (building_info["名称"] == "大型采矿机") {
-                    building_count_per_yield /= scheme_data.mining_rate["大矿机覆盖矿脉数"];
-                }
-                else if (building_info["名称"] == "原油萃取站") {
-                    building_count_per_yield /= scheme_data.mining_rate["油井期望面板"];
-                }
-                else if (building_info["名称"] == "轨道采集器") {
-                    if (item == "氢") {
-                        building_count_per_yield /= scheme_data.mining_rate["巨星氢面板"];
-                    }
-                    else if (item == "重氢") {
-                        building_count_per_yield /= scheme_data.mining_rate["巨星重氢面板"];
-                    }
-                    else if (item == "可燃冰") {
-                        building_count_per_yield /= scheme_data.mining_rate["巨星可燃冰面板"];
-                    }
-                }
-            }//采矿设备需算上科技加成
-            else if (factory_type == "轻型工业机甲") {
-                if (building_info["名称"] == "伊卡洛斯") {
-                    building_count_per_yield /= scheme_data.mining_rate["伊卡洛斯手速"];
-                }
-            }//毫无意义，只是我想这么干
             var layer_count = 1;
             if (building_info["名称"] in stackable_buildings) {
                 layer_count = stackable_buildings[building_info["名称"]];
