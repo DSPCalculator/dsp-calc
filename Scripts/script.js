@@ -2076,7 +2076,8 @@ var scheme_data = {
         "巨星重氢面板": 0.2,
         "巨星可燃冰面板": 0.5,
         "伊卡洛斯手速": 1
-    }
+    },
+    "fractionating_speed":1
 }//在非导入的情况会依据game_data生成默认值，这里的内容仅做示例，这个一样应该存在本地json里的，目前存在html的localStorage里
 {/*初始化生产策略数据
     scheme_data是用户根据自己选取的配方策略而制定的数据
@@ -2288,9 +2289,18 @@ var scheme_data = {
         natural_production_line[i]["增产模式"] = 0;
         show_natural_production_line();
         calculate();
-    }
+    }//改变固有产线物品
 
-
+    function changeFractionatingSpeed(){
+        scheme_data.fractionating_speed = Number(document.getElementById("分馏塔过氢带速").value);
+        if(scheme_data.fractionating_speed > 1800){
+            game_data.factory_data["分馏设备"][0]["耗能"] = scheme_data.fractionating_speed * 0.0006 - 0.36;
+        }
+        else{
+            game_data.factory_data["分馏设备"][0]["耗能"] = 0.72;
+        }
+        calculate();
+    }//更改分馏塔过氢带速
 
 }//这里是前端按钮调用的布局相关的函数
 
@@ -2699,6 +2709,11 @@ var scheme_data = {
                         }
                     }
                 }//采矿设备需算上科技加成
+                else if (factory_type == "分馏设备"){
+                    if (building_info["名称"] == "分馏塔") {
+                        item_graph[item]["产出倍率"] *= scheme_data.fractionating_speed / 60;
+                    }
+                }
                 else if (factory_type == "轻型工业机甲") {
                     if (building_info["名称"] == "伊卡洛斯") {
                         item_graph[item]["产出倍率"] *= scheme_data.mining_rate["伊卡洛斯手速"];
@@ -3160,10 +3175,7 @@ var scheme_data = {
 
     }//运行逻辑相关
 
-
-
-
-    function calculate() {
+    function calculate() { //主要计算逻辑
         multi_sources = {};
         result_dict = {};
         surplus_list = {};
@@ -3283,12 +3295,12 @@ var scheme_data = {
                     }
                 }
             }
-        }//将故有产线的输入输出添至计算的实际需求列表中
+        }//将固有产线的输入输出添至计算的实际需求列表中
         for (var item in in_out_list) {
             if (in_out_list[item] < 0) {
                 external_supply_item[item] = in_out_list[item];
             }
-        }
+        }//将实际需求列表中小于0的部分看做外部输入
         item_graph = build_item_graph();
         build_item_list();
         item_price = get_item_price();
@@ -3371,9 +3383,6 @@ var scheme_data = {
                 }
             }
         }//将循环关键物品的总需求放入线性规划相关物品表
-        for (var item in external_supply_item) {
-
-        }
         var lp_cost = get_linear_programming_list();//线规最终目标函数成本，在考虑要不要显示
         show_result_dict();
         show_surplus_list();
