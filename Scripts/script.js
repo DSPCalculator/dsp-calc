@@ -2848,6 +2848,21 @@ var scheme_data = {
                     document.getElementById("row_of_" + i).remove();
                 }
             }
+            for (var NPId in natural_production_line){
+                var recipe = game_data.recipe_data[item_data[natural_production_line[NPId]["目标物品"]][natural_production_line[NPId]["配方id"]]];
+                var building = game_data.factory_data[recipe["设施"]][natural_production_line[NPId]["建筑"]];
+                if(building in building_list){
+                    building_list[building["名称"]] = Number(building_list[building["名称"]]) + Math.ceil(natural_production_line[NPId]["建筑数量"]);
+                }
+                else{
+                    building_list[building["名称"]] = Math.ceil(natural_production_line[NPId]["建筑数量"]);
+                }
+                var e_cost = natural_production_line[NPId]["建筑数量"] * building["耗能"];
+                if(natural_production_line[NPId]["喷涂点数"] != 0 && natural_production_line[NPId]["增产模式"] != 0){
+                    e_cost *= game_data.proliferate_effect[natural_production_line[NPId]["喷涂点数"]]["耗电倍率"];
+                }
+                energy_cost = Number(energy_cost) + e_cost;
+            }
             var building_str = "";
             for (var building in building_list) {
                 building_str += building + ":" + building_list[building] + "</br>";
