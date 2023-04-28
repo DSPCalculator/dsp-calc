@@ -157,7 +157,7 @@ var game_data = {
             "产物": {
                 "重氢": 1
             },
-            "设施": "分馏塔",
+            "设施": "分馏设备",
             "时间": 100,
             "增产": 2
         },
@@ -2131,7 +2131,7 @@ var scheme_data = {
     function changeNeeds(item) {
         var num = document.getElementById("needs_of_" + item).value;
         if (item in needs_list) {
-            needs_list[item] = num;
+            needs_list[item] = Number(num);
         }
         show_needs_list();
         calculate();
@@ -2235,12 +2235,12 @@ var scheme_data = {
     }//批量更改配方使用的增产剂的等级
 
     function ChangeBuildingLayer(building) {
-        stackable_buildings[building] = document.getElementById("stack_of_"+building).value;
+        stackable_buildings[building] = document.getElementById("stack_of_" + building).value;
         calculate();
     }
 
-    function changeMiningRate(i){
-        scheme_data.mining_rate[i] = Number(document.getElementById("mining_rate_"+i).value);
+    function changeMiningRate(i) {
+        scheme_data.mining_rate[i] = Number(document.getElementById("mining_rate_" + i).value);
         calculate();
     }
 
@@ -2258,10 +2258,10 @@ var scheme_data = {
             item_graph = build_item_graph();
         }//在用户一通瞎几把操作后在需要的时候初始化
 
-        function show_mining_setting(){
+        function show_mining_setting() {
             var str = "";
-            for(var i in scheme_data.mining_rate){
-                str += i + ":<input type=\"text\" size=\"6\" id=\"mining_rate_"+i+"\" value=\""+ scheme_data.mining_rate[i] +"\" onchange=\"changeMiningRate(&#34"+ i +"&#34)\"/>";
+            for (var i in scheme_data.mining_rate) {
+                str += i + ":<input type=\"text\" size=\"6\" id=\"mining_rate_" + i + "\" value=\"" + scheme_data.mining_rate[i] + "\" onchange=\"changeMiningRate(&#34" + i + "&#34)\"/>";
             }
             document.getElementById("采矿参数").innerHTML = str;
         }
@@ -2874,7 +2874,7 @@ var scheme_data = {
                     item_price[item_list[i]] = { "原料": {}, "成本": 0 };
                     ++p_key_item;
                 }
-                else if (item_list[i] in multi_sources) {
+                else if ((item_list[i] in multi_sources) || (item_list[i] in external_supply_item)) {
                     item_price[item_list[i]] = { "原料": {}, "成本": 0 };
                 }
                 else {
@@ -2984,7 +2984,7 @@ var scheme_data = {
             }//记录线规目标函数结果
             if ("feasible" in results) {
                 if (!results.feasible) {
-                    alert("线性规划无解,请检查配方是否可能满足需求");
+                    alert("线性规划无解,请检查来源配方设定是否可能满足需求");
                 }
                 delete results.feasible;
             }//无解判断
@@ -3057,46 +3057,54 @@ var scheme_data = {
         result_dict = {};
         surplus_list = {};
         lp_surplus_list = {};
+        external_supply_item = {};
+        lp_item_dict = {};
+        for (var item in needs_list) {
+            if (needs_list[item] < 0) {
+                external_supply_item[item] = needs_list[item];
+            }
+        }
         item_graph = build_item_graph();
         build_item_list();
         item_price = get_item_price();
         for (var item in needs_list) {
-            if (item in result_dict) {
-                result_dict[item] = Number(result_dict[item]) + needs_list[item];
-            }
-            else {
-                result_dict[item] = needs_list[item];
-            }
-            if (item_graph[item]["副产物"] && !(item in multi_sources) && !(item in key_item_list)) {//如果是线性规划相关物品的副产物因为这边是原矿化的所以不应考虑其副产物
-                for (var other_products in item_graph[item]["副产物"]) {
-                    if (other_products in surplus_list) {
-                        surplus_list[other_products] = Number(surplus_list[other_products]) + item_graph[item]["副产物"][other_products] * needs_list[item];
-                    }
-                    else {
-                        surplus_list[other_products] = item_graph[item]["副产物"][other_products] * needs_list[item];
-                    }
-                }
-            }
-            for (var material in item_price[item]["原料"]) {
-                if (material in result_dict) {
-                    result_dict[material] = Number(result_dict[material]) + item_price[item]["原料"][material] * needs_list[item];
+            if (needs_list[item] > 0) {
+                if (item in result_dict) {
+                    result_dict[item] = Number(result_dict[item]) + needs_list[item];
                 }
                 else {
-                    result_dict[material] = item_price[item]["原料"][material] * needs_list[item];
+                    result_dict[item] = needs_list[item];
                 }
-                if (item_graph[material]["副产物"] && !(material in multi_sources) && !(material in key_item_list)) {
-                    for (var other_products in item_graph[material]["副产物"]) {
+                if (item_graph[item]["副产物"] && !(item in multi_sources) && !(item in key_item_list)) {//如果是线性规划相关物品的副产物因为这边是原矿化的所以不应考虑其副产物
+                    for (var other_products in item_graph[item]["副产物"]) {
                         if (other_products in surplus_list) {
-                            surplus_list[other_products] = Number(surplus_list[other_products]) + item_graph[material]["副产物"][other_products] * item_price[item]["原料"][material] * needs_list[item];
+                            surplus_list[other_products] = Number(surplus_list[other_products]) + item_graph[item]["副产物"][other_products] * needs_list[item];
                         }
                         else {
-                            surplus_list[other_products] = item_graph[material]["副产物"][other_products] * item_price[item]["原料"][material] * needs_list[item];
+                            surplus_list[other_products] = item_graph[item]["副产物"][other_products] * needs_list[item];
+                        }
+                    }
+                }
+                for (var material in item_price[item]["原料"]) {
+                    if (material in result_dict) {
+                        result_dict[material] = Number(result_dict[material]) + item_price[item]["原料"][material] * needs_list[item];
+                    }
+                    else {
+                        result_dict[material] = item_price[item]["原料"][material] * needs_list[item];
+                    }
+                    if (item_graph[material]["副产物"] && !(material in multi_sources) && !(material in key_item_list)) {
+                        for (var other_products in item_graph[material]["副产物"]) {
+                            if (other_products in surplus_list) {
+                                surplus_list[other_products] = Number(surplus_list[other_products]) + item_graph[material]["副产物"][other_products] * item_price[item]["原料"][material] * needs_list[item];
+                            }
+                            else {
+                                surplus_list[other_products] = item_graph[material]["副产物"][other_products] * item_price[item]["原料"][material] * needs_list[item];
+                            }
                         }
                     }
                 }
             }
         }//遍历物品的item_price降可迭代物品的生产结果和副产物产出结果放入输出结果内
-        lp_item_dict = {};
         for (var item in multi_sources) {
             if (item in result_dict) {
                 if (item in surplus_list) {
@@ -3115,8 +3123,21 @@ var scheme_data = {
                 }
             }
         }//将多来源配方物品的总需求与总富余相减后放入线性规划相关物品表
+        for (var item in external_supply_item) {
+            if (!(item in multi_sources)) {
+                if (item in result_dict) {
+                    lp_item_dict[item] = result_dict[item] + needs_list[item];
+                }
+                else {
+                    lp_item_dict[item] = needs_list[item];
+                }
+            }
+            else {
+                lp_item_dict[item] = Number(lp_item_dict[item]) + needs_list[item];
+            }
+        }//将定量外部供应的物品放入线性规划相关物品表
         for (var item in key_item_list) {
-            if (!(key_item_list[item] in multi_sources)) {
+            if (!(key_item_list[item] in multi_sources) && !(key_item_list[item] in external_supply_item)) {
                 if ([key_item_list[item]] in result_dict) {
                     lp_item_dict[key_item_list[item]] = result_dict[key_item_list[item]];
                 }
@@ -3125,6 +3146,9 @@ var scheme_data = {
                 }
             }
         }//将循环关键物品的总需求放入线性规划相关物品表
+        for (var item in external_supply_item) {
+
+        }
         var lp_cost = get_linear_programming_list();//线规最终目标函数成本，在考虑要不要显示
         show_result_dict();
         show_surplus_list();
@@ -3148,6 +3172,7 @@ var scheme_data = {
 */}
     var multi_sources = {};//初始化多来源物品表
     var lp_item_dict = {};//线性规划相关物品需求表
+    var external_supply_item = {};//外部供应物品
     var side_item_dict = {};
     var surplus_list = {};
     var lp_surplus_list = {};
