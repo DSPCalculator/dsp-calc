@@ -2077,7 +2077,7 @@ var scheme_data = {
         "巨星可燃冰面板": 0.5,
         "伊卡洛斯手速": 1
     },
-    "fractionating_speed":1
+    "fractionating_speed": 1
 }//在非导入的情况会依据game_data生成默认值，这里的内容仅做示例，这个一样应该存在本地json里的，目前存在html的localStorage里
 {/*初始化生产策略数据
     scheme_data是用户根据自己选取的配方策略而制定的数据
@@ -2246,7 +2246,7 @@ var scheme_data = {
     }
 
     function addNaturalProductionLine() {
-        natural_production_line.push({ "目标物品":"氢","建筑数量": 0, "配方id": 1, "喷涂点数": 0, "增产模式": 0, "建筑": 0 })
+        natural_production_line.push({ "目标物品": "氢", "建筑数量": 0, "配方id": 1, "喷涂点数": 0, "增产模式": 0, "建筑": 0 })
         show_natural_production_line();
     }
 
@@ -2268,20 +2268,20 @@ var scheme_data = {
     }
 
     function NPDeleteLine(i) {
-        for(var j = i;j<natural_production_line.length;j++){
-            natural_production_line[j] = natural_production_line[j+1];
+        for (var j = i; j < natural_production_line.length; j++) {
+            natural_production_line[j] = natural_production_line[j + 1];
         }
         natural_production_line.pop();
         show_natural_production_line();
         calculate();
     }
 
-    function NPChangeItem(i){
+    function NPChangeItem(i) {
         var item = document.getElementById("item_of_natural_production_" + i).value;
-        if(!(item in item_data)){
+        if (!(item in item_data)) {
             alert("请输入或选择正确的物品名字！");
         }
-        else{
+        else {
             natural_production_line[i]["目标物品"] = item;
         }
         natural_production_line[i]["配方id"] = 1;
@@ -2291,12 +2291,12 @@ var scheme_data = {
         calculate();
     }//改变固有产线物品
 
-    function changeFractionatingSpeed(){
+    function changeFractionatingSpeed() {
         scheme_data.fractionating_speed = Number(document.getElementById("分馏塔过氢带速").value);
-        if(scheme_data.fractionating_speed > 1800){
+        if (scheme_data.fractionating_speed > 1800) {
             game_data.factory_data["分馏设备"][0]["耗能"] = scheme_data.fractionating_speed * 0.0006 - 0.36;
         }
-        else{
+        else {
             game_data.factory_data["分馏设备"][0]["耗能"] = 0.72;
         }
         calculate();
@@ -2709,7 +2709,7 @@ var scheme_data = {
                         }
                     }
                 }//采矿设备需算上科技加成
-                else if (factory_type == "分馏设备"){
+                else if (factory_type == "分馏设备") {
                     if (building_info["名称"] == "分馏塔") {
                         item_graph[item]["产出倍率"] *= scheme_data.fractionating_speed / 60;
                     }
@@ -2794,11 +2794,13 @@ var scheme_data = {
                         building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]] = Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
                     }
                 }
-                var e_cost = build_number * game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["耗能"];
-                if (scheme_for_recipe["增产模式"] != 0 && scheme_for_recipe["喷涂点数"] != 0) {
-                    e_cost *= game_data.proliferate_effect[scheme_for_recipe["喷涂点数"]]["耗电倍率"];
+                if (game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"] != "轨道采集器") {
+                    var e_cost = build_number * game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["耗能"];
+                    if (scheme_for_recipe["增产模式"] != 0 && scheme_for_recipe["喷涂点数"] != 0) {
+                        e_cost *= game_data.proliferate_effect[scheme_for_recipe["喷涂点数"]]["耗电倍率"];
+                    }
+                    energy_cost = Number(energy_cost) + e_cost;
                 }
-                energy_cost = Number(energy_cost) + e_cost;
                 return build_number;
             }
             function is_mineralized(item) {
@@ -2848,20 +2850,22 @@ var scheme_data = {
                     document.getElementById("row_of_" + i).remove();
                 }
             }
-            for (var NPId in natural_production_line){
+            for (var NPId in natural_production_line) {
                 var recipe = game_data.recipe_data[item_data[natural_production_line[NPId]["目标物品"]][natural_production_line[NPId]["配方id"]]];
                 var building = game_data.factory_data[recipe["设施"]][natural_production_line[NPId]["建筑"]];
-                if(building in building_list){
+                if (building in building_list) {
                     building_list[building["名称"]] = Number(building_list[building["名称"]]) + Math.ceil(natural_production_line[NPId]["建筑数量"]);
                 }
-                else{
+                else {
                     building_list[building["名称"]] = Math.ceil(natural_production_line[NPId]["建筑数量"]);
                 }
-                var e_cost = natural_production_line[NPId]["建筑数量"] * building["耗能"];
-                if(natural_production_line[NPId]["喷涂点数"] != 0 && natural_production_line[NPId]["增产模式"] != 0){
-                    e_cost *= game_data.proliferate_effect[natural_production_line[NPId]["喷涂点数"]]["耗电倍率"];
+                if (building["名称"] != "轨道采集器") {
+                    var e_cost = natural_production_line[NPId]["建筑数量"] * building["耗能"];
+                    if (natural_production_line[NPId]["喷涂点数"] != 0 && natural_production_line[NPId]["增产模式"] != 0) {
+                        e_cost *= game_data.proliferate_effect[natural_production_line[NPId]["喷涂点数"]]["耗电倍率"];
+                    }
+                    energy_cost = Number(energy_cost) + e_cost;
                 }
-                energy_cost = Number(energy_cost) + e_cost;
             }
             var building_str = "";
             for (var building in building_list) {
