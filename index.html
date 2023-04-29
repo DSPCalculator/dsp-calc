@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 戴森球计划量化计算器(若版本与gitee中的版本对不上就按ctrl+f5刷新)
-计算器版本: v0.2.4(最新版本可在底部源码链接的源代码仓库中查看,或者按ctrl+f5刷新以后没有变化就说明是最新版本)
+计算器版本: v0.2.5(最新版本可在底部源码链接的源代码仓库中查看,或者按ctrl+f5刷新以后没有变化就说明是最新版本)
 <head>
     <meta charset="UTF-8">
     <title>戴森球计划量化计算器</title>
@@ -31,15 +31,15 @@
         所需物品: <input list="item_list" size="5" id="needs_item" value="传送带" />
         所需产能: <input type="text" size="6" id="needs_amount" value="60" />个/min
         <button id="添加需求" onclick="addNeeds()">增加需求</button>
-        显示精度: <input id="显示精度" size="5" type="number" onchange="changeFixedNum()" value="6"/>
+        显示精度: <input id="显示精度" size="5" type="number" onchange="changeFixedNum()" value="2"/>
         <p id="建筑层数"></p>
         采矿参数:<p id="采矿参数"></p>
         分馏塔过氢带速:<input type="text" size="6" id="分馏塔过氢带速" value="60" onchange="changeFractionatingSpeed()"/>过氢量/min
         <p id="批量预设"></p>
         <p id="resetNeeds"></p>
         <p id="原矿化列表"></p>
-        <button onclick="addNaturalProductionLine()">添加固有产线</button>
-        <table>固有产线
+        <table>固有产线:
+            <button onclick="addNaturalProductionLine()">添加固有产线</button>
             <thead>
                 <tr>
                     <th>目标物品</th>

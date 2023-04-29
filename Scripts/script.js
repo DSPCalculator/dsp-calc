@@ -1,5 +1,5 @@
 /*
-    戴森球计划量化计算器，详细计算思路见：https://www.bilibili.com/read/cv19387400?spm_id_from=333.999.0.0
+    戴森球计划量化计算器，详细计算思路见：https://www.bilibili.com/read/cv19387400
     线性规划使用javascript-lp-solver库：https://github.com/JWally/jsLPSolver
     作者：莳槡
     联系方式:
@@ -2071,13 +2071,15 @@ var scheme_data = {
         "科技面板倍率": 1.0,
         "小矿机覆盖矿脉数": 8,
         "大矿机覆盖矿脉数": 16,
+        "大矿机工作倍率": 3,
         "油井期望面板": 3,
         "巨星氢面板": 1,
         "巨星重氢面板": 0.2,
         "巨星可燃冰面板": 0.5,
         "伊卡洛斯手速": 1
     },
-    "fractionating_speed": 1
+    "fractionating_speed": 1,
+    "energy_contain_miner": 0
 }//在非导入的情况会依据game_data生成默认值，这里的内容仅做示例，这个一样应该存在本地json里的，目前存在html的localStorage里
 {/*初始化生产策略数据
     scheme_data是用户根据自己选取的配方策略而制定的数据
@@ -2302,6 +2304,10 @@ var scheme_data = {
         calculate();
     }//更改分馏塔过氢带速
 
+    function IfEnergyContainMiner(){
+        scheme_data.energy_contain_miner = (scheme_data.energy_contain_miner + 1) % 2;
+        calculate();
+    }
 }//这里是前端按钮调用的布局相关的函数
 
 
@@ -2529,6 +2535,7 @@ var scheme_data = {
                 "科技面板倍率": 1.0,
                 "小矿机覆盖矿脉数": 8,
                 "大矿机覆盖矿脉数": 16,
+                "大矿机工作倍率": 3,
                 "油井期望面板": 3,
                 "巨星氢面板": 1,
                 "巨星重氢面板": 0.2,
@@ -2692,7 +2699,7 @@ var scheme_data = {
                         item_graph[item]["产出倍率"] *= scheme_data.mining_rate["小矿机覆盖矿脉数"];
                     }
                     else if (building_info["名称"] == "大型采矿机") {
-                        item_graph[item]["产出倍率"] *= scheme_data.mining_rate["大矿机覆盖矿脉数"];
+                        item_graph[item]["产出倍率"] *= (scheme_data.mining_rate["大矿机覆盖矿脉数"] * scheme_data.mining_rate["大矿机工作倍率"]);
                     }
                     else if (building_info["名称"] == "原油萃取站") {
                         item_graph[item]["产出倍率"] *= scheme_data.mining_rate["油井期望面板"];
@@ -2793,9 +2800,13 @@ var scheme_data = {
                     else {
                         building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]] = Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
                     }
-                }
-                if (game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"] != "轨道采集器") {
+                }game_data.factory_data[""]
+                var factory = game_data.recipe_data[recipe_id]["设施"];
+                if (factory != "巨星采集" && !(!scheme_data.energy_contain_miner && (factory == "采矿设备" || factory == "抽水设备" || factory == "抽油设备"))) {
                     var e_cost = build_number * game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["耗能"];
+                    if (game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"] == "大型采矿机"){
+                        e_cost = scheme_data.mining_rate["大矿机工作倍率"] * scheme_data.mining_rate["大矿机工作倍率"] * (2.94-0.168) + 0.168;
+                    }
                     if (scheme_for_recipe["增产模式"] != 0 && scheme_for_recipe["喷涂点数"] != 0) {
                         e_cost *= game_data.proliferate_effect[scheme_for_recipe["喷涂点数"]]["耗电倍率"];
                     }
@@ -2859,7 +2870,7 @@ var scheme_data = {
                 else {
                     building_list[building["名称"]] = Math.ceil(natural_production_line[NPId]["建筑数量"]);
                 }
-                if (building["名称"] != "轨道采集器") {
+                if (recipe["设施"] != "巨星采集" && !(!scheme_data.energy_contain_miner && (recipe["设施"] == "采矿设备" || recipe["设施"] == "抽水设备" || recipe["设施"] == "抽油设备"))){
                     var e_cost = natural_production_line[NPId]["建筑数量"] * building["耗能"];
                     if (natural_production_line[NPId]["喷涂点数"] != 0 && natural_production_line[NPId]["增产模式"] != 0) {
                         e_cost *= game_data.proliferate_effect[natural_production_line[NPId]["喷涂点数"]]["耗电倍率"];
@@ -2872,7 +2883,15 @@ var scheme_data = {
                 building_str += building + ":" + building_list[building] + "</br>";
             }
             document.getElementById("建筑统计").innerHTML = building_str;
-            document.getElementById("耗电统计").innerHTML = "预估电力需求下限：" + energy_cost + " MW";
+            document.getElementById("耗电统计").innerHTML = "预估电力需求下限：" + energy_cost + " MW" + if_energy_contain_miner();
+            function if_energy_contain_miner(){
+                if(scheme_data.energy_contain_miner){
+                    return "<button onclick=\"IfEnergyContainMiner()\">忽视采集设备耗电</button>";
+                }
+                else{
+                    return "<button onclick=\"IfEnergyContainMiner()\">考虑采集设备耗电</button>";
+                }
+            }
         }//展示结果
 
         function recipe_to_html(recipe) {
@@ -3433,7 +3452,7 @@ var scheme_data = {
     var lp_item_dict = {};
     var item_graph = build_item_graph();//初始化产物关系图
     var result_dict = {};
-    var fixed_num = 6;
+    var fixed_num = 2;
     var key_item_list = [];
     var item_list = [];
     var item_price = {};
