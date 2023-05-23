@@ -2575,7 +2575,7 @@ var scheme_data = {
             }
             for (var item in item_data) {
                 if (item in mineralize_list) {
-                    item_graph[item]["产出倍率"] = 1000 ** fixed_num;
+                    item_graph[item]["产出倍率"] = 1000 ** ( fixed_num + 1 );
                     continue;
                 }
                 var recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
