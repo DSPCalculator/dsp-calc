@@ -2165,6 +2165,19 @@ var scheme_data = {
         calculate();
     }//读取生产策略
 
+    function saveNeeds() {
+        localStorage.setItem('needs_list', JSON.stringify(needs_list));
+    }//保存生产策略
+
+    function loadNeeds() {
+        var scheme = JSON.parse(localStorage.getItem('needs_list'));
+        if (scheme) {
+            needs_list = JSON.parse(localStorage.getItem('needs_list'));
+        }
+        show_needs_list();
+        calculate();
+    }//读取生产策略
+
     function clearData() {
         localStorage.clear();
     }//清空所有缓存
