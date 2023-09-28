@@ -374,6 +374,7 @@ var scheme_data = {
             batch_setting_init();
             building_stack_init();
             show_mining_setting();
+            show_needs_list();
         }//全局初始化
 
         function show_mining_setting() {
@@ -565,12 +566,12 @@ var scheme_data = {
                 if (game_data.proliferator_data[i]["单次喷涂最高增产点数"] != 0) {
                     proliferator_price[game_data.proliferator_data[i]["单次喷涂最高增产点数"]] = {};
                     if (proliferate_itself) {
-                        proliferator_price[game_data.proliferator_data[i]["单次喷涂最高增产点数"]][i]
+                        proliferator_price[game_data.proliferator_data[i]["单次喷涂最高增产点数"]][game_data.proliferator_data[i]["增产剂名称"]]
                             = 1 / (game_data.proliferator_data[i]["喷涂次数"] *
                                 game_data.proliferate_effect[game_data.proliferator_data[i]["单次喷涂最高增产点数"]]["增产效果"] - 1);
                     }
                     else {
-                        proliferator_price[game_data.proliferator_data[i]["单次喷涂最高增产点数"]][i]
+                        proliferator_price[game_data.proliferator_data[i]["单次喷涂最高增产点数"]][game_data.proliferator_data[i]["增产剂名称"]]
                             = 1 / game_data.proliferator_data[i]["喷涂次数"];
                     }
                 }
