@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 戴森球计划量化计算器(若版本与gitee中的版本对不上就按ctrl+f5刷新)
-计算器版本: v0.2.7(最新版本可在底部源码链接的源代码仓库中查看,或者按ctrl+f5刷新以后没有变化就说明是最新版本)
+计算器版本: v0.3.0(最新版本可在底部源码链接的源代码仓库中查看,或者按ctrl+f5刷新以后没有变化就说明是最新版本)
 <head>
     <meta charset="UTF-8">
     <title>戴森球计划量化计算器</title>
@@ -9,20 +9,22 @@
     <script src="./Scripts/jquery.min.2.1.4.js"></script>
     <script src="./Scripts/jquery.cookie.min.1.4.1.js"></script>
     <script src="./Scripts/vue.min.2.5.16.js"></script>
+    <script src="./data/GameData.js"></script>
     <script src="./Scripts/script.js"></script>
     <script src="./Scripts/jsLPSolver/prod/solver.js"></script>
-    
 </head>
 
 <body>
     <div>
-        <button id="saveData" onclick="saveData()">保存游戏数据</button>
-        <button id="loadData" onclick="loadData()">读取游戏数据</button>
         <button id="saveScheme" onclick="saveScheme()">保存生产策略</button>
         <button id="loadScheme" onclick="loadScheme()">加载生产策略</button>
         <button id="saveScheme" onclick="saveNeeds()">保存需求列表</button>
         <button id="loadScheme" onclick="loadNeeds()">加载需求列表</button>
         <button id="loadScheme" onclick="clearData()">清空数据缓存</button>
+        <select id="gameData" onchange="changeGameData()">
+            <option value="vanilla" label="原版游戏" selected></option>
+            <option value="GenesisBook" label="创世之书"></option>
+        </select>
     </div><!--本地数据相关按钮-->
     <div>
         <p id="是否自喷涂"><button onclick="if_proliferate_itself(0)">自喷涂?</button>Yes!</p>
@@ -30,7 +32,7 @@
         <script>
             init_item_list();
         </script>
-        所需物品: <input list="item_list" size="5" id="needs_item" value="传送带" />
+        所需物品: <input list="item_list" size="5" id="needs_item" value="矩阵" />
         所需产能: <input type="text" size="6" id="needs_amount" value="60" />个/min
         <button id="添加需求" onclick="addNeeds()">增加需求</button>
         显示精度: <input id="显示精度" size="5" type="number" onchange="changeFixedNum()" value="2"/>
