@@ -622,6 +622,18 @@ var scheme_data = {
             document.getElementById("totalNeeds").innerHTML = str;
         }//展示需求列表
 
+        function min_or_sec(isMin){
+            if(isMin){
+                time_tick = 60;
+                document.getElementById("时间单位").innerHTML = "个/min<button onclick=\"min_or_sec(0)\">转化为秒</button>";
+            }
+            else{
+                time_tick = 1;
+                document.getElementById("时间单位").innerHTML = "个/s<button onclick=\"min_or_sec(1)\">转化为分</button>";
+            }
+            calculate();
+        }//分秒转换
+
         function build_item_graph() {
             var item_graph = {};
             for (var item in item_data) {
@@ -846,7 +858,7 @@ var scheme_data = {
                 var factory_per_yield = 1 / item_graph[item]["产出倍率"] / game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["倍率"];
                 var offset = 0;
                 offset = 0.49994 * 0.1 ** fixed_num;//未显示的部分进一法取整
-                var build_number = amount / 60 * factory_per_yield + offset;
+                var build_number = amount / time_tick * factory_per_yield + offset;
                 if (Math.ceil(build_number - 0.5 * 0.1 ** fixed_num) != 0) {
                     if (game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"] in building_list) {
                         building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]] = Number(building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]]) + Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
@@ -1513,6 +1525,7 @@ var scheme_data = {
     var item_price = {};
     var building_list = {};
     var energy_cost = 0;
+    var time_tick = 60;
     build_item_list();
     item_price = get_item_price();
 }//主要逻辑
