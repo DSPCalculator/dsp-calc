@@ -32,7 +32,7 @@
         <script>
             init_item_list();
         </script>
-        所需物品: <input list="item_list" size="5" id="needs_item" value="矩阵" />
+        所需物品: <input list="item_list" size="5" id="needs_item" value="" placeholder="请输入搜索需要的物品"/>
         所需产能: <input type="text" size="6" id="needs_amount" value="60" /> <button id="添加需求" onclick="addNeeds()">增加需求</button>单位:<nobr id="时间单位">个/min<button onclick="min_or_sec(0)">转化为秒</button></nobr>
         显示精度: <input id="显示精度" size="5" type="number" onchange="changeFixedNum()" value="2"/>
         <p id="建筑层数"></p>
