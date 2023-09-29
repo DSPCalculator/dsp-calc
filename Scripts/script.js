@@ -375,6 +375,7 @@ var scheme_data = {
             building_stack_init();
             show_mining_setting();
             show_needs_list();
+            show_natural_production_line();
         }//全局初始化
 
         function show_mining_setting() {
