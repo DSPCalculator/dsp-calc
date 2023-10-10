@@ -25,6 +25,10 @@
             <option value="vanilla" label="原版游戏" selected></option>
             <option value="GenesisBook" label="创世之书"></option>
         </select>
+        <nobr id="版本号"></nobr>
+        <script>
+            document.getElementById("版本号").innerHTML = "版本号：" + game_data.Version;
+        </script>
     </div><!--本地数据相关按钮-->
     <div>
         <p id="是否自喷涂"><button onclick="if_proliferate_itself(0)">自喷涂?</button>Yes!</p>
