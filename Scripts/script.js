@@ -876,7 +876,7 @@ var scheme_data = {
                 var factory_number = get_factory_number(result_dict[i], i).toFixed(fixed_num);
                 var img_path = document.getElementById("gameData" ).value + "/";
                 str += "<tr id=\"row_of_" + i + "\"><th><a href=\"Javascript:mineralize('" + i + "')\">视为原矿</a></th>" + //操作
-                    "<th>" + "<img src=\"./image/" + img_path + i + ".png\" title=\"" + i + "\" style=\"width: 40px; height: 40px;\">" + "</th>" +  //目标物品
+                    "<th align='left'>" + "<img src=\"./image/" + img_path + i + ".png\" title=\"" + i + "\" style=\"width: 40px; height: 40px;\">" + i + "</th>" +  //目标物品
                     "<th id=\"num_of_" + i + "\">" + get_gross_output(result_dict[i], i).toFixed(fixed_num) + "</th>" +  //分钟毛产出
                     "<th><p id=\"factory_counts_of_" + i + "\" value=\"" + factory_number + "\">" + game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"] +
                     " * " + factory_number + is_mineralized(i) + "</p></th>" +  //所需工厂*数目
