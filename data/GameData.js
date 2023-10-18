@@ -35,7 +35,7 @@
 */
 var GameData = {
     vanilla: {
-        "Version": "0.9.27.15446",
+        "Version": "0.9.27.15466",
         "recipe_data": [
             {
                 "原料": {},

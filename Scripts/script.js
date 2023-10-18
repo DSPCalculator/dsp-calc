@@ -114,45 +114,118 @@ var scheme_data = {
         show_needs_list();
         calculate();
     }
-    function loadData() {
-        var data_of_game = JSON.parse(localStorage.getItem('game_data'));
-        if (data_of_game) {
-            game_data = JSON.parse(localStorage.getItem('game_data'));
-            item_data = get_item_data();
-        }
-        calculate();
-    }//读取游戏数据
 
-    function saveData() {
-        localStorage.setItem('game_data', JSON.stringify(game_data));
-    }//保存游戏数据
+    function init_scheme_selection(){
+        let scheme = JSON.parse(localStorage.getItem('scheme_data'));
+        let str = "<option value=\"\" label=\"无\" selected></option>";
+        let game_name = document.getElementById("gameData").value;
+        for(let name in scheme[game_name]){
+            str += "<option value=\""+name+"\" label=\""+name+"\"></option>"
+        }
+        document.getElementById("schemeData").innerHTML = str;
+    }//更新生产策略选取
 
     function saveScheme() {
-        localStorage.setItem('scheme_data', JSON.stringify(scheme_data));
+        let scheme = {};
+        let game_name = document.getElementById("gameData").value;
+        if(localStorage.getItem('scheme_data')){
+            scheme = JSON.parse(localStorage.getItem('scheme_data'));
+        }
+        if(!(game_name in scheme)) scheme[game_name] = {};
+        let name = prompt("输入方案名");
+        if (!name) return;
+        if (name in scheme[game_name]) {
+            if (!confirm(`已存在名为${name}的方案，继续保存将覆盖原方案`)) {
+                return;// 用户取消保存
+            }
+        }
+        scheme[game_name][name] = scheme_data;
+        localStorage.setItem('scheme_data', JSON.stringify(scheme));
+        init_scheme_selection();
     }//保存生产策略
 
+    function deleteScheme(){
+        let name = document.getElementById("schemeData").value;
+        let game_name = document.getElementById("gameData").value;
+        let scheme = JSON.parse(localStorage.getItem('scheme_data'));
+        if (name in scheme[game_name]){
+            if (!confirm(`即将删除名为${name}的方案，是否继续`)) {
+                return;// 用户取消保存
+            }
+            delete scheme[game_name][name];
+        }
+        localStorage.setItem('scheme_data', JSON.stringify(scheme));
+        init_scheme_selection();
+    }//删除当前保存的策略
+
     function loadScheme() {
-        var scheme = JSON.parse(localStorage.getItem('scheme_data'));
+        let game_name = document.getElementById("gameData").value;
+        let name = document.getElementById("schemeData").value;
+        let scheme = JSON.parse(localStorage.getItem('scheme_data'))[game_name][name];
         if (scheme) {
-            scheme_data = JSON.parse(localStorage.getItem('scheme_data'));
+            scheme_data = scheme;
         }
         calculate();
     }//读取生产策略
 
+    function init_needs_selection(){
+        let game_name = document.getElementById("gameData").value;
+        let scheme = JSON.parse(localStorage.getItem('needs_list'));
+        let str = "<option value=\"\" label=\"无\" selected></option>";
+        for(let name in scheme[game_name]){
+            str += "<option value=\""+name+"\" label=\""+name+"\"></option>"
+        }
+        document.getElementById("needs_listData").innerHTML = str;
+    }//更新生产策略选取
+
     function saveNeeds() {
-        localStorage.setItem('needs_list', JSON.stringify(needs_list));
+        let scheme = {};
+        let game_name = document.getElementById("gameData").value;
+        if(localStorage.getItem('needs_list')){
+            scheme = JSON.parse(localStorage.getItem('needs_list'));
+        }
+        if(!(game_name in scheme)) scheme[game_name] = {};
+        let name = prompt("输入方案名");
+        if (!name) return;
+        if (name in scheme[game_name]) {
+            if (!confirm(`已存在名为${name}的方案，继续保存将覆盖原方案`)) {
+                return;// 用户取消保存
+            }
+        }
+        scheme[game_name][name] = needs_list;
+        localStorage.setItem('needs_list', JSON.stringify(scheme));
+        init_needs_selection();
     }//保存生产策略
 
     function loadNeeds() {
-        var scheme = JSON.parse(localStorage.getItem('needs_list'));
+        let game_name = document.getElementById("gameData").value;
+        let name = document.getElementById("needs_listData").value;
+        let scheme = JSON.parse(localStorage.getItem('needs_list'))[game_name][name];
         if (scheme) {
-            needs_list = JSON.parse(localStorage.getItem('needs_list'));
+            needs_list = scheme;
         }
-        show_needs_list();
         calculate();
+        show_needs_list();
     }//读取生产策略
 
+    function deleteNeeds_listData(){
+        let name = document.getElementById("needs_listData").value;
+        let game_name = document.getElementById("gameData").value;
+        let scheme = JSON.parse(localStorage.getItem('needs_list'));
+        if (name in scheme[game_name]){
+            if (!confirm(`即将删除名为${name}的需求列表，是否继续`)) {
+                return;// 用户取消保存
+            }
+            delete scheme[game_name][name];
+        }
+        localStorage.setItem('scheme_data', JSON.stringify(scheme));
+        init_scheme_selection();
+    }//删除当前保存的策略
+
     function clearData() {
+        if (!confirm(`即将清空所有保存的生产策略、需求列表等数据，初始化整个计算器，是否继续`)) {
+            return;// 用户取消保存
+        }
         localStorage.clear();
     }//清空所有缓存
 
@@ -342,6 +415,7 @@ var scheme_data = {
             show_mining_setting();
             show_needs_list();
             show_natural_production_line();
+            init_scheme_selection();
         }//全局初始化
 
         function show_mining_setting() {
@@ -867,7 +941,7 @@ var scheme_data = {
             function add_side_products_in_other_row(item) {
                 var item_num = result_dict[item];
                 for (var side_products in item_graph[item]["副产物"]) {
-                    document.getElementById("num_of_" + side_products).insertAdjacentHTML("beforeend", "<br>+" + (item_num * item_graph[item]["副产物"][side_products]) + "(来自" + item + ")");
+                    document.getElementById("num_of_" + side_products).insertAdjacentHTML("beforeend", "<br>+" + (item_num * item_graph[item]["副产物"][side_products] + 0.49994 * 0.1 ** fixed_num).toFixed(fixed_num) + "(来自" + item + ")");
                     total_item_dict[side_products] += item_num * item_graph[item]["副产物"][side_products];
                 }
             }
@@ -1497,3 +1571,20 @@ var scheme_data = {
     build_item_list();
     item_price = get_item_price();
 }//主要逻辑
+
+
+
+
+//暂时弃用的功能
+// function loadGameData() {
+//     var data_of_game = JSON.parse(localStorage.getItem('game_data'));
+//     if (data_of_game) {
+//         game_data = JSON.parse(localStorage.getItem('game_data'));
+//         item_data = get_item_data();
+//     }
+//     calculate();
+// }//读取游戏数据
+
+// function saveGameData() {
+//     localStorage.setItem('game_data', JSON.stringify(game_data));
+// }//保存游戏数据

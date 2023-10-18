@@ -16,11 +16,7 @@
 
 <body>
     <div>
-        <button id="saveScheme" onclick="saveScheme()">保存生产策略</button>
-        <button id="loadScheme" onclick="loadScheme()">加载生产策略</button>
-        <button id="saveScheme" onclick="saveNeeds()">保存需求列表</button>
-        <button id="loadScheme" onclick="loadNeeds()">加载需求列表</button>
-        <button id="loadScheme" onclick="clearData()">清空数据缓存</button>
+        游戏版本：
         <select id="gameData" onchange="changeGameData()">
             <option value="vanilla" label="原版游戏" selected></option>
             <option value="GenesisBook" label="创世之书"></option>
@@ -29,7 +25,24 @@
         <script>
             document.getElementById("版本号").innerHTML = "版本号：" + game_data.Version;
         </script>
-    </div><!--本地数据相关按钮-->
+    </div>
+    <div>
+        <button onclick="saveScheme()">保存生产策略为</button>
+        <select id="schemeData">
+            <option value="" label="无" selected></option>
+        </select>
+        <button onclick="loadScheme()">加载生产策略</button>
+        <button onclick="deleteScheme()">删除当前生产策略</button>
+    </div><!--存取生成策略-->
+    <div>
+        <button onclick="saveNeeds()">保存需求列表</button>
+        <select id="needs_listData">
+            <option value="" label="无" selected></option>
+        </select>
+        <button onclick="loadNeeds()">加载需求列表</button>
+        <button onclick="deleteNeeds_listData()">删除当前生产策略</button>
+    </div><!--存取需求列表-->
+    <button onclick="clearData()">清空数据缓存</button>
     <div>
         <p id="是否自喷涂"><button onclick="if_proliferate_itself(0)">自喷涂?</button>Yes!</p>
         <datalist id="item_list"></datalist>
@@ -72,6 +85,7 @@
             batch_setting_init();
             building_stack_init();
             show_mining_setting();
+            init_scheme_selection();
         </script>
     </div>
     <table>总计产能需求：
