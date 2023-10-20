@@ -218,7 +218,7 @@ var scheme_data = {
             }
             delete scheme[game_name][name];
         }
-        localStorage.setItem('scheme_data', JSON.stringify(scheme));
+        localStorage.setItem('needs_list', JSON.stringify(scheme));
         init_scheme_selection();
     }//删除当前保存的策略
 
