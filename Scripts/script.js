@@ -219,7 +219,7 @@ var scheme_data = {
             delete scheme[game_name][name];
         }
         localStorage.setItem('needs_list', JSON.stringify(scheme));
-        init_scheme_selection();
+        init_needs_selection();
     }//删除当前保存的策略
 
     function clearData() {
@@ -416,6 +416,7 @@ var scheme_data = {
             show_needs_list();
             show_natural_production_line();
             init_scheme_selection();
+            init_needs_selection();
         }//全局初始化
 
         function show_mining_setting() {
