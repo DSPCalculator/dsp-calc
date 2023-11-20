@@ -2,19 +2,21 @@
 <html lang="en">
 戴森球计划量化计算器(若版本与gitee中的版本对不上就按ctrl+f5刷新)
 计算器版本: v0.3.1(最新版本可在底部源码链接的源代码仓库中查看,或者按ctrl+f5刷新以后没有变化就说明是最新版本)
+
 <head>
     <meta charset="UTF-8">
     <title>戴森球计划量化计算器</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./Scripts/jquery.min.2.1.4.js"></script>
-    <script src="./Scripts/jquery.cookie.min.1.4.1.js"></script>
-    <script src="./Scripts/vue.min.2.5.16.js"></script>
     <script src="./data/GameData.js"></script>
-    <script src="./Scripts/script.js"></script>
     <script src="./Scripts/jsLPSolver/prod/solver.js"></script>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
+    <div id="root"></div>
+    <script type="module" src="src/main.jsx"></script>
     <div>
         游戏版本：
         <select id="gameData" onchange="changeGameData()">
@@ -23,9 +25,7 @@
             <option value="TheyComeFromVoid" label="深空来敌"></option>
         </select>
         <nobr id="版本号"></nobr>
-        <script>
-            document.getElementById("版本号").innerHTML = "版本号：" + game_data.Version;
-        </script>
+
     </div>
     <div>
         <button onclick="saveScheme()">保存生产策略为</button>
@@ -47,15 +47,14 @@
     <div>
         <p id="是否自喷涂"><button onclick="if_proliferate_itself(0)">自喷涂?</button>Yes!</p>
         <datalist id="item_list"></datalist>
-        <script>
-            init_item_list();
-        </script>
-        所需物品: <input list="item_list" size="5" id="needs_item" value="" placeholder="请输入搜索需要的物品"/>
-        所需产能: <input type="text" size="6" id="needs_amount" value="60" /> <button id="添加需求" onclick="addNeeds()">增加需求</button>单位:<nobr id="时间单位">个/min<button onclick="min_or_sec(0)">转化为秒</button></nobr>
-        显示精度: <input id="显示精度" size="5" type="number" onchange="changeFixedNum()" value="2"/>
+        所需物品: <input list="item_list" size="5" id="needs_item" value="" placeholder="请输入搜索需要的物品" />
+        所需产能: <input type="text" size="6" id="needs_amount" value="60" /> <button id="添加需求"
+            onclick="addNeeds()">增加需求</button>单位:<nobr id="时间单位">个/min<button onclick="min_or_sec(0)">转化为秒</button>
+        </nobr>
+        显示精度: <input id="显示精度" size="5" type="number" onchange="changeFixedNum()" value="2" />
         <p id="建筑层数"></p>
         采矿参数:<p id="采矿参数"></p>
-        分馏塔过氢带速:<input type="text" size="6" id="分馏塔过氢带速" value="60" onchange="changeFractionatingSpeed()"/>过氢量/min
+        分馏塔过氢带速:<input type="text" size="6" id="分馏塔过氢带速" value="60" onchange="changeFractionatingSpeed()" />过氢量/min
         <p id="批量预设"></p>
         <p id="resetNeeds"></p>
         <p id="原矿化列表"></p>
@@ -78,17 +77,6 @@
         <datalist id="pro_num_list"></datalist>
         <datalist id="pro_mode_list"></datalist>
         <datalist id="factory_list"></datalist>
-        <script>
-            init_recipe_list();
-            init_pro_num_list();
-            init_pro_mode_list();
-            init_factory_list();
-            batch_setting_init();
-            building_stack_init();
-            show_mining_setting();
-            init_scheme_selection();
-            init_needs_selection();
-        </script>
     </div>
     <table>总计产能需求：
         <thead>
@@ -121,11 +109,14 @@
     <br>
     <a href="https://www.bilibili.com/read/readlist/rl630834" target="_blank" title="点击可跳转专栏">量化计算器逻辑</a>
     <br>
-    <a href="https://space.bilibili.com/16051534" target="_blank" title="作者bilibili空间">联系作者 QQ:653524123, QQ群:816367922</a>
+    <a href="https://space.bilibili.com/16051534" target="_blank" title="作者bilibili空间">联系作者 QQ:653524123,
+        QQ群:816367922</a>
     <br>
-    <a href="https://github.com/makuwa8992/DSP_web_quantizing_calculator" target="_blank" title="跳转至github">github仓库源码</a>
+    <a href="https://github.com/makuwa8992/DSP_web_quantizing_calculator" target="_blank"
+        title="跳转至github">github仓库源码</a>
     <br>
-    <a href="https://dspcalc.arkwish.com/#/" target="_blank" title="https://dspcalc.arkwish.com/#/">UI优化版地址：https://dspcalc.arkwish.com/#/</a>
+    <a href="https://dspcalc.arkwish.com/#/" target="_blank"
+        title="https://dspcalc.arkwish.com/#/">UI优化版地址：https://dspcalc.arkwish.com/#/</a>
 </body>
 
 </html>
