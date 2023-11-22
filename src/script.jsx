@@ -1251,7 +1251,7 @@ function get_linear_programming_list() {
             }
         }
     }//完善求解器输入的模型
-    // console.log(model);
+    console.log("model input", model);
     var results = solver.Solve(model);
     //求解线性规划，解得满足需求时每个item对应的item_graph的执行次数
     console.log(model);

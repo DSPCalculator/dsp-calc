@@ -47,6 +47,26 @@ export function MiningSettings({ scheme_data, set_scheme_data }) {
     return <>{doms}</>;
 }
 
+export function FractionatingSetting({ scheme_data, set_scheme_data }) {
+    return <><span>分馏塔过氢带速: <input type="number" size="6"
+        value={scheme_data.fractionating_speed} onChange={
+            event => set_scheme_data(prev_scheme_data => {
+                let fractionating_speed = parseFloat(event.target.value) || 0;
+                let new_scheme_data = structuredClone(prev_scheme_data);
+                new_scheme_data.fractionating_speed = fractionating_speed;
+
+                // TODO calculate fractionating_speed somewhere else
+                // if (fractionating_speed > 1800) {
+                //     game_data.factory_data["分馏设备"][0]["耗能"] = scheme_data.fractionating_speed * 0.0006 - 0.36;
+                // }
+                // else {
+                //     game_data.factory_data["分馏设备"][0]["耗能"] = 0.72;
+                // }
+                return new_scheme_data;
+            })} />
+    </span></>;
+}
+
 function get_item_data(game_data) {
     var item_data = {};//通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，键值为此物品在计算器中的id与用于生产此物品的配方在配方表中的序号
     var i = 0;
@@ -101,7 +121,8 @@ export function init_scheme_data(game_data) {
 
 export function SchemeStorage({ scheme_data, set_scheme_data, game_name }) {
     const [all_scheme, set_all_scheme] = useState({});
-    const NULL_SELECTION = { value: null, label: "（无）" };
+    // TODO implement 实时保存
+    const NULL_SELECTION = { value: null, label: "（默认，实时保存）" };
     const [current_selection, set_current_selection] = useState(NULL_SELECTION);
 
     useEffect(() => {
