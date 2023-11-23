@@ -3,6 +3,8 @@ import Select from 'react-select';
 import { MiningSettings, FractionatingSetting, SchemeStorage, init_scheme_data } from './scheme_data.jsx'
 import { NeedsList } from './needs_list.jsx';
 import { GameInfo, GlobalState } from './global_state.jsx'
+import { BatchSetting } from './batch_setting.jsx';
+import { Result } from './result.jsx';
 
 function App() {
   const [game_data, _set_game_data] = useState({ data: GameData.vanilla, name: "vanilla" });
@@ -11,7 +13,7 @@ function App() {
     proliferate_itself: false, time_tick: 60, mineralize_list: [], stackable_buildings: []
   };
   const NATURAL_PRODUCTION_LINE = [];
-  const game_info = useRef(new GameInfo(game_data.data));
+  const game_info = useRef(new GameInfo("vanilla", game_data.data));
   const global_state = useRef(new GlobalState(game_info.current, scheme_data, NATURAL_PRODUCTION_LINE, UI_SETTINGS));
   const [needs_list, set_needs_list] = useState({});
 
@@ -32,7 +34,8 @@ function App() {
     { value: "TheyComeFromVoid", label: "深空来敌" }];
 
   useEffect(() => {
-    game_info.current = new GameInfo(game_data.data);
+    game_info.current = new GameInfo(game_data.name, game_data.data);
+    set_needs_list({});
   }, [game_data])
 
   useEffect(() => {
@@ -49,18 +52,27 @@ function App() {
       <h1>Root node...</h1>
 
       <div className='card'>
-        游戏版本：
-        <Select options={game_ver_options} defaultValue={game_ver_options[0]}
-          onChange={v => set_game_version(v.value)} />
-        <nobr id="版本号">{game_data.data.Version}</nobr>
+        <span>
+          游戏版本：
+          <div style={{ display: "inline-flex" }}>
+            <Select options={game_ver_options} defaultValue={game_ver_options[0]}
+              onChange={v => set_game_version(v.value)} isSearchable={false} />
+          </div>
+          <nobr id="版本号">{game_data.data.Version}</nobr>
+        </span>
       </div>
       <div className="card">
-        <p>采矿参数</p>
-        <p>debug: {JSON.stringify(scheme_data.mining_rate)}</p>
-        <MiningSettings scheme_data={scheme_data} set_scheme_data={set_scheme_data} />
+        <p>采矿参数 debug: {JSON.stringify(scheme_data.mining_rate)}</p>
+        <span>
+          <MiningSettings scheme_data={scheme_data} set_scheme_data={set_scheme_data} />
+        </span>
         <SchemeStorage scheme_data={scheme_data} set_scheme_data={set_scheme_data} game_name={game_data.name} />
         <FractionatingSetting scheme_data={scheme_data} set_scheme_data={set_scheme_data} />
+        <BatchSetting game_data={game_data.data} set_game_data={_set_game_data} proliferator_price={global_state.current.proliferator_price} />
+
         <NeedsList needs_list={needs_list} set_needs_list={set_needs_list} game_data={game_data.data} />
+
+        <Result global_state={global_state.current} needs_list={needs_list} />
 
       </div>
       <div id="result_debug"></div>

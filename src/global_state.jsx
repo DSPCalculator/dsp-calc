@@ -1,9 +1,11 @@
 
 export class GameInfo {
+    name;
     game_data;
     item_data;
 
-    constructor(game_data) {
+    constructor(name, game_data) {
+        this.name = name;
         this.game_data = game_data;
         this.init_item_data();
     }
@@ -29,6 +31,7 @@ export class GameInfo {
 }
 
 export class GlobalState {
+    game_name;
     game_data;
     item_data;
     scheme_data;
@@ -45,6 +48,8 @@ export class GlobalState {
     key_item_list;
 
     constructor(game_info, scheme_data, natural_production_line, ui_settings) {
+        this.game_name = game_info.name;
+        console.log("game_name", this.game_name);
         this.game_data = game_info.game_data;
         this.item_data = game_info.item_data;
         this.scheme_data = scheme_data;
@@ -633,9 +638,14 @@ export class GlobalState {
                 }
             }
         }//将循环关键物品的总需求放入线性规划相关物品表
-        var lp_cost = this.#get_linear_programming_list(lp_item_dict, result_dict);//线规最终目标函数成本，在考虑要不要显示
-        this.#show_result_dict(result_dict);
+        var lp_cost = this.#get_linear_programming_list(lp_item_dict, result_dict, lp_surplus_list);
+        //线规最终目标函数成本，在考虑要不要显示
+
         this.#show_surplus_list(lp_surplus_list);
+        // this.#show_result_dict(result_dict);
+
+        console.log("result_dict from calculate", result_dict);
+        return result_dict;
     }
 
     #show_result_dict(result_dict) {
@@ -774,7 +784,7 @@ export class GlobalState {
 
 
     /** 线性规划 */
-    #get_linear_programming_list(lp_item_dict, result_dict) {
+    #get_linear_programming_list(lp_item_dict, result_dict, lp_surplus_list) {
         let item_graph = this.item_graph;
         let item_price = this.item_price;
 

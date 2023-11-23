@@ -28,14 +28,14 @@ const DEFAULT_SCHEME_DATA = {
         "巨星可燃冰面板": 0.5,
         "伊卡洛斯手速": 1
     },
-    "fractionating_speed": 1,
+    "fractionating_speed": 1800,
     "energy_contain_miner": 0
 };
 
 export function MiningSettings({ scheme_data, set_scheme_data }) {
     let doms = Object.entries(scheme_data.mining_rate).map(([key, value]) =>
-        <span key={key}>
-            {key}: <input type="number" size="6" value={value} onChange={
+        <span key={key} className='me-2'>
+            {key}：<input type="number" style={{ ["max-width"]: '4em' }} value={value} onChange={
                 event => set_scheme_data(prev_scheme_data => ({
                     ...prev_scheme_data,
                     mining_rate: Object.assign(prev_scheme_data.mining_rate, {
@@ -48,7 +48,7 @@ export function MiningSettings({ scheme_data, set_scheme_data }) {
 }
 
 export function FractionatingSetting({ scheme_data, set_scheme_data }) {
-    return <><span>分馏塔过氢带速: <input type="number" size="6"
+    return <><span>分馏塔过氢带速: <input type="number" style={{ ["max-width"]: '4em' }}
         value={scheme_data.fractionating_speed} onChange={
             event => set_scheme_data(prev_scheme_data => {
                 let fractionating_speed = parseFloat(event.target.value) || 0;
@@ -182,7 +182,9 @@ export function SchemeStorage({ scheme_data, set_scheme_data, game_name }) {
 
     return <><div>
         <button onClick={save}>保存生产策略为</button>
-        <Select value={current_selection} onChange={set_current_selection} options={options} />
+        <div style={{ display: "inline-flex" }}>
+            <Select value={current_selection} onChange={set_current_selection} options={options} isSearchable={false} />
+        </div>
         <button onClick={load}>加载生产策略</button>
         <button onClick={delete_}>删除生产策略</button>
     </div ></>;
