@@ -1,6 +1,7 @@
 import structuredClone from '@ungap/structured-clone';
 import { createContext, useContext, useState, useEffect, useRef } from 'react';
 import Select from 'react-select';
+import { GlobalStateContext } from './contexts';
 
 function get_item_data(game_data) {
     //通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，键值为
@@ -19,7 +20,10 @@ function get_item_data(game_data) {
     return item_data;
 }
 
-export function NeedsList({ needs_list, set_needs_list, game_data }) {
+export function NeedsList({ needs_list, set_needs_list }) {
+    const global_state = useContext(GlobalStateContext);
+    let game_data = global_state.game_data;
+
     const item_ref = useRef(null);
     const count_ref = useRef(60);
 

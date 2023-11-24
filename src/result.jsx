@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useContext } from 'react';
+import { GlobalStateContext } from './contexts';
 
-export function Result({ global_state, needs_list }) {
+export function Result({ needs_list }) {
+    const global_state = useContext(GlobalStateContext);
     // const [result_dict, set_result_dict] = useState(global_state.calculate());
     let game_data = global_state.game_data;
     let scheme_data = global_state.scheme_data;
@@ -79,6 +81,10 @@ export function Result({ global_state, needs_list }) {
         });
     })
 
+    // function ChangeRecipeOf() {
+    //     scheme_data.item_recipe_choices
+    // }
+
     let result_table_rows = [];
     for (let i in result_dict) {
         side_products[i] = side_products[i] || {};
@@ -89,30 +95,30 @@ export function Result({ global_state, needs_list }) {
         let factory_number = get_factory_number(result_dict[i], i).toFixed(fixed_num);
 
         let from_side_products = Object.entries(side_products[i]).map(([from, amount]) =>
-            <p key={from}>+ {amount} (来自 {from} )</p>
+            <div key={from}>+ {amount} (来自 {from} )</div>
         );
 
         result_table_rows.push(<tr key={i} id={`row_of_${i}`}>
             {/* 操作 */}
-            <th><button className='btn btn-sm btn-outline-primary' onClick={() => mineralize(i)}>视为原矿</button></th>
+            <td><button className='btn btn-sm btn-outline-primary' onClick={() => mineralize(i)}>视为原矿</button></td>
             {/* 目标物品 */}
-            <th><img src={`./image/${global_state.game_name}/${i}.png`} title={i} style={{ width: '40px', height: '40px' }} /></th>
+            <td><img src={`./image/${global_state.game_name}/${i}.png`} title={i} style={{ width: '40px', height: '40px' }} /></td>
             {/* 分钟毛产出 */}
-            <th id={`num_of_${i}`}>
-                <span>{get_gross_output(result_dict[i], i).toFixed(fixed_num)}</span>
+            <td id={`num_of_${i}`}>
+                <div>{get_gross_output(result_dict[i], i).toFixed(fixed_num)}</div>
                 {from_side_products}
-            </th>
+            </td>
             {/* 所需工厂*数目 */}
-            <th><p id={`factory_counts_of_${i}`} value={factory_number}>{game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"] +
-                " * " + factory_number + is_mineralized(i)}</p></th>
+            <td><span id={`factory_counts_of_${i}`} value={factory_number}>{game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"] +
+                " * " + factory_number + is_mineralized(i)}</span></td>
             {/* 所选配方 */}
-            <th><select id={`recipe_for_${i}`} onChange={() => ChangeRecipeOf(i)}></select></th>
+            <td><select id={`recipe_for_${i}`} onChange={() => ChangeRecipeOf(i)}></select></td>
             {/* 所选增产剂 */}
-            <th><select id={`pro_num_for_${i}`} onChange={() => ChangeSchemeOf(i)}></select></th>
+            <td><select id={`pro_num_for_${i}`} onChange={() => ChangeSchemeOf(i)}></select></td>
             {/* 所选增产模式 */}
-            <th><select id={`pro_mode_for_${i}`} onChange={() => ChangeSchemeOf(i)}></select></th>
+            <td><select id={`pro_mode_for_${i}`} onChange={() => ChangeSchemeOf(i)}></select></td>
             {/* 所选工厂种类 */}
-            <th><select id={`factory_for_${i}`} onChange={() => ChangeSchemeOf(i)}></select></th>
+            <td><select id={`factory_for_${i}`} onChange={() => ChangeSchemeOf(i)}></select></td>
         </tr>);
     }
 

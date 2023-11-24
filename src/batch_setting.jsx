@@ -1,4 +1,6 @@
 import Select from 'react-select';
+import { useContext } from 'react';
+import { GlobalStateContext } from './contexts';
 
 function FactorySelect({ factory, list }) {
     const options = list.map((data, idx) => ({ value: idx, label: data["名称"] }));
@@ -10,7 +12,11 @@ function FactorySelect({ factory, list }) {
     </span>;
 }
 
-export function BatchSetting({ game_data, set_game_data, proliferator_price }) {
+export function BatchSetting() {
+    const global_state = useContext(GlobalStateContext);
+    let game_data = global_state.game_data;
+    let proliferator_price = global_state.proliferator_price;
+
     let factory_doms = [];
     Object.keys(game_data.factory_data).forEach(factory => {
         let list = game_data.factory_data[factory];

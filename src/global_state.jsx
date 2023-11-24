@@ -35,7 +35,6 @@ export class GlobalState {
     game_data;
     item_data;
     scheme_data;
-    needs_list;
     natural_production_line;
     ui_settings; // { proliferate_itself, time_tick, mineralize_list, stackable_buildings }
 
@@ -787,6 +786,7 @@ export class GlobalState {
     #get_linear_programming_list(lp_item_dict, result_dict, lp_surplus_list) {
         let item_graph = this.item_graph;
         let item_price = this.item_price;
+        let scheme_data = this.scheme_data;
 
         /** 求解模型 */
         let model = {

@@ -1,6 +1,7 @@
 import structuredClone from '@ungap/structured-clone';
-import { createContext, useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import Select from 'react-select';
+import { GlobalStateContext, SchemeDataSetterContext } from './contexts.jsx';
 
 const DEFAULT_SCHEME_DATA = {
     "item_recipe_choices": { "氢": 1 },
@@ -32,10 +33,14 @@ const DEFAULT_SCHEME_DATA = {
     "energy_contain_miner": 0
 };
 
-export function MiningSettings({ scheme_data, set_scheme_data }) {
+export function MiningSettings() {
+    const global_state = useContext(GlobalStateContext);
+    const set_scheme_data = useContext(SchemeDataSetterContext);
+    let scheme_data = global_state.scheme_data;
+
     let doms = Object.entries(scheme_data.mining_rate).map(([key, value]) =>
         <span key={key} className='me-2'>
-            {key}：<input type="number" style={{ ["max-width"]: '4em' }} value={value} onChange={
+            {key}：<input type="number" style={{ maxWidth: '4em' }} value={value} onChange={
                 event => set_scheme_data(prev_scheme_data => ({
                     ...prev_scheme_data,
                     mining_rate: Object.assign(prev_scheme_data.mining_rate, {
@@ -47,8 +52,12 @@ export function MiningSettings({ scheme_data, set_scheme_data }) {
     return <>{doms}</>;
 }
 
-export function FractionatingSetting({ scheme_data, set_scheme_data }) {
-    return <><span>分馏塔过氢带速: <input type="number" style={{ ["max-width"]: '4em' }}
+export function FractionatingSetting() {
+    const global_state = useContext(GlobalStateContext);
+    const set_scheme_data = useContext(SchemeDataSetterContext);
+    let scheme_data = global_state.scheme_data;
+
+    return <><span>分馏塔过氢带速: <input type="number" style={{ maxWidth: '4em' }}
         value={scheme_data.fractionating_speed} onChange={
             event => set_scheme_data(prev_scheme_data => {
                 let fractionating_speed = parseFloat(event.target.value) || 0;
@@ -119,7 +128,12 @@ export function init_scheme_data(game_data) {
     return scheme_data;
 }
 
-export function SchemeStorage({ scheme_data, set_scheme_data, game_name }) {
+export function SchemeStorage() {
+    const global_state = useContext(GlobalStateContext);
+    const set_scheme_data = useContext(SchemeDataSetterContext);
+    let scheme_data = global_state.scheme_data;
+    let game_name = global_state.game_name;
+
     const [all_scheme, set_all_scheme] = useState({});
     // TODO implement 实时保存
     const NULL_SELECTION = { value: null, label: "（默认，实时保存）" };
