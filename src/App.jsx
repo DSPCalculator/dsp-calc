@@ -6,6 +6,7 @@ import { GameInfo } from './global_state.jsx';
 import { NeedsList } from './needs_list.jsx';
 import { Result } from './result.jsx';
 import { FractionatingSetting, MiningSettings, SchemeStorage, init_scheme_data } from './scheme_data.jsx';
+import { UiSettings } from './ui_settings.jsx';
 
 function GameVersion() {
   const set_game_name_and_data = useContext(GameInfoSetterContext);
@@ -13,6 +14,7 @@ function GameVersion() {
   const game_info = useContext(GameInfoContext);
 
   function set_game_version(name) {
+    if (name == game_info.name) return;
     console.log("name", name);
     if (name in GameData) {
       let game_data = GameData[name];
@@ -29,14 +31,14 @@ function GameVersion() {
     { value: "GenesisBook", label: "创世之书" },
     { value: "TheyComeFromVoid", label: "深空来敌" }];
 
-  return <div className='card'>
+  return <div>
     <span>
       游戏版本：
       <div style={{ display: "inline-flex" }}>
         <Select options={game_ver_options} defaultValue={game_ver_options[0]}
           onChange={v => set_game_version(v.value)} isSearchable={false} />
       </div>
-      <nobr id="版本号">{game_info.game_data.Version}</nobr>
+      <span>版本号：{game_info.game_data.Version}</span>
     </span>
   </div>;
 }
@@ -49,8 +51,6 @@ function App() {
 
 function AppWithContexts() {
   const game_info = useContext(GameInfoContext);
-  const global_state = useContext(GlobalStateContext);
-  let scheme_data = global_state.scheme_data;
 
   const [needs_list, set_needs_list] = useState({});
 
@@ -60,11 +60,10 @@ function AppWithContexts() {
 
   return <>
     <GameVersion />
-    <div className="card">
-      <p>采矿参数 debug: {JSON.stringify(scheme_data.mining_rate)}</p>
-      <span>
-        <MiningSettings />
-      </span>
+    <div>
+      <UiSettings />
+      <div>采矿参数</div>
+      <MiningSettings />
       <SchemeStorage />
       <FractionatingSetting />
       <BatchSetting />

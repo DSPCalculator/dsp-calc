@@ -1,7 +1,7 @@
 import structuredClone from '@ungap/structured-clone';
 import { useContext, useState, useEffect } from 'react';
 import Select from 'react-select';
-import { GlobalStateContext, SchemeDataSetterContext } from './contexts.jsx';
+import { GameInfoContext, GlobalStateContext, SchemeDataSetterContext } from './contexts.jsx';
 
 const DEFAULT_SCHEME_DATA = {
     "item_recipe_choices": { "氢": 1 },
@@ -49,7 +49,7 @@ export function MiningSettings() {
                 }))} />
         </span>
     );
-    return <>{doms}</>;
+    return <span>{doms}</span>;
 }
 
 export function FractionatingSetting() {
@@ -57,7 +57,7 @@ export function FractionatingSetting() {
     const set_scheme_data = useContext(SchemeDataSetterContext);
     let scheme_data = global_state.scheme_data;
 
-    return <><span>分馏塔过氢带速: <input type="number" style={{ maxWidth: '4em' }}
+    return <span>分馏塔过氢带速: <input type="number" style={{ maxWidth: '4em' }}
         value={scheme_data.fractionating_speed} onChange={
             event => set_scheme_data(prev_scheme_data => {
                 let fractionating_speed = parseFloat(event.target.value) || 0;
@@ -73,7 +73,7 @@ export function FractionatingSetting() {
                 // }
                 return new_scheme_data;
             })} />
-    </span></>;
+    </span>;
 }
 
 function get_item_data(game_data) {
@@ -133,19 +133,22 @@ export function SchemeStorage() {
     const set_scheme_data = useContext(SchemeDataSetterContext);
     let scheme_data = global_state.scheme_data;
     let game_name = global_state.game_name;
+    const game_info = useContext(GameInfoContext);
 
-    const [all_scheme, set_all_scheme] = useState({});
+    const all_saved = JSON.parse(localStorage.getItem("scheme_data")) || {};
+    const [all_scheme, set_all_scheme] = useState(all_saved[game_name] || {});
     // TODO implement 实时保存
     const NULL_SELECTION = { value: null, label: "（默认，实时保存）" };
     const [current_selection, set_current_selection] = useState(NULL_SELECTION);
 
     useEffect(() => {
+        let game_name = game_info.name;
         let all_scheme_data = JSON.parse(localStorage.getItem("scheme_data")) || {};
         let all_scheme_init = all_scheme_data[game_name] || {};
         console.log("Loading storage", game_name, Object.keys(all_scheme_init));
         set_all_scheme(all_scheme_init);
         set_current_selection(NULL_SELECTION);
-    }, [game_name]);
+    }, [game_info]);
 
     useEffect(() => {
         let all_scheme_saved = JSON.parse(localStorage.getItem("scheme_data")) || {};

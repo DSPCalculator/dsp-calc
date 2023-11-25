@@ -1,20 +1,167 @@
 import { useContext } from 'react';
-import { GlobalStateContext } from './contexts';
+import { GlobalStateContext, SchemeDataSetterContext } from './contexts';
+
+/** 配方选项的展示格式，有空把它换成图形界面 */
+function RecipeSelect({ item }) {
+    const global_state = useContext(GlobalStateContext);
+    const set_scheme_data = useContext(SchemeDataSetterContext);
+
+    let game_data = global_state.game_data;
+    let scheme_data = global_state.scheme_data;
+    let item_data = global_state.item_data;
+
+    function recipe_label_text(recipe) {
+        var str = "";
+        var num = 0;
+        for (var material in recipe["原料"]) {
+            if (num != 0) {
+                str += " + ";
+            }
+            str += recipe["原料"][material] + " * " + material;
+            num += 1;
+        }
+        if (num != 0) {
+            str += "→";
+        }
+        num = 0;
+        for (var products in recipe["产物"]) {
+            if (num != 0) {
+                str += " + ";
+            }
+            str += recipe["产物"][products] + " * " + products;
+            num += 1;
+        }
+        str += "    耗时:" + recipe["时间"] + "s";
+        return str;
+    }
+
+    let recipe_choice = scheme_data.item_recipe_choices[item];
+    let option_doms = [];
+    for (let i = 1; i < item_data[item].length; i++) {
+        let recipe_index = item_data[item][i];
+        let recipe = game_data.recipe_data[recipe_index];
+        option_doms.push(<option key={i} value={i}>{recipe_label_text(recipe)}</option>);
+    }
+
+    function change_recipe(e) {
+        set_scheme_data(old_scheme_data => {
+            let scheme_data = structuredClone(old_scheme_data);
+            scheme_data.item_recipe_choices[item] = e.target.value;
+            return scheme_data;
+        })
+    }
+
+    return <select onChange={change_recipe} value={recipe_choice}>{option_doms}</select>;
+}
+
+function ProNumSelect({ item }) {
+    const global_state = useContext(GlobalStateContext);
+    const set_scheme_data = useContext(SchemeDataSetterContext);
+
+    let game_data = global_state.game_data;
+    let scheme_data = global_state.scheme_data;
+    let item_data = global_state.item_data;
+
+    let pro_nums = [];
+    for (var i = 0; i < game_data.proliferate_effect.length; i++) {
+        if (global_state.proliferator_price[i] != -1)
+            pro_nums.push(i);
+    }
+
+    let recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
+    let pro_num_choice = scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"];
+    let option_doms = [];
+    for (let pro_num of pro_nums) {
+        option_doms.push(<option key={pro_num} value={pro_num}>{pro_num}</option>)
+    }
+
+    function change_pro_num(e) {
+        set_scheme_data(old_scheme_data => {
+            let scheme_data = structuredClone(old_scheme_data);
+            scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"] = e.target.value;
+            return scheme_data;
+        })
+    }
+
+    return <select value={pro_num_choice} onChange={change_pro_num}>{option_doms}</select>;
+}
+
+const pro_mode_lists = {
+    [0]: { [0]: "不使用增产剂" },
+    [1]: { [0]: "不使用增产剂", [1]: "增产" },
+    [2]: { [0]: "不使用增产剂", [2]: "加速" },
+    [3]: { [0]: "不使用增产剂", [1]: "增产", [2]: "加速" },
+    [4]: { [0]: "不使用增产剂", [4]: "接收站透镜喷涂" },
+}
+
+function ProModeSelect({ recipe_id }) {
+    const global_state = useContext(GlobalStateContext);
+    const set_scheme_data = useContext(SchemeDataSetterContext);
+
+    let game_data = global_state.game_data;
+    let scheme_data = global_state.scheme_data;
+
+    let pro_mode_list = pro_mode_lists[game_data.recipe_data[recipe_id]["增产"]];
+    let pro_mode_choice = scheme_data.scheme_for_recipe[recipe_id]["增产模式"];
+    let option_doms = Object.entries(pro_mode_list).map(([value, label]) => (
+        <option key={value} value={value}>{label}</option>
+    ));
+
+    function change_pro_mode(e) {
+        set_scheme_data(old_scheme_data => {
+            let scheme_data = structuredClone(old_scheme_data);
+            scheme_data.scheme_for_recipe[recipe_id]["增产模式"] = e.target.value;
+            return scheme_data;
+        })
+    }
+
+    return <select value={pro_mode_choice} onChange={change_pro_mode}>{option_doms}</select>;
+}
+
+function FactorySelect({ recipe_id }) {
+    const global_state = useContext(GlobalStateContext);
+    const set_scheme_data = useContext(SchemeDataSetterContext);
+
+    let game_data = global_state.game_data;
+    let scheme_data = global_state.scheme_data;
+
+    let factory_kind = game_data.recipe_data[recipe_id]["设施"];
+    let factory_list = game_data.factory_data[factory_kind];
+
+    let factory_choice = scheme_data.scheme_for_recipe[recipe_id]["建筑"];
+    let option_doms = Object.entries(factory_list).map(([factory, factory_data]) => {
+        let factory_name = factory_data["名称"];
+        return <option key={factory} value={factory}>{factory_name}</option>
+    });
+
+    function change_factory(e) {
+        set_scheme_data(old_scheme_data => {
+            let scheme_data = structuredClone(old_scheme_data);
+            scheme_data.scheme_for_recipe[recipe_id]["建筑"] = e.target.value;
+            return scheme_data;
+        })
+    }
+
+    return <select value={factory_choice} onChange={change_factory}>{option_doms}</select>;
+
+}
 
 export function Result({ needs_list }) {
     const global_state = useContext(GlobalStateContext);
+    const set_scheme_data = useContext(SchemeDataSetterContext);
+
     // const [result_dict, set_result_dict] = useState(global_state.calculate());
     let game_data = global_state.game_data;
     let scheme_data = global_state.scheme_data;
     let item_data = global_state.item_data;
     let item_graph = global_state.item_graph;
-    let time_tick = global_state.ui_settings.time_tick;
+    let time_tick = global_state.ui_settings.is_time_unit_minute ? 60 : 1;
     let mineralize_list = global_state.ui_settings.mineralize_list;
-    let natural_production_line = global_state.natural_production_line;
+    let natural_production_line = global_state.ui_settings.natural_production_line;
 
 
     console.log("CALCULATING");
-    let result_dict = global_state.calculate(needs_list);
+    let [result_dict, lp_surplus_list] = global_state.calculate(needs_list);
 
     // TODO fixed_num
     let fixed_num = 2;
@@ -109,22 +256,17 @@ export function Result({ needs_list }) {
                 {from_side_products}
             </td>
             {/* 所需工厂*数目 */}
-            <td><span id={`factory_counts_of_${i}`} value={factory_number}>{game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"] +
-                " * " + factory_number + is_mineralized(i)}</span></td>
+            <td><span id={`factory_counts_of_${i}`} value={factory_number}>{
+                game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"] + " * " + factory_number + is_mineralized(i)}</span></td>
             {/* 所选配方 */}
-            <td><select id={`recipe_for_${i}`} onChange={() => ChangeRecipeOf(i)}></select></td>
+            <td><RecipeSelect item={i} /></td>
             {/* 所选增产剂 */}
-            <td><select id={`pro_num_for_${i}`} onChange={() => ChangeSchemeOf(i)}></select></td>
+            <td><ProNumSelect item={i} /></td>
             {/* 所选增产模式 */}
-            <td><select id={`pro_mode_for_${i}`} onChange={() => ChangeSchemeOf(i)}></select></td>
+            <td><ProModeSelect recipe_id={recipe_id} /></td>
             {/* 所选工厂种类 */}
-            <td><select id={`factory_for_${i}`} onChange={() => ChangeSchemeOf(i)}></select></td>
+            <td><FactorySelect recipe_id={recipe_id} /></td>
         </tr>);
-    }
-
-    for (var i in result_dict) {
-        // TODO enable these
-        // change_result_row_for_item(i);
     }
 
     for (var NPId in natural_production_line) {
@@ -148,6 +290,17 @@ export function Result({ needs_list }) {
     let building_doms = Object.entries(building_list).map(([building, count]) => (
         <div key={building}>{building}：{count}</div>));
 
+    function toggle_energy_contain_miner() {
+        set_scheme_data(old_scheme_data => {
+            let scheme_data = structuredClone(old_scheme_data);
+            scheme_data.energy_contain_miner = !scheme_data.energy_contain_miner;
+            return scheme_data;
+        })
+    }
+
+    let surplus_rows = Object.entries(lp_surplus_list).map(([item, quant]) =>
+        (<tr key={item}><td>{item}</td><td>{quant}</td></tr>));
+
     return <div className="card">
         <p>总计产能需求：</p>
         <table>
@@ -165,10 +318,22 @@ export function Result({ needs_list }) {
             </thead>
             <tbody>{result_table_rows}</tbody>
         </table>
+        <p>多余产物：</p>
+        <div><table>
+            <thead><tr>
+                <th>物品名</th>
+                <th>分钟冗余量</th>
+            </tr></thead>
+            <tbody>{surplus_rows}</tbody>
+        </table>
+        </div>
 
         <p>建筑统计：</p>
         {building_doms}
-        <p>预估电力需求下限：{energy_cost.toFixed(fixed_num)} MW</p>
-        <button onClick={() => alert("TODO")}>{scheme_data.energy_contain_miner ? "忽视" : "考虑"}采集设备耗电</button>
+        <p>预估电力需求下限：{energy_cost.toFixed(fixed_num)} MW
+            <button className='ms-2' onClick={toggle_energy_contain_miner}>
+                {scheme_data.energy_contain_miner ? "忽视" : "考虑"}采集设备耗电</button>
+        </p>
+
     </div>;
 }
