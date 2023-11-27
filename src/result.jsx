@@ -1,14 +1,9 @@
 import { useContext } from 'react';
-import { GlobalStateContext, SchemeDataSetterContext } from './contexts';
+import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
 
 /** 配方选项的展示格式，有空把它换成图形界面 */
-function RecipeSelect({ item }) {
+export function RecipeSelect({ item, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
-    const set_scheme_data = useContext(SchemeDataSetterContext);
-
-    let game_data = global_state.game_data;
-    let scheme_data = global_state.scheme_data;
-    let item_data = global_state.item_data;
 
     function recipe_label_text(recipe) {
         var str = "";
@@ -35,7 +30,9 @@ function RecipeSelect({ item }) {
         return str;
     }
 
-    let recipe_choice = scheme_data.item_recipe_choices[item];
+    let game_data = global_state.game_data;
+    let item_data = global_state.item_data;
+
     let option_doms = [];
     for (let i = 1; i < item_data[item].length; i++) {
         let recipe_index = item_data[item][i];
@@ -43,50 +40,27 @@ function RecipeSelect({ item }) {
         option_doms.push(<option key={i} value={i}>{recipe_label_text(recipe)}</option>);
     }
 
-    function change_recipe(e) {
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
-            scheme_data.item_recipe_choices[item] = e.target.value;
-            return scheme_data;
-        })
-    }
-
-    return <select onChange={change_recipe} value={recipe_choice}>{option_doms}</select>;
+    return <select value={choice} onChange={onChange}>{option_doms}</select>;
 }
 
-function ProNumSelect({ item }) {
+export function ProNumSelect({ choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
-    const set_scheme_data = useContext(SchemeDataSetterContext);
-
     let game_data = global_state.game_data;
-    let scheme_data = global_state.scheme_data;
-    let item_data = global_state.item_data;
 
     let pro_nums = [];
     for (var i = 0; i < game_data.proliferate_effect.length; i++) {
         if (global_state.proliferator_price[i] != -1)
             pro_nums.push(i);
     }
-
-    let recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
-    let pro_num_choice = scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"];
     let option_doms = [];
     for (let pro_num of pro_nums) {
         option_doms.push(<option key={pro_num} value={pro_num}>{pro_num}</option>)
     }
 
-    function change_pro_num(e) {
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
-            scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"] = e.target.value;
-            return scheme_data;
-        })
-    }
-
-    return <select value={pro_num_choice} onChange={change_pro_num}>{option_doms}</select>;
+    return <select value={choice} onChange={onChange}>{option_doms}</select>;
 }
 
-const pro_mode_lists = {
+export const pro_mode_lists = {
     [0]: { [0]: "不使用增产剂" },
     [1]: { [0]: "不使用增产剂", [1]: "增产" },
     [2]: { [0]: "不使用增产剂", [2]: "加速" },
@@ -94,61 +68,38 @@ const pro_mode_lists = {
     [4]: { [0]: "不使用增产剂", [4]: "接收站透镜喷涂" },
 }
 
-function ProModeSelect({ recipe_id }) {
+export function ProModeSelect({ recipe_id, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
-    const set_scheme_data = useContext(SchemeDataSetterContext);
-
     let game_data = global_state.game_data;
-    let scheme_data = global_state.scheme_data;
 
     let pro_mode_list = pro_mode_lists[game_data.recipe_data[recipe_id]["增产"]];
-    let pro_mode_choice = scheme_data.scheme_for_recipe[recipe_id]["增产模式"];
     let option_doms = Object.entries(pro_mode_list).map(([value, label]) => (
         <option key={value} value={value}>{label}</option>
     ));
 
-    function change_pro_mode(e) {
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
-            scheme_data.scheme_for_recipe[recipe_id]["增产模式"] = e.target.value;
-            return scheme_data;
-        })
-    }
-
-    return <select value={pro_mode_choice} onChange={change_pro_mode}>{option_doms}</select>;
+    return <select value={choice} onChange={onChange}>{option_doms}</select>;
 }
 
-function FactorySelect({ recipe_id }) {
+export function FactorySelect({ recipe_id, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
-    const set_scheme_data = useContext(SchemeDataSetterContext);
-
     let game_data = global_state.game_data;
-    let scheme_data = global_state.scheme_data;
 
     let factory_kind = game_data.recipe_data[recipe_id]["设施"];
     let factory_list = game_data.factory_data[factory_kind];
 
-    let factory_choice = scheme_data.scheme_for_recipe[recipe_id]["建筑"];
     let option_doms = Object.entries(factory_list).map(([factory, factory_data]) => {
         let factory_name = factory_data["名称"];
         return <option key={factory} value={factory}>{factory_name}</option>
     });
 
-    function change_factory(e) {
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
-            scheme_data.scheme_for_recipe[recipe_id]["建筑"] = e.target.value;
-            return scheme_data;
-        })
-    }
-
-    return <select value={factory_choice} onChange={change_factory}>{option_doms}</select>;
+    return <select value={choice} onChange={onChange}>{option_doms}</select>;
 
 }
 
 export function Result({ needs_list }) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
+    const set_ui_settings = useContext(UiSettingsSetterContext);
 
     // const [result_dict, set_result_dict] = useState(global_state.calculate());
     let game_data = global_state.game_data;
@@ -156,12 +107,15 @@ export function Result({ needs_list }) {
     let item_data = global_state.item_data;
     let item_graph = global_state.item_graph;
     let time_tick = global_state.ui_settings.is_time_unit_minute ? 60 : 1;
+
+    // TODO refactor to a simple list
     let mineralize_list = global_state.ui_settings.mineralize_list;
     let natural_production_line = global_state.ui_settings.natural_production_line;
-
+    console.log("result natural_production_line", natural_production_line);
 
     console.log("CALCULATING");
     let [result_dict, lp_surplus_list] = global_state.calculate(needs_list);
+    console.log("lp_surplus_list", lp_surplus_list);
 
     // TODO fixed_num
     let fixed_num = 2;
@@ -211,13 +165,6 @@ export function Result({ needs_list }) {
         }
         return Number(amount) + offset;
     }
-    // function add_side_products_in_other_row(item) {
-    //     var item_num = result_dict[item];
-    //     for (var side_products in item_graph[item]["副产物"]) {
-    //         document.getElementById("num_of_" + side_products).insertAdjacentHTML("beforeend", "<br>+" + (item_num * item_graph[item]["副产物"][side_products] + 0.49994 * 0.1 ** fixed_num).toFixed(fixed_num) + "(来自" + item + ")");
-    //         total_item_dict[side_products] += item_num * item_graph[item]["副产物"][side_products];
-    //     }
-    // }
 
     // Dict<item, Dict<from, quantity>>
     let side_products = {};
@@ -228,9 +175,27 @@ export function Result({ needs_list }) {
         });
     })
 
-    // function ChangeRecipeOf() {
-    //     scheme_data.item_recipe_choices
-    // }
+    function mineralize(item) {
+        let new_mineralize_list = structuredClone(mineralize_list);
+        new_mineralize_list[item] = structuredClone(item_graph[item]);
+        // editing item_graph!
+        item_graph[item]["原料"] = {};
+
+        console.log("mineralize_list", new_mineralize_list);
+        set_ui_settings("mineralize_list", new_mineralize_list);
+    }
+
+    function unmineralize(item) {
+        let new_mineralize_list = structuredClone(mineralize_list);
+        // editing item_graph!
+        item_graph[item] = structuredClone(mineralize_list[item]);
+        delete new_mineralize_list[item];
+        set_ui_settings("mineralize_list", new_mineralize_list);
+    }
+
+    let mineralize_doms = Object.keys(mineralize_list).map(item => (
+        <button key={item} onClick={() => unmineralize(item)}>{item}</button>
+    ));
 
     let result_table_rows = [];
     for (let i in result_dict) {
@@ -242,8 +207,41 @@ export function Result({ needs_list }) {
         let factory_number = get_factory_number(result_dict[i], i).toFixed(fixed_num);
 
         let from_side_products = Object.entries(side_products[i]).map(([from, amount]) =>
-            <div key={from}>+ {amount} (来自 {from} )</div>
+            // TODO apply [fixed_num]
+            <div key={from}>+{amount} ({from})</div>
         );
+
+        function change_recipe(e) {
+            set_scheme_data(old_scheme_data => {
+                let scheme_data = structuredClone(old_scheme_data);
+                scheme_data.item_recipe_choices[i] = e.target.value;
+                return scheme_data;
+            })
+        }
+
+        function change_pro_num(e) {
+            set_scheme_data(old_scheme_data => {
+                let scheme_data = structuredClone(old_scheme_data);
+                scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"] = e.target.value;
+                return scheme_data;
+            })
+        }
+
+        function change_pro_mode(e) {
+            set_scheme_data(old_scheme_data => {
+                let scheme_data = structuredClone(old_scheme_data);
+                scheme_data.scheme_for_recipe[recipe_id]["增产模式"] = e.target.value;
+                return scheme_data;
+            })
+        }
+
+        function change_factory(e) {
+            set_scheme_data(old_scheme_data => {
+                let scheme_data = structuredClone(old_scheme_data);
+                scheme_data.scheme_for_recipe[recipe_id]["建筑"] = e.target.value;
+                return scheme_data;
+            })
+        }
 
         result_table_rows.push(<tr key={i} id={`row_of_${i}`}>
             {/* 操作 */}
@@ -259,13 +257,17 @@ export function Result({ needs_list }) {
             <td><span id={`factory_counts_of_${i}`} value={factory_number}>{
                 game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"] + " * " + factory_number + is_mineralized(i)}</span></td>
             {/* 所选配方 */}
-            <td><RecipeSelect item={i} /></td>
+            <td><RecipeSelect item={i} onChange={change_recipe}
+                choice={scheme_data.item_recipe_choices[i]} /></td>
             {/* 所选增产剂 */}
-            <td><ProNumSelect item={i} /></td>
+            <td><ProNumSelect onChange={change_pro_num}
+                choice={scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"]} /></td>
             {/* 所选增产模式 */}
-            <td><ProModeSelect recipe_id={recipe_id} /></td>
+            <td><ProModeSelect recipe_id={recipe_id} onChange={change_pro_mode}
+                choice={scheme_data.scheme_for_recipe[recipe_id]["增产模式"]} /></td>
             {/* 所选工厂种类 */}
-            <td><FactorySelect recipe_id={recipe_id} /></td>
+            <td><FactorySelect recipe_id={recipe_id} onChange={change_factory}
+                choice={scheme_data.scheme_for_recipe[recipe_id]["建筑"]} /></td>
         </tr>);
     }
 
@@ -302,6 +304,7 @@ export function Result({ needs_list }) {
         (<tr key={item}><td>{item}</td><td>{quant}</td></tr>));
 
     return <div className="card">
+        {mineralize_doms.length > 0 && <span>原矿化列表：{mineralize_doms}</span>}
         <p>总计产能需求：</p>
         <table>
             <thead>

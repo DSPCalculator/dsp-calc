@@ -1,7 +1,7 @@
 import structuredClone from '@ungap/structured-clone';
-import { createContext, useContext, useState, useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Select from 'react-select';
-import { GlobalStateContext } from './contexts';
+import { GameInfoContext, GlobalStateContext } from './contexts';
 
 function get_item_data(game_data) {
     //通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，键值为
@@ -73,3 +73,82 @@ export function NeedsList({ needs_list, set_needs_list }) {
         </span>
     </>;
 }
+
+export function NeedsListStorage({ needs_list, set_needs_list }) {
+    const game_info = useContext(GameInfoContext);
+    let game_name = game_info.name;
+
+    const NEEDS_LIST_STORAGE_KEY = "needs_list";
+
+    const all_saved = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
+    const [all_scheme, set_all_scheme] = useState(all_saved[game_name] || {});
+    // TODO implement 实时保存
+    const NULL_SELECTION = { value: null, label: "（无）" };
+    const [current_selection, set_current_selection] = useState(NULL_SELECTION);
+
+    useEffect(() => {
+        let game_name = game_info.name;
+        let all_scheme_data = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
+        let all_scheme_init = all_scheme_data[game_name] || {};
+        console.log("Loading storage", game_name, Object.keys(all_scheme_init));
+        set_all_scheme(all_scheme_init);
+        set_current_selection(NULL_SELECTION);
+    }, [game_info]);
+
+    useEffect(() => {
+        let all_scheme_saved = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
+        all_scheme_saved[game_name] = all_scheme;
+        localStorage.setItem(NEEDS_LIST_STORAGE_KEY, JSON.stringify(all_scheme_saved));
+    }, [all_scheme])
+
+    function delete_() {
+        if (!current_selection) return;
+        let name = current_selection.value;
+        if (name in all_scheme) {
+            if (!confirm(`即将删除名为${name}的需求列表，是否继续`)) {
+                return;// 用户取消保存
+            }
+            let all_scheme_copy = structuredClone(all_scheme);
+            delete all_scheme_copy[name];
+            set_all_scheme(all_scheme_copy);
+            set_current_selection(NULL_SELECTION);
+        }
+    }//删除当前保存的策略
+
+    function load() {
+        if (!current_selection) return;
+        let name = current_selection.value;
+        if (all_scheme[name]) {
+            set_needs_list(all_scheme[name]);
+        } else {
+            alert(`未找到名为${name}的需求列表`);
+        }
+    }//读取生产策略
+
+    function save() {
+        let name = prompt("输入需求列表名");
+        if (!name) return;
+        if (name in all_scheme) {
+            if (!confirm(`已存在名为${name}的需求列表，继续保存将覆盖原需求列表`)) {
+                return;// 用户取消保存
+            }
+        }
+        let all_scheme_copy = structuredClone(all_scheme);
+        all_scheme_copy[name] = structuredClone(needs_list);
+        set_all_scheme(all_scheme_copy);
+        set_current_selection({ value: name, label: name });
+    }//保存生产策略
+
+    let options = Object.keys(all_scheme).map(scheme_name =>
+        ({ value: scheme_name, label: scheme_name }));
+
+    return <><div>
+        <button onClick={save}>保存需求列表为</button>
+        <div style={{ display: "inline-flex" }}>
+            <Select value={current_selection} onChange={set_current_selection} options={options} isSearchable={false} />
+        </div>
+        <button onClick={load}>加载需求列表</button>
+        <button onClick={delete_}>删除需求列表</button>
+    </div ></>;
+}
+

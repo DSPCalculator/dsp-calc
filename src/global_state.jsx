@@ -90,6 +90,7 @@ export class GlobalState {
         let scheme_data = this.scheme_data;
         let proliferator_price = this.proliferator_price;
         let mineralize_list = this.ui_settings.mineralize_list;
+        let fixed_num = this.ui_settings.fixed_num;
 
         let multi_sources = {};
         let item_graph = {};
@@ -438,6 +439,7 @@ export class GlobalState {
         for (var item in needs_list) {
             in_out_list[item] = needs_list[item];
         }//将需求目标添至计算的实际需求列表中
+
         for (var id in natural_production_line) {
             var recipe = game_data.recipe_data[item_data[natural_production_line[id]["目标物品"]][natural_production_line[id]["配方id"]]];
             var recipe_time = 60 * natural_production_line[id]["建筑数量"] * game_data.factory_data[recipe["设施"]][natural_production_line[id]["建筑"]]["倍率"] / recipe["时间"];
@@ -548,6 +550,7 @@ export class GlobalState {
                 }
             }
         }//将固有产线的输入输出添至计算的实际需求列表中
+
         for (var item in in_out_list) {
             if (in_out_list[item] < 0) {
                 external_supply_item[item] = in_out_list[item];
@@ -638,11 +641,8 @@ export class GlobalState {
         var lp_cost = this.#get_linear_programming_list(lp_item_dict, result_dict, lp_surplus_list, item_price);
         //线规最终目标函数成本，在考虑要不要显示
 
-        console.log("result_dict from calculate", result_dict);
-        return [result_dict, surplus_list];
+        return [result_dict, lp_surplus_list];
     }
-
-
 
     /** 线性规划 */
     #get_linear_programming_list(lp_item_dict, result_dict, lp_surplus_list, item_price) {

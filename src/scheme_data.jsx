@@ -138,7 +138,7 @@ export function SchemeStorage() {
     const all_saved = JSON.parse(localStorage.getItem("scheme_data")) || {};
     const [all_scheme, set_all_scheme] = useState(all_saved[game_name] || {});
     // TODO implement 实时保存
-    const NULL_SELECTION = { value: null, label: "（默认，实时保存）" };
+    const NULL_SELECTION = { value: null, label: "（无）" };
     const [current_selection, set_current_selection] = useState(NULL_SELECTION);
 
     useEffect(() => {

@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import Select from 'react-select';
 import { BatchSetting } from './batch_setting.jsx';
-import { ContextProvider, GameInfoContext, GameInfoSetterContext, GlobalStateContext, SchemeDataSetterContext } from './contexts.jsx';
-import { GameInfo } from './global_state.jsx';
-import { NeedsList } from './needs_list.jsx';
+import { ContextProvider, GameInfoContext, GameInfoSetterContext, SchemeDataSetterContext } from './contexts.jsx';
+import { NaturalProductionLine } from './natural_production_line.jsx';
+import { NeedsList, NeedsListStorage } from './needs_list.jsx';
 import { Result } from './result.jsx';
 import { FractionatingSetting, MiningSettings, SchemeStorage, init_scheme_data } from './scheme_data.jsx';
 import { UiSettings } from './ui_settings.jsx';
@@ -58,6 +58,14 @@ function AppWithContexts() {
     set_needs_list({});
   }, [game_info]);
 
+  function clearData() {
+    if (!confirm(`即将清空所有保存的生产策略、需求列表等数据，初始化整个计算器，是否继续`)) {
+      return;// 用户取消保存
+    }
+    localStorage.clear();
+    window.location.reload();
+  }
+
   return <>
     <GameVersion />
     <div>
@@ -65,6 +73,9 @@ function AppWithContexts() {
       <div>采矿参数</div>
       <MiningSettings />
       <SchemeStorage />
+      <NeedsListStorage needs_list={needs_list} set_needs_list={set_needs_list} />
+      <NaturalProductionLine />
+      <div><button onClick={clearData}>清空数据缓存</button></div>
       <FractionatingSetting />
       <BatchSetting />
 
