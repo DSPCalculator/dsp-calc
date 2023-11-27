@@ -1,122 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-戴森球计划量化计算器(若版本与gitee中的版本对不上就按ctrl+f5刷新)
-计算器版本: v0.3.1(最新版本可在底部源码链接的源代码仓库中查看,或者按ctrl+f5刷新以后没有变化就说明是最新版本)
 
 <head>
     <meta charset="UTF-8">
     <title>戴森球计划量化计算器</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./data/GameData.js"></script>
-    <script src="./Scripts/jsLPSolver/prod/solver.js"></script>
-
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <div id="root"></div>
-    <script type="module" src="src/main.jsx"></script>
-    <div>
-        游戏版本：
-        <select id="gameData" onchange="changeGameData()">
-            <option value="vanilla" label="原版游戏" selected></option>
-            <option value="GenesisBook" label="创世之书"></option>
-            <option value="TheyComeFromVoid" label="深空来敌"></option>
-        </select>
-        <nobr id="版本号"></nobr>
+    <div class="p-3">
+        <div>戴森球计划量化计算器(若版本与gitee中的版本对不上就按ctrl+f5刷新) 计算器版本:
+            v0.3.1(最新版本可在底部源码链接的源代码仓库中查看,或者按ctrl+f5刷新以后没有变化就说明是最新版本)</div>
+        <div id="root"></div>
+        <script type="module" src="src/main.jsx"></script>
 
+        <p>相关链接：</p>
+        <a href="https://gitee.com/shi-sang/DSP_calculator" target="_blank"
+            title="点击可跳转至源码网址">网页源码</a>
+        <br>
+        <a href="https://www.bilibili.com/read/readlist/rl630834"
+            target="_blank" title="点击可跳转专栏">量化计算器逻辑</a>
+        <br>
+        <a href="https://space.bilibili.com/16051534" target="_blank"
+            title="作者bilibili空间">联系作者 QQ:653524123,
+            QQ群:816367922</a>
+        <br>
+        <a href="https://github.com/makuwa8992/DSP_web_quantizing_calculator"
+            target="_blank" title="跳转至github">github仓库源码</a>
+        <br>
+        <a href="https://dspcalc.arkwish.com/#/" target="_blank"
+            title="https://dspcalc.arkwish.com/#/">UI优化版地址：https://dspcalc.arkwish.com/#/</a>
     </div>
-    <div>
-        <button onclick="saveScheme()">保存生产策略为</button>
-        <select id="schemeData">
-            <option value="" label="无" selected></option>
-        </select>
-        <button onclick="loadScheme()">加载生产策略</button>
-        <button onclick="deleteScheme()">删除生产策略</button>
-    </div><!--存取生成策略-->
-    <div>
-        <button onclick="saveNeeds()">保存需求列表为</button>
-        <select id="needs_listData">
-            <option value="" label="无" selected></option>
-        </select>
-        <button onclick="loadNeeds()">加载需求列表</button>
-        <button onclick="deleteNeeds_listData()">删除需求列表</button>
-    </div><!--存取需求列表-->
-    <button onclick="clearData()">清空数据缓存</button>
-    <div>
-        <p id="是否自喷涂"><button onclick="if_proliferate_itself(0)">自喷涂?</button>Yes!</p>
-        <datalist id="item_list"></datalist>
-        所需物品: <input list="item_list" size="5" id="needs_item" value="" placeholder="请输入搜索需要的物品" />
-        所需产能: <input type="text" size="6" id="needs_amount" value="60" /> <button id="添加需求"
-            onclick="addNeeds()">增加需求</button>单位:<nobr id="时间单位">个/min<button onclick="min_or_sec(0)">转化为秒</button>
-        </nobr>
-        显示精度: <input id="显示精度" size="5" type="number" onchange="changeFixedNum()" value="2" />
-        <p id="建筑层数"></p>
-        采矿参数:<p id="采矿参数"></p>
-        分馏塔过氢带速:<input type="text" size="6" id="分馏塔过氢带速" value="60" onchange="changeFractionatingSpeed()" />过氢量/min
-        <p id="批量预设"></p>
-        <p id="resetNeeds"></p>
-        <p id="原矿化列表"></p>
-        <table>固有产线:
-            <button onclick="addNaturalProductionLine()">添加固有产线</button>
-            <thead>
-                <tr>
-                    <th>目标物品</th>
-                    <th>建筑数量</th>
-                    <th>配方选取</th>
-                    <th>合成时原料喷涂点数</th>
-                    <th>增产模式选择</th>
-                    <th>工厂类型选择</th>
-                </tr>
-            </thead>
-            <tbody id="固有产线"></tbody>
-        </table>
-        <p id="totalNeeds">需求列表：</p>
-        <datalist id="recipe_list"></datalist>
-        <datalist id="pro_num_list"></datalist>
-        <datalist id="pro_mode_list"></datalist>
-        <datalist id="factory_list"></datalist>
-    </div>
-    <table>总计产能需求：
-        <thead>
-            <tr>
-                <th>操作</th>
-                <th>目标物品</th>
-                <th>需求产能</th>
-                <th>所需工厂数</th>
-                <th>配方选取</th>
-                <th>合成时原料喷涂点数</th>
-                <th>增产模式选择</th>
-                <th>工厂类型选择</th>
-            </tr>
-        </thead>
-        <tbody id="result">
-        </tbody>
-    </table>
-    <table>多余产物：
-        <thead>
-            <th>物品名</th>
-            <th>分钟冗余量</th>
-        </thead>
-        <tbody id="surplus_list">
-        </tbody>
-    </table>
-    建筑统计：<p id="建筑统计"></p>
-    <p id="耗电统计"></p>
-    <p>相关链接：</p>
-    <a href="https://gitee.com/shi-sang/DSP_calculator" target="_blank" title="点击可跳转至源码网址">网页源码</a>
-    <br>
-    <a href="https://www.bilibili.com/read/readlist/rl630834" target="_blank" title="点击可跳转专栏">量化计算器逻辑</a>
-    <br>
-    <a href="https://space.bilibili.com/16051534" target="_blank" title="作者bilibili空间">联系作者 QQ:653524123,
-        QQ群:816367922</a>
-    <br>
-    <a href="https://github.com/makuwa8992/DSP_web_quantizing_calculator" target="_blank"
-        title="跳转至github">github仓库源码</a>
-    <br>
-    <a href="https://dspcalc.arkwish.com/#/" target="_blank"
-        title="https://dspcalc.arkwish.com/#/">UI优化版地址：https://dspcalc.arkwish.com/#/</a>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
-import { createContext, useEffect, useState } from 'react';
 import structuredClone from '@ungap/structured-clone';
+import { createContext, useState } from 'react';
+import { GameData } from '../data/GameData.jsx';
 import { GameInfo, GlobalState } from './global_state';
 import { init_scheme_data } from './scheme_data';
 

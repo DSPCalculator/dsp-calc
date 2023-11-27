@@ -1,3 +1,4 @@
+import 'javascript-lp-solver/src/solver';
 
 export class GameInfo {
     name;
