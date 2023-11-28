@@ -1,10 +1,5 @@
-import { useContext, useEffect, useRef, useState } from 'react';
-import { BatchSetting } from './batch_setting.jsx';
-import { ContextProvider, GameInfoContext, GameInfoSetterContext, GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext, UiSettingsContext } from './contexts.jsx';
-import { GameInfo } from './global_state.jsx';
-import { NeedsList } from './needs_list.jsx';
-import { Result } from './result.jsx';
-import { FractionatingSetting, MiningSettings, SchemeStorage, init_scheme_data } from './scheme_data.jsx';
+import { useContext } from 'react';
+import { UiSettingsContext, UiSettingsSetterContext } from './contexts.jsx';
 
 export function UiSettings() {
     const ui_settings = useContext(UiSettingsContext);
