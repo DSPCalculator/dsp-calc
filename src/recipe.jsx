@@ -13,7 +13,7 @@ export function Recipe({ recipe }) {
     function item_to_doms([item, count]) {
         return <React.Fragment key={item}>
             <ItemIcon item={item} size={24} />
-            <sub>{count}</sub>
+            <sub className='me-1'>{count}</sub>
         </React.Fragment>;
     }
 
@@ -23,7 +23,7 @@ export function Recipe({ recipe }) {
     return <span>
         {input_doms.length > 0 && <>
             {input_doms}
-            <span style={{ fontSize: "24px", lineHeight: "24px" }}>→</span>
+            <span className='mx-1' style={{ fontSize: "24px", lineHeight: "24px" }}>→</span>
         </>
         }
 

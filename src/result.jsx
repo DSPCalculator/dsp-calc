@@ -14,7 +14,8 @@ export function RecipeSelect({ item, choice, onChange }) {
         let recipe_index = item_data[item][i];
         let recipe = game_data.recipe_data[recipe_index];
         let bg_class = i == choice ? "bg-success-subtle" : "bg-dark-subtle";
-        doms.push(<a key={i} href="javascript:;"
+        doms.push(<a key={i}
+            style={{ cursor: 'pointer' }}
             className={`my-1 px-2 py-1 d-block text-reset text-decoration-none ${bg_class}`}
             onClick={() => onChange(i)}>
             <Recipe recipe={recipe} />
