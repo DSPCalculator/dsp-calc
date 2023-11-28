@@ -79,7 +79,7 @@ export function NaturalProductionLine() {
                     <th>目标物品</th>
                     <th>建筑数量</th>
                     <th>配方选取</th>
-                    <th>合成时原料喷涂点数</th>
+                    <th>喷涂点数</th>
                     <th>增产模式选择</th>
                     <th>工厂类型选择</th>
                     <th></th>

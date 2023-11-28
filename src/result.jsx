@@ -1,46 +1,27 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
+import { Recipe } from './recipe';
 
 /** 配方选项的展示格式，有空把它换成图形界面 */
 export function RecipeSelect({ item, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
 
-    function recipe_label_text(recipe) {
-        var str = "";
-        var num = 0;
-        for (var material in recipe["原料"]) {
-            if (num != 0) {
-                str += " + ";
-            }
-            str += recipe["原料"][material] + " * " + material;
-            num += 1;
-        }
-        if (num != 0) {
-            str += "→";
-        }
-        num = 0;
-        for (var products in recipe["产物"]) {
-            if (num != 0) {
-                str += " + ";
-            }
-            str += recipe["产物"][products] + " * " + products;
-            num += 1;
-        }
-        str += "    耗时:" + recipe["时间"] + "s";
-        return str;
-    }
-
     let game_data = global_state.game_data;
     let item_data = global_state.item_data;
 
-    let option_doms = [];
+    let doms = [];
     for (let i = 1; i < item_data[item].length; i++) {
         let recipe_index = item_data[item][i];
         let recipe = game_data.recipe_data[recipe_index];
-        option_doms.push(<option key={i} value={i}>{recipe_label_text(recipe)}</option>);
+        let bg_class = i == choice ? "bg-success-subtle" : "bg-dark-subtle";
+        doms.push(<a key={i} href="javascript:;"
+            className={`my-1 px-2 py-1 d-block text-reset text-decoration-none ${bg_class}`}
+            onClick={() => onChange(i)}>
+            <Recipe recipe={recipe} />
+        </a>);
     }
 
-    return <select value={choice} onChange={onChange}>{option_doms}</select>;
+    return <>{doms}</>;
 }
 
 export function ProNumSelect({ choice, onChange }) {
@@ -211,10 +192,10 @@ export function Result({ needs_list }) {
             <div key={from}>+{amount} ({from})</div>
         );
 
-        function change_recipe(e) {
+        function change_recipe(value) {
             set_scheme_data(old_scheme_data => {
                 let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.item_recipe_choices[i] = e.target.value;
+                scheme_data.item_recipe_choices[i] = value;
                 return scheme_data;
             })
         }
@@ -314,7 +295,7 @@ export function Result({ needs_list }) {
                     <th>需求产能</th>
                     <th>所需工厂数</th>
                     <th>配方选取</th>
-                    <th>合成时原料喷涂点数</th>
+                    <th>喷涂点数</th>
                     <th>增产模式选择</th>
                     <th>工厂类型选择</th>
                 </tr>
