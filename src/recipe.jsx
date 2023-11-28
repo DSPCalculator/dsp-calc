@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalStateContext } from './contexts';
 
-function ItemIcon({ item, size }) {
+export function ItemIcon({ item, size }) {
     const global_state = useContext(GlobalStateContext);
     size = size || 40;
 

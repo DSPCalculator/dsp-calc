@@ -8,7 +8,6 @@ import { Result } from './result.jsx';
 import { FractionatingSetting, MiningSettings, SchemeStorage, init_scheme_data } from './scheme_data.jsx';
 import { UiSettings } from './ui_settings.jsx';
 import { GameData } from '../data/GameData.jsx';
-import { Recipe } from './recipe.jsx';
 
 function GameVersion() {
   const set_game_name_and_data = useContext(GameInfoSetterContext);
@@ -69,10 +68,6 @@ function AppWithContexts() {
   }
 
   return <>
-    <div>
-      Test recipe:
-      <Recipe recipe={GameData.vanilla.recipe_data[23]} />
-    </div>
     <GameVersion />
     <div>
       <UiSettings />

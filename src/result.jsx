@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { Recipe } from './recipe';
+import { Recipe, ItemIcon } from './recipe';
 
 /** 配方选项的展示格式，有空把它换成图形界面 */
 export function RecipeSelect({ item, choice, onChange }) {
@@ -224,6 +224,8 @@ export function Result({ needs_list }) {
             })
         }
 
+        let factory_name = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"];
+
         result_table_rows.push(<tr key={i} id={`row_of_${i}`}>
             {/* 操作 */}
             <td><button className='btn btn-sm btn-outline-primary' onClick={() => mineralize(i)}>视为原矿</button></td>
@@ -235,8 +237,10 @@ export function Result({ needs_list }) {
                 {from_side_products}
             </td>
             {/* 所需工厂*数目 */}
-            <td><span id={`factory_counts_of_${i}`} value={factory_number}>{
-                game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"] + " * " + factory_number + is_mineralized(i)}</span></td>
+            <td><span style={{ lineHeight: "30px" }}>
+                <ItemIcon item={factory_name} size={30} />
+                {" " + factory_number + is_mineralized(i)}
+            </span></td>
             {/* 所选配方 */}
             <td><RecipeSelect item={i} onChange={change_recipe}
                 choice={scheme_data.item_recipe_choices[i]} /></td>
