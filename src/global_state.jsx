@@ -54,7 +54,7 @@ export class GlobalState {
         this.scheme_data = scheme_data;
         this.ui_settings = ui_settings;
 
-        this.#init_pro_proliferator();
+        this.#init_pro_proliferator(ui_settings.proliferate_itself);
         this.#init_item_graph();
         this.#init_item_list();
     }
