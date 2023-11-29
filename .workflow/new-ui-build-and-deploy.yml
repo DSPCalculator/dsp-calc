@@ -1,12 +1,12 @@
 version: '1.0'
-name: migrate-to-react-npm-build
-displayName: migrate-to-react-npm-build
+name: new-ui-build-and-deploy
+displayName: new-ui-build-and-deploy
 triggers:
   trigger: auto
   push:
     branches:
       precise:
-        - migrate-to-react
+        - new-ui
 stages:
   - name: stage-nodejs
     displayName: nodejs
