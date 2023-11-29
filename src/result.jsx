@@ -13,13 +13,19 @@ export function RecipeSelect({ item, choice, onChange }) {
     for (let i = 1; i < item_data[item].length; i++) {
         let recipe_index = item_data[item][i];
         let recipe = game_data.recipe_data[recipe_index];
-        let bg_class = i == choice ? "bg-success-subtle" : "bg-dark-subtle";
-        doms.push(<a key={i}
-            style={{ cursor: 'pointer' }}
-            className={`my-1 px-2 py-1 d-block text-reset text-decoration-none ${bg_class}`}
-            onClick={() => onChange(i)}>
-            <Recipe recipe={recipe} />
-        </a>);
+        if (item_data[item].length == 2) {
+            // only one recipe
+            doms.push(<div key={i} className="my-1 px-2 py-1"
+                onClick={() => onChange(i)}> <Recipe recipe={recipe} /></div>);
+        } else {
+            let bg_class = (i == choice) ? "bg-success-subtle" : "bg-dark-subtle";
+            doms.push(<a key={i}
+                style={{ cursor: 'pointer' }}
+                className={`my-1-middle px-2 py-1 d-block text-reset text-decoration-none ${bg_class}`}
+                onClick={() => onChange(i)}>
+                <Recipe recipe={recipe} />
+            </a>);
+        }
     }
 
     return <>{doms}</>;
@@ -229,7 +235,7 @@ export function Result({ needs_list }) {
 
         result_table_rows.push(<tr key={i} id={`row_of_${i}`}>
             {/* 操作 */}
-            <td><button className='btn btn-sm btn-outline-primary' onClick={() => mineralize(i)}>视为原矿</button></td>
+            <td><sub><a className="text-primary" style={{ cursor: "pointer", textDecoration: "underline" }} onClick={() => mineralize(i)}>视为原矿</a></sub></td>
             {/* 目标物品 */}
             <td><img src={`./image/${global_state.game_name}/${i}.png`} title={i} style={{ width: '40px', height: '40px' }} /></td>
             {/* 分钟毛产出 */}
@@ -292,20 +298,20 @@ export function Result({ needs_list }) {
     return <div className="card">
         {mineralize_doms.length > 0 && <span>原矿化列表：{mineralize_doms}</span>}
         <p>总计产能需求：</p>
-        <table>
+        <table className="table table-hover table-sm align-middle">
             <thead>
-                <tr>
-                    <th>操作</th>
-                    <th>目标物品</th>
-                    <th>需求产能</th>
-                    <th>所需工厂数</th>
-                    <th>配方选取</th>
+                <tr className="text-center">
+                    <th width={80}>操作</th>
+                    <th width={50}>物品</th>
+                    <th width={130}>产能</th>
+                    <th width={110}>工厂</th>
+                    <th width={300}>配方选取</th>
                     <th>喷涂点数</th>
                     <th>增产模式选择</th>
                     <th>工厂类型选择</th>
                 </tr>
             </thead>
-            <tbody>{result_table_rows}</tbody>
+            <tbody className="table-group-divider">{result_table_rows}</tbody>
         </table>
         <p>多余产物：</p>
         <div><table>

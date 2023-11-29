@@ -23,7 +23,7 @@ export function Recipe({ recipe }) {
     return <span>
         {input_doms.length > 0 && <>
             {input_doms}
-            <span className='mx-1' style={{ fontSize: "24px", lineHeight: "24px" }}>→</span>
+            <span className='mx-1' style={{ fontSize: "20px", lineHeight: "20px" }}>→</span>
         </>
         }
 
