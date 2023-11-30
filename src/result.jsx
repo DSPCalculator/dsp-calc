@@ -18,10 +18,10 @@ export function RecipeSelect({ item, choice, onChange }) {
             doms.push(<div key={i} className="my-1 px-2 py-1"
                 onClick={() => onChange(i)}> <Recipe recipe={recipe} /></div>);
         } else {
-            let bg_class = (i == choice) ? "bg-success-subtle" : "bg-dark-subtle";
+            let bg_class = (i == choice) ? "bg-selected-recipe" : "bg-unselected-recipe text-reset";
             doms.push(<a key={i}
                 style={{ cursor: 'pointer' }}
-                className={`my-1-middle px-2 py-1 d-block text-reset text-decoration-none ${bg_class}`}
+                className={`my-1-middle px-2 py-1 d-block text-decoration-none ${bg_class}`}
                 onClick={() => onChange(i)}>
                 <Recipe recipe={recipe} />
             </a>);
@@ -137,14 +137,6 @@ export function Result({ needs_list }) {
         }
         return build_number;
     }
-    function is_mineralized(item) {
-        if (item in mineralize_list) {
-            return "(原矿化)";
-        }
-        else {
-            return "";
-        }
-    }
     function get_gross_output(amount, item) {
         var offset = 0;
         offset = 0.49994 * 0.1 ** fixed_num;//未显示的部分进一法取整
@@ -182,7 +174,7 @@ export function Result({ needs_list }) {
     }
 
     let mineralize_doms = Object.keys(mineralize_list).map(item => (
-        <button key={item} onClick={() => unmineralize(item)}>{item}</button>
+        <a key={item} className="m-1" style={{ cursor: "pointer" }} onClick={() => unmineralize(item)}><ItemIcon item={item} /></a>
     ));
 
     let result_table_rows = [];
@@ -196,7 +188,7 @@ export function Result({ needs_list }) {
 
         let from_side_products = Object.entries(side_products[i]).map(([from, amount]) =>
             // TODO apply [fixed_num]
-            <div key={from}>+{amount} ({from})</div>
+            <div key={from}>+{amount} (<ItemIcon item={from} size={26} />)</div>
         );
 
         function change_recipe(value) {
@@ -233,21 +225,33 @@ export function Result({ needs_list }) {
 
         let factory_name = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"];
 
-        result_table_rows.push(<tr key={i} id={`row_of_${i}`}>
+        let is_mineralized = i in mineralize_list;
+        let row_class = is_mineralized ? "table-secondary" : "";
+
+        result_table_rows.push(<tr className={row_class} key={i}>
             {/* 操作 */}
-            <td><sub><a className="text-primary" style={{ cursor: "pointer", textDecoration: "underline" }} onClick={() => mineralize(i)}>视为原矿</a></sub></td>
+            <td>
+                {is_mineralized ?
+                    <sub>(原矿化)</sub> :
+                    <sub><a className="text-primary" style={{ cursor: "pointer", textDecoration: "underline" }} onClick={() => mineralize(i)}>视为原矿</a></sub>
+                }
+            </td>
             {/* 目标物品 */}
             <td><img src={`./image/${global_state.game_name}/${i}.png`} title={i} style={{ width: '40px', height: '40px' }} /></td>
             {/* 分钟毛产出 */}
-            <td id={`num_of_${i}`}>
+            <td className="text-center">
                 <div>{get_gross_output(result_dict[i], i).toFixed(fixed_num)}</div>
                 {from_side_products}
             </td>
             {/* 所需工厂*数目 */}
-            <td><span style={{ lineHeight: "30px" }}>
-                <ItemIcon item={factory_name} size={30} />
-                {" " + factory_number + is_mineralized(i)}
-            </span></td>
+            <td>
+                {is_mineralized ||
+                    <span style={{ lineHeight: "30px" }}>
+                        <ItemIcon item={factory_name} size={30} />
+                        {" " + factory_number}
+                    </span>
+                }
+            </td>
             {/* 所选配方 */}
             <td><RecipeSelect item={i} onChange={change_recipe}
                 choice={scheme_data.item_recipe_choices[i]} /></td>
@@ -293,12 +297,13 @@ export function Result({ needs_list }) {
     }
 
     let surplus_rows = Object.entries(lp_surplus_list).map(([item, quant]) =>
-        (<tr key={item}><td>{item}</td><td>{quant}</td></tr>));
+        (<tr key={item}><td><ItemIcon item={item} /></td><td>{quant}</td></tr>));
 
     return <div className="card">
-        {mineralize_doms.length > 0 && <span>原矿化列表：{mineralize_doms}</span>}
+        {mineralize_doms.length > 0 &&
+            <div className="d-flex align-items-center rounded-2 px-3 py-1 border-primary border border-primary">原矿化列表：{mineralize_doms}</div>}
         <p>总计产能需求：</p>
-        <table className="table table-hover table-sm align-middle">
+        <table className="table table-sm align-middle">
             <thead>
                 <tr className="text-center">
                     <th width={80}>操作</th>
