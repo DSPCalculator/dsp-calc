@@ -237,7 +237,10 @@ export function Result({ needs_list }) {
                 }
             </td>
             {/* 目标物品 */}
-            <td><img src={`./image/${global_state.game_name}/${i}.png`} title={i} style={{ width: '40px', height: '40px' }} /></td>
+            <td><div className="d-flex align-items-center">
+                <ItemIcon item={i} />
+                <small className="ms-1">{i}</small>
+            </div></td>
             {/* 分钟毛产出 */}
             <td className="text-center">
                 <div>{get_gross_output(result_dict[i], i).toFixed(fixed_num)}</div>
@@ -307,7 +310,7 @@ export function Result({ needs_list }) {
             <thead>
                 <tr className="text-center">
                     <th width={80}>操作</th>
-                    <th width={50}>物品</th>
+                    <th width={140}>物品</th>
                     <th width={130}>产能</th>
                     <th width={110}>工厂</th>
                     <th width={300}>配方选取</th>
