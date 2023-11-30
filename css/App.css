@@ -11,12 +11,12 @@
     margin-bottom: 0 !important;
 }
 
-.bg-selected-recipe {
+.bg-selected {
     background-color: #484 !important;
     color: white !important;
 }
 
-.bg-unselected-recipe {
+.bg-unselected {
     background-color: #AAA !important;
     color: white !important;
 }

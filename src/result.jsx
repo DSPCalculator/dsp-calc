@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { Fragment, useContext, useId } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
 import { Recipe, ItemIcon } from './recipe';
 
@@ -18,7 +18,7 @@ export function RecipeSelect({ item, choice, onChange }) {
             doms.push(<div key={i} className="my-1 px-2 py-1"
                 onClick={() => onChange(i)}> <Recipe recipe={recipe} /></div>);
         } else {
-            let bg_class = (i == choice) ? "bg-selected-recipe" : "bg-unselected-recipe text-reset";
+            let bg_class = (i == choice) ? "bg-selected" : "bg-unselected text-reset";
             doms.push(<a key={i}
                 style={{ cursor: 'pointer' }}
                 className={`my-1-middle px-2 py-1 d-block text-decoration-none ${bg_class}`}
@@ -31,29 +31,45 @@ export function RecipeSelect({ item, choice, onChange }) {
     return <>{doms}</>;
 }
 
+export const pro_num_text = {
+    [0]: "(无)",
+    [1]: "Mk.Ⅰ",
+    [2]: "Mk.Ⅱ",
+    [4]: "Mk.Ⅲ",
+}
+
+function HorizontalMultiButtonSelect({ choice, options, onChange }) {
+    let option_doms = options.map(({ value, label }) => {
+        let selected_class = choice == value ? "bg-selected" : "bg-unselected";
+        return <div key={value}
+            className={`me-1 p-1 text-nowrap ${selected_class}`}
+            style={{ cursor: "pointer", fontSize: "0.8em" }}
+            onClick={() => onChange(value)}
+        >{label}</div>;
+    })
+
+    return <div className="d-flex">{option_doms}</div>;
+}
+
 export function ProNumSelect({ choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
 
-    let pro_nums = [];
+    let pro_num_options = [];
     for (var i = 0; i < game_data.proliferate_effect.length; i++) {
         if (global_state.proliferator_price[i] != -1)
-            pro_nums.push(i);
-    }
-    let option_doms = [];
-    for (let pro_num of pro_nums) {
-        option_doms.push(<option key={pro_num} value={pro_num}>{pro_num}</option>)
+            pro_num_options.push({ value: i, label: pro_num_text[i] });
     }
 
-    return <select value={choice} onChange={onChange}>{option_doms}</select>;
+    return <HorizontalMultiButtonSelect choice={choice} options={pro_num_options} onChange={onChange} />;
 }
 
 export const pro_mode_lists = {
-    [0]: { [0]: "不使用增产剂" },
-    [1]: { [0]: "不使用增产剂", [1]: "增产" },
-    [2]: { [0]: "不使用增产剂", [2]: "加速" },
-    [3]: { [0]: "不使用增产剂", [1]: "增产", [2]: "加速" },
-    [4]: { [0]: "不使用增产剂", [4]: "接收站透镜喷涂" },
+    [0]: { [0]: "(无)" },
+    [1]: { [0]: "(无)", [1]: "增产" },
+    [2]: { [0]: "(无)", [2]: "加速" },
+    [3]: { [0]: "(无)", [1]: "增产", [2]: "加速" },
+    [4]: { [0]: "(无)", [4]: "接收站透镜喷涂" },
 }
 
 export function ProModeSelect({ recipe_id, choice, onChange }) {
@@ -61,11 +77,11 @@ export function ProModeSelect({ recipe_id, choice, onChange }) {
     let game_data = global_state.game_data;
 
     let pro_mode_list = pro_mode_lists[game_data.recipe_data[recipe_id]["增产"]];
-    let option_doms = Object.entries(pro_mode_list).map(([value, label]) => (
-        <option key={value} value={value}>{label}</option>
+    let options = Object.entries(pro_mode_list).map(([value, label]) => (
+        { value: value, label: label }
     ));
 
-    return <select value={choice} onChange={onChange}>{option_doms}</select>;
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} />;
 }
 
 export function FactorySelect({ recipe_id, choice, onChange }) {
@@ -75,13 +91,11 @@ export function FactorySelect({ recipe_id, choice, onChange }) {
     let factory_kind = game_data.recipe_data[recipe_id]["设施"];
     let factory_list = game_data.factory_data[factory_kind];
 
-    let option_doms = Object.entries(factory_list).map(([factory, factory_data]) => {
-        let factory_name = factory_data["名称"];
-        return <option key={factory} value={factory}>{factory_name}</option>
-    });
+    let options = Object.entries(factory_list).map(([factory, factory_data]) => (
+        { value: factory, label: factory_data["名称"] }
+    ));
 
-    return <select value={choice} onChange={onChange}>{option_doms}</select>;
-
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} />;
 }
 
 export function Result({ needs_list }) {
@@ -199,26 +213,26 @@ export function Result({ needs_list }) {
             })
         }
 
-        function change_pro_num(e) {
+        function change_pro_num(value) {
             set_scheme_data(old_scheme_data => {
                 let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"] = e.target.value;
+                scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"] = value;
                 return scheme_data;
             })
         }
 
-        function change_pro_mode(e) {
+        function change_pro_mode(value) {
             set_scheme_data(old_scheme_data => {
                 let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.scheme_for_recipe[recipe_id]["增产模式"] = e.target.value;
+                scheme_data.scheme_for_recipe[recipe_id]["增产模式"] = value;
                 return scheme_data;
             })
         }
 
-        function change_factory(e) {
+        function change_factory(value) {
             set_scheme_data(old_scheme_data => {
                 let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.scheme_for_recipe[recipe_id]["建筑"] = e.target.value;
+                scheme_data.scheme_for_recipe[recipe_id]["建筑"] = value;
                 return scheme_data;
             })
         }
@@ -233,11 +247,11 @@ export function Result({ needs_list }) {
             <td>
                 {is_mineralized ?
                     <sub>(原矿化)</sub> :
-                    <sub><a className="text-primary" style={{ cursor: "pointer", textDecoration: "underline" }} onClick={() => mineralize(i)}>视为原矿</a></sub>
+                    <sub><a className="text-primary text-nowrap" style={{ cursor: "pointer", textDecoration: "underline" }} onClick={() => mineralize(i)}>视为原矿</a></sub>
                 }
             </td>
             {/* 目标物品 */}
-            <td><div className="d-flex align-items-center">
+            <td><div className="d-flex align-items-center text-nowrap">
                 <ItemIcon item={i} />
                 <small className="ms-1">{i}</small>
             </div></td>
@@ -302,11 +316,10 @@ export function Result({ needs_list }) {
     let surplus_rows = Object.entries(lp_surplus_list).map(([item, quant]) =>
         (<tr key={item}><td><ItemIcon item={item} /></td><td>{quant}</td></tr>));
 
-    return <div className="card">
+    return <div className="m-3">
         {mineralize_doms.length > 0 &&
             <div className="d-flex align-items-center rounded-2 px-3 py-1 border-primary border border-primary">原矿化列表：{mineralize_doms}</div>}
-        <p>总计产能需求：</p>
-        <table className="table table-sm align-middle">
+        <table className="table table-sm align-middle mt-3">
             <thead>
                 <tr className="text-center">
                     <th width={80}>操作</th>

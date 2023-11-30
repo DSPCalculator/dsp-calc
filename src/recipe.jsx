@@ -20,10 +20,10 @@ export function Recipe({ recipe }) {
     const input_doms = Object.entries(recipe["原料"]).map(item_to_doms);
     const output_doms = Object.entries(recipe["产物"]).map(item_to_doms);
 
-    return <span>
+    return <span className="text-nowrap">
         {input_doms.length > 0 && <>
             {input_doms}
-            <span className='mx-1' style={{ fontSize: "20px", lineHeight: "20px" }}>→</span>
+            <span className="mx-1" style={{ fontSize: "20px", lineHeight: "20px" }}>→</span>
         </>
         }
 
