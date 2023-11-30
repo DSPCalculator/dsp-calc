@@ -2,6 +2,8 @@ import structuredClone from '@ungap/structured-clone';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Select from 'react-select';
 import { GameInfoContext, GlobalStateContext } from './contexts';
+import { ItemIcon } from './recipe';
+import { Trash } from 'react-bootstrap-icons';
 
 function get_item_data(game_data) {
     //通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，键值为
@@ -43,10 +45,13 @@ export function NeedsList({ needs_list, set_needs_list }) {
             delete new_needs_list[item];
             set_needs_list(new_needs_list);
         }
-        return <div key={item}>{item}:
-            <input value={count} onChange={edit_count} /><span>/min</span>
-            <button onClick={remove}>删除需求</button>
-        </div>;
+
+        return <div key={item} className="input-group" style={{ width: 'fit-content' }}>
+            <span className="input-group-text"><ItemIcon item={item} size={24} /><small className="ms-1">{item}</small></span>
+            <input type="text" className="form-control" style={{ width: "6em" }} value={count} onChange={edit_count} />
+            <span class="input-group-text">/min</span>
+            <button class="btn btn-outline-danger" onClick={remove}><Trash /></button>
+        </div>
     });
 
     function add_need() {
@@ -69,7 +74,7 @@ export function NeedsList({ needs_list, set_needs_list }) {
             <button onClick={add_need}>添加需求</button>
             {Object.keys(needs_list).length == 0 ||
                 <div className='m-1'><button onClick={() => set_needs_list({})}>清空所有需求</button></div>}
-            <div>{needs_doms}</div>
+            <div className="d-flex flex-wrap gap-4 row-gap-2">{needs_doms}</div>
         </span>
     </>;
 }
