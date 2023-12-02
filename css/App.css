@@ -1,14 +1,11 @@
-.my-1-middle {
-    margin-top: 0.25rem !important;
-    margin-bottom: 0.25rem !important;
+.recipe-item:hover {
+    background-color: #AAA;
+    color: white;
 }
 
-.my-1-middle:first-child {
-    margin-top: 0 !important;
-}
-
-.my-1-middle:last-child {
-    margin-bottom: 0 !important;
+.recipe-item.selected {
+    background-color: #484 !important;
+    color: white !important;
 }
 
 .bg-selected {
@@ -58,7 +55,7 @@
     position: absolute;
     display: block;
     content: attr(data-tooltip);
-    top: 110%;
+    top: 120%;
     left: 62%;
     width: max-content;
     background-color: #333;

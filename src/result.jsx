@@ -1,8 +1,7 @@
-import { Fragment, useContext, useId } from 'react';
+import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { Recipe, ItemIcon } from './recipe';
+import { ItemIcon, Recipe } from './recipe';
 
-/** 配方选项的展示格式，有空把它换成图形界面 */
 export function RecipeSelect({ item, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
 
@@ -18,10 +17,10 @@ export function RecipeSelect({ item, choice, onChange }) {
             doms.push(<div key={i} className="my-1 px-2 py-1"
                 onClick={() => onChange(i)}> <Recipe recipe={recipe} /></div>);
         } else {
-            let bg_class = (i == choice) ? "bg-selected" : "bg-unselected text-reset";
+            let bg_class = (i == choice) ? "selected" : "";
             doms.push(<a key={i}
                 style={{ cursor: 'pointer' }}
-                className={`my-1-middle px-2 py-1 d-block text-decoration-none ${bg_class}`}
+                className={`recipe-item px-2 py-1 d-block text-decoration-none text-reset ${bg_class}`}
                 onClick={() => onChange(i)}>
                 <Recipe recipe={recipe} />
             </a>);
