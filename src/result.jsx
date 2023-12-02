@@ -39,13 +39,13 @@ export const pro_num_text = {
 }
 
 function HorizontalMultiButtonSelect({ choice, options, onChange }) {
-    let option_doms = options.map(({ value, label }) => {
+    let option_doms = options.map(({ value, label, item_icon }) => {
         let selected_class = choice == value ? "bg-selected" : "bg-unselected";
         return <div key={value}
             className={`me-1 p-1 text-nowrap ${selected_class}`}
             style={{ cursor: "pointer", fontSize: "0.8em" }}
             onClick={() => onChange(value)}
-        >{label}</div>;
+        >{label}{item_icon && <ItemIcon item={item_icon} size={32} />}</div>;
     })
 
     return <div className="d-flex">{option_doms}</div>;
@@ -92,7 +92,7 @@ export function FactorySelect({ recipe_id, choice, onChange }) {
     let factory_list = game_data.factory_data[factory_kind];
 
     let options = Object.entries(factory_list).map(([factory, factory_data]) => (
-        { value: factory, label: factory_data["名称"] }
+        { value: factory, item_icon: factory_data["名称"] }
     ));
 
     return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} />;
