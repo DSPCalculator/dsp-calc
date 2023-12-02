@@ -1,17 +1,21 @@
 import Select from 'react-select';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import structuredClone from '@ungap/structured-clone';
 import { GlobalStateContext, SchemeDataSetterContext } from './contexts';
+import { HorizontalMultiButtonSelect } from './recipe.jsx';
 
 function FactorySelect({ factory, list }) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
+    const [cur, set_cur] = useState(0);
     let game_data = global_state.game_data;
 
-    const options = list.map((data, idx) => ({ value: idx, label: data["名称"] }));
+    const options = list.map((data, idx) => ({
+        value: idx, item_icon: data["名称"], label: cur == idx ? data["名称"] : null
+    }));
 
-    function set_factory(e) {
-        let building = e.value;
+    function set_factory(building) {
+        set_cur(building);
         set_scheme_data(old_scheme_data => {
             let scheme_data = structuredClone(old_scheme_data);
             for (var i = 0; i < game_data.recipe_data.length; i++) {
@@ -23,9 +27,10 @@ function FactorySelect({ factory, list }) {
         });
     }
 
-    return <span className='ms-3'>{factory}：
+    return <span className='ms-3'>
+        {/* {factory}： */}
         <div style={{ display: "inline-flex" }}>
-            <Select defaultValue={options[0]} onChange={set_factory} options={options} isSearchable={false} />
+            <HorizontalMultiButtonSelect choice={cur} options={options} onChange={set_factory} />
         </div>
     </span>;
 }

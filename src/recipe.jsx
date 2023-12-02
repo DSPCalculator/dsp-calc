@@ -39,3 +39,16 @@ export function Recipe({ recipe }) {
         {output_doms}
     </span>;
 }
+
+export function HorizontalMultiButtonSelect({ choice, options, onChange }) {
+    let option_doms = options.map(({ value, label, item_icon }) => {
+        let selected_class = choice == value ? "bg-selected" : "bg-unselected";
+        return <div key={value}
+            className={`me-1 py-1 px-2 text-nowrap d-flex align-items-center gap-1 ${selected_class}`}
+            style={{ cursor: "pointer", fontSize: "0.8em" }}
+            onClick={() => onChange(value)}
+        >{item_icon && <ItemIcon item={item_icon} size={32} />}{label}</div>;
+    })
+
+    return <div className="d-flex">{option_doms}</div>;
+}

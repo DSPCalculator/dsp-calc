@@ -3,6 +3,8 @@ import { useEffect, useRef } from 'react';
 import { icon_layout } from '../data/icon_layout.jsx';
 import { ItemIcon } from './recipe.jsx';
 
+// TODO this should depend on the game data
+
 function ItemSelectPanel({ onSelect }) {
   const doms = icon_layout.map((row, i) => {
     if (row.length == 0) return <div key={i} className="m-1"></div>;

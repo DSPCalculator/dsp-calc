@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { ItemIcon, Recipe } from './recipe';
+import { ItemIcon, Recipe, HorizontalMultiButtonSelect } from './recipe';
 
 export function RecipeSelect({ item, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
@@ -35,19 +35,6 @@ export const pro_num_text = {
     [1]: "Mk.Ⅰ",
     [2]: "Mk.Ⅱ",
     [4]: "Mk.Ⅲ",
-}
-
-function HorizontalMultiButtonSelect({ choice, options, onChange }) {
-    let option_doms = options.map(({ value, label, item_icon }) => {
-        let selected_class = choice == value ? "bg-selected" : "bg-unselected";
-        return <div key={value}
-            className={`me-1 p-1 text-nowrap ${selected_class}`}
-            style={{ cursor: "pointer", fontSize: "0.8em" }}
-            onClick={() => onChange(value)}
-        >{label}{item_icon && <ItemIcon item={item_icon} size={32} />}</div>;
-    })
-
-    return <div className="d-flex">{option_doms}</div>;
 }
 
 export function ProNumSelect({ choice, onChange }) {

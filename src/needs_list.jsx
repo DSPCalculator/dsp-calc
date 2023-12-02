@@ -77,7 +77,7 @@ export function NeedsList({ needs_list, set_needs_list }) {
             </div>
 
             {Object.keys(needs_list).length == 0 ||
-                <div className="d-flex flex-wrap gap-4 row-gap-2 mt-3">
+                <div className="d-flex flex-wrap gap-4 row-gap-2 mt-2">
                     {needs_doms}
                     <button className="btn btn-outline-danger ms-2" onClick={() => set_needs_list({})}>清空所有需求</button>
                 </div>}

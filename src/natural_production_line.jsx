@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { GameInfoContext, UiSettingsContext, UiSettingsSetterContext } from './contexts.jsx';
 import { FactorySelect, ProModeSelect, ProNumSelect, RecipeSelect } from './result.jsx';
+import { ItemSelect } from './item_select.jsx';
 
 
 // { "目标物品": "氢", "建筑数量": 0, "配方id": 1, "喷涂点数": 0, "增产模式": 0, "建筑": 0 }
@@ -11,7 +12,7 @@ function NplRow({ row, set_row, remove_row }) {
 
     function set_row_prop(prop, is_number) {
         return function (e_or_value) {
-            // Both an event [e] or a raw [value] are supported
+            // Either an event [e] or a raw [value] is supported
             let value = e_or_value.target ? e_or_value.target.value : e_or_value;
             let row_new = structuredClone(row);
             row_new[prop] = is_number ? (Number(value) || 1) : value;
@@ -25,7 +26,7 @@ function NplRow({ row, set_row, remove_row }) {
 
     return <tr>
         {/* 目标物品 */}
-        <td><input list="item_list" value={item} onChange={set_row_prop("目标物品")} /></td>
+        <td><ItemSelect item={item} set_item={set_row_prop("目标物品")} /></td>
         {/* 建筑数量 */}
         <td><input size={4} value={row["建筑数量"]} onChange={set_row_prop("建筑数量", true)} /></td>
         {/* 所选配方 */}
