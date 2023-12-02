@@ -202,7 +202,7 @@ export function Result({ needs_list }) {
 
         let from_side_products = Object.entries(side_products[i]).map(([from, amount]) =>
             // TODO apply [fixed_num]
-            <div key={from}>+{amount} (<ItemIcon item={from} size={26} />)</div>
+            <div key={from} className="text-nowrap">+{amount} (<ItemIcon item={from} size={26} />)</div>
         );
 
         function change_recipe(value) {
@@ -252,7 +252,7 @@ export function Result({ needs_list }) {
             </td>
             {/* 目标物品 */}
             <td><div className="d-flex align-items-center text-nowrap">
-                <ItemIcon item={i} />
+                <ItemIcon item={i} tooltip={false} />
                 <small className="ms-1">{i}</small>
             </div></td>
             {/* 分钟毛产出 */}
@@ -261,12 +261,14 @@ export function Result({ needs_list }) {
                 {from_side_products}
             </td>
             {/* 所需工厂*数目 */}
-            <td>
+            <td className="text-nowrap">
                 {is_mineralized ||
-                    <span style={{ lineHeight: "30px" }}>
+                    <>
                         <ItemIcon item={factory_name} size={30} />
-                        {" " + factory_number}
-                    </span>
+                        <span style={{ lineHeight: "30px" }}>
+                            {" " + factory_number}
+                        </span>
+                    </>
                 }
             </td>
             {/* 所选配方 */}
@@ -316,9 +318,12 @@ export function Result({ needs_list }) {
     let surplus_rows = Object.entries(lp_surplus_list).map(([item, quant]) =>
         (<tr key={item}><td><ItemIcon item={item} /></td><td>{quant}</td></tr>));
 
-    return <div className="m-3">
+    return <div className="my-3">
         {mineralize_doms.length > 0 &&
-            <div className="d-flex align-items-center rounded-2 px-3 py-1 border-primary border border-primary">原矿化列表：{mineralize_doms}</div>}
+            <div class="alert alert-secondary border-success py-1">
+                <div className="d-flex align-items-center">原矿化：{mineralize_doms}</div>
+            </div>
+        }
         <table className="table table-sm align-middle mt-3">
             <thead>
                 <tr className="text-center">

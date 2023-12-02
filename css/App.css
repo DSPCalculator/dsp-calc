@@ -21,3 +21,47 @@
     color: white !important;
 }
 
+.w-fit {
+    width: fit-content;
+}
+
+.mw-fit {
+    max-width: fit-content;
+}
+
+.modal.fade .modal-dialog {
+    -webkit-transition: -webkit-transform 0.1s ease-out;
+    -moz-transition: -moz-transform 0.1s ease-out;
+    -ms-transition: -ms-transform 0.1s ease-out;
+    -o-transition: -o-transform 0.1s ease-out;
+    transition: transform 0.1s ease-out;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.hover-bg-opacity-50:hover {
+    --bs-bg-opacity: 0.5;
+}
+
+.hover-bg-opacity-50 {
+    transition: 0.05s linear all;
+}
+
+.fast-tooltip {
+    position: relative;
+}
+
+.fast-tooltip:hover::after {
+    z-index: 10000;
+    position: absolute;
+    display: block;
+    content: attr(data-tooltip);
+    top: 110%;
+    left: 62%;
+    width: max-content;
+    background-color: #333;
+    color: white;
+    padding: .15em .4em;
+}

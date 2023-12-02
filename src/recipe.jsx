@@ -1,12 +1,21 @@
 import React, { useContext } from 'react';
 import { GlobalStateContext } from './contexts';
 
-export function ItemIcon({ item, size }) {
+export function ItemIcon({ item, size, tooltip }) {
     const global_state = useContext(GlobalStateContext);
     size = size || 40;
 
-    return <img src={`./image/${global_state.game_name}/${item}.png`}
-        title={item} style={{ width: size, height: size, verticalAlign: 'bottom' }} />;
+    let img =
+        <img src={`./image/${global_state.game_name}/${item}.png`}
+            style={{ width: size, height: size, verticalAlign: 'bottom' }} />;
+
+    tooltip = tooltip === undefined ? true : tooltip;
+    if (tooltip) {
+        let fontSize = Math.min(size / 2, 16);
+        return <span data-tooltip={item} className="fast-tooltip" style={{ fontSize: fontSize }}>{img}</span>;
+    } else {
+        return img;
+    }
 }
 
 export function Recipe({ recipe }) {

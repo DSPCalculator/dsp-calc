@@ -1,9 +1,10 @@
 import structuredClone from '@ungap/structured-clone';
 import { useContext, useEffect, useRef, useState } from 'react';
+import { Trash } from 'react-bootstrap-icons';
 import Select from 'react-select';
 import { GameInfoContext, GlobalStateContext } from './contexts';
+import { ItemSelect } from './item_select';
 import { ItemIcon } from './recipe';
-import { Trash } from 'react-bootstrap-icons';
 
 function get_item_data(game_data) {
     //通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，键值为
@@ -26,13 +27,10 @@ export function NeedsList({ needs_list, set_needs_list }) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
 
-    const item_ref = useRef(null);
+    const [item, set_item] = useState("宇宙矩阵");
     const count_ref = useRef(60);
 
     let item_data = get_item_data(game_data);
-    let item_options = Object.keys(item_data).map(item =>
-        <option key={item} value={item} />
-    );
 
     let needs_doms = Object.entries(needs_list).map(([item, count]) => {
         function edit_count(e) {
@@ -46,16 +44,18 @@ export function NeedsList({ needs_list, set_needs_list }) {
             set_needs_list(new_needs_list);
         }
 
-        return <div key={item} className="input-group" style={{ width: 'fit-content' }}>
-            <span className="input-group-text"><ItemIcon item={item} size={24} /><small className="ms-1">{item}</small></span>
-            <input type="text" className="form-control" style={{ width: "6em" }} value={count} onChange={edit_count} />
-            <span class="input-group-text">/min</span>
-            <button class="btn btn-outline-danger" onClick={remove}><Trash /></button>
+        return <div className="d-inline-flex align-items-center">
+            <ItemIcon item={item} />
+            <span class="ms-1 me-2">x</span>
+            <div key={item} className="input-group w-fit d-inline-flex">
+                <input type="text" className="form-control" style={{ width: "6em" }} value={count} onChange={edit_count} />
+                <span class="input-group-text">/min</span>
+                <button class="btn btn-outline-danger" onClick={remove}>删除 <Trash /></button>
+            </div>
         </div>
     });
 
-    function add_need() {
-        let item = item_ref.current.value;
+    function add_need(item) {
         if (!(item in item_data)) {
             alert("请输入或选择正确的物品名字！");
             return;
@@ -67,15 +67,21 @@ export function NeedsList({ needs_list, set_needs_list }) {
     }
 
     return <>
-        <span>
-            物品: <datalist id="needs_list_item_datalist">{item_options}</datalist>
-            <input list="needs_list_item_datalist" defaultValue="粒子宽带" size="5" ref={item_ref} placeholder="请输入搜索需要的物品"></input>
-            产能: <input ref={count_ref} defaultValue={60} />
-            <button onClick={add_need}>添加需求</button>
+        <div class="alert alert-light py-2">
+            增加需求：
+            <div key={item} className="input-group w-fit d-inline-flex">
+                <input type="text" className="form-control" style={{ width: "6em" }} ref={count_ref} defaultValue={60} />
+                <span class="input-group-text">/min</span>
+                <ItemSelect item={item} set_item={item => { set_item(item); add_need(item); }} />
+                <button class="btn btn-outline-primary" onClick={() => add_need(item)}>增加</button>
+            </div>
+
             {Object.keys(needs_list).length == 0 ||
-                <div className='m-1'><button onClick={() => set_needs_list({})}>清空所有需求</button></div>}
-            <div className="d-flex flex-wrap gap-4 row-gap-2">{needs_doms}</div>
-        </span>
+                <div className="d-flex flex-wrap gap-4 row-gap-2 mt-3">
+                    {needs_doms}
+                    <button className="btn btn-outline-danger ms-2" onClick={() => set_needs_list({})}>清空所有需求</button>
+                </div>}
+        </div>
     </>;
 }
 
