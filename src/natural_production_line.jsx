@@ -10,9 +10,11 @@ function NplRow({ row, set_row, remove_row }) {
     const game_info = useContext(GameInfoContext);
 
     function set_row_prop(prop, is_number) {
-        return function (e) {
+        return function (e_or_value) {
+            // Both an event [e] or a raw [value] are supported
+            let value = e_or_value.target ? e_or_value.target.value : e_or_value;
             let row_new = structuredClone(row);
-            row_new[prop] = is_number ? (Number(e.target.value) || 1) : e.target.value;
+            row_new[prop] = is_number ? (Number(value) || 1) : value;
             set_row(row_new);
         }
     }

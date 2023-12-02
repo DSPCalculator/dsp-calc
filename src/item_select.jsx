@@ -5,7 +5,7 @@ import { ItemIcon } from './recipe.jsx';
 
 function ItemSelectPanel({ onSelect }) {
   const doms = icon_layout.map((row, i) => {
-    if (row.length == 0) return <div className="m-1"></div>;
+    if (row.length == 0) return <div key={i} className="m-1"></div>;
     let doms = row.map((r, i) => {
       // TODO is_ore
       let [is_ore, item] =
@@ -45,7 +45,7 @@ export function ItemSelect({ item, set_item }) {
       <span className="ms-1">{item}</span>
     </button>
 
-    <div ref={ref} className="modal" tabindex="-1">
+    <div ref={ref} className="modal" tabIndex="-1">
       <div className="modal-dialog mw-fit">
         <div className="modal-content">
           <ItemSelectPanel onSelect={item => {

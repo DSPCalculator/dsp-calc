@@ -320,7 +320,7 @@ export function Result({ needs_list }) {
 
     return <div className="my-3">
         {mineralize_doms.length > 0 &&
-            <div class="alert alert-secondary border-success py-1">
+            <div className="alert alert-secondary border-success py-1">
                 <div className="d-flex align-items-center">原矿化：{mineralize_doms}</div>
             </div>
         }

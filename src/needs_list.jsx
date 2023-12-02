@@ -44,13 +44,13 @@ export function NeedsList({ needs_list, set_needs_list }) {
             set_needs_list(new_needs_list);
         }
 
-        return <div className="d-inline-flex align-items-center">
+        return <div key={item} className="d-inline-flex align-items-center">
             <ItemIcon item={item} />
-            <span class="ms-1 me-2">x</span>
+            <span className="ms-1 me-2">x</span>
             <div key={item} className="input-group w-fit d-inline-flex">
                 <input type="text" className="form-control" style={{ width: "6em" }} value={count} onChange={edit_count} />
-                <span class="input-group-text">/min</span>
-                <button class="btn btn-outline-danger" onClick={remove}>删除 <Trash /></button>
+                <span className="input-group-text">/min</span>
+                <button className="btn btn-outline-danger" onClick={remove}>删除 <Trash /></button>
             </div>
         </div>
     });
@@ -67,13 +67,13 @@ export function NeedsList({ needs_list, set_needs_list }) {
     }
 
     return <>
-        <div class="alert alert-light py-2">
+        <div className="alert alert-light py-2">
             增加需求：
             <div key={item} className="input-group w-fit d-inline-flex">
                 <input type="text" className="form-control" style={{ width: "6em" }} ref={count_ref} defaultValue={60} />
-                <span class="input-group-text">/min</span>
+                <span className="input-group-text">/min</span>
                 <ItemSelect item={item} set_item={item => { set_item(item); add_need(item); }} />
-                <button class="btn btn-outline-primary" onClick={() => add_need(item)}>增加</button>
+                <button className="btn btn-outline-primary" onClick={() => add_need(item)}>增加</button>
             </div>
 
             {Object.keys(needs_list).length == 0 ||
