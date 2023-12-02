@@ -40,11 +40,12 @@ export function Recipe({ recipe }) {
     </span>;
 }
 
-export function HorizontalMultiButtonSelect({ choice, options, onChange }) {
+export function HorizontalMultiButtonSelect({ choice, options, onChange, no_gap }) {
     let option_doms = options.map(({ value, label, item_icon }) => {
         let selected_class = choice == value ? "bg-selected" : "bg-unselected";
+        let gap_class = no_gap ? "border-between border-white" : "me-1";
         return <div key={value}
-            className={`me-1 py-1 px-2 text-nowrap d-flex align-items-center gap-1 ${selected_class}`}
+            className={`py-1 px-2 text-nowrap d-flex align-items-center gap-1 ${selected_class} ${gap_class}`}
             style={{ cursor: "pointer", fontSize: "0.8em" }}
             onClick={() => onChange(value)}
         >{item_icon && <ItemIcon item={item_icon} size={32} />}{label}</div>;

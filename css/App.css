@@ -18,6 +18,10 @@
     color: white !important;
 }
 
+.bg-unselected:hover {
+    background-color: #CCC !important;
+}
+
 .w-fit {
     width: fit-content;
 }
@@ -61,4 +65,12 @@
     background-color: #333;
     color: white;
     padding: .15em .4em;
+}
+
+.border-between {
+    border-left: solid 1px;
+}
+
+.border-between:first-child {
+    border-left: none;
 }

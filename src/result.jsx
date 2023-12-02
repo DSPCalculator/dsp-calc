@@ -32,9 +32,9 @@ export function RecipeSelect({ item, choice, onChange }) {
 
 export const pro_num_text = {
     [0]: "(无)",
-    [1]: "Mk.Ⅰ",
-    [2]: "Mk.Ⅱ",
-    [4]: "Mk.Ⅲ",
+    [1]: "MK.Ⅰ",
+    [2]: "MK.Ⅱ",
+    [4]: "MK.Ⅲ",
 }
 
 export function ProNumSelect({ choice, onChange }) {
