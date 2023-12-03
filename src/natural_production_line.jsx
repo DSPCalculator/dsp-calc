@@ -15,9 +15,20 @@ function NplRow({ row, set_row, remove_row }) {
             // Either an event [e] or a raw [value] is supported
             let value = e_or_value.target ? e_or_value.target.value : e_or_value;
             let row_new = structuredClone(row);
-            row_new[prop] = is_number ? (Number(value) || 1) : value;
+            if (is_number) {
+                row_new[prop] = Number(value) || 0;
+            } else {
+                row_new[prop] = value;
+            }
             set_row(row_new);
         }
+    }
+
+    function set_item(item) {
+        let row_new = structuredClone(row);
+        row_new["目标物品"] = item;
+        row_new["配方id"] = 0;
+        set_row(row_new);
     }
 
     console.log("NplRow", row);
@@ -26,7 +37,7 @@ function NplRow({ row, set_row, remove_row }) {
 
     return <tr>
         {/* 目标物品 */}
-        <td><ItemSelect item={item} set_item={set_row_prop("目标物品")} /></td>
+        <td><ItemSelect item={item} set_item={set_item} /></td>
         {/* 建筑数量 */}
         <td><input size={4} value={row["建筑数量"]} onChange={set_row_prop("建筑数量", true)} /></td>
         {/* 所选配方 */}

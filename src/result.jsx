@@ -77,8 +77,8 @@ export function FactorySelect({ recipe_id, choice, onChange }) {
     let factory_kind = game_data.recipe_data[recipe_id]["设施"];
     let factory_list = game_data.factory_data[factory_kind];
 
-    let options = Object.entries(factory_list).map(([factory, factory_data]) => (
-        { value: factory, item_icon: factory_data["名称"] }
+    let options = factory_list.map((factory_data, idx) => (
+        { value: idx, item_icon: factory_data["名称"] }
     ));
 
     return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} />;

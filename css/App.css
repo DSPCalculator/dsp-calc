@@ -30,6 +30,10 @@
     max-width: fit-content;
 }
 
+.h-fit {
+    height: fit-content;
+}
+
 .modal.fade .modal-dialog {
     -webkit-transition: -webkit-transform 0.1s ease-out;
     -moz-transition: -moz-transform 0.1s ease-out;

@@ -32,7 +32,7 @@ function ItemSelectPanel({ onSelect }) {
   </div>;
 }
 
-export function ItemSelect({ item, set_item }) {
+export function ItemSelect({ item, set_item, text }) {
   const ref = useRef();
   const ref_modal = useRef();
 
@@ -41,10 +41,11 @@ export function ItemSelect({ item, set_item }) {
   }, [ref]);
 
   return <>
-    <button type="button" className="btn py-1 btn-outline-primary"
+    <button className="btn py-1 btn-outline-primary d-inline-flex align-items-center"
       onClick={() => ref_modal.current.show()}>
-      <ItemIcon item={item} size={24} tooltip={false} />
-      <span className="ms-1">{item}</span>
+      {item && <><ItemIcon item={item} size={24} tooltip={false} />
+        <span className="ms-1"></span></>}
+      <span>{item || text}</span>
     </button>
 
     <div ref={ref} className="modal" tabIndex="-1">
