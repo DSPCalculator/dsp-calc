@@ -46,6 +46,15 @@
     cursor: pointer;
 }
 
+.a-href {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.ssmall {
+    font-size: 0.8em;
+}
+
 .hover-bg-opacity-50:hover {
     --bs-bg-opacity: 0.5;
 }

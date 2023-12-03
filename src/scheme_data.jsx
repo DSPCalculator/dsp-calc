@@ -1,6 +1,5 @@
 import structuredClone from '@ungap/structured-clone';
 import { useContext, useState, useEffect } from 'react';
-import Select from 'react-select';
 import { GameInfoContext, GlobalStateContext, SchemeDataSetterContext } from './contexts.jsx';
 
 const DEFAULT_SCHEME_DATA = {

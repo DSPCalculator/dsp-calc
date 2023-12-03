@@ -1,8 +1,7 @@
 import structuredClone from '@ungap/structured-clone';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Trash } from 'react-bootstrap-icons';
-import Select from 'react-select';
-import { GameInfoContext, GlobalStateContext } from './contexts';
+import { GameInfoContext, GlobalStateContext, UiSettingsContext, UiSettingsSetterContext } from './contexts';
 import { ItemSelect } from './item_select';
 import { ItemIcon } from './recipe';
 
@@ -25,6 +24,8 @@ function get_item_data(game_data) {
 
 export function NeedsList({ needs_list, set_needs_list }) {
     const global_state = useContext(GlobalStateContext);
+    const ui_settings = useContext(UiSettingsContext);
+    const set_ui_settings = useContext(UiSettingsSetterContext);
     const count_ref = useRef(60);
 
     let game_data = global_state.game_data;
@@ -47,7 +48,6 @@ export function NeedsList({ needs_list, set_needs_list }) {
             <span className="ms-1 me-2">x</span>
             <div key={item} className="input-group input-group-sm w-fit d-inline-flex">
                 <input type="text" className="form-control" style={{ width: "6em" }} value={count} onChange={edit_count} />
-                <span className="input-group-text">/min</span>
                 <button className="btn btn-outline-danger d-inline-flex align-items-center" onClick={remove}>
                     <Trash />
                 </button>
@@ -66,6 +66,15 @@ export function NeedsList({ needs_list, set_needs_list }) {
         set_needs_list(new_needs_list);
     }
 
+    function add_npl(item) {
+        let new_npl = structuredClone(ui_settings.natural_production_line);
+        new_npl.push({
+            "目标物品": item,
+            "建筑数量": 10, "配方id": 1, "喷涂点数": 0, "增产模式": 0, "建筑": 0
+        });
+        set_ui_settings("natural_production_line", new_npl);
+    }
+
     return <>
         <div className="alert alert-light py-2">
             增加需求：
@@ -76,8 +85,13 @@ export function NeedsList({ needs_list, set_needs_list }) {
                 <button className="btn btn-sm btn-outline-danger" onClick={() => set_needs_list({})}>清空所有需求</button>
             </div>
 
+            <span className="ms-5">
+                <ItemSelect text="增加固有产线" set_item={add_npl} btn_class="btn-outline-info text-body border-2" />
+            </span>
+
             {Object.keys(needs_list).length == 0 ||
                 <div className="d-flex flex-wrap gap-4 row-gap-2 align-items-center mt-2">
+                    <span>需求</span>
                     {needs_doms}
                 </div>}
         </div>

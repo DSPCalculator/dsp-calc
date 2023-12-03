@@ -32,7 +32,7 @@ function ItemSelectPanel({ onSelect }) {
   </div>;
 }
 
-export function ItemSelect({ item, set_item, text }) {
+export function ItemSelect({ item, set_item, text, btn_class }) {
   const ref = useRef();
   const ref_modal = useRef();
 
@@ -40,12 +40,14 @@ export function ItemSelect({ item, set_item, text }) {
     ref_modal.current = new Modal(ref.current);
   }, [ref]);
 
+  btn_class = btn_class || "btn-outline-primary";
+
   return <>
-    <button className="btn py-1 btn-outline-primary d-inline-flex align-items-center"
+    <button className={`btn py-1 px-2 ${btn_class} d-inline-flex align-items-center`}
       onClick={() => ref_modal.current.show()}>
       {item && <><ItemIcon item={item} size={24} tooltip={false} />
         <span className="ms-1"></span></>}
-      <span>{item || text}</span>
+      <small className="text-nowrap">{item || text}</small>
     </button>
 
     <div ref={ref} className="modal" tabIndex="-1">

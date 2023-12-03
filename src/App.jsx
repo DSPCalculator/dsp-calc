@@ -1,8 +1,6 @@
 import { useContext, useEffect, useId, useState } from 'react';
-import Select from 'react-select';
 import { BatchSetting } from './batch_setting.jsx';
 import { ContextProvider, GameInfoContext, GameInfoSetterContext, SchemeDataSetterContext } from './contexts.jsx';
-import { NaturalProductionLine } from './natural_production_line.jsx';
 import { NeedsList, NeedsListStorage } from './needs_list.jsx';
 import { Result } from './result.jsx';
 import { FractionatingSetting, MiningSettings, SchemeStorage, init_scheme_data } from './scheme_data.jsx';
@@ -95,7 +93,6 @@ function AppWithContexts() {
     </div>
     <MiscCollapse show={misc_show} />
     <div>
-      <NaturalProductionLine />
       <BatchSetting />
 
       <NeedsList needs_list={needs_list} set_needs_list={set_needs_list} />

@@ -1,4 +1,3 @@
-import Select from 'react-select';
 import { useContext, useState } from 'react';
 import structuredClone from '@ungap/structured-clone';
 import { GlobalStateContext, SchemeDataSetterContext } from './contexts';
@@ -110,7 +109,7 @@ export function BatchSetting() {
 
     return <fieldset>
         <legend><small>批量预设</small></legend>
-        <div className="d-flex column-gap-3 row-gap-2">
+        <div className="d-flex flex-wrap column-gap-3 row-gap-2">
             {factory_doms}
             <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
                 onChange={change_pro_num} no_gap={true} />

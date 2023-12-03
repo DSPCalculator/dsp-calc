@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
 import { ItemIcon, Recipe, HorizontalMultiButtonSelect } from './recipe';
+import { NplRows } from './natural_production_line';
 
 export function RecipeSelect({ item, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
@@ -70,7 +71,7 @@ export function ProModeSelect({ recipe_id, choice, onChange }) {
     return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} />;
 }
 
-export function FactorySelect({ recipe_id, choice, onChange }) {
+export function FactorySelect({ recipe_id, choice, onChange, no_gap }) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
 
@@ -81,7 +82,7 @@ export function FactorySelect({ recipe_id, choice, onChange }) {
         { value: idx, item_icon: factory_data["名称"] }
     ));
 
-    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} />;
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} no_gap={no_gap} />;
 }
 
 export function Result({ needs_list }) {
@@ -174,7 +175,7 @@ export function Result({ needs_list }) {
     }
 
     let mineralize_doms = Object.keys(mineralize_list).map(item => (
-        <a key={item} className="m-1" style={{ cursor: "pointer" }} onClick={() => unmineralize(item)}><ItemIcon item={item} /></a>
+        <a key={item} className="m-1 cursor-pointer" onClick={() => unmineralize(item)}><ItemIcon item={item} /></a>
     ));
 
     let result_table_rows = [];
@@ -232,8 +233,8 @@ export function Result({ needs_list }) {
             {/* 操作 */}
             <td>
                 {is_mineralized ?
-                    <sub>(原矿化)</sub> :
-                    <sub><a className="text-primary text-nowrap" style={{ cursor: "pointer", textDecoration: "underline" }} onClick={() => mineralize(i)}>视为原矿</a></sub>
+                    <span className="ssmall">(原矿化)</span> :
+                    <a className="text-primary text-nowrap a-href ssmall" onClick={() => mineralize(i)}>视为原矿</a>
                 }
             </td>
             {/* 目标物品 */}
@@ -306,9 +307,10 @@ export function Result({ needs_list }) {
 
     return <div className="my-3">
         {mineralize_doms.length > 0 &&
-            <div className="alert alert-secondary border-success py-1">
-                <div className="d-flex align-items-center">原矿化：{mineralize_doms}</div>
-            </div>
+            <fieldset>
+                <legend><small>原矿化列表</small></legend>
+                {mineralize_doms}
+            </fieldset>
         }
         <table className="table table-sm align-middle mt-3">
             <thead>
@@ -319,11 +321,14 @@ export function Result({ needs_list }) {
                     <th width={110}>工厂</th>
                     <th width={300}>配方选取</th>
                     <th>喷涂点数</th>
-                    <th>增产模式选择</th>
-                    <th>工厂类型选择</th>
+                    <th>增产模式</th>
+                    <th>工厂类型</th>
                 </tr>
             </thead>
-            <tbody className="table-group-divider">{result_table_rows}</tbody>
+            <tbody className="table-group-divider">
+                <NplRows />
+                {result_table_rows}
+            </tbody>
         </table>
         <p>多余产物：</p>
         <div><table>
