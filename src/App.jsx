@@ -87,10 +87,10 @@ function AppWithContexts() {
       <GameVersion />
       <SchemeStorage />
       <NeedsListStorage needs_list={needs_list} set_needs_list={set_needs_list} />
-      <button onClick={clearData}>清空数据缓存</button>
+      <button className="btn btn-outline-danger btn-sm" onClick={clearData}>清空数据缓存</button>
 
-      <button className="btn btn-primary btn-sm" onClick={() => set_misc_show(s => !s)}>
-        其他设置
+      <button className="btn btn-outline-primary btn-sm" onClick={() => set_misc_show(s => !s)}>
+        采矿参数 & 其他设置
       </button>
     </div>
     <MiscCollapse show={misc_show} />
@@ -101,8 +101,6 @@ function AppWithContexts() {
       <NeedsList needs_list={needs_list} set_needs_list={set_needs_list} />
       <Result needs_list={needs_list} />
     </div>
-    <div id="result_debug"></div>
-    <div className='m-4'>===============</div>
   </>;
 }
 
