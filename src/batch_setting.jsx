@@ -5,7 +5,7 @@ import { GlobalStateContext, SchemeDataSetterContext } from './contexts';
 import { HorizontalMultiButtonSelect } from './recipe.jsx';
 // TODO refactor to some other modules
 export const pro_num_item = {
-    [0]: { label: "(无)", item_icon: "喷涂机" },
+    [0]: { label: "无喷涂", item_icon: null },
     [1]: { label: "MK.Ⅰ", item_icon: "增产剂MK.Ⅰ" },
     [2]: { label: "MK.Ⅱ", item_icon: "增产剂MK.Ⅱ" },
     [4]: { label: "MK.Ⅲ", item_icon: "增产剂MK.Ⅲ" },
