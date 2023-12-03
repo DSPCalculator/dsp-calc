@@ -28,7 +28,7 @@ function NplRow({ row, set_row, remove_row }) {
     function set_item(item) {
         let row_new = structuredClone(row);
         row_new["目标物品"] = item;
-        row_new["配方id"] = 0;
+        row_new["配方id"] = 1;
         set_row(row_new);
     }
 
@@ -50,13 +50,13 @@ function NplRow({ row, set_row, remove_row }) {
                 {/* 建筑数量 */}
                 <AutoSizedInput value={row["建筑数量"]} onChange={set_row_prop("建筑数量", true)} />
             </div>
-        </td >
+        </td>
         {/* 所选配方 */}
-        < td > <RecipeSelect item={item} choice={row["配方id"]} onChange={set_row_prop("配方id", true)} /></td >
+        <td><RecipeSelect item={item} choice={row["配方id"]} onChange={set_row_prop("配方id", true)} /></td>
         {/* 所选增产剂 */}
-        < td > <ProNumSelect choice={row["喷涂点数"]} onChange={set_row_prop("喷涂点数", true)} /></td >
+        <td><ProNumSelect choice={row["喷涂点数"]} onChange={set_row_prop("喷涂点数", true)} /></td>
         {/* 所选增产模式 */}
-        < td > <ProModeSelect recipe_id={recipe_id} choice={row["增产模式"]} onChange={set_row_prop("增产模式", true)} /></td >
+        <td><ProModeSelect recipe_id={recipe_id} choice={row["增产模式"]} onChange={set_row_prop("增产模式", true)} /></td>
         <td></td>
     </tr >;
 }

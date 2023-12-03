@@ -20,8 +20,7 @@ export function RecipeSelect({ item, choice, onChange }) {
         } else {
             let bg_class = (i == choice) ? "selected" : "";
             doms.push(<a key={i}
-                style={{ cursor: 'pointer' }}
-                className={`recipe-item px-2 py-1 d-block text-decoration-none text-reset ${bg_class}`}
+                className={`recipe-item px-2 py-1 d-block text-decoration-none text-reset cursor-pointer ${bg_class}`}
                 onClick={() => onChange(i)}>
                 <Recipe recipe={recipe} />
             </a>);
