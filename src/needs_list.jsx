@@ -94,8 +94,6 @@ export function NeedsListStorage({ needs_list, set_needs_list }) {
     const all_saved = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
     const [all_scheme, set_all_scheme] = useState(all_saved[game_name] || {});
     // TODO implement 实时保存
-    const NULL_SELECTION = { value: null, label: "（无）" };
-    const [current_selection, set_current_selection] = useState(NULL_SELECTION);
 
     useEffect(() => {
         let game_name = game_info.name;
@@ -103,7 +101,6 @@ export function NeedsListStorage({ needs_list, set_needs_list }) {
         let all_scheme_init = all_scheme_data[game_name] || {};
         console.log("Loading storage", game_name, Object.keys(all_scheme_init));
         set_all_scheme(all_scheme_init);
-        set_current_selection(NULL_SELECTION);
     }, [game_info]);
 
     useEffect(() => {
@@ -112,9 +109,7 @@ export function NeedsListStorage({ needs_list, set_needs_list }) {
         localStorage.setItem(NEEDS_LIST_STORAGE_KEY, JSON.stringify(all_scheme_saved));
     }, [all_scheme])
 
-    function delete_() {
-        if (!current_selection) return;
-        let name = current_selection.value;
+    function delete_(name) {
         if (name in all_scheme) {
             if (!confirm(`即将删除名为${name}的需求列表，是否继续`)) {
                 return;// 用户取消保存
@@ -122,13 +117,10 @@ export function NeedsListStorage({ needs_list, set_needs_list }) {
             let all_scheme_copy = structuredClone(all_scheme);
             delete all_scheme_copy[name];
             set_all_scheme(all_scheme_copy);
-            set_current_selection(NULL_SELECTION);
         }
     }//删除当前保存的策略
 
-    function load() {
-        if (!current_selection) return;
-        let name = current_selection.value;
+    function load(name) {
         if (all_scheme[name]) {
             set_needs_list(all_scheme[name]);
         } else {
@@ -147,19 +139,29 @@ export function NeedsListStorage({ needs_list, set_needs_list }) {
         let all_scheme_copy = structuredClone(all_scheme);
         all_scheme_copy[name] = structuredClone(needs_list);
         set_all_scheme(all_scheme_copy);
-        set_current_selection({ value: name, label: name });
     }//保存生产策略
 
-    let options = Object.keys(all_scheme).map(scheme_name =>
-        ({ value: scheme_name, label: scheme_name }));
+    let dd_load_list = Object.keys(all_scheme).map(scheme_name => (
+        <li key={scheme_name}>
+            <a className="dropdown-item cursor-pointer"
+                onClick={() => load(scheme_name)}>{scheme_name}</a>
+        </li>));
 
-    return <><div>
-        <button onClick={save}>保存需求列表为</button>
-        <div style={{ display: "inline-flex" }}>
-            <Select value={current_selection} onChange={set_current_selection} options={options} isSearchable={false} />
+    let dd_delete_list = Object.keys(all_scheme).map(scheme_name => (
+        <li key={scheme_name}>
+            <a className="dropdown-item cursor-pointer"
+                onClick={() => delete_(scheme_name)}>{scheme_name}</a>
+        </li>));
+
+    return <div className="d-flex gap-2 align-items-center">
+        <div className="text-nowrap">需求列表</div>
+        <div className="input-group input-group-sm">
+            <button className="btn btn-outline-secondary" type="button" onClick={save}>保存</button>
+            <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">加载</button>
+            <ul className="dropdown-menu">{dd_load_list}</ul>
+            <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">删除</button>
+            <ul className="dropdown-menu">{dd_delete_list}</ul>
         </div>
-        <button onClick={load}>加载需求列表</button>
-        <button onClick={delete_}>删除需求列表</button>
-    </div ></>;
+    </div >;
 }
 

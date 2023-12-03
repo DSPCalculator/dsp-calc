@@ -74,3 +74,8 @@
 .border-between:first-child {
     border-left: none;
 }
+
+fieldset,
+legend {
+    all: revert;
+}

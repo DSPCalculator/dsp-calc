@@ -25,11 +25,30 @@ export function UiSettings() {
         set_ui_settings("proliferate_itself", !proliferate_itself);
     }
 
-    return <span>
-        <span>单位：{is_min ? "个/min" : "个/sec"}</span>
-        <button onClick={toggle_min_or_sec}>{is_min ? "转化为秒" : "转化为分"}</button>
-        <span>显示精度：</span><input type="number" value={ui_settings.fixed_num} onChange={change_fixed_num} style={{ maxWidth: '4em' }} />
-        <span>建筑层数（研究站）：</span><input value={research_stack_num} onChange={change_research_stack_num} size={4} />
-        <button onClick={toggle_proliferate_itself}>自喷涂？</button><span>{proliferate_itself ? "Yes!" : "No!"}</span>
-    </span>;
+    return <table><tbody>
+        <tr>
+            <td>单位{is_min ? "个/min" : "个/sec"}</td>
+            <td className="ps-2">
+                <button onClick={toggle_min_or_sec}>{is_min ? "转化为秒" : "转化为分"}</button>
+            </td>
+        </tr>
+        <tr>
+            <td>显示精度</td>
+            <td className="ps-2">
+                <input type="number" value={ui_settings.fixed_num}
+                    onChange={change_fixed_num} style={{ maxWidth: '5em' }} />
+            </td>
+        </tr>
+        <tr>
+            <td>研究站层数</td>
+            <td className="ps-2">
+                <input value={research_stack_num}
+                    onChange={change_research_stack_num} style={{ maxWidth: '5em' }} />
+            </td>
+        </tr>
+        <tr>
+            <td><button onClick={toggle_proliferate_itself}>自喷涂？</button></td>
+            <td className="ps-2">{proliferate_itself ? "Yes!" : "No!"}</td>
+        </tr>
+    </tbody></table>;
 }

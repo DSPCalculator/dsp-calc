@@ -39,17 +39,20 @@ export function MiningSettings() {
     let scheme_data = global_state.scheme_data;
 
     let doms = Object.entries(scheme_data.mining_rate).map(([key, value]) =>
-        <span key={key} className='me-2'>
-            {key}：<input type="number" style={{ maxWidth: '4em' }} value={value} onChange={
-                event => set_scheme_data(prev_scheme_data => ({
-                    ...prev_scheme_data,
-                    mining_rate: Object.assign(prev_scheme_data.mining_rate, {
-                        [key]: parseFloat(event.target.value) || 0
-                    })
-                }))} />
-        </span>
+        <tr key={key}>
+            <td className="text-nowrap">{key}</td>
+            <td className="ps-3">
+                <input type="number" style={{ maxWidth: '5em' }} value={value} onChange={
+                    event => set_scheme_data(prev_scheme_data => ({
+                        ...prev_scheme_data,
+                        mining_rate: Object.assign(prev_scheme_data.mining_rate, {
+                            [key]: parseFloat(event.target.value) || 0
+                        })
+                    }))} />
+            </td>
+        </tr>
     );
-    return <span>{doms}</span>;
+    return <table><tbody>{doms}</tbody></table>;
 }
 
 export function FractionatingSetting() {
@@ -138,8 +141,6 @@ export function SchemeStorage() {
     const all_saved = JSON.parse(localStorage.getItem("scheme_data")) || {};
     const [all_scheme, set_all_scheme] = useState(all_saved[game_name] || {});
     // TODO implement 实时保存
-    const NULL_SELECTION = { value: null, label: "（无）" };
-    const [current_selection, set_current_selection] = useState(NULL_SELECTION);
 
     useEffect(() => {
         let game_name = game_info.name;
@@ -147,7 +148,6 @@ export function SchemeStorage() {
         let all_scheme_init = all_scheme_data[game_name] || {};
         console.log("Loading storage", game_name, Object.keys(all_scheme_init));
         set_all_scheme(all_scheme_init);
-        set_current_selection(NULL_SELECTION);
     }, [game_info]);
 
     useEffect(() => {
@@ -156,9 +156,7 @@ export function SchemeStorage() {
         localStorage.setItem("scheme_data", JSON.stringify(all_scheme_saved));
     }, [all_scheme])
 
-    function delete_() {
-        if (!current_selection) return;
-        let name = current_selection.value;
+    function delete_(name) {
         if (name in all_scheme) {
             if (!confirm(`即将删除名为${name}的方案，是否继续`)) {
                 return;// 用户取消保存
@@ -166,13 +164,10 @@ export function SchemeStorage() {
             let all_scheme_copy = structuredClone(all_scheme);
             delete all_scheme_copy[name];
             set_all_scheme(all_scheme_copy);
-            set_current_selection(NULL_SELECTION);
         }
     }//删除当前保存的策略
 
-    function load() {
-        if (!current_selection) return;
-        let name = current_selection.value;
+    function load(name) {
         if (all_scheme[name]) {
             set_scheme_data(all_scheme[name]);
         } else {
@@ -191,18 +186,29 @@ export function SchemeStorage() {
         let all_scheme_copy = structuredClone(all_scheme);
         all_scheme_copy[name] = structuredClone(scheme_data);
         set_all_scheme(all_scheme_copy);
-        set_current_selection({ value: name, label: name });
     }//保存生产策略
 
-    let options = Object.keys(all_scheme).map(scheme_name =>
-        ({ value: scheme_name, label: scheme_name }));
+    let dd_load_list = Object.keys(all_scheme).map(scheme_name => (
+        <li key={scheme_name}>
+            <a className="dropdown-item cursor-pointer"
+                onClick={() => load(scheme_name)}>{scheme_name}</a>
+        </li>));
 
-    return <><div>
-        <button onClick={save}>保存生产策略为</button>
-        <div style={{ display: "inline-flex" }}>
-            <Select value={current_selection} onChange={set_current_selection} options={options} isSearchable={false} />
+    let dd_delete_list = Object.keys(all_scheme).map(scheme_name => (
+        <li key={scheme_name}>
+            <a className="dropdown-item cursor-pointer"
+                onClick={() => delete_(scheme_name)}>{scheme_name}</a>
+        </li>));
+
+    return <div className="d-flex gap-2 align-items-center">
+
+        <div className="text-nowrap">生产策略</div>
+        <div className="input-group input-group-sm">
+            <button className="btn btn-outline-secondary" type="button" onClick={save}>保存</button>
+            <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">加载</button>
+            <ul className="dropdown-menu">{dd_load_list}</ul>
+            <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">删除</button>
+            <ul className="dropdown-menu">{dd_delete_list}</ul>
         </div>
-        <button onClick={load}>加载生产策略</button>
-        <button onClick={delete_}>删除生产策略</button>
-    </div ></>;
+    </div >;
 }

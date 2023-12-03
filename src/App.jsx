@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useId, useState } from 'react';
 import Select from 'react-select';
 import { BatchSetting } from './batch_setting.jsx';
 import { ContextProvider, GameInfoContext, GameInfoSetterContext, SchemeDataSetterContext } from './contexts.jsx';
@@ -30,17 +30,31 @@ function GameVersion() {
   let game_ver_options =
     [{ value: "vanilla", label: "原版游戏" },
     { value: "GenesisBook", label: "创世之书" },
-    { value: "TheyComeFromVoid", label: "深空来敌" }];
+    { value: "TheyComeFromVoid", label: "深空来敌" }].map(({ value, label }) => (
+      <option key={value} value={value}>{label}</option>
+    ));
 
-  return <div>
-    <span>
-      游戏版本：
-      <div style={{ display: "inline-flex" }}>
-        <Select options={game_ver_options} defaultValue={game_ver_options[0]}
-          onChange={v => set_game_version(v.value)} isSearchable={false} />
-      </div>
-      <span>版本号：{game_info.game_data.Version}</span>
-    </span>
+  return <div className="d-flex gap-2 align-items-center">
+    <select className="form-select form-select-sm"
+      onChange={e => set_game_version(e.target.value)} defaultValue="vanilla">
+      {game_ver_options}
+    </select>
+    <div className="text-nowrap">{game_info.game_data.Version}</div>
+  </div>;
+}
+
+function MiscCollapse({ show }) {
+  let class_show = show ? "" : "d-none";
+  return <div className={`d-flex gap-3 ${class_show}`}>
+    <fieldset>
+      <legend><small>采矿参数</small></legend>
+      <MiningSettings />
+    </fieldset>
+    <fieldset>
+      <legend><small>其他设置</small></legend>
+      <UiSettings />
+      <FractionatingSetting />
+    </fieldset>
   </div>;
 }
 
@@ -52,6 +66,7 @@ function App() {
 
 function AppWithContexts() {
   const game_info = useContext(GameInfoContext);
+  const [misc_show, set_misc_show] = useState(false);
 
   const [needs_list, set_needs_list] = useState({});
 
@@ -68,21 +83,23 @@ function AppWithContexts() {
   }
 
   return <>
-    <GameVersion />
-    <div>
-      <UiSettings />
-      <div>采矿参数</div>
-      <MiningSettings />
+    <div className="d-flex column-gap-4 row-gap-2 flex-wrap">
+      <GameVersion />
       <SchemeStorage />
       <NeedsListStorage needs_list={needs_list} set_needs_list={set_needs_list} />
+      <button onClick={clearData}>清空数据缓存</button>
+
+      <button className="btn btn-primary btn-sm" onClick={() => set_misc_show(s => !s)}>
+        其他设置
+      </button>
+    </div>
+    <MiscCollapse show={misc_show} />
+    <div>
       <NaturalProductionLine />
-      <div><button onClick={clearData}>清空数据缓存</button></div>
-      <FractionatingSetting />
       <BatchSetting />
 
       <NeedsList needs_list={needs_list} set_needs_list={set_needs_list} />
       <Result needs_list={needs_list} />
-
     </div>
     <div id="result_debug"></div>
     <div className='m-4'>===============</div>
