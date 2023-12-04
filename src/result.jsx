@@ -320,7 +320,7 @@ export function Result({ needs_list }) {
         </tr>));
 
     let surplus_doms = Object.entries(lp_surplus_list).map(([item, quant]) =>
-        (<div key={item} className="text-nowrap"><ItemIcon item={item} /> x{quant}</div>));
+        (<div key={item} className="text-nowrap"><ItemIcon item={item} /> x{quant.toFixed(fixed_num)}</div>));
 
 
     function add_npl(item) {
