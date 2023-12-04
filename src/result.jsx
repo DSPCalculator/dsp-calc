@@ -180,6 +180,14 @@ export function Result({ needs_list }) {
         set_ui_settings("mineralize_list", new_mineralize_list);
     }
 
+    function clear_mineralize_list() {
+        for (let item in mineralize_list) {
+            // editing item_graph!
+            item_graph[item] = structuredClone(mineralize_list[item]);
+        }
+        set_ui_settings("mineralize_list", {});
+    }
+
     let mineralize_doms = Object.keys(mineralize_list).map(item => (
         <a key={item} className="m-1 cursor-pointer" onClick={() => unmineralize(item)}><ItemIcon item={item} /></a>
     ));
@@ -239,7 +247,7 @@ export function Result({ needs_list }) {
             {/* 操作 */}
             <td>
                 {is_mineralized ?
-                    <span className="ssmall">(原矿化)</span> :
+                    <a className="text-primary text-nowrap a-href ssmall" onClick={() => unmineralize(i)}>恢复</a> :
                     <a className="text-primary text-nowrap a-href ssmall" onClick={() => mineralize(i)}>视为原矿</a>
                 }
             </td>
@@ -327,7 +335,8 @@ export function Result({ needs_list }) {
     }
 
     return <div className="my-3 d-flex gap-5">
-        <table className="table table-sm align-middle mt-3 w-auto result-table">
+        {/* 结果表格 */}
+        <table className="table table-sm align-middle w-auto result-table">
             <thead>
                 <tr className="text-center">
                     <th width={80}>操作</th>
@@ -345,7 +354,8 @@ export function Result({ needs_list }) {
                 {result_table_rows}
             </tbody>
         </table>
-        <div className="sticky-top align-self-start d-flex flex-column gap-2">
+        {/* 结果右侧悬浮栏 */}
+        <div className="sticky-top mt-3 align-self-start d-flex flex-column gap-2">
             {result_table_rows.length > 0 &&
                 <span className="w-fit">
                     <ItemSelect text="← 增加固有产线" set_item={add_npl} btn_class="btn-outline-info text-body border-2" />
@@ -355,7 +365,11 @@ export function Result({ needs_list }) {
             {mineralize_doms.length > 0 &&
                 <fieldset className="w-fit">
                     <legend><small>原矿化列表</small></legend>
-                    {mineralize_doms}
+                    <div className="d-flex flex-wrap align-items-center">
+                        {mineralize_doms}
+                        <button className="ms-2 btn btn-sm btn-outline-danger text-nowrap"
+                            onClick={clear_mineralize_list}>清空</button>
+                    </div>
                 </fieldset>
             }
 
