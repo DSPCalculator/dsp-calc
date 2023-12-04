@@ -107,8 +107,7 @@ export function Result({ needs_list }) {
     let [result_dict, lp_surplus_list] = global_state.calculate(needs_list);
     console.log("lp_surplus_list", lp_surplus_list);
 
-    // TODO fixed_num
-    let fixed_num = 2;
+    let fixed_num = ui_settings.fixed_num;
     let energy_cost = 0, miner_energy_cost = 0;
     let building_list = {};
     function get_factory_number(amount, item) {
@@ -202,8 +201,7 @@ export function Result({ needs_list }) {
         let factory_number = get_factory_number(result_dict[i], i).toFixed(fixed_num);
 
         let from_side_products = Object.entries(side_products[i]).map(([from, amount]) =>
-            // TODO apply [fixed_num]
-            <div key={from} className="text-nowrap">+{amount} (<ItemIcon item={from} size={26} />)</div>
+            <div key={from} className="text-nowrap">+{amount.toFixed(fixed_num)} (<ItemIcon item={from} size={26} />)</div>
         );
 
         function change_recipe(value) {
