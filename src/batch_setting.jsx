@@ -107,14 +107,12 @@ export function BatchSetting() {
         promode_opt.item_icon = pro_mode == promode_opt.value ? current_pro_item : null;
     }
 
-    return <fieldset>
-        <legend><small>批量预设</small></legend>
-        <div className="d-flex flex-wrap column-gap-3 row-gap-2">
-            {factory_doms}
-            <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
-                onChange={change_pro_num} no_gap={true} />
-            <HorizontalMultiButtonSelect choice={pro_mode} options={promode_options}
-                onChange={change_pro_mode} no_gap={true} />
-        </div>
-    </fieldset>;
+    return <div className="mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center">
+        <small>批量预设</small>
+        {factory_doms}
+        <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
+            onChange={change_pro_num} no_gap={true} />
+        <HorizontalMultiButtonSelect choice={pro_mode} options={promode_options}
+            onChange={change_pro_mode} no_gap={true} />
+    </div>;
 }

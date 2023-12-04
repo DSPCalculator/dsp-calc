@@ -1,5 +1,6 @@
 import { Modal } from 'bootstrap';
 import { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { icon_layout } from '../data/icon_layout.jsx';
 import { ItemIcon } from './recipe.jsx';
 
@@ -50,15 +51,17 @@ export function ItemSelect({ item, set_item, text, btn_class }) {
       <small className="text-nowrap">{item || text}</small>
     </button>
 
-    <div ref={ref} className="modal" tabIndex="-1">
-      <div className="modal-dialog mw-fit">
-        <div className="modal-content">
-          <ItemSelectPanel onSelect={item => {
-            set_item(item);
-            ref_modal.current.hide();
-          }} />
+    {createPortal(
+      <div ref={ref} className="modal" tabIndex="-1">
+        <div className="modal-dialog mw-fit">
+          <div className="modal-content">
+            <ItemSelectPanel onSelect={item => {
+              set_item(item);
+              ref_modal.current.hide();
+            }} />
+          </div>
         </div>
       </div>
-    </div>
+      , document.body)}
   </>;
 }

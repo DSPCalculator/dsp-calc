@@ -93,9 +93,8 @@ function AppWithContexts() {
     </div>
     <MiscCollapse show={misc_show} />
     <div>
-      <BatchSetting />
-
       <NeedsList needs_list={needs_list} set_needs_list={set_needs_list} />
+      <BatchSetting />
       <Result needs_list={needs_list} />
     </div>
   </>;

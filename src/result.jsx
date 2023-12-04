@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { ItemIcon, Recipe, HorizontalMultiButtonSelect } from './recipe';
+import { ItemSelect } from './item_select';
 import { NplRows } from './natural_production_line';
+import { HorizontalMultiButtonSelect, ItemIcon, Recipe } from './recipe';
 
 export function RecipeSelect({ item, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
@@ -92,13 +93,14 @@ export function Result({ needs_list }) {
     // const [result_dict, set_result_dict] = useState(global_state.calculate());
     let game_data = global_state.game_data;
     let scheme_data = global_state.scheme_data;
+    let ui_settings = global_state.ui_settings;
     let item_data = global_state.item_data;
     let item_graph = global_state.item_graph;
-    let time_tick = global_state.ui_settings.is_time_unit_minute ? 60 : 1;
+    let time_tick = ui_settings.is_time_unit_minute ? 60 : 1;
 
     // TODO refactor to a simple list
-    let mineralize_list = global_state.ui_settings.mineralize_list;
-    let natural_production_line = global_state.ui_settings.natural_production_line;
+    let mineralize_list = ui_settings.mineralize_list;
+    let natural_production_line = ui_settings.natural_production_line;
     console.log("result natural_production_line", natural_production_line);
 
     console.log("CALCULATING");
@@ -302,71 +304,84 @@ export function Result({ needs_list }) {
         }
     }
 
-    let building_doms = Object.entries(building_list).map(([building, count]) => (
+    let building_rows = Object.entries(building_list).map(([building, count]) => (
         <tr key={building}>
-            <td className="d-flex align-items-center">
+            <td className="d-flex align-items-center text-nowrap">
                 <span className="ms-auto me-1">{building}</span>
                 <ItemIcon item={building} tooltip={false} />
             </td>
-            <td className="ps-2">x {count}</td>
+            <td className="ps-2 text-nowrap">x {count}</td>
         </tr>));
 
     let surplus_doms = Object.entries(lp_surplus_list).map(([item, quant]) =>
-        (<div className="text-nowrap"><ItemIcon item={item} /> x{quant}</div>));
+        (<div key={item} className="text-nowrap"><ItemIcon item={item} /> x{quant}</div>));
 
-    return <div className="my-3">
-        <div className="d-flex gap-5">
-            <table className="table table-sm align-middle mt-3 w-auto result-table">
-                <thead>
-                    <tr className="text-center">
-                        <th width={80}>操作</th>
-                        <th width={140}>物品</th>
-                        <th width={130}>产能</th>
-                        <th width={110}>工厂</th>
-                        <th width={300}>配方选取</th>
-                        <th width={210}>喷涂点数</th>
-                        <th width={140}>增产模式</th>
-                        <th width={170}>工厂类型</th>
-                    </tr>
-                </thead>
-                <tbody className="table-group-divider">
-                    <NplRows />
-                    {result_table_rows}
-                </tbody>
-            </table>
-            <div className="sticky-top align-self-start d-flex flex-column gap-2">
-                {mineralize_doms.length > 0 &&
+
+    function add_npl(item) {
+        let new_npl = structuredClone(natural_production_line);
+        new_npl.push({
+            "目标物品": item,
+            "建筑数量": 10, "配方id": 1, "喷涂点数": 0, "增产模式": 0, "建筑": 0
+        });
+        set_ui_settings("natural_production_line", new_npl);
+    }
+
+    return <div className="my-3 d-flex gap-5">
+        <table className="table table-sm align-middle mt-3 w-auto result-table">
+            <thead>
+                <tr className="text-center">
+                    <th width={80}>操作</th>
+                    <th width={140}>物品</th>
+                    <th width={130}>产能</th>
+                    <th width={110}>工厂</th>
+                    <th width={300}>配方选取</th>
+                    <th width={210}>喷涂点数</th>
+                    <th width={140}>增产模式</th>
+                    <th width={170}>工厂类型</th>
+                </tr>
+            </thead>
+            <tbody className="table-group-divider">
+                <NplRows />
+                {result_table_rows}
+            </tbody>
+        </table>
+        <div className="sticky-top align-self-start d-flex flex-column gap-2">
+            {result_table_rows.length > 0 &&
+                <span className="w-fit">
+                    <ItemSelect text="← 增加固有产线" set_item={add_npl} btn_class="btn-outline-info text-body border-2" />
+                </span>
+            }
+
+            {mineralize_doms.length > 0 &&
+                <fieldset className="w-fit">
+                    <legend><small>原矿化列表</small></legend>
+                    {mineralize_doms}
+                </fieldset>
+            }
+
+            {surplus_doms.length > 0 &&
+                <fieldset className="w-fit">
+                    <legend><small>多余产物</small></legend>
+                    {surplus_doms}
+                </fieldset>}
+
+            {building_rows.length > 0 &&
+                <>
                     <fieldset className="w-fit">
-                        <legend><small>原矿化列表</small></legend>
-                        {mineralize_doms}
+                        <legend><small>建筑统计</small></legend>
+                        <table><tbody>{building_rows}</tbody></table>
                     </fieldset>
-                }
-
-                {surplus_doms.length > 0 &&
-                    <fieldset className="w-fit">
-                        <legend><small>多余产物</small></legend>
-                        <table>{surplus_doms}</table>
-                    </fieldset>}
-
-                {building_doms.length > 0 &&
-                    <>
-                        <fieldset className="w-fit">
-                            <legend><small>建筑统计</small></legend>
-                            <table>{building_doms}</table>
-                        </fieldset>
-                        <span className="d-inline-flex gap-1">
-                            <span className="me-1">预估电力</span>
-                            <span className="fast-tooltip" data-tooltip="不包含采集设备">
-                                {energy_cost.toFixed(fixed_num)}
-                            </span>/
-                            <span className="fast-tooltip" data-tooltip="包含采集设备">
-                                {(energy_cost + miner_energy_cost).toFixed(fixed_num)}
-                            </span>
-                            MW
+                    <span className="d-inline-flex gap-1 text-nowrap">
+                        <span className="me-1">预估电力</span>
+                        <span className="fast-tooltip" data-tooltip="不包含采集设备">
+                            {energy_cost.toFixed(fixed_num)}
+                        </span>/
+                        <span className="fast-tooltip" data-tooltip="包含采集设备">
+                            {(energy_cost + miner_energy_cost).toFixed(fixed_num)}
                         </span>
-                    </>}
-            </div>
+                        MW
+                    </span>
+                </>}
         </div>
-
     </div>;
 }

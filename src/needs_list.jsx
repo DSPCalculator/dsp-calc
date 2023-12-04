@@ -24,8 +24,6 @@ function get_item_data(game_data) {
 
 export function NeedsList({ needs_list, set_needs_list }) {
     const global_state = useContext(GlobalStateContext);
-    const ui_settings = useContext(UiSettingsContext);
-    const set_ui_settings = useContext(UiSettingsSetterContext);
     const count_ref = useRef(60);
 
     let game_data = global_state.game_data;
@@ -66,32 +64,18 @@ export function NeedsList({ needs_list, set_needs_list }) {
         set_needs_list(new_needs_list);
     }
 
-    function add_npl(item) {
-        let new_npl = structuredClone(ui_settings.natural_production_line);
-        new_npl.push({
-            "目标物品": item,
-            "建筑数量": 10, "配方id": 1, "喷涂点数": 0, "增产模式": 0, "建筑": 0
-        });
-        set_ui_settings("natural_production_line", new_npl);
-    }
-
     return <>
-        <div className="alert alert-light py-2">
-            增加需求：
+        <div className="w-fit mt-3 d-flex align-items-center">
+            <small className="me-3">添加需求</small>
             <div className="input-group input-group-sm w-fit d-inline-flex">
                 <input type="text" className="form-control" style={{ width: "6em" }} ref={count_ref} defaultValue={60} />
                 <span className="input-group-text">/min</span>
                 <ItemSelect text="选择物品" set_item={add_need} />
-                <button className="btn btn-sm btn-outline-danger" onClick={() => set_needs_list({})}>清空所有需求</button>
+                <button className="btn btn-sm btn-outline-danger" onClick={() => set_needs_list({})}>清空需求</button>
             </div>
 
-            <span className="ms-5">
-                <ItemSelect text="增加固有产线" set_item={add_npl} btn_class="btn-outline-info text-body border-2" />
-            </span>
-
             {Object.keys(needs_list).length == 0 ||
-                <div className="d-flex flex-wrap gap-4 row-gap-2 align-items-center mt-2">
-                    <span>需求</span>
+                <div className="ms-5 d-inline-flex flex-wrap gap-4 row-gap-2 align-items-center">
                     {needs_doms}
                 </div>}
         </div>
