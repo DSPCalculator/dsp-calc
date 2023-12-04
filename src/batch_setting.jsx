@@ -108,7 +108,7 @@ export function BatchSetting() {
     }
 
     return <div className="mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center">
-        <small>批量预设</small>
+        <small className="fw-bold">批量预设</small>
         {factory_doms}
         <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
             onChange={change_pro_num} no_gap={true} />

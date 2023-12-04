@@ -10,15 +10,15 @@ export function RecipeSelect({ item, choice, onChange }) {
     let game_data = global_state.game_data;
     let item_data = global_state.item_data;
 
-    let doms = [];
-    for (let i = 1; i < item_data[item].length; i++) {
-        let recipe_index = item_data[item][i];
+    if (item_data[item].length == 2) {
+        let recipe_index = item_data[item][1];
         let recipe = game_data.recipe_data[recipe_index];
-        if (item_data[item].length == 2) {
-            // only one recipe
-            doms.push(<div key={i} className="my-1 px-2 py-1"
-                onClick={() => onChange(i)}> <Recipe recipe={recipe} /></div>);
-        } else {
+        return <div className="my-1 px-2 py-1"><Recipe recipe={recipe} /></div>
+    } else {
+        let doms = [];
+        for (let i = 1; i < item_data[item].length; i++) {
+            let recipe_index = item_data[item][i];
+            let recipe = game_data.recipe_data[recipe_index];
             let bg_class = (i == choice) ? "selected" : "";
             doms.push(<a key={i}
                 className={`recipe-item px-2 py-1 d-block text-decoration-none text-reset cursor-pointer ${bg_class}`}
@@ -26,9 +26,9 @@ export function RecipeSelect({ item, choice, onChange }) {
                 <Recipe recipe={recipe} />
             </a>);
         }
-    }
 
-    return <>{doms}</>;
+        return <div className="border-recipe-item">{doms}</div>;
+    }
 }
 
 export const pro_num_text = {

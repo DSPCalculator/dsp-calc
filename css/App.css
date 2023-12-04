@@ -13,6 +13,10 @@
     color: white !important;
 }
 
+.border-recipe-item {
+    border: 1px dashed #484 !important;
+}
+
 .bg-unselected {
     background-color: #AAA !important;
     color: white !important;

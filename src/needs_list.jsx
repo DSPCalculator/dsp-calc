@@ -64,12 +64,14 @@ export function NeedsList({ needs_list, set_needs_list }) {
         set_needs_list(new_needs_list);
     }
 
+    const is_min = global_state.ui_settings.is_time_unit_minute;
+
     return <>
         <div className="w-fit mt-3 d-flex align-items-center">
-            <small className="me-3">添加需求</small>
+            <small className="me-3 fw-bold">添加需求</small>
             <div className="input-group input-group-sm w-fit d-inline-flex">
                 <input type="text" className="form-control" style={{ width: "6em" }} ref={count_ref} defaultValue={60} />
-                <span className="input-group-text">/min</span>
+                <span className="input-group-text">/{is_min ? "min" : "sec"}</span>
                 <ItemSelect text="选择物品" set_item={add_need} />
                 <button className="btn btn-sm btn-outline-danger" onClick={() => set_needs_list({})}>清空需求</button>
             </div>
