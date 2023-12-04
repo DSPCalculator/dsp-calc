@@ -31,7 +31,7 @@ export function RecipeSelect({ item, choice, onChange }) {
 }
 
 export const pro_num_text = {
-    [0]: "(无)",
+    [0]: "无",
     [1]: "MK.Ⅰ",
     [2]: "MK.Ⅱ",
     [4]: "MK.Ⅲ",
@@ -51,11 +51,11 @@ export function ProNumSelect({ choice, onChange }) {
 }
 
 export const pro_mode_lists = {
-    [0]: { [0]: "(无)" },
-    [1]: { [0]: "(无)", [1]: "增产" },
-    [2]: { [0]: "(无)", [2]: "加速" },
-    [3]: { [0]: "(无)", [1]: "增产", [2]: "加速" },
-    [4]: { [0]: "(无)", [4]: "接收站透镜喷涂" },
+    [0]: { [0]: "无" },
+    [1]: { [0]: "无", [1]: "增产" },
+    [2]: { [0]: "无", [2]: "加速" },
+    [3]: { [0]: "无", [1]: "增产", [2]: "加速" },
+    [4]: { [0]: "无", [4]: "接收站透镜喷涂" },
 }
 
 export function ProModeSelect({ recipe_id, choice, onChange }) {
@@ -311,7 +311,7 @@ export function Result({ needs_list }) {
                 {mineralize_doms}
             </fieldset>
         }
-        <table className="table table-sm align-middle mt-3">
+        <table className="table table-sm align-middle mt-3 w-auto">
             <thead>
                 <tr className="text-center">
                     <th width={80}>操作</th>
@@ -319,9 +319,9 @@ export function Result({ needs_list }) {
                     <th width={130}>产能</th>
                     <th width={110}>工厂</th>
                     <th width={300}>配方选取</th>
-                    <th>喷涂点数</th>
-                    <th>增产模式</th>
-                    <th>工厂类型</th>
+                    <th width={210}>喷涂点数</th>
+                    <th width={140}>增产模式</th>
+                    <th width={170}>工厂类型</th>
                 </tr>
             </thead>
             <tbody className="table-group-divider">
