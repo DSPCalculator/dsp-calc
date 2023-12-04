@@ -92,3 +92,11 @@ fieldset,
 legend {
     all: revert;
 }
+
+.result-table tr td {
+    padding-left: 0.75em;
+}
+
+.result-table tr td:first-child {
+    padding-left: 0;
+}

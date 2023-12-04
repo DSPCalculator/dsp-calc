@@ -107,7 +107,7 @@ export function Result({ needs_list }) {
 
     // TODO fixed_num
     let fixed_num = 2;
-    let energy_cost = 0;
+    let energy_cost = 0, miner_energy_cost = 0;
     let building_list = {};
     function get_factory_number(amount, item) {
         var recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
@@ -123,9 +123,10 @@ export function Result({ needs_list }) {
             else {
                 building_list[game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"]] = Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
             }
-        } game_data.factory_data[""]
+        }
         var factory = game_data.recipe_data[recipe_id]["设施"];
-        if (factory != "巨星采集" && !(!scheme_data.energy_contain_miner && (factory == "采矿设备" || factory == "抽水设备" || factory == "抽油设备"))) {
+        let is_factory_miner = factory == "采矿设备" || factory == "抽水设备" || factory == "抽油设备";
+        if (factory != "巨星采集") {
             var e_cost = build_number * game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["耗能"];
             if (game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"] == "大型采矿机") {
                 e_cost = scheme_data.mining_rate["大矿机工作倍率"] * scheme_data.mining_rate["大矿机工作倍率"] * (2.94 - 0.168) + 0.168;
@@ -133,7 +134,11 @@ export function Result({ needs_list }) {
             if (scheme_for_recipe["增产模式"] != 0 && scheme_for_recipe["喷涂点数"] != 0) {
                 e_cost *= game_data.proliferate_effect[scheme_for_recipe["喷涂点数"]]["耗电倍率"];
             }
-            energy_cost = Number(energy_cost) + e_cost;
+            if (is_factory_miner) {
+                miner_energy_cost += e_cost;
+            } else {
+                energy_cost += e_cost;
+            }
         }
         return build_number;
     }
@@ -281,70 +286,87 @@ export function Result({ needs_list }) {
         else {
             building_list[building["名称"]] = Math.ceil(natural_production_line[NPId]["建筑数量"]);
         }
-        if (recipe["设施"] != "巨星采集" && !(!scheme_data.energy_contain_miner && (recipe["设施"] == "采矿设备" || recipe["设施"] == "抽水设备" || recipe["设施"] == "抽油设备"))) {
+
+        let factory = recipe["设施"];
+        let is_factory_miner = factory == "采矿设备" || factory == "抽水设备" || factory == "抽油设备";
+        if (factory != "巨星采集") {
             var e_cost = natural_production_line[NPId]["建筑数量"] * building["耗能"];
             if (natural_production_line[NPId]["喷涂点数"] != 0 && natural_production_line[NPId]["增产模式"] != 0) {
                 e_cost *= game_data.proliferate_effect[natural_production_line[NPId]["喷涂点数"]]["耗电倍率"];
             }
-            energy_cost = Number(energy_cost) + e_cost;
+            if (is_factory_miner) {
+                miner_energy_cost += e_cost;
+            } else {
+                energy_cost += e_cost;
+            }
         }
     }
 
     let building_doms = Object.entries(building_list).map(([building, count]) => (
-        <div key={building}>{building}：{count}</div>));
+        <tr key={building}>
+            <td className="d-flex align-items-center">
+                <span className="ms-auto me-1">{building}</span>
+                <ItemIcon item={building} tooltip={false} />
+            </td>
+            <td className="ps-2">x {count}</td>
+        </tr>));
 
-    function toggle_energy_contain_miner() {
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
-            scheme_data.energy_contain_miner = !scheme_data.energy_contain_miner;
-            return scheme_data;
-        })
-    }
-
-    let surplus_rows = Object.entries(lp_surplus_list).map(([item, quant]) =>
-        (<tr key={item}><td><ItemIcon item={item} /></td><td>{quant}</td></tr>));
+    let surplus_doms = Object.entries(lp_surplus_list).map(([item, quant]) =>
+        (<div className="text-nowrap"><ItemIcon item={item} /> x{quant}</div>));
 
     return <div className="my-3">
-        {mineralize_doms.length > 0 &&
-            <fieldset>
-                <legend><small>原矿化列表</small></legend>
-                {mineralize_doms}
-            </fieldset>
-        }
-        <table className="table table-sm align-middle mt-3 w-auto">
-            <thead>
-                <tr className="text-center">
-                    <th width={80}>操作</th>
-                    <th width={140}>物品</th>
-                    <th width={130}>产能</th>
-                    <th width={110}>工厂</th>
-                    <th width={300}>配方选取</th>
-                    <th width={210}>喷涂点数</th>
-                    <th width={140}>增产模式</th>
-                    <th width={170}>工厂类型</th>
-                </tr>
-            </thead>
-            <tbody className="table-group-divider">
-                <NplRows />
-                {result_table_rows}
-            </tbody>
-        </table>
-        <p>多余产物：</p>
-        <div><table>
-            <thead><tr>
-                <th>物品名</th>
-                <th>分钟冗余量</th>
-            </tr></thead>
-            <tbody>{surplus_rows}</tbody>
-        </table>
-        </div>
+        <div className="d-flex gap-5">
+            <table className="table table-sm align-middle mt-3 w-auto result-table">
+                <thead>
+                    <tr className="text-center">
+                        <th width={80}>操作</th>
+                        <th width={140}>物品</th>
+                        <th width={130}>产能</th>
+                        <th width={110}>工厂</th>
+                        <th width={300}>配方选取</th>
+                        <th width={210}>喷涂点数</th>
+                        <th width={140}>增产模式</th>
+                        <th width={170}>工厂类型</th>
+                    </tr>
+                </thead>
+                <tbody className="table-group-divider">
+                    <NplRows />
+                    {result_table_rows}
+                </tbody>
+            </table>
+            <div className="sticky-top align-self-start d-flex flex-column gap-2">
+                {mineralize_doms.length > 0 &&
+                    <fieldset className="w-fit">
+                        <legend><small>原矿化列表</small></legend>
+                        {mineralize_doms}
+                    </fieldset>
+                }
 
-        <p>建筑统计：</p>
-        {building_doms}
-        <p>预估电力需求下限：{energy_cost.toFixed(fixed_num)} MW
-            <button className='ms-2' onClick={toggle_energy_contain_miner}>
-                {scheme_data.energy_contain_miner ? "忽视" : "考虑"}采集设备耗电</button>
-        </p>
+                {surplus_doms.length > 0 &&
+                    <fieldset className="w-fit">
+                        <legend><small>多余产物</small></legend>
+                        <table>{surplus_doms}</table>
+                    </fieldset>}
+
+                {building_doms.length > 0 &&
+                    <>
+                        <fieldset className="w-fit">
+                            <legend><small>建筑统计</small></legend>
+                            <table>{building_doms}</table>
+                        </fieldset>
+                        <span className="d-inline-flex gap-1">
+                            <span className="me-1">预估电力</span>
+                            <span className="fast-tooltip" data-tooltip="不包含采集设备">
+                                {energy_cost.toFixed(fixed_num)}
+                            </span>/
+                            <span className="fast-tooltip" data-tooltip="包含采集设备">
+                                {(energy_cost + miner_energy_cost).toFixed(fixed_num)}
+                            </span>
+                            MW
+                        </span>
+                    </>}
+            </div>
+        </div>
 
     </div>;
 }

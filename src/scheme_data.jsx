@@ -29,7 +29,6 @@ const DEFAULT_SCHEME_DATA = {
         "伊卡洛斯手速": 1
     },
     "fractionating_speed": 1800,
-    "energy_contain_miner": 0
 };
 
 export function MiningSettings() {
