@@ -135,7 +135,7 @@ export function ItemSelect({ item, set_item, text, btn_class }) {
         <span className="ms-1"></span></>}
       {(item) ?
         <small className="text-nowrap">{item}</small>
-        : text}
+        : <span className="text-nowrap">{text}</span>}
     </button>
 
     {createPortal(

@@ -4,7 +4,7 @@ import { GlobalStateContext, SchemeDataSetterContext } from './contexts';
 import { HorizontalMultiButtonSelect } from './recipe.jsx';
 // TODO refactor to some other modules
 export const pro_num_item = {
-    [0]: { label: "无喷涂", item_icon: null },
+    [0]: { label: "无", item_icon: null },
     [1]: { label: "MK.Ⅰ", item_icon: "增产剂MK.Ⅰ" },
     [2]: { label: "MK.Ⅱ", item_icon: "增产剂MK.Ⅱ" },
     [4]: { label: "MK.Ⅲ", item_icon: "增产剂MK.Ⅲ" },
@@ -95,11 +95,10 @@ export function BatchSetting() {
         });
     }
 
-    const default_pro_item = pro_num_item[1].item_icon;
-    const current_pro_item = pro_num == 0 ? default_pro_item :
-        pro_num_item[pro_num] ? pro_num_item[pro_num].item_icon : default_pro_item;
+    const current_pro_item = pro_mode == 0 ? null :
+        pro_num_item[pro_num] ? pro_num_item[pro_num].item_icon : null;
     const promode_options = [
-        { value: 0, label: "不使用增产剂" },
+        { value: 0, label: "无" },
         { value: 1, label: "增产" },
         { value: 2, label: "加速" },
     ];
