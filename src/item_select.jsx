@@ -95,21 +95,22 @@ export function ItemSelect({ item, set_item, text, btn_class }) {
     }
   }
 
+  function on_select_item(item) {
+    set_item(item);
+    ref_modal.current.hide();
+  }
+
   let search_result_doms = fuzz_result.length > RESULT_LIMIT ? [] : fuzz_result.map((item, i) => {
     let hl_class = i == 0 ? "bg-opacity-75" : "bg-opacity-25";
     return <>
       <div key={item} className={`text-white bg-secondary ${hl_class} rounded-3\
-      p-1 d-flex align-items-center gap-2`}>
+      p-1 d-flex align-items-center gap-2 cursor-pointer`}
+        onClick={() => on_select_item(item)}>
         <ItemIcon item={item} tooltip={false} />
         <small>{item}</small>
       </div>
     </>
   });
-
-  function on_select_item(item) {
-    set_item(item);
-    ref_modal.current.hide();
-  }
 
   function on_search_keydown(e) {
     if (e.keyCode == 13 && fuzz_result.length > 0 && fuzz_result.length <= RESULT_LIMIT) {
@@ -125,7 +126,10 @@ export function ItemSelect({ item, set_item, text, btn_class }) {
 
   function show() {
     ref_modal.current.show();
-    input_ref.current && input_ref.current.focus();
+    if (input_ref.current) {
+      input_ref.current.select();
+      input_ref.current.focus();
+    }
   }
 
   return <>
