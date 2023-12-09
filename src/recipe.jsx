@@ -22,21 +22,30 @@ export function Recipe({ recipe }) {
     function item_to_doms([item, count]) {
         return <React.Fragment key={item}>
             <ItemIcon item={item} size={28} />
-            <sub className='me-1'>{count}</sub>
+            <span className="me-1 ssmall align-self-end">{count}</span>
         </React.Fragment>;
     }
 
     const input_doms = Object.entries(recipe["原料"]).map(item_to_doms);
     const output_doms = Object.entries(recipe["产物"]).map(item_to_doms);
 
-    return <span className="text-nowrap">
+    return <span className="d-inline-flex">
         {input_doms.length > 0 && <>
             {input_doms}
-            <span className="mx-1" style={{ fontSize: "24px", lineHeight: "24px" }}>→</span>
-        </>
-        }
-
+            <span className="me-1 position-relative"
+                style={{ fontSize: "32px", lineHeight: "20px" }}>
+                &#10230;
+                <span className="position-absolute text-center text-recipe-time"
+                    style={{ left: 0, width: "100%", top: "50%", fontSize: "14px" }}>
+                    {recipe["时间"]}s
+                </span>
+            </span>
+        </>}
         {output_doms}
+
+        {input_doms.length == 0 && <small className="ms-1 align-self-end text-recipe-time">
+            ({recipe["时间"]}s)
+        </small>}
     </span>;
 }
 
