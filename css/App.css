@@ -37,6 +37,14 @@
     color: white !important;
 }
 
+.text-recipe-time {
+    color: #666;
+}
+
+.recipe-item.selected .text-recipe-time {
+    color: #CCC !important;
+}
+
 .bg-selected {
     background-color: rgb(106, 157, 192) !important;
     color: white !important;
