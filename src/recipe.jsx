@@ -36,7 +36,7 @@ export function Recipe({ recipe }) {
                 style={{ fontSize: "32px", lineHeight: "20px" }}>
                 &#10230;
                 <span className="position-absolute text-center text-recipe-time"
-                    style={{ left: 0, width: "100%", top: "50%", fontSize: "14px" }}>
+                    style={{ left: 0, width: "100%", top: "50%", fontSize: "12px" }}>
                     {recipe["时间"]}s
                 </span>
             </span>

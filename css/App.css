@@ -38,11 +38,11 @@
 }
 
 .text-recipe-time {
-    color: #666;
+    color: #444;
 }
 
 .recipe-item.selected .text-recipe-time {
-    color: #CCC !important;
+    color: #F8F8F8 !important;
 }
 
 .bg-selected {
