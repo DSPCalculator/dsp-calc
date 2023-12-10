@@ -2,7 +2,6 @@ import structuredClone from '@ungap/structured-clone';
 import { Modal } from 'bootstrap';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { icon_layout } from '../data/icon_layout.jsx';
 import { GameInfoContext } from './contexts.jsx';
 import { ItemIcon } from './recipe.jsx';
 import fuzzysort from 'fuzzysort'
@@ -46,11 +45,27 @@ export function ItemSelect({ item, set_item, text, btn_class }) {
   let game_data = game_info.game_data;
   let all_targets = game_data.recipe_data.flatMap(recipe => Object.keys(recipe["产物"]));
   all_targets = Array.from(new Set(all_targets));
-
   const [fuzz_result, set_fuzz_result] = useState(all_targets);
 
+  let icon_layouts = new Array(32);
+  for (let i = 0; i < 32; i++) {
+    icon_layouts[i] = new Array(17).fill("");
+  }
+  let max_row = 8;
+  for (let item in game_info.item_data) {
+    if (!(item in game_data.item_grid)) {
+      //console.log(item);
+      continue;
+    }
+    let grid = game_data.item_grid[item];
+    if (grid > 4716) {
+      //console.log(item, grid);
+      continue;
+    }
+    icon_layouts[(Math.floor(grid / 1000) - 1) * max_row + (Math.floor((grid % 1000) / 100) - 1)][Math.floor((grid % 100) - 1)] = item;
+  }
   let all_unused_targets = new Set(all_targets);
-  let icons = structuredClone(icon_layout);
+  let icons = structuredClone(icon_layouts);
 
   for (let row of icons) {
     for (let i in row) {
