@@ -129,8 +129,7 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    produce_rate *= game_data.proliferate_effect[proliferate_num]["增产效果"];
-                    item_graph[item]["产出倍率"] *= produce_rate;
+                    item_graph[item]["产出倍率"] *= game_data.proliferate_effect[proliferate_num]["加速效果"];
                 }
                 else if (proliferate_mode == 2) {
                     for (var proliferate in proliferator_price[proliferate_num]) {
@@ -141,7 +140,8 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    item_graph[item]["产出倍率"] *= game_data.proliferate_effect[proliferate_num]["加速效果"];
+                    produce_rate *= game_data.proliferate_effect[proliferate_num]["增产效果"];
+                    item_graph[item]["产出倍率"] *= produce_rate;
                 }
                 else if (proliferate_mode == 4) {
                     for (var proliferate in proliferator_price[proliferate_num]) {
@@ -468,34 +468,7 @@ export class GlobalState {
                     num += recipe["原料"][item];
                 }
                 num = Number(num) * recipe_time;
-                if (natural_production_line[id]["增产模式"] == 1) {//增产
-                    var pro_time = game_data.proliferate_effect[natural_production_line[id]["喷涂点数"]]["增产效果"];
-                    for (var item in recipe["原料"]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) + recipe["原料"][item] * recipe_time;
-                        }
-                        else {
-                            in_out_list[item] = recipe["原料"][item] * recipe_time;
-                        }
-                    }
-                    for (var item in proliferator_price[natural_production_line[id]["喷涂点数"]]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) + proliferator_price[natural_production_line[id]["喷涂点数"]][item] * num;
-                        }
-                        else {
-                            in_out_list[item] = proliferator_price[natural_production_line[id]["喷涂点数"]][item] * num;
-                        }
-                    }
-                    for (var item in recipe["产物"]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) - recipe["产物"][item] * recipe_time * pro_time;
-                        }
-                        else {
-                            in_out_list[item] = -1 * recipe["产物"][item] * recipe_time * pro_time;
-                        }
-                    }
-                }
-                else if (natural_production_line[id]["增产模式"] == 2) {//加速
+                if (natural_production_line[id]["增产模式"] == 1) {//加速
                     var pro_time = game_data.proliferate_effect[natural_production_line[id]["喷涂点数"]]["加速效果"];
                     for (var item in recipe["原料"]) {
                         if (item in in_out_list) {
@@ -511,6 +484,33 @@ export class GlobalState {
                         }
                         else {
                             in_out_list[item] = proliferator_price[natural_production_line[id]["喷涂点数"]][item] * num * pro_time;
+                        }
+                    }
+                    for (var item in recipe["产物"]) {
+                        if (item in in_out_list) {
+                            in_out_list[item] = Number(in_out_list[item]) - recipe["产物"][item] * recipe_time * pro_time;
+                        }
+                        else {
+                            in_out_list[item] = -1 * recipe["产物"][item] * recipe_time * pro_time;
+                        }
+                    }
+                }
+                else if (natural_production_line[id]["增产模式"] == 2) {//增产
+                    var pro_time = game_data.proliferate_effect[natural_production_line[id]["喷涂点数"]]["增产效果"];
+                    for (var item in recipe["原料"]) {
+                        if (item in in_out_list) {
+                            in_out_list[item] = Number(in_out_list[item]) + recipe["原料"][item] * recipe_time;
+                        }
+                        else {
+                            in_out_list[item] = recipe["原料"][item] * recipe_time;
+                        }
+                    }
+                    for (var item in proliferator_price[natural_production_line[id]["喷涂点数"]]) {
+                        if (item in in_out_list) {
+                            in_out_list[item] = Number(in_out_list[item]) + proliferator_price[natural_production_line[id]["喷涂点数"]][item] * num;
+                        }
+                        else {
+                            in_out_list[item] = proliferator_price[natural_production_line[id]["喷涂点数"]][item] * num;
                         }
                     }
                     for (var item in recipe["产物"]) {

@@ -40,15 +40,54 @@ export function Recipe({ recipe }) {
     </span>;
 }
 
-export function HorizontalMultiButtonSelect({ choice, options, onChange, no_gap }) {
-    let gap_class = no_gap ? "" : "gap-1";
+function getOptionTypebg(optionType, value) {
+    if (optionType === "proModeSelect") {
+        if (value == "0") {
+            return "proMode-none";
+        }
+        else if (value == "1") {
+            return "proMode-speedup";
+        }
+        else if (value == "2") {
+            return "proMode-extraProducts";
+        }
+        return "bg-selected";
+    }
+    else {
+        return "bg-selected";
+    }
+}
 
+function getOptionTypeShape(optionType) {
+    if (optionType === "proNumSelect") {
+        return "proNum-shape";
+    }
+    else if (optionType === "proModeSelect") {
+        return "proMode-shape";
+    }
+    else {
+        return "";
+    }
+
+}
+
+function getUnselectedBg(optionType) {
+    if (optionType === "factorySelect") {
+        return "bg-transparent";
+    }
+    else {
+        return "bg-unselected";
+    }
+}
+
+export function HorizontalMultiButtonSelect({ choice, options, onChange, no_gap, optionType }) {
+    let gap_class = no_gap ? "" : "gap-1";
     let option_doms = options.map(({ value, label, item_icon }) => {
-        let selected_class = choice == value ? "bg-selected" : "bg-unselected";
-        let gap_class = no_gap ? "border-between border-white" : "";
+        let selected_class = choice == value ? getOptionTypebg(optionType, value) : getUnselectedBg(optionType);
+        let gap_class = no_gap ? "" : "border-between border-white";
+        let shape_class = getOptionTypeShape(optionType);
         return <div key={value}
-            className={`py-1 px-2 text-nowrap d-flex align-items-center cursor-pointer ${selected_class} ${gap_class}`}
-            style={{ fontSize: "0.8em" }}
+            className={`py-1 px-1 text-nowrap d-flex align-items-center cursor-pointer ${selected_class} ${gap_class} ${shape_class}`}
             onClick={() => onChange(value)}
         >{item_icon && <ItemIcon item={item_icon} size={32} />}{label}</div>;
     })

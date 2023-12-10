@@ -31,31 +31,31 @@ export function RecipeSelect({ item, choice, onChange }) {
     }
 }
 
-export const pro_num_text = {
-    [0]: "无",
-    [1]: "MK.Ⅰ",
-    [2]: "MK.Ⅱ",
-    [4]: "MK.Ⅲ",
-}
-
 export function ProNumSelect({ choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
-
+    let pro_num_text = {};
+    for (var i = 0; i < game_data.proliferator_data.length; i++) {
+        pro_num_text[game_data.proliferator_data[i]["单次喷涂最高增产点数"]] = game_data.proliferator_data[i]["增产剂名称"];
+    }
     let pro_num_options = [];
     for (var i = 0; i < game_data.proliferate_effect.length; i++) {
-        if (global_state.proliferator_price[i] != -1)
-            pro_num_options.push({ value: i, label: pro_num_text[i] });
+        if (i == 0) {
+            continue;
+        }
+        else if (global_state.proliferator_price[i] != -1)
+            pro_num_options.push({ value: i, item_icon: pro_num_text[i] });
+
     }
 
-    return <HorizontalMultiButtonSelect choice={choice} options={pro_num_options} onChange={onChange} />;
+    return <HorizontalMultiButtonSelect choice={choice} options={pro_num_options} onChange={onChange} optionType={"proNumSelect"} />;
 }
 
 export const pro_mode_lists = {
     [0]: { [0]: "无" },
-    [1]: { [0]: "无", [1]: "增产" },
-    [2]: { [0]: "无", [2]: "加速" },
-    [3]: { [0]: "无", [1]: "增产", [2]: "加速" },
+    [1]: { [0]: "无", [1]: "加速" },
+    [2]: { [0]: "无", [2]: "增产" },
+    [3]: { [0]: "无", [1]: "加速", [2]: "增产" },
     [4]: { [0]: "无", [4]: "接收站透镜喷涂" },
 }
 
@@ -68,7 +68,7 @@ export function ProModeSelect({ recipe_id, choice, onChange }) {
         { value: value, label: label }
     ));
 
-    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} />;
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} optionType={"proModeSelect"} />;
 }
 
 export function FactorySelect({ recipe_id, choice, onChange, no_gap }) {
@@ -82,7 +82,7 @@ export function FactorySelect({ recipe_id, choice, onChange, no_gap }) {
         { value: idx, item_icon: factory_data["名称"] }
     ));
 
-    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} no_gap={no_gap} />;
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} no_gap={true} optionType={"factorySelect"} />;
 }
 
 export function Result({ needs_list }) {
@@ -245,8 +245,8 @@ export function Result({ needs_list }) {
             {/* 操作 */}
             <td>
                 {is_mineralized ?
-                    <a className="text-primary text-nowrap a-href ssmall" onClick={() => unmineralize(i)}>恢复</a> :
-                    <a className="text-primary text-nowrap a-href ssmall" onClick={() => mineralize(i)}>视为原矿</a>
+                    <button className="btn btn-sm btn-outline-primary ssmall mineralize-btn" onClick={() => unmineralize(i)}>恢复</button> :
+                    <button className="btn btn-sm btn-outline-primary ssmall mineralize-btn" onClick={() => mineralize(i)}>视为<br />原矿</button>
                 }
             </td>
             {/* 目标物品 */}
@@ -273,12 +273,12 @@ export function Result({ needs_list }) {
             {/* 所选配方 */}
             <td><RecipeSelect item={i} onChange={change_recipe}
                 choice={scheme_data.item_recipe_choices[i]} /></td>
-            {/* 所选增产剂 */}
-            <td><ProNumSelect onChange={change_pro_num}
-                choice={scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"]} /></td>
             {/* 所选增产模式 */}
             <td><ProModeSelect recipe_id={recipe_id} onChange={change_pro_mode}
                 choice={scheme_data.scheme_for_recipe[recipe_id]["增产模式"]} /></td>
+            {/* 所选增产剂 */}
+            <td><ProNumSelect onChange={change_pro_num}
+                choice={scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"]} /></td>
             {/* 所选工厂种类 */}
             <td><FactorySelect recipe_id={recipe_id} onChange={change_factory}
                 choice={scheme_data.scheme_for_recipe[recipe_id]["建筑"]} /></td>
@@ -337,13 +337,13 @@ export function Result({ needs_list }) {
         <table className="table table-sm align-middle w-auto result-table">
             <thead>
                 <tr className="text-center">
-                    <th width={80}>操作</th>
+                    <th width={60}>操作</th>
                     <th width={140}>物品</th>
                     <th width={130}>产能</th>
                     <th width={110}>工厂</th>
                     <th width={300}>配方选取</th>
-                    <th width={210}>喷涂点数</th>
-                    <th width={140}>增产模式</th>
+                    <th width={180}>增产模式</th>
+                    <th width={160}>增产剂</th>
                     <th width={170}>工厂类型</th>
                 </tr>
             </thead>
