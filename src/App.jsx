@@ -86,10 +86,10 @@ function AppWithContexts() {
       <SchemeStorage />
       <NeedsListStorage needs_list={needs_list} set_needs_list={set_needs_list} />
       <button className="btn btn-outline-danger btn-sm" onClick={clearData}>清空数据缓存</button>
-
       <button className="btn btn-outline-primary btn-sm" onClick={() => set_misc_show(s => !s)}>
         采矿参数 & 其他设置
       </button>
+
     </div>
     <MiscCollapse show={misc_show} />
     <div>
