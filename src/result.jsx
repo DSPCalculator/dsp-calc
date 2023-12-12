@@ -73,7 +73,7 @@ export function ProModeSelect({ recipe_id, choice, onChange }) {
         { value: value, label: label, className: pro_mode_class[value] }
     ));
 
-    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} />;
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} className={"raw-text-selection"} />;
 }
 
 export function FactorySelect({ recipe_id, choice, onChange, no_gap }) {

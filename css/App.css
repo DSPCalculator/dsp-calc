@@ -14,7 +14,14 @@
 }
 
 .raw-text-selection {
-    font-size: 1.15em !important;
+    font-size: 1.1em !important;
+}
+
+/* 32px is the height of the image icon */
+.raw-text-selection div::after {
+    content: '';
+    display: block;
+    height: 32px;
 }
 
 .pro-mode-speedup:hover,
