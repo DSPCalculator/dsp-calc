@@ -4,12 +4,12 @@
 }
 
 .recipe-item.selected {
-    background-color: rgb(106, 157, 192) !important;
+    background-color: #60a363 !important;
     color: white !important;
 }
 
 .bg-selected {
-    background-color: rgb(106, 157, 192) !important;
+    background-color: #60a363 !important;
     color: white !important;
 }
 
