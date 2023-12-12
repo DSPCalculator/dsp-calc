@@ -59,16 +59,21 @@ export const pro_mode_lists = {
     [4]: { [0]: "无", [4]: "接收站透镜喷涂" },
 }
 
+export const pro_mode_class = {
+    [1]: "pro-mode-speedup",
+    [2]: "pro-mode-extra-products"
+}
+
 export function ProModeSelect({ recipe_id, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
 
     let pro_mode_list = pro_mode_lists[game_data.recipe_data[recipe_id]["增产"]];
     let options = Object.entries(pro_mode_list).map(([value, label]) => (
-        { value: value, label: label }
+        { value: value, label: label, className: pro_mode_class[value] }
     ));
 
-    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} optionType={"proModeSelect"} />;
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} />;
 }
 
 export function FactorySelect({ recipe_id, choice, onChange, no_gap }) {
@@ -82,7 +87,7 @@ export function FactorySelect({ recipe_id, choice, onChange, no_gap }) {
         { value: idx, item_icon: factory_data["名称"] }
     ));
 
-    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} no_gap={true} optionType={"factorySelect"} />;
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} no_gap={no_gap} />;
 }
 
 export function Result({ needs_list }) {

@@ -2,6 +2,8 @@ import { useContext, useState } from 'react';
 import structuredClone from '@ungap/structured-clone';
 import { GlobalStateContext, SchemeDataSetterContext } from './contexts';
 import { HorizontalMultiButtonSelect } from './recipe.jsx';
+import { pro_mode_class } from './result.jsx';
+
 // TODO refactor to some other modules
 function FactorySelect({ factory, list }) {
     const global_state = useContext(GlobalStateContext);
@@ -36,12 +38,13 @@ export function BatchSetting() {
     const [pro_num, set_pro_num] = useState(0);
     const [pro_mode, set_pro_mode] = useState(0);
     let game_data = global_state.game_data;
-    let pro_num_item = {}
-    pro_num_item[0] = "无";
-    for (var i = 1; i < game_data.proliferator_data.length; i++) {
-        pro_num_item[game_data.proliferator_data[i]["单次喷涂最高增产点数"]] = game_data.proliferator_data[i]["增产剂名称"];
-    }
     let proliferator_price = global_state.proliferator_price;
+
+    let pro_num_item = {};
+    for (let data of game_data.proliferator_data) {
+        let pro_point = data["单次喷涂最高增产点数"];
+        pro_num_item[pro_point] = pro_point == 0 ? "无" : data["增产剂名称"];
+    }
 
     let factory_doms = [];
     // TODO rename to [factory_kind]
@@ -94,16 +97,16 @@ export function BatchSetting() {
 
     const promode_options = [
         { value: 0, label: "无" },
-        { value: 1, label: "加速" },
-        { value: 2, label: "增产" },
+        { value: 1, label: "加速", className: pro_mode_class[1] },
+        { value: 2, label: "增产", className: pro_mode_class[2] },
     ];
 
-    return <div className="mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center">
-        <small className="fw-bold">批量预设</small>
+    return <div className="mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-stretch">
+        <small className="fw-bold align-self-center">批量预设</small>
         {factory_doms}
         <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
-            onChange={change_pro_num} no_gap={true} optionType={"proNumSelect"} />
+            onChange={change_pro_num} no_gap={true} className={"raw-text-selection"} />
         <HorizontalMultiButtonSelect choice={pro_mode} options={promode_options}
-            onChange={change_pro_mode} optionType={"proModeSelect"} />
+            onChange={change_pro_mode} no_gap={true} className={"raw-text-selection"} />
     </div>;
 }
