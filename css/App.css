@@ -132,9 +132,7 @@ legend {
 }
 
 .mineralize-btn {
-    max-width: 45px !important;
-    max-height: 45px !important;
-    min-width: 45px !important;
-    min-height: 45px !important;
-    text-align: center !important;
+    margin: 0 0.25em;
+    font-size: 0.75em;
+    padding: 0.1em 0.4em;
 }

@@ -250,8 +250,9 @@ export function Result({ needs_list }) {
             {/* 操作 */}
             <td>
                 {is_mineralized ?
-                    <button className="btn btn-sm btn-outline-primary ssmall mineralize-btn" onClick={() => unmineralize(i)}>恢复</button> :
-                    <button className="btn btn-sm btn-outline-primary ssmall mineralize-btn" onClick={() => mineralize(i)}>视为<br />原矿</button>
+                    <button className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn" onClick={() => unmineralize(i)}>恢复</button> :
+                    <button className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn" onClick={() => mineralize(i)}>
+                        <div>视为</div><div>原矿</div></button>
                 }
             </td>
             {/* 目标物品 */}
@@ -341,7 +342,7 @@ export function Result({ needs_list }) {
         {/* 结果表格 */}
         <table className="table table-sm align-middle w-auto result-table">
             <thead>
-                <tr className="text-center">
+                <tr className="text-center text-nowrap">
                     <th width={60}>操作</th>
                     <th width={140}>物品</th>
                     <th width={130}>产能</th>
