@@ -4,37 +4,34 @@
 }
 
 .recipe-item.selected {
-    background-color: rgb(106, 157, 192) !important;
+    background-color: #60a363 !important;
     color: white !important;
 }
 
-.proNum-shape {
-    max-width: 40px !important;
-    max-height: 40px !important;
-    min-width: 40px !important;
-    min-height: 40px !important;
-    justify-content: center;
-    font-size: 20px !important;
-}
-
-.proMode-shape {
-    border-radius: 5px;
-    font-size: 21px;
-}
-
-.proMode-none {
-    background-color: rgb(65, 65, 65) !important;
+.bg-selected {
+    background-color: #60a363 !important;
     color: white !important;
 }
 
-.proMode-speedup {
-    background-color: rgb(255, 192, 0) !important;
-    color: rgb(59, 59, 59) !important;
+.raw-text-selection {
+    font-size: 1.1em !important;
 }
 
-.proMode-extraProducts {
-    background-color: rgb(0, 176, 240) !important;
-    color: white !important;
+/* 32px is the height of the image icon */
+.raw-text-selection div::after {
+    content: '';
+    display: block;
+    height: 32px;
+}
+
+.pro-mode-speedup:hover,
+.pro-mode-speedup.bg-selected {
+    text-shadow: 0 0 3px #fb7, 0 0 5px #fb7, 0 0 8px #fda, 0 0 10px #fda;
+}
+
+.pro-mode-extra-products:hover,
+.pro-mode-extra-products.bg-selected {
+    text-shadow: 0 0 3px #5cf, 0 0 5px #5cf, 0 0 8px #8df, 0 0 10px #8df;
 }
 
 .text-recipe-time {
@@ -45,13 +42,8 @@
     color: #F8F8F8 !important;
 }
 
-.bg-selected {
-    background-color: rgb(106, 157, 192) !important;
-    color: white !important;
-}
-
 .border-recipe-item {
-    border: 1px dashed #484 !important;
+    border: 1px dashed #1aa179 !important;
 }
 
 .bg-unselected {
@@ -147,9 +139,7 @@ legend {
 }
 
 .mineralize-btn {
-    max-width: 45px !important;
-    max-height: 45px !important;
-    min-width: 45px !important;
-    min-height: 45px !important;
-    text-align: center !important;
+    margin: 0 0.25em;
+    font-size: 0.75em;
+    padding: 0.1em 0.4em;
 }

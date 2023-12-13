@@ -1,14 +1,54 @@
 import 'javascript-lp-solver/src/solver';
 
+function uniq(arr) {
+    return Array.from(new Set(arr));
+}
+
 export class GameInfo {
     name;
     game_data;
     item_data;
+    all_target_items;
+    icon_grid;
 
     constructor(name, game_data) {
         this.name = name;
         this.game_data = game_data;
         this.init_item_data();
+        this.all_target_items = uniq(this.game_data.recipe_data.flatMap(recipe => Object.keys(recipe["产物"])));
+        this.init_icon_layout();
+    }
+
+    init_icon_layout() {
+        let loc_item = {};
+        for (let [item, loc] of Object.entries(this.game_data.item_grid)) {
+            let x = loc % 100;
+            let y = (loc - x) / 100;
+            loc_item[[x, y]] = { item: item, x: x, y: y };
+        }
+        let xs = Object.values(loc_item).map(({ item, x, y }) => x);
+        let ys = Object.values(loc_item).map(({ item, x, y }) => y);
+        let minX = Math.min.apply(null, xs), maxX = Math.max.apply(null, xs);
+        let minY = Math.min.apply(null, ys), maxY = Math.max.apply(null, ys);
+
+        let icons = [];
+        let all_unused_targets = new Set(self.all_target_items);
+        for (let x = minX; x <= maxX; x++) {
+            for (let y = minY; y <= maxY; y++) {
+                let item = loc_item[[x, y]]?.item;
+                if (item) {
+                    // CSS grid starts from index 1
+                    icons.push({ col: x - minX + 1, row: y - minY + 1, item: item });
+                    all_unused_targets.delete(item);
+                }
+            }
+        }
+
+        if (all_unused_targets.size > 0) {
+            console.warn("如下产物未能在物品选择器中显示", all_unused_targets);
+        }
+
+        this.icon_grid = { nrow: maxY - minY + 1, ncol: maxX - minX + 1, icons: icons };
     }
 
     init_item_data() {

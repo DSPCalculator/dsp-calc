@@ -59,16 +59,21 @@ export const pro_mode_lists = {
     [4]: { [0]: "无", [4]: "接收站透镜喷涂" },
 }
 
+export const pro_mode_class = {
+    [1]: "pro-mode-speedup",
+    [2]: "pro-mode-extra-products"
+}
+
 export function ProModeSelect({ recipe_id, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
 
     let pro_mode_list = pro_mode_lists[game_data.recipe_data[recipe_id]["增产"]];
     let options = Object.entries(pro_mode_list).map(([value, label]) => (
-        { value: value, label: label }
+        { value: value, label: label, className: pro_mode_class[value] }
     ));
 
-    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} optionType={"proModeSelect"} />;
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} className={"raw-text-selection"} />;
 }
 
 export function FactorySelect({ recipe_id, choice, onChange, no_gap }) {
@@ -82,7 +87,7 @@ export function FactorySelect({ recipe_id, choice, onChange, no_gap }) {
         { value: idx, item_icon: factory_data["名称"] }
     ));
 
-    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} no_gap={true} optionType={"factorySelect"} />;
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} no_gap={no_gap} />;
 }
 
 export function Result({ needs_list }) {
@@ -245,8 +250,9 @@ export function Result({ needs_list }) {
             {/* 操作 */}
             <td>
                 {is_mineralized ?
-                    <button className="btn btn-sm btn-outline-primary ssmall mineralize-btn" onClick={() => unmineralize(i)}>恢复</button> :
-                    <button className="btn btn-sm btn-outline-primary ssmall mineralize-btn" onClick={() => mineralize(i)}>视为<br />原矿</button>
+                    <button className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn" onClick={() => unmineralize(i)}>恢复</button> :
+                    <button className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn" onClick={() => mineralize(i)}>
+                        <div>视为</div><div>原矿</div></button>
                 }
             </td>
             {/* 目标物品 */}
@@ -336,7 +342,7 @@ export function Result({ needs_list }) {
         {/* 结果表格 */}
         <table className="table table-sm align-middle w-auto result-table">
             <thead>
-                <tr className="text-center">
+                <tr className="text-center text-nowrap">
                     <th width={60}>操作</th>
                     <th width={140}>物品</th>
                     <th width={130}>产能</th>
