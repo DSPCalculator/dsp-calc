@@ -329,15 +329,6 @@ export function Result({ needs_list }) {
         (<div key={item} className="text-nowrap"><ItemIcon item={item} /> x{quant.toFixed(fixed_num)}</div>));
 
 
-    function add_npl(item) {
-        let new_npl = structuredClone(natural_production_line);
-        new_npl.push({
-            "目标物品": item,
-            "建筑数量": 10, "配方id": 1, "喷涂点数": 0, "增产模式": 0, "建筑": 0
-        });
-        set_ui_settings("natural_production_line", new_npl);
-    }
-
     return <div className="my-3 d-flex gap-5">
         {/* 结果表格 */}
         <table className="table table-sm align-middle w-auto result-table">
@@ -360,11 +351,6 @@ export function Result({ needs_list }) {
         </table>
         {/* 结果右侧悬浮栏 */}
         <div className="sticky-top mt-3 align-self-start d-flex flex-column gap-2">
-            {result_table_rows.length > 0 &&
-                <span className="w-fit">
-                    <ItemSelect text="← 增加固有产线" set_item={add_npl} btn_class="btn-outline-info text-body border-2" />
-                </span>
-            }
 
             {mineralize_doms.length > 0 &&
                 <fieldset className="w-fit">

@@ -438,20 +438,20 @@ export class GlobalState {
             if (p_key_item < key_item_list.length && item_list[i] == key_item_list[p_key_item]) {
                 item_price[item_list[i]] = { "原料": {}, "成本": 0 };
                 ++p_key_item;
-            }
+            }//关键物品成本为0
             else if ((item_list[i] in multi_sources) || (item_list[i] in external_supply_item)) {
                 item_price[item_list[i]] = { "原料": {}, "成本": 0 };
-            }
+            }//多来源物品成本为0
             else {
-                item_price[item_list[i]] = { "原料": {}, "成本": this.#get_item_cost(item_list[i]) };
+                item_price[item_list[i]] = { "原料": {}, "成本": this.#get_item_cost(item_list[i]) };//计算当前产线成本
                 for (var material in item_graph[item_list[i]]["原料"]) {
                     item_price[item_list[i]]["原料"] = count_total_material(item_price[item_list[i]]["原料"], material, item_graph[item_list[i]]["原料"][material]);
-                }
+                }//计算其历史产出
                 if (!scheme_data.cost_weight["物品额外成本"][item_list[i]]["与其它成本累计"]) {
                     for (var material in item_graph[item_list[i]]["原料"]) {
                         item_price[item_list[i]]["成本"] = Number(item_price[item_list[i]]["成本"]) + item_graph[item_list[i]]["原料"][material] * item_price[material]["成本"];
                     }
-                }
+                }//自定义的额外成本的情况下是原料成本+额外成本
             }
         }
         return item_price;

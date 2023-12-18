@@ -25,10 +25,10 @@ function get_item_data(game_data) {
 export function NeedsList({ needs_list, set_needs_list }) {
     const global_state = useContext(GlobalStateContext);
     const count_ref = useRef(60);
-
+    const set_ui_settings = useContext(UiSettingsSetterContext);
     let game_data = global_state.game_data;
     let item_data = get_item_data(game_data);
-
+    let natural_production_line = global_state.ui_settings.natural_production_line;
     let needs_doms = Object.entries(needs_list).map(([item, count]) => {
         function edit_count(e) {
             let new_needs_list = structuredClone(needs_list);
@@ -64,6 +64,14 @@ export function NeedsList({ needs_list, set_needs_list }) {
         set_needs_list(new_needs_list);
     }
 
+    function add_npl(item) {
+        let new_npl = structuredClone(natural_production_line);
+        new_npl.push({
+            "目标物品": item,
+            "建筑数量": 10, "配方id": 1, "喷涂点数": 0, "增产模式": 0, "建筑": 0
+        });
+        set_ui_settings("natural_production_line", new_npl);
+    }
     const is_min = global_state.ui_settings.is_time_unit_minute;
 
     return <>
@@ -74,12 +82,14 @@ export function NeedsList({ needs_list, set_needs_list }) {
                 <span className="input-group-text">/{is_min ? "min" : "sec"}</span>
                 <ItemSelect text="选择物品" set_item={add_need} />
                 <button className="btn btn-sm btn-outline-danger text-nowrap" onClick={() => set_needs_list({})}>清空需求</button>
+                <ItemSelect text="添加现有产线" set_item={add_npl} btn_class="btn btn-sm btn-outline-success text-nowrap" />
             </div>
 
             {Object.keys(needs_list).length == 0 ||
                 <div className="ms-5 d-inline-flex flex-wrap gap-4 row-gap-2 align-items-center">
                     {needs_doms}
-                </div>}
+                </div>
+            }
         </div>
     </>;
 }

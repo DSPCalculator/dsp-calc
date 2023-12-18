@@ -14,7 +14,7 @@ function GameVersion() {
 
   function set_game_version(name) {
     if (name == game_info.name) return;
-    console.log("name", name);
+    //console.log("name", name);
     if (name in GameData) {
       let game_data = GameData[name];
       set_game_name_and_data(name, game_data);
