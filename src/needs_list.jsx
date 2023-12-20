@@ -80,8 +80,8 @@ export function NeedsList({ needs_list, set_needs_list }) {
             <div className="input-group input-group-sm w-fit d-inline-flex">
                 <input type="text" className="form-control" style={{ width: "6em" }} ref={count_ref} defaultValue={60} />
                 <span className="input-group-text">/{is_min ? "min" : "sec"}</span>
-                <ItemSelect text="选择物品" set_item={add_need} />
                 <button className="btn btn-sm btn-outline-danger text-nowrap" onClick={() => set_needs_list({})}>清空需求</button>
+                <ItemSelect text="添加需求物品" set_item={add_need} />
                 <ItemSelect text="添加现有产线" set_item={add_npl} btn_class="btn btn-sm btn-outline-success text-nowrap" />
             </div>
 
