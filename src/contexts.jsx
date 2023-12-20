@@ -17,6 +17,7 @@ export const GameInfoContext = createContext(null);
 
 const DEFAULT_UI_SETTINGS = {
     proliferate_itself: true,
+    hide_mines: false,
     is_time_unit_minute: true,
     fixed_num: 2,
     stackable_buildings: { 研究站: 15 },

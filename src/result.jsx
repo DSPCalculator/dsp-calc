@@ -197,52 +197,50 @@ export function Result({ needs_list }) {
     ));
 
     let result_table_rows = [];
+    function change_recipe(value) {
+        set_scheme_data(old_scheme_data => {
+            let scheme_data = structuredClone(old_scheme_data);
+            scheme_data.item_recipe_choices[i] = value;
+            return scheme_data;
+        })
+    }
+
+    function change_pro_num(value) {
+        set_scheme_data(old_scheme_data => {
+            let scheme_data = structuredClone(old_scheme_data);
+            scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"] = value;
+            return scheme_data;
+        })
+    }
+
+    function change_pro_mode(value) {
+        set_scheme_data(old_scheme_data => {
+            let scheme_data = structuredClone(old_scheme_data);
+            scheme_data.scheme_for_recipe[recipe_id]["增产模式"] = value;
+            return scheme_data;
+        })
+    }
+
+    function change_factory(value) {
+        set_scheme_data(old_scheme_data => {
+            let scheme_data = structuredClone(old_scheme_data);
+            scheme_data.scheme_for_recipe[recipe_id]["建筑"] = value;
+            return scheme_data;
+        })
+    }
     for (let i in result_dict) {
         side_products[i] = side_products[i] || {};
         let total = result_dict[i] + Object.values(side_products[i]).reduce((a, b) => a + b, 0);
         if (total < 1e-6) continue;
-
         let recipe_id = item_data[i][scheme_data.item_recipe_choices[i]];
         let factory_number = get_factory_number(result_dict[i], i).toFixed(fixed_num);
-
+        if (ui_settings.hide_mines && ((i in mineralize_list) || Object.keys(game_data.recipe_data[recipe_id]["原料"]).length < 1)) {
+            continue;
+        }
         let from_side_products = Object.entries(side_products[i]).map(([from, amount]) =>
             <div key={from} className="text-nowrap">+{amount.toFixed(fixed_num)} (<ItemIcon item={from} size={26} />)</div>
         );
-
-        function change_recipe(value) {
-            set_scheme_data(old_scheme_data => {
-                let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.item_recipe_choices[i] = value;
-                return scheme_data;
-            })
-        }
-
-        function change_pro_num(value) {
-            set_scheme_data(old_scheme_data => {
-                let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.scheme_for_recipe[recipe_id]["喷涂点数"] = value;
-                return scheme_data;
-            })
-        }
-
-        function change_pro_mode(value) {
-            set_scheme_data(old_scheme_data => {
-                let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.scheme_for_recipe[recipe_id]["增产模式"] = value;
-                return scheme_data;
-            })
-        }
-
-        function change_factory(value) {
-            set_scheme_data(old_scheme_data => {
-                let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.scheme_for_recipe[recipe_id]["建筑"] = value;
-                return scheme_data;
-            })
-        }
-
         let factory_name = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"];
-
         let is_mineralized = i in mineralize_list;
         let row_class = is_mineralized ? "table-secondary" : "";
 

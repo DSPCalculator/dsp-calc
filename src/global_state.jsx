@@ -112,8 +112,8 @@ export class GlobalState {
                 proliferator_price[game_data.proliferator_data[i]["单次喷涂最高增产点数"]] = {};
                 if (proliferate_itself) {
                     proliferator_price[game_data.proliferator_data[i]["单次喷涂最高增产点数"]][game_data.proliferator_data[i]["增产剂名称"]]
-                        = 1 / (game_data.proliferator_data[i]["喷涂次数"] *
-                            game_data.proliferate_effect[game_data.proliferator_data[i]["单次喷涂最高增产点数"]]["增产效果"] - 1);
+                        = 1 / Math.floor(game_data.proliferator_data[i]["喷涂次数"] *
+                            game_data.proliferate_effect[game_data.proliferator_data[i]["单次喷涂最高增产点数"]]["增产效果"] - 1 + 1e-6);
                 }
                 else {
                     proliferator_price[game_data.proliferator_data[i]["单次喷涂最高增产点数"]][game_data.proliferator_data[i]["增产剂名称"]]

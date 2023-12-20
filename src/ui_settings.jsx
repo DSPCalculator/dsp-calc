@@ -24,10 +24,14 @@ export function UiSettings() {
     function toggle_proliferate_itself(e) {
         set_ui_settings("proliferate_itself", !proliferate_itself);
     }
+    const hide_mines = ui_settings.hide_mines;
+    function toggle_hide_mines(e) {
+        set_ui_settings("hide_mines", !hide_mines);
+    }
 
     return <table><tbody>
         <tr>
-            <td>单位{is_min ? "个/min" : "个/sec"}</td>
+            <td>单位: {is_min ? "个/min" : "个/sec"}</td>
             <td className="ps-2">
                 <button onClick={toggle_min_or_sec}>{is_min ? "转化为秒" : "转化为分"}</button>
             </td>
@@ -47,8 +51,12 @@ export function UiSettings() {
             </td>
         </tr>
         <tr>
-            <td><button onClick={toggle_proliferate_itself}>自喷涂？</button></td>
-            <td className="ps-2">{proliferate_itself ? "Yes!" : "No!"}</td>
+            <td lassName="ps-2">增产剂: {proliferate_itself ? "先自喷涂" : "直接喷涂"}</td>
+            <td><button onClick={toggle_proliferate_itself}>{proliferate_itself ? "取消自喷涂" : "改为自喷涂"}</button></td>
+        </tr>
+        <tr>
+            <td lassName="ps-2">输出列表: {hide_mines ? "隐藏原矿" : "显示原矿"}</td>
+            <td><button onClick={toggle_hide_mines}>{hide_mines ? "显示原矿" : "隐藏原矿"}</button></td>
         </tr>
     </tbody></table>;
 }
