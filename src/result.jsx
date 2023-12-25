@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { ItemSelect } from './item_select';
+import { AutoSizedInput } from './auto_sized_input.jsx';
 import { NplRows } from './natural_production_line';
 import { HorizontalMultiButtonSelect, ItemIcon, Recipe } from './recipe';
 
@@ -90,11 +90,10 @@ export function FactorySelect({ recipe_id, choice, onChange, no_gap }) {
     return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} no_gap={no_gap} />;
 }
 
-export function Result({ needs_list }) {
+export function Result({ needs_list, set_needs_list }) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const set_ui_settings = useContext(UiSettingsSetterContext);
-
     // const [result_dict, set_result_dict] = useState(global_state.calculate());
     let game_data = global_state.game_data;
     let scheme_data = global_state.scheme_data;
@@ -245,6 +244,20 @@ export function Result({ needs_list }) {
             })
         }
 
+        function set_needs_in_row(value0) {
+            return function (e_or_value) {
+                // Either an event [e] or a raw [value] is supported
+                if (value0 != 0) {
+                    let value = e_or_value.target ? e_or_value.target.value : e_or_value;
+                    let new_needs_list = structuredClone(needs_list);
+                    for (let i in needs_list) {
+                        new_needs_list[i] *= value / value0;
+                    }
+                    set_needs_list(new_needs_list);
+                }
+            }
+        }
+
         result_table_rows.push(<tr className={row_class} key={i}>
             {/* 操作 */}
             <td>
@@ -261,7 +274,7 @@ export function Result({ needs_list }) {
             </div></td>
             {/* 分钟毛产出 */}
             <td className="text-center">
-                <div>{get_gross_output(result_dict[i], i).toFixed(fixed_num)}</div>
+                <AutoSizedInput value={get_gross_output(result_dict[i], i).toFixed(fixed_num)} onChange={set_needs_in_row(result_dict[i])} />
                 {from_side_products}
             </td>
             {/* 所需工厂*数目 */}
@@ -269,9 +282,7 @@ export function Result({ needs_list }) {
                 {is_mineralized ||
                     <>
                         <ItemIcon item={factory_name} size={30} />
-                        <span style={{ lineHeight: "30px" }}>
-                            {" " + factory_number}
-                        </span>
+                        <AutoSizedInput value={factory_number} onChange={set_needs_in_row(factory_number)} />
                     </>
                 }
             </td>

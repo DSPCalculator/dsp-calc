@@ -95,7 +95,7 @@ function AppWithContexts() {
     <div>
       <NeedsList needs_list={needs_list} set_needs_list={set_needs_list} />
       <BatchSetting />
-      <Result needs_list={needs_list} />
+      <Result needs_list={needs_list} set_needs_list={set_needs_list} />
     </div>
   </>;
 }
