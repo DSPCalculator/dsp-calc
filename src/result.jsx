@@ -133,7 +133,7 @@ export function Result({ needs_list }) {
         var factory = game_data.recipe_data[recipe_id]["设施"];
         let is_factory_miner = factory == "采矿设备" || factory == "抽水设备" || factory == "抽油设备";
         if (factory != "巨星采集") {
-            var e_cost = build_number * game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["耗能"];
+            var e_cost = (build_number - offset) * game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["耗能"];
             if (game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"] == "大型采矿机") {
                 e_cost = scheme_data.mining_rate["大矿机工作倍率"] * scheme_data.mining_rate["大矿机工作倍率"] * (2.94 - 0.168) + 0.168;
             }
@@ -293,7 +293,7 @@ export function Result({ needs_list }) {
     for (var NPId in natural_production_line) {
         var recipe = game_data.recipe_data[item_data[natural_production_line[NPId]["目标物品"]][natural_production_line[NPId]["配方id"]]];
         var building = game_data.factory_data[recipe["设施"]][natural_production_line[NPId]["建筑"]];
-        if (building in building_list) {
+        if (building["名称"] in building_list) {
             building_list[building["名称"]] = Number(building_list[building["名称"]]) + Math.ceil(natural_production_line[NPId]["建筑数量"]);
         }
         else {
