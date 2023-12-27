@@ -1,16 +1,29 @@
-# html版戴森球量化计算器(当前最新版本v0.4.4——自动化布局矿物选择页面,更改一些UI风格)
-
+# html版戴森球量化计算器
+![](https://img.shields.io/github/license/DSPCalculator/dsp-calc)
+![](https://img.shields.io/github/stars/DSPCalculator/dsp-calc)
+![Contributors](https://img.shields.io/github/contributors/DSPCalculator/dsp-calc)
+- 当前最新版本:v0.4.5
 ## 在线使用方式
 
-访问 https://dsp-calc.pro/ 即可
+本项目使用了不同平台进行部署,以保证可访问性:
 
-备份站，以后可能不维护：https://shi-sang.gitee.io/dsp_calculator/
+Github Pages: https://dyson.gaozih.com/
+
+NetFliy: https://dsp-calc.pro/
+
+Cloudflare Pages: 暂无
+
+已经废弃的站点：~~https://shi-sang.gitee.io/dsp_calculator/~~
 
 ## 本地开发环境
 
 - 下载nodejs，并确认npm指令可以运行
 - `npm install`
 - `npm run dev`，然后根据提示打开浏览器链接即可
+
+## 部署
+- 您可以使用本项目release分支内的静态文件直接部署
+- 或使用 `npm run build` 来生成静态文件
 
 ## 简介
 
@@ -55,6 +68,9 @@ v0.4.2——更新战斗模式物品
 
 v0.4.3——增加在输出列表中隐藏原矿的功能,以及部分UI调整
 
+v0.4.4——对UI进行优化,增加标题栏
+
+v0.4.5——优化部署的方式,增加备选部署方案
 ## 待完善功能：
 
 - 优化界面和UI交互(希望大家广泛提意见)
