@@ -6,7 +6,7 @@ import { Result } from './result.jsx';
 import { FractionatingSetting, MiningSettings, SchemeStorage, init_scheme_data } from './scheme_data.jsx';
 import { UiSettings } from './ui_settings.jsx';
 import { GameData } from '../data/GameData.jsx';
-
+import  Header  from './header.jsx';
 function GameVersion() {
   const set_game_name_and_data = useContext(GameInfoSetterContext);
   const set_scheme_data = useContext(SchemeDataSetterContext);
@@ -81,7 +81,8 @@ function AppWithContexts() {
   }
 
   return <>
-    <div className="d-flex column-gap-4 row-gap-2 flex-wrap">
+    <Header />
+    <div className="d-flex column-gap-4 row-gap-2 flex-wrap mt-4"> 
       <GameVersion />
       <SchemeStorage />
       <NeedsListStorage needs_list={needs_list} set_needs_list={set_needs_list} />

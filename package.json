@@ -1,7 +1,7 @@
 {
   "name": "dsp_calculator",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.4.4",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -16,8 +16,11 @@
     "javascript-lp-solver": "^0.4.24",
     "pinyin-pro": "^3.18.4",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.9.2",
     "react-bootstrap-icons": "^1.10.3",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-github-corner": "^2.5.0",
+    "react-icons": "^4.12.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
