@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { AutoSizedInput, ResultNum } from './auto_sized_input.jsx';
+import { AutoSizedInput } from './auto_sized_input.jsx';
 import { NplRows } from './natural_production_line';
 import { HorizontalMultiButtonSelect, ItemIcon, Recipe } from './recipe';
 
