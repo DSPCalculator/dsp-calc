@@ -7,11 +7,11 @@
 
 本项目使用了不同平台进行部署,以保证可访问性:
 
-Github Pages: https://dyson.gaozih.com/
+Netlify: https://dsp-calc.pro/
 
-NetFliy: https://dsp-calc.pro/
+Cloudflare Pages: https://dyson.gaozih.com/
 
-Cloudflare Pages: 暂无
+Github Pages: https://dspcalculator.github.io/dsp-calc/
 
 已经废弃的站点：~~https://shi-sang.gitee.io/dsp_calculator/~~
 
