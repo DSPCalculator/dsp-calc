@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { AutoSizedInput } from './auto_sized_input.jsx';
+import { AutoSizedInput, ResultNum } from './auto_sized_input.jsx';
 import { NplRows } from './natural_production_line';
 import { HorizontalMultiButtonSelect, ItemIcon, Recipe } from './recipe';
 
@@ -135,6 +135,12 @@ export function Result({ needs_list, set_needs_list }) {
             var e_cost = (build_number - offset) * game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["耗能"];
             if (game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_for_recipe["建筑"]]["名称"] == "大型采矿机") {
                 e_cost = scheme_data.mining_rate["大矿机工作倍率"] * scheme_data.mining_rate["大矿机工作倍率"] * (2.94 - 0.168) + 0.168;
+            }
+            else if (game_data.recipe_data[recipe_id]["设施"] == "分馏设备") {
+                if (scheme_data.fractionating_speed > 1800) {
+                    console.log(scheme_data.fractionating_speed)
+                    e_cost *= (scheme_data.fractionating_speed * 0.0006 - 0.36) / 0.72;
+                }
             }
             if (scheme_for_recipe["增产模式"] != 0 && scheme_for_recipe["喷涂点数"] != 0) {
                 e_cost *= game_data.proliferate_effect[scheme_for_recipe["喷涂点数"]]["耗电倍率"];
