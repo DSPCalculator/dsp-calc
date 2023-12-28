@@ -9,7 +9,7 @@
 
 Github Pages: https://dyson.gaozih.com/
 
-NetFliy: https://dsp-calc.pro/
+Netlify: https://dsp-calc.pro/
 
 Cloudflare Pages: 暂无
 
