@@ -623,6 +623,9 @@ export class GlobalState {
             "成本":一个物品的当前产线成本以及被赋予的额外成本,若为原矿化物品或关键物品或多来源物品则为0
             "累计成本":一个物品独自建造时的历史总计产出的成本,若为原矿化物品或关键物品或多来源物品则为0
         */
+        console.log(item_graph["石墨烯"]);
+        console.log(item_price["石墨烯"]);
+        console.log(result_dict);
         for (var item in in_out_list) {
             if (in_out_list[item] > 0) {
                 if (item in result_dict) {
@@ -719,6 +722,7 @@ export class GlobalState {
             constraints: {},
             variables: {}
         }
+        console.log(item_graph["石墨烯"])
         for (var item in lp_item_dict) {
             model.constraints["i" + item] = { min: lp_item_dict[item] };
             model.variables[item] = { cost: this.#get_item_cost(item) };//计算线性规划物品当前的产线成本
@@ -727,6 +731,7 @@ export class GlobalState {
             }
             model.variables[item]["i" + item] = 1.0;
             model.variables[item].cost = Number(model.variables[item].cost) + scheme_data.cost_weight["物品额外成本"][item]["溢出时处理成本"];
+            console.log(item_graph[item]);
             if ("副产物" in item_graph[item]) {
                 for (var sub_product in item_graph[item]["副产物"]) {
                     model.variables[item]["i" + sub_product] = Number(model.variables[item]["i" + sub_product]) + item_graph[item]["副产物"][sub_product];
@@ -738,15 +743,26 @@ export class GlobalState {
                 if (material in lp_item_dict) {
                     model.variables[item]["i" + material] = Number(model.variables[item]["i" + material]) - item_graph[item]["原料"][material];
                 }
-                if ("副产物" in item_graph[material] && !(material in lp_item_dict)) {//遍历原料时，如果原料时线规相关物品那么将其视作原矿，不考虑生产时的副产物
+                /*历史累计产出的副产物已在item_price中以负数的形式记录
+                if ("副产物" in item_graph[material] && !(material in lp_item_dict)) {//遍历原料时，如果原料是线规相关物品那么将其视作原矿，不考虑生产时的副产物
                     for (var sub_product in item_graph[material]["副产物"]) {
+                        console.log(material + model.variables[item]["i" + sub_product]);
                         model.variables[item]["i" + sub_product] = Number(model.variables[item]["i" + sub_product]) + item_graph[material]["副产物"][sub_product] * item_graph[item]["原料"][material];
+                        console.log(material + model.variables[item]["i" + sub_product]);
                     }
                 }
+                */
                 for (var sub_item in item_price[material]["原料"]) {
                     if (sub_item in lp_item_dict) {
+                        console.log(material + model.variables[item]["i" + sub_item]);
                         model.variables[item]["i" + sub_item] = Number(model.variables[item]["i" + sub_item]) - item_price[material]["原料"][sub_item] * item_graph[item]["原料"][material];
-                    }//历史累计产出的副产物已在item_price中以负数的形式记录
+                        console.log(material + model.variables[item]["i" + sub_item]);
+                    }
+                    if ("副产物" in item_graph[sub_item] && !(sub_item in lp_item_dict)) {//遍历原料时，如果原料是线规相关物品那么将其视作原矿，不考虑生产时的副产物
+                        for (var sub_product in item_graph[sub_item]["副产物"]) {
+                            model.variables[item]["i" + sub_product] = Number(model.variables[item]["i" + sub_product]) + item_graph[sub_item]["副产物"][sub_product] * item_graph[item]["原料"][material] * item_price[material]["原料"][sub_item];
+                        }//否则生产这个配方时，其原料带来的必要副产物为：配方的此原料数*此原料成本中该物品的数量*单个该物品造成的副产物产出
+                    }
                 }
             }
         }//完善求解器输入的模型
