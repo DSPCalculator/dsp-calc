@@ -8,15 +8,9 @@
 
 ## 在线使用方式
 
-本项目使用了不同平台进行部署,以保证可访问性:
+- 由Jimmy大佬部署和维护: https://dsp-calc.pro/
 
-实时部署(Cloudflare CDN): https://calc.dspgame.com/
-
-Netlify: https://dsp-calc.pro/
-
-Cloudflare Pages: https://dyson.gaozih.com/
-
-Github Pages: https://dspcalculator.github.io/dsp-calc/
+- Github Pages: https://dspcalculator.github.io/dsp-calc/
 
 已经废弃的站点：~~https://shi-sang.gitee.io/dsp_calculator/~~
 
