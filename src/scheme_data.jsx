@@ -118,7 +118,7 @@ export function init_scheme_data(game_data) {
         }
     }
     for (var item in item_data) {
-        scheme_data.cost_weight["物品额外成本"][item] = { "成本": 0, "启用": 0, "与其它成本累计": 0 };
+        scheme_data.cost_weight["物品额外成本"][item] = { "成本": 0, "启用": 0, "与其它成本累计": 0, "溢出时处理成本": 99999 };
     }
     for (var item in item_data) {
         scheme_data.item_recipe_choices[item] = 1;

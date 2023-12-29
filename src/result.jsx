@@ -51,14 +51,6 @@ export function ProNumSelect({ choice, onChange }) {
     return <HorizontalMultiButtonSelect choice={choice} options={pro_num_options} onChange={onChange} optionType={"proNumSelect"} />;
 }
 
-export const pro_mode_lists = {
-    [0]: { [0]: "无" },
-    [1]: { [0]: "无", [1]: "加速" },
-    [2]: { [0]: "无", [2]: "增产" },
-    [3]: { [0]: "无", [1]: "加速", [2]: "增产" },
-    [4]: { [0]: "无", [4]: "接收站透镜喷涂" },
-}
-
 export const pro_mode_class = {
     [1]: "pro-mode-speedup",
     [2]: "pro-mode-extra-products"
@@ -67,9 +59,9 @@ export const pro_mode_class = {
 export function ProModeSelect({ recipe_id, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
-
-    let pro_mode_list = pro_mode_lists[game_data.recipe_data[recipe_id]["增产"]];
-    let options = Object.entries(pro_mode_list).map(([value, label]) => (
+    let pro_modes = { [0]: "无" };
+    ["加速", "增产", "接收站透镜喷涂"].forEach((e, i) => { if (game_data.recipe_data[recipe_id]["增产"] & (1 << i)) pro_modes[i + 1] = e })
+    let options = Object.entries(pro_modes).map(([value, label]) => (
         { value: value, label: label, className: pro_mode_class[value] }
     ));
 

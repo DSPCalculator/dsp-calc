@@ -42,7 +42,7 @@ function NplRow({ row, set_row, remove_row }) {
         if (pro_mode == 2) {
             output_num *= proliferator_data["增产效果"];
         }
-        else if (pro_mode == 1 || pro_mode == 4) {
+        else if (pro_mode == 1 || pro_mode == 3) {
             output_num *= proliferator_data["加速效果"];
         }
         return output_num;

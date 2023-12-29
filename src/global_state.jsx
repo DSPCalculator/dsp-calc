@@ -183,7 +183,7 @@ export class GlobalState {
                     produce_rate *= game_data.proliferate_effect[proliferate_num]["增产效果"];
                     item_graph[item]["产出倍率"] *= produce_rate;
                 }
-                else if (proliferate_mode == 4) {
+                else if (proliferate_mode == 3) {
                     for (var proliferate in proliferator_price[proliferate_num]) {
                         if (proliferate in item_graph[item]["原料"]) {
                             item_graph[item]["原料"][proliferate] += total_material_num * proliferator_price[proliferate_num][proliferate];
@@ -289,7 +289,7 @@ export class GlobalState {
                 if (building_info["名称"] == "分馏塔") {
                     item_graph[item]["产出倍率"] *= scheme_data.fractionating_speed / 60;
                 }
-            }
+            }//分馏塔流速加成计算
             else if (factory_type == "轻型工业机甲") {
                 if (building_info["名称"] == "伊卡洛斯") {
                     item_graph[item]["产出倍率"] *= scheme_data.mining_rate["伊卡洛斯手速"];
@@ -308,9 +308,9 @@ export class GlobalState {
         let item_graph = this.item_graph;
         let stackable_buildings = this.ui_settings.stackable_buildings;
 
-        var cost = 0.0;
+        let cost = 0.0;
         if (scheme_data.cost_weight["物品额外成本"][item]["启用"]) {
-            cost = Number(cost) + scheme_data.cost_weight["物品额外成本"][item]["成本"];
+            cost = Number(cost) + scheme_data.cost_weight["物品额外成本"][item]["额外成本"];
             if (!scheme_data.cost_weight["物品额外成本"][item]["与其它成本累计"]) {
                 return cost;
             }
@@ -408,14 +408,15 @@ export class GlobalState {
     }
 
     /** 取得每一个物品的历史产出 */
-    #get_item_price(external_supply_item) {
+    #get_item_price() {
         let scheme_data = this.scheme_data;
         let item_graph = this.item_graph;
         let item_list = this.item_list;
         let key_item_list = this.key_item_list;
         let multi_sources = this.multi_sources;
-
-        var p_key_item = 0;
+        let mineralize_list = this.ui_settings.mineralize_list;
+        let p_key_item = 0;
+        let p_mineralize_item = 0;
         let item_price = {};
         function count_total_material(dict, material, num) {
             if (material in dict) {
@@ -434,24 +435,41 @@ export class GlobalState {
             }
             return dict;
         }
+        for (let key_item in key_item_list) {
+            item_price[key_item_list[key_item]] = { "原料": {}, "成本": 0, "累计成本": 0 };
+        }//关键物品成本为0
+        for (let mineralize_item in mineralize_list) {
+            item_price[mineralize_item] = { "原料": {}, "成本": 0, "累计成本": 0 };
+        }// 矿物化物品成本为0
+        for (let multi_source in multi_sources) {
+            item_price[multi_source] = { "原料": {}, "成本": 0, "累计成本": 0 };
+        }//多来源物品成本为0
         for (var i = 0; i < item_list.length; i++) {
             if (p_key_item < key_item_list.length && item_list[i] == key_item_list[p_key_item]) {
-                item_price[item_list[i]] = { "原料": {}, "成本": 0 };
                 ++p_key_item;
-            }//关键物品成本为0
-            else if ((item_list[i] in multi_sources) || (item_list[i] in external_supply_item)) {
-                item_price[item_list[i]] = { "原料": {}, "成本": 0 };
-            }//多来源物品成本为0
+                continue;
+            }//跳过关键物品
+            else if (p_mineralize_item < mineralize_list.length && item_list[i] == mineralize_list[p_mineralize_item]) {
+                ++p_mineralize_item;
+                continue;
+            }//跳过原矿化物品
+            else if (item_list[i] in multi_sources) {
+                continue;
+            }//跳过多来源物品
             else {
-                item_price[item_list[i]] = { "原料": {}, "成本": this.#get_item_cost(item_list[i]) };//计算当前产线成本
+                item_price[item_list[i]] = { "原料": {}, "成本": this.#get_item_cost(item_list[i]), "累计成本": 0 };//计算当前产线成本
                 for (var material in item_graph[item_list[i]]["原料"]) {
                     item_price[item_list[i]]["原料"] = count_total_material(item_price[item_list[i]]["原料"], material, item_graph[item_list[i]]["原料"][material]);
                 }//计算其历史产出
-                if (!scheme_data.cost_weight["物品额外成本"][item_list[i]]["与其它成本累计"]) {
-                    for (var material in item_graph[item_list[i]]["原料"]) {
-                        item_price[item_list[i]]["成本"] = Number(item_price[item_list[i]]["成本"]) + item_graph[item_list[i]]["原料"][material] * item_price[material]["成本"];
+                for (var side_products in item_graph[item_list[i]]["副产物"]) {
+                    item_price[item_list[i]]["原料"] = count_total_material(item_price[item_list[i]]["原料"], side_products, -item_graph[item_list[i]]["副产物"][side_products]);
+                }//计算其副产物的历史产出
+                item_price[item_list[i]]["累计成本"] = item_price[item_list[i]]["成本"];
+                for (let item in item_price[item_list[i]]["原料"]) {
+                    if (item_price[item_list[i]]["原料"][item] > 0) {
+                        item_price[item_list[i]]["累计成本"] = Number(item_price[item_list[i]]["累计成本"]) + Number(item_price[item]["成本"]) * item_price[item_list[i]]["原料"][item];
                     }
-                }//自定义的额外成本的情况下是原料成本+额外成本
+                }
             }
         }
         return item_price;
@@ -562,7 +580,7 @@ export class GlobalState {
                         }
                     }
                 }
-                else if (natural_production_line[id]["增产模式"] == 4) {
+                else if (natural_production_line[id]["增产模式"] == 3) {
                     var pro_time = game_data.proliferate_effect[natural_production_line[id]["喷涂点数"]]["加速效果"];
                     for (var item in recipe["原料"]) {
                         if (item in in_out_list) {
@@ -590,7 +608,7 @@ export class GlobalState {
                     }
                 }
             }
-        }//将固有产线的输入输出添至计算的实际需求列表中
+        }//将现有产线的输入输出添至计算的实际需求列表中
 
         for (var item in in_out_list) {
             if (in_out_list[item] < 0) {
@@ -598,8 +616,13 @@ export class GlobalState {
             }
         }//将实际需求列表中小于0的部分看做外部输入
 
-        let item_price = this.#get_item_price(external_supply_item);
-
+        let item_price = this.#get_item_price();
+        //console.log(item_price);
+        /*item_price:
+            "原料":一个物品的历史累计产出,若有没用到的副产物则为负,若为原矿化物品或关键物品或多来源物品则为空
+            "成本":一个物品的当前产线成本以及被赋予的额外成本,若为原矿化物品或关键物品或多来源物品则为0
+            "累计成本":一个物品独自建造时的历史总计产出的成本,若为原矿化物品或关键物品或多来源物品则为0
+        */
         for (var item in in_out_list) {
             if (in_out_list[item] > 0) {
                 if (item in result_dict) {
@@ -608,7 +631,7 @@ export class GlobalState {
                 else {
                     result_dict[item] = in_out_list[item];
                 }
-                if (item_graph[item]["副产物"] && !(item in multi_sources) && !(item in key_item_list)) {//如果是线性规划相关物品的副产物因为这边是原矿化的所以不应考虑其副产物
+                if (item_graph[item]["副产物"] && !(item in multi_sources) && !(item in key_item_list)) {//如果是线性规划相关物品的副产物,因为这边是当成原矿化的所以不应考虑其副产物
                     for (var other_products in item_graph[item]["副产物"]) {
                         if (other_products in surplus_list) {
                             surplus_list[other_products] = Number(surplus_list[other_products]) + item_graph[item]["副产物"][other_products] * in_out_list[item];
@@ -689,7 +712,6 @@ export class GlobalState {
     #get_linear_programming_list(lp_item_dict, result_dict, lp_surplus_list, item_price) {
         let item_graph = this.item_graph;
         let scheme_data = this.scheme_data;
-
         /** 求解模型 */
         let model = {
             optimize: 'cost',
@@ -699,20 +721,20 @@ export class GlobalState {
         }
         for (var item in lp_item_dict) {
             model.constraints["i" + item] = { min: lp_item_dict[item] };
-            model.variables[item] = { cost: this.#get_item_cost(item) };
+            model.variables[item] = { cost: this.#get_item_cost(item) };//计算线性规划物品当前的产线成本
             for (var other_item in lp_item_dict) {
                 model.variables[item]["i" + other_item] = 0.0;
             }
             model.variables[item]["i" + item] = 1.0;
+            model.variables[item].cost = Number(model.variables[item].cost) + scheme_data.cost_weight["物品额外成本"][item]["溢出时处理成本"];
             if ("副产物" in item_graph[item]) {
                 for (var sub_product in item_graph[item]["副产物"]) {
                     model.variables[item]["i" + sub_product] = Number(model.variables[item]["i" + sub_product]) + item_graph[item]["副产物"][sub_product];
+                    model.variables[item].cost = Number(model.variables[item].cost) + item_graph[item]["副产物"][sub_product] * scheme_data.cost_weight["物品额外成本"][sub_product]["溢出时处理成本"];
                 }
             }
             for (var material in item_graph[item]["原料"]) {
-                if (!scheme_data.cost_weight["物品额外成本"][item]["与其它成本累计"]) {
-                    model.variables[item].cost = Number(model.variables[item].cost) + item_graph[item]["原料"][material] * item_price[material]["成本"];//配方成本加上原料的成本
-                }
+                model.variables[item].cost = Number(model.variables[item].cost) + item_graph[item]["原料"][material] * item_price[material]["累计成本"];//配方成本加上原料的成本
                 if (material in lp_item_dict) {
                     model.variables[item]["i" + material] = Number(model.variables[item]["i" + material]) - item_graph[item]["原料"][material];
                 }
@@ -724,12 +746,7 @@ export class GlobalState {
                 for (var sub_item in item_price[material]["原料"]) {
                     if (sub_item in lp_item_dict) {
                         model.variables[item]["i" + sub_item] = Number(model.variables[item]["i" + sub_item]) - item_price[material]["原料"][sub_item] * item_graph[item]["原料"][material];
-                    }
-                    if ("副产物" in item_graph[sub_item] && !(sub_item in lp_item_dict)) {//遍历原料时，如果原料是线规相关物品那么将其视作原矿，不考虑生产时的副产物
-                        for (var sub_product in item_graph[sub_item]["副产物"]) {
-                            model.variables[item]["i" + sub_product] = Number(model.variables[item]["i" + sub_product]) + item_graph[sub_item]["副产物"][sub_product] * item_graph[item]["原料"][material] * item_price[material]["原料"][sub_item];
-                        }//否则生产这个配方时，其原料带来的必要副产物为：配方的此原料数*此原料成本中该物品的数量*单个该物品造成的副产物产出
-                    }
+                    }//历史累计产出的副产物已在item_price中以负数的形式记录
                 }
             }
         }//完善求解器输入的模型
