@@ -1,3 +1,5 @@
+import React from 'react';
+import { useRef, useState } from 'react';
 const input_style = {
   padding: 0,
   margin: 0,
@@ -30,6 +32,29 @@ const template_style = {
   paddingRight: '6px',
 }
 
+const DelayedInput_style = {
+  ...input_style,
+  position: 'relative',
+  width: '80%',
+  minWidth: '80px',
+  margin: 5,
+}
+
+export const DelayedInput = ({ value, onChange }) => {
+  const [displayedValue, setValue] = useState(null);
+  return (
+    <input style={DelayedInput_style}
+      type="text"
+      value={displayedValue || value}
+      onBlur={e => {
+        onChange(e.target.value);
+        setv(null);
+      }}
+      onChange={e => setValue(e.target.value)}
+      onKeyDown={e => { if (e.key == "Enter") onChange(e.target.value); }}
+    />
+  );
+}
 export const AutoSizedInput = ({ value, onChange }) => {
   return (
     <label style={label_style}>

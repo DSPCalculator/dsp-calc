@@ -64,14 +64,6 @@ export function FractionatingSetting() {
                 let fractionating_speed = parseFloat(event.target.value) || 0;
                 let new_scheme_data = structuredClone(prev_scheme_data);
                 new_scheme_data.fractionating_speed = fractionating_speed;
-
-                // TODO calculate fractionating_speed somewhere else
-                // if (fractionating_speed > 1800) {
-                //     game_data.factory_data["分馏设备"][0]["耗能"] = scheme_data.fractionating_speed * 0.0006 - 0.36;
-                // }
-                // else {
-                //     game_data.factory_data["分馏设备"][0]["耗能"] = 0.72;
-                // }
                 return new_scheme_data;
             })} />
     </span>;

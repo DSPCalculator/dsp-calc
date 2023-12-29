@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { AutoSizedInput } from './auto_sized_input.jsx';
+import { AutoSizedInput, DelayedInput } from './auto_sized_input.jsx';
 import { NplRows } from './natural_production_line';
 import { HorizontalMultiButtonSelect, ItemIcon, Recipe } from './recipe';
 
@@ -272,7 +272,7 @@ export function Result({ needs_list, set_needs_list }) {
             </div></td>
             {/* 分钟毛产出 */}
             <td className="text-center">
-                <AutoSizedInput value={get_gross_output(result_dict[i], i).toFixed(fixed_num)} onChange={set_needs_in_row(result_dict[i])} />
+                <DelayedInput value={get_gross_output(result_dict[i], i).toFixed(fixed_num)} onChange={set_needs_in_row(result_dict[i])} />
                 {from_side_products}
             </td>
             {/* 所需工厂*数目 */}
@@ -280,7 +280,7 @@ export function Result({ needs_list, set_needs_list }) {
                 {is_mineralized ||
                     <>
                         <ItemIcon item={factory_name} size={30} />
-                        <AutoSizedInput value={factory_number} onChange={set_needs_in_row(factory_number)} />
+                        <DelayedInput value={factory_number} onChange={set_needs_in_row(factory_number)} />
                     </>
                 }
             </td>
