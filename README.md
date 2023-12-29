@@ -45,6 +45,7 @@ Github Pages: https://dspcalculator.github.io/dsp-calc/
 ## 开发路线图：
 
 ### 功能完善
+
 - [ ] 界面优化和UI交互(希望大家广泛提意见)
 - [ ] 限制/不限制物品获取来源时自动计算最优增产策略
 - [ ] 自定义增产剂成本(其实已经可以实现了，但是不知道UI放哪比较好)
@@ -53,9 +54,8 @@ Github Pages: https://dspcalculator.github.io/dsp-calc/
 - [ ] 自带mod或其它游戏的数据(按game_data的格式导入即可)
 
 ### 部署平台
+
 - [ ] PWA
 - [ ] 桌面端应用
 - [ ] 移动端UI适配
 - [ ] 游戏内插件
-- [ ] 自定义新配方(按自己的想法创造配方，不知道有没有用不过这边可以加)
-- [ ] 自带mod或其它游戏的数据(按game_data的格式导入即可)
