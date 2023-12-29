@@ -47,8 +47,11 @@ export const DelayedInput = ({ value, onChange }) => {
       type="text"
       value={displayedValue || value}
       onBlur={e => {
-        onChange(e.target.value);
-        setv(null);
+        if (!isNaN(e.target.value)) {
+          onChange(e.target.value);
+          setValue(null);
+        }
+        else (setValue(value))
       }}
       onChange={e => setValue(e.target.value)}
       onKeyDown={e => { if (e.key == "Enter") onChange(e.target.value); }}
