@@ -136,13 +136,10 @@ export class GlobalState {
         let multi_sources = {};
         let item_graph = {};
 
-        // TODO seems not used?
-        let side_item_dict = {};
-
-        for (var item in item_data) {
+        for (let item in item_data) {
             item_graph[item] = { "原料": {}, "可生产": {}, "产出倍率": 0, "副产物": {} };
         }
-        for (var item in item_data) {
+        for (let item in item_data) {
             if (item in mineralize_list) {
                 item_graph[item]["产出倍率"] = 100000000 ** (fixed_num + 1);
                 continue;
@@ -223,13 +220,6 @@ export class GlobalState {
                             if (Math.min(game_data.recipe_data[recipe_id]["产物"][product] / (game_data.recipe_data[recipe_id]["产物"][item] - self_cost), item_graph[item]["原料"][product]) == item_graph[item]["原料"][product]) {
                                 item_graph[item]["副产物"][product] = game_data.recipe_data[recipe_id]["产物"][product] / (game_data.recipe_data[recipe_id]["产物"][item] - self_cost) - item_graph[item]["原料"][product];
                                 item_graph[item]["原料"][product] = 0;
-                                if (product in side_item_dict) {
-                                    side_item_dict[product][item] = 0;
-                                }
-                                else {
-                                    side_item_dict[product] = {};
-                                    side_item_dict[product][item] = 0;
-                                }
                                 if (product in multi_sources) {
                                     multi_sources[product].push(item);
                                 }
@@ -243,13 +233,6 @@ export class GlobalState {
                         }
                         else {
                             item_graph[item]["副产物"][product] = game_data.recipe_data[recipe_id]["产物"][product] / (game_data.recipe_data[recipe_id]["产物"][item] - self_cost);
-                            if (product in side_item_dict) {
-                                side_item_dict[product][item] = 0;
-                            }
-                            else {
-                                side_item_dict[product] = {};
-                                side_item_dict[product][item] = 0;
-                            }
                             if (product in multi_sources) {
                                 multi_sources[product].push(item);
                             }
@@ -294,7 +277,7 @@ export class GlobalState {
                 if (building_info["名称"] == "伊卡洛斯") {
                     item_graph[item]["产出倍率"] *= scheme_data.mining_rate["伊卡洛斯手速"];
                 }
-            }//毫无意义，只是我想这么干
+            }//伊卡洛斯采集速度的加成计算除了作弊以外暂时没办法更改,所以毫无意义，只是我想这么干
         }
         this.item_graph = item_graph;
         this.multi_sources = multi_sources;
@@ -502,7 +485,7 @@ export class GlobalState {
         for (var id in natural_production_line) {
             var recipe = game_data.recipe_data[item_data[natural_production_line[id]["目标物品"]][natural_production_line[id]["配方id"]]];
             var recipe_time = 60 * natural_production_line[id]["建筑数量"] * game_data.factory_data[recipe["设施"]][natural_production_line[id]["建筑"]]["倍率"] / recipe["时间"];
-            if ((natural_production_line[id]["喷涂点数"] == 0) || (natural_production_line[id]["增产模式"] == 0)) {
+            if ((natural_production_line[id]["喷涂点数"] == 0) || (natural_production_line[id]["增产模式"] == 0)) {//无喷涂的情况
                 for (var item in recipe["原料"]) {
                     if (item in in_out_list) {
                         in_out_list[item] = Number(in_out_list[item]) + recipe["原料"][item] * recipe_time;
@@ -623,9 +606,6 @@ export class GlobalState {
             "成本":一个物品的当前产线成本以及被赋予的额外成本,若为原矿化物品或关键物品或多来源物品则为0
             "累计成本":一个物品独自建造时的历史总计产出的成本,若为原矿化物品或关键物品或多来源物品则为0
         */
-        console.log(item_graph["石墨烯"]);
-        console.log(item_price["石墨烯"]);
-        console.log(result_dict);
         for (var item in in_out_list) {
             if (in_out_list[item] > 0) {
                 if (item in result_dict) {

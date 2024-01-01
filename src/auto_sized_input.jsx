@@ -41,19 +41,20 @@ const DelayedInput_style = {
 }
 
 export const DelayedInput = ({ value, onChange }) => {
-  const [displayedValue, setValue] = useState(null);
+  const [displayedValue, setDisplayedValue] = useState(null);
   return (
     <input style={DelayedInput_style}
       type="text"
       value={displayedValue || value}
       onBlur={e => {
-        if (!isNaN(e.target.value)) {
-          onChange(e.target.value);
-          setValue(null);
+        const num = Number(e.target.value);
+        if (!isNaN(num)) {
+          onChange(num);
+          setDisplayedValue(null);
         }
-        else (setValue(value))
+        else (setDisplayedValue(value))
       }}
-      onChange={e => setValue(e.target.value)}
+      onChange={e => setDisplayedValue(e.target.value)}
       onKeyDown={e => { if (e.key == "Enter") onChange(e.target.value); }}
     />
   );

@@ -92,8 +92,8 @@ export function Result({ needs_list, set_needs_list }) {
     let ui_settings = global_state.ui_settings;
     let item_data = global_state.item_data;
     let item_graph = global_state.item_graph;
+    let item_list = global_state.item_list;
     let time_tick = ui_settings.is_time_unit_minute ? 60 : 1;
-
     // TODO refactor to a simple list
     let mineralize_list = ui_settings.mineralize_list;
     let natural_production_line = ui_settings.natural_production_line;
@@ -168,8 +168,6 @@ export function Result({ needs_list, set_needs_list }) {
         new_mineralize_list[item] = structuredClone(item_graph[item]);
         // editing item_graph!
         item_graph[item]["原料"] = {};
-
-        console.log("mineralize_list", new_mineralize_list);
         set_ui_settings("mineralize_list", new_mineralize_list);
     }
 
@@ -192,9 +190,14 @@ export function Result({ needs_list, set_needs_list }) {
     let mineralize_doms = Object.keys(mineralize_list).map(item => (
         <a key={item} className="m-1 cursor-pointer" onClick={() => unmineralize(item)}><ItemIcon item={item} /></a>
     ));
-
     let result_table_rows = [];
+    // let i;
+    // for (let index = item_list.length - 1; index >= 0; index--) {//保障物品输出顺序不变
     for (let i in result_dict) {
+        // if (item_list[index] in result_dict) {
+        //     i = item_list[index];
+        // }
+        // else continue;
         side_products[i] = side_products[i] || {};
         let total = result_dict[i] + Object.values(side_products[i]).reduce((a, b) => a + b, 0);
         if (total < 1e-6) continue;
@@ -209,7 +212,7 @@ export function Result({ needs_list, set_needs_list }) {
         let factory_name = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"];
         let is_mineralized = i in mineralize_list;
         let row_class = is_mineralized ? "table-secondary" : "";
-
+        //row_class = is_highlighted(i) ? row_class + " table-primary" : row_class;
         function change_recipe(value) {
             set_scheme_data(old_scheme_data => {
                 let scheme_data = structuredClone(old_scheme_data);
@@ -332,6 +335,17 @@ export function Result({ needs_list, set_needs_list }) {
             </td>
             <td className="ps-2 text-nowrap">x {count}</td>
         </tr>));
+
+    //因线性规划精度误差而产生微量多余产物时将其除去
+    let microscale_lp_surplus_list = [];
+    for (let i in lp_surplus_list) {
+        if (lp_surplus_list[i] < 1e-6) {
+            microscale_lp_surplus_list.push(i);
+        }
+    }
+    for (let i in microscale_lp_surplus_list) {
+        delete lp_surplus_list[microscale_lp_surplus_list[i]];
+    }
 
     let surplus_doms = Object.entries(lp_surplus_list).map(([item, quant]) =>
         (<div key={item} className="text-nowrap"><ItemIcon item={item} /> x{quant.toFixed(fixed_num)}</div>));

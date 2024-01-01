@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { GlobalStateContext, GameInfoContext, UiSettingsContext, UiSettingsSetterContext } from './contexts.jsx';
 import { FactorySelect, ProModeSelect, ProNumSelect, RecipeSelect } from './result.jsx';
 import { ItemSelect } from './item_select.jsx';
-import { AutoSizedInput } from './auto_sized_input.jsx';
+import { DelayedInput } from './auto_sized_input.jsx';
 import { ItemIcon } from './recipe';
 
 // { "目标物品": "氢", "建筑数量": 0, "配方id": 1, "喷涂点数": 0, "增产模式": 0, "建筑": 0 }
@@ -71,7 +71,7 @@ function NplRow({ row, set_row, remove_row }) {
                 </div>
                 <span style={{ margin: "-0.5em" }}>x</span>
                 {/* 建筑数量 */}
-                <AutoSizedInput value={row["建筑数量"]} onChange={set_row_prop("建筑数量", true)} />
+                <DelayedInput value={row["建筑数量"]} onChange={set_row_prop("建筑数量", true)} />
             </div>
         </td>
         {/* 所选配方 */}
