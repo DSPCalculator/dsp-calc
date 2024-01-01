@@ -8,7 +8,7 @@
 
 ## 在线使用方式
 
-- 由Jimmy大佬部署和维护: https://dsp-calc.pro/
+- 主站 (Netlify) https://dsp-calc.pro/ &emsp;&emsp; 分支/PR预览 https://b.dsp-calc.pro/
 
 - Github Pages: https://dspcalculator.github.io/dsp-calc/
 
