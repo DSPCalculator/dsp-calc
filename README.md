@@ -8,9 +8,7 @@
 
 ## 在线使用方式
 
-- 主站: https://dsp-calc.pro/
-
-- 分支预览站（开发中）：https://b.dsp-calc.pro/
+- 主站 (Netlify) https://dsp-calc.pro/ &emsp;&emsp; 分支/PR预览 https://b.dsp-calc.pro/
 
 - Github Pages: https://dspcalculator.github.io/dsp-calc/
 
