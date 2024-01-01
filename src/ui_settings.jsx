@@ -51,12 +51,12 @@ export function UiSettings() {
             </td>
         </tr>
         <tr>
-            <td className="ps-2">增产剂: {proliferate_itself ? "先自喷涂" : "直接喷涂"}</td>
-            <td><button onClick={toggle_proliferate_itself}>{proliferate_itself ? "取消自喷涂" : "改为自喷涂"}</button></td>
+            <td>增产剂: {proliferate_itself ? "先自喷涂" : "直接喷涂"}</td>
+            <td className="ps-2"><button onClick={toggle_proliferate_itself}>{proliferate_itself ? "取消自喷涂" : "改为自喷涂"}</button></td>
         </tr>
         <tr>
-            <td className="ps-2">输出列表: {hide_mines ? "隐藏原矿" : "显示原矿"}</td>
-            <td><button onClick={toggle_hide_mines}>{hide_mines ? "显示原矿" : "隐藏原矿"}</button></td>
+            <td>输出列表: {hide_mines ? "隐藏原矿" : "显示原矿"}</td>
+            <td className="ps-2"><button onClick={toggle_hide_mines}>{hide_mines ? "显示原矿" : "隐藏原矿"}</button></td>
         </tr>
     </tbody></table>;
 }
