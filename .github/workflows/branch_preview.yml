@@ -1,7 +1,6 @@
 name: Deploy branch preview (https://b.dsp-calc.pro)
 
-on:
-  push
+on: [push, pull_request]
 
 jobs:
   build:
