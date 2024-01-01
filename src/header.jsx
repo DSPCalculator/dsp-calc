@@ -12,7 +12,7 @@ export function Header() {
     );
     return (
         <Navbar className="px-3 text-nowrap" bg="light" expand="lg">
-            <Navbar.Brand href="#" className="ms-3 d-inline-flex align-items-baseline">
+            <Navbar.Brand href="#" className="d-inline-flex align-items-baseline">
                 <FaReact className="me-2 align-self-center" />
                 <span className="me-1">戴森球计划量化计算器</span>
                 <span className="text-muted ssmall">v{version}</span>
