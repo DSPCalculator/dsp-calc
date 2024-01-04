@@ -342,8 +342,11 @@ export function Result({ needs_list, set_needs_list }) {
     }
 
     let surplus_doms = Object.entries(lp_surplus_list).map(([item, quant]) =>
-        (<div key={item} className="text-nowrap"><ItemIcon item={item} /> x{quant.toFixed(fixed_num)}<button className="btn btn-outline-primary ssmall text-nowrap mineralize-btn" onClick={() => IncreaseCostWhenSurplus(item)}>避免<br />溢出</button></div>));
-
+    (<div key={item} className="text-nowrap"><ItemIcon item={item} /> x{quant.toFixed(fixed_num)}
+        <button className="ms-2 btn btn-outline-primary ssmall text-nowrap mineralize-btn" onClick={() => IncreaseCostWhenSurplus(item)}>
+            <div>避免</div><div>溢出</div>
+        </button>
+    </div>));
 
     return <div className="my-3 d-flex gap-5">
         {/* 结果表格 */}
