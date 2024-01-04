@@ -16,7 +16,7 @@ const DEFAULT_SCHEME_DATA = {
             "单极磁石": { "成本": 10, "启用": 1, "与其它成本累计": 0 },
             "铁": { "成本": 1, "启用": 0, "与其它成本累计": 0 }
         }
-    },
+    },//这是示例,实际上cost_weight之后会在init_scheme_data中重置
     "mining_rate": {
         "科技面板倍率": 1.0,
         "小矿机覆盖矿脉数": 8,
@@ -118,7 +118,7 @@ export function init_scheme_data(game_data) {
         }
     }
     for (var item in item_data) {
-        scheme_data.cost_weight["物品额外成本"][item] = { "成本": 0, "启用": 0, "与其它成本累计": 0, "溢出时处理成本": 99999 };
+        scheme_data.cost_weight["物品额外成本"][item] = { "成本": 0, "启用": 0, "与其它成本累计": 0, "溢出时处理成本": 0 };
     }
     for (var item in item_data) {
         scheme_data.item_recipe_choices[item] = 1;
