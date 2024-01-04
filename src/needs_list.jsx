@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { Trash } from 'react-bootstrap-icons';
 import { GameInfoContext, GlobalStateContext, UiSettingsContext, UiSettingsSetterContext } from './contexts';
 import { ItemSelect } from './item_select';
-import { ItemIcon } from './recipe';
+import { ItemIcon } from './icon';
 
 function get_item_data(game_data) {
     //通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，键值为

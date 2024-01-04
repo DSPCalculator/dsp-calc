@@ -2,7 +2,8 @@ import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
 import { AutoSizedInput } from './auto_sized_input.jsx';
 import { NplRows } from './natural_production_line';
-import { HorizontalMultiButtonSelect, ItemIcon, Recipe } from './recipe';
+import { HorizontalMultiButtonSelect, Recipe } from './recipe';
+import { ItemIcon } from './icon';
 
 export function RecipeSelect({ item, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);

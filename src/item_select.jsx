@@ -2,7 +2,7 @@ import { Modal } from 'bootstrap';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { GameInfoContext } from './contexts.jsx';
-import { ItemIcon } from './recipe.jsx';
+import { ItemIcon } from './icon';
 import fuzzysort from 'fuzzysort'
 import { pinyin } from 'pinyin-pro';
 
