@@ -333,9 +333,20 @@ export function Result({ needs_list, set_needs_list }) {
             <td className="ps-2 text-nowrap">x {count}</td>
         </tr>));
 
-    let surplus_doms = Object.entries(lp_surplus_list).map(([item, quant]) =>
-        (<div key={item} className="text-nowrap"><ItemIcon item={item} /> x{quant.toFixed(fixed_num)}</div>));
+    function IncreaseCostWhenSurplus(item) {
+        set_scheme_data(old_scheme_data => {
+            let scheme_data = structuredClone(old_scheme_data);
+            scheme_data.cost_weight["物品额外成本"][item]["溢出时处理成本"] += 5000;
+            return scheme_data;
+        })
+    }
 
+    let surplus_doms = Object.entries(lp_surplus_list).map(([item, quant]) =>
+    (<div key={item} className="text-nowrap"><ItemIcon item={item} /> x{quant.toFixed(fixed_num)}
+        <button className="ms-2 btn btn-outline-primary ssmall text-nowrap mineralize-btn" onClick={() => IncreaseCostWhenSurplus(item)}>
+            <div>避免</div><div>溢出</div>
+        </button>
+    </div>));
 
     return <div className="my-3 d-flex gap-5">
         {/* 结果表格 */}

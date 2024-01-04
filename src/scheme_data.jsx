@@ -5,6 +5,7 @@ import { GameInfoContext, GlobalStateContext, SchemeDataSetterContext } from './
 const DEFAULT_SCHEME_DATA = {
     "item_recipe_choices": { "氢": 1 },
     "scheme_for_recipe": [{ "建筑": 0, "喷涂点数": 0, "增产模式": 0 }],
+    // 这是示例,实际上cost_weight之后会在init_scheme_data中重置
     "cost_weight": {
         "占地": 1,
         "电力": 0,
@@ -118,7 +119,7 @@ export function init_scheme_data(game_data) {
         }
     }
     for (var item in item_data) {
-        scheme_data.cost_weight["物品额外成本"][item] = { "成本": 0, "启用": 0, "与其它成本累计": 0, "溢出时处理成本": 99999 };
+        scheme_data.cost_weight["物品额外成本"][item] = { "成本": 0, "启用": 0, "与其它成本累计": 0, "溢出时处理成本": 0 };
     }
     for (var item in item_data) {
         scheme_data.item_recipe_choices[item] = 1;
