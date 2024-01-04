@@ -30,7 +30,11 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "imagemin": "^8.0.1",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^8.0.0",
     "sass": "^1.69.5",
-    "vite": "^5.0.0"
+    "vite": "^5.0.0",
+    "vite-plugin-spritesmith": "^0.1.1"
   }
 }
