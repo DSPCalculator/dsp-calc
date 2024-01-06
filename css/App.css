@@ -181,3 +181,13 @@ legend {
     border: 1px solid black;
     outline: 0.5px solid black;
 }
+
+.auto-sized-input>input.valid {
+    border-color: var(--bs-form-valid-border-color);
+    outline-color: var(--bs-form-valid-border-color);
+}
+
+.auto-sized-input>input.invalid {
+    border-color: var(--bs-form-invalid-border-color);
+    outline-color: var(--bs-form-invalid-border-color);
+}
