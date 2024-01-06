@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { AutoSizedInput } from './auto_sized_input.jsx';
+import { AutoSizedInput } from './ui_components/auto_sized_input.jsx';
 import { NplRows } from './natural_production_line';
 import { HorizontalMultiButtonSelect, Recipe } from './recipe';
 import { ItemIcon } from './icon';
@@ -203,7 +203,7 @@ export function Result({ needs_list, set_needs_list }) {
         if (ui_settings.hide_mines && ((i in mineralize_list) || Object.keys(game_data.recipe_data[recipe_id]["原料"]).length < 1)) {
             continue;
         }
-        let factory_number = get_factory_number(result_dict[i], i).toFixed(fixed_num);
+        let factory_number = get_factory_number(result_dict[i], i);
         let from_side_products = Object.entries(side_products[i]).map(([from, amount]) =>
             <div key={from} className="text-nowrap">+{amount.toFixed(fixed_num)} (<ItemIcon item={from} size={26} />)</div>
         );
@@ -243,18 +243,29 @@ export function Result({ needs_list, set_needs_list }) {
             })
         }
 
-        function set_needs_in_row(value0) {
-            return function (e_or_value) {
-                // Either an event [e] or a raw [value] is supported
-                if (value0 != 0) {
-                    let value = e_or_value.target ? e_or_value.target.value : e_or_value;
-                    let new_needs_list = structuredClone(needs_list);
-                    for (let i in needs_list) {
-                        new_needs_list[i] *= value / value0;
+        function RatioAdjustInput({ value }) {
+            let disp_value = value.toFixed(fixed_num);
+            let base_value = +disp_value;
+            function set_needs_in_row() {
+                return function (e_or_value) {
+                    // Either an event [e] or a raw [value] is supported
+                    if (base_value != 0) {
+                        let new_value = e_or_value.target ? e_or_value.target.value : e_or_value;
+                        let new_needs_list = {};
+                        for (let i in needs_list) {
+                            new_needs_list[i] = needs_list[i] * new_value / base_value;
+                        }
+                        set_needs_list(new_needs_list);
                     }
-                    set_needs_list(new_needs_list);
                 }
             }
+
+            return <span data-tooltip="等比例调整需求" className="fast-tooltip">
+                <AutoSizedInput
+                    delayed={true}
+                    value={disp_value}
+                    onChange={set_needs_in_row()} />
+            </span >;
         }
 
         result_table_rows.push(<tr className={row_class} key={i}>
@@ -273,15 +284,17 @@ export function Result({ needs_list, set_needs_list }) {
             </div></td>
             {/* 分钟毛产出 */}
             <td className="text-center">
-                <AutoSizedInput value={get_gross_output(result_dict[i], i).toFixed(fixed_num)} onChange={set_needs_in_row(result_dict[i])} />
+                <RatioAdjustInput value={get_gross_output(result_dict[i], i)} />
                 {from_side_products}
             </td>
             {/* 所需工厂*数目 */}
             <td className="text-nowrap">
                 {is_mineralized ||
                     <>
-                        <ItemIcon item={factory_name} size={30} />
-                        <AutoSizedInput value={factory_number} onChange={set_needs_in_row(factory_number)} />
+                        <div className="d-inline-flex align-items-center gap-1">
+                            <ItemIcon item={factory_name} size={30} />
+                            <RatioAdjustInput value={factory_number} />
+                        </div>
                     </>
                 }
             </td>
