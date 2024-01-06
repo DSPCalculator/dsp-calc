@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+/** When `delayed` is `true`, validation (number) is also enabled. */
 export const AutoSizedInput = ({ value, onChange, className, delayed }) => {
   const [disp_value, set_disp_value] = useState(null);
 
