@@ -143,3 +143,41 @@ legend {
     font-size: 0.75em;
     padding: 0.1em 0.4em;
 }
+
+/* auto-sized input */
+.auto-sized-input {
+    display: inline-block;
+    position: relative;
+    min-width: 1em;
+    min-height: 1.4em;
+}
+
+.auto-sized-input>span {
+    /* max-width : could be wised to set a maximum width and overflow:hidden; */
+    white-space: pre;
+    padding-left: 5px;
+    padding-right: 5px;
+    visibility: hidden;
+}
+
+.auto-sized-input>input {
+    padding: 0;
+    margin: 0;
+    border: 1px dashed var(--bs-border-color);
+    border-radius: 5px;
+
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit;
+    position: absolute;
+    vertical-align: top;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+}
+
+.auto-sized-input>input:focus {
+    border: 1px solid black;
+    outline: 0.5px solid black;
+}

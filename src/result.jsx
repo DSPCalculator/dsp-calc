@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { AutoSizedInput } from './auto_sized_input.jsx';
+import { AutoSizedInput } from './ui_components/auto_sized_input.jsx';
 import { NplRows } from './natural_production_line';
 import { HorizontalMultiButtonSelect, Recipe } from './recipe';
 import { ItemIcon } from './icon';
@@ -273,15 +273,21 @@ export function Result({ needs_list, set_needs_list }) {
             </div></td>
             {/* 分钟毛产出 */}
             <td className="text-center">
-                <AutoSizedInput value={get_gross_output(result_dict[i], i).toFixed(fixed_num)} onChange={set_needs_in_row(result_dict[i])} />
+                <span data-tooltip="等比例调整需求" className="fast-tooltip">
+                    <AutoSizedInput value={get_gross_output(result_dict[i], i).toFixed(fixed_num)} onChange={set_needs_in_row(result_dict[i])} />
+                </span>
                 {from_side_products}
             </td>
             {/* 所需工厂*数目 */}
             <td className="text-nowrap">
                 {is_mineralized ||
                     <>
-                        <ItemIcon item={factory_name} size={30} />
-                        <AutoSizedInput value={factory_number} onChange={set_needs_in_row(factory_number)} />
+                        <div className="d-inline-flex align-items-center gap-1">
+                            <ItemIcon item={factory_name} size={30} />
+                            <span data-tooltip="等比例调整需求" className="fast-tooltip">
+                                <AutoSizedInput value={factory_number} onChange={set_needs_in_row(factory_number)} />
+                            </span>
+                        </div>
                     </>
                 }
             </td>
