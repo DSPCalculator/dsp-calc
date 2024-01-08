@@ -5,6 +5,7 @@ import { GameInfoContext, GlobalStateContext, SchemeDataSetterContext } from './
 const DEFAULT_SCHEME_DATA = {
     "item_recipe_choices": { "氢": 1 },
     "scheme_for_recipe": [{ "建筑": 0, "喷涂点数": 0, "增产模式": 0 }],
+    // 这是示例,实际上cost_weight之后会在init_scheme_data中重置
     "cost_weight": {
         "占地": 1,
         "电力": 0,

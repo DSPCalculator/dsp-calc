@@ -1,0 +1,26 @@
+name: Deploy external PR preview (https://b.dsp-calc.pro)
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    environment: branch-preview
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      
+      - run: npm install
+      - run: npm run build
+
+      - name: Create dist.zip
+        run: |
+          cd dist
+          zip -q -r ../dist.zip *
+
+      - name: Deploy branch site (https://b.dsp-calc.pro)
+        run: "curl --fail --no-progress-meter --location 'https://publish.b.dsp-calc.pro/external/pr?branch=${{ github.ref_name }}' --form 'file=@dist.zip'"

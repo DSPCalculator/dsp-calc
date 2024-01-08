@@ -1,9 +1,63 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react';
+import { lstatSync, readdirSync } from 'fs';
+import imagemin from 'imagemin';
+import imageminPngquant from 'imagemin-pngquant';
+import imageminWebp from 'imagemin-webp';
 import path from 'path';
+import { defineConfig } from 'vite';
+import Spritesmith from 'vite-plugin-spritesmith';
+
+/** This generates one sprite image per game name when `mode == "development"` (`npm run dev`) */
+function get_sprite_plugins(mode) {
+  if (mode == "development") return [];
+
+  return readdirSync('./icon').flatMap(dir => {
+    if (lstatSync(`./icon/${dir}`).isDirectory()) {
+      const output_icon = `./icon/${dir}.png`;
+      return [Spritesmith({
+        src: { cwd: `./icon/${dir}`, glob: '*.png' },
+        target: {
+          image: output_icon,
+          css: [[`./icon/${dir}.json`, { format: "json" }]],
+        },
+      }),
+      {
+        // convert `output_icon` to webp and compressed png
+        name: "vite:spritesmith:postprocess_image",
+        enforce: "post",
+        async buildStart() {
+          function filesize_mb(filename) {
+            return (lstatSync(filename).size / 1024 / 1024).toFixed(2);
+          }
+
+          let size_before = filesize_mb(output_icon);
+
+          const plugin_options = [
+            imageminPngquant({ quality: [0.1, 0.5], strip: true, speed: 5 }),
+            imageminWebp({ quality: 75 })
+          ];
+          for (let plugin of plugin_options) {
+            await imagemin([output_icon],
+              { destination: './public/icon', plugins: [plugin] });
+          }
+
+          let output_png = output_icon.replace("/icon/", "/public/icon/");
+
+          let size_after_png = filesize_mb(output_png);
+          let size_after_webp = filesize_mb(output_png.replace(".png", ".webp"));
+          console.log("icon sprite:", dir, size_before, "->",
+            size_after_png, "MB", "(png)",
+            size_after_webp, "MB", "(webp)");
+        },
+      }]
+    } else {
+      return [];
+    }
+  });
+}
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   base: "",
   define: {
     'import.meta.env.VITE_APP_VERSION': JSON.stringify(require('./package.json').version),
@@ -13,5 +67,8 @@ export default defineConfig({
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
     }
   },
-  plugins: [react()]
-})
+  plugins: [
+    react(),
+    ...get_sprite_plugins(mode)
+  ]
+}))
