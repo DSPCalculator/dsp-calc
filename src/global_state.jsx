@@ -623,9 +623,6 @@ export class GlobalState {
             "成本":一个物品的当前产线成本以及被赋予的额外成本,若为原矿化物品或关键物品或多来源物品则为0
             "累计成本":一个物品独自建造时的历史总计产出的成本,若为原矿化物品或关键物品或多来源物品则为0
         */
-        console.log(item_graph["石墨烯"]);
-        console.log(item_price["石墨烯"]);
-        console.log(result_dict);
         for (var item in in_out_list) {
             if (in_out_list[item] > 0) {
                 if (item in result_dict) {
@@ -634,32 +631,12 @@ export class GlobalState {
                 else {
                     result_dict[item] = in_out_list[item];
                 }
-                if (item_graph[item]["副产物"] && !(item in multi_sources) && !(item in key_item_list)) {//如果是线性规划相关物品的副产物,因为这边是当成原矿化的所以不应考虑其副产物
-                    for (var other_products in item_graph[item]["副产物"]) {
-                        if (other_products in surplus_list) {
-                            surplus_list[other_products] = Number(surplus_list[other_products]) + item_graph[item]["副产物"][other_products] * in_out_list[item];
-                        }
-                        else {
-                            surplus_list[other_products] = item_graph[item]["副产物"][other_products] * in_out_list[item];
-                        }
-                    }
-                }
                 for (var material in item_price[item]["原料"]) {
                     if (material in result_dict) {
                         result_dict[material] = Number(result_dict[material]) + item_price[item]["原料"][material] * in_out_list[item];
                     }
                     else {
                         result_dict[material] = item_price[item]["原料"][material] * in_out_list[item];
-                    }
-                    if (item_graph[material]["副产物"] && !(material in multi_sources) && !(material in key_item_list)) {
-                        for (var other_products in item_graph[material]["副产物"]) {
-                            if (other_products in surplus_list) {
-                                surplus_list[other_products] = Number(surplus_list[other_products]) + item_graph[material]["副产物"][other_products] * item_price[item]["原料"][material] * in_out_list[item];
-                            }
-                            else {
-                                surplus_list[other_products] = item_graph[material]["副产物"][other_products] * item_price[item]["原料"][material] * in_out_list[item];
-                            }
-                        }
                     }
                 }
             }
