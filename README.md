@@ -3,8 +3,7 @@
 ![](https://img.shields.io/github/license/DSPCalculator/dsp-calc)
 ![](https://img.shields.io/github/stars/DSPCalculator/dsp-calc)
 ![Contributors](https://img.shields.io/github/contributors/DSPCalculator/dsp-calc)
-
-- 当前最新版本:v0.4.5
+![GitHub Release](https://img.shields.io/github/v/release/DSPCalculator/dsp-calc)
 
 ## 在线使用方式
 
