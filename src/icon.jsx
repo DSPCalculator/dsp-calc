@@ -17,8 +17,6 @@ export function IconStyles() {
     function get_icon_style(game_name) {
         return `
 .icon-${game_name} {
-    vertical-align: bottom;
-    display: inline-block;
     background-image: url('icon/${game_name}.png');
     @supports (background-image: url('icon/${game_name}.webp')) {
         background-image: url('icon/${game_name}.webp');
@@ -42,6 +40,8 @@ function Icon({ item, size, game_name }) {
                 width: size, height: size,
                 backgroundPosition: `${bgx}px ${bgy}px`,
                 backgroundSize: `${tw}px ${th}px`,
+                display: "inline-block",
+                verticalAlign: "bottom",
             }}
         /></>;
     } catch {
