@@ -37,7 +37,7 @@ function Icon({ item, size, game_name }) {
         const tw = total_width * scale, th = total_height * scale;
         const bgx = -x * scale, bgy = -y * scale;
 
-        return <><span className={`icon-${game_name}`}
+        return <><div className={`icon-${game_name}`}
             style={{
                 width: size, height: size,
                 backgroundPosition: `${bgx}px ${bgy}px`,
