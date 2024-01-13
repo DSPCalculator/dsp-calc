@@ -1,9 +1,10 @@
+import structuredClone from '@ungap/structured-clone';
 import { useContext } from 'react';
 import { GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext } from './contexts';
-import { AutoSizedInput } from './ui_components/auto_sized_input.jsx';
+import { ItemIcon } from './icon';
 import { NplRows } from './natural_production_line';
 import { HorizontalMultiButtonSelect, Recipe } from './recipe';
-import { ItemIcon } from './icon';
+import { AutoSizedInput } from './ui_components/auto_sized_input.jsx';
 
 export function RecipeSelect({ item, choice, onChange }) {
     const global_state = useContext(GlobalStateContext);
