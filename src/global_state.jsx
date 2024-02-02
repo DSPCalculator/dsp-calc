@@ -136,9 +136,6 @@ export class GlobalState {
         let multi_sources = {};
         let item_graph = {};
 
-        // TODO seems not used?
-        let side_item_dict = {};
-
         for (var item in item_data) {
             item_graph[item] = { "原料": {}, "可生产": {}, "产出倍率": 0, "副产物": {} };
         }
@@ -223,13 +220,6 @@ export class GlobalState {
                             if (Math.min(game_data.recipe_data[recipe_id]["产物"][product] / (game_data.recipe_data[recipe_id]["产物"][item] - self_cost), item_graph[item]["原料"][product]) == item_graph[item]["原料"][product]) {
                                 item_graph[item]["副产物"][product] = game_data.recipe_data[recipe_id]["产物"][product] / (game_data.recipe_data[recipe_id]["产物"][item] - self_cost) - item_graph[item]["原料"][product];
                                 item_graph[item]["原料"][product] = 0;
-                                if (product in side_item_dict) {
-                                    side_item_dict[product][item] = 0;
-                                }
-                                else {
-                                    side_item_dict[product] = {};
-                                    side_item_dict[product][item] = 0;
-                                }
                                 if (product in multi_sources) {
                                     multi_sources[product].push(item);
                                 }
@@ -243,13 +233,6 @@ export class GlobalState {
                         }
                         else {
                             item_graph[item]["副产物"][product] = game_data.recipe_data[recipe_id]["产物"][product] / (game_data.recipe_data[recipe_id]["产物"][item] - self_cost);
-                            if (product in side_item_dict) {
-                                side_item_dict[product][item] = 0;
-                            }
-                            else {
-                                side_item_dict[product] = {};
-                                side_item_dict[product][item] = 0;
-                            }
                             if (product in multi_sources) {
                                 multi_sources[product].push(item);
                             }
