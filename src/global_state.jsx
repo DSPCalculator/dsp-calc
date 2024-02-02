@@ -645,7 +645,19 @@ export class GlobalState {
         for (var item in external_supply_item) {
             if (!(item in multi_sources)) {
                 if (item in result_dict) {
-                    lp_item_dict[item] = result_dict[item] + in_out_list[item];
+                    if (result_dict[item] + in_out_list[item] > 0) {
+                        for (let i in item_price[item]["原料"]) {
+                            result_dict[i] = Number(result_dict[i]) + item_price[item]["原料"][i] * in_out_list[item];
+                        }
+                        result_dict[item] = Number(result_dict[item]) + in_out_list[item];
+                    }
+                    else {
+                        for (let i in item_price[item]["原料"]) {
+                            result_dict[i] = Number(result_dict[i]) - item_price[item]["原料"][i] * result_dict[item];
+                        }
+                        lp_item_dict[item] = result_dict[item] + in_out_list[item];
+                        result_dict[item] = 0;
+                    }
                 }
                 else {
                     lp_item_dict[item] = in_out_list[item];
@@ -714,9 +726,9 @@ export class GlobalState {
                 */
                 for (var sub_item in item_price[material]["原料"]) {
                     if (sub_item in lp_item_dict) {
-                        console.log(material + model.variables[item]["i" + sub_item]);
+                        // console.log(material + model.variables[item]["i" + sub_item]);
                         model.variables[item]["i" + sub_item] = Number(model.variables[item]["i" + sub_item]) - item_price[material]["原料"][sub_item] * item_graph[item]["原料"][material];
-                        console.log(material + model.variables[item]["i" + sub_item]);
+                        // console.log(material + model.variables[item]["i" + sub_item]);
                     }
                     if ("副产物" in item_graph[sub_item] && !(sub_item in lp_item_dict)) {//遍历原料时，如果原料是线规相关物品那么将其视作原矿，不考虑生产时的副产物
                         for (var sub_product in item_graph[sub_item]["副产物"]) {
