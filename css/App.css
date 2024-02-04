@@ -152,7 +152,7 @@ legend {
     min-height: 1.4em;
 }
 
-.auto-sized-input>span {
+.auto-sized-input > span {
     /* max-width : could be wised to set a maximum width and overflow:hidden; */
     white-space: pre;
     padding-left: 5px;
@@ -160,7 +160,7 @@ legend {
     visibility: hidden;
 }
 
-.auto-sized-input>input {
+.auto-sized-input > input {
     padding: 0;
     margin: 0;
     border: 1px dashed var(--bs-border-color);
@@ -177,17 +177,17 @@ legend {
     background: white;
 }
 
-.auto-sized-input>input:focus {
+.auto-sized-input > input:focus {
     border: 1px solid black;
     outline: 0.5px solid black;
 }
 
-.auto-sized-input>input.valid {
+.auto-sized-input > input.valid {
     border-color: var(--bs-form-valid-border-color);
     outline-color: var(--bs-form-valid-border-color);
 }
 
-.auto-sized-input>input.invalid {
+.auto-sized-input > input.invalid {
     border-color: var(--bs-form-invalid-border-color);
     outline-color: var(--bs-form-invalid-border-color);
 }

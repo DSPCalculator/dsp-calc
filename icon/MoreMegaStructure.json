@@ -1,0 +1,442 @@
+{
+  "compoCrystal": {
+    "x": 0,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "constrainring": {
+    "x": 80,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "drop1": {
+    "x": 0,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "drop1old": {
+    "x": 80,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "elemaginhibitor": {
+    "x": 160,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "elemaginhibitor2": {
+    "x": 160,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "energyAssign": {
+    "x": 0,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "exchangeLS": {
+    "x": 80,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "forceGen": {
+    "x": 160,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "gluonGen": {
+    "x": 240,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "gravitydrill2": {
+    "x": 240,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "gravitygenerator": {
+    "x": 240,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "iacomponent": {
+    "x": 0,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "integratedcomponents": {
+    "x": 80,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "photonprobeflipsmall": {
+    "x": 160,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "quantumcomputer2": {
+    "x": 240,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "quantumcomputer3": {
+    "x": 320,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "quick6257": {
+    "x": 320,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "quick6258": {
+    "x": 320,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "quick6259": {
+    "x": 320,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "quick6260": {
+    "x": 0,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "quick6264": {
+    "x": 80,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "quick6265": {
+    "x": 160,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rassembly": {
+    "x": 240,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rbelt": {
+    "x": 320,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rchemical": {
+    "x": 400,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rchemical2": {
+    "x": 400,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "RchemicalOld": {
+    "x": 400,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rcollider": {
+    "x": 400,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "resonancedisc": {
+    "x": 400,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rlab": {
+    "x": 0,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rlogistic": {
+    "x": 80,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketAssembly": {
+    "x": 160,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketAssembly0": {
+    "x": 240,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketCrystal": {
+    "x": 320,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketCrystal0": {
+    "x": 400,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketMatter": {
+    "x": 480,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketMatter0": {
+    "x": 480,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketScience": {
+    "x": 480,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketScience0": {
+    "x": 480,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketStarcannon": {
+    "x": 480,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketWarp": {
+    "x": 480,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "rocketWarp0": {
+    "x": 0,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rpower": {
+    "x": 80,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rreactor": {
+    "x": 160,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rrefinery": {
+    "x": 240,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rsmelter": {
+    "x": 320,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rsorter": {
+    "x": 400,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "Rstellalogistic": {
+    "x": 480,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "shieldGen": {
+    "x": 560,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "starcannoncompo": {
+    "x": 560,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "starcannonframe": {
+    "x": 560,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "strIntOverloader": {
+    "x": 560,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "tunnelingexciter": {
+    "x": 560,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  },
+  "tunnelingexciter2": {
+    "x": 560,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 640,
+    "total_height": 560
+  }
+}

@@ -1,5 +1,6 @@
-import { useContext } from 'react';
-import { GlobalStateContext } from './contexts';
+import {useContext} from 'react';
+import {GlobalStateContext} from './contexts';
+import {get_icon_by_item} from "./GameData.jsx";
 
 const image_index_modules = import.meta.glob('../icon/*.json', {
     import: 'default',
@@ -14,60 +15,87 @@ const image_indices = Object.fromEntries(
         ))
 
 export function IconStyles() {
-    function get_icon_style(game_name) {
+    function get_icon_style(mod_name) {
+        //console.log("mod_name", mod_name)
         return `
-.icon-${game_name} {
+.icon-${mod_name} {
     vertical-align: bottom;
     display: inline-block;
-    background-image: url('icon/${game_name}.png');
-    @supports (background-image: url('icon/${game_name}.webp')) {
-        background-image: url('icon/${game_name}.webp');
+    background-image: url('icon/${mod_name}.png');
+    @supports (background-image: url('icon/${mod_name}.webp')) {
+        background-image: url('icon/${mod_name}.webp');
     }
 }`;
     }
+
     const styles = Object.keys(image_indices).map(get_icon_style).join("\n");
     return <style>{styles}</style>;
 }
 
-function Icon({ item, size, game_name }) {
+function Icon({icon, size, mods}) {
+    //console.log("Icon(" + icon + ", " + size + ", " + mods + ")");
+    if (!mods.includes("Vanilla")) {
+        mods = ["Vanilla", ...mods];
+    }
+    //倒序查询图标
+    for (let i = mods.length - 1; i >= 0; i--) {
+        let icon2 = get_icon_from_one_mod(icon, size, mods[i]);
+        if (icon2 !== null) {
+            return icon2;
+        }
+    }
+    return <><span
+        style={{
+            width: size, height: size,
+            display: "inline-block",
+            fontSize: 10,
+            textWrap: "pretty",
+            overflow: "hidden",
+        }}
+    >? {icon}</span></>
+}
+
+function get_icon_from_one_mod(icon, size, mod) {
+    //console.log("Icon1(" + icon + ", " + size + ", " + mod + ")");
+    //console.log("image_indices", image_indices);
+    //console.log("mod", mod);
+    //console.log("icon", icon);
     try {
-        const { x, y, width, height, total_width, total_height } = image_indices[game_name][item];
+        const {x, y, width, height, total_width, total_height} = image_indices[mod][icon];
+        //console.log("find " + icon + " from " + mod + " success.");
         const scale = size / height;
 
         const tw = total_width * scale, th = total_height * scale;
         const bgx = -x * scale, bgy = -y * scale;
 
-        return <><div className={`icon-${game_name}`}
-            style={{
-                width: size, height: size,
-                backgroundPosition: `${bgx}px ${bgy}px`,
-                backgroundSize: `${tw}px ${th}px`,
-            }}
-        /></>;
+        return <>
+            <div className={`icon-${mod}`}
+                 style={{
+                     width: size, height: size,
+                     backgroundPosition: `${bgx}px ${bgy}px`,
+                     backgroundSize: `${tw}px ${th}px`,
+                 }}
+            />
+        </>;
     } catch {
-        return <><span
-            style={{
-                width: size, height: size,
-                display: "inline-block",
-                fontSize: 10,
-                textWrap: "pretty",
-                overflow: "hidden",
-            }}
-        >? {item}</span></>
+        //console.log("find " + icon + " from " + mod + " fail.");
+        return null;
     }
 }
 
-export function ItemIcon({ item, size, tooltip }) {
+export function ItemIcon({item, size, tooltip}) {
     const global_state = useContext(GlobalStateContext);
     size = size || 40;
 
-    let img = <Icon item={item} size={size} game_name={global_state.game_name} />;
+    const icon = get_icon_by_item(item);
+
+    let img = <Icon icon={icon} size={size} mods={global_state.game_data.mods}/>;
 
     tooltip = tooltip === undefined ? true : tooltip;
     if (tooltip) {
         let fontSize = Math.min(size / 2, 16);
         return <span data-tooltip={item} className="fast-tooltip"
-            style={{ fontSize: fontSize }}>
+                     style={{fontSize: fontSize}}>
             {img}
         </span>;
     } else {
