@@ -1,6 +1,6 @@
 name: Deploy external PR preview (https://b.dsp-calc.pro)
 
-on: [pull_request]
+on: [ pull_request ]
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      
+
       - run: npm install
       - run: npm run build
 
