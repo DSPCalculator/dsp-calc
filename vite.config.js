@@ -8,6 +8,7 @@ import imageminWebp from 'imagemin-webp';
 import path from 'path';
 import Spritesmith from 'spritesmith';
 import {defineConfig} from 'vite';
+import legacy from '@vitejs/plugin-legacy';
 
 /** This generates one sprite image per game name when `mode == "development"` (`npm run dev`) */
 function get_sprite_plugins(mode) {
@@ -73,7 +74,7 @@ function get_sprite_plugins(mode) {
 
 // https://vitejs.dev/config/
 export default defineConfig(({mode}) => ({
-    base: "",
+    base: "./",
     define: {
         'import.meta.env.VITE_APP_VERSION': JSON.stringify(require('./package.json').version),
     },
@@ -84,6 +85,10 @@ export default defineConfig(({mode}) => ({
     },
     plugins: [
         react(),
-        ...get_sprite_plugins(mode)
+        ...get_sprite_plugins(mode),
+        legacy({
+            targets: ['ie>=11'],
+            additionalLegacyPolyfills:['regenerator-runtime/runtime'],
+        })
     ]
 }))
