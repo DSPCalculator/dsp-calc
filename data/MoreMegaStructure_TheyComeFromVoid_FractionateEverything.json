@@ -5812,6 +5812,216 @@
       "IconName": "exchangeLS"
     },
     {
+      "ID": 452,
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "熔炉采矿机 A型",
+      "Items": [
+        2301,
+        1107,
+        1119
+      ],
+      "ItemCounts": [
+        1,
+        10,
+        10
+      ],
+      "Results": [
+        9446
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60.0,
+      "Proliferator": 3,
+      "IconName": "SmelterMinerA"
+    },
+    {
+      "ID": 472,
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "大型熔炉采矿机 A型",
+      "Items": [
+        2316,
+        1107,
+        1119
+      ],
+      "ItemCounts": [
+        1,
+        20,
+        20
+      ],
+      "Results": [
+        9466
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60.0,
+      "Proliferator": 3,
+      "IconName": "SmelterMinerBigA"
+    },
+    {
+      "ID": 453,
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "熔炉采矿机 B型",
+      "Items": [
+        2301,
+        1107,
+        1119
+      ],
+      "ItemCounts": [
+        1,
+        10,
+        10
+      ],
+      "Results": [
+        9447
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60.0,
+      "Proliferator": 3,
+      "IconName": "SmelterMinerB"
+    },
+    {
+      "ID": 473,
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "大型熔炉采矿机 B型",
+      "Items": [
+        2316,
+        1107,
+        1119
+      ],
+      "ItemCounts": [
+        1,
+        20,
+        20
+      ],
+      "Results": [
+        9467
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60.0,
+      "Proliferator": 3,
+      "IconName": "SmelterMinerBigB"
+    },
+    {
+      "ID": 454,
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "化工采矿机 C型",
+      "Items": [
+        2301,
+        1107,
+        1305
+      ],
+      "ItemCounts": [
+        1,
+        20,
+        5
+      ],
+      "Results": [
+        9448
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60.0,
+      "Proliferator": 3,
+      "IconName": "SmelterMinerC"
+    },
+    {
+      "ID": 474,
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "大型化工采矿机 C型",
+      "Items": [
+        2316,
+        1107,
+        1305
+      ],
+      "ItemCounts": [
+        1,
+        30,
+        10
+      ],
+      "Results": [
+        9468
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60.0,
+      "Proliferator": 3,
+      "IconName": "SmelterMinerBigC"
+    },
+    {
+      "ID": 475,
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "等离子精炼油井",
+      "Items": [
+        2301,
+        1401,
+        1119
+      ],
+      "ItemCounts": [
+        1,
+        30,
+        15
+      ],
+      "Results": [
+        9469
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60.0,
+      "Proliferator": 3,
+      "IconName": "SmelterMinerO"
+    },
+    {
       "ID": 1028,
       "Type": 8,
       "Factories": [
@@ -5822,7 +6032,7 @@
         5101
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         5102
@@ -5832,7 +6042,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "fighter-shield-fighter-plasma-formula-v3"
+      "IconName": "fighter-shield-fighter-plasma-formula-v2"
     },
     {
       "ID": 2028,
@@ -5840,7 +6050,7 @@
       "Factories": [
         2323
       ],
-      "Name": "地面战斗机-E型-地面战斗机-A型分馏-降级分馏塔",
+      "Name": "原型机-精准无人机分馏-降级分馏塔",
       "Items": [
         5102
       ],
@@ -5855,7 +6065,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "fighter-shield-fighter-plasma-formula-v3"
+      "IconName": "fighter-shield-fighter-plasma-formula-v2"
     },
     {
       "ID": 1029,
@@ -5868,7 +6078,7 @@
         5102
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         5103
@@ -5878,7 +6088,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "fighter-plasma-fighter-laser-formula-v3"
+      "IconName": "fighter-plasma-fighter-laser-formula-v2"
     },
     {
       "ID": 2029,
@@ -5886,7 +6096,7 @@
       "Factories": [
         2323
       ],
-      "Name": "地面战斗机-A型-地面战斗机-F型分馏-降级分馏塔",
+      "Name": "精准无人机-攻击无人机分馏-降级分馏塔",
       "Items": [
         5103
       ],
@@ -5901,7 +6111,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "fighter-plasma-fighter-laser-formula-v3"
+      "IconName": "fighter-plasma-fighter-laser-formula-v2"
     },
     {
       "ID": 1030,
@@ -5914,7 +6124,7 @@
         5111
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         5112
@@ -5924,7 +6134,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "warship-plasma-warship-laser-formula-v3"
+      "IconName": "warship-plasma-warship-laser-formula-v2"
     },
     {
       "ID": 2030,
@@ -5932,7 +6142,7 @@
       "Factories": [
         2323
       ],
-      "Name": "太空战斗机-A型-太空战斗机-F型分馏-降级分馏塔",
+      "Name": "护卫舰-驱逐舰分馏-降级分馏塔",
       "Items": [
         5112
       ],
@@ -5947,7 +6157,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "warship-plasma-warship-laser-formula-v3"
+      "IconName": "warship-plasma-warship-laser-formula-v2"
     },
     {
       "ID": 1031,
@@ -5960,7 +6170,7 @@
         5112
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         9511
@@ -5970,7 +6180,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "warship-laser-drop1-formula-v3"
+      "IconName": "warship-laser-drop1-formula-v2"
     },
     {
       "ID": 2031,
@@ -5978,7 +6188,7 @@
       "Factories": [
         2323
       ],
-      "Name": "太空战斗机-F型-水滴gm分馏-降级分馏塔",
+      "Name": "驱逐舰-水滴分馏-降级分馏塔",
       "Items": [
         9511
       ],
@@ -5993,7 +6203,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "warship-laser-drop1-formula-v3"
+      "IconName": "warship-laser-drop1-formula-v2"
     },
     {
       "ID": 1032,
@@ -6006,7 +6216,7 @@
         5206
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         5201
@@ -6016,7 +6226,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "energy-fragment-memory-formula-v3"
+      "IconName": "energy-fragment-memory-formula-v2"
     },
     {
       "ID": 2032,
@@ -6024,7 +6234,7 @@
       "Factories": [
         2323
       ],
-      "Name": "能量碎片-存储单元分馏-降级分馏塔",
+      "Name": "能量碎片-黑雾矩阵分馏-降级分馏塔",
       "Items": [
         5201
       ],
@@ -6039,7 +6249,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "energy-fragment-memory-formula-v3"
+      "IconName": "energy-fragment-memory-formula-v2"
     },
     {
       "ID": 1033,
@@ -6052,7 +6262,7 @@
         5201
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         5203
@@ -6062,7 +6272,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "memory-reassembler-formula-v3"
+      "IconName": "memory-reassembler-formula-v2"
     },
     {
       "ID": 2033,
@@ -6070,7 +6280,7 @@
       "Factories": [
         2323
       ],
-      "Name": "存储单元-物质重组器分馏-降级分馏塔",
+      "Name": "黑雾矩阵-物质重组器分馏-降级分馏塔",
       "Items": [
         5203
       ],
@@ -6085,7 +6295,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "memory-reassembler-formula-v3"
+      "IconName": "memory-reassembler-formula-v2"
     },
     {
       "ID": 1034,
@@ -6098,7 +6308,7 @@
         5203
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         5202
@@ -6108,7 +6318,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "reassembler-silicon-neuron-formula-v3"
+      "IconName": "reassembler-silicon-neuron-formula-v2"
     },
     {
       "ID": 2034,
@@ -6131,7 +6341,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "reassembler-silicon-neuron-formula-v3"
+      "IconName": "reassembler-silicon-neuron-formula-v2"
     },
     {
       "ID": 1035,
@@ -6144,7 +6354,7 @@
         5202
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         5204
@@ -6154,7 +6364,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "silicon-neuron-negentropy-formula-v3"
+      "IconName": "silicon-neuron-negentropy-formula-v2"
     },
     {
       "ID": 2035,
@@ -6177,7 +6387,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "silicon-neuron-negentropy-formula-v3"
+      "IconName": "silicon-neuron-negentropy-formula-v2"
     },
     {
       "ID": 1036,
@@ -6190,7 +6400,7 @@
         5204
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         5205
@@ -6200,7 +6410,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "negentropy-virtual-particle-formula-v3"
+      "IconName": "negentropy-virtual-particle-formula-v2"
     },
     {
       "ID": 2036,
@@ -6208,7 +6418,7 @@
       "Factories": [
         2323
       ],
-      "Name": "负熵奇点-虚粒子分馏-降级分馏塔",
+      "Name": "负熵奇点-核心素分馏-降级分馏塔",
       "Items": [
         5205
       ],
@@ -6223,7 +6433,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "negentropy-virtual-particle-formula-v3"
+      "IconName": "negentropy-virtual-particle-formula-v2"
     },
     {
       "ID": 1037,
@@ -6236,7 +6446,7 @@
         6001
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         6002
@@ -6246,7 +6456,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "t-matrix-e-matrix-formula-v3"
+      "IconName": "t-matrix-e-matrix-formula-v2"
     },
     {
       "ID": 2037,
@@ -6269,7 +6479,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "t-matrix-e-matrix-formula-v3"
+      "IconName": "t-matrix-e-matrix-formula-v2"
     },
     {
       "ID": 1038,
@@ -6282,7 +6492,7 @@
         6002
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         6003
@@ -6292,7 +6502,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "e-matrix-c-matrix-formula-v3"
+      "IconName": "e-matrix-c-matrix-formula-v2"
     },
     {
       "ID": 2038,
@@ -6315,7 +6525,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "e-matrix-c-matrix-formula-v3"
+      "IconName": "e-matrix-c-matrix-formula-v2"
     },
     {
       "ID": 1039,
@@ -6328,7 +6538,7 @@
         6003
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         6004
@@ -6338,7 +6548,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "c-matrix-i-matrix-formula-v3"
+      "IconName": "c-matrix-i-matrix-formula-v2"
     },
     {
       "ID": 2039,
@@ -6361,7 +6571,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "c-matrix-i-matrix-formula-v3"
+      "IconName": "c-matrix-i-matrix-formula-v2"
     },
     {
       "ID": 1040,
@@ -6374,7 +6584,7 @@
         6004
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         6005
@@ -6384,7 +6594,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "i-matrix-g-matrix-formula-v3"
+      "IconName": "i-matrix-g-matrix-formula-v2"
     },
     {
       "ID": 2040,
@@ -6407,7 +6617,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "i-matrix-g-matrix-formula-v3"
+      "IconName": "i-matrix-g-matrix-formula-v2"
     },
     {
       "ID": 1041,
@@ -6420,7 +6630,7 @@
         1141
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1142
@@ -6430,7 +6640,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "accelerator-1-accelerator-2-formula-v3"
+      "IconName": "accelerator-1-accelerator-2-formula-v2"
     },
     {
       "ID": 2041,
@@ -6438,7 +6648,7 @@
       "Factories": [
         2323
       ],
-      "Name": "增产剂 Mk.I-增产剂 Mk.II分馏-降级分馏塔",
+      "Name": "增产剂 Mk.I-增产剂 Mk.II分馏-降级分馏塔",
       "Items": [
         1142
       ],
@@ -6453,7 +6663,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "accelerator-1-accelerator-2-formula-v3"
+      "IconName": "accelerator-1-accelerator-2-formula-v2"
     },
     {
       "ID": 1042,
@@ -6466,7 +6676,7 @@
         1142
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1143
@@ -6476,7 +6686,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "accelerator-2-accelerator-3-formula-v3"
+      "IconName": "accelerator-2-accelerator-3-formula-v2"
     },
     {
       "ID": 2042,
@@ -6484,7 +6694,7 @@
       "Factories": [
         2323
       ],
-      "Name": "增产剂 Mk.II-增产剂 Mk.III分馏-降级分馏塔",
+      "Name": "增产剂 Mk.II-增产剂 Mk.III分馏-降级分馏塔",
       "Items": [
         1143
       ],
@@ -6499,7 +6709,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "accelerator-2-accelerator-3-formula-v3"
+      "IconName": "accelerator-2-accelerator-3-formula-v2"
     },
     {
       "ID": 1043,
@@ -6512,7 +6722,7 @@
         2107
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2103
@@ -6522,7 +6732,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "delivery-machine-logistic-station-formula-v3"
+      "IconName": "delivery-machine-logistic-station-formula-v2"
     },
     {
       "ID": 2043,
@@ -6530,7 +6740,7 @@
       "Factories": [
         2323
       ],
-      "Name": "物流配送器-物流运输站分馏-降级分馏塔",
+      "Name": "物流配送器-行星内物流运输站分馏-降级分馏塔",
       "Items": [
         2103
       ],
@@ -6545,7 +6755,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "delivery-machine-logistic-station-formula-v3"
+      "IconName": "delivery-machine-logistic-station-formula-v2"
     },
     {
       "ID": 1044,
@@ -6558,7 +6768,7 @@
         2103
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2104
@@ -6568,7 +6778,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "logistic-station-interstellar-logistic-station-formula-v3"
+      "IconName": "logistic-station-interstellar-logistic-station-formula-v2"
     },
     {
       "ID": 2044,
@@ -6576,7 +6786,7 @@
       "Factories": [
         2323
       ],
-      "Name": "物流运输站-星际物流运输站分馏-降级分馏塔",
+      "Name": "行星内物流运输站-星际物流运输站分馏-降级分馏塔",
       "Items": [
         2104
       ],
@@ -6591,7 +6801,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "logistic-station-interstellar-logistic-station-formula-v3"
+      "IconName": "logistic-station-interstellar-logistic-station-formula-v2"
     },
     {
       "ID": 1045,
@@ -6604,7 +6814,7 @@
         2104
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         9512
@@ -6614,7 +6824,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "interstellar-logistic-station-exchangeLS-formula-v3"
+      "IconName": "interstellar-logistic-station-exchangeLS-formula-v2"
     },
     {
       "ID": 2045,
@@ -6622,7 +6832,7 @@
       "Factories": [
         2323
       ],
-      "Name": "星际物流运输站-物资交换器分馏-降级分馏塔",
+      "Name": "星际物流运输站-物资交换物流站分馏-降级分馏塔",
       "Items": [
         9512
       ],
@@ -6637,7 +6847,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "interstellar-logistic-station-exchangeLS-formula-v3"
+      "IconName": "interstellar-logistic-station-exchangeLS-formula-v2"
     },
     {
       "ID": 1046,
@@ -6650,7 +6860,7 @@
         9512
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2105
@@ -6660,7 +6870,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "exchangeLS-orbital-collector-formula-v3"
+      "IconName": "exchangeLS-orbital-collector-formula-v2"
     },
     {
       "ID": 2046,
@@ -6668,7 +6878,7 @@
       "Factories": [
         2323
       ],
-      "Name": "物资交换器-轨道采集器分馏-降级分馏塔",
+      "Name": "物资交换物流站-轨道采集器分馏-降级分馏塔",
       "Items": [
         2105
       ],
@@ -6683,7 +6893,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "exchangeLS-orbital-collector-formula-v3"
+      "IconName": "exchangeLS-orbital-collector-formula-v2"
     },
     {
       "ID": 1047,
@@ -6696,7 +6906,7 @@
         5003
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         5001
@@ -6706,7 +6916,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "delivery-drone-logistic-drone-formula-v3"
+      "IconName": "delivery-drone-logistic-drone-formula-v2"
     },
     {
       "ID": 2047,
@@ -6729,7 +6939,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "delivery-drone-logistic-drone-formula-v3"
+      "IconName": "delivery-drone-logistic-drone-formula-v2"
     },
     {
       "ID": 1048,
@@ -6742,7 +6952,7 @@
         5001
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         5002
@@ -6752,7 +6962,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "logistic-drone-logistic-vessel-formula-v3"
+      "IconName": "logistic-drone-logistic-vessel-formula-v2"
     },
     {
       "ID": 2048,
@@ -6775,7 +6985,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "logistic-drone-logistic-vessel-formula-v3"
+      "IconName": "logistic-drone-logistic-vessel-formula-v2"
     },
     {
       "ID": 1049,
@@ -6788,7 +6998,7 @@
         1801
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1802
@@ -6798,7 +7008,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "hydrogen-energy-fuel-deuterium-energy-fuel-formula-v3"
+      "IconName": "hydrogen-energy-fuel-deuterium-energy-fuel-formula-v2"
     },
     {
       "ID": 2049,
@@ -6806,7 +7016,7 @@
       "Factories": [
         2323
       ],
-      "Name": "氢燃料棒-氘核燃料棒分馏-降级分馏塔",
+      "Name": "液氢燃料棒-氘核燃料棒分馏-降级分馏塔",
       "Items": [
         1802
       ],
@@ -6821,7 +7031,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "hydrogen-energy-fuel-deuterium-energy-fuel-formula-v3"
+      "IconName": "hydrogen-energy-fuel-deuterium-energy-fuel-formula-v2"
     },
     {
       "ID": 1050,
@@ -6834,7 +7044,7 @@
         1802
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1803
@@ -6844,7 +7054,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "deuterium-energy-fuel-antimatter-energy-fuel-formula-v3"
+      "IconName": "deuterium-energy-fuel-antimatter-energy-fuel-formula-v2"
     },
     {
       "ID": 2050,
@@ -6867,7 +7077,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "deuterium-energy-fuel-antimatter-energy-fuel-formula-v3"
+      "IconName": "deuterium-energy-fuel-antimatter-energy-fuel-formula-v2"
     },
     {
       "ID": 1051,
@@ -6880,7 +7090,7 @@
         1803
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1804
@@ -6890,7 +7100,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "antimatter-energy-fuel-virtual-energy-fuel-formula-v3"
+      "IconName": "antimatter-energy-fuel-virtual-energy-fuel-formula-v2"
     },
     {
       "ID": 2051,
@@ -6898,7 +7108,7 @@
       "Factories": [
         2323
       ],
-      "Name": "反物质燃料棒-金色燃料棒分馏-降级分馏塔",
+      "Name": "反物质燃料棒-奇异湮灭燃料棒分馏-降级分馏塔",
       "Items": [
         1804
       ],
@@ -6913,7 +7123,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "antimatter-energy-fuel-virtual-energy-fuel-formula-v3"
+      "IconName": "antimatter-energy-fuel-virtual-energy-fuel-formula-v2"
     },
     {
       "ID": 1052,
@@ -6926,7 +7136,7 @@
         1601
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1602
@@ -6936,7 +7146,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "bullet-bullet-titanium-formula-v3"
+      "IconName": "bullet-bullet-titanium-formula-v2"
     },
     {
       "ID": 2052,
@@ -6959,7 +7169,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "bullet-bullet-titanium-formula-v3"
+      "IconName": "bullet-bullet-titanium-formula-v2"
     },
     {
       "ID": 1053,
@@ -6972,7 +7182,7 @@
         1602
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1603
@@ -6982,7 +7192,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "bullet-titanium-bullet-alloy-formula-v3"
+      "IconName": "bullet-titanium-bullet-alloy-formula-v2"
     },
     {
       "ID": 2053,
@@ -7005,7 +7215,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "bullet-titanium-bullet-alloy-formula-v3"
+      "IconName": "bullet-titanium-bullet-alloy-formula-v2"
     },
     {
       "ID": 1054,
@@ -7018,7 +7228,7 @@
         1604
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1605
@@ -7028,7 +7238,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "cannonball-cannonball-cluster-formula-v3"
+      "IconName": "cannonball-cannonball-cluster-formula-v2"
     },
     {
       "ID": 2054,
@@ -7051,7 +7261,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "cannonball-cannonball-cluster-formula-v3"
+      "IconName": "cannonball-cannonball-cluster-formula-v2"
     },
     {
       "ID": 1055,
@@ -7064,7 +7274,7 @@
         1605
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1606
@@ -7074,7 +7284,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "cannonball-cluster-cannonball-alloy-formula-v3"
+      "IconName": "cannonball-cluster-cannonball-alloy-formula-v2"
     },
     {
       "ID": 2055,
@@ -7097,7 +7307,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "cannonball-cluster-cannonball-alloy-formula-v3"
+      "IconName": "cannonball-cluster-cannonball-alloy-formula-v2"
     },
     {
       "ID": 1056,
@@ -7110,7 +7320,7 @@
         1609
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1610
@@ -7120,7 +7330,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "missile-missile-supersonic-formula-v3"
+      "IconName": "missile-missile-supersonic-formula-v2"
     },
     {
       "ID": 2056,
@@ -7143,7 +7353,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "missile-missile-supersonic-formula-v3"
+      "IconName": "missile-missile-supersonic-formula-v2"
     },
     {
       "ID": 1057,
@@ -7156,7 +7366,7 @@
         1610
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1611
@@ -7166,7 +7376,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "missile-supersonic-missile-graviton-formula-v3"
+      "IconName": "missile-supersonic-missile-graviton-formula-v2"
     },
     {
       "ID": 2057,
@@ -7189,7 +7399,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "missile-supersonic-missile-graviton-formula-v3"
+      "IconName": "missile-supersonic-missile-graviton-formula-v2"
     },
     {
       "ID": 1058,
@@ -7202,7 +7412,7 @@
         1607
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1608
@@ -7212,7 +7422,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "capsule-energy-capsule-antimatter-formula-v3"
+      "IconName": "capsule-energy-capsule-antimatter-formula-v2"
     },
     {
       "ID": 2058,
@@ -7235,7 +7445,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "capsule-energy-capsule-antimatter-formula-v3"
+      "IconName": "capsule-energy-capsule-antimatter-formula-v2"
     },
     {
       "ID": 1059,
@@ -7248,7 +7458,7 @@
         1612
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         1613
@@ -7258,7 +7468,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "em-disturb-em-suppress-formula-v3"
+      "IconName": "em-disturb-em-suppress-formula-v2"
     },
     {
       "ID": 2059,
@@ -7266,7 +7476,7 @@
       "Factories": [
         2323
       ],
-      "Name": "电磁干扰胶囊-电磁压制胶囊分馏-降级分馏塔",
+      "Name": "干扰胶囊-压制胶囊分馏-降级分馏塔",
       "Items": [
         1613
       ],
@@ -7281,7 +7491,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "em-disturb-em-suppress-formula-v3"
+      "IconName": "em-disturb-em-suppress-formula-v2"
     },
     {
       "ID": 1060,
@@ -7294,7 +7504,7 @@
         2201
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2202
@@ -7304,7 +7514,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "tesla-coil-charging-pole-formula-v3"
+      "IconName": "tesla-coil-charging-pole-formula-v2"
     },
     {
       "ID": 2060,
@@ -7327,7 +7537,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "tesla-coil-charging-pole-formula-v3"
+      "IconName": "tesla-coil-charging-pole-formula-v2"
     },
     {
       "ID": 1061,
@@ -7340,7 +7550,7 @@
         2202
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2212
@@ -7350,7 +7560,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "charging-pole-orbital-substation-formula-v3"
+      "IconName": "charging-pole-orbital-substation-formula-v2"
     },
     {
       "ID": 2061,
@@ -7373,7 +7583,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "charging-pole-orbital-substation-formula-v3"
+      "IconName": "charging-pole-orbital-substation-formula-v2"
     },
     {
       "ID": 1062,
@@ -7386,7 +7596,7 @@
         2203
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2205
@@ -7396,7 +7606,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "wind-turbine-solar-panel-formula-v3"
+      "IconName": "wind-turbine-solar-panel-formula-v2"
     },
     {
       "ID": 2062,
@@ -7419,7 +7629,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "wind-turbine-solar-panel-formula-v3"
+      "IconName": "wind-turbine-solar-panel-formula-v2"
     },
     {
       "ID": 1063,
@@ -7432,7 +7642,7 @@
         2205
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2206
@@ -7442,7 +7652,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "solar-panel-accumulator-formula-v3"
+      "IconName": "solar-panel-accumulator-formula-v2"
     },
     {
       "ID": 2063,
@@ -7465,7 +7675,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "solar-panel-accumulator-formula-v3"
+      "IconName": "solar-panel-accumulator-formula-v2"
     },
     {
       "ID": 1064,
@@ -7478,7 +7688,7 @@
         2206
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2207
@@ -7488,7 +7698,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "accumulator-accumulator-full-formula-v3"
+      "IconName": "accumulator-accumulator-full-formula-v2"
     },
     {
       "ID": 2064,
@@ -7511,7 +7721,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "accumulator-accumulator-full-formula-v3"
+      "IconName": "accumulator-accumulator-full-formula-v2"
     },
     {
       "ID": 1065,
@@ -7524,7 +7734,7 @@
         2207
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2209
@@ -7534,7 +7744,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "accumulator-full-energy-exchanger-formula-v3"
+      "IconName": "accumulator-full-energy-exchanger-formula-v2"
     },
     {
       "ID": 2065,
@@ -7557,7 +7767,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "accumulator-full-energy-exchanger-formula-v3"
+      "IconName": "accumulator-full-energy-exchanger-formula-v2"
     },
     {
       "ID": 1066,
@@ -7570,7 +7780,7 @@
         2204
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2213
@@ -7580,7 +7790,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "fuel-plant-geothermal-power-station-formula-v3"
+      "IconName": "fuel-plant-geothermal-power-station-formula-v2"
     },
     {
       "ID": 2066,
@@ -7603,7 +7813,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "fuel-plant-geothermal-power-station-formula-v3"
+      "IconName": "fuel-plant-geothermal-power-station-formula-v2"
     },
     {
       "ID": 1067,
@@ -7616,7 +7826,7 @@
         2213
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2211
@@ -7626,7 +7836,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "geothermal-power-station-fusion-power-station-formula-v3"
+      "IconName": "geothermal-power-station-fusion-power-station-formula-v2"
     },
     {
       "ID": 2067,
@@ -7649,7 +7859,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "geothermal-power-station-fusion-power-station-formula-v3"
+      "IconName": "geothermal-power-station-fusion-power-station-formula-v2"
     },
     {
       "ID": 1068,
@@ -7662,7 +7872,7 @@
         2211
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2210
@@ -7672,7 +7882,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "fusion-power-station-fusion-reactor-formula-v3"
+      "IconName": "fusion-power-station-fusion-reactor-formula-v2"
     },
     {
       "ID": 2068,
@@ -7695,7 +7905,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "fusion-power-station-fusion-reactor-formula-v3"
+      "IconName": "fusion-power-station-fusion-reactor-formula-v2"
     },
     {
       "ID": 1069,
@@ -7708,7 +7918,7 @@
         2001
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2002
@@ -7718,7 +7928,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "belt-1-belt-2-formula-v3"
+      "IconName": "belt-1-belt-2-formula-v2"
     },
     {
       "ID": 2069,
@@ -7726,7 +7936,7 @@
       "Factories": [
         2323
       ],
-      "Name": "低速传送带-高速传送带分馏-降级分馏塔",
+      "Name": "传送带-高速传送带分馏-降级分馏塔",
       "Items": [
         2002
       ],
@@ -7741,7 +7951,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "belt-1-belt-2-formula-v3"
+      "IconName": "belt-1-belt-2-formula-v2"
     },
     {
       "ID": 1070,
@@ -7754,7 +7964,7 @@
         2002
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2003
@@ -7764,7 +7974,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "belt-2-belt-3-formula-v3"
+      "IconName": "belt-2-belt-3-formula-v2"
     },
     {
       "ID": 2070,
@@ -7787,7 +7997,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "belt-2-belt-3-formula-v3"
+      "IconName": "belt-2-belt-3-formula-v2"
     },
     {
       "ID": 1071,
@@ -7800,7 +8010,7 @@
         2030
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2020
@@ -7810,7 +8020,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "monitor-splitter-4dir-formula-v3"
+      "IconName": "monitor-splitter-4dir-formula-v2"
     },
     {
       "ID": 2071,
@@ -7818,7 +8028,7 @@
       "Factories": [
         2323
       ],
-      "Name": "流速器-四向分流器分馏-降级分馏塔",
+      "Name": "流速监测器-四向分流器分馏-降级分馏塔",
       "Items": [
         2020
       ],
@@ -7833,7 +8043,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "monitor-splitter-4dir-formula-v3"
+      "IconName": "monitor-splitter-4dir-formula-v2"
     },
     {
       "ID": 1072,
@@ -7846,7 +8056,7 @@
         2020
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2313
@@ -7856,7 +8066,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "splitter-4dir-spray-coater-formula-v3"
+      "IconName": "splitter-4dir-spray-coater-formula-v2"
     },
     {
       "ID": 2072,
@@ -7879,7 +8089,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "splitter-4dir-spray-coater-formula-v3"
+      "IconName": "splitter-4dir-spray-coater-formula-v2"
     },
     {
       "ID": 1073,
@@ -7892,7 +8102,7 @@
         2313
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2040
@@ -7902,7 +8112,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "spray-coater-piler-formula-v3"
+      "IconName": "spray-coater-piler-formula-v2"
     },
     {
       "ID": 2073,
@@ -7925,7 +8135,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "spray-coater-piler-formula-v3"
+      "IconName": "spray-coater-piler-formula-v2"
     },
     {
       "ID": 1074,
@@ -7938,7 +8148,7 @@
         2101
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2106
@@ -7948,7 +8158,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "storage-1-storage-tank-formula-v3"
+      "IconName": "storage-1-storage-tank-formula-v2"
     },
     {
       "ID": 2074,
@@ -7971,7 +8181,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "storage-1-storage-tank-formula-v3"
+      "IconName": "storage-1-storage-tank-formula-v2"
     },
     {
       "ID": 1075,
@@ -7984,7 +8194,7 @@
         2106
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2102
@@ -7994,7 +8204,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "storage-tank-storage-2-formula-v3"
+      "IconName": "storage-tank-storage-2-formula-v2"
     },
     {
       "ID": 2075,
@@ -8017,7 +8227,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "storage-tank-storage-2-formula-v3"
+      "IconName": "storage-tank-storage-2-formula-v2"
     },
     {
       "ID": 1076,
@@ -8030,7 +8240,7 @@
         2011
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2012
@@ -8040,7 +8250,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "inserter-1-inserter-2-formula-v3"
+      "IconName": "inserter-1-inserter-2-formula-v2"
     },
     {
       "ID": 2076,
@@ -8048,7 +8258,7 @@
       "Factories": [
         2323
       ],
-      "Name": "低速分拣器-高速分拣器分馏-降级分馏塔",
+      "Name": "分拣器-高速分拣器分馏-降级分馏塔",
       "Items": [
         2012
       ],
@@ -8063,7 +8273,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "inserter-1-inserter-2-formula-v3"
+      "IconName": "inserter-1-inserter-2-formula-v2"
     },
     {
       "ID": 1077,
@@ -8076,7 +8286,7 @@
         2012
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2013
@@ -8086,7 +8296,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "inserter-2-inserter-3-formula-v3"
+      "IconName": "inserter-2-inserter-3-formula-v2"
     },
     {
       "ID": 2077,
@@ -8109,7 +8319,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "inserter-2-inserter-3-formula-v3"
+      "IconName": "inserter-2-inserter-3-formula-v2"
     },
     {
       "ID": 1078,
@@ -8122,7 +8332,7 @@
         2013
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2014
@@ -8132,7 +8342,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "inserter-3-inserter-4-formula-v3"
+      "IconName": "inserter-3-inserter-4-formula-v2"
     },
     {
       "ID": 2078,
@@ -8155,7 +8365,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "inserter-3-inserter-4-formula-v3"
+      "IconName": "inserter-3-inserter-4-formula-v2"
     },
     {
       "ID": 1079,
@@ -8168,7 +8378,7 @@
         2301
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2316
@@ -8178,7 +8388,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "mining-drill-mining-drill-mk2-formula-v3"
+      "IconName": "mining-drill-mining-drill-mk2-formula-v2"
     },
     {
       "ID": 2079,
@@ -8201,7 +8411,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "mining-drill-mining-drill-mk2-formula-v3"
+      "IconName": "mining-drill-mining-drill-mk2-formula-v2"
     },
     {
       "ID": 1080,
@@ -8214,7 +8424,7 @@
         2306
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2307
@@ -8224,7 +8434,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "water-pump-oil-extractor-formula-v3"
+      "IconName": "water-pump-oil-extractor-formula-v2"
     },
     {
       "ID": 2080,
@@ -8247,7 +8457,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "water-pump-oil-extractor-formula-v3"
+      "IconName": "water-pump-oil-extractor-formula-v2"
     },
     {
       "ID": 1081,
@@ -8260,7 +8470,7 @@
         2307
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2308
@@ -8270,7 +8480,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "oil-extractor-oil-refinery-formula-v3"
+      "IconName": "oil-extractor-oil-refinery-formula-v2"
     },
     {
       "ID": 2081,
@@ -8293,7 +8503,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "oil-extractor-oil-refinery-formula-v3"
+      "IconName": "oil-extractor-oil-refinery-formula-v2"
     },
     {
       "ID": 1082,
@@ -8306,7 +8516,7 @@
         2309
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2317
@@ -8316,7 +8526,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "chemical-plant-chemical-plant-2-formula-v3"
+      "IconName": "chemical-plant-chemical-plant-2-formula-v2"
     },
     {
       "ID": 2082,
@@ -8324,7 +8534,7 @@
       "Factories": [
         2323
       ],
-      "Name": "化工厂-化工厂 Mk.II分馏-降级分馏塔",
+      "Name": "化工厂-量子化工厂分馏-降级分馏塔",
       "Items": [
         2317
       ],
@@ -8339,7 +8549,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "chemical-plant-chemical-plant-2-formula-v3"
+      "IconName": "chemical-plant-chemical-plant-2-formula-v2"
     },
     {
       "ID": 1083,
@@ -8352,7 +8562,7 @@
         2314
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2310
@@ -8362,7 +8572,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "fractionator-hadron-collider-formula-v3"
+      "IconName": "fractionator-hadron-collider-formula-v2"
     },
     {
       "ID": 2083,
@@ -8385,7 +8595,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "fractionator-hadron-collider-formula-v3"
+      "IconName": "fractionator-hadron-collider-formula-v2"
     },
     {
       "ID": 1084,
@@ -8398,7 +8608,7 @@
         2302
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2315
@@ -8408,7 +8618,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "smelter-smelter-2-formula-v3"
+      "IconName": "smelter-smelter-2-formula-v2"
     },
     {
       "ID": 2084,
@@ -8431,7 +8641,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "smelter-smelter-2-formula-v3"
+      "IconName": "smelter-smelter-2-formula-v2"
     },
     {
       "ID": 1085,
@@ -8444,7 +8654,7 @@
         2315
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2319
@@ -8454,7 +8664,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "smelter-2-smelter-3-formula-v3"
+      "IconName": "smelter-2-smelter-3-formula-v2"
     },
     {
       "ID": 2085,
@@ -8462,7 +8672,7 @@
       "Factories": [
         2323
       ],
-      "Name": "位面熔炉-熔炉 Mk.III分馏-降级分馏塔",
+      "Name": "位面熔炉-负熵熔炉分馏-降级分馏塔",
       "Items": [
         2319
       ],
@@ -8477,7 +8687,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "smelter-2-smelter-3-formula-v3"
+      "IconName": "smelter-2-smelter-3-formula-v2"
     },
     {
       "ID": 1086,
@@ -8490,7 +8700,7 @@
         2303
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2304
@@ -8500,7 +8710,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "assembler-1-assembler-2-formula-v3"
+      "IconName": "assembler-1-assembler-2-formula-v2"
     },
     {
       "ID": 2086,
@@ -8508,7 +8718,7 @@
       "Factories": [
         2323
       ],
-      "Name": "制造台 Mk.I-制造台 Mk.II分馏-降级分馏塔",
+      "Name": "制造台 Mk.I-制造台 Mk.II分馏-降级分馏塔",
       "Items": [
         2304
       ],
@@ -8523,7 +8733,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "assembler-1-assembler-2-formula-v3"
+      "IconName": "assembler-1-assembler-2-formula-v2"
     },
     {
       "ID": 1087,
@@ -8536,7 +8746,7 @@
         2304
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2305
@@ -8546,7 +8756,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "assembler-2-assembler-3-formula-v3"
+      "IconName": "assembler-2-assembler-3-formula-v2"
     },
     {
       "ID": 2087,
@@ -8554,7 +8764,7 @@
       "Factories": [
         2323
       ],
-      "Name": "制造台 Mk.II-制造台 Mk.III分馏-降级分馏塔",
+      "Name": "制造台 Mk.II-制造台 Mk.III分馏-降级分馏塔",
       "Items": [
         2305
       ],
@@ -8569,7 +8779,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "assembler-2-assembler-3-formula-v3"
+      "IconName": "assembler-2-assembler-3-formula-v2"
     },
     {
       "ID": 1088,
@@ -8582,7 +8792,7 @@
         2305
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2318
@@ -8592,7 +8802,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "assembler-3-assembler-4-formula-v3"
+      "IconName": "assembler-3-assembler-4-formula-v2"
     },
     {
       "ID": 2088,
@@ -8600,7 +8810,7 @@
       "Factories": [
         2323
       ],
-      "Name": "制造台 Mk.III-制造台 Mk.IV分馏-降级分馏塔",
+      "Name": "制造台 Mk.III-重组式制造台分馏-降级分馏塔",
       "Items": [
         2318
       ],
@@ -8615,7 +8825,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "assembler-3-assembler-4-formula-v3"
+      "IconName": "assembler-3-assembler-4-formula-v2"
     },
     {
       "ID": 1089,
@@ -8628,7 +8838,7 @@
         2901
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2902
@@ -8638,7 +8848,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "lab-lab-2-formula-v3"
+      "IconName": "lab-lab-2-formula-v2"
     },
     {
       "ID": 2089,
@@ -8646,7 +8856,7 @@
       "Factories": [
         2323
       ],
-      "Name": "矩阵研究站-矩阵研究站 Mk.II分馏-降级分馏塔",
+      "Name": "矩阵研究站-自演化研究站分馏-降级分馏塔",
       "Items": [
         2902
       ],
@@ -8661,7 +8871,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "lab-lab-2-formula-v3"
+      "IconName": "lab-lab-2-formula-v2"
     },
     {
       "ID": 1090,
@@ -8674,7 +8884,7 @@
         2311
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2208
@@ -8684,7 +8894,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "em-rail-ejector-ray-receiver-formula-v3"
+      "IconName": "em-rail-ejector-ray-receiver-formula-v2"
     },
     {
       "ID": 2090,
@@ -8692,7 +8902,7 @@
       "Factories": [
         2323
       ],
-      "Name": "电磁轨道弹射器-射线接收站分馏-降级分馏塔",
+      "Name": "电磁轨道弹射器-射线重构站分馏-降级分馏塔",
       "Items": [
         2208
       ],
@@ -8707,7 +8917,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "em-rail-ejector-ray-receiver-formula-v3"
+      "IconName": "em-rail-ejector-ray-receiver-formula-v2"
     },
     {
       "ID": 1091,
@@ -8720,7 +8930,7 @@
         2208
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2312
@@ -8730,7 +8940,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "ray-receiver-vertical-launching-silo-formula-v3"
+      "IconName": "ray-receiver-vertical-launching-silo-formula-v2"
     },
     {
       "ID": 2091,
@@ -8738,7 +8948,7 @@
       "Factories": [
         2323
       ],
-      "Name": "射线接收站-垂直发射井分馏-降级分馏塔",
+      "Name": "射线重构站-垂直发射井分馏-降级分馏塔",
       "Items": [
         2312
       ],
@@ -8753,7 +8963,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "ray-receiver-vertical-launching-silo-formula-v3"
+      "IconName": "ray-receiver-vertical-launching-silo-formula-v2"
     },
     {
       "ID": 1092,
@@ -8766,7 +8976,7 @@
         3001
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         3005
@@ -8776,7 +8986,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "turret-gauss-turret-missile-formula-v3"
+      "IconName": "turret-gauss-turret-missile-formula-v2"
     },
     {
       "ID": 2092,
@@ -8799,7 +9009,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "turret-gauss-turret-missile-formula-v3"
+      "IconName": "turret-gauss-turret-missile-formula-v2"
     },
     {
       "ID": 1093,
@@ -8812,7 +9022,7 @@
         3005
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         3003
@@ -8822,7 +9032,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "turret-missile-turret-cannon-formula-v3"
+      "IconName": "turret-missile-turret-cannon-formula-v2"
     },
     {
       "ID": 2093,
@@ -8845,7 +9055,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "turret-missile-turret-cannon-formula-v3"
+      "IconName": "turret-missile-turret-cannon-formula-v2"
     },
     {
       "ID": 1094,
@@ -8858,7 +9068,7 @@
         3002
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         3004
@@ -8868,7 +9078,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "turret-laser-turret-plasma-formula-v3"
+      "IconName": "turret-laser-turret-plasma-formula-v2"
     },
     {
       "ID": 2094,
@@ -8891,7 +9101,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "turret-laser-turret-plasma-formula-v3"
+      "IconName": "turret-laser-turret-plasma-formula-v2"
     },
     {
       "ID": 1095,
@@ -8904,7 +9114,7 @@
         3004
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         3010
@@ -8914,7 +9124,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "turret-plasma-turret-plasma-ground-formula-v3"
+      "IconName": "turret-plasma-turret-plasma-ground-formula-v2"
     },
     {
       "ID": 2095,
@@ -8922,7 +9132,7 @@
       "Factories": [
         2323
       ],
-      "Name": "磁化电浆炮-地面电浆炮分馏-降级分馏塔",
+      "Name": "磁化电浆炮-近程电浆塔分馏-降级分馏塔",
       "Items": [
         3010
       ],
@@ -8937,7 +9147,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "turret-plasma-turret-plasma-ground-formula-v3"
+      "IconName": "turret-plasma-turret-plasma-ground-formula-v2"
     },
     {
       "ID": 1096,
@@ -8950,7 +9160,7 @@
         3009
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         3007
@@ -8960,7 +9170,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "battle-base-turret-signal-formula-v3"
+      "IconName": "battle-base-turret-signal-formula-v2"
     },
     {
       "ID": 2096,
@@ -8968,7 +9178,7 @@
       "Factories": [
         2323
       ],
-      "Name": "战场分析基站-信标分馏-降级分馏塔",
+      "Name": "战场分析基站-信号塔分馏-降级分馏塔",
       "Items": [
         3007
       ],
@@ -8983,7 +9193,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "battle-base-turret-signal-formula-v3"
+      "IconName": "battle-base-turret-signal-formula-v2"
     },
     {
       "ID": 1097,
@@ -8996,7 +9206,7 @@
         3007
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         3006
@@ -9006,7 +9216,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "turret-signal-turret-disturb-formula-v3"
+      "IconName": "turret-signal-turret-disturb-formula-v2"
     },
     {
       "ID": 2097,
@@ -9014,7 +9224,7 @@
       "Factories": [
         2323
       ],
-      "Name": "信标-干扰塔分馏-降级分馏塔",
+      "Name": "信号塔-干扰塔分馏-降级分馏塔",
       "Items": [
         3006
       ],
@@ -9029,7 +9239,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "turret-signal-turret-disturb-formula-v3"
+      "IconName": "turret-signal-turret-disturb-formula-v2"
     },
     {
       "ID": 1098,
@@ -9042,7 +9252,7 @@
         3006
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         3008
@@ -9052,7 +9262,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "turret-disturb-turret-shield-formula-v3"
+      "IconName": "turret-disturb-turret-shield-formula-v2"
     },
     {
       "ID": 2098,
@@ -9060,7 +9270,7 @@
       "Factories": [
         2323
       ],
-      "Name": "干扰塔-护盾发生器分馏-降级分馏塔",
+      "Name": "干扰塔-行星护盾发生器分馏-降级分馏塔",
       "Items": [
         3008
       ],
@@ -9075,7 +9285,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "turret-disturb-turret-shield-formula-v3"
+      "IconName": "turret-disturb-turret-shield-formula-v2"
     },
     {
       "ID": 1099,
@@ -9088,7 +9298,7 @@
         2321
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2322
@@ -9098,7 +9308,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "fractionator-1-fractionator-2-formula-v3"
+      "IconName": "fractionator-1-fractionator-2-formula-v2"
     },
     {
       "ID": 2099,
@@ -9121,7 +9331,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "fractionator-1-fractionator-2-formula-v3"
+      "IconName": "fractionator-1-fractionator-2-formula-v2"
     },
     {
       "ID": 1100,
@@ -9134,7 +9344,7 @@
         2322
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2323
@@ -9144,7 +9354,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "fractionator-2-fractionator-3-formula-v3"
+      "IconName": "fractionator-2-fractionator-3-formula-v2"
     },
     {
       "ID": 2100,
@@ -9167,7 +9377,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "fractionator-2-fractionator-3-formula-v3"
+      "IconName": "fractionator-2-fractionator-3-formula-v2"
     },
     {
       "ID": 1101,
@@ -9180,7 +9390,7 @@
         2323
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2324
@@ -9190,7 +9400,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "fractionator-3-fractionator-4-formula-v3"
+      "IconName": "fractionator-3-fractionator-4-formula-v2"
     },
     {
       "ID": 2101,
@@ -9213,7 +9423,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "fractionator-3-fractionator-4-formula-v3"
+      "IconName": "fractionator-3-fractionator-4-formula-v2"
     },
     {
       "ID": 1102,
@@ -9226,7 +9436,7 @@
         2324
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2325
@@ -9236,7 +9446,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "fractionator-4-fractionator-5-formula-v3"
+      "IconName": "fractionator-4-fractionator-5-formula-v2"
     },
     {
       "ID": 2102,
@@ -9259,7 +9469,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "fractionator-4-fractionator-5-formula-v3"
+      "IconName": "fractionator-4-fractionator-5-formula-v2"
     },
     {
       "ID": 1103,
@@ -9272,7 +9482,7 @@
         2325
       ],
       "ItemCounts": [
-        1
+        100
       ],
       "Results": [
         2326
@@ -9282,7 +9492,7 @@
       ],
       "TimeSpend": 100000.0,
       "Proliferator": 1,
-      "IconName": "fractionator-5-fractionator-6-formula-v3"
+      "IconName": "fractionator-5-fractionator-6-formula-v2"
     },
     {
       "ID": 2103,
@@ -9305,7 +9515,7 @@
       ],
       "TimeSpend": 3001.5007503751876,
       "Proliferator": 1,
-      "IconName": "fractionator-5-fractionator-6-formula-v3"
+      "IconName": "fractionator-5-fractionator-6-formula-v2"
     },
     {
       "ID": 11001,
@@ -15677,6 +15887,167 @@
       "TimeSpend": 12000.000268220909,
       "Proliferator": 8,
       "IconName": "exchangeLS"
+    },
+    {
+      "ID": 39446,
+      "Type": -1,
+      "Factories": [
+        2326
+      ],
+      "Name": "[增产分馏塔]熔炉采矿机 A型",
+      "Items": [
+        9446
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        9446
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 3573.6114335136249,
+      "Proliferator": 8,
+      "IconName": "SmelterMinerA"
+    },
+    {
+      "ID": 39466,
+      "Type": -1,
+      "Factories": [
+        2326
+      ],
+      "Name": "[增产分馏塔]大型熔炉采矿机 A型",
+      "Items": [
+        9466
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        9466
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 12000.000268220909,
+      "Proliferator": 8,
+      "IconName": "SmelterMinerBigA"
+    },
+    {
+      "ID": 39447,
+      "Type": -1,
+      "Factories": [
+        2326
+      ],
+      "Name": "[增产分馏塔]熔炉采矿机 B型",
+      "Items": [
+        9447
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        9447
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 3573.6114335136249,
+      "Proliferator": 8,
+      "IconName": "SmelterMinerB"
+    },
+    {
+      "ID": 39467,
+      "Type": -1,
+      "Factories": [
+        2326
+      ],
+      "Name": "[增产分馏塔]大型熔炉采矿机 B型",
+      "Items": [
+        9467
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        9467
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 12000.000268220909,
+      "Proliferator": 8,
+      "IconName": "SmelterMinerBigB"
+    },
+    {
+      "ID": 39448,
+      "Type": -1,
+      "Factories": [
+        2326
+      ],
+      "Name": "[增产分馏塔]化工采矿机 C型",
+      "Items": [
+        9448
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        9448
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 12000.000268220909,
+      "Proliferator": 8,
+      "IconName": "SmelterMinerC"
+    },
+    {
+      "ID": 39468,
+      "Type": -1,
+      "Factories": [
+        2326
+      ],
+      "Name": "[增产分馏塔]大型化工采矿机 C型",
+      "Items": [
+        9468
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        9468
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 12000.000268220909,
+      "Proliferator": 8,
+      "IconName": "SmelterMinerBigC"
+    },
+    {
+      "ID": 39469,
+      "Type": -1,
+      "Factories": [
+        2326
+      ],
+      "Name": "[增产分馏塔]等离子精炼油井",
+      "Items": [
+        9469
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        9469
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 12000.000268220909,
+      "Proliferator": 8,
+      "IconName": "SmelterMinerO"
     }
   ],
   "items": [
@@ -17180,6 +17551,55 @@
       "Name": "物资交换物流站",
       "GridIndex": 3409,
       "IconName": "exchangeLS"
+    },
+    {
+      "ID": 9446,
+      "Type": 6,
+      "Name": "熔炉采矿机 A型",
+      "GridIndex": 2610,
+      "IconName": "SmelterMinerA"
+    },
+    {
+      "ID": 9466,
+      "Type": 6,
+      "Name": "大型熔炉采矿机 A型",
+      "GridIndex": 2710,
+      "IconName": "SmelterMinerBigA"
+    },
+    {
+      "ID": 9447,
+      "Type": 6,
+      "Name": "熔炉采矿机 B型",
+      "GridIndex": 2611,
+      "IconName": "SmelterMinerB"
+    },
+    {
+      "ID": 9467,
+      "Type": 6,
+      "Name": "大型熔炉采矿机 B型",
+      "GridIndex": 2711,
+      "IconName": "SmelterMinerBigB"
+    },
+    {
+      "ID": 9448,
+      "Type": 6,
+      "Name": "化工采矿机 C型",
+      "GridIndex": 2612,
+      "IconName": "SmelterMinerC"
+    },
+    {
+      "ID": 9468,
+      "Type": 6,
+      "Name": "大型化工采矿机 C型",
+      "GridIndex": 2712,
+      "IconName": "SmelterMinerBigC"
+    },
+    {
+      "ID": 9469,
+      "Type": 6,
+      "Name": "等离子精炼油井",
+      "GridIndex": 2609,
+      "IconName": "SmelterMinerO"
     },
     {
       "ID": 0,
