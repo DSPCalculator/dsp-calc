@@ -289,9 +289,11 @@
       "Name": "电磁矩阵",
       "Items": [
         1202,
-        1301
+        1301,
+        1110
       ],
       "ItemCounts": [
+        1,
         1,
         1
       ],
@@ -299,9 +301,9 @@
         6001
       ],
       "ResultCounts": [
-        1
+        2
       ],
-      "TimeSpend": 180.0,
+      "TimeSpend": 360.0,
       "Proliferator": 3,
       "IconName": "t-matrix"
     },
@@ -560,9 +562,11 @@
       "Name": "能量矩阵",
       "Items": [
         1109,
-        1120
+        7006,
+        1401
       ],
       "ItemCounts": [
+        1,
         1,
         1
       ],
@@ -570,9 +574,9 @@
         6002
       ],
       "ResultCounts": [
-        1
+        2
       ],
-      "TimeSpend": 180.0,
+      "TimeSpend": 360.0,
       "Proliferator": 3,
       "IconName": "e-matrix"
     },
@@ -852,9 +856,11 @@
       "Name": "结构矩阵",
       "Items": [
         1118,
-        6204
+        6204,
+        1112
       ],
       "ItemCounts": [
+        1,
         1,
         1
       ],
@@ -862,9 +868,9 @@
         6003
       ],
       "ResultCounts": [
-        1
+        2
       ],
-      "TimeSpend": 180.0,
+      "TimeSpend": 360.0,
       "Proliferator": 3,
       "IconName": "c-matrix"
     },
@@ -1677,9 +1683,11 @@
       "Name": "信息矩阵",
       "Items": [
         1303,
-        1402
+        1402,
+        7708
       ],
       "ItemCounts": [
+        1,
         1,
         1
       ],
@@ -1687,9 +1695,9 @@
         6004
       ],
       "ResultCounts": [
-        1
+        2
       ],
-      "TimeSpend": 180.0,
+      "TimeSpend": 360.0,
       "Proliferator": 3,
       "IconName": "i-matrix"
     },
@@ -2393,9 +2401,11 @@
       "Name": "宇宙矩阵",
       "Items": [
         6280,
+        1120,
         1122
       ],
       "ItemCounts": [
+        2,
         1,
         1
       ],
@@ -2403,9 +2413,9 @@
         6006
       ],
       "ResultCounts": [
-        1
+        2
       ],
-      "TimeSpend": 180.0,
+      "TimeSpend": 360.0,
       "Proliferator": 3,
       "IconName": "u-matrix"
     },
@@ -3139,9 +3149,11 @@
       "Name": "引力矩阵",
       "Items": [
         1209,
-        1305
+        1305,
+        7709
       ],
       "ItemCounts": [
+        1,
         1,
         1
       ],
@@ -3149,9 +3161,9 @@
         6005
       ],
       "ResultCounts": [
-        1
+        2
       ],
-      "TimeSpend": 180.0,
+      "TimeSpend": 360.0,
       "Proliferator": 3,
       "IconName": "g-matrix"
     },
@@ -6334,56 +6346,58 @@
     },
     {
       "ID": 539,
-      "Type": 9,
+      "Type": 15,
       "Factories": [
-        2304,
-        2318,
-        6257
+        2901,
+        2902
       ],
       "Name": "通量矩阵",
       "Items": [
         6001,
-        6002
+        6002,
+        1302
       ],
       "ItemCounts": [
-        1,
+        2,
+        2,
         1
       ],
       "Results": [
         6278
       ],
       "ResultCounts": [
-        1
+        2
       ],
-      "TimeSpend": 180.0,
-      "Proliferator": 1,
+      "TimeSpend": 360.0,
+      "Proliferator": 3,
       "IconName": "稳定矩阵"
     },
     {
       "ID": 540,
-      "Type": 9,
+      "Type": 15,
       "Factories": [
-        2304,
-        2318,
-        6257
+        2901,
+        2902
       ],
       "Name": "空间矩阵",
       "Items": [
         6003,
-        6004
+        6004,
+        1206
       ],
       "ItemCounts": [
-        1,
+        2,
+        2,
         1
       ],
       "Results": [
         6279
       ],
       "ResultCounts": [
-        1
+        2
       ],
-      "TimeSpend": 180.0,
-      "Proliferator": 1,
+      "TimeSpend": 360.0,
+      "Proliferator": 3,
       "IconName": "虚空矩阵"
     },
     {
@@ -6445,11 +6459,10 @@
     },
     {
       "ID": 544,
-      "Type": 9,
+      "Type": 15,
       "Factories": [
-        2304,
-        2318,
-        6257
+        2901,
+        2902
       ],
       "Name": "宇宙矩阵粗坯",
       "Items": [
@@ -6469,7 +6482,7 @@
         1
       ],
       "TimeSpend": 180.0,
-      "Proliferator": 1,
+      "Proliferator": 3,
       "IconName": "生宇宙矩阵"
     },
     {
@@ -8184,7 +8197,7 @@
       "Factories": [
         1
       ],
-      "Name": "[无中生有]铜线圈",
+      "Name": "[无中生有]磁线圈",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -8608,25 +8621,6 @@
       "ID": 11801,
       "Type": -1,
       "Factories": [
-        1
-      ],
-      "Name": "[无中生有]液氢燃料棒",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1801
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "hydrogen-energy-fuel"
-    },
-    {
-      "ID": 11801,
-      "Type": -1,
-      "Factories": [
         2204
       ],
       "Name": "[燃料棒耗尽]液氢燃料棒",
@@ -8650,25 +8644,6 @@
       "ID": 11802,
       "Type": -1,
       "Factories": [
-        1
-      ],
-      "Name": "[无中生有]氘核燃料棒",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1802
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "deuterium-energy-fuel"
-    },
-    {
-      "ID": 11802,
-      "Type": -1,
-      "Factories": [
         2210
       ],
       "Name": "[燃料棒耗尽]氘核燃料棒",
@@ -8687,25 +8662,6 @@
       "TimeSpend": 3600,
       "Proliferator": 1,
       "IconName": "deuterium-energy-fuel"
-    },
-    {
-      "ID": 11803,
-      "Type": -1,
-      "Factories": [
-        1
-      ],
-      "Name": "[无中生有]反物质燃料棒",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1803
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "antimatter-energy-fuel"
     },
     {
       "ID": 11803,
@@ -9492,25 +9448,6 @@
       "ID": 16243,
       "Type": -1,
       "Factories": [
-        1
-      ],
-      "Name": "[无中生有]MOX燃料棒",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6243
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "钚铀混合氧化物燃料棒"
-    },
-    {
-      "ID": 16243,
-      "Type": -1,
-      "Factories": [
         2211
       ],
       "Name": "[燃料棒耗尽]MOX燃料棒",
@@ -9529,25 +9466,6 @@
       "TimeSpend": 3600,
       "Proliferator": 1,
       "IconName": "钚铀混合氧化物燃料棒"
-    },
-    {
-      "ID": 16244,
-      "Type": -1,
-      "Factories": [
-        1
-      ],
-      "Name": "[无中生有]氦三燃料棒",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6244
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氦三燃料棒"
     },
     {
       "ID": 16244,
@@ -10065,7 +9983,7 @@
     {
       "ID": 1202,
       "Type": 3,
-      "Name": "铜线圈",
+      "Name": "磁线圈",
       "GridIndex": 1302,
       "IconName": "magnetism-wire"
     },
@@ -10701,7 +10619,7 @@
       "GridIndex": 2404,
       "IconName": "assembler-4",
       "WorkEnergyPerTick": 45000,
-      "Speed": 40000,
+      "Speed": 80000,
       "Space": 10.24
     },
     {
@@ -11385,7 +11303,7 @@
       "GridIndex": 2505,
       "IconName": "回收塔",
       "WorkEnergyPerTick": 500000,
-      "Speed": 60000,
+      "Speed": 300000,
       "Space": 50.0
     },
     {
