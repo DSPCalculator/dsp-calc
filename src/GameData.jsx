@@ -72,7 +72,7 @@ export const game_data_info_list = [
     {
         "GUID": FractionateEverythingGUID,
         "name": "万物分馏",
-        "version": "1.4.2",
+        "version": "1.4.3",
     },
 ]
 
