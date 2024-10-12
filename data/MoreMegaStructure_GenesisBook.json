@@ -481,7 +481,8 @@
       "ID": 16,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "等离子精炼",
       "Items": [
@@ -1756,7 +1757,8 @@
       "ID": 58,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "X射线裂解",
       "Items": [
@@ -5063,6 +5065,31 @@
       "IconName": "iacomponent"
     },
     {
+      "ID": 550,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "多功能集成组件",
+      "Items": [
+        9500
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        9500
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60.0,
+      "Proliferator": 1,
+      "IconName": "integratedcomponents"
+    },
+    {
       "ID": 538,
       "Type": 4,
       "Factories": [
@@ -6101,7 +6128,8 @@
       "ID": 501,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "焦油裂化",
       "Items": [
@@ -7177,7 +7205,8 @@
       "ID": 712,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "煤炭干馏",
       "Items": [
@@ -7200,7 +7229,8 @@
       "ID": 713,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "焦油分馏",
       "Items": [
