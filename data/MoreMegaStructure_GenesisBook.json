@@ -5063,6 +5063,31 @@
       "IconName": "iacomponent"
     },
     {
+      "ID": 550,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "多功能集成组件",
+      "Items": [
+        9500
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        9500
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60.0,
+      "Proliferator": 1,
+      "IconName": "integratedcomponents"
+    },
+    {
       "ID": 538,
       "Type": 4,
       "Factories": [

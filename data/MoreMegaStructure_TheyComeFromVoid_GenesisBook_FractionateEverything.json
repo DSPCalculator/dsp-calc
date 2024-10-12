@@ -8925,209 +8925,6 @@
       "IconName": "exchangeLS"
     },
     {
-      "ID": 452,
-      "Type": 4,
-      "Factories": [
-        2303,
-        2318,
-        6257
-      ],
-      "Name": "熔炉采矿机 A型",
-      "Items": [
-        2301,
-        1107,
-        1119
-      ],
-      "ItemCounts": [
-        1,
-        10,
-        10
-      ],
-      "Results": [
-        9446
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60.0,
-      "Proliferator": 3,
-      "IconName": "SmelterMinerA"
-    },
-    {
-      "ID": 472,
-      "Type": 10,
-      "Factories": [
-        2305,
-        2318,
-        6260
-      ],
-      "Name": "大型熔炉采矿机 A型",
-      "Items": [
-        2316,
-        1107,
-        1119
-      ],
-      "ItemCounts": [
-        1,
-        20,
-        20
-      ],
-      "Results": [
-        9466
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60.0,
-      "Proliferator": 3,
-      "IconName": "SmelterMinerBigA"
-    },
-    {
-      "ID": 453,
-      "Type": 4,
-      "Factories": [
-        2303,
-        2318,
-        6257
-      ],
-      "Name": "熔炉采矿机 B型",
-      "Items": [
-        2301,
-        1107,
-        1119
-      ],
-      "ItemCounts": [
-        1,
-        10,
-        10
-      ],
-      "Results": [
-        9447
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60.0,
-      "Proliferator": 3,
-      "IconName": "SmelterMinerB"
-    },
-    {
-      "ID": 473,
-      "Type": 10,
-      "Factories": [
-        2305,
-        2318,
-        6260
-      ],
-      "Name": "大型熔炉采矿机 B型",
-      "Items": [
-        2316,
-        1107,
-        1119
-      ],
-      "ItemCounts": [
-        1,
-        20,
-        20
-      ],
-      "Results": [
-        9467
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60.0,
-      "Proliferator": 3,
-      "IconName": "SmelterMinerBigB"
-    },
-    {
-      "ID": 454,
-      "Type": 4,
-      "Factories": [
-        2303,
-        2318,
-        6257
-      ],
-      "Name": "化工采矿机 C型",
-      "Items": [
-        2301,
-        1107,
-        1305
-      ],
-      "ItemCounts": [
-        1,
-        20,
-        5
-      ],
-      "Results": [
-        9448
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60.0,
-      "Proliferator": 3,
-      "IconName": "SmelterMinerC"
-    },
-    {
-      "ID": 474,
-      "Type": 10,
-      "Factories": [
-        2305,
-        2318,
-        6260
-      ],
-      "Name": "大型化工采矿机 C型",
-      "Items": [
-        2316,
-        1107,
-        1305
-      ],
-      "ItemCounts": [
-        1,
-        30,
-        10
-      ],
-      "Results": [
-        9468
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60.0,
-      "Proliferator": 3,
-      "IconName": "SmelterMinerBigC"
-    },
-    {
-      "ID": 475,
-      "Type": 4,
-      "Factories": [
-        2303,
-        2318,
-        6257
-      ],
-      "Name": "等离子精炼油井",
-      "Items": [
-        2301,
-        1401,
-        1119
-      ],
-      "ItemCounts": [
-        1,
-        30,
-        15
-      ],
-      "Results": [
-        9469
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60.0,
-      "Proliferator": 3,
-      "IconName": "SmelterMinerO"
-    },
-    {
       "ID": 1038,
       "Type": 8,
       "Factories": [
@@ -13702,6 +13499,29 @@
       "IconName": "iron-ore"
     },
     {
+      "ID": 1010,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "铁矿分馏-自然资源分馏塔",
+      "Items": [
+        1001
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1001
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "iron-ore-iron-ore-formula-v2"
+    },
+    {
       "ID": 31001,
       "Type": -1,
       "Factories": [
@@ -13743,6 +13563,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "copper-ore"
+    },
+    {
+      "ID": 1011,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "铜矿分馏-自然资源分馏塔",
+      "Items": [
+        1002
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1002
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "copper-ore-copper-ore-formula-v2"
     },
     {
       "ID": 31002,
@@ -13788,6 +13631,29 @@
       "IconName": "silicium-ore"
     },
     {
+      "ID": 1013,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "硅石分馏-自然资源分馏塔",
+      "Items": [
+        1003
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1003
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "silicium-ore-silicium-ore-formula-v2"
+    },
+    {
       "ID": 31003,
       "Type": -1,
       "Factories": [
@@ -13829,6 +13695,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "titanium-ore"
+    },
+    {
+      "ID": 1014,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "钛石分馏-自然资源分馏塔",
+      "Items": [
+        1004
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1004
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "titanium-ore-titanium-ore-formula-v2"
     },
     {
       "ID": 31004,
@@ -13874,6 +13763,29 @@
       "IconName": "stone-ore"
     },
     {
+      "ID": 1017,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "石矿分馏-自然资源分馏塔",
+      "Items": [
+        1005
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1005
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "stone-ore-stone-ore-formula-v2"
+    },
+    {
       "ID": 31005,
       "Type": -1,
       "Factories": [
@@ -13915,6 +13827,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "coal-ore"
+    },
+    {
+      "ID": 1016,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "煤矿分馏-自然资源分馏塔",
+      "Items": [
+        1006
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1006
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "coal-ore-coal-ore-formula-v2"
     },
     {
       "ID": 31006,
@@ -14047,6 +13982,29 @@
       "IconName": "gas-hydrate"
     },
     {
+      "ID": 1033,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "可燃冰分馏-自然资源分馏塔",
+      "Items": [
+        1011
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1011
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "gas-hydrate-gas-hydrate-formula-v2"
+    },
+    {
       "ID": 31011,
       "Type": -1,
       "Factories": [
@@ -14088,6 +14046,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "diamond-ore"
+    },
+    {
+      "ID": 1031,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "金伯利矿石分馏-自然资源分馏塔",
+      "Items": [
+        1012
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1012
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "diamond-ore-diamond-ore-formula-v2"
     },
     {
       "ID": 31012,
@@ -14133,6 +14114,29 @@
       "IconName": "fractal-silica"
     },
     {
+      "ID": 1032,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "分形硅石分馏-自然资源分馏塔",
+      "Items": [
+        1013
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1013
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "fractal-silica-fractal-silica-formula-v2"
+    },
+    {
       "ID": 31013,
       "Type": -1,
       "Factories": [
@@ -14175,6 +14179,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "grating-ore"
+    },
+    {
+      "ID": 1036,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "光栅石分馏-自然资源分馏塔",
+      "Items": [
+        1014
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1014
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "grating-ore-grating-ore-formula-v2"
     },
     {
       "ID": 11014,
@@ -14262,6 +14289,29 @@
       "IconName": "bamboo-crystal"
     },
     {
+      "ID": 1034,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "刺笋结晶分馏-自然资源分馏塔",
+      "Items": [
+        1015
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1015
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "bamboo-crystal-bamboo-crystal-formula-v2"
+    },
+    {
       "ID": 31015,
       "Type": -1,
       "Factories": [
@@ -14304,6 +14354,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "mono-mag-ore"
+    },
+    {
+      "ID": 1037,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "单极磁石分馏-自然资源分馏塔",
+      "Items": [
+        1016
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1016
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "mono-mag-ore-mono-mag-ore-formula-v2"
     },
     {
       "ID": 11016,
@@ -15800,6 +15873,29 @@
       "IconName": "water"
     },
     {
+      "ID": 1019,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "水分馏-自然资源分馏塔",
+      "Items": [
+        1000
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1000
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "water-water-formula-v2"
+    },
+    {
       "ID": 31000,
       "Type": -1,
       "Factories": [
@@ -15840,6 +15936,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "oil"
+    },
+    {
+      "ID": 1020,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "原油分馏-自然资源分馏塔",
+      "Items": [
+        1007
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1007
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "oil-oil-formula-v2"
     },
     {
       "ID": 31007,
@@ -15908,6 +16027,29 @@
       "IconName": "sulphuric-acid"
     },
     {
+      "ID": 1021,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "硫酸分馏-自然资源分馏塔",
+      "Items": [
+        1116
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1116
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "sulphuric-acid-sulphuric-acid-formula-v2"
+    },
+    {
       "ID": 31116,
       "Type": -1,
       "Factories": [
@@ -15951,6 +16093,29 @@
       "IconName": "hydrogen"
     },
     {
+      "ID": 1023,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "氢分馏-自然资源分馏塔",
+      "Items": [
+        1120
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1120
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "hydrogen-hydrogen-formula-v2"
+    },
+    {
       "ID": 31120,
       "Type": -1,
       "Factories": [
@@ -15992,6 +16157,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "deuterium"
+    },
+    {
+      "ID": 1024,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "重氢分馏-自然资源分馏塔",
+      "Items": [
+        1121
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1121
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "deuterium-deuterium-formula-v2"
     },
     {
       "ID": 31121,
@@ -16509,6 +16697,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "crystal-rubber"
+    },
+    {
+      "ID": 1035,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "有机晶体分馏-自然资源分馏塔",
+      "Items": [
+        1117
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1117
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "crystal-rubber-crystal-rubber-formula-v2"
     },
     {
       "ID": 31117,
@@ -17174,6 +17385,29 @@
       "TimeSpend": 1584.4063382835229,
       "Proliferator": 8,
       "IconName": "terrain-tool"
+    },
+    {
+      "ID": 2111,
+      "Type": 8,
+      "Factories": [
+        2323
+      ],
+      "Name": "增产剂-增产剂分馏-降级分馏塔",
+      "Items": [
+        1143
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1143
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 3001.5007503751876,
+      "Proliferator": 1,
+      "IconName": "accelerator-3-accelerator-3-formula-v2"
     },
     {
       "ID": 31143,
@@ -18854,6 +19088,29 @@
       "IconName": "energy-exchanger"
     },
     {
+      "ID": 2089,
+      "Type": 8,
+      "Factories": [
+        2323
+      ],
+      "Name": "微型粒子对撞机-微型粒子对撞机分馏-降级分馏塔",
+      "Items": [
+        2310
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        2310
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 3001.5007503751876,
+      "Proliferator": 1,
+      "IconName": "hadron-collider-hadron-collider-formula-v2"
+    },
+    {
       "ID": 32310,
       "Type": -1,
       "Factories": [
@@ -19015,6 +19272,29 @@
       "IconName": "lab-2"
     },
     {
+      "ID": 2122,
+      "Type": 8,
+      "Factories": [
+        2323
+      ],
+      "Name": "高斯机枪塔-高斯机枪塔分馏-降级分馏塔",
+      "Items": [
+        3001
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        3001
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 3001.5007503751876,
+      "Proliferator": 1,
+      "IconName": "turret-gauss-turret-gauss-formula-v2"
+    },
+    {
       "ID": 33001,
       "Type": -1,
       "Factories": [
@@ -19105,6 +19385,29 @@
       "TimeSpend": 13995.576873069958,
       "Proliferator": 8,
       "IconName": "turret-plasma"
+    },
+    {
+      "ID": 2135,
+      "Type": 8,
+      "Factories": [
+        2323
+      ],
+      "Name": "导弹防御塔-导弹防御塔分馏-降级分馏塔",
+      "Items": [
+        3005
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        3005
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 3001.5007503751876,
+      "Proliferator": 1,
+      "IconName": "turret-missile-turret-missile-formula-v2"
     },
     {
       "ID": 33005,
@@ -19951,6 +20254,29 @@
       "IconName": "钨矿"
     },
     {
+      "ID": 1015,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "钨矿分馏-自然资源分馏塔",
+      "Items": [
+        6201
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        6201
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "钨矿-钨矿-formula-v2"
+    },
+    {
       "ID": 36201,
       "Type": -1,
       "Factories": [
@@ -19992,6 +20318,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "铝矿石"
+    },
+    {
+      "ID": 1012,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "铝矿分馏-自然资源分馏塔",
+      "Items": [
+        6202
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        6202
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "铝矿石-铝矿石-formula-v2"
     },
     {
       "ID": 36202,
@@ -20143,6 +20492,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "硫矿"
+    },
+    {
+      "ID": 1018,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "硫矿分馏-自然资源分馏塔",
+      "Items": [
+        6207
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        6207
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "硫矿-硫矿-formula-v2"
     },
     {
       "ID": 36207,
@@ -20344,6 +20716,29 @@
       "IconName": "氮气_新"
     },
     {
+      "ID": 1026,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "氮分馏-自然资源分馏塔",
+      "Items": [
+        6220
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        6220
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "氮气_新-氮气_新-formula-v2"
+    },
+    {
       "ID": 36220,
       "Type": -1,
       "Factories": [
@@ -20411,6 +20806,29 @@
       "IconName": "放射晶体矿_新"
     },
     {
+      "ID": 1028,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "放射性矿物分馏-自然资源分馏塔",
+      "Items": [
+        6222
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        6222
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "放射晶体矿_新-放射晶体矿_新-formula-v2"
+    },
+    {
       "ID": 36222,
       "Type": -1,
       "Factories": [
@@ -20434,6 +20852,29 @@
       "IconName": "放射晶体矿_新"
     },
     {
+      "ID": 1029,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "铀矿分馏-自然资源分馏塔",
+      "Items": [
+        6225
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        6225
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "铀矿-铀矿-formula-v2"
+    },
+    {
       "ID": 36225,
       "Type": -1,
       "Factories": [
@@ -20455,6 +20896,29 @@
       "TimeSpend": 1473.2528298103666,
       "Proliferator": 8,
       "IconName": "铀矿"
+    },
+    {
+      "ID": 1030,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "钚矿分馏-自然资源分馏塔",
+      "Items": [
+        6226
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        6226
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "钚矿-钚矿-formula-v2"
     },
     {
       "ID": 36226,
@@ -20613,6 +21077,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "氦_新"
+    },
+    {
+      "ID": 1025,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "氦分馏-自然资源分馏塔",
+      "Items": [
+        6234
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        6234
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "氦_新-氦_新-formula-v2"
     },
     {
       "ID": 36234,
@@ -21626,6 +22113,29 @@
       "IconName": "氨"
     },
     {
+      "ID": 1022,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "氨分馏-自然资源分馏塔",
+      "Items": [
+        7002
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        7002
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "氨-氨-formula-v2"
+    },
+    {
       "ID": 37002,
       "Type": -1,
       "Factories": [
@@ -21864,6 +22374,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "氧气"
+    },
+    {
+      "ID": 1027,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "氧分馏-自然资源分馏塔",
+      "Items": [
+        7019
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        7019
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "氧气-氧气-formula-v2"
     },
     {
       "ID": 37019,
@@ -22733,167 +23266,6 @@
       "TimeSpend": 27230.591584615879,
       "Proliferator": 8,
       "IconName": "exchangeLS"
-    },
-    {
-      "ID": 39446,
-      "Type": -1,
-      "Factories": [
-        2326
-      ],
-      "Name": "[增产分馏塔]熔炉采矿机 A型",
-      "Items": [
-        9446
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        9446
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 9156.9773628699331,
-      "Proliferator": 8,
-      "IconName": "SmelterMinerA"
-    },
-    {
-      "ID": 39466,
-      "Type": -1,
-      "Factories": [
-        2326
-      ],
-      "Name": "[增产分馏塔]大型熔炉采矿机 A型",
-      "Items": [
-        9466
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        9466
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 45033.142558766995,
-      "Proliferator": 8,
-      "IconName": "SmelterMinerBigA"
-    },
-    {
-      "ID": 39447,
-      "Type": -1,
-      "Factories": [
-        2326
-      ],
-      "Name": "[增产分馏塔]熔炉采矿机 B型",
-      "Items": [
-        9447
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        9447
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 9156.9773628699331,
-      "Proliferator": 8,
-      "IconName": "SmelterMinerB"
-    },
-    {
-      "ID": 39467,
-      "Type": -1,
-      "Factories": [
-        2326
-      ],
-      "Name": "[增产分馏塔]大型熔炉采矿机 B型",
-      "Items": [
-        9467
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        9467
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 45033.142558766995,
-      "Proliferator": 8,
-      "IconName": "SmelterMinerBigB"
-    },
-    {
-      "ID": 39448,
-      "Type": -1,
-      "Factories": [
-        2326
-      ],
-      "Name": "[增产分馏塔]化工采矿机 C型",
-      "Items": [
-        9448
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        9448
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 15174.909551079534,
-      "Proliferator": 8,
-      "IconName": "SmelterMinerC"
-    },
-    {
-      "ID": 39468,
-      "Type": -1,
-      "Factories": [
-        2326
-      ],
-      "Name": "[增产分馏塔]大型化工采矿机 C型",
-      "Items": [
-        9468
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        9468
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 47979.834865816956,
-      "Proliferator": 8,
-      "IconName": "SmelterMinerBigC"
-    },
-    {
-      "ID": 39469,
-      "Type": -1,
-      "Factories": [
-        2326
-      ],
-      "Name": "[增产分馏塔]等离子精炼油井",
-      "Items": [
-        9469
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        9469
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 16483.541743304206,
-      "Proliferator": 8,
-      "IconName": "SmelterMinerO"
     }
   ],
   "items": [
@@ -24977,55 +25349,6 @@
       "Name": "物资交换物流站",
       "GridIndex": 3409,
       "IconName": "exchangeLS"
-    },
-    {
-      "ID": 9446,
-      "Type": 6,
-      "Name": "熔炉采矿机 A型",
-      "GridIndex": 2610,
-      "IconName": "SmelterMinerA"
-    },
-    {
-      "ID": 9466,
-      "Type": 6,
-      "Name": "大型熔炉采矿机 A型",
-      "GridIndex": 2710,
-      "IconName": "SmelterMinerBigA"
-    },
-    {
-      "ID": 9447,
-      "Type": 6,
-      "Name": "熔炉采矿机 B型",
-      "GridIndex": 2611,
-      "IconName": "SmelterMinerB"
-    },
-    {
-      "ID": 9467,
-      "Type": 6,
-      "Name": "大型熔炉采矿机 B型",
-      "GridIndex": 2711,
-      "IconName": "SmelterMinerBigB"
-    },
-    {
-      "ID": 9448,
-      "Type": 6,
-      "Name": "化工采矿机 C型",
-      "GridIndex": 2612,
-      "IconName": "SmelterMinerC"
-    },
-    {
-      "ID": 9468,
-      "Type": 6,
-      "Name": "大型化工采矿机 C型",
-      "GridIndex": 2712,
-      "IconName": "SmelterMinerBigC"
-    },
-    {
-      "ID": 9469,
-      "Type": 6,
-      "Name": "等离子精炼油井",
-      "GridIndex": 2609,
-      "IconName": "SmelterMinerO"
     },
     {
       "ID": 0,

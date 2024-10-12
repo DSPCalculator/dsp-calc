@@ -3405,6 +3405,33 @@
       "IconName": "piler"
     },
     {
+      "ID": 121,
+      "Type": 3,
+      "Factories": [
+        2308
+      ],
+      "Name": "重整精炼",
+      "Items": [
+        1114,
+        1120,
+        1006
+      ],
+      "ItemCounts": [
+        2,
+        1,
+        1
+      ],
+      "Results": [
+        1114
+      ],
+      "ResultCounts": [
+        3
+      ],
+      "TimeSpend": 240.0,
+      "Proliferator": 1,
+      "IconName": "reforming-refine"
+    },
+    {
       "ID": 122,
       "Type": 4,
       "Factories": [
@@ -4861,6 +4888,32 @@
       "TimeSpend": 480.0,
       "Proliferator": 3,
       "IconName": "iacomponent"
+    },
+    {
+      "ID": 550,
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "多功能集成组件",
+      "Items": [
+        9500
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        9500
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60.0,
+      "Proliferator": 3,
+      "IconName": "integratedcomponents"
     },
     {
       "ID": 538,
@@ -9135,6 +9188,29 @@
       "IconName": "iron-ore"
     },
     {
+      "ID": 1010,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "铁矿分馏-自然资源分馏塔",
+      "Items": [
+        1001
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1001
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "iron-ore-iron-ore-formula-v2"
+    },
+    {
       "ID": 31001,
       "Type": -1,
       "Factories": [
@@ -9176,6 +9252,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "copper-ore"
+    },
+    {
+      "ID": 1011,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "铜矿分馏-自然资源分馏塔",
+      "Items": [
+        1002
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1002
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "copper-ore-copper-ore-formula-v2"
     },
     {
       "ID": 31002,
@@ -9221,6 +9320,29 @@
       "IconName": "silicium-ore"
     },
     {
+      "ID": 1012,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "硅石分馏-自然资源分馏塔",
+      "Items": [
+        1003
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1003
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "silicium-ore-silicium-ore-formula-v2"
+    },
+    {
       "ID": 31003,
       "Type": -1,
       "Factories": [
@@ -9262,6 +9384,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "titanium-ore"
+    },
+    {
+      "ID": 1013,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "钛石分馏-自然资源分馏塔",
+      "Items": [
+        1004
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1004
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "titanium-ore-titanium-ore-formula-v2"
     },
     {
       "ID": 31004,
@@ -9307,6 +9452,29 @@
       "IconName": "stone-ore"
     },
     {
+      "ID": 1014,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "石矿分馏-自然资源分馏塔",
+      "Items": [
+        1005
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1005
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "stone-ore-stone-ore-formula-v2"
+    },
+    {
       "ID": 31005,
       "Type": -1,
       "Factories": [
@@ -9348,6 +9516,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "coal-ore"
+    },
+    {
+      "ID": 1015,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "煤矿分馏-自然资源分馏塔",
+      "Items": [
+        1006
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1006
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "coal-ore-coal-ore-formula-v2"
     },
     {
       "ID": 31006,
@@ -9480,6 +9671,29 @@
       "IconName": "gas-hydrate"
     },
     {
+      "ID": 1021,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "可燃冰分馏-自然资源分馏塔",
+      "Items": [
+        1011
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1011
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "gas-hydrate-gas-hydrate-formula-v2"
+    },
+    {
       "ID": 31011,
       "Type": -1,
       "Factories": [
@@ -9521,6 +9735,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "diamond-ore"
+    },
+    {
+      "ID": 1022,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "金伯利矿石分馏-自然资源分馏塔",
+      "Items": [
+        1012
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1012
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "diamond-ore-diamond-ore-formula-v2"
     },
     {
       "ID": 31012,
@@ -9566,6 +9803,29 @@
       "IconName": "fractal-silica"
     },
     {
+      "ID": 1023,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "分形硅石分馏-自然资源分馏塔",
+      "Items": [
+        1013
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1013
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "fractal-silica-fractal-silica-formula-v2"
+    },
+    {
       "ID": 31013,
       "Type": -1,
       "Factories": [
@@ -9608,6 +9868,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "grating-ore"
+    },
+    {
+      "ID": 1024,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "光栅石分馏-自然资源分馏塔",
+      "Items": [
+        1014
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1014
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "grating-ore-grating-ore-formula-v2"
     },
     {
       "ID": 11014,
@@ -9695,6 +9978,29 @@
       "IconName": "bamboo-crystal"
     },
     {
+      "ID": 1025,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "刺笋结晶分馏-自然资源分馏塔",
+      "Items": [
+        1015
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1015
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "bamboo-crystal-bamboo-crystal-formula-v2"
+    },
+    {
       "ID": 31015,
       "Type": -1,
       "Factories": [
@@ -9737,6 +10043,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "mono-mag-ore"
+    },
+    {
+      "ID": 1026,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "单极磁石分馏-自然资源分馏塔",
+      "Items": [
+        1016
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1016
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "mono-mag-ore-mono-mag-ore-formula-v2"
     },
     {
       "ID": 11016,
@@ -11274,6 +11603,29 @@
       "IconName": "water"
     },
     {
+      "ID": 1016,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "水分馏-自然资源分馏塔",
+      "Items": [
+        1000
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1000
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "water-water-formula-v2"
+    },
+    {
       "ID": 31000,
       "Type": -1,
       "Factories": [
@@ -11314,6 +11666,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "oil"
+    },
+    {
+      "ID": 1017,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "原油分馏-自然资源分馏塔",
+      "Items": [
+        1007
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1007
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "oil-oil-formula-v2"
     },
     {
       "ID": 31007,
@@ -11381,6 +11756,29 @@
       "IconName": "sulphuric-acid"
     },
     {
+      "ID": 1018,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "硫酸分馏-自然资源分馏塔",
+      "Items": [
+        1116
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1116
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "sulphuric-acid-sulphuric-acid-formula-v2"
+    },
+    {
       "ID": 31116,
       "Type": -1,
       "Factories": [
@@ -11424,6 +11822,29 @@
       "IconName": "hydrogen"
     },
     {
+      "ID": 1019,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "氢分馏-自然资源分馏塔",
+      "Items": [
+        1120
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1120
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "hydrogen-hydrogen-formula-v2"
+    },
+    {
       "ID": 31120,
       "Type": -1,
       "Factories": [
@@ -11465,6 +11886,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "deuterium"
+    },
+    {
+      "ID": 1020,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "重氢分馏-自然资源分馏塔",
+      "Items": [
+        1121
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1121
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1200.0,
+      "Proliferator": 1,
+      "IconName": "deuterium-deuterium-formula-v2"
     },
     {
       "ID": 31121,
@@ -11890,6 +12334,29 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "crystal-rubber"
+    },
+    {
+      "ID": 1027,
+      "Type": 8,
+      "Factories": [
+        2321
+      ],
+      "Name": "有机晶体分馏-自然资源分馏塔",
+      "Items": [
+        1117
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        1117
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 2400.0,
+      "Proliferator": 1,
+      "IconName": "crystal-rubber-crystal-rubber-formula-v2"
     },
     {
       "ID": 31117,

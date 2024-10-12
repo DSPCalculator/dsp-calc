@@ -3405,6 +3405,33 @@
       "IconName": "piler"
     },
     {
+      "ID": 121,
+      "Type": 3,
+      "Factories": [
+        2308
+      ],
+      "Name": "重整精炼",
+      "Items": [
+        1114,
+        1120,
+        1006
+      ],
+      "ItemCounts": [
+        2,
+        1,
+        1
+      ],
+      "Results": [
+        1114
+      ],
+      "ResultCounts": [
+        3
+      ],
+      "TimeSpend": 240.0,
+      "Proliferator": 1,
+      "IconName": "reforming-refine"
+    },
+    {
       "ID": 122,
       "Type": 4,
       "Factories": [
