@@ -16,7 +16,7 @@ import {
 } from "./GameData.jsx";
 import {Select} from "antd";
 
-function GameVersion() {
+function GameVersion({set_needs_list}) {
     const mod_options = get_mod_options();
     const set_game_data = useContext(GameInfoSetterContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
@@ -69,6 +69,7 @@ function GameVersion() {
         console.log("无递归，继续执行，新list", modList2)
         set_mods(modList2);
         let game_data = modList.length === 0 ? default_game_data : get_game_data(modList);
+        set_needs_list({});
         set_game_data(game_data);
         set_scheme_data(init_scheme_data(game_data));
     }
@@ -119,7 +120,7 @@ function AppWithContexts() {
     return <>
         {/*游戏版本、模组选择*/}
         <div className="d-flex column-gap-4 row-gap-2 flex-wrap">
-            <GameVersion/>
+            <GameVersion set_needs_list={set_needs_list}/>
         </div>
         {/*生产策略、需求列表、清空数据缓存按钮、采矿参数&其他设置是否显示按钮*/}
         <div className="d-flex column-gap-4 row-gap-2 flex-wrap">
