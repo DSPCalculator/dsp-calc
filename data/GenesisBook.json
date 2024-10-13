@@ -483,7 +483,8 @@
       "ID": 16,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "等离子精炼",
       "Items": [
@@ -1764,7 +1765,8 @@
       "ID": 58,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "X射线裂解",
       "Items": [
@@ -5744,7 +5746,8 @@
       "ID": 501,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "焦油裂化",
       "Items": [
@@ -6821,7 +6824,8 @@
       "ID": 712,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "煤炭干馏",
       "Items": [
@@ -6844,7 +6848,8 @@
       "ID": 713,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "焦油分馏",
       "Items": [
@@ -8590,7 +8595,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 600,
       "Proliferator": 0,
       "IconName": "photon-capacitor-full"
     },
@@ -8600,7 +8605,7 @@
       "Factories": [
         2208
       ],
-      "Name": "[射线接收带透镜]临界光子-",
+      "Name": "[射线接收带透镜]临界光子",
       "Items": [
         1209
       ],
@@ -8613,7 +8618,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 300,
       "Proliferator": 4,
       "IconName": "photon-capacitor-full"
     },

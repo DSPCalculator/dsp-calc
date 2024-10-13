@@ -67,12 +67,12 @@ export const game_data_info_list = [
     {
         "GUID": GenesisBookGUID,
         "name": "创世之书",
-        "version": "2.10.0-alpha3",
+        "version": "2.9.13",
     },
     {
         "GUID": FractionateEverythingGUID,
         "name": "万物分馏",
-        "version": "1.4.1",
+        "version": "1.4.3",
     },
 ]
 

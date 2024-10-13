@@ -16,13 +16,19 @@ import {
 } from "./GameData.jsx";
 import {Select} from "antd";
 
-function GameVersion() {
+function GameVersion({needs_list, set_needs_list}) {
     const mod_options = get_mod_options();
     const set_game_data = useContext(GameInfoSetterContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const [mods, set_mods] = useState([]);
 
     async function mods_change(modList) {
+        if (JSON.stringify(needs_list) !== '{}'
+            && !confirm(`检测到计算器内有产线，确认继续切换mod吗？切换后将清空产线！`)) {
+            return;// 用户取消
+        }
+        //清除产线
+        set_needs_list({});
         //判断modList是否合理，并调整顺序
         //巨构是深空的前置依赖
         let b1 = false;
@@ -69,6 +75,7 @@ function GameVersion() {
         console.log("无递归，继续执行，新list", modList2)
         set_mods(modList2);
         let game_data = modList.length === 0 ? default_game_data : get_game_data(modList);
+        set_needs_list({});
         set_game_data(game_data);
         set_scheme_data(init_scheme_data(game_data));
     }
@@ -119,7 +126,7 @@ function AppWithContexts() {
     return <>
         {/*游戏版本、模组选择*/}
         <div className="d-flex column-gap-4 row-gap-2 flex-wrap">
-            <GameVersion/>
+            <GameVersion needs_list={needs_list} set_needs_list={set_needs_list}/>
         </div>
         {/*生产策略、需求列表、清空数据缓存按钮、采矿参数&其他设置是否显示按钮*/}
         <div className="d-flex column-gap-4 row-gap-2 flex-wrap">
