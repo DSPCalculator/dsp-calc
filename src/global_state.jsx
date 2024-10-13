@@ -94,6 +94,22 @@ export class GlobalState {
         this.scheme_data = scheme_data;
         this.ui_settings = ui_settings;
 
+        //获取最后一个增产剂对应的点数值
+        //懒得比较获取最大值了，直接用最后一个增产剂作为最大值
+        let maxProliferatorPoint = game_info.game_data.proliferator_data[game_info.game_data.proliferator_data.length - 1].增产点数;
+        for (let i = 0; i < scheme_data.scheme_for_recipe.length; i++) {
+            //选择增产塔对应配方时，如果未选择增产策略，强制选择增产策略为增产分馏
+            if (game_info.game_data.recipe_data[i].增产 == 8//8也就是bit4，增产分馏策略的位置
+                && scheme_data.scheme_for_recipe[i].增产模式 == 0) {
+                scheme_data.scheme_for_recipe[i].增产模式 = 4;//模式就是对应的bit，也就是4
+            }
+            //选择增产策略但是未选择增产剂时，强制选择最后一个增产剂；但是选择增产剂时，不会强制选择增产策略
+            if (scheme_data.scheme_for_recipe[i].增产模式 > 0
+                && scheme_data.scheme_for_recipe[i].增产点数 == 0) {
+                scheme_data.scheme_for_recipe[i].增产点数 = maxProliferatorPoint;
+            }
+        }
+
         this.#init_pro_proliferator(ui_settings.proliferate_itself);
         this.#init_item_graph();
         this.#init_item_list();

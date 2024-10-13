@@ -43,7 +43,7 @@ export function BatchSetting() {
     let pro_num_item = {};
     for (let data of game_data.proliferator_data) {
         let pro_point = data["增产点数"];
-        pro_num_item[pro_point] = pro_point == 0 ? "无" : data["名称"];
+        pro_num_item[pro_point] = pro_point === 0 ? "无" : data["名称"];
     }
 
     let factory_doms = [];
