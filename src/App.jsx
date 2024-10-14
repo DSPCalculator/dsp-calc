@@ -27,7 +27,7 @@ function GameVersion({needs_list, set_needs_list}) {
             && !confirm(`检测到计算器内有产线，确认继续切换mod吗？切换后将清空产线！`)) {
             return;// 用户取消
         }
-        //清除产线
+        //清除原有产线，否则会出现找不到配方而导致白屏的bug
         set_needs_list({});
         //判断modList是否合理，并调整顺序
         //巨构是深空的前置依赖
@@ -75,7 +75,6 @@ function GameVersion({needs_list, set_needs_list}) {
         console.log("无递归，继续执行，新list", modList2)
         set_mods(modList2);
         let game_data = modList.length === 0 ? default_game_data : get_game_data(modList);
-        set_needs_list({});
         set_game_data(game_data);
         set_scheme_data(init_scheme_data(game_data));
     }
