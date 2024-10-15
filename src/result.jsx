@@ -62,6 +62,10 @@ export function ProModeSelect({recipe_id, choice, onChange}) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
     let pro_modes = {[0]: "无"};
+    //如果是增产塔，只能选择增产分馏
+    if (game_data.recipe_data[recipe_id]["增产"] & (1 << 3)) {
+        pro_modes = {};
+    }
     ["加速", "增产", "接收站透镜喷涂", "增产分馏"].forEach((e, i) => {
         if (game_data.recipe_data[recipe_id]["增产"] & (1 << i)) pro_modes[i + 1] = e
     })

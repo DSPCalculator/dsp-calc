@@ -357,7 +357,7 @@
         1111
       ],
       "ResultCounts": [
-        2
+        1
       ],
       "TimeSpend": 120.0,
       "Proliferator": 3,
@@ -377,7 +377,7 @@
         1202
       ],
       "ItemCounts": [
-        2,
+        1,
         2
       ],
       "Results": [
@@ -483,7 +483,8 @@
       "ID": 16,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "等离子精炼",
       "Items": [
@@ -1764,7 +1765,8 @@
       "ID": 58,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "X射线裂解",
       "Items": [
@@ -2205,7 +2207,7 @@
         1301
       ],
       "ItemCounts": [
-        2,
+        1,
         1
       ],
       "Results": [
@@ -3280,9 +3282,11 @@
       "Name": "增产剂",
       "Items": [
         1124,
+        6277,
         7015
       ],
       "ItemCounts": [
+        2,
         2,
         1
       ],
@@ -4616,13 +4620,13 @@
       ],
       "Name": "自演化研究站",
       "Items": [
-        2901,
+        6503,
         5202,
         5201,
         7803
       ],
       "ItemCounts": [
-        1,
+        4,
         10,
         20,
         2
@@ -4634,7 +4638,7 @@
         1
       ],
       "TimeSpend": 240.0,
-      "Proliferator": 1,
+      "Proliferator": 3,
       "IconName": "lab-2"
     },
     {
@@ -4647,13 +4651,13 @@
       ],
       "Name": "物质重组工厂",
       "Items": [
-        2305,
+        6503,
         5203,
         5206,
         1305
       ],
       "ItemCounts": [
-        1,
+        8,
         10,
         30,
         2
@@ -4665,7 +4669,7 @@
         1
       ],
       "TimeSpend": 240.0,
-      "Proliferator": 1,
+      "Proliferator": 3,
       "IconName": "assembler-4"
     },
     {
@@ -6370,7 +6374,8 @@
       "ID": 501,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "焦油裂化",
       "Items": [
@@ -7005,7 +7010,7 @@
         2901,
         2902
       ],
-      "Name": "空间矩阵",
+      "Name": "领域矩阵",
       "Items": [
         6003,
         6004,
@@ -7090,7 +7095,7 @@
         2901,
         2902
       ],
-      "Name": "宇宙矩阵粗坯",
+      "Name": "奇点矩阵",
       "Items": [
         6278,
         6279,
@@ -7112,13 +7117,65 @@
       "IconName": "生宇宙矩阵"
     },
     {
+      "ID": 547,
+      "Type": 5,
+      "Factories": [
+        2310,
+        6265
+      ],
+      "Name": "能量物质化",
+      "Items": [
+        1208
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        5206
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 180.0,
+      "Proliferator": 1,
+      "IconName": "能量碎片制作"
+    },
+    {
+      "ID": 549,
+      "Type": 16,
+      "Factories": [
+        2317,
+        6259
+      ],
+      "Name": "有机晶体活化",
+      "Items": [
+        1117,
+        6222,
+        5206
+      ],
+      "ItemCounts": [
+        2,
+        2,
+        4
+      ],
+      "Results": [
+        7709
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 360.0,
+      "Proliferator": 3,
+      "IconName": "高效黑塑料"
+    },
+    {
       "ID": 550,
       "Type": 16,
       "Factories": [
         2317,
         6259
       ],
-      "Name": "活性纤维重组",
+      "Name": "有机晶体重组",
       "Items": [
         1117
       ],
@@ -7447,7 +7504,8 @@
       "ID": 712,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "煤炭干馏",
       "Items": [
@@ -7470,7 +7528,8 @@
       "ID": 713,
       "Type": 3,
       "Factories": [
-        2308
+        2308,
+        6259
       ],
       "Name": "焦油分馏",
       "Items": [
@@ -8976,7 +9035,6 @@
       "Factories": [
         2301,
         2316,
-        2208,
         1
       ],
       "Name": "[无中生有]光栅石",
@@ -8993,12 +9051,31 @@
       "IconName": "grating-ore"
     },
     {
+      "ID": 11014,
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]光栅石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1014
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "grating-ore"
+    },
+    {
       "ID": 21014,
       "Type": -1,
       "Factories": [
         2208
       ],
-      "Name": "[射线接收带透镜]光栅石-",
+      "Name": "[射线接收带透镜]光栅石",
       "Items": [
         1209
       ],
@@ -9011,7 +9088,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 300,
       "Proliferator": 4,
       "IconName": "grating-ore"
     },
@@ -9041,7 +9118,6 @@
       "Factories": [
         2301,
         2316,
-        2208,
         1
       ],
       "Name": "[无中生有]单极磁石",
@@ -9058,12 +9134,31 @@
       "IconName": "mono-mag-ore"
     },
     {
+      "ID": 11016,
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]单极磁石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1016
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "mono-mag-ore"
+    },
+    {
       "ID": 21016,
       "Type": -1,
       "Factories": [
         2208
       ],
-      "Name": "[射线接收带透镜]单极磁石-",
+      "Name": "[射线接收带透镜]单极磁石",
       "Items": [
         1209
       ],
@@ -9076,7 +9171,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 300,
       "Proliferator": 4,
       "IconName": "mono-mag-ore"
     },
@@ -9084,7 +9179,6 @@
       "ID": 11101,
       "Type": -1,
       "Factories": [
-        2208,
         1
       ],
       "Name": "[无中生有]铁块",
@@ -9101,12 +9195,31 @@
       "IconName": "iron-plate"
     },
     {
+      "ID": 11101,
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]铁块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1101
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "iron-plate"
+    },
+    {
       "ID": 21101,
       "Type": -1,
       "Factories": [
         2208
       ],
-      "Name": "[射线接收带透镜]铁块-",
+      "Name": "[射线接收带透镜]铁块",
       "Items": [
         1209
       ],
@@ -9119,7 +9232,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 300,
       "Proliferator": 4,
       "IconName": "iron-plate"
     },
@@ -9127,7 +9240,6 @@
       "ID": 11104,
       "Type": -1,
       "Factories": [
-        2208,
         1
       ],
       "Name": "[无中生有]铜块",
@@ -9144,12 +9256,31 @@
       "IconName": "copper-plate"
     },
     {
+      "ID": 11104,
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]铜块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1104
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "copper-plate"
+    },
+    {
       "ID": 21104,
       "Type": -1,
       "Factories": [
         2208
       ],
-      "Name": "[射线接收带透镜]铜块-",
+      "Name": "[射线接收带透镜]铜块",
       "Items": [
         1209
       ],
@@ -9162,7 +9293,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 300,
       "Proliferator": 4,
       "IconName": "copper-plate"
     },
@@ -9170,7 +9301,6 @@
       "ID": 11105,
       "Type": -1,
       "Factories": [
-        2208,
         1
       ],
       "Name": "[无中生有]高纯硅块",
@@ -9187,12 +9317,31 @@
       "IconName": "silicium-single-crystal"
     },
     {
+      "ID": 11105,
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]高纯硅块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1105
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "silicium-single-crystal"
+    },
+    {
       "ID": 21105,
       "Type": -1,
       "Factories": [
         2208
       ],
-      "Name": "[射线接收带透镜]高纯硅块-",
+      "Name": "[射线接收带透镜]高纯硅块",
       "Items": [
         1209
       ],
@@ -9205,7 +9354,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 300,
       "Proliferator": 4,
       "IconName": "silicium-single-crystal"
     },
@@ -9213,7 +9362,6 @@
       "ID": 11106,
       "Type": -1,
       "Factories": [
-        2208,
         1
       ],
       "Name": "[无中生有]钛块",
@@ -9230,12 +9378,31 @@
       "IconName": "titanium-plate"
     },
     {
+      "ID": 11106,
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]钛块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1106
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "titanium-plate"
+    },
+    {
       "ID": 21106,
       "Type": -1,
       "Factories": [
         2208
       ],
-      "Name": "[射线接收带透镜]钛块-",
+      "Name": "[射线接收带透镜]钛块",
       "Items": [
         1209
       ],
@@ -9248,7 +9415,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 300,
       "Proliferator": 4,
       "IconName": "titanium-plate"
     },
@@ -9275,7 +9442,6 @@
       "ID": 11109,
       "Type": -1,
       "Factories": [
-        2208,
         1
       ],
       "Name": "[无中生有]高能石墨",
@@ -9292,12 +9458,31 @@
       "IconName": "graphite"
     },
     {
+      "ID": 11109,
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]高能石墨",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1109
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "graphite"
+    },
+    {
       "ID": 21109,
       "Type": -1,
       "Factories": [
         2208
       ],
-      "Name": "[射线接收带透镜]高能石墨-",
+      "Name": "[射线接收带透镜]高能石墨",
       "Items": [
         1209
       ],
@@ -9310,7 +9495,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 300,
       "Proliferator": 4,
       "IconName": "graphite"
     },
@@ -9865,7 +10050,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 600,
       "Proliferator": 0,
       "IconName": "photon-capacitor-full"
     },
@@ -9875,7 +10060,7 @@
       "Factories": [
         2208
       ],
-      "Name": "[射线接收带透镜]临界光子-",
+      "Name": "[射线接收带透镜]临界光子",
       "Items": [
         1209
       ],
@@ -9888,7 +10073,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 300,
       "Proliferator": 4,
       "IconName": "photon-capacitor-full"
     },
@@ -10084,7 +10269,6 @@
       "ID": 11126,
       "Type": -1,
       "Factories": [
-        2208,
         1
       ],
       "Name": "[无中生有]卡西米尔晶体",
@@ -10101,12 +10285,31 @@
       "IconName": "casimir-crystal"
     },
     {
+      "ID": 11126,
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]卡西米尔晶体",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1126
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "casimir-crystal"
+    },
+    {
       "ID": 21126,
       "Type": -1,
       "Factories": [
         2208
       ],
-      "Name": "[射线接收带透镜]卡西米尔晶体-",
+      "Name": "[射线接收带透镜]卡西米尔晶体",
       "Items": [
         1209
       ],
@@ -10119,7 +10322,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 300,
       "Proliferator": 4,
       "IconName": "casimir-crystal"
     },
@@ -11936,7 +12139,7 @@
       "Name": "物质重组工厂",
       "GridIndex": 2404,
       "IconName": "assembler-4",
-      "WorkEnergyPerTick": 45000,
+      "WorkEnergyPerTick": 240000,
       "Speed": 80000,
       "Space": 10.24
     },
@@ -12299,28 +12502,28 @@
       "ID": 6003,
       "Type": 11,
       "Name": "结构矩阵",
-      "GridIndex": 1703,
+      "GridIndex": 1704,
       "IconName": "c-matrix"
     },
     {
       "ID": 6004,
       "Type": 11,
       "Name": "信息矩阵",
-      "GridIndex": 1704,
+      "GridIndex": 1705,
       "IconName": "i-matrix"
     },
     {
       "ID": 6005,
       "Type": 11,
       "Name": "引力矩阵",
-      "GridIndex": 1705,
+      "GridIndex": 1707,
       "IconName": "g-matrix"
     },
     {
       "ID": 6006,
       "Type": 11,
       "Name": "宇宙矩阵",
-      "GridIndex": 1706,
+      "GridIndex": 1709,
       "IconName": "u-matrix"
     },
     {
@@ -12840,21 +13043,21 @@
       "ID": 6278,
       "Type": 11,
       "Name": "通量矩阵",
-      "GridIndex": 1707,
+      "GridIndex": 1703,
       "IconName": "稳定矩阵"
     },
     {
       "ID": 6279,
       "Type": 11,
-      "Name": "空间矩阵",
-      "GridIndex": 1708,
+      "Name": "领域矩阵",
+      "GridIndex": 1706,
       "IconName": "虚空矩阵"
     },
     {
       "ID": 6280,
       "Type": 11,
-      "Name": "宇宙矩阵粗坯",
-      "GridIndex": 1709,
+      "Name": "奇点矩阵",
+      "GridIndex": 1708,
       "IconName": "生宇宙矩阵"
     },
     {

@@ -67,12 +67,12 @@ export const game_data_info_list = [
     {
         "GUID": GenesisBookGUID,
         "name": "创世之书",
-        "version": "2.10.0-alpha3",
+        "version": "2.10.0",
     },
     {
         "GUID": FractionateEverythingGUID,
         "name": "万物分馏",
-        "version": "1.4.1",
+        "version": "1.4.3",
     },
 ]
 
@@ -335,20 +335,20 @@ export function get_icon_by_item(item) {
     return name_icon_list[item];
 }
 
-function saveJSONToFile(jsonData, filename) {
-    // 将JSON数据转换为字符串
-    const jsonString = JSON.stringify(jsonData, null, 2);
-
-    // 创建一个虚拟的<a>标签
-    const blob = new Blob([jsonString], {type: 'text/json'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-
-    // 设置下载的文件名
-    a.download = filename;
-    a.href = url;
-    a.click();
-
-    // 清理URL对象
-    URL.revokeObjectURL(url);
-}
+// function saveJSONToFile(jsonData, filename) {
+//     // 将JSON数据转换为字符串
+//     const jsonString = JSON.stringify(jsonData, null, 2);
+//
+//     // 创建一个虚拟的<a>标签
+//     const blob = new Blob([jsonString], {type: 'text/json'});
+//     const url = URL.createObjectURL(blob);
+//     const a = document.createElement('a');
+//
+//     // 设置下载的文件名
+//     a.download = filename;
+//     a.href = url;
+//     a.click();
+//
+//     // 清理URL对象
+//     URL.revokeObjectURL(url);
+// }
