@@ -17,6 +17,8 @@ export const GameInfoContext = createContext(null);
 
 const DEFAULT_UI_SETTINGS = {
     proliferate_itself: true,
+    acc_rate : 1.0,
+    inc_rate : 1.0,
     hide_mines: false,
     is_time_unit_minute: true,
     fixed_num: 2,
