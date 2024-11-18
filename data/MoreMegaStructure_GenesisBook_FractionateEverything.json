@@ -173,28 +173,32 @@
     },
     {
       "ID": 5,
-      "Type": 4,
+      "Type": 10,
       "Factories": [
-        2303,
+        2305,
         2318,
-        6257
+        6260
       ],
-      "Name": "齿轮",
+      "Name": "湮灭弹箱",
       "Items": [
-        1101
+        7609,
+        7611,
+        5205
       ],
       "ItemCounts": [
+        1,
+        1,
         1
       ],
       "Results": [
-        1201
+        7616
       ],
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60.0,
+      "TimeSpend": 360.0,
       "Proliferator": 3,
-      "IconName": "gear-wheel"
+      "IconName": "湮灭弹药箱"
     },
     {
       "ID": 6,
@@ -290,7 +294,7 @@
       "Items": [
         1202,
         1301,
-        1110
+        6203
       ],
       "ItemCounts": [
         1,
@@ -357,7 +361,7 @@
         1111
       ],
       "ResultCounts": [
-        1
+        2
       ],
       "TimeSpend": 120.0,
       "Proliferator": 3,
@@ -597,8 +601,8 @@
       ],
       "ItemCounts": [
         1,
-        20,
-        10
+        30,
+        15
       ],
       "Results": [
         1801
@@ -743,7 +747,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60.0,
+      "TimeSpend": 120.0,
       "Proliferator": 3,
       "IconName": "sulphuric-acid"
     },
@@ -1049,16 +1053,16 @@
         7020
       ],
       "ItemCounts": [
-        5,
-        2
+        10,
+        1
       ],
       "Results": [
         1003
       ],
       "ResultCounts": [
-        1
+        2
       ],
-      "TimeSpend": 60.0,
+      "TimeSpend": 180.0,
       "Proliferator": 3,
       "IconName": "silicium-ore"
     },
@@ -1311,7 +1315,7 @@
         2318,
         6260
       ],
-      "Name": "人造恒星 MK.I",
+      "Name": "“朱曦”K型人造恒星",
       "Items": [
         6502,
         1107,
@@ -1525,7 +1529,7 @@
         1005
       ],
       "ItemCounts": [
-        2
+        1
       ],
       "Results": [
         1110
@@ -1533,7 +1537,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 120.0,
+      "TimeSpend": 60.0,
       "Proliferator": 3,
       "IconName": "glass"
     },
@@ -1548,7 +1552,7 @@
         1005
       ],
       "ItemCounts": [
-        2
+        1
       ],
       "Results": [
         1110
@@ -1556,7 +1560,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 120.0,
+      "TimeSpend": 60.0,
       "Proliferator": 3,
       "IconName": "glass"
     },
@@ -2002,7 +2006,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 120.0,
+      "TimeSpend": 180.0,
       "Proliferator": 3,
       "IconName": "steel-plate"
     },
@@ -2025,7 +2029,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 120.0,
+      "TimeSpend": 180.0,
       "Proliferator": 3,
       "IconName": "steel-plate"
     },
@@ -2037,7 +2041,7 @@
         2318,
         6257
       ],
-      "Name": "火力发电厂",
+      "Name": "燃料电池发电厂",
       "Items": [
         1103,
         1108,
@@ -2257,7 +2261,7 @@
       ],
       "Name": "太阳帆",
       "Items": [
-        7709,
+        6204,
         1123,
         1404
       ],
@@ -3260,15 +3264,15 @@
         1014
       ],
       "ItemCounts": [
-        1
+        2
       ],
       "Results": [
         6234
       ],
       "ResultCounts": [
-        2
+        1
       ],
-      "TimeSpend": 120.0,
+      "TimeSpend": 60.0,
       "Proliferator": 3,
       "IconName": "氦_新"
     },
@@ -3339,7 +3343,7 @@
         2318,
         6260
       ],
-      "Name": "人造恒星 MK.II",
+      "Name": "“湛曦”O型人造恒星",
       "Items": [
         6503,
         7707,
@@ -3373,11 +3377,13 @@
       "Name": "轨道采集器",
       "Items": [
         2104,
-        1205
+        1205,
+        6221
       ],
       "ItemCounts": [
         1,
-        20
+        20,
+        10
       ],
       "Results": [
         2105
@@ -3825,7 +3831,7 @@
         2318,
         6257
       ],
-      "Name": "高频激光塔 MK.I",
+      "Name": "高频激光塔",
       "Items": [
         6501,
         1101,
@@ -3854,7 +3860,7 @@
         2318,
         6257
       ],
-      "Name": "聚爆加农炮 MK.I",
+      "Name": "聚爆加农炮",
       "Items": [
         6501,
         1103,
@@ -4637,7 +4643,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 240.0,
+      "TimeSpend": 1800.0,
       "Proliferator": 3,
       "IconName": "lab-2"
     },
@@ -4658,9 +4664,9 @@
       ],
       "ItemCounts": [
         8,
-        10,
         30,
-        2
+        30,
+        6
       ],
       "Results": [
         2318
@@ -4668,7 +4674,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 240.0,
+      "TimeSpend": 1800.0,
       "Proliferator": 3,
       "IconName": "assembler-4"
     },
@@ -6277,7 +6283,7 @@
         2318,
         6257
       ],
-      "Name": "煤油燃料棒",
+      "Name": "焦油燃料棒",
       "Items": [
         6509,
         1114,
@@ -6285,8 +6291,8 @@
       ],
       "ItemCounts": [
         1,
-        10,
-        10
+        5,
+        5
       ],
       "Results": [
         6217
@@ -6768,7 +6774,7 @@
         2
       ],
       "TimeSpend": 360.0,
-      "Proliferator": 3,
+      "Proliferator": 1,
       "IconName": "稳定矩阵"
     },
     {
@@ -6778,7 +6784,7 @@
         2901,
         2902
       ],
-      "Name": "领域矩阵",
+      "Name": "张量矩阵",
       "Items": [
         6003,
         6004,
@@ -6796,7 +6802,7 @@
         2
       ],
       "TimeSpend": 360.0,
-      "Proliferator": 3,
+      "Proliferator": 1,
       "IconName": "虚空矩阵"
     },
     {
@@ -6881,8 +6887,36 @@
         1
       ],
       "TimeSpend": 180.0,
+      "Proliferator": 1,
+      "IconName": "生宇宙矩阵_新"
+    },
+    {
+      "ID": 546,
+      "Type": 2,
+      "Factories": [
+        2309,
+        6259
+      ],
+      "Name": "有机晶体",
+      "Items": [
+        1030,
+        1031,
+        1000
+      ],
+      "ItemCounts": [
+        20,
+        30,
+        10
+      ],
+      "Results": [
+        1117
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 360.0,
       "Proliferator": 3,
-      "IconName": "生宇宙矩阵"
+      "IconName": "crystal-rubber-lv0"
     },
     {
       "ID": 547,
@@ -7057,8 +7091,8 @@
       ],
       "Name": "基础机械组件",
       "Items": [
+        1101,
         6203,
-        1201,
         1301
       ],
       "ItemCounts": [
@@ -7255,14 +7289,14 @@
         1120
       ],
       "ItemCounts": [
-        3,
-        9
+        1,
+        3
       ],
       "Results": [
         7002
       ],
       "ResultCounts": [
-        3
+        1
       ],
       "TimeSpend": 120.0,
       "Proliferator": 3,
@@ -7280,7 +7314,7 @@
         1006
       ],
       "ItemCounts": [
-        4
+        6
       ],
       "Results": [
         1114
@@ -7288,7 +7322,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60.0,
+      "TimeSpend": 180.0,
       "Proliferator": 3,
       "IconName": "焦油循环"
     },
@@ -7896,35 +7930,6 @@
       "IconName": "反物质导弹组"
     },
     {
-      "ID": 790,
-      "Type": 10,
-      "Factories": [
-        2305,
-        2318,
-        6260
-      ],
-      "Name": "湮灭弹箱",
-      "Items": [
-        7609,
-        7611,
-        5205
-      ],
-      "ItemCounts": [
-        1,
-        1,
-        1
-      ],
-      "Results": [
-        7616
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 360.0,
-      "Proliferator": 3,
-      "IconName": "湮灭弹药箱"
-    },
-    {
       "ID": 791,
       "Type": 9,
       "Factories": [
@@ -7932,7 +7937,7 @@
         2318,
         6257
       ],
-      "Name": "聚爆加农炮 MK.II",
+      "Name": "电磁加农炮",
       "Items": [
         6502,
         1107,
@@ -7963,7 +7968,7 @@
         2318,
         6257
       ],
-      "Name": "高频激光塔 MK.II",
+      "Name": "紫外激光塔",
       "Items": [
         6502,
         1107,
@@ -8310,11 +8315,11 @@
     },
     {
       "ID": 551,
-      "Type": 4,
+      "Type": 10,
       "Factories": [
-        2303,
+        2305,
         2318,
-        6257
+        6260
       ],
       "Name": "传送带 快速组装",
       "Items": [
@@ -8525,13 +8530,15 @@
         9500
       ],
       "ItemCounts": [
-        1
+        2
       ],
       "Results": [
+        2307,
         2308
       ],
       "ResultCounts": [
-        2
+        1,
+        4
       ],
       "TimeSpend": 6.0,
       "Proliferator": 1,
@@ -8586,6 +8593,156 @@
       "TimeSpend": 6.0,
       "Proliferator": 1,
       "IconName": "Rsorter"
+    },
+    {
+      "ID": 352,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "集装分拣器 快速组装",
+      "Items": [
+        9500
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        2014
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 6.0,
+      "Proliferator": 1,
+      "IconName": "Rsorter4"
+    },
+    {
+      "ID": 353,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "制造台4 快速组装",
+      "Items": [
+        9500
+      ],
+      "ItemCounts": [
+        2
+      ],
+      "Results": [
+        2318
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 6.0,
+      "Proliferator": 1,
+      "IconName": "Rassembly4"
+    },
+    {
+      "ID": 354,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "熔炉3 快速组装",
+      "Items": [
+        9500
+      ],
+      "ItemCounts": [
+        2
+      ],
+      "Results": [
+        2319
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 6.0,
+      "Proliferator": 1,
+      "IconName": "Rsmelter3"
+    },
+    {
+      "ID": 355,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "实验室2 快速组装",
+      "Items": [
+        9500
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        2902
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 6.0,
+      "Proliferator": 1,
+      "IconName": "Rlab2"
+    },
+    {
+      "ID": 356,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "大矿机 快速组装",
+      "Items": [
+        9500
+      ],
+      "ItemCounts": [
+        2
+      ],
+      "Results": [
+        2316
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 6.0,
+      "Proliferator": 1,
+      "IconName": "Rmining2"
+    },
+    {
+      "ID": 357,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "抽水泵 快速组装",
+      "Items": [
+        9500
+      ],
+      "ItemCounts": [
+        1
+      ],
+      "Results": [
+        2306
+      ],
+      "ResultCounts": [
+        5
+      ],
+      "TimeSpend": 6.0,
+      "Proliferator": 1,
+      "IconName": "Rpump"
     },
     {
       "ID": 376,
@@ -8898,7 +9055,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2400.0,
+      "TimeSpend": 240.0,
       "Proliferator": 1,
       "IconName": "energy-fragment-memory-formula-v2"
     },
@@ -9598,7 +9755,7 @@
       "Factories": [
         2322
       ],
-      "Name": "火力发电厂-地热发电站分馏-升级分馏",
+      "Name": "燃料电池发电厂-地热发电站分馏-升级分馏",
       "Items": [
         2204
       ],
@@ -9621,7 +9778,7 @@
       "Factories": [
         2323
       ],
-      "Name": "火力发电厂-地热发电站分馏-降级分馏",
+      "Name": "燃料电池发电厂-地热发电站分馏-降级分馏",
       "Items": [
         2213
       ],
@@ -9690,7 +9847,7 @@
       "Factories": [
         2322
       ],
-      "Name": "裂变能源发电站-人造恒星 MK.I分馏-升级分馏",
+      "Name": "裂变能源发电站-“朱曦”K型人造恒星分馏-升级分馏",
       "Items": [
         2211
       ],
@@ -9713,7 +9870,7 @@
       "Factories": [
         2323
       ],
-      "Name": "裂变能源发电站-人造恒星 MK.I分馏-降级分馏",
+      "Name": "裂变能源发电站-“朱曦”K型人造恒星分馏-降级分馏",
       "Items": [
         2210
       ],
@@ -9736,7 +9893,7 @@
       "Factories": [
         2322
       ],
-      "Name": "人造恒星 MK.I-人造恒星 MK.II分馏-升级分馏",
+      "Name": "“朱曦”K型人造恒星-“湛曦”O型人造恒星分馏-升级分馏",
       "Items": [
         2210
       ],
@@ -9759,7 +9916,7 @@
       "Factories": [
         2323
       ],
-      "Name": "人造恒星 MK.I-人造恒星 MK.II分馏-降级分馏",
+      "Name": "“朱曦”K型人造恒星-“湛曦”O型人造恒星分馏-降级分馏",
       "Items": [
         6261
       ],
@@ -11622,7 +11779,7 @@
       "Factories": [
         2322
       ],
-      "Name": "液氢燃料棒-煤油燃料棒分馏-升级分馏",
+      "Name": "液氢燃料棒-焦油燃料棒分馏-升级分馏",
       "Items": [
         1801
       ],
@@ -11635,7 +11792,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 1200.0,
+      "TimeSpend": 4002.6684456304206,
       "Proliferator": 1,
       "IconName": "hydrogen-energy-fuel-火箭燃料棒-formula-v2"
     },
@@ -11645,7 +11802,7 @@
       "Factories": [
         2323
       ],
-      "Name": "液氢燃料棒-煤油燃料棒分馏-降级分馏",
+      "Name": "液氢燃料棒-焦油燃料棒分馏-降级分馏",
       "Items": [
         6217
       ],
@@ -11668,7 +11825,7 @@
       "Factories": [
         2322
       ],
-      "Name": "煤油燃料棒-四氢双环戊二烯燃料棒分馏-升级分馏",
+      "Name": "焦油燃料棒-四氢双环戊二烯燃料棒分馏-升级分馏",
       "Items": [
         6217
       ],
@@ -11681,7 +11838,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 1200.0,
+      "TimeSpend": 4002.6684456304206,
       "Proliferator": 1,
       "IconName": "火箭燃料棒-硝基柴油燃料棒-formula-v2"
     },
@@ -11691,7 +11848,7 @@
       "Factories": [
         2323
       ],
-      "Name": "煤油燃料棒-四氢双环戊二烯燃料棒分馏-降级分馏",
+      "Name": "焦油燃料棒-四氢双环戊二烯燃料棒分馏-降级分馏",
       "Items": [
         6216
       ],
@@ -11704,7 +11861,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2400.0,
+      "TimeSpend": 8010.6809078771694,
       "Proliferator": 1,
       "IconName": "火箭燃料棒-硝基柴油燃料棒-formula-v2"
     },
@@ -11750,7 +11907,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2400.0,
+      "TimeSpend": 8010.6809078771694,
       "Proliferator": 1,
       "IconName": "硝基柴油燃料棒-铀235燃料棒-formula-v2"
     },
@@ -12220,7 +12377,7 @@
       "Factories": [
         2322
       ],
-      "Name": "高频激光塔 MK.I-高频激光塔 MK.II分馏-升级分馏",
+      "Name": "高频激光塔-紫外激光塔分馏-升级分馏",
       "Items": [
         3002
       ],
@@ -12243,7 +12400,7 @@
       "Factories": [
         2323
       ],
-      "Name": "高频激光塔 MK.I-高频激光塔 MK.II分馏-降级分馏",
+      "Name": "高频激光塔-紫外激光塔分馏-降级分馏",
       "Items": [
         7618
       ],
@@ -12266,7 +12423,7 @@
       "Factories": [
         2322
       ],
-      "Name": "高频激光塔 MK.II-近程电浆塔分馏-升级分馏",
+      "Name": "紫外激光塔-近程电浆塔分馏-升级分馏",
       "Items": [
         7618
       ],
@@ -12289,7 +12446,7 @@
       "Factories": [
         2323
       ],
-      "Name": "高频激光塔 MK.II-近程电浆塔分馏-降级分馏",
+      "Name": "紫外激光塔-近程电浆塔分馏-降级分馏",
       "Items": [
         3010
       ],
@@ -12864,7 +13021,7 @@
       "Factories": [
         2322
       ],
-      "Name": "聚爆加农炮 MK.I-聚爆加农炮 MK.II分馏-升级分馏",
+      "Name": "聚爆加农炮-电磁加农炮分馏-升级分馏",
       "Items": [
         3003
       ],
@@ -12887,7 +13044,7 @@
       "Factories": [
         2323
       ],
-      "Name": "聚爆加农炮 MK.I-聚爆加农炮 MK.II分馏-降级分馏",
+      "Name": "聚爆加农炮-电磁加农炮分馏-降级分馏",
       "Items": [
         7617
       ],
@@ -14737,7 +14894,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1286.0407441570487,
+      "TimeSpend": 1373.4803859324861,
       "Proliferator": 8,
       "IconName": "steel-plate"
     },
@@ -14779,7 +14936,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1837.2011888215188,
+      "TimeSpend": 1900.6262552931776,
       "Proliferator": 8,
       "IconName": "titanium-alloy"
     },
@@ -14821,7 +14978,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 788.37722842317783,
+      "TimeSpend": 764.16284691063072,
       "Proliferator": 8,
       "IconName": "glass"
     },
@@ -14863,7 +15020,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1680.4847720966193,
+      "TimeSpend": 1656.9581879074078,
       "Proliferator": 8,
       "IconName": "titan-glass"
     },
@@ -14905,7 +15062,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1546.9292180308705,
+      "TimeSpend": 1159.8707315351853,
       "Proliferator": 8,
       "IconName": "prism"
     },
@@ -14992,48 +15149,6 @@
       "TimeSpend": 764.16284691063072,
       "Proliferator": 8,
       "IconName": "silicium-high-purity"
-    },
-    {
-      "ID": 11201,
-      "Type": -1,
-      "Factories": [
-        1
-      ],
-      "Name": "[无中生有]齿轮",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1201
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "gear-wheel"
-    },
-    {
-      "ID": 31201,
-      "Type": -1,
-      "Factories": [
-        2326
-      ],
-      "Name": "[增产分馏塔]齿轮",
-      "Items": [
-        1201
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1201
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 900.22853528620908,
-      "Proliferator": 8,
-      "IconName": "gear-wheel"
     },
     {
       "ID": 11202,
@@ -15409,7 +15524,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 5048.414957245066,
+      "TimeSpend": 5031.8297926581354,
       "Proliferator": 8,
       "IconName": "quantum-processor"
     },
@@ -15493,7 +15608,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4255.4879990361424,
+      "TimeSpend": 4235.9898911449154,
       "Proliferator": 8,
       "IconName": "plane-filter"
     },
@@ -15577,7 +15692,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2392.3319667818141,
+      "TimeSpend": 2155.1077006757573,
       "Proliferator": 8,
       "IconName": "plasma-generator"
     },
@@ -15642,7 +15757,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1557.0064067223168,
+      "TimeSpend": 1449.2538291411092,
       "Proliferator": 8,
       "IconName": "solar-collector"
     },
@@ -16147,7 +16262,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3921.0790745708191,
+      "TimeSpend": 4594.4376422557125,
       "Proliferator": 8,
       "IconName": "hydrogen-energy-fuel"
     },
@@ -16193,7 +16308,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 5018.108123391642,
+      "TimeSpend": 5063.7108444644118,
       "Proliferator": 8,
       "IconName": "deuterium-energy-fuel"
     },
@@ -16239,7 +16354,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 20997.618358169297,
+      "TimeSpend": 21048.275634046357,
       "Proliferator": 8,
       "IconName": "antimatter-energy-fuel"
     },
@@ -16285,7 +16400,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 43293.426373188653,
+      "TimeSpend": 43395.8144797123,
       "Proliferator": 8,
       "IconName": "virtual-energy-fuel"
     },
@@ -16771,7 +16886,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2427.2636488419575,
+      "TimeSpend": 2425.610996578479,
       "Proliferator": 8,
       "IconName": "space-warper"
     },
@@ -16813,7 +16928,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 14574.114646050481,
+      "TimeSpend": 14647.037124525432,
       "Proliferator": 8,
       "IconName": "fusion-capacitor"
     },
@@ -16897,7 +17012,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2400.692531566599,
+      "TimeSpend": 2450.2903683705404,
       "Proliferator": 8,
       "IconName": "fuel-thruster"
     },
@@ -16939,7 +17054,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4205.5994296138861,
+      "TimeSpend": 4264.23467243346,
       "Proliferator": 8,
       "IconName": "ion-thruster"
     },
@@ -16985,7 +17100,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4106.1213024709568,
+      "TimeSpend": 4166.0771995988116,
       "Proliferator": 8,
       "IconName": "logistic-drone"
     },
@@ -17008,7 +17123,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 7544.8448191905309,
+      "TimeSpend": 7612.5708328966239,
       "Proliferator": 8,
       "IconName": "logistic-vessel"
     },
@@ -17031,7 +17146,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3624.6554196564325,
+      "TimeSpend": 3658.459697521871,
       "Proliferator": 8,
       "IconName": "frame-material"
     },
@@ -17054,7 +17169,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 6905.4310961888586,
+      "TimeSpend": 6891.2461029532724,
       "Proliferator": 8,
       "IconName": "dyson-sphere-component"
     },
@@ -17077,7 +17192,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 17680.463211080612,
+      "TimeSpend": 17674.877700506277,
       "Proliferator": 8,
       "IconName": "rocket"
     },
@@ -17119,7 +17234,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1584.4063382835229,
+      "TimeSpend": 1656.9581879074078,
       "Proliferator": 8,
       "IconName": "terrain-tool"
     },
@@ -17211,7 +17326,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2546.7490403120337,
+      "TimeSpend": 2639.8778971881734,
       "Proliferator": 8,
       "IconName": "bullet-titanium"
     },
@@ -17303,7 +17418,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 20923.040117332304,
+      "TimeSpend": 20974.945839542641,
       "Proliferator": 8,
       "IconName": "capsule-antimatter"
     },
@@ -17349,7 +17464,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 6271.6519116637064,
+      "TimeSpend": 6291.8633735758476,
       "Proliferator": 8,
       "IconName": "missile-supersonic"
     },
@@ -17372,7 +17487,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 11973.399325525894,
+      "TimeSpend": 11980.72941765215,
       "Proliferator": 8,
       "IconName": "missile-graviton"
     },
@@ -17395,7 +17510,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3375.5003527732547,
+      "TimeSpend": 3208.1787713903868,
       "Proliferator": 8,
       "IconName": "em-disturb"
     },
@@ -17418,7 +17533,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4514.600187326676,
+      "TimeSpend": 4379.2807116859476,
       "Proliferator": 8,
       "IconName": "em-suppress"
     },
@@ -17441,7 +17556,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3915.8212930155555,
+      "TimeSpend": 3771.254227144269,
       "Proliferator": 8,
       "IconName": "fighter-shield"
     },
@@ -17464,7 +17579,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4920.6220996845814,
+      "TimeSpend": 4804.8223734817429,
       "Proliferator": 8,
       "IconName": "fighter-plasma"
     },
@@ -17487,7 +17602,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 5933.4357327344678,
+      "TimeSpend": 5836.7128035487485,
       "Proliferator": 8,
       "IconName": "fighter-laser"
     },
@@ -17510,7 +17625,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 7075.3665369789969,
+      "TimeSpend": 7182.9875055761258,
       "Proliferator": 8,
       "IconName": "warship-plasma"
     },
@@ -17533,7 +17648,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 15261.162571882578,
+      "TimeSpend": 15400.534544253658,
       "Proliferator": 8,
       "IconName": "warship-laser"
     },
@@ -17992,7 +18107,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 5846.4530014198572,
+      "TimeSpend": 5759.3293970836876,
       "Proliferator": 8,
       "IconName": "piler"
     },
@@ -18038,7 +18153,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 10573.282132600882,
+      "TimeSpend": 10540.254005286119,
       "Proliferator": 8,
       "IconName": "spray-coater"
     },
@@ -18061,7 +18176,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3500.4146978438584,
+      "TimeSpend": 3429.5606498397506,
       "Proliferator": 8,
       "IconName": "delivery-machine"
     },
@@ -18130,7 +18245,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2060.7437823919881,
+      "TimeSpend": 2041.3778621254457,
       "Proliferator": 8,
       "IconName": "storage-tank"
     },
@@ -18153,7 +18268,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4264.23467243346,
+      "TimeSpend": 4146.1829045318436,
       "Proliferator": 8,
       "IconName": "assembler-1"
     },
@@ -18176,7 +18291,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 6717.5570741237107,
+      "TimeSpend": 6564.1288883780862,
       "Proliferator": 8,
       "IconName": "assembler-2"
     },
@@ -18199,7 +18314,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 16488.421722909225,
+      "TimeSpend": 16472.148801461477,
       "Proliferator": 8,
       "IconName": "assembler-3"
     },
@@ -18222,7 +18337,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 20837.343987385913,
+      "TimeSpend": 23632.41491096601,
       "Proliferator": 8,
       "IconName": "assembler-4"
     },
@@ -18268,7 +18383,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3846.8546366311366,
+      "TimeSpend": 3546.9086543908834,
       "Proliferator": 8,
       "IconName": "charging-pole"
     },
@@ -18291,7 +18406,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 11169.217392073202,
+      "TimeSpend": 11110.352977351522,
       "Proliferator": 8,
       "IconName": "orbital-substation"
     },
@@ -18324,7 +18439,7 @@
       "Factories": [
         2326
       ],
-      "Name": "[增产分馏塔]火力发电厂",
+      "Name": "[增产分馏塔]燃料电池发电厂",
       "Items": [
         2204
       ],
@@ -18337,7 +18452,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 6573.1716077635947,
+      "TimeSpend": 6764.2016968537328,
       "Proliferator": 8,
       "IconName": "fuel-plant"
     },
@@ -18383,7 +18498,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 8119.3490305669193,
+      "TimeSpend": 8369.5666908845724,
       "Proliferator": 8,
       "IconName": "geothermal-power-station"
     },
@@ -18406,7 +18521,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3846.8546366311366,
+      "TimeSpend": 3716.3662366205472,
       "Proliferator": 8,
       "IconName": "mining-drill"
     },
@@ -18452,7 +18567,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4322.1188465943051,
+      "TimeSpend": 4205.5994296138861,
       "Proliferator": 8,
       "IconName": "water-pump"
     },
@@ -18475,7 +18590,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3078.72513955321,
+      "TimeSpend": 2998.5278100736409,
       "Proliferator": 8,
       "IconName": "smelter"
     },
@@ -18498,7 +18613,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 12942.430993767295,
+      "TimeSpend": 12915.151756443944,
       "Proliferator": 8,
       "IconName": "smelter-2"
     },
@@ -18521,7 +18636,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 34638.616176074655,
+      "TimeSpend": 34530.790089788774,
       "Proliferator": 8,
       "IconName": "smelter-3"
     },
@@ -18544,7 +18659,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 8810.8634691433817,
+      "TimeSpend": 8420.8121240750261,
       "Proliferator": 8,
       "IconName": "oil-extractor"
     },
@@ -18567,7 +18682,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 7817.9045320103605,
+      "TimeSpend": 7378.7569027837226,
       "Proliferator": 8,
       "IconName": "oil-refinery"
     },
@@ -18590,7 +18705,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4379.2807116859476,
+      "TimeSpend": 4244.7745350330488,
       "Proliferator": 8,
       "IconName": "chemical-plant"
     },
@@ -18613,7 +18728,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 12556.135795179751,
+      "TimeSpend": 12598.134335559949,
       "Proliferator": 8,
       "IconName": "chemical-plant-2"
     },
@@ -18751,7 +18866,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 24591.40809165594,
+      "TimeSpend": 24464.672227857165,
       "Proliferator": 8,
       "IconName": "em-rail-ejector"
     },
@@ -18774,7 +18889,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 16029.682804560229,
+      "TimeSpend": 16068.614175917934,
       "Proliferator": 8,
       "IconName": "ray-receiver"
     },
@@ -18797,7 +18912,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 47115.40505570246,
+      "TimeSpend": 47165.718252695413,
       "Proliferator": 8,
       "IconName": "vertical-launching-silo"
     },
@@ -18820,7 +18935,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 13033.425592683989,
+      "TimeSpend": 13114.406626851222,
       "Proliferator": 8,
       "IconName": "energy-exchanger"
     },
@@ -18866,7 +18981,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 21841.722819053044,
+      "TimeSpend": 21820.92175425289,
       "Proliferator": 8,
       "IconName": "hadron-collider"
     },
@@ -18876,7 +18991,7 @@
       "Factories": [
         2326
       ],
-      "Name": "[增产分馏塔]人造恒星 MK.I",
+      "Name": "[增产分馏塔]“朱曦”K型人造恒星",
       "Items": [
         2210
       ],
@@ -18889,7 +19004,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 38982.430961089885,
+      "TimeSpend": 39072.623514666106,
       "Proliferator": 8,
       "IconName": "fusion-reactor"
     },
@@ -18912,7 +19027,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 17727.9927177777,
+      "TimeSpend": 18103.987211195476,
       "Proliferator": 8,
       "IconName": "logistic-station"
     },
@@ -18935,7 +19050,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 20604.724711345756,
+      "TimeSpend": 20931.807822609982,
       "Proliferator": 8,
       "IconName": "interstellar-logistic-station"
     },
@@ -18958,7 +19073,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 23275.753278026878,
+      "TimeSpend": 36510.434173573231,
       "Proliferator": 8,
       "IconName": "orbital-collector"
     },
@@ -18981,7 +19096,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3488.7002853039394,
+      "TimeSpend": 3405.6337270524355,
       "Proliferator": 8,
       "IconName": "lab"
     },
@@ -19004,7 +19119,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 16398.188317923137,
+      "TimeSpend": 16523.087472365136,
       "Proliferator": 8,
       "IconName": "lab-2"
     },
@@ -19050,7 +19165,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4045.328204669986,
+      "TimeSpend": 3921.0790745708191,
       "Proliferator": 8,
       "IconName": "turret-gauss"
     },
@@ -19060,7 +19175,7 @@
       "Factories": [
         2326
       ],
-      "Name": "[增产分馏塔]高频激光塔 MK.I",
+      "Name": "[增产分馏塔]高频激光塔",
       "Items": [
         3002
       ],
@@ -19073,7 +19188,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 5058.7545891321661,
+      "TimeSpend": 4726.1375509067766,
       "Proliferator": 8,
       "IconName": "turret-laser"
     },
@@ -19083,7 +19198,7 @@
       "Factories": [
         2326
       ],
-      "Name": "[增产分馏塔]聚爆加农炮 MK.I",
+      "Name": "[增产分馏塔]聚爆加农炮",
       "Items": [
         3003
       ],
@@ -19096,7 +19211,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 6296.5701185230228,
+      "TimeSpend": 6376.75380029706,
       "Proliferator": 8,
       "IconName": "turret-cannon"
     },
@@ -19119,7 +19234,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 13851.219769092979,
+      "TimeSpend": 13671.177805604875,
       "Proliferator": 8,
       "IconName": "turret-plasma"
     },
@@ -19165,7 +19280,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 7817.9045320103605,
+      "TimeSpend": 7883.414569321837,
       "Proliferator": 8,
       "IconName": "turret-missile"
     },
@@ -19188,7 +19303,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 8990.2977224126571,
+      "TimeSpend": 8517.37676283278,
       "Proliferator": 8,
       "IconName": "turret-disturb"
     },
@@ -19211,7 +19326,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 7696.4367753064171,
+      "TimeSpend": 7595.6928338557909,
       "Proliferator": 8,
       "IconName": "turret-signal"
     },
@@ -19234,7 +19349,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 11869.960882722789,
+      "TimeSpend": 11958.359799855347,
       "Proliferator": 8,
       "IconName": "turret-shield"
     },
@@ -19257,7 +19372,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 8076.93556787934,
+      "TimeSpend": 7948.4153404041981,
       "Proliferator": 8,
       "IconName": "battle-base"
     },
@@ -19280,7 +19395,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 9686.9027026100484,
+      "TimeSpend": 9423.84635846566,
       "Proliferator": 8,
       "IconName": "turret-plasma-ground"
     },
@@ -19303,7 +19418,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1754.8884315566238,
+      "TimeSpend": 1749.2711637763628,
       "Proliferator": 8,
       "IconName": "t-matrix"
     },
@@ -19326,7 +19441,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2201.7622242735324,
+      "TimeSpend": 2076.1137767351029,
       "Proliferator": 8,
       "IconName": "e-matrix"
     },
@@ -19395,7 +19510,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 5458.320644318037,
+      "TimeSpend": 5450.6233589310823,
       "Proliferator": 8,
       "IconName": "g-matrix"
     },
@@ -19418,7 +19533,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 8493.8392584218691,
+      "TimeSpend": 8453.2006895659943,
       "Proliferator": 8,
       "IconName": "u-matrix"
     },
@@ -19441,7 +19556,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 5194.223885533188,
+      "TimeSpend": 5218.3518776246865,
       "Proliferator": 8,
       "IconName": "gravitygenerator"
     },
@@ -19464,7 +19579,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3500.9994398358244,
+      "TimeSpend": 3495.1479024395749,
       "Proliferator": 8,
       "IconName": "constrainring"
     },
@@ -19487,7 +19602,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 8262.27692516045,
+      "TimeSpend": 8275.2728584076212,
       "Proliferator": 8,
       "IconName": "gravitydrill2"
     },
@@ -19533,7 +19648,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 6057.3432332590874,
+      "TimeSpend": 6043.38337489862,
       "Proliferator": 8,
       "IconName": "resonancedisc"
     },
@@ -19579,7 +19694,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 9771.8451226973139,
+      "TimeSpend": 9745.1669639274041,
       "Proliferator": 8,
       "IconName": "quantumcomputer3"
     },
@@ -19602,7 +19717,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 29937.582251722961,
+      "TimeSpend": 29923.676945378946,
       "Proliferator": 8,
       "IconName": "iacomponent"
     },
@@ -19625,7 +19740,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 15356.384518215242,
+      "TimeSpend": 15396.920195786744,
       "Proliferator": 8,
       "IconName": "rocketMatter"
     },
@@ -19648,7 +19763,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 13877.078293273307,
+      "TimeSpend": 13888.23821425538,
       "Proliferator": 8,
       "IconName": "rocketScience"
     },
@@ -19671,7 +19786,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 15466.896942926836,
+      "TimeSpend": 15484.164287693276,
       "Proliferator": 8,
       "IconName": "rocketWarp"
     },
@@ -19694,7 +19809,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 43473.110952422641,
+      "TimeSpend": 43465.507109877661,
       "Proliferator": 8,
       "IconName": "rocketAssembly"
     },
@@ -19717,7 +19832,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 12130.436072962422,
+      "TimeSpend": 12155.759329415851,
       "Proliferator": 8,
       "IconName": "rocketCrystal"
     },
@@ -19759,7 +19874,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4981.3424930423043,
+      "TimeSpend": 4862.6183389546668,
       "Proliferator": 8,
       "IconName": "integratedcomponents"
     },
@@ -19782,7 +19897,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 17109.306980152454,
+      "TimeSpend": 17077.864239422215,
       "Proliferator": 8,
       "IconName": "strIntOverloader"
     },
@@ -20130,7 +20245,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1895.4173957128555,
+      "TimeSpend": 1957.060488256363,
       "Proliferator": 8,
       "IconName": "混凝土"
     },
@@ -20199,7 +20314,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 5016.4424108415469,
+      "TimeSpend": 5012.2761391899257,
       "Proliferator": 8,
       "IconName": "硝基柴油燃料棒"
     },
@@ -20209,7 +20324,7 @@
       "Factories": [
         2204
       ],
-      "Name": "[燃料棒耗尽]煤油燃料棒",
+      "Name": "[燃料棒耗尽]焦油燃料棒",
       "Items": [
         6217
       ],
@@ -20232,7 +20347,7 @@
       "Factories": [
         2326
       ],
-      "Name": "[增产分馏塔]煤油燃料棒",
+      "Name": "[增产分馏塔]焦油燃料棒",
       "Items": [
         6217
       ],
@@ -20245,7 +20360,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3441.4651303343649,
+      "TimeSpend": 2806.6249416997371,
       "Proliferator": 8,
       "IconName": "火箭燃料棒"
     },
@@ -20333,7 +20448,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 8387.0234204449134,
+      "TimeSpend": 8381.8926633388637,
       "Proliferator": 8,
       "IconName": "放射性同位素温差电池"
     },
@@ -20561,7 +20676,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 13727.358090424186,
+      "TimeSpend": 13842.908689609651,
       "Proliferator": 8,
       "IconName": "量子储液罐"
     },
@@ -20607,7 +20722,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 36323.974225427984,
+      "TimeSpend": 36465.267206692573,
       "Proliferator": 8,
       "IconName": "量子箱"
     },
@@ -20761,7 +20876,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 5385.1693388483018,
+      "TimeSpend": 5381.2725977582331,
       "Proliferator": 8,
       "IconName": "钚燃料棒"
     },
@@ -20807,7 +20922,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 5385.1693388483018,
+      "TimeSpend": 5381.2725977582331,
       "Proliferator": 8,
       "IconName": "铀235燃料棒"
     },
@@ -20853,7 +20968,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 10141.592896281529,
+      "TimeSpend": 10135.159208163124,
       "Proliferator": 8,
       "IconName": "钚铀混合氧化物燃料棒"
     },
@@ -20899,7 +21014,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 11698.583618952849,
+      "TimeSpend": 11734.132038722841,
       "Proliferator": 8,
       "IconName": "氦三燃料棒"
     },
@@ -20945,7 +21060,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 13441.450523505975,
+      "TimeSpend": 13510.314617097363,
       "Proliferator": 8,
       "IconName": "氘氦三混合聚变燃料棒"
     },
@@ -21106,7 +21221,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 72945.207176793047,
+      "TimeSpend": 73497.851343688279,
       "Proliferator": 8,
       "IconName": "行星组装站"
     },
@@ -21129,7 +21244,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 76318.595620532,
+      "TimeSpend": 77000.494967253253,
       "Proliferator": 8,
       "IconName": "行星熔炉"
     },
@@ -21152,7 +21267,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 75888.965311455235,
+      "TimeSpend": 76650.846418285684,
       "Proliferator": 8,
       "IconName": "行星化工厂"
     },
@@ -21175,7 +21290,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 100690.36636900526,
+      "TimeSpend": 101302.41133023225,
       "Proliferator": 8,
       "IconName": "行星精密组装厂"
     },
@@ -21185,7 +21300,7 @@
       "Factories": [
         2326
       ],
-      "Name": "[增产分馏塔]人造恒星 MK.II",
+      "Name": "[增产分馏塔]“湛曦”O型人造恒星",
       "Items": [
         6261
       ],
@@ -21198,7 +21313,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 60688.138018640842,
+      "TimeSpend": 60820.420560951694,
       "Proliferator": 8,
       "IconName": "人造恒星MK2"
     },
@@ -21240,7 +21355,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 8751.67725660507,
+      "TimeSpend": 8800.8210391837256,
       "Proliferator": 8,
       "IconName": "金属氢单元"
     },
@@ -21263,7 +21378,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 39572.220237283109,
+      "TimeSpend": 40132.28614210862,
       "Proliferator": 8,
       "IconName": "回收塔"
     },
@@ -21286,7 +21401,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 98138.715869688152,
+      "TimeSpend": 98771.6737623814,
       "Proliferator": 8,
       "IconName": "大型强子对撞机"
     },
@@ -21309,7 +21424,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 29978.249347645291,
+      "TimeSpend": 29947.386301912396,
       "Proliferator": 8,
       "IconName": "fractionator"
     },
@@ -21443,7 +21558,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3281.0515090048934,
+      "TimeSpend": 3192.9059923012837,
       "Proliferator": 8,
       "IconName": "稳定矩阵"
     },
@@ -21453,7 +21568,7 @@
       "Factories": [
         2326
       ],
-      "Name": "[增产分馏塔]领域矩阵",
+      "Name": "[增产分馏塔]张量矩阵",
       "Items": [
         6279
       ],
@@ -21489,9 +21604,9 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 7853.7258109041259,
+      "TimeSpend": 7809.9534951156666,
       "Proliferator": 8,
-      "IconName": "生宇宙矩阵"
+      "IconName": "生宇宙矩阵_新"
     },
     {
       "ID": 36281,
@@ -21535,7 +21650,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2191.7787662734645,
+      "TimeSpend": 2079.9394180141526,
       "Proliferator": 8,
       "IconName": "基础机械组件"
     },
@@ -21558,7 +21673,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3712.49555361524,
+      "TimeSpend": 3645.5363774958605,
       "Proliferator": 8,
       "IconName": "先进机械组件_新"
     },
@@ -21581,7 +21696,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 6549.8947626978188,
+      "TimeSpend": 6497.8876726794642,
       "Proliferator": 8,
       "IconName": "尖端机械组件_新"
     },
@@ -21604,7 +21719,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1300.9987190441732,
+      "TimeSpend": 1286.0407441570487,
       "Proliferator": 8,
       "IconName": "空燃料棒"
     },
@@ -22047,7 +22162,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1656.9581879074078,
+      "TimeSpend": 1726.6296436573771,
       "Proliferator": 8,
       "IconName": "钢芯弹药箱"
     },
@@ -22070,7 +22185,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 3624.6554196564325,
+      "TimeSpend": 3725.1995195626937,
       "Proliferator": 8,
       "IconName": "钨芯弹药箱"
     },
@@ -22093,7 +22208,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4386.8492690265248,
+      "TimeSpend": 4471.16146148026,
       "Proliferator": 8,
       "IconName": "三元弹药箱"
     },
@@ -22135,7 +22250,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 6139.0955197173434,
+      "TimeSpend": 6135.6523726703153,
       "Proliferator": 8,
       "IconName": "核子爆破单元"
     },
@@ -22158,7 +22273,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 19126.445303405104,
+      "TimeSpend": 19181.753730310083,
       "Proliferator": 8,
       "IconName": "反物质湮灭单元"
     },
@@ -22181,7 +22296,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 10319.771910880703,
+      "TimeSpend": 10315.553369404821,
       "Proliferator": 8,
       "IconName": "微型核弹组"
     },
@@ -22204,7 +22319,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 29519.629128913442,
+      "TimeSpend": 29591.535833073529,
       "Proliferator": 8,
       "IconName": "反物质炮弹"
     },
@@ -22227,7 +22342,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 30152.058769466039,
+      "TimeSpend": 30226.984182616008,
       "Proliferator": 8,
       "IconName": "反物质导弹组"
     },
@@ -22250,7 +22365,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 19800.575700935729,
+      "TimeSpend": 19874.576949402734,
       "Proliferator": 8,
       "IconName": "湮灭弹药箱"
     },
@@ -22260,7 +22375,7 @@
       "Factories": [
         2326
       ],
-      "Name": "[增产分馏塔]聚爆加农炮 MK.II",
+      "Name": "[增产分馏塔]电磁加农炮",
       "Items": [
         7617
       ],
@@ -22273,7 +22388,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 9998.28502150055,
+      "TimeSpend": 10050.304860008757,
       "Proliferator": 8,
       "IconName": "加农炮MK2"
     },
@@ -22283,7 +22398,7 @@
       "Factories": [
         2326
       ],
-      "Name": "[增产分馏塔]高频激光塔 MK.II",
+      "Name": "[增产分馏塔]紫外激光塔",
       "Items": [
         7618
       ],
@@ -22361,7 +22476,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 1534.2450737557767,
+      "TimeSpend": 1508.5754106587794,
       "Proliferator": 8,
       "IconName": "钨强化玻璃"
     },
@@ -22403,7 +22518,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 2479.5995600000306,
+      "TimeSpend": 2527.7352418373439,
       "Proliferator": 8,
       "IconName": "钨复合金属_修复"
     },
@@ -22594,7 +22709,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 20826.037720387343,
+      "TimeSpend": 20945.331517461404,
       "Proliferator": 8,
       "IconName": "超级纳米电脑"
     },
@@ -22617,7 +22732,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 25886.762758820627,
+      "TimeSpend": 26019.294989869362,
       "Proliferator": 8,
       "IconName": "光学主机"
     },
@@ -22640,7 +22755,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 4004.3158954122532,
+      "TimeSpend": 3868.1987296000125,
       "Proliferator": 8,
       "IconName": "fractionator-1"
     },
@@ -22663,7 +22778,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 6316.7061692996031,
+      "TimeSpend": 6303.2888243232392,
       "Proliferator": 8,
       "IconName": "fractionator-2"
     },
@@ -22686,7 +22801,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 6316.7061692996031,
+      "TimeSpend": 6303.2888243232392,
       "Proliferator": 8,
       "IconName": "fractionator-3"
     },
@@ -22709,7 +22824,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 10417.401735503026,
+      "TimeSpend": 10400.667171757368,
       "Proliferator": 8,
       "IconName": "fractionator-4"
     },
@@ -22732,7 +22847,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 16566.726890638263,
+      "TimeSpend": 16528.902597584609,
       "Proliferator": 8,
       "IconName": "fractionator-5"
     },
@@ -22755,7 +22870,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 25815.817889806793,
+      "TimeSpend": 25659.084824980207,
       "Proliferator": 8,
       "IconName": "fractionator-6"
     },
@@ -22778,7 +22893,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 26401.042132982762,
+      "TimeSpend": 26684.7684480706,
       "Proliferator": 8,
       "IconName": "exchangeLS"
     }
@@ -22956,7 +23071,7 @@
       "ID": 1111,
       "Type": 2,
       "Name": "棱镜",
-      "GridIndex": 1305,
+      "GridIndex": 1304,
       "IconName": "prism"
     },
     {
@@ -22974,17 +23089,10 @@
       "IconName": "silicium-high-purity"
     },
     {
-      "ID": 1201,
-      "Type": 3,
-      "Name": "齿轮",
-      "GridIndex": 1301,
-      "IconName": "gear-wheel"
-    },
-    {
       "ID": 1202,
       "Type": 3,
       "Name": "磁线圈",
-      "GridIndex": 1302,
+      "GridIndex": 1301,
       "IconName": "magnetism-wire"
     },
     {
@@ -23026,7 +23134,7 @@
       "ID": 1301,
       "Type": 3,
       "Name": "电路板",
-      "GridIndex": 1303,
+      "GridIndex": 1302,
       "IconName": "circuit-board"
     },
     {
@@ -23047,7 +23155,7 @@
       "ID": 1302,
       "Type": 3,
       "Name": "微晶元件",
-      "GridIndex": 1304,
+      "GridIndex": 1303,
       "IconName": "micro-component"
     },
     {
@@ -23068,7 +23176,7 @@
       "ID": 1401,
       "Type": 3,
       "Name": "电浆激发器",
-      "GridIndex": 1306,
+      "GridIndex": 1305,
       "IconName": "plasma-generator"
     },
     {
@@ -23145,7 +23253,7 @@
       "ID": 1801,
       "Type": 4,
       "Name": "液氢燃料棒",
-      "GridIndex": 4701,
+      "GridIndex": 4702,
       "IconName": "hydrogen-energy-fuel"
     },
     {
@@ -23257,35 +23365,35 @@
       "ID": 1405,
       "Type": 3,
       "Name": "推进器",
-      "GridIndex": 1211,
+      "GridIndex": 1210,
       "IconName": "fuel-thruster"
     },
     {
       "ID": 1406,
       "Type": 3,
       "Name": "加力推进器",
-      "GridIndex": 1212,
+      "GridIndex": 1211,
       "IconName": "ion-thruster"
     },
     {
       "ID": 5003,
       "Type": 5,
       "Name": "配送运输机",
-      "GridIndex": 1310,
+      "GridIndex": 1309,
       "IconName": "delivery-drone"
     },
     {
       "ID": 5001,
       "Type": 5,
       "Name": "物流运输机",
-      "GridIndex": 1311,
+      "GridIndex": 1310,
       "IconName": "logistic-drone"
     },
     {
       "ID": 5002,
       "Type": 5,
       "Name": "星际物流运输船",
-      "GridIndex": 1312,
+      "GridIndex": 1311,
       "IconName": "logistic-vessel"
     },
     {
@@ -23653,7 +23761,7 @@
     {
       "ID": 2204,
       "Type": 6,
-      "Name": "火力发电厂",
+      "Name": "燃料电池发电厂",
       "GridIndex": 2105,
       "IconName": "fuel-plant"
     },
@@ -23845,7 +23953,7 @@
     {
       "ID": 2210,
       "Type": 6,
-      "Name": "人造恒星 MK.I",
+      "Name": "“朱曦”K型人造恒星",
       "GridIndex": 2111,
       "IconName": "fusion-reactor"
     },
@@ -23869,7 +23977,7 @@
       "Name": "轨道采集器",
       "GridIndex": 2213,
       "IconName": "orbital-collector",
-      "WorkEnergyPerTick": 500000,
+      "WorkEnergyPerTick": 0,
       "Speed": 10000,
       "Space": 0.0
     },
@@ -23880,7 +23988,7 @@
       "GridIndex": 2312,
       "IconName": "lab",
       "WorkEnergyPerTick": 8000,
-      "Speed": 10000,
+      "Speed": 40000,
       "Space": 20.25
     },
     {
@@ -23890,7 +23998,7 @@
       "GridIndex": 2313,
       "IconName": "lab-2",
       "WorkEnergyPerTick": 32000,
-      "Speed": 30000,
+      "Speed": 120000,
       "Space": 20.25
     },
     {
@@ -23903,14 +24011,14 @@
     {
       "ID": 3002,
       "Type": 8,
-      "Name": "高频激光塔 MK.I",
+      "Name": "高频激光塔",
       "GridIndex": 6106,
       "IconName": "turret-laser"
     },
     {
       "ID": 3003,
       "Type": 8,
-      "Name": "聚爆加农炮 MK.I",
+      "Name": "聚爆加农炮",
       "GridIndex": 6401,
       "IconName": "turret-cannon"
     },
@@ -24176,8 +24284,8 @@
     {
       "ID": 6217,
       "Type": 4,
-      "Name": "煤油燃料棒",
-      "GridIndex": 4702,
+      "Name": "焦油燃料棒",
+      "GridIndex": 4701,
       "IconName": "火箭燃料棒"
     },
     {
@@ -24390,7 +24498,7 @@
     {
       "ID": 6261,
       "Type": 6,
-      "Name": "人造恒星 MK.II",
+      "Name": "“湛曦”O型人造恒星",
       "GridIndex": 2112,
       "IconName": "人造恒星MK2"
     },
@@ -24472,7 +24580,7 @@
     {
       "ID": 6279,
       "Type": 11,
-      "Name": "领域矩阵",
+      "Name": "张量矩阵",
       "GridIndex": 1706,
       "IconName": "虚空矩阵"
     },
@@ -24481,7 +24589,7 @@
       "Type": 11,
       "Name": "奇点矩阵",
       "GridIndex": 1708,
-      "IconName": "生宇宙矩阵"
+      "IconName": "生宇宙矩阵_新"
     },
     {
       "ID": 6281,
@@ -24515,7 +24623,7 @@
       "ID": 6509,
       "Type": 2,
       "Name": "空燃料棒",
-      "GridIndex": 1307,
+      "GridIndex": 1306,
       "IconName": "空燃料棒"
     },
     {
@@ -24592,14 +24700,14 @@
       "ID": 7501,
       "Type": 2,
       "Name": "塑料基板",
-      "GridIndex": 1308,
+      "GridIndex": 1307,
       "IconName": "塑料基板"
     },
     {
       "ID": 7504,
       "Type": 2,
       "Name": "光学基板",
-      "GridIndex": 1309,
+      "GridIndex": 1308,
       "IconName": "光学基板"
     },
     {
@@ -24668,14 +24776,14 @@
     {
       "ID": 7617,
       "Type": 8,
-      "Name": "聚爆加农炮 MK.II",
+      "Name": "电磁加农炮",
       "GridIndex": 6501,
       "IconName": "加农炮MK2"
     },
     {
       "ID": 7618,
       "Type": 8,
-      "Name": "高频激光塔 MK.II",
+      "Name": "紫外激光塔",
       "GridIndex": 6107,
       "IconName": "紫激光"
     },
