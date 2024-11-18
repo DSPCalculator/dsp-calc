@@ -174,6 +174,7 @@ export class GlobalState {
             //如果有用增产剂且有增产效果，计算增产剂效果带来的变化
             if (proliferate_mode && proliferate_num) {
                 if (proliferate_mode == 1) {
+                    //加速
                     for (var proliferate in proliferator_price[proliferate_num]) {
                         if (proliferate in item_graph[item]["原料"]) {
                             item_graph[item]["原料"][proliferate] += total_material_num * proliferator_price[proliferate_num][proliferate];
@@ -181,8 +182,9 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    item_graph[item]["产出倍率"] *= game_data.proliferator_effect[proliferate_num]["加速效果"];
+                    item_graph[item]["产出倍率"] *= game_data.proliferator_effect[proliferate_num]["加速效果"] * this.ui_settings.acc_rate;
                 } else if (proliferate_mode == 2) {
+                    //增产
                     for (var proliferate in proliferator_price[proliferate_num]) {
                         if (proliferate in item_graph[item]["原料"]) {
                             item_graph[item]["原料"][proliferate] += total_material_num * proliferator_price[proliferate_num][proliferate];
@@ -190,7 +192,7 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    produce_rate *= game_data.proliferator_effect[proliferate_num]["增产效果"];
+                    produce_rate *= game_data.proliferator_effect[proliferate_num]["增产效果"] * this.ui_settings.inc_rate;
                     item_graph[item]["产出倍率"] *= produce_rate;
                 } else if (proliferate_mode == 3) {
                     //接收站透镜喷涂效果，按加速效果计算额外产出
@@ -201,7 +203,7 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    produce_rate *= game_data.proliferator_effect[proliferate_num]["加速效果"];
+                    produce_rate *= game_data.proliferator_effect[proliferate_num]["加速效果"] * this.ui_settings.acc_rate;
                     item_graph[item]["产出倍率"] *= produce_rate;
                 } else if (proliferate_mode == 4) {
                     //增产分馏塔，按点数计算产出

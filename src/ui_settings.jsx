@@ -29,6 +29,14 @@ export function UiSettings() {
         set_ui_settings("proliferate_itself", !proliferate_itself);
     }
 
+    function change_acc_rate(e) {
+        set_ui_settings("acc_rate", parseFloat(e.target.value));
+    }
+
+    function change_inc_rate(e) {
+        set_ui_settings("inc_rate", parseFloat(e.target.value));
+    }
+
     const hide_mines = ui_settings.hide_mines;
 
     function toggle_hide_mines(e) {
@@ -77,6 +85,20 @@ export function UiSettings() {
             <td className="ps-2">{proliferate_itself ? "启用" : "禁用"}</td>
             <td className="ps-2">
                 <button onClick={toggle_proliferate_itself}>{proliferate_itself ? "改为禁用" : "改为启用"}</button>
+            </td>
+        </tr>
+        <tr>
+            <td>增产剂加速效率修正</td>
+            <td className="ps-2">
+                <input type="number" value={ui_settings.acc_rate} step={0.05}
+                       onChange={change_acc_rate} style={{maxWidth: '5em'}}/>
+            </td>
+        </tr>
+        <tr>
+            <td>增产剂增产效率修正</td>
+            <td className="ps-2">
+                <input type="number" value={ui_settings.inc_rate} step={0.05}
+                       onChange={change_inc_rate} style={{maxWidth: '5em'}}/>
             </td>
         </tr>
         <tr>

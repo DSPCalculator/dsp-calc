@@ -57,17 +57,17 @@ export const game_data_info_list = [
     {
         "GUID": MoreMegaStructureGUID,
         "name": "更多巨构",
-        "version": "1.5.8",
+        "version": "1.5.9",
     },
     {
         "GUID": TheyComeFromVoidGUID,
         "name": "深空来敌",
-        "version": "3.2.3",
+        "version": "3.2.6",
     },
     {
         "GUID": GenesisBookGUID,
         "name": "创世之书",
-        "version": "2.10.0",
+        "version": "3.0.11",
     },
     {
         "GUID": FractionateEverythingGUID,
