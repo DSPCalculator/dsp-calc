@@ -1,442 +1,594 @@
 {
-  "compoCrystal": {
+  "Ccoal": {
     "x": 0,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Ccopper": {
+    "x": 80,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Ccrystal": {
+    "x": 0,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Cgrating": {
+    "x": 80,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Cic": {
+    "x": 160,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Ciron": {
+    "x": 160,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Cmagore": {
+    "x": 0,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "compoCrystal": {
+    "x": 80,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   },
   "constrainring": {
-    "x": 80,
+    "x": 160,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Cscience": {
+    "x": 240,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Csilicon": {
+    "x": 240,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Ctitanium": {
+    "x": 240,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Cwarp": {
+    "x": 0,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   },
   "drop1": {
-    "x": 0,
-    "y": 80,
+    "x": 80,
+    "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "drop1old": {
-    "x": 80,
-    "y": 80,
+    "x": 160,
+    "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "elemaginhibitor": {
-    "x": 160,
-    "y": 0,
+    "x": 240,
+    "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "elemaginhibitor2": {
-    "x": 160,
-    "y": 80,
+    "x": 320,
+    "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "energyAssign": {
-    "x": 0,
-    "y": 160,
+    "x": 320,
+    "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "exchangeLS": {
-    "x": 80,
+    "x": 320,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "forceGen": {
-    "x": 160,
-    "y": 160,
+    "x": 320,
+    "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "gluonGen": {
-    "x": 240,
-    "y": 0,
+    "x": 0,
+    "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "gravitydrill2": {
-    "x": 240,
-    "y": 80,
+    "x": 80,
+    "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "gravitygenerator": {
-    "x": 240,
-    "y": 160,
+    "x": 160,
+    "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "iacomponent": {
-    "x": 0,
-    "y": 240,
+    "x": 240,
+    "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "integratedcomponents": {
-    "x": 80,
-    "y": 240,
+    "x": 320,
+    "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "photonprobeflipsmall": {
-    "x": 160,
-    "y": 240,
+    "x": 400,
+    "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "quantumcomputer2": {
-    "x": 240,
-    "y": 240,
+    "x": 400,
+    "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "quantumcomputer3": {
-    "x": 320,
-    "y": 0,
+    "x": 400,
+    "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "quick6257": {
-    "x": 320,
-    "y": 80,
-    "width": 80,
-    "height": 80,
-    "total_width": 640,
-    "total_height": 560
-  },
-  "quick6258": {
-    "x": 320,
-    "y": 160,
-    "width": 80,
-    "height": 80,
-    "total_width": 640,
-    "total_height": 560
-  },
-  "quick6259": {
-    "x": 320,
+    "x": 400,
     "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "quick6258": {
+    "x": 400,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "quick6259": {
+    "x": 0,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   },
   "quick6260": {
-    "x": 0,
-    "y": 320,
+    "x": 80,
+    "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "quick6264": {
-    "x": 80,
-    "y": 320,
+    "x": 160,
+    "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "quick6265": {
-    "x": 160,
-    "y": 320,
+    "x": 240,
+    "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "Rassembly": {
-    "x": 240,
-    "y": 320,
+    "x": 320,
+    "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Rassembly4": {
+    "x": 400,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   },
   "Rbelt": {
-    "x": 320,
-    "y": 320,
-    "width": 80,
-    "height": 80,
-    "total_width": 640,
-    "total_height": 560
-  },
-  "Rchemical": {
-    "x": 400,
+    "x": 480,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "Rchemical2": {
-    "x": 400,
+  "Rchemical": {
+    "x": 480,
     "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "RchemicalOld": {
-    "x": 400,
+  "Rchemical2": {
+    "x": 480,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "Rcollider": {
-    "x": 400,
+  "RchemicalOld": {
+    "x": 480,
     "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "resonancedisc": {
-    "x": 400,
+  "Rcollider": {
+    "x": 480,
     "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "resonancedisc": {
+    "x": 480,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   },
   "Rlab": {
     "x": 0,
-    "y": 400,
+    "y": 480,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Rlab2": {
+    "x": 80,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   },
   "Rlogistic": {
-    "x": 80,
-    "y": 400,
+    "x": 160,
+    "y": 480,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Rmining2": {
+    "x": 240,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   },
   "rocketAssembly": {
-    "x": 160,
-    "y": 400,
+    "x": 320,
+    "y": 480,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "rocketAssembly0": {
-    "x": 240,
-    "y": 400,
+    "x": 400,
+    "y": 480,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "rocketCrystal": {
-    "x": 320,
-    "y": 400,
+    "x": 480,
+    "y": 480,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "rocketCrystal0": {
-    "x": 400,
-    "y": 400,
-    "width": 80,
-    "height": 80,
-    "total_width": 640,
-    "total_height": 560
-  },
-  "rocketMatter": {
-    "x": 480,
+    "x": 560,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "rocketMatter0": {
-    "x": 480,
+  "rocketMatter": {
+    "x": 560,
     "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "rocketScience": {
-    "x": 480,
+  "rocketMatter0": {
+    "x": 560,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "rocketScience0": {
-    "x": 480,
+  "rocketScience": {
+    "x": 560,
     "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "rocketStarcannon": {
-    "x": 480,
+  "rocketScience0": {
+    "x": 560,
     "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "rocketWarp": {
-    "x": 480,
+  "rocketStarcannon": {
+    "x": 560,
     "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "rocketWarp": {
+    "x": 560,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   },
   "rocketWarp0": {
     "x": 0,
-    "y": 480,
+    "y": 560,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "Rpower": {
     "x": 80,
-    "y": 480,
+    "y": 560,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Rpump": {
+    "x": 160,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Rpump2": {
+    "x": 240,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   },
   "Rreactor": {
-    "x": 160,
-    "y": 480,
+    "x": 320,
+    "y": 560,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Rreactor2": {
+    "x": 400,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   },
   "Rrefinery": {
-    "x": 240,
-    "y": 480,
+    "x": 480,
+    "y": 560,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
   "Rsmelter": {
-    "x": 320,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 640,
-    "total_height": 560
-  },
-  "Rsorter": {
-    "x": 400,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 640,
-    "total_height": 560
-  },
-  "Rstellalogistic": {
-    "x": 480,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 640,
-    "total_height": 560
-  },
-  "shieldGen": {
     "x": 560,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "Rsmelter3": {
+    "x": 640,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "starcannoncompo": {
-    "x": 560,
+  "Rsorter": {
+    "x": 640,
     "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "starcannonframe": {
-    "x": 560,
+  "Rsorter4": {
+    "x": 640,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "strIntOverloader": {
-    "x": 560,
+  "Rstellalogistic": {
+    "x": 640,
     "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "tunnelingexciter": {
-    "x": 560,
+  "shieldGen": {
+    "x": 640,
     "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
   },
-  "tunnelingexciter2": {
-    "x": 560,
+  "starcannoncompo": {
+    "x": 640,
     "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 640,
-    "total_height": 560
+    "total_width": 720,
+    "total_height": 720
+  },
+  "starcannonframe": {
+    "x": 640,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "strIntOverloader": {
+    "x": 640,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "tunnelingexciter": {
+    "x": 0,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
+  },
+  "tunnelingexciter2": {
+    "x": 80,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 720,
+    "total_height": 720
   }
 }

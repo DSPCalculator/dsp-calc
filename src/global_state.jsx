@@ -276,10 +276,10 @@ export class GlobalState {
                 || factory_name === "轨道采集器" || factory_name === "大气采集站"
                 || factory_name === "采矿机" || factory_name === "大型采矿机" || factory_name === "行星基地") {
                 if (factory_name === "采矿机") {
-                    item_graph[item]["产出倍率"] *= scheme_data.mining_rate["科技面板倍率"];
+                    item_graph[item]["产出倍率"] *= scheme_data.mining_rate["采矿速度(%)"] / 100.0;
                     item_graph[item]["产出倍率"] *= scheme_data.mining_rate["小矿机覆盖矿脉数"];
                 } else if (factory_name === "大型采矿机") {
-                    item_graph[item]["产出倍率"] *= scheme_data.mining_rate["科技面板倍率"];
+                    item_graph[item]["产出倍率"] *= scheme_data.mining_rate["采矿速度(%)"] / 100.0;
                     item_graph[item]["产出倍率"] *= (scheme_data.mining_rate["大矿机覆盖矿脉数"] * scheme_data.mining_rate["大矿机工作倍率"]);
                 } else if (factory_name === "原油萃取站") {
                     item_graph[item]["产出倍率"] *= scheme_data.mining_rate["油井期望面板"];
