@@ -4859,7 +4859,7 @@
       "IconName": "inserter-4"
     },
     {
-      "ID": 530,
+      "ID": 330,
       "Type": 10,
       "Factories": [
         2305,
@@ -4886,7 +4886,7 @@
       "IconName": "gravitygenerator"
     },
     {
-      "ID": 531,
+      "ID": 331,
       "Type": 10,
       "Factories": [
         2305,
@@ -4915,7 +4915,7 @@
       "IconName": "constrainring"
     },
     {
-      "ID": 532,
+      "ID": 332,
       "Type": 10,
       "Factories": [
         2305,
@@ -4944,7 +4944,7 @@
       "IconName": "gravitydrill2"
     },
     {
-      "ID": 533,
+      "ID": 333,
       "Type": 10,
       "Factories": [
         2305,
@@ -4971,7 +4971,7 @@
       "IconName": "tunnelingexciter2"
     },
     {
-      "ID": 534,
+      "ID": 334,
       "Type": 10,
       "Factories": [
         2305,
@@ -5000,7 +5000,7 @@
       "IconName": "resonancedisc"
     },
     {
-      "ID": 535,
+      "ID": 335,
       "Type": 10,
       "Factories": [
         2305,
@@ -5027,7 +5027,7 @@
       "IconName": "photonprobeflipsmall"
     },
     {
-      "ID": 536,
+      "ID": 336,
       "Type": 10,
       "Factories": [
         2305,
@@ -5056,7 +5056,7 @@
       "IconName": "quantumcomputer3"
     },
     {
-      "ID": 537,
+      "ID": 337,
       "Type": 10,
       "Factories": [
         2305,
@@ -5066,12 +5066,12 @@
       "Name": "星际组装厂组件",
       "Items": [
         1125,
-        2305,
+        6503,
         1143
       ],
       "ItemCounts": [
-        3,
-        3,
+        2,
+        1,
         1
       ],
       "Results": [
@@ -5085,37 +5085,12 @@
       "IconName": "iacomponent"
     },
     {
-      "ID": 550,
+      "ID": 338,
       "Type": 10,
       "Factories": [
         2305,
         2318,
         6260
-      ],
-      "Name": "多功能集成组件",
-      "Items": [
-        9500
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        9500
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60.0,
-      "Proliferator": 1,
-      "IconName": "integratedcomponents"
-    },
-    {
-      "ID": 538,
-      "Type": 4,
-      "Factories": [
-        2303,
-        2318,
-        6257
       ],
       "Name": "物质解压器运载火箭",
       "Items": [
@@ -5139,12 +5114,12 @@
       "IconName": "rocketMatter"
     },
     {
-      "ID": 539,
-      "Type": 4,
+      "ID": 339,
+      "Type": 10,
       "Factories": [
-        2303,
+        2305,
         2318,
-        6257
+        6260
       ],
       "Name": "科学枢纽运载火箭",
       "Items": [
@@ -5168,12 +5143,12 @@
       "IconName": "rocketScience"
     },
     {
-      "ID": 540,
-      "Type": 4,
+      "ID": 340,
+      "Type": 10,
       "Factories": [
-        2303,
+        2305,
         2318,
-        6257
+        6260
       ],
       "Name": "谐振发射器运载火箭",
       "Items": [
@@ -5197,12 +5172,12 @@
       "IconName": "rocketWarp"
     },
     {
-      "ID": 541,
-      "Type": 4,
+      "ID": 341,
+      "Type": 10,
       "Factories": [
-        2303,
+        2305,
         2318,
-        6257
+        6260
       ],
       "Name": "星际组装厂运载火箭",
       "Items": [
@@ -5224,12 +5199,12 @@
       "IconName": "rocketAssembly"
     },
     {
-      "ID": 542,
-      "Type": 4,
+      "ID": 342,
+      "Type": 10,
       "Factories": [
-        2303,
+        2305,
         2318,
-        6257
+        6260
       ],
       "Name": "晶体重构器运载火箭",
       "Items": [
@@ -5251,6 +5226,118 @@
       "TimeSpend": 480.0,
       "Proliferator": 1,
       "IconName": "rocketCrystal"
+    },
+    {
+      "ID": 365,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "力场发生器Recipe",
+      "Items": [
+        9480,
+        9484
+      ],
+      "ItemCounts": [
+        1,
+        2
+      ],
+      "Results": [
+        9503
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 240.0,
+      "Proliferator": 1,
+      "IconName": "forceGen"
+    },
+    {
+      "ID": 370,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "导流框架Recipe",
+      "Items": [
+        1125,
+        9481,
+        9503
+      ],
+      "ItemCounts": [
+        3,
+        2,
+        3
+      ],
+      "Results": [
+        9508
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 180.0,
+      "Proliferator": 1,
+      "IconName": "starcannonframe"
+    },
+    {
+      "ID": 371,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "恒星炮组件Recipe",
+      "Items": [
+        1209,
+        9508
+      ],
+      "ItemCounts": [
+        3,
+        2
+      ],
+      "Results": [
+        9509
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 480.0,
+      "Proliferator": 1,
+      "IconName": "starcannoncompo"
+    },
+    {
+      "ID": 372,
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318,
+        6260
+      ],
+      "Name": "恒星炮运载火箭Recipe",
+      "Items": [
+        9509,
+        1802,
+        1305
+      ],
+      "ItemCounts": [
+        2,
+        2,
+        2
+      ],
+      "Results": [
+        9510
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 360.0,
+      "Proliferator": 1,
+      "IconName": "rocketStarcannon"
     },
     {
       "ID": 401,
@@ -8126,7 +8213,7 @@
       "IconName": "Rassembly"
     },
     {
-      "ID": 551,
+      "ID": 351,
       "Type": 10,
       "Factories": [
         2305,
@@ -8707,7 +8794,7 @@
       "IconName": "quick6265"
     },
     {
-      "ID": 575,
+      "ID": 375,
       "Type": 10,
       "Factories": [
         2305,
@@ -12524,11 +12611,32 @@
       "IconName": "integratedcomponents"
     },
     {
-      "ID": 9507,
+      "ID": 9503,
       "Type": 3,
-      "Name": "强力过载装置",
-      "GridIndex": 3205,
-      "IconName": "strIntOverloader"
+      "Name": "力场发生器",
+      "GridIndex": 3201,
+      "IconName": "forceGen"
+    },
+    {
+      "ID": 9508,
+      "Type": 3,
+      "Name": "导流框架",
+      "GridIndex": 3206,
+      "IconName": "starcannonframe"
+    },
+    {
+      "ID": 9509,
+      "Type": 3,
+      "Name": "恒星炮组件",
+      "GridIndex": 3207,
+      "IconName": "starcannoncompo"
+    },
+    {
+      "ID": 9510,
+      "Type": 4,
+      "Name": "恒星炮运载火箭",
+      "GridIndex": 3306,
+      "IconName": "rocketStarcannon"
     },
     {
       "ID": 6201,
