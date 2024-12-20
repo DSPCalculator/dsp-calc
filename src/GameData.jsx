@@ -196,7 +196,7 @@ export function get_game_data(modList) {
             //console.log("i=" + i + ",j=" + j + ",FactoriesArr[i][j]=" + FactoriesArr[i][j]);
             factory["名称"] = item["Name"];
             factory["耗能"] = item["WorkEnergyPerTick"] * 0.00006;
-            factory["倍率"] = item["Speed"] * 0.0001;
+            factory["倍率"] = item["Speed"];
             //factory["输出倍率"] = item["MultipleOutput"];
             factory["占地"] = item["Space"];
             factories.push(factory);

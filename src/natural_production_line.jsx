@@ -1,6 +1,6 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext} from 'react';
-import {GameInfoContext, GlobalStateContext, UiSettingsContext, UiSettingsSetterContext} from './contexts.jsx';
+import {GameInfoContext, GlobalStateContext, SettingsContext, SettingsSetterContext} from './contexts.jsx';
 import {ItemIcon} from './icon';
 import {ItemSelect} from './item_select.jsx';
 import {FactorySelect, ProModeSelect, ProNumSelect, RecipeSelect} from './result.jsx';
@@ -10,7 +10,7 @@ import {AutoSizedInput} from './ui_components/auto_sized_input.jsx';
 
 function NplRow({row, set_row, remove_row}) {
     // TODO performance issue (dependency loop?)
-    const ui_settings = useContext(UiSettingsContext);
+    const settings = useContext(SettingsContext);
     const game_info = useContext(GameInfoContext);
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
@@ -39,7 +39,7 @@ function NplRow({row, set_row, remove_row}) {
     function get_output_num(item, recipe, building_scale, pro_mode, pro_num) {
         let output_num = recipe["产物"][item];
         output_num *= building_scale;
-        output_num *= (ui_settings.is_time_unit_minute ? 60 : 1) / recipe["时间"];
+        output_num *= (settings.is_time_unit_minute ? 60 : 1) / recipe["时间"];
         let proliferator_data = game_data.proliferator_effect[Number(pro_num)];
         if (pro_mode == 2) {
             output_num *= proliferator_data["增产效果"];
@@ -91,13 +91,13 @@ function NplRow({row, set_row, remove_row}) {
 }
 
 export function NplRows() {
-    const ui_settings = useContext(UiSettingsContext);
-    const set_ui_settings = useContext(UiSettingsSetterContext);
+    const settings = useContext(SettingsContext);
+    const set_settings = useContext(SettingsSetterContext);
 
-    const npl = ui_settings.natural_production_line;
+    const npl = settings.natural_production_line;
 
     function set_npl(new_npl) {
-        set_ui_settings("natural_production_line", new_npl);
+        set_settings("natural_production_line", new_npl);
         console.log("set_npl", new_npl);
     }
 
