@@ -7175,6 +7175,34 @@
       "IconName": "能量碎片制作"
     },
     {
+      "ID": 548,
+      "Type": 2,
+      "Factories": [
+        2309,
+        6259
+      ],
+      "Name": "二氧化硫还原",
+      "Items": [
+        6205,
+        1109
+      ],
+      "ItemCounts": [
+        1,
+        1
+      ],
+      "Results": [
+        6277,
+        6206
+      ],
+      "ResultCounts": [
+        1,
+        1
+      ],
+      "TimeSpend": 120.0,
+      "Proliferator": 3,
+      "IconName": "二氧化硫还原"
+    },
+    {
       "ID": 549,
       "Type": 16,
       "Factories": [
@@ -10893,6 +10921,44 @@
       "IconName": "铝合金"
     },
     {
+      "ID": 16205,
+      "Type": -1,
+      "Factories": [
+        6267
+      ],
+      "Name": "[无中生有]二氧化硫",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6205
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "硫化氢"
+    },
+    {
+      "ID": 16206,
+      "Type": -1,
+      "Factories": [
+        6267
+      ],
+      "Name": "[无中生有]二氧化碳",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6206
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "二氧化碳"
+    },
+    {
       "ID": 16207,
       "Type": -1,
       "Factories": [
@@ -11214,6 +11280,8 @@
       "ID": 17002,
       "Type": -1,
       "Factories": [
+        2306,
+        6266,
         2105
       ],
       "Name": "[无中生有]氨",
@@ -12241,7 +12309,7 @@
       "GridIndex": 2401,
       "IconName": "assembler-1",
       "WorkEnergyPerTick": 9000,
-      "Speed": 20000,
+      "Speed": 2.0,
       "Space": 10.24
     },
     {
@@ -12251,7 +12319,7 @@
       "GridIndex": 2402,
       "IconName": "assembler-2",
       "WorkEnergyPerTick": 18000,
-      "Speed": 20000,
+      "Speed": 2.0,
       "Space": 10.24
     },
     {
@@ -12261,7 +12329,7 @@
       "GridIndex": 2403,
       "IconName": "assembler-3",
       "WorkEnergyPerTick": 36000,
-      "Speed": 20000,
+      "Speed": 2.0,
       "Space": 10.24
     },
     {
@@ -12271,7 +12339,7 @@
       "GridIndex": 2404,
       "IconName": "assembler-4",
       "WorkEnergyPerTick": 240000,
-      "Speed": 80000,
+      "Speed": 8.0,
       "Space": 10.24
     },
     {
@@ -12330,7 +12398,7 @@
       "GridIndex": 2411,
       "IconName": "mining-drill",
       "WorkEnergyPerTick": 7000,
-      "Speed": 5000,
+      "Speed": 1.0,
       "Space": 15.0
     },
     {
@@ -12340,7 +12408,7 @@
       "GridIndex": 2412,
       "IconName": "mining-drill-mk2",
       "WorkEnergyPerTick": 49000,
-      "Speed": 10000,
+      "Speed": 2.0,
       "Space": 25.0
     },
     {
@@ -12350,7 +12418,7 @@
       "GridIndex": 2308,
       "IconName": "water-pump",
       "WorkEnergyPerTick": 5000,
-      "Speed": 10000,
+      "Speed": 1.6666666666666667,
       "Space": 12.0
     },
     {
@@ -12360,7 +12428,7 @@
       "GridIndex": 2405,
       "IconName": "smelter",
       "WorkEnergyPerTick": 12000,
-      "Speed": 20000,
+      "Speed": 2.0,
       "Space": 5.76
     },
     {
@@ -12370,7 +12438,7 @@
       "GridIndex": 2407,
       "IconName": "smelter-2",
       "WorkEnergyPerTick": 24000,
-      "Speed": 40000,
+      "Speed": 4.0,
       "Space": 5.76
     },
     {
@@ -12380,7 +12448,7 @@
       "GridIndex": 2408,
       "IconName": "smelter-3",
       "WorkEnergyPerTick": 240000,
-      "Speed": 40000,
+      "Speed": 4.0,
       "Space": 5.76
     },
     {
@@ -12390,7 +12458,7 @@
       "GridIndex": 2310,
       "IconName": "oil-extractor",
       "WorkEnergyPerTick": 14000,
-      "Speed": 10000,
+      "Speed": 2.0,
       "Space": 50.0
     },
     {
@@ -12400,7 +12468,7 @@
       "GridIndex": 2311,
       "IconName": "oil-refinery",
       "WorkEnergyPerTick": 16000,
-      "Speed": 40000,
+      "Speed": 4.0,
       "Space": 18.0
     },
     {
@@ -12410,7 +12478,7 @@
       "GridIndex": 2409,
       "IconName": "chemical-plant",
       "WorkEnergyPerTick": 12000,
-      "Speed": 40000,
+      "Speed": 4.0,
       "Space": 23.76
     },
     {
@@ -12420,7 +12488,7 @@
       "GridIndex": 2410,
       "IconName": "chemical-plant-2",
       "WorkEnergyPerTick": 24000,
-      "Speed": 40000,
+      "Speed": 4.0,
       "Space": 23.76
     },
     {
@@ -12437,7 +12505,7 @@
       "GridIndex": 2107,
       "IconName": "accumulator",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 4.0
     },
     {
@@ -12447,7 +12515,7 @@
       "GridIndex": 2114,
       "IconName": "accumulator-full",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 4.0
     },
     {
@@ -12464,7 +12532,7 @@
       "GridIndex": 2110,
       "IconName": "ray-receiver",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 54.82
     },
     {
@@ -12481,7 +12549,7 @@
       "GridIndex": 2314,
       "IconName": "energy-exchanger",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 64.0
     },
     {
@@ -12491,7 +12559,7 @@
       "GridIndex": 2413,
       "IconName": "hadron-collider",
       "WorkEnergyPerTick": 200000,
-      "Speed": 40000,
+      "Speed": 4.0,
       "Space": 45.12
     },
     {
@@ -12522,7 +12590,7 @@
       "GridIndex": 2213,
       "IconName": "orbital-collector",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 10.0,
       "Space": 0.0
     },
     {
@@ -12532,7 +12600,7 @@
       "GridIndex": 2312,
       "IconName": "lab",
       "WorkEnergyPerTick": 8000,
-      "Speed": 40000,
+      "Speed": 4.0,
       "Space": 20.25
     },
     {
@@ -12542,7 +12610,7 @@
       "GridIndex": 2313,
       "IconName": "lab-2",
       "WorkEnergyPerTick": 32000,
-      "Speed": 120000,
+      "Speed": 12.0,
       "Space": 20.25
     },
     {
@@ -12847,6 +12915,13 @@
       "IconName": "铝合金"
     },
     {
+      "ID": 6205,
+      "Type": 1,
+      "Name": "二氧化硫",
+      "GridIndex": 5401,
+      "IconName": "硫化氢"
+    },
+    {
       "ID": 6206,
       "Type": 2,
       "Name": "二氧化碳",
@@ -12902,7 +12977,7 @@
       "GridIndex": 2113,
       "IconName": "放射性同位素温差电池",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 4.0
     },
     {
@@ -12954,7 +13029,7 @@
       "GridIndex": 2406,
       "IconName": "矿物处理厂",
       "WorkEnergyPerTick": 12000,
-      "Speed": 20000,
+      "Speed": 2.0,
       "Space": 5.76
     },
     {
@@ -13062,7 +13137,7 @@
       "GridIndex": 2501,
       "IconName": "行星组装站",
       "WorkEnergyPerTick": 375000,
-      "Speed": 300000,
+      "Speed": 30.0,
       "Space": 50.0
     },
     {
@@ -13072,7 +13147,7 @@
       "GridIndex": 2502,
       "IconName": "行星熔炉",
       "WorkEnergyPerTick": 375000,
-      "Speed": 300000,
+      "Speed": 30.0,
       "Space": 50.0
     },
     {
@@ -13082,7 +13157,7 @@
       "GridIndex": 2503,
       "IconName": "行星化工厂",
       "WorkEnergyPerTick": 375000,
-      "Speed": 300000,
+      "Speed": 30.0,
       "Space": 50.0
     },
     {
@@ -13092,7 +13167,7 @@
       "GridIndex": 2504,
       "IconName": "行星精密组装厂",
       "WorkEnergyPerTick": 375000,
-      "Speed": 300000,
+      "Speed": 30.0,
       "Space": 50.0
     },
     {
@@ -13116,7 +13191,7 @@
       "GridIndex": 2505,
       "IconName": "回收塔",
       "WorkEnergyPerTick": 500000,
-      "Speed": 300000,
+      "Speed": 30.0,
       "Space": 50.0
     },
     {
@@ -13126,7 +13201,7 @@
       "GridIndex": 2506,
       "IconName": "大型强子对撞机",
       "WorkEnergyPerTick": 750000,
-      "Speed": 300000,
+      "Speed": 30.0,
       "Space": 50.0
     },
     {
@@ -13136,7 +13211,7 @@
       "GridIndex": 2309,
       "IconName": "fractionator",
       "WorkEnergyPerTick": 500000,
-      "Speed": 10000,
+      "Speed": 16.666666666666668,
       "Space": 12.96
     },
     {
@@ -13146,7 +13221,7 @@
       "GridIndex": 2214,
       "IconName": "行星采集器",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 10.0,
       "Space": 50.0
     },
     {
