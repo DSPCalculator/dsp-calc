@@ -185,7 +185,7 @@ export function Result({needs_list, set_needs_list}) {
         item_graph[item]["原料"] = {};
 
         console.log("mineralize_list", new_mineralize_list);
-        set_settings("mineralize_list", new_mineralize_list);
+        set_settings({"mineralize_list": new_mineralize_list});
     }
 
     function unmineralize(item) {
@@ -193,7 +193,7 @@ export function Result({needs_list, set_needs_list}) {
         // editing item_graph!
         item_graph[item] = structuredClone(mineralize_list[item]);
         delete new_mineralize_list[item];
-        set_settings("mineralize_list", new_mineralize_list);
+        set_settings({"mineralize_list": new_mineralize_list});
     }
 
     function clear_mineralize_list() {
@@ -201,7 +201,7 @@ export function Result({needs_list, set_needs_list}) {
             // editing item_graph!
             item_graph[item] = structuredClone(mineralize_list[item]);
         }
-        set_settings("mineralize_list", {});
+        set_settings({"mineralize_list": {}});
     }
 
     let mineralize_doms = Object.keys(mineralize_list).map(item => (

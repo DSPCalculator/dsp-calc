@@ -71,7 +71,7 @@ export function NeedsList({needs_list, set_needs_list}) {
             "目标物品": item,
             "建筑数量": 10, "配方id": 1, "增产点数": 0, "增产模式": 0, "建筑": 0
         });
-        set_settings("natural_production_line", new_npl);
+        set_settings({"natural_production_line": new_npl});
     }
 
     const is_min = global_state.settings.is_time_unit_minute;
