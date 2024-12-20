@@ -47,7 +47,7 @@ export function Settings() {
         if (settings.is_time_unit_minute) {
             fractionating_speed /= 60;
         }
-        set_settings("fractionating_speed", fractionating_speed);
+        set_settings({"fractionating_speed": fractionating_speed});
     }
 
     return <div style={{display: 'flex', flexWrap: 'wrap'}}>
