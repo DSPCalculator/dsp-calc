@@ -6,7 +6,8 @@ export function Settings() {
     const set_settings = useContext(SettingsSetterContext);
     const DEFAULT_SETTINGS = useContext(DefaultSettingsContext);
     const global_state = useContext(GlobalStateContext);
-    let display = global_state.game_data.GenesisBookEnable ? "" : "none";
+    let GenesisBookEnable = global_state.game_data.GenesisBookEnable ? "" : "none";
+    let TheyComeFromVoidEnable = global_state.game_data.TheyComeFromVoidEnable ? "" : "none";
 
     let fix_multiple = Math.pow(10, settings.fixed_num);
     let percent_val = {
@@ -90,7 +91,7 @@ export function Settings() {
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
             </tbody>
-            <tbody style={{display: display}}>
+            <tbody style={{display: GenesisBookEnable}}>
             <tr>
                 <td>巨星氦面板</td>
                 <td className="ps-2">
@@ -271,6 +272,27 @@ export function Settings() {
                            onChange={e => change_percent_setting(e, "inc_rate")}/>
                 </td>
                 <td className="ps-2">{"%"}</td>
+            </tr>
+            </tbody>
+        </table>
+        <table style={{display: TheyComeFromVoidEnable}}>
+            <tbody>
+            <tr>
+                <td colSpan={4}>【深空来敌元驱动】</td>
+            </tr>
+            <tr>
+                <td colSpan={4}>注意：更改任意元驱动状态后，必须重新选择MOD！</td>
+            </tr>
+            <tr>
+                <td colSpan={4}>PS：鼠标悬停在元驱动名称上以查看具体效果</td>
+            </tr>
+            <tr>
+                <td title="制造厂在制造原材料至少2种的配方时，每产出1个产物，会返还1个第1位置的原材料">蓝Buff</td>
+                <td className="ps-2">{settings.blue_buff ? "启用" : "禁用"}</td>
+                <td className="ps-2">
+                    <button onClick={e => change_bool_setting(e, "blue_buff")}>
+                        {settings.blue_buff ? "改为禁用" : "改为启用"}</button>
+                </td>
             </tr>
             </tbody>
         </table>

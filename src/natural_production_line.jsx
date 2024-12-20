@@ -97,7 +97,7 @@ export function NplRows() {
     const npl = settings.natural_production_line;
 
     function set_npl(new_npl) {
-        set_settings("natural_production_line", new_npl);
+        set_settings({"natural_production_line": new_npl});
         console.log("set_npl", new_npl);
     }
 

@@ -159,6 +159,11 @@ export class GlobalState {
                 continue;
             }
             var recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
+            let recipe = game_data.recipe_data[recipe_id];
+            if (game_data.TheyComeFromVoidEnable && settings.blue_buff && Object.keys(recipe["原料"]).length >= 2) {
+                //大部分情况下不会出现循环配方，此处无视，直接赋值
+                recipe["产物"][Object.keys(recipe["原料"])[0]] = Object.values(recipe["产物"])[0];
+            }
             item_graph[item]["产出倍率"] = 1 * game_data.recipe_data[recipe_id]["产物"][item];
             var produce_rate = 1;//净产出一个目标产物时公式的执行次数，用于考虑增产等对原料消耗的影响
             var material_num = 0;
