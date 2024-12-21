@@ -427,7 +427,6 @@ export class GlobalState {
 
     /** 取得每一个物品的历史产出 */
     #get_item_price() {
-        let scheme_data = this.scheme_data;
         let item_graph = this.item_graph;
         let item_list = this.item_list;
         let key_item_list = this.key_item_list;
@@ -458,7 +457,7 @@ export class GlobalState {
         }//关键物品成本为0
         for (let mineralize_item in mineralize_list) {
             item_price[mineralize_item] = {"原料": {}, "成本": 0, "累计成本": 0};
-        }// 矿物化物品成本为0
+        }//矿物化物品成本为0
         for (let multi_source in multi_sources) {
             item_price[multi_source] = {"原料": {}, "成本": 0, "累计成本": 0};
         }//多来源物品成本为0

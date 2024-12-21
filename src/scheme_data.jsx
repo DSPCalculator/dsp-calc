@@ -20,66 +20,6 @@ const DEFAULT_SCHEME_DATA = {
     },
 };
 
-// var is_genesis_book_previous_enable;
-// export function MiningSettings() {
-//     const global_state = useContext(GlobalStateContext);
-//     const set_scheme_data = useContext(SchemeDataSetterContext);
-//     let scheme_data = global_state.scheme_data;
-//     let settings = global_state.settings;
-//
-//     if (is_genesis_book_previous_enable === undefined) {
-//         is_genesis_book_previous_enable = global_state.game_data.GenesisBookEnable;
-//     }
-//     let is_genesis_book_current_enable = global_state.game_data.GenesisBookEnable;
-//     if (is_genesis_book_previous_enable !== is_genesis_book_current_enable) {
-//         if (is_genesis_book_current_enable) {
-//             settings.巨星氢面板 = 1;
-//             settings.巨星重氢面板 = 0.2;
-//             settings.巨星可燃冰面板 = 0.5;
-//             settings.fractionating_speed = 3600;
-//         } else {
-//             settings.巨星氢面板 = 1;
-//             settings.巨星重氢面板 = 0.5;
-//             settings.巨星可燃冰面板 = 0.5;
-//             settings.巨星氦面板 = 0.2;
-//             settings.巨星氨面板 = 0.2;
-//             settings.行星氮面板 = 0.2;
-//             settings.行星氧面板 = 0.2;
-//             settings.fractionating_speed.fractionating_speed = 1800;
-//         }
-//         is_genesis_book_previous_enable = is_genesis_book_current_enable;
-//     }
-//     let doms = Object.entries(scheme_data.mining_rate).map(([key, value]) =>
-//         <tr key={key}>
-//             <td className="text-nowrap">{key}</td>
-//             <td className="ps-3">
-//                 <input type="number" style={{maxWidth: '5em'}} value={value} onChange={
-//                     event => set_scheme_data(prev_scheme_data => ({
-//                         ...prev_scheme_data,
-//                         mining_rate: Object.assign(prev_scheme_data.mining_rate, {
-//                             [key]: parseFloat(event.target.value) || 0
-//                         })
-//                     }))}/>
-//             </td>
-//         </tr>
-//     );
-//     //如果未启用创世之书，隐藏巨星氦和巨星氨
-//     if (!is_genesis_book_current_enable) {
-//         doms = removeProperties(doms, value => value["key"] === "巨星氦面板" || value["key"] === "巨星氨面板");
-//     }
-//     return <table>
-//         <tbody>{doms}</tbody>
-//     </table>;
-// }
-// function removeProperties(obj, predicate) {
-//     Object.keys(obj).forEach(key => {
-//         if (predicate(obj[key])) {
-//             delete obj[key];
-//         }
-//     });
-//     return obj;
-// }
-
 function get_item_data(game_data) {
     //通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，键值为
     //此物品在计算器中的id与用于生产此物品的配方在配方表中的序号
