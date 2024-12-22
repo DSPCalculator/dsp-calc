@@ -67,7 +67,7 @@ export function Settings() {
                 <td className="ps-2">
                     <input type="number" value={settings.mining_speed_hydrogen} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onBlur={e => change_float_setting(e, "mining_speed_hydrogen", 0.01)}/>
+                           onChange={e => change_float_setting(e, "mining_speed_hydrogen", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
@@ -76,7 +76,7 @@ export function Settings() {
                 <td className="ps-2">
                     <input type="number" value={settings.mining_speed_deuterium} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onBlur={e => change_float_setting(e, "mining_speed_deuterium", 0.01)}/>
+                           onChange={e => change_float_setting(e, "mining_speed_deuterium", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
@@ -85,7 +85,7 @@ export function Settings() {
                 <td className="ps-2">
                     <input type="number" value={settings.mining_speed_gas_hydrate} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onBlur={e => change_float_setting(e, "mining_speed_gas_hydrate", 0.01)}/>
+                           onChange={e => change_float_setting(e, "mining_speed_gas_hydrate", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
@@ -96,7 +96,7 @@ export function Settings() {
                 <td className="ps-2">
                     <input type="number" value={settings.mining_speed_helium} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onBlur={e => change_float_setting(e, "mining_speed_helium", 0.01)}/>
+                           onChange={e => change_float_setting(e, "mining_speed_helium", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
@@ -105,7 +105,7 @@ export function Settings() {
                 <td className="ps-2">
                     <input type="number" value={settings.mining_speed_ammonia} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onBlur={e => change_float_setting(e, "mining_speed_ammonia", 0.01)}/>
+                           onChange={e => change_float_setting(e, "mining_speed_ammonia", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
@@ -114,7 +114,7 @@ export function Settings() {
                 <td className="ps-2">
                     <input type="number" value={settings.mining_speed_nitrogen} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onBlur={e => change_float_setting(e, "mining_speed_nitrogen", 0.01)}/>
+                           onChange={e => change_float_setting(e, "mining_speed_nitrogen", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
@@ -123,7 +123,7 @@ export function Settings() {
                 <td className="ps-2">
                     <input type="number" value={settings.mining_speed_oxygen} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onBlur={e => change_float_setting(e, "mining_speed_oxygen", 0.01)}/>
+                           onChange={e => change_float_setting(e, "mining_speed_oxygen", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
@@ -133,7 +133,7 @@ export function Settings() {
                     <input type="number" value={settings.mining_speed_carbon_dioxide}
                            step={0.10}
                            style={{maxWidth: '5em'}}
-                           onBlur={e => change_float_setting(e, "mining_speed_carbon_dioxide", 0.01)}/>
+                           onChange={e => change_float_setting(e, "mining_speed_carbon_dioxide", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
@@ -143,7 +143,7 @@ export function Settings() {
                     <input type="number" value={settings.mining_speed_sulfur_dioxide}
                            step={0.10}
                            style={{maxWidth: '5em'}}
-                           onBlur={e => change_float_setting(e, "mining_speed_sulfur_dioxide", 0.01)}/>
+                           onChange={e => change_float_setting(e, "mining_speed_sulfur_dioxide", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
