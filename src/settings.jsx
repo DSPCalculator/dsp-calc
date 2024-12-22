@@ -9,7 +9,6 @@ export function Settings() {
     let GenesisBookEnable = global_state.game_data.GenesisBookEnable ? "" : "none";
     let TheyComeFromVoidEnable = global_state.game_data.TheyComeFromVoidEnable ? "" : "none";
 
-    let fix_multiple = Math.pow(10, settings.fixed_num);
     let percent_val = {
         mining_efficiency_large: Math.round(settings.mining_efficiency_large * 100),
         mining_speed_multiple: Math.round(settings.mining_speed_multiple * 100),
@@ -19,18 +18,18 @@ export function Settings() {
         inc_rate: Math.round(settings.inc_rate * 100),
     }
 
-    function change_int_setting(e, name) {
-        let val = parseInt(e.target.value) || DEFAULT_SETTINGS[name];
+    function change_int_setting(e, name, minVal) {
+        let val = Math.max(parseInt(e.target.value) || DEFAULT_SETTINGS[name], minVal);
         set_settings({[name]: val});
     }
 
-    function change_float_setting(e, name) {
-        let val = parseFloat(e.target.value) || DEFAULT_SETTINGS[name];
-        set_settings({[name]: Math.round(val * fix_multiple) / fix_multiple});
+    function change_float_setting(e, name, minVal) {
+        let val = Math.max(parseFloat(e.target.value) || DEFAULT_SETTINGS[name], minVal);
+        set_settings({[name]: Math.round(val * 10000) / 10000});//输入框最多四位小数
     }
 
-    function change_percent_setting(e, name) {
-        let val = parseInt(e.target.value) || (DEFAULT_SETTINGS[name] * 100);
+    function change_percent_setting(e, name, minVal) {
+        let val = Math.max(parseInt(e.target.value) || (DEFAULT_SETTINGS[name] * 100), minVal);
         percent_val[name] = val;
         set_settings({[name]: val / 100});
     }
@@ -57,36 +56,36 @@ export function Settings() {
             <tr>
                 <td>原油面板</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_oil} aria-valuemin={0.01} step={0.10}
+                    <input type="number" value={settings.mining_speed_oil} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_oil")}/>
+                           onChange={e => change_float_setting(e, "mining_speed_oil", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（单个油井）"}</td>
             </tr>
             <tr>
                 <td>巨星氢面板</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_hydrogen} aria-valuemin={0.01} step={0.10}
+                    <input type="number" value={settings.mining_speed_hydrogen} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_hydrogen")}/>
+                           onBlur={e => change_float_setting(e, "mining_speed_hydrogen", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
             <tr>
                 <td>巨星重氢面板</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_deuterium} aria-valuemin={0.01} step={0.10}
+                    <input type="number" value={settings.mining_speed_deuterium} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_deuterium")}/>
+                           onBlur={e => change_float_setting(e, "mining_speed_deuterium", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
             <tr>
                 <td>巨星可燃冰面板</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_gas_hydrate} aria-valuemin={0.01} step={0.10}
+                    <input type="number" value={settings.mining_speed_gas_hydrate} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_gas_hydrate")}/>
+                           onBlur={e => change_float_setting(e, "mining_speed_gas_hydrate", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
@@ -95,56 +94,56 @@ export function Settings() {
             <tr>
                 <td>巨星氦面板</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_helium} aria-valuemin={0.01} step={0.10}
+                    <input type="number" value={settings.mining_speed_helium} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_helium")}/>
+                           onBlur={e => change_float_setting(e, "mining_speed_helium", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
             <tr>
                 <td>巨星氨面板</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_ammonia} aria-valuemin={0.01} step={0.10}
+                    <input type="number" value={settings.mining_speed_ammonia} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_ammonia")}/>
+                           onBlur={e => change_float_setting(e, "mining_speed_ammonia", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
             <tr>
                 <td>行星氮面板</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_nitrogen} aria-valuemin={0.01} step={0.10}
+                    <input type="number" value={settings.mining_speed_nitrogen} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_nitrogen")}/>
+                           onBlur={e => change_float_setting(e, "mining_speed_nitrogen", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
             <tr>
                 <td>行星氧面板</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_oxygen} aria-valuemin={0.01} step={0.10}
+                    <input type="number" value={settings.mining_speed_oxygen} step={0.10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_oxygen")}/>
+                           onBlur={e => change_float_setting(e, "mining_speed_oxygen", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
             <tr>
                 <td>行星二氧化碳面板</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_carbon_dioxide} aria-valuemin={0.01}
+                    <input type="number" value={settings.mining_speed_carbon_dioxide}
                            step={0.10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_carbon_dioxide")}/>
+                           onBlur={e => change_float_setting(e, "mining_speed_carbon_dioxide", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
             <tr>
                 <td>行星二氧化硫面板</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_sulfur_dioxide} aria-valuemin={0.01}
+                    <input type="number" value={settings.mining_speed_sulfur_dioxide}
                            step={0.10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_sulfur_dioxide")}/>
+                           onBlur={e => change_float_setting(e, "mining_speed_sulfur_dioxide", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
@@ -163,52 +162,52 @@ export function Settings() {
             <tr>
                 <td>小矿机覆盖矿脉数</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.covered_veins_small} aria-valuemin={1} step={1}
+                    <input type="number" value={settings.covered_veins_small} step={1}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_int_setting(e, "covered_veins_small")}/>
+                           onChange={e => change_int_setting(e, "covered_veins_small", 1)}/>
                 </td>
             </tr>
             <tr>
                 <td>大矿机覆盖矿脉数</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.covered_veins_large} aria-valuemin={1} step={1}
+                    <input type="number" value={settings.covered_veins_large} step={1}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_int_setting(e, "covered_veins_large")}/>
+                           onChange={e => change_int_setting(e, "covered_veins_large", 1)}/>
                 </td>
             </tr>
             <tr>
                 <td>大矿机开采速度</td>
                 <td className="ps-2">
-                    <input type="number" value={percent_val["mining_efficiency_large"]} aria-valuemin={100} step={100}
+                    <input type="number" value={percent_val["mining_efficiency_large"]} step={100}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "mining_efficiency_large")}/>
+                           onChange={e => change_percent_setting(e, "mining_efficiency_large", 100)}/>
                 </td>
                 <td className="ps-2">{"%"}</td>
             </tr>
             <tr>
                 <td>采矿速度</td>
                 <td className="ps-2">
-                    <input type="number" value={percent_val["mining_speed_multiple"]} aria-valuemin={100} step={10}
+                    <input type="number" value={percent_val["mining_speed_multiple"]} step={10}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "mining_speed_multiple")}/>
+                           onChange={e => change_percent_setting(e, "mining_speed_multiple", 100)}/>
                 </td>
                 <td className="ps-2">{"%（科技面板右上）"}</td>
             </tr>
             <tr>
                 <td>残骸产出倍率</td>
                 <td className="ps-2">
-                    <input type="number" value={percent_val["enemy_drop_multiple"]} aria-valuemin={100} step={4}
+                    <input type="number" value={percent_val["enemy_drop_multiple"]} step={4}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "enemy_drop_multiple")}/>
+                           onChange={e => change_percent_setting(e, "enemy_drop_multiple", 100)}/>
                 </td>
                 <td className="ps-2">{"%（科技面板右上）"}</td>
             </tr>
             <tr>
                 <td>手动制造速度</td>
                 <td className="ps-2">
-                    <input type="number" value={percent_val["icarus_manufacturing_speed"]} aria-valuemin={100} step={50}
+                    <input type="number" value={percent_val["icarus_manufacturing_speed"]} step={50}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "icarus_manufacturing_speed")}/>
+                           onChange={e => change_percent_setting(e, "icarus_manufacturing_speed", 100)}/>
                 </td>
                 <td className="ps-2">{"%"}</td>
             </tr>
@@ -235,16 +234,16 @@ export function Settings() {
             <tr>
                 <td>精度位数</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.fixed_num} aria-valuemin={0} step={1} style={{maxWidth: '5em'}}
-                           onChange={e => change_int_setting(e, "fixed_num")}/>
+                    <input type="number" value={settings.fixed_num} step={1} style={{maxWidth: '5em'}}
+                           onChange={e => change_int_setting(e, "fixed_num", 0)}/>
                 </td>
             </tr>
             <tr>
                 <td>研究站层数</td>
                 <td className="ps-2">
-                    <input type="number" value={settings.stack_research_lab} aria-valuemin={1} step={1}
+                    <input type="number" value={settings.stack_research_lab} step={1}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_int_setting(e, "stack_research_lab")}/>
+                           onChange={e => change_int_setting(e, "stack_research_lab", 1)}/>
                 </td>
             </tr>
             <tr>
@@ -258,18 +257,18 @@ export function Settings() {
             <tr>
                 <td>增产剂加速效率修正</td>
                 <td className="ps-2">
-                    <input type="number" value={percent_val["acc_rate"]} aria-valuemin={1} step={5}
+                    <input type="number" value={percent_val["acc_rate"]} step={5}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "acc_rate")}/>
+                           onChange={e => change_percent_setting(e, "acc_rate", 1)}/>
                 </td>
                 <td className="ps-2">{"%"}</td>
             </tr>
             <tr>
                 <td>增产剂增产效率修正</td>
                 <td className="ps-2">
-                    <input type="number" value={percent_val["inc_rate"]} aria-valuemin={1} step={5}
+                    <input type="number" value={percent_val["inc_rate"]} step={5}
                            style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "inc_rate")}/>
+                           onChange={e => change_percent_setting(e, "inc_rate", 1)}/>
                 </td>
                 <td className="ps-2">{"%"}</td>
             </tr>
