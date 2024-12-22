@@ -67,8 +67,10 @@ export function NeedsList({needs_list, set_needs_list}) {
 
     function add_npl(item) {
         let new_npl = structuredClone(natural_production_line);
+        let count = Number(count_ref.current.value);
         new_npl.push({
             "目标物品": item,
+            "目标产量": count,
             "建筑数量": 10, "配方id": 1, "增产点数": 0, "增产模式": 0, "建筑": 0
         });
         set_settings({"natural_production_line": new_npl});
