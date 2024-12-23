@@ -77,7 +77,7 @@ export class GlobalState {
     game_data;
     item_data;
     scheme_data;
-    ui_settings; // { proliferate_itself, is_time_unit_minute, stackable_buildings, fixed_num, mineralize_list, natural_production_line }
+    settings;
 
     proliferator_price;
 
@@ -87,12 +87,12 @@ export class GlobalState {
     item_list;
     key_item_list;
 
-    constructor(game_info, scheme_data, ui_settings) {
+    constructor(game_info, scheme_data, settings) {
         console.log("mods", game_info.game_data.mods);
         this.game_data = game_info.game_data;
         this.item_data = game_info.item_data;
         this.scheme_data = scheme_data;
-        this.ui_settings = ui_settings;
+        this.settings = settings;
 
         //获取最后一个增产剂对应的点数值
         //懒得比较获取最大值了，直接用最后一个增产剂作为最大值
@@ -110,7 +110,7 @@ export class GlobalState {
             }
         }
 
-        this.#init_pro_proliferator(ui_settings.proliferate_itself);
+        this.#init_pro_proliferator(settings.proliferate_itself);
         this.#init_item_graph();
         this.#init_item_list();
     }
@@ -144,9 +144,8 @@ export class GlobalState {
         let game_data = this.game_data;
         let item_data = this.item_data;
         let scheme_data = this.scheme_data;
+        let settings = this.settings;
         let proliferator_price = this.proliferator_price;
-        let mineralize_list = this.ui_settings.mineralize_list;
-        let fixed_num = this.ui_settings.fixed_num;
 
         let multi_sources = {};
         let item_graph = {};
@@ -155,11 +154,16 @@ export class GlobalState {
             item_graph[item] = {"原料": {}, "可生产": {}, "产出倍率": 0, "副产物": {}};
         }
         for (var item in item_data) {
-            if (item in mineralize_list) {
-                item_graph[item]["产出倍率"] = 100000000 ** (fixed_num + 1);
+            if (item in settings.mineralize_list) {
+                item_graph[item]["产出倍率"] = 100000000 ** (settings.fixed_num + 1);
                 continue;
             }
             var recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
+            let recipe = game_data.recipe_data[recipe_id];
+            if (game_data.TheyComeFromVoidEnable && settings.blue_buff && Object.keys(recipe["原料"]).length >= 2) {
+                //大部分情况下不会出现循环配方，此处无视，直接赋值
+                recipe["产物"][Object.keys(recipe["原料"])[0]] = Object.values(recipe["产物"])[0];
+            }
             item_graph[item]["产出倍率"] = 1 * game_data.recipe_data[recipe_id]["产物"][item];
             var produce_rate = 1;//净产出一个目标产物时公式的执行次数，用于考虑增产等对原料消耗的影响
             var material_num = 0;
@@ -174,6 +178,7 @@ export class GlobalState {
             //如果有用增产剂且有增产效果，计算增产剂效果带来的变化
             if (proliferate_mode && proliferate_num) {
                 if (proliferate_mode == 1) {
+                    //加速
                     for (var proliferate in proliferator_price[proliferate_num]) {
                         if (proliferate in item_graph[item]["原料"]) {
                             item_graph[item]["原料"][proliferate] += total_material_num * proliferator_price[proliferate_num][proliferate];
@@ -181,8 +186,9 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    item_graph[item]["产出倍率"] *= game_data.proliferator_effect[proliferate_num]["加速效果"];
+                    item_graph[item]["产出倍率"] *= game_data.proliferator_effect[proliferate_num]["加速效果"] * this.settings.acc_rate;
                 } else if (proliferate_mode == 2) {
+                    //增产
                     for (var proliferate in proliferator_price[proliferate_num]) {
                         if (proliferate in item_graph[item]["原料"]) {
                             item_graph[item]["原料"][proliferate] += total_material_num * proliferator_price[proliferate_num][proliferate];
@@ -190,7 +196,7 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    produce_rate *= game_data.proliferator_effect[proliferate_num]["增产效果"];
+                    produce_rate *= game_data.proliferator_effect[proliferate_num]["增产效果"] * this.settings.inc_rate;
                     item_graph[item]["产出倍率"] *= produce_rate;
                 } else if (proliferate_mode == 3) {
                     //接收站透镜喷涂效果，按加速效果计算额外产出
@@ -201,7 +207,7 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    produce_rate *= game_data.proliferator_effect[proliferate_num]["加速效果"];
+                    produce_rate *= game_data.proliferator_effect[proliferate_num]["加速效果"] * this.settings.acc_rate;
                     item_graph[item]["产出倍率"] *= produce_rate;
                 } else if (proliferate_mode == 4) {
                     //增产分馏塔，按点数计算产出
@@ -269,38 +275,49 @@ export class GlobalState {
             const factories_type = game_data.recipe_data[recipe_id]["设施"];
             const factory_info = game_data.factory_data[factories_type][scheme_data.scheme_for_recipe[recipe_id]["建筑"]];
             const factory_name = factory_info["名称"];
-            if (factory_name === "电弧熔炉" || factory_name === "位面熔炉" || factory_name === "负熵熔炉"
-                || factory_name === "原油萃取站" || factory_name === "抽水机" || factory_name === "聚束液体汲取设施"
-                || factory_name === "轨道采集器" || factory_name === "大气采集站"
-                || factory_name === "采矿机" || factory_name === "大型采矿机" || factory_name === "行星基地") {
-                item_graph[item]["产出倍率"] *= scheme_data.mining_rate["科技面板倍率"];
-                if (factory_name === "采矿机") {
-                    item_graph[item]["产出倍率"] *= scheme_data.mining_rate["小矿机覆盖矿脉数"];
-                } else if (factory_name === "大型采矿机") {
-                    item_graph[item]["产出倍率"] *= (scheme_data.mining_rate["大矿机覆盖矿脉数"] * scheme_data.mining_rate["大矿机工作倍率"]);
-                } else if (factory_name === "原油萃取站") {
-                    item_graph[item]["产出倍率"] *= scheme_data.mining_rate["油井期望面板"];
-                } else if (factory_name === "轨道采集器") {
-                    if (item === "氢") {
-                        item_graph[item]["产出倍率"] *= scheme_data.mining_rate["巨星氢面板"];
-                    } else if (item === "重氢") {
-                        item_graph[item]["产出倍率"] *= scheme_data.mining_rate["巨星重氢面板"];
-                    } else if (item === "可燃冰") {
-                        item_graph[item]["产出倍率"] *= scheme_data.mining_rate["巨星可燃冰面板"];
-                    } else if (item === "氦") {
-                        item_graph[item]["产出倍率"] *= scheme_data.mining_rate["巨星氦面板"];
-                    } else if (item === "氨") {
-                        item_graph[item]["产出倍率"] *= scheme_data.mining_rate["巨星氨面板"];
-                    }
+            if (factory_name === "采矿机") {
+                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.covered_veins_small;
+            } else if (factory_name === "大型采矿机") {
+                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.covered_veins_large * settings.mining_efficiency_large;
+            } else if (factory_name === "原油萃取站") {
+                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.mining_speed_oil;
+            } else if (factory_name === "抽水站" || factory_name === "聚束液体汲取设施") {
+                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple;
+            } else if (factory_name === "轨道采集器") {
+                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple;
+                if (item === "氢") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_hydrogen;
+                } else if (item === "重氢") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_deuterium;
+                } else if (item === "可燃冰") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_gas_hydrate;
+                } else if (item === "氦") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_helium;
+                } else if (item === "氨") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_ammonia;
                 }
-            }//采矿设备需算上科技加成
+            } else if (factory_name === "大气采集站") {
+                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple;
+                if (item === "氮") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_nitrogen;
+                } else if (item === "氧") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_oxygen;
+                } else if (item === "二氧化硫") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_carbon_dioxide;
+                } else if (item === "二氧化碳") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_sulfur_dioxide;
+                }
+            } else if (factory_name === "行星基地") {
+                item_graph[item]["产出倍率"] *= settings.enemy_drop_multiple;
+            } //采矿设备需算上科技加成
             else if (factory_name.endsWith("分馏塔")) {
-                item_graph[item]["产出倍率"] *= scheme_data.fractionating_speed / 60;
+                item_graph[item]["产出倍率"] *= settings.fractionating_speed;
             }//分馏塔流速加成计算
             else if (factory_name === "伊卡洛斯") {
-                item_graph[item]["产出倍率"] *= scheme_data.mining_rate["伊卡洛斯手速"];
+                item_graph[item]["产出倍率"] *= settings.icarus_manufacturing_speed;
             }//毫无意义，只是我想这么干
         }
+
         this.item_graph = item_graph;
         this.multi_sources = multi_sources;
     }
@@ -311,7 +328,7 @@ export class GlobalState {
         let scheme_data = this.scheme_data;
         let item_data = this.item_data;
         let item_graph = this.item_graph;
-        let stackable_buildings = this.ui_settings.stackable_buildings;
+        let stack_research_lab = this.settings.stack_research_lab;
 
         let cost = 0.0;
         if (scheme_data.cost_weight["物品额外成本"][item]["启用"]) {
@@ -323,10 +340,7 @@ export class GlobalState {
         var recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
         var building_info = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]];
         var building_count_per_yield = 1 / item_graph[item]["产出倍率"] / building_info["倍率"];
-        var layer_count = 1;
-        if (building_info["名称"] in stackable_buildings) {
-            layer_count = stackable_buildings[building_info["名称"]];
-        }
+        var layer_count = building_info["名称"].endsWith("研究站") ? stack_research_lab : 1;
         cost = Number(cost) + building_count_per_yield * scheme_data.cost_weight["占地"] * building_info["占地"] / layer_count;//计算占地造成的成本=单位产能建筑数*占地成本权重*建筑占地
         cost = Number(cost) + building_count_per_yield * scheme_data.cost_weight["电力"] * building_info["耗能"] * game_data.proliferator_effect[scheme_data.scheme_for_recipe[recipe_id]["增产点数"]]["耗电倍率"];
         //计算耗电造成的成本 = 单位产能建筑数 * 耗电成本权重 * 建筑耗电 * 喷涂影响
@@ -413,12 +427,11 @@ export class GlobalState {
 
     /** 取得每一个物品的历史产出 */
     #get_item_price() {
-        let scheme_data = this.scheme_data;
         let item_graph = this.item_graph;
         let item_list = this.item_list;
         let key_item_list = this.key_item_list;
         let multi_sources = this.multi_sources;
-        let mineralize_list = this.ui_settings.mineralize_list;
+        let mineralize_list = this.settings.mineralize_list;
         let p_key_item = 0;
         let p_mineralize_item = 0;
         let item_price = {};
@@ -444,7 +457,7 @@ export class GlobalState {
         }//关键物品成本为0
         for (let mineralize_item in mineralize_list) {
             item_price[mineralize_item] = {"原料": {}, "成本": 0, "累计成本": 0};
-        }// 矿物化物品成本为0
+        }//矿物化物品成本为0
         for (let multi_source in multi_sources) {
             item_price[multi_source] = {"原料": {}, "成本": 0, "累计成本": 0};
         }//多来源物品成本为0
@@ -482,7 +495,7 @@ export class GlobalState {
     /** 主要计算逻辑 */
     calculate(needs_list) {
         let game_data = this.game_data;
-        let natural_production_line = this.ui_settings.natural_production_line;
+        let natural_production_line = this.settings.natural_production_line;
 
         let item_data = this.item_data;
         let proliferator_price = this.proliferator_price;

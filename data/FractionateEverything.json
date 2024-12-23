@@ -15126,7 +15126,7 @@
       "GridIndex": 2404,
       "IconName": "assembler-1",
       "WorkEnergyPerTick": 4500,
-      "Speed": 7500,
+      "Speed": 0.75,
       "Space": 10.24
     },
     {
@@ -15136,7 +15136,7 @@
       "GridIndex": 2405,
       "IconName": "assembler-2",
       "WorkEnergyPerTick": 9000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 10.24
     },
     {
@@ -15146,7 +15146,7 @@
       "GridIndex": 2406,
       "IconName": "assembler-3",
       "WorkEnergyPerTick": 18000,
-      "Speed": 15000,
+      "Speed": 1.5,
       "Space": 10.24
     },
     {
@@ -15156,7 +15156,7 @@
       "GridIndex": 2407,
       "IconName": "assembler-4",
       "WorkEnergyPerTick": 45000,
-      "Speed": 30000,
+      "Speed": 3.0,
       "Space": 10.24
     },
     {
@@ -15215,7 +15215,7 @@
       "GridIndex": 2305,
       "IconName": "mining-drill",
       "WorkEnergyPerTick": 7000,
-      "Speed": 5000,
+      "Speed": 0.5,
       "Space": 15.0
     },
     {
@@ -15225,7 +15225,7 @@
       "GridIndex": 2306,
       "IconName": "mining-drill-mk2",
       "WorkEnergyPerTick": 49000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 25.0
     },
     {
@@ -15235,7 +15235,7 @@
       "GridIndex": 2307,
       "IconName": "water-pump",
       "WorkEnergyPerTick": 5000,
-      "Speed": 10000,
+      "Speed": 0.83333333333333337,
       "Space": 12.0
     },
     {
@@ -15245,7 +15245,7 @@
       "GridIndex": 2401,
       "IconName": "smelter",
       "WorkEnergyPerTick": 6000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 5.76
     },
     {
@@ -15255,7 +15255,7 @@
       "GridIndex": 2402,
       "IconName": "smelter-2",
       "WorkEnergyPerTick": 24000,
-      "Speed": 20000,
+      "Speed": 2.0,
       "Space": 5.76
     },
     {
@@ -15265,7 +15265,7 @@
       "GridIndex": 2403,
       "IconName": "smelter-3",
       "WorkEnergyPerTick": 48000,
-      "Speed": 30000,
+      "Speed": 3.0,
       "Space": 5.76
     },
     {
@@ -15275,7 +15275,7 @@
       "GridIndex": 2308,
       "IconName": "oil-extractor",
       "WorkEnergyPerTick": 14000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 50.0
     },
     {
@@ -15285,7 +15285,7 @@
       "GridIndex": 2309,
       "IconName": "oil-refinery",
       "WorkEnergyPerTick": 16000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 18.0
     },
     {
@@ -15295,7 +15295,7 @@
       "GridIndex": 2311,
       "IconName": "chemical-plant",
       "WorkEnergyPerTick": 12000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 23.76
     },
     {
@@ -15305,7 +15305,7 @@
       "GridIndex": 2312,
       "IconName": "chemical-plant-2",
       "WorkEnergyPerTick": 36000,
-      "Speed": 20000,
+      "Speed": 2.0,
       "Space": 23.76
     },
     {
@@ -15315,7 +15315,7 @@
       "GridIndex": 2310,
       "IconName": "fractionator",
       "WorkEnergyPerTick": 12000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 12.96
     },
     {
@@ -15332,7 +15332,7 @@
       "GridIndex": 2110,
       "IconName": "accumulator",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 4.0
     },
     {
@@ -15342,7 +15342,7 @@
       "GridIndex": 2111,
       "IconName": "accumulator-full",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 4.0
     },
     {
@@ -15359,7 +15359,7 @@
       "GridIndex": 2112,
       "IconName": "ray-receiver",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 54.82
     },
     {
@@ -15376,7 +15376,7 @@
       "GridIndex": 2109,
       "IconName": "energy-exchanger",
       "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 64.0
     },
     {
@@ -15386,7 +15386,7 @@
       "GridIndex": 2313,
       "IconName": "hadron-collider",
       "WorkEnergyPerTick": 200000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 45.12
     },
     {
@@ -15417,7 +15417,7 @@
       "GridIndex": 2214,
       "IconName": "orbital-collector",
       "WorkEnergyPerTick": 500000,
-      "Speed": 10000,
+      "Speed": 8.0,
       "Space": 0.0
     },
     {
@@ -15427,7 +15427,7 @@
       "GridIndex": 2408,
       "IconName": "lab",
       "WorkEnergyPerTick": 8000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 20.25
     },
     {
@@ -15437,7 +15437,7 @@
       "GridIndex": 2409,
       "IconName": "lab-2",
       "WorkEnergyPerTick": 32000,
-      "Speed": 30000,
+      "Speed": 3.0,
       "Space": 20.25
     },
     {
@@ -15559,7 +15559,7 @@
       "GridIndex": 2601,
       "IconName": "fractionator-1",
       "WorkEnergyPerTick": 4800,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 12.96
     },
     {
@@ -15569,7 +15569,7 @@
       "GridIndex": 2602,
       "IconName": "fractionator-2",
       "WorkEnergyPerTick": 12000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 12.96
     },
     {
@@ -15579,7 +15579,7 @@
       "GridIndex": 2603,
       "IconName": "fractionator-3",
       "WorkEnergyPerTick": 12000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 12.96
     },
     {
@@ -15589,7 +15589,7 @@
       "GridIndex": 2604,
       "IconName": "fractionator-4",
       "WorkEnergyPerTick": 24000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 12.96
     },
     {
@@ -15599,7 +15599,7 @@
       "GridIndex": 2605,
       "IconName": "fractionator-5",
       "WorkEnergyPerTick": 30000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 12.96
     },
     {
@@ -15609,7 +15609,7 @@
       "GridIndex": 2606,
       "IconName": "fractionator-6",
       "WorkEnergyPerTick": 24000,
-      "Speed": 10000,
+      "Speed": 1.0,
       "Space": 12.96
     },
     {

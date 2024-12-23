@@ -1,6 +1,6 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext} from 'react';
-import {GlobalStateContext, SchemeDataSetterContext, UiSettingsSetterContext} from './contexts';
+import {GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from './contexts';
 import {ItemIcon} from './icon';
 import {NplRows} from './natural_production_line';
 import {HorizontalMultiButtonSelect, Recipe} from './recipe';
@@ -94,25 +94,25 @@ export function FactorySelect({recipe_id, choice, onChange, no_gap}) {
 export function Result({needs_list, set_needs_list}) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
-    const set_ui_settings = useContext(UiSettingsSetterContext);
+    const set_settings = useContext(SettingsSetterContext);
     // const [result_dict, set_result_dict] = useState(global_state.calculate());
     let game_data = global_state.game_data;
     let scheme_data = global_state.scheme_data;
-    let ui_settings = global_state.ui_settings;
+    let settings = global_state.settings;
     let item_data = global_state.item_data;
     let item_graph = global_state.item_graph;
-    let time_tick = ui_settings.is_time_unit_minute ? 60 : 1;
+    let time_tick = settings.is_time_unit_minute ? 60 : 1;
 
     // TODO refactor to a simple list
-    let mineralize_list = ui_settings.mineralize_list;
-    let natural_production_line = ui_settings.natural_production_line;
+    let mineralize_list = settings.mineralize_list;
+    let natural_production_line = settings.natural_production_line;
     console.log("result natural_production_line", natural_production_line);
 
     console.log("CALCULATING");
     let [result_dict, lp_surplus_list] = global_state.calculate(needs_list);
     console.log("lp_surplus_list", lp_surplus_list);
 
-    let fixed_num = ui_settings.fixed_num;
+    let fixed_num = settings.fixed_num;
     let energy_cost = 0, miner_energy_cost = 0;
     let building_list = {};
 
@@ -135,15 +135,15 @@ export function Result({needs_list, set_needs_list}) {
         if (factory_name !== "轨道采集器") {
             let e_cost = (build_number - offset) * factory_info["耗能"];
             if (factory_name === "大型采矿机") {
-                e_cost = scheme_data.mining_rate["大矿机工作倍率"] * scheme_data.mining_rate["大矿机工作倍率"] * (2.94 - 0.168) + 0.168;
+                e_cost = settings.mining_efficiency_large / 100.0 * settings.mining_efficiency_large / 100.0 * (2.94 - 0.168) + 0.168;
             } else if (factory_name.endsWith("分馏塔")) {
                 if (game_data.mods.GenesisBookEnable) {
-                    if (scheme_data.fractionating_speed > 3600) {
-                        e_cost *= (scheme_data.fractionating_speed * 0.0006 - 0.72) / 1.44;
+                    if (settings.fractionating_speed > 60) {
+                        e_cost *= (settings.fractionating_speed * 0.036 - 0.72) / 1.44;
                     }
                 } else {
-                    if (scheme_data.fractionating_speed > 1800) {
-                        e_cost *= (scheme_data.fractionating_speed * 0.0006 - 0.36) / 0.72;
+                    if (settings.fractionating_speed > 30) {
+                        e_cost *= (settings.fractionating_speed * 0.036 - 0.36) / 0.72;
                     }
                 }
             }
@@ -185,7 +185,7 @@ export function Result({needs_list, set_needs_list}) {
         item_graph[item]["原料"] = {};
 
         console.log("mineralize_list", new_mineralize_list);
-        set_ui_settings("mineralize_list", new_mineralize_list);
+        set_settings({"mineralize_list": new_mineralize_list});
     }
 
     function unmineralize(item) {
@@ -193,7 +193,7 @@ export function Result({needs_list, set_needs_list}) {
         // editing item_graph!
         item_graph[item] = structuredClone(mineralize_list[item]);
         delete new_mineralize_list[item];
-        set_ui_settings("mineralize_list", new_mineralize_list);
+        set_settings({"mineralize_list": new_mineralize_list});
     }
 
     function clear_mineralize_list() {
@@ -201,7 +201,7 @@ export function Result({needs_list, set_needs_list}) {
             // editing item_graph!
             item_graph[item] = structuredClone(mineralize_list[item]);
         }
-        set_ui_settings("mineralize_list", {});
+        set_settings({"mineralize_list": {}});
     }
 
     let mineralize_doms = Object.keys(mineralize_list).map(item => (
@@ -214,7 +214,7 @@ export function Result({needs_list, set_needs_list}) {
         let total = result_dict[i] + Object.values(side_products[i]).reduce((a, b) => a + b, 0);
         if (total < 1e-6) continue;
         let recipe_id = item_data[i][scheme_data.item_recipe_choices[i]];
-        if (ui_settings.hide_mines && ((i in mineralize_list) || Object.keys(game_data.recipe_data[recipe_id]["原料"]).length < 1)) {
+        if (settings.hide_mines && ((i in mineralize_list) || Object.keys(game_data.recipe_data[recipe_id]["原料"]).length < 1)) {
             continue;
         }
         let factory_number = get_factory_number(result_dict[i], i);

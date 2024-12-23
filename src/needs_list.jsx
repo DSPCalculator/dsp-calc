@@ -1,7 +1,7 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext, useEffect, useRef, useState} from 'react';
 import {Trash} from 'react-bootstrap-icons';
-import {GameInfoContext, GlobalStateContext, UiSettingsSetterContext} from './contexts';
+import {GameInfoContext, GlobalStateContext, SettingsSetterContext} from './contexts';
 import {ItemIcon} from './icon';
 import {ItemSelect} from './item_select';
 
@@ -25,10 +25,10 @@ function get_item_data(game_data) {
 export function NeedsList({needs_list, set_needs_list}) {
     const global_state = useContext(GlobalStateContext);
     const count_ref = useRef(60);
-    const set_ui_settings = useContext(UiSettingsSetterContext);
+    const set_settings = useContext(SettingsSetterContext);
     let game_data = global_state.game_data;
     let item_data = get_item_data(game_data);
-    let natural_production_line = global_state.ui_settings.natural_production_line;
+    let natural_production_line = global_state.settings.natural_production_line;
     let needs_doms = Object.entries(needs_list).map(([item, count]) => {
         function edit_count(e) {
             let new_needs_list = structuredClone(needs_list);
@@ -67,14 +67,16 @@ export function NeedsList({needs_list, set_needs_list}) {
 
     function add_npl(item) {
         let new_npl = structuredClone(natural_production_line);
+        let count = Number(count_ref.current.value);
         new_npl.push({
             "目标物品": item,
+            "目标产量": count,
             "建筑数量": 10, "配方id": 1, "增产点数": 0, "增产模式": 0, "建筑": 0
         });
-        set_ui_settings("natural_production_line", new_npl);
+        set_settings({"natural_production_line": new_npl});
     }
 
-    const is_min = global_state.ui_settings.is_time_unit_minute;
+    const is_min = global_state.settings.is_time_unit_minute;
 
     return <>
         <div className="w-fit mt-3 d-flex align-items-center row-gap-1 flex-wrap">

@@ -1,10 +1,16 @@
 import {useContext, useEffect, useState} from 'react';
 import {BatchSetting} from './batch_setting.jsx';
-import {ContextProvider, GameInfoContext, GameInfoSetterContext, SchemeDataSetterContext} from './contexts.jsx';
+import {
+    ContextProvider,
+    GameInfoContext,
+    GameInfoSetterContext,
+    SchemeDataSetterContext,
+    SettingsSetterContext
+} from './contexts.jsx';
 import {NeedsList, NeedsListStorage} from './needs_list.jsx';
 import {Result} from './result.jsx';
-import {init_scheme_data, MiningSettings, SchemeStorage} from './scheme_data.jsx';
-import {UiSettings} from './ui_settings.jsx';
+import {init_scheme_data, SchemeStorage} from './scheme_data.jsx';
+import {Settings} from './settings.jsx';
 import {
     default_game_data,
     game_data_info_list,
@@ -21,13 +27,14 @@ function GameVersion({needs_list, set_needs_list}) {
     const set_game_data = useContext(GameInfoSetterContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const [mods, set_mods] = useState([]);
+    const set_settings = useContext(SettingsSetterContext);
 
     async function mods_change(modList) {
         if (JSON.stringify(needs_list) !== '{}'
             && !confirm(`检测到计算器内有产线，确认继续切换mod吗？切换后将清空产线！`)) {
             return;// 用户取消
         }
-        //清除产线
+        //清除原有产线，否则会出现找不到配方而导致白屏的bug
         set_needs_list({});
         //判断modList是否合理，并调整顺序
         //巨构是深空的前置依赖
@@ -75,9 +82,26 @@ function GameVersion({needs_list, set_needs_list}) {
         console.log("无递归，继续执行，新list", modList2)
         set_mods(modList2);
         let game_data = modList.length === 0 ? default_game_data : get_game_data(modList);
-        set_needs_list({});
         set_game_data(game_data);
         set_scheme_data(init_scheme_data(game_data));
+        //根据创世是否启用，设定采矿速率初始值
+        if (!game_data.GenesisBookEnable) {
+            set_settings({"mining_speed_oil": 3.0});
+            set_settings({"mining_speed_hydrogen": 1.0});
+            set_settings({"mining_speed_deuterium": 0.2});
+            set_settings({"mining_speed_gas_hydrate": 0.5});
+        } else {
+            set_settings({"mining_speed_oil": 3.0});
+            set_settings({"mining_speed_hydrogen": 1.0});
+            set_settings({"mining_speed_deuterium": 0.05});
+            set_settings({"mining_speed_gas_hydrate": 0.8});
+            set_settings({"mining_speed_helium": 0.02});
+            set_settings({"mining_speed_ammonia": 0.3});
+            set_settings({"mining_speed_nitrogen": 1.2});
+            set_settings({"mining_speed_oxygen": 0.6});
+            set_settings({"mining_speed_carbon_dioxide": 0.4});
+            set_settings({"mining_speed_sulfur_dioxide": 0.6});
+        }
     }
 
     return <div className="d-flex gap-2 align-items-center">
@@ -87,24 +111,14 @@ function GameVersion({needs_list, set_needs_list}) {
     </div>;
 }
 
-function MiscCollapse({show}) {
+function UserSettings({show}) {
     let class_show = show ? "" : "d-none";
     return <div className={`d-flex gap-3 ${class_show}`}>
         <fieldset>
-            <legend><small>采矿参数</small></legend>
-            <MiningSettings/>
-        </fieldset>
-        <fieldset>
-            <legend><small>其他设置</small></legend>
-            <UiSettings/>
+            <legend><small>设置</small></legend>
+            <Settings/>
         </fieldset>
     </div>;
-}
-
-function App() {
-    return <ContextProvider>
-        <AppWithContexts/>
-    </ContextProvider>;
 }
 
 function AppWithContexts() {
@@ -138,7 +152,7 @@ function AppWithContexts() {
             </button>
         </div>
         {/*采矿参数&其他设置*/}
-        <MiscCollapse show={misc_show}/>
+        <UserSettings show={misc_show}/>
         {/*添加需求、批量预设、计算结果*/}
         <div>
             <NeedsList needs_list={needs_list} set_needs_list={set_needs_list}/>
@@ -148,4 +162,8 @@ function AppWithContexts() {
     </>;
 }
 
-export default App
+export default function App() {
+    return <ContextProvider>
+        <AppWithContexts/>
+    </ContextProvider>;
+}

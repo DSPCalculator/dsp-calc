@@ -6,10 +6,10 @@
                 产物：完成一趟此配方将产出的物品类型及相应数目
                 设施：可以用于完成此配方的工厂类型
                 时间：完成一趟此配方所需要的时间。其中，较为特殊的是：
-                    采矿设备的时间规定为1s，即小矿机在矿物利用等级为1级时开采2簇矿物时的单位矿物产出时间
-                    采集器的时间定规为1s，是矿物利用等级为1级时采集器在面板为0.125/s的巨星上采集的算入供电消耗前的单位矿物产出时间
-                    抽水设备的时间规定为1.2s，是矿物利用等级为1级时单个抽水机的单位产出时间
-                    抽油设备的时间规定为1s,是矿物利用等级为1级时单个萃取站在面板为1/s的油井上的单位产出时间
+                    采矿设备的时间规定为1s，即小矿机在矿物利用等级为0级时开采2簇矿物时的单位矿物产出时间
+                    采集器的时间定规为1s，是矿物利用等级为0级时采集器在面板为0.125/s的巨星上采集的算入供电消耗前的单位矿物产出时间
+                    抽水设备的时间规定为1.2s，是矿物利用等级为0级时单个抽水机的单位产出时间
+                    抽油设备的时间规定为1s,是矿物利用等级为0级时单个萃取站在面板为1/s的油井上的单位产出时间
                     分馏塔的时间规定为100s，是让氢以1/s速度过带时的期望单位产出时间
                     蓄电器（满）的时间定为300s，是直接接入电网时充满电的时间（直接接入电网，设备倍率为1，使用能量枢纽，则设备倍率为50）
                 增产：此配方的可增产情况，可以看做是2位2进制数所表示的一个值，第一位代表是否能加速，第二位代表是否能增产，比如0代表此配方既不能增产也不能加速，
@@ -52,27 +52,27 @@ export const game_data_info_list = [
     {
         "GUID": "Vanilla",
         "name": "原版游戏",
-        "version": "0.10.30.23430",
+        "version": "0.10.31.24710",
     },
     {
         "GUID": MoreMegaStructureGUID,
         "name": "更多巨构",
-        "version": "1.5.8",
+        "version": "1.7.5",
     },
     {
         "GUID": TheyComeFromVoidGUID,
         "name": "深空来敌",
-        "version": "3.2.3",
+        "version": "3.4.3",
     },
     {
         "GUID": GenesisBookGUID,
         "name": "创世之书",
-        "version": "2.9.13",
+        "version": "3.0.14",
     },
     {
         "GUID": FractionateEverythingGUID,
         "name": "万物分馏",
-        "version": "1.4.3",
+        "version": "1.4.4",
     },
 ]
 
@@ -196,7 +196,7 @@ export function get_game_data(modList) {
             //console.log("i=" + i + ",j=" + j + ",FactoriesArr[i][j]=" + FactoriesArr[i][j]);
             factory["名称"] = item["Name"];
             factory["耗能"] = item["WorkEnergyPerTick"] * 0.00006;
-            factory["倍率"] = item["Speed"] * 0.0001;
+            factory["倍率"] = item["Speed"];
             //factory["输出倍率"] = item["MultipleOutput"];
             factory["占地"] = item["Space"];
             factories.push(factory);
@@ -335,20 +335,20 @@ export function get_icon_by_item(item) {
     return name_icon_list[item];
 }
 
-function saveJSONToFile(jsonData, filename) {
-    // 将JSON数据转换为字符串
-    const jsonString = JSON.stringify(jsonData, null, 2);
-
-    // 创建一个虚拟的<a>标签
-    const blob = new Blob([jsonString], {type: 'text/json'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-
-    // 设置下载的文件名
-    a.download = filename;
-    a.href = url;
-    a.click();
-
-    // 清理URL对象
-    URL.revokeObjectURL(url);
-}
+// function saveJSONToFile(jsonData, filename) {
+//     // 将JSON数据转换为字符串
+//     const jsonString = JSON.stringify(jsonData, null, 2);
+//
+//     // 创建一个虚拟的<a>标签
+//     const blob = new Blob([jsonString], {type: 'text/json'});
+//     const url = URL.createObjectURL(blob);
+//     const a = document.createElement('a');
+//
+//     // 设置下载的文件名
+//     a.download = filename;
+//     a.href = url;
+//     a.click();
+//
+//     // 清理URL对象
+//     URL.revokeObjectURL(url);
+// }
