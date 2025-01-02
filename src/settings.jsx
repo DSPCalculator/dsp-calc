@@ -232,6 +232,14 @@ export function Settings() {
                 </td>
             </tr>
             <tr>
+                <td>混带计算</td>
+                <td className="ps-2">{settings.is_mix_vein_calculation ? "启用" : "禁用"}</td>
+                <td className="ps-2">
+                    <button onClick={e => change_bool_setting(e, "is_mix_vein_calculation")}>
+                        {settings.is_mix_vein_calculation ? "改为禁用" : "改为启用"}</button>
+                </td>
+            </tr>
+            <tr>
                 <td>精度位数</td>
                 <td className="ps-2">
                     <input type="number" value={settings.fixed_num} step={1} style={{maxWidth: '5em'}}

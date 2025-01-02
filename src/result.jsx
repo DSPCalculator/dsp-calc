@@ -77,6 +77,165 @@ export function ProModeSelect({recipe_id, choice, onChange}) {
                                         className={"raw-text-selection"}/>;
 }
 
+// 定义可用的分拣器配置
+const sorters = {
+    极速分拣器d1: 12,
+    极速分拣器d2: 6,
+    极速分拣器d3: 4,
+    高速分拣器d1: 6,
+    高速分拣器d2: 3,
+    高速分拣器d3: 2,
+    分拣器d1: 3,
+    分拣器d2: 1.5,
+    分拣器d3: 1,
+  };
+  
+  const beltsALL = {
+    传送带: 12,
+    高速传送带: 24,
+    极速传送带: 60,
+  };
+  
+  function findMinCombinations(target, beltsMap = beltsALL) {
+    // 将配置按照速度从大到小排序
+    const sortedBelts = Object.entries(beltsMap).sort((a, b) => b[1] - a[1]);
+    const results = new Set(); // 使用 Set 避免重复方案
+  
+    function findCombination(remaining, current = [], startIndex = 0) {
+      // 如果已经找到3种方案，停止搜索
+      if (results.size >= 3) return;
+  
+      // 如果剩余值小于等于0，说明找到一个解
+      if (remaining <= 0) {
+        results.add(JSON.stringify(current));
+        return;
+      }
+  
+      // 从大到小尝试每种传送带
+      for (let i = startIndex; i < sortedBelts.length; i++) {
+        const [beltType, speed] = sortedBelts[i];
+  
+        // 尝试添加当前传送带
+        current.push(beltType);
+        findCombination(remaining - speed, current, i);
+        current.pop();
+  
+        // 如果当前传送带可以单独满足需求，也记录这个解
+        if (speed >= remaining && results.size < 3) {
+          results.add(JSON.stringify([beltType]));
+        }
+      }
+    }
+  
+    findCombination(target);
+  
+    // 将结果转换回数组格式
+    return Array.from(results).map((json) => JSON.parse(json));
+  }
+  
+  function findCombinations(target, configMap = sorters) {
+    // 如果输入无效，直接返回空数组
+    if (!target || target <= 0) return [];
+  
+    let results = [];
+  
+    // 递归函数来寻找组合
+    function findCombination(remaining, currentCombination) {
+      // 如果已经找到3种方案，停止搜索
+      if (results.length >= 3) return;
+  
+      // 如果剩余值为0或接近0（处理浮点数误差），找到一个解
+      if (Math.abs(remaining) < 0.01) {
+        results.push([...currentCombination]);
+        return;
+      }
+  
+      // 如果剩余值小于0，无效解
+      if (remaining < 0) return;
+  
+      // 优先使用值大的分拣器
+      for (let [sorter, value] of Object.entries(configMap).sort(
+        (a, b) => b[1] - a[1]
+      )) {
+        if (value <= remaining) {
+          // 更新当前组合
+          currentCombination.push(sorter);
+  
+          // 递归查找剩余部分
+          findCombination(remaining - value, currentCombination);
+  
+          // 回溯
+          currentCombination.pop();
+        }
+      }
+    }
+  
+    findCombination(target, []);
+  
+    // 如果没有找到任何方案，返回值最小的一个
+    if (results.length === 0) {
+      let minItem = Object.entries(configMap).reduce((min, current) => {
+        return current[1] < min[1] ? current : min;
+      });
+      return [[minItem[0]]];
+    }
+  
+    return results;
+  }
+  
+  function roundtoHalf(value) {
+    return Math.ceil((Math.floor(value) / 120) * 2) / 2;
+  }
+  
+  export function MixLineSelect({ value }) {
+    const ceil_value = roundtoHalf(value);
+    const combinations = findCombinations(ceil_value);
+    return (
+      <>
+        <div>
+          向上取整: {ceil_value * 120}, 份数: {ceil_value}
+          {combinations.length < 1 ? (
+            <div>无方案</div>
+          ) : (
+            <>
+              {combinations.map((combination, index) => {
+                const countItems = combination.reduce((acc, item) => {
+                  acc[item] = (acc[item] || 0) + 1;
+                  return acc;
+                }, {});
+  
+                return (
+                  <div
+                    key={index}
+                    className="p-1 border border-gray-200 shadow-sm"
+                  >
+                    {Object.keys(countItems).map((item) => {
+                      const [f, d] = item.split("d");
+                      return (
+                        <div
+                          key={item}
+                          className="d-inline-flex align-items-center gap-2"
+                        >
+                          <ItemIcon item={f} size={32} />
+                          <span>
+                            {" "}
+                            距离: {d} 数量: {countItems[item]} 份数:{" "}
+                            {sorters[item]}{" "}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </>
+          )}
+        </div>
+      </>
+    );
+  }
+  
+
 export function FactorySelect({recipe_id, choice, onChange, no_gap}) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
@@ -115,6 +274,7 @@ export function Result({needs_list, set_needs_list}) {
     let fixed_num = settings.fixed_num;
     let energy_cost = 0, miner_energy_cost = 0;
     let building_list = {};
+    let mixBeltAll=0;
 
     function get_factory_number(amount, item) {
         const recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
@@ -225,6 +385,7 @@ export function Result({needs_list, set_needs_list}) {
         let factory_name = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"];
         let is_mineralized = i in mineralize_list;
         let row_class = is_mineralized ? "table-secondary" : "";
+        mixBeltAll+=roundtoHalf(get_gross_output(result_dict[i], i))
 
         function change_recipe(value) {
             set_scheme_data(old_scheme_data => {
@@ -320,6 +481,10 @@ export function Result({needs_list, set_needs_list}) {
                     </>
                 }
             </td>
+            {/* 混带计算 */}
+            {settings.is_mix_vein_calculation && <td>
+                <MixLineSelect value={get_gross_output(result_dict[i], i)}/>
+            </td>}
             {/* 所选配方 */}
             <td><RecipeSelect item={i} onChange={change_recipe}
                               choice={scheme_data.item_recipe_choices[i]}/></td>
@@ -375,6 +540,55 @@ export function Result({needs_list, set_needs_list}) {
         })
     }
 
+
+    function MixBeltRows() {
+        let belts = findMinCombinations(mixBeltAll);
+        return (
+          <>
+            <tr>
+              <td>混带份数</td>
+              <td>{mixBeltAll}</td>
+            </tr>
+            <tr>
+              <td>
+                {belts.length < 1 ? (
+                  <div>无方案</div>
+                ) : (
+                  <>
+                    {belts.map((combination, index) => {
+                      const countItems = combination.reduce((acc, item) => {
+                        acc[item] = (acc[item] || 0) + 1;
+                        return acc;
+                      }, {});
+      
+                      return (
+                        <div
+                          key={index}
+                          className="p-1 border border-gray-200 shadow-sm"
+                        >
+                          {Object.keys(countItems).map((item) => (
+                            <div
+                              key={item}
+                              className="d-inline-flex align-items-center gap-2"
+                            >
+                              <ItemIcon item={item} size={32} />
+                              <span>
+                                数量: {countItems[item]} 份数: {beltsALL[item]}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      );
+                    })}
+                  </>
+                )}
+              </td>
+            </tr>
+          </>
+        );
+      }
+      
+
     let surplus_doms = Object.entries(lp_surplus_list).map(([item, quant]) =>
         (<div key={item} className="text-nowrap"><ItemIcon item={item}/> x{quant.toFixed(fixed_num)}
             <button className="ms-2 btn btn-outline-primary ssmall text-nowrap mineralize-btn"
@@ -393,6 +607,7 @@ export function Result({needs_list, set_needs_list}) {
                 <th width={140}>物品</th>
                 <th width={130}>产能</th>
                 <th width={110}>工厂</th>
+                {settings.is_mix_vein_calculation && <th width={230}>混带计算</th>}
                 <th width={300}>配方选取</th>
                 <th width={180}>增产模式</th>
                 <th width={160}>增产剂</th>
@@ -431,6 +646,7 @@ export function Result({needs_list, set_needs_list}) {
                         <legend><small>建筑统计</small></legend>
                         <table>
                             <tbody>{building_rows}</tbody>
+                            {settings.is_mix_vein_calculation && <tbody><MixBeltRows/></tbody>}
                         </table>
                     </fieldset>
                     <span className="d-inline-flex gap-1 text-nowrap">
