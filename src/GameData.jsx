@@ -52,27 +52,27 @@ export const game_data_info_list = [
     {
         "GUID": "Vanilla",
         "name": "原版游戏",
-        "version": "0.10.31.24710",
+        "version": "0.10.32.25699",
     },
     {
         "GUID": MoreMegaStructureGUID,
         "name": "更多巨构",
-        "version": "1.7.5",
+        "version": "1.8.3",
     },
     {
         "GUID": TheyComeFromVoidGUID,
         "name": "深空来敌",
-        "version": "3.4.3",
+        "version": "3.4.10",
     },
     {
         "GUID": GenesisBookGUID,
         "name": "创世之书",
-        "version": "3.0.14",
+        "version": "3.1.0-alpha2.2",
     },
     {
         "GUID": FractionateEverythingGUID,
         "name": "万物分馏",
-        "version": "1.4.4",
+        "version": "2.0.0",
     },
 ]
 
