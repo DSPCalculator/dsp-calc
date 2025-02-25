@@ -402,6 +402,25 @@
       "IconName": "oil-refinery"
     },
     {
+      "Type": -1,
+      "Factories": [
+        2105,
+        1
+      ],
+      "Name": "[无中生有]氢",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1120
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "hydrogen"
+    },
+    {
       "Type": 3,
       "Factories": [
         2308
@@ -612,6 +631,24 @@
       "IconName": "plastic"
     },
     {
+      "Type": -1,
+      "Factories": [
+        2306
+      ],
+      "Name": "[无中生有]硫酸",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1116
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "sulphuric-acid"
+    },
+    {
       "Type": 2,
       "Factories": [
         2309,
@@ -637,6 +674,25 @@
       "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "sulphuric-acid"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2301,
+        2316
+      ],
+      "Name": "[无中生有]有机晶体",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1117
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "crystal-rubber"
     },
     {
       "Type": 2,
@@ -880,6 +936,25 @@
       "IconName": "nanotube"
     },
     {
+      "Type": -1,
+      "Factories": [
+        2301,
+        2316
+      ],
+      "Name": "[无中生有]硅石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1003
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "silicium-ore"
+    },
+    {
       "Type": 1,
       "Factories": [
         2302,
@@ -1038,6 +1113,25 @@
       "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "hadron-collider"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2105,
+        1
+      ],
+      "Name": "[无中生有]重氢",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1121
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "deuterium"
     },
     {
       "Type": 5,
@@ -4848,18 +4942,18 @@
         2301,
         2316
       ],
-      "Name": "[无中生有]硅石",
+      "Name": "[无中生有]分形硅石",
       "Items": [],
       "ItemCounts": [],
       "Results": [
-        1003
+        1013
       ],
       "ResultCounts": [
         1
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "silicium-ore"
+      "IconName": "fractal-silica"
     },
     {
       "Type": -1,
@@ -5308,25 +5402,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "diamond-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2301,
-        2316
-      ],
-      "Name": "[无中生有]分形硅石",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1013
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "fractal-silica"
     },
     {
       "Type": -1,
@@ -7728,24 +7803,6 @@
     {
       "Type": -1,
       "Factories": [
-        2306
-      ],
-      "Name": "[无中生有]硫酸",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1116
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "sulphuric-acid"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2321
       ],
       "Name": "[自然资源分馏]硫酸",
@@ -7812,25 +7869,6 @@
     {
       "Type": -1,
       "Factories": [
-        2105,
-        1
-      ],
-      "Name": "[无中生有]氢",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1120
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "hydrogen"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2321
       ],
       "Name": "[自然资源分馏]氢",
@@ -7873,25 +7911,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "hydrogen"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2105,
-        1
-      ],
-      "Name": "[无中生有]重氢",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1121
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "deuterium"
     },
     {
       "Type": -1,
@@ -7958,6 +7977,46 @@
     {
       "Type": -1,
       "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]临界光子",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1208
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "photon-capacitor-full"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[射线接收带透镜]临界光子",
+      "Items": [
+        1209
+      ],
+      "ItemCounts": [
+        0.0083333333333333332
+      ],
+      "Results": [
+        1208
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 300,
+      "Proliferator": 4,
+      "IconName": "photon-capacitor-full"
+    },
+    {
+      "Type": -1,
+      "Factories": [
         2323
       ],
       "Name": "[降级分馏]反物质",
@@ -7998,46 +8057,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "anti-matter"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[无中生有]临界光子",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1208
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 600,
-      "Proliferator": 0,
-      "IconName": "photon-capacitor-full"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[射线接收带透镜]临界光子",
-      "Items": [
-        1209
-      ],
-      "ItemCounts": [
-        0.0083333333333333332
-      ],
-      "Results": [
-        1208
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 300,
-      "Proliferator": 4,
-      "IconName": "photon-capacitor-full"
     },
     {
       "Type": -1,
@@ -8614,25 +8633,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "nanotube"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2301,
-        2316
-      ],
-      "Name": "[无中生有]有机晶体",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1117
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "crystal-rubber"
     },
     {
       "Type": -1,

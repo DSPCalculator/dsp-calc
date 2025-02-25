@@ -1,6 +1,64 @@
 ﻿{
   "recipes": [
     {
+      "Type": -1,
+      "Factories": [
+        1
+      ],
+      "Name": "[无中生有]铁块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1101
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "iron-plate"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]铁块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1101
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "iron-plate"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[射线接收带透镜]铁块",
+      "Items": [
+        1209
+      ],
+      "ItemCounts": [
+        0.0083333333333333332
+      ],
+      "Results": [
+        1101
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 300,
+      "Proliferator": 4,
+      "IconName": "iron-plate"
+    },
+    {
       "Type": 1,
       "Factories": [
         2302,
@@ -71,6 +129,64 @@
       "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "magnetism-wire"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        1
+      ],
+      "Name": "[无中生有]铜块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1104
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "copper-plate"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]铜块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1104
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "copper-plate"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[射线接收带透镜]铜块",
+      "Items": [
+        1209
+      ],
+      "ItemCounts": [
+        0.0083333333333333332
+      ],
+      "Results": [
+        1104
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 300,
+      "Proliferator": 4,
+      "IconName": "copper-plate"
     },
     {
       "Type": 1,
@@ -466,6 +582,25 @@
       "IconName": "oil-refinery"
     },
     {
+      "Type": -1,
+      "Factories": [
+        2105,
+        1
+      ],
+      "Name": "[无中生有]氢",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1120
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "hydrogen"
+    },
+    {
       "Type": 3,
       "Factories": [
         2308,
@@ -489,6 +624,64 @@
       "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "plasma-refining"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        1
+      ],
+      "Name": "[无中生有]高能石墨",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1109
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "graphite"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]高能石墨",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1109
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "graphite"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[射线接收带透镜]高能石墨",
+      "Items": [
+        1209
+      ],
+      "ItemCounts": [
+        0.0083333333333333332
+      ],
+      "Results": [
+        1109
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 300,
+      "Proliferator": 4,
+      "IconName": "graphite"
     },
     {
       "Type": 1,
@@ -697,6 +890,25 @@
       "IconName": "plastic"
     },
     {
+      "Type": -1,
+      "Factories": [
+        2306,
+        6266
+      ],
+      "Name": "[无中生有]硫酸",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1116
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "sulphuric-acid"
+    },
+    {
       "Type": 2,
       "Factories": [
         2309,
@@ -845,6 +1057,64 @@
       "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "c-matrix"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        1
+      ],
+      "Name": "[无中生有]卡西米尔晶体",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1126
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "casimir-crystal"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]卡西米尔晶体",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1126
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "casimir-crystal"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[射线接收带透镜]卡西米尔晶体",
+      "Items": [
+        1209
+      ],
+      "ItemCounts": [
+        0.0083333333333333332
+      ],
+      "Results": [
+        1126
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 300,
+      "Proliferator": 4,
+      "IconName": "casimir-crystal"
     },
     {
       "Type": 9,
@@ -1000,6 +1270,25 @@
       "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "nanotube"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2301,
+        2316
+      ],
+      "Name": "[无中生有]硅石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1003
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "silicium-ore"
     },
     {
       "Type": 2,
@@ -1178,6 +1467,25 @@
       "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "hadron-collider"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2105,
+        1
+      ],
+      "Name": "[无中生有]重氢",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1121
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "deuterium"
     },
     {
       "Type": 5,
@@ -1726,6 +2034,64 @@
       "IconName": "X-ray"
     },
     {
+      "Type": -1,
+      "Factories": [
+        1
+      ],
+      "Name": "[无中生有]高纯硅块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1105
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "silicium-single-crystal"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]高纯硅块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1105
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "silicium-single-crystal"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[射线接收带透镜]高纯硅块",
+      "Items": [
+        1209
+      ],
+      "ItemCounts": [
+        0.0083333333333333332
+      ],
+      "Results": [
+        1105
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 300,
+      "Proliferator": 4,
+      "IconName": "silicium-single-crystal"
+    },
+    {
       "Type": 1,
       "Factories": [
         2302,
@@ -1984,6 +2350,64 @@
       "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "fuel-plant"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        1
+      ],
+      "Name": "[无中生有]钛块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1106
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "titanium-plate"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]钛块",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1106
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "titanium-plate"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[射线接收带透镜]钛块",
+      "Items": [
+        1209
+      ],
+      "ItemCounts": [
+        0.0083333333333333332
+      ],
+      "Results": [
+        1106
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 300,
+      "Proliferator": 4,
+      "IconName": "titanium-plate"
     },
     {
       "Type": 1,
@@ -3131,6 +3555,25 @@
       "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "氦三_新"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2105,
+        1
+      ],
+      "Name": "[无中生有]氦",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6234
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "氦_新"
     },
     {
       "Type": 16,
@@ -6149,6 +6592,24 @@
       "IconName": "精炼油-丙烯"
     },
     {
+      "Type": -1,
+      "Factories": [
+        6267
+      ],
+      "Name": "[无中生有]二氧化碳",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6206
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "二氧化碳"
+    },
+    {
       "Type": 2,
       "Factories": [
         2309,
@@ -6195,6 +6656,25 @@
       "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "氯苯循环"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306,
+        6266
+      ],
+      "Name": "[无中生有]水",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1000
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "water"
     },
     {
       "Type": 2,
@@ -6847,6 +7327,25 @@
       "IconName": "生宇宙矩阵_新"
     },
     {
+      "Type": -1,
+      "Factories": [
+        2301,
+        2316
+      ],
+      "Name": "[无中生有]有机晶体",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1117
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "crystal-rubber"
+    },
+    {
       "Type": 2,
       "Factories": [
         2309,
@@ -7166,6 +7665,24 @@
       "IconName": "空燃料棒"
     },
     {
+      "Type": -1,
+      "Factories": [
+        6267
+      ],
+      "Name": "[无中生有]氧",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7019
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "氧气"
+    },
+    {
       "Type": 2,
       "Factories": [
         2309,
@@ -7189,6 +7706,25 @@
       "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "电解水_新"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306,
+        6266
+      ],
+      "Name": "[无中生有]盐酸",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7014
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "氢氯酸_新新"
     },
     {
       "Type": 2,
@@ -7267,6 +7803,26 @@
       "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "高效钛晶石"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306,
+        6266,
+        2105
+      ],
+      "Name": "[无中生有]氨",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7002
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "氨"
     },
     {
       "Type": 16,
@@ -7395,6 +7951,25 @@
       "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "三氯化铁"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306,
+        6266
+      ],
+      "Name": "[无中生有]硝酸",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7017
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "硝酸"
     },
     {
       "Type": 2,
@@ -7583,6 +8158,25 @@
       "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "聚苯并咪唑"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2301,
+        2316
+      ],
+      "Name": "[无中生有]钨矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6201
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "钨矿"
     },
     {
       "Type": 2,
@@ -9018,18 +9612,18 @@
         2301,
         2316
       ],
-      "Name": "[无中生有]硅石",
+      "Name": "[无中生有]分形硅石",
       "Items": [],
       "ItemCounts": [],
       "Results": [
-        1003
+        1013
       ],
       "ResultCounts": [
         1
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "silicium-ore"
+      "IconName": "fractal-silica"
     },
     {
       "Type": -1,
@@ -9482,25 +10076,6 @@
     {
       "Type": -1,
       "Factories": [
-        2301,
-        2316
-      ],
-      "Name": "[无中生有]分形硅石",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1013
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "fractal-silica"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2321
       ],
       "Name": "[自然资源分馏]分形硅石",
@@ -9816,64 +10391,6 @@
     {
       "Type": -1,
       "Factories": [
-        1
-      ],
-      "Name": "[无中生有]铁块",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1101
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "iron-plate"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[无中生有]铁块",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1101
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 600,
-      "Proliferator": 0,
-      "IconName": "iron-plate"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[射线接收带透镜]铁块",
-      "Items": [
-        1209
-      ],
-      "ItemCounts": [
-        0.0083333333333333332
-      ],
-      "Results": [
-        1101
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 300,
-      "Proliferator": 4,
-      "IconName": "iron-plate"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2326
       ],
       "Name": "[增产分馏]铁块",
@@ -9896,64 +10413,6 @@
     {
       "Type": -1,
       "Factories": [
-        1
-      ],
-      "Name": "[无中生有]铜块",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1104
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "copper-plate"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[无中生有]铜块",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1104
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 600,
-      "Proliferator": 0,
-      "IconName": "copper-plate"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[射线接收带透镜]铜块",
-      "Items": [
-        1209
-      ],
-      "ItemCounts": [
-        0.0083333333333333332
-      ],
-      "Results": [
-        1104
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 300,
-      "Proliferator": 4,
-      "IconName": "copper-plate"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2326
       ],
       "Name": "[增产分馏]铜块",
@@ -9972,64 +10431,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "copper-plate"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        1
-      ],
-      "Name": "[无中生有]高纯硅块",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1105
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "silicium-single-crystal"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[无中生有]高纯硅块",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1105
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 600,
-      "Proliferator": 0,
-      "IconName": "silicium-single-crystal"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[射线接收带透镜]高纯硅块",
-      "Items": [
-        1209
-      ],
-      "ItemCounts": [
-        0.0083333333333333332
-      ],
-      "Results": [
-        1105
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 300,
-      "Proliferator": 4,
-      "IconName": "silicium-single-crystal"
     },
     {
       "Type": -1,
@@ -10074,64 +10475,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "silicium-single-crystal"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        1
-      ],
-      "Name": "[无中生有]钛块",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1106
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "titanium-plate"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[无中生有]钛块",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1106
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 600,
-      "Proliferator": 0,
-      "IconName": "titanium-plate"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[射线接收带透镜]钛块",
-      "Items": [
-        1209
-      ],
-      "ItemCounts": [
-        0.0083333333333333332
-      ],
-      "Results": [
-        1106
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 300,
-      "Proliferator": 4,
-      "IconName": "titanium-plate"
     },
     {
       "Type": -1,
@@ -10194,64 +10537,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "stone-brick"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        1
-      ],
-      "Name": "[无中生有]高能石墨",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1109
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "graphite"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[无中生有]高能石墨",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1109
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 600,
-      "Proliferator": 0,
-      "IconName": "graphite"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[射线接收带透镜]高能石墨",
-      "Items": [
-        1209
-      ],
-      "ItemCounts": [
-        0.0083333333333333332
-      ],
-      "Results": [
-        1109
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 300,
-      "Proliferator": 4,
-      "IconName": "graphite"
     },
     {
       "Type": -1,
@@ -11844,25 +12129,6 @@
     {
       "Type": -1,
       "Factories": [
-        2306,
-        6266
-      ],
-      "Name": "[无中生有]水",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1000
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "water"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2321
       ],
       "Name": "[自然资源分馏]水",
@@ -12013,25 +12279,6 @@
     {
       "Type": -1,
       "Factories": [
-        2306,
-        6266
-      ],
-      "Name": "[无中生有]硫酸",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1116
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "sulphuric-acid"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2321
       ],
       "Name": "[自然资源分馏]硫酸",
@@ -12094,25 +12341,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "sulphuric-acid"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2105,
-        1
-      ],
-      "Name": "[无中生有]氢",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1120
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "hydrogen"
     },
     {
       "Type": -1,
@@ -12181,25 +12409,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "hydrogen"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2105,
-        1
-      ],
-      "Name": "[无中生有]重氢",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1121
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "deuterium"
     },
     {
       "Type": -1,
@@ -12288,6 +12497,46 @@
     {
       "Type": -1,
       "Factories": [
+        2208
+      ],
+      "Name": "[无中生有]临界光子",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1208
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 600,
+      "Proliferator": 0,
+      "IconName": "photon-capacitor-full"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2208
+      ],
+      "Name": "[射线接收带透镜]临界光子",
+      "Items": [
+        1209
+      ],
+      "ItemCounts": [
+        0.0083333333333333332
+      ],
+      "Results": [
+        1208
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 300,
+      "Proliferator": 4,
+      "IconName": "photon-capacitor-full"
+    },
+    {
+      "Type": -1,
+      "Factories": [
         2323
       ],
       "Name": "[降级分馏]反物质",
@@ -12328,46 +12577,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "anti-matter"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[无中生有]临界光子",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1208
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 600,
-      "Proliferator": 0,
-      "IconName": "photon-capacitor-full"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[射线接收带透镜]临界光子",
-      "Items": [
-        1209
-      ],
-      "ItemCounts": [
-        0.0083333333333333332
-      ],
-      "Results": [
-        1208
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 300,
-      "Proliferator": 4,
-      "IconName": "photon-capacitor-full"
     },
     {
       "Type": -1,
@@ -12962,25 +13171,6 @@
     {
       "Type": -1,
       "Factories": [
-        2301,
-        2316
-      ],
-      "Name": "[无中生有]有机晶体",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1117
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "crystal-rubber"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2321
       ],
       "Name": "[自然资源分馏]有机晶体",
@@ -13083,64 +13273,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "titan-crystal"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        1
-      ],
-      "Name": "[无中生有]卡西米尔晶体",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1126
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "casimir-crystal"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[无中生有]卡西米尔晶体",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1126
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 600,
-      "Proliferator": 0,
-      "IconName": "casimir-crystal"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2208
-      ],
-      "Name": "[射线接收带透镜]卡西米尔晶体",
-      "Items": [
-        1209
-      ],
-      "ItemCounts": [
-        0.0083333333333333332
-      ],
-      "Results": [
-        1126
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 300,
-      "Proliferator": 4,
-      "IconName": "casimir-crystal"
     },
     {
       "Type": -1,
@@ -19507,25 +19639,6 @@
     {
       "Type": -1,
       "Factories": [
-        2301,
-        2316
-      ],
-      "Name": "[无中生有]钨矿",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6201
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "钨矿"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2321
       ],
       "Name": "[自然资源分馏]钨矿",
@@ -19771,24 +19884,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "硫化氢"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        6267
-      ],
-      "Name": "[无中生有]二氧化碳",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6206
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "二氧化碳"
     },
     {
       "Type": -1,
@@ -20537,25 +20632,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "量子箱"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2105,
-        1
-      ],
-      "Name": "[无中生有]氦",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6234
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氦_新"
     },
     {
       "Type": -1,
@@ -22202,26 +22278,6 @@
     {
       "Type": -1,
       "Factories": [
-        2306,
-        6266,
-        2105
-      ],
-      "Name": "[无中生有]氨",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7002
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氨"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2321
       ],
       "Name": "[自然资源分馏]氨",
@@ -22310,25 +22366,6 @@
     {
       "Type": -1,
       "Factories": [
-        2306,
-        6266
-      ],
-      "Name": "[无中生有]盐酸",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7014
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氢氯酸_新新"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2321
       ],
       "Name": "[自然资源分馏]盐酸",
@@ -22391,25 +22428,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "三氯化铁"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2306,
-        6266
-      ],
-      "Name": "[无中生有]硝酸",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7017
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "硝酸"
     },
     {
       "Type": -1,
@@ -22517,24 +22535,6 @@
       "TimeSpend": 6000,
       "Proliferator": 8,
       "IconName": "盐水"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        6267
-      ],
-      "Name": "[无中生有]氧",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7019
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氧气"
     },
     {
       "Type": -1,

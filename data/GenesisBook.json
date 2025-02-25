@@ -466,6 +466,25 @@
       "IconName": "oil-refinery"
     },
     {
+      "Type": -1,
+      "Factories": [
+        2105,
+        1
+      ],
+      "Name": "[无中生有]氢",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1120
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "hydrogen"
+    },
+    {
       "Type": 3,
       "Factories": [
         2308,
@@ -695,6 +714,25 @@
       "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "plastic"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306,
+        6266
+      ],
+      "Name": "[无中生有]硫酸",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1116
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "sulphuric-acid"
     },
     {
       "Type": 2,
@@ -1002,6 +1040,25 @@
       "IconName": "nanotube"
     },
     {
+      "Type": -1,
+      "Factories": [
+        2301,
+        2316
+      ],
+      "Name": "[无中生有]硅石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1003
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "silicium-ore"
+    },
+    {
       "Type": 2,
       "Factories": [
         2309,
@@ -1178,6 +1235,25 @@
       "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "hadron-collider"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2105,
+        1
+      ],
+      "Name": "[无中生有]重氢",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1121
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "deuterium"
     },
     {
       "Type": 5,
@@ -3131,6 +3207,25 @@
       "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "氦三_新"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2105,
+        1
+      ],
+      "Name": "[无中生有]氦",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6234
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "氦_新"
     },
     {
       "Type": 16,
@@ -5545,6 +5640,24 @@
       "IconName": "精炼油-丙烯"
     },
     {
+      "Type": -1,
+      "Factories": [
+        6267
+      ],
+      "Name": "[无中生有]二氧化碳",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6206
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "二氧化碳"
+    },
+    {
       "Type": 2,
       "Factories": [
         2309,
@@ -5591,6 +5704,25 @@
       "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "氯苯循环"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306,
+        6266
+      ],
+      "Name": "[无中生有]水",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1000
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "water"
     },
     {
       "Type": 2,
@@ -6243,6 +6375,25 @@
       "IconName": "生宇宙矩阵_新"
     },
     {
+      "Type": -1,
+      "Factories": [
+        2301,
+        2316
+      ],
+      "Name": "[无中生有]有机晶体",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1117
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "crystal-rubber"
+    },
+    {
       "Type": 2,
       "Factories": [
         2309,
@@ -6562,6 +6713,24 @@
       "IconName": "空燃料棒"
     },
     {
+      "Type": -1,
+      "Factories": [
+        6267
+      ],
+      "Name": "[无中生有]氧",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7019
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "氧气"
+    },
+    {
       "Type": 2,
       "Factories": [
         2309,
@@ -6585,6 +6754,25 @@
       "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "电解水_新"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306,
+        6266
+      ],
+      "Name": "[无中生有]盐酸",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7014
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "氢氯酸_新新"
     },
     {
       "Type": 2,
@@ -6663,6 +6851,26 @@
       "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "高效钛晶石"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306,
+        6266,
+        2105
+      ],
+      "Name": "[无中生有]氨",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7002
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "氨"
     },
     {
       "Type": 16,
@@ -6791,6 +6999,25 @@
       "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "三氯化铁"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306,
+        6266
+      ],
+      "Name": "[无中生有]硝酸",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7017
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "硝酸"
     },
     {
       "Type": 2,
@@ -6979,6 +7206,25 @@
       "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "聚苯并咪唑"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2301,
+        2316
+      ],
+      "Name": "[无中生有]钨矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6201
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "钨矿"
     },
     {
       "Type": 2,
@@ -7499,25 +7745,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "copper-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2301,
-        2316
-      ],
-      "Name": "[无中生有]硅石",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1003
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "silicium-ore"
     },
     {
       "Type": -1,
@@ -8220,25 +8447,6 @@
     {
       "Type": -1,
       "Factories": [
-        2306,
-        6266
-      ],
-      "Name": "[无中生有]水",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1000
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "water"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2307
       ],
       "Name": "[无中生有]原油",
@@ -8253,63 +8461,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "oil"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2306,
-        6266
-      ],
-      "Name": "[无中生有]硫酸",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1116
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "sulphuric-acid"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2105,
-        1
-      ],
-      "Name": "[无中生有]氢",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1120
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "hydrogen"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2105,
-        1
-      ],
-      "Name": "[无中生有]重氢",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1121
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "deuterium"
     },
     {
       "Type": -1,
@@ -8510,25 +8661,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "nanotube"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2301,
-        2316
-      ],
-      "Name": "[无中生有]有机晶体",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1117
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "crystal-rubber"
     },
     {
       "Type": -1,
@@ -8886,25 +9018,6 @@
         2301,
         2316
       ],
-      "Name": "[无中生有]钨矿",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6201
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "钨矿"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2301,
-        2316
-      ],
       "Name": "[无中生有]铝矿",
       "Items": [],
       "ItemCounts": [],
@@ -8971,24 +9084,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "硫化氢"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        6267
-      ],
-      "Name": "[无中生有]二氧化碳",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6206
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "二氧化碳"
     },
     {
       "Type": -1,
@@ -9091,25 +9186,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "放射晶体矿_新"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2105,
-        1
-      ],
-      "Name": "[无中生有]氦",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6234
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氦_新"
     },
     {
       "Type": -1,
@@ -9279,64 +9355,6 @@
       "Type": -1,
       "Factories": [
         2306,
-        6266,
-        2105
-      ],
-      "Name": "[无中生有]氨",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7002
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氨"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2306,
-        6266
-      ],
-      "Name": "[无中生有]盐酸",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7014
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氢氯酸_新新"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2306,
-        6266
-      ],
-      "Name": "[无中生有]硝酸",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7017
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "硝酸"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2306,
         6266
       ],
       "Name": "[无中生有]海水",
@@ -9351,24 +9369,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "盐水"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        6267
-      ],
-      "Name": "[无中生有]氧",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7019
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氧气"
     },
     {
       "Type": -1,
