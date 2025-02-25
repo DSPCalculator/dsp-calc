@@ -92,31 +92,34 @@ export const vanilla_game_version = game_data_info_list[0].version;
 
 var name_icon_list;
 
-export function get_game_data(modList) {
+export function get_game_data(mod_guid_list) {
+    if(mod_guid_list.count === 0){
+        return get_game_data(["Vanilla"]);
+    }
     let data = {};
     //根据mod列表，获取json文件名
     const mod_names = [];
     let json_file_name = "";
     data.MoreMegaStructureEnable = false;
-    if (modList.includes(MoreMegaStructureGUID)) {
+    if (mod_guid_list.includes(MoreMegaStructureGUID)) {
         json_file_name += "_MoreMegaStructure";
         data.MoreMegaStructureEnable = true;
         mod_names.push("MoreMegaStructure");
     }
     data.TheyComeFromVoidEnable = false;
-    if (modList.includes(TheyComeFromVoidGUID)) {
+    if (mod_guid_list.includes(TheyComeFromVoidGUID)) {
         json_file_name += "_TheyComeFromVoid";
         data.TheyComeFromVoidEnable = true;
         mod_names.push("TheyComeFromVoid")
     }
     data.GenesisBookEnable = false;
-    if (modList.includes(GenesisBookGUID)) {
+    if (mod_guid_list.includes(GenesisBookGUID)) {
         json_file_name += "_GenesisBook";
         data.GenesisBookEnable = true;
         mod_names.push("GenesisBook")
     }
     data.FractionateEverythingEnable = false;
-    if (modList.includes(FractionateEverythingGUID)) {
+    if (mod_guid_list.includes(FractionateEverythingGUID)) {
         json_file_name += "_FractionateEverything";
         data.FractionateEverythingEnable = true;
         mod_names.push("FractionateEverything")
@@ -124,6 +127,7 @@ export function get_game_data(modList) {
     json_file_name = json_file_name === "" ? "Vanilla" : json_file_name.substring(1);
     let json_data = data_indices[json_file_name];
     //将json转换为需要的数据结构
+    data.mod_guid_list = mod_guid_list;
     data.mods = mod_names;
     data.game_name = json_file_name;
     data.item_grid = {};

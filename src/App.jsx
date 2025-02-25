@@ -12,7 +12,6 @@ import {Result} from './result.jsx';
 import {init_scheme_data, SchemeStorage} from './scheme_data.jsx';
 import {Settings} from './settings.jsx';
 import {
-    default_game_data,
     game_data_info_list,
     get_game_data,
     get_mod_options,
@@ -81,7 +80,7 @@ function GameVersion({needs_list, set_needs_list}) {
         console.log("无递归，继续执行，原list", mods)
         console.log("无递归，继续执行，新list", modList2)
         set_mods(modList2);
-        let game_data = modList.length === 0 ? default_game_data : get_game_data(modList);
+        let game_data = get_game_data(modList);
         set_game_data(game_data);
         set_scheme_data(init_scheme_data(game_data));
         //根据创世是否启用，设定采矿速率初始值
