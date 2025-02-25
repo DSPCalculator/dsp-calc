@@ -543,24 +543,14 @@ export class GlobalState {
                 let inputName = Object.keys(recipe["原料"])[0];
                 let inputCount = Object.values(recipe["原料"])[0];
                 let outputCount = Object.values(recipe["产物"])[0];
-                // 如果想减少原料，执行下面的代码，但是这样会导致增产剂计算有问题
-                // if (inputCount > outputCount) {
-                //     recipe["原料"][inputName] -= outputCount;
-                // } else if (inputCount === outputCount) {
-                //     delete recipe["原料"][inputName];
-                // } else {
-                //     delete recipe["原料"][inputName];
-                //     if (recipe["产物"][inputName] === undefined) {
-                //         recipe["产物"][inputName] = outputCount - inputCount;
-                //     } else {
-                //         recipe["产物"][inputName] += outputCount - inputCount;
-                //     }
-                // }
-                // 如果想增加产物，执行下面的代码
-                if (recipe["产物"][inputName] === undefined) {
-                    recipe["产物"][inputName] = outputCount;
+                //蓝buff有两个特性：
+                //1.新增加的物品会直接填充到第一个格子里面，并且增产点数按照4点进行补充
+                //2.如果第一个格子已满，则不再回填物品
+                //3.由于游戏本身特性，低增产点数的物品会先被消耗，所以即使无增产剂，第一个格子也会逐渐变为平均4点增产
+                if (inputCount > outputCount) {
+                    recipe["原料"][inputName] -= outputCount;
                 } else {
-                    recipe["产物"][inputName] += outputCount;
+                    delete recipe["原料"][inputName];
                 }
             }
         }
