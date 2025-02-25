@@ -18,6 +18,13 @@ export class GameInfo {
         this.init_icon_layout();
     }
 
+    reinit(game_data) {
+        this.game_data = game_data;
+        this.init_item_data();
+        this.all_target_items = uniq(this.game_data.recipe_data.flatMap(recipe => Object.keys(recipe["产物"])));
+        this.init_icon_layout();
+    }
+
     init_icon_layout() {
         let loc_item = {};
         for (let [item, loc] of Object.entries(this.game_data.item_grid)) {
@@ -89,7 +96,7 @@ export class GlobalState {
     key_item_list;
 
     constructor(game_info, scheme_data, settings) {
-        console.log("mods", game_info.game_data.mods);
+        console.log("mods", game_info.game_data.mod_guid_list);
         this.game_data = game_info.game_data;
         this.item_data = game_info.item_data;
         this.scheme_data = scheme_data;
@@ -101,6 +108,33 @@ export class GlobalState {
         for (let i = 0; i < scheme_data.scheme_for_recipe.length; i++) {
             //选择增产塔对应配方时，如果未选择增产策略，强制选择增产策略为增产分馏
             if (game_info.game_data.recipe_data[i].增产 == 8//8也就是bit4，增产分馏策略的位置
+                && scheme_data.scheme_for_recipe[i].增产模式 == 0) {
+                scheme_data.scheme_for_recipe[i].增产模式 = 4;//模式就是对应的bit，也就是4
+            }
+            //选择增产策略但是未选择增产剂时，强制选择最后一个增产剂；但是选择增产剂时，不会强制选择增产策略
+            if (scheme_data.scheme_for_recipe[i].增产模式 > 0
+                && scheme_data.scheme_for_recipe[i].增产点数 == 0) {
+                scheme_data.scheme_for_recipe[i].增产点数 = maxProliferatorPoint;
+            }
+        }
+
+        this.#init_pro_proliferator(settings.proliferate_itself);
+        this.#init_item_graph();
+        this.#init_item_list();
+    }
+
+    #reinit(game_data) {
+        console.log("mods", game_data.mod_guid_list);
+        this.game_data = game_data;
+        let scheme_data = this.scheme_data;
+        let settings = this.settings;
+
+        //获取最后一个增产剂对应的点数值
+        //懒得比较获取最大值了，直接用最后一个增产剂作为最大值
+        let maxProliferatorPoint = game_data.proliferator_data[game_data.proliferator_data.length - 1].增产点数;
+        for (let i = 0; i < scheme_data.scheme_for_recipe.length; i++) {
+            //选择增产塔对应配方时，如果未选择增产策略，强制选择增产策略为增产分馏
+            if (game_data.recipe_data[i].增产 == 8//8也就是bit4，增产分馏策略的位置
                 && scheme_data.scheme_for_recipe[i].增产模式 == 0) {
                 scheme_data.scheme_for_recipe[i].增产模式 = 4;//模式就是对应的bit，也就是4
             }
@@ -490,8 +524,49 @@ export class GlobalState {
 
     /** 主要计算逻辑 */
     calculate(needs_list) {
-        let game_data = this.game_data;
         let settings = this.settings;
+        //忽略原有的配方等数据，直接从json重新读取
+        let game_data = get_game_data(this.game_data.mod_guid_list);
+        //根据是否启用蓝buff，修改recipe
+        if (game_data.TheyComeFromVoidEnable && settings.blue_buff) {
+            for (let i = 0; i < game_data.recipe_data.length; i++) {
+                let recipe = game_data.recipe_data[i];
+                //排除不生效的配方（分馏配方包含在其中，因为分馏原料只有一个）
+                if (Object.keys(recipe["原料"]).length < 2) {
+                    continue;
+                }
+                //排除所有糖
+                let outputName = Object.keys(recipe["产物"])[0];
+                if (outputName.endsWith("矩阵")) {
+                    continue;
+                }
+                let inputName = Object.keys(recipe["原料"])[0];
+                let inputCount = Object.values(recipe["原料"])[0];
+                let outputCount = Object.values(recipe["产物"])[0];
+                // 如果想减少原料，执行下面的代码，但是这样会导致增产剂计算有问题
+                // if (inputCount > outputCount) {
+                //     recipe["原料"][inputName] -= outputCount;
+                // } else if (inputCount === outputCount) {
+                //     delete recipe["原料"][inputName];
+                // } else {
+                //     delete recipe["原料"][inputName];
+                //     if (recipe["产物"][inputName] === undefined) {
+                //         recipe["产物"][inputName] = outputCount - inputCount;
+                //     } else {
+                //         recipe["产物"][inputName] += outputCount - inputCount;
+                //     }
+                // }
+                // 如果想增加产物，执行下面的代码
+                if (recipe["产物"][inputName] === undefined) {
+                    recipe["产物"][inputName] = outputCount;
+                } else {
+                    recipe["产物"][inputName] += outputCount;
+                }
+            }
+        }
+        //重新初始化
+        this.#reinit(game_data);
+
         let natural_production_line = this.settings.natural_production_line;
 
         let item_data = this.item_data;
@@ -509,31 +584,6 @@ export class GlobalState {
         let lp_item_dict = {};
         let in_out_list = {};
 
-        //重新读取一遍game_data.recipe_data
-        let game_data2 = get_game_data(this.game_data.mod_guid_list);
-        game_data["recipe_data"] = game_data2["recipe_data"];
-        //根据是否启用蓝buff，修改recipe
-        if (game_data.TheyComeFromVoidEnable && settings.blue_buff) {
-            for (let i = 0; i < game_data.recipe_data.length; i++) {
-                let recipe = game_data.recipe_data[i];
-                //排除不生效的配方（分馏配方包含在其中，因为分馏原料只有一个）
-                if (Object.keys(recipe["原料"]).length < 2) {
-                    continue;
-                }
-                //排除所有糖
-                let outputName = Object.keys(recipe["产物"])[0];
-                if (outputName.endsWith("矩阵")) {
-                    continue;
-                }
-                let inputName = Object.keys(recipe["原料"])[0];
-                let outputCount = Object.values(recipe["产物"])[0];
-                if (recipe["产物"][inputName] === undefined) {
-                    recipe["产物"][inputName] = outputCount;
-                } else {
-                    recipe["产物"][inputName] += outputCount;
-                }
-            }
-        }
 
         for (let item in needs_list) {
             in_out_list[item] = needs_list[item];
