@@ -137,7 +137,7 @@ export function Result({needs_list, set_needs_list}) {
             if (factory_name === "大型采矿机") {
                 e_cost = settings.mining_efficiency_large / 100.0 * settings.mining_efficiency_large / 100.0 * (2.94 - 0.168) + 0.168;
             } else if (factory_name.endsWith("分馏塔")) {
-                if (game_data.mods.GenesisBookEnable) {
+                if (game_data.GenesisBookEnable) {
                     if (settings.fractionating_speed > 60) {
                         e_cost *= (settings.fractionating_speed * 0.036 - 0.72) / 1.44;
                     }

@@ -11,14 +11,7 @@ import {NeedsList, NeedsListStorage} from './needs_list.jsx';
 import {Result} from './result.jsx';
 import {init_scheme_data, SchemeStorage} from './scheme_data.jsx';
 import {Settings} from './settings.jsx';
-import {
-    game_data_info_list,
-    get_game_data,
-    get_mod_options,
-    MoreMegaStructureGUID,
-    TheyComeFromVoidGUID,
-    vanilla_game_version
-} from "./GameData.jsx";
+import {game_data_info_list, get_game_data, get_mod_options, vanilla_game_version} from "./GameData.jsx";
 import {Select} from "antd";
 
 function GameVersion({needs_list, set_needs_list}) {
@@ -35,40 +28,52 @@ function GameVersion({needs_list, set_needs_list}) {
         }
         //清除原有产线，否则会出现找不到配方而导致白屏的bug
         set_needs_list({});
-        //判断modList是否合理，并调整顺序
+        //判断modList是否合理
         //巨构是深空的前置依赖
-        let b1 = false;
-        let b2 = false;
-        for (let i = 0; i < mods.length; i++) {
-            if (mods[i] === MoreMegaStructureGUID) {
-                b1 = true;
-            }
-            if (mods[i] === TheyComeFromVoidGUID) {
-                b2 = true;
-            }
-        }
-        let b3 = false;
-        let b4 = false;
-        for (let i = 0; i < modList.length; i++) {
-            if (modList[i] === MoreMegaStructureGUID) {
-                b3 = true;
-            }
-            if (modList[i] === TheyComeFromVoidGUID) {
-                b4 = true;
-            }
-        }
+        let MMSGUID = game_data_info_list[1].name_en + game_data_info_list[1].version;
+        let TCFVGUID = game_data_info_list[2].name_en + game_data_info_list[2].version;
+        let b1 = mods.includes(MMSGUID);
+        let b2 = mods.includes(TCFVGUID);
+        let b3 = modList.includes(MMSGUID);
+        let b4 = modList.includes(TCFVGUID);
         if (!b1 && !b2 && !b3 && b4) {
-            modList.push(MoreMegaStructureGUID);
+            modList.push(MMSGUID);
         }
         if (b1 && b2 && !b3 && b4) {
-            modList = modList.filter((mod) => mod !== TheyComeFromVoidGUID);
+            modList = modList.filter((mod) => mod !== TCFVGUID);
         }
+        //创世和分馏只能选择一个
+        let GBGUID1 = game_data_info_list[3].name_en + game_data_info_list[3].version;
+        let GBGUID2 = game_data_info_list[4].name_en + game_data_info_list[4].version;
+        b1 = mods.includes(GBGUID1);
+        b2 = mods.includes(GBGUID2);
+        b3 = modList.includes(GBGUID1);
+        b4 = modList.includes(GBGUID2);
+        if (b1 && !b2 && b3 && b4) {
+            modList = modList.filter((mod) => mod !== GBGUID1);
+        }
+        if (!b1 && b2 && b3 && b4) {
+            modList = modList.filter((mod) => mod !== GBGUID2);
+        }
+        let FEGUID1 = game_data_info_list[5].name_en + game_data_info_list[5].version;
+        let FEGUID2 = game_data_info_list[6].name_en + game_data_info_list[6].version;
+        b1 = mods.includes(FEGUID1);
+        b2 = mods.includes(FEGUID2);
+        b3 = modList.includes(FEGUID1);
+        b4 = modList.includes(FEGUID2);
+        if (b1 && !b2 && b3 && b4) {
+            modList = modList.filter((mod) => mod !== FEGUID1);
+        }
+        if (!b1 && b2 && b3 && b4) {
+            modList = modList.filter((mod) => mod !== FEGUID2);
+        }
+
         //按照规定的顺序排序mods
         let modList2 = [];
         game_data_info_list.forEach((mod_info) => {
             for (let i = 0; i < modList.length; i++) {
-                if (modList[i] === mod_info.GUID) {
-                    modList2.push(mod_info.GUID);
+                if (modList[i] === mod_info.name_en + mod_info.version) {
+                    modList2.push(modList[i]);
                 }
             }
         })

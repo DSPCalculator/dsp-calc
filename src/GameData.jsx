@@ -33,11 +33,6 @@
                     面积定义为游戏中一纬线间隔的平方（即游戏内的约1.256637m），之后通过其他数据结构来给涉及物品数目不同的相同建筑通过算法将进出货物时的分拣
                     器与传送带的占地也考虑上，届时会有不同的铺设模式对应不同的分拣器传送带占地。建筑占地本身也会因是否使用建筑偏移而有所改动。
 */
-export const MoreMegaStructureGUID = "Gnimaerd.DSP.plugin.MoreMegaStructure";
-export const TheyComeFromVoidGUID = "com.ckcz123.DSP_Battle";
-export const GenesisBookGUID = "org.LoShin.GenesisBook";
-export const FractionateEverythingGUID = "com.menglei.dsp.FractionateEverything";
-
 const data_index_modules = import.meta.glob('../data/*.json', {
     import: 'default',
     eager: true,
@@ -50,85 +45,102 @@ const data_indices = Object.fromEntries(
 
 export const game_data_info_list = [
     {
-        "GUID": "Vanilla",
-        "name": "原版游戏",
+        "name_en": "Vanilla",
+        "name_cn": "原版游戏",
         "version": "0.10.32.25699",
     },
     {
-        "GUID": MoreMegaStructureGUID,
-        "name": "更多巨构",
+        "name_en": "MoreMegaStructure",
+        "name_cn": "更多巨构",
         "version": "1.8.3",
     },
     {
-        "GUID": TheyComeFromVoidGUID,
-        "name": "深空来敌",
+        "name_en": "TheyComeFromVoid",
+        "name_cn": "深空来敌",
         "version": "3.4.10",
     },
     {
-        "GUID": GenesisBookGUID,
-        "name": "创世之书",
+        "name_en": "GenesisBook",
+        "name_cn": "创世之书",
+        "version": "3.0.14",
+    },
+    {
+        "name_en": "GenesisBook",
+        "name_cn": "创世之书",
         "version": "3.1.0-alpha2.2",
     },
     {
-        "GUID": FractionateEverythingGUID,
-        "name": "万物分馏",
+        "name_en": "FractionateEverything",
+        "name_cn": "万物分馏",
+        "version": "1.4.5",
+    },
+    {
+        "name_en": "FractionateEverything",
+        "name_cn": "万物分馏",
         "version": "2.0.0",
     },
 ]
 
+/**
+ * 用户可以选择的mod显示列表
+ */
 export function get_mod_options() {
     const mod_options = [];
     game_data_info_list.forEach(function (mod) {
-        if (mod.GUID === "Vanilla") {
+        if (mod.name_en === "Vanilla") {
             return;
         }
-        mod_options.push({value: mod.GUID, label: mod.name + " v" + mod.version});
+        mod_options.push({value: mod.name_en + mod.version, label: mod.name_cn + " v" + mod.version});
     });
     return mod_options;
 }
 
-export const default_game_data = get_game_data(["Vanilla"])
+const VanillaGUID = "Vanilla";
+export const default_game_data = get_game_data([]);
 export const vanilla_game_version = game_data_info_list[0].version;
 
 var name_icon_list;
 
 export function get_game_data(mod_guid_list) {
-    if(mod_guid_list.count === 0){
-        return get_game_data(["Vanilla"]);
+    //guid 指 name_en + version
+    if (mod_guid_list.length === 0) {
+        return get_game_data([VanillaGUID]);
     }
     let data = {};
     //根据mod列表，获取json文件名
-    const mod_names = [];
     let json_file_name = "";
     data.MoreMegaStructureEnable = false;
-    if (mod_guid_list.includes(MoreMegaStructureGUID)) {
-        json_file_name += "_MoreMegaStructure";
-        data.MoreMegaStructureEnable = true;
-        mod_names.push("MoreMegaStructure");
-    }
     data.TheyComeFromVoidEnable = false;
-    if (mod_guid_list.includes(TheyComeFromVoidGUID)) {
-        json_file_name += "_TheyComeFromVoid";
-        data.TheyComeFromVoidEnable = true;
-        mod_names.push("TheyComeFromVoid")
-    }
     data.GenesisBookEnable = false;
-    if (mod_guid_list.includes(GenesisBookGUID)) {
-        json_file_name += "_GenesisBook";
-        data.GenesisBookEnable = true;
-        mod_names.push("GenesisBook")
-    }
     data.FractionateEverythingEnable = false;
-    if (mod_guid_list.includes(FractionateEverythingGUID)) {
-        json_file_name += "_FractionateEverything";
-        data.FractionateEverythingEnable = true;
-        mod_names.push("FractionateEverything")
+    //mod_name_list存储mod英文名，用于在指定文件夹寻找图标
+    let mod_name_list = []
+    for (let i = 0; i < mod_guid_list.length; i++) {
+        if (mod_guid_list[i].includes("MoreMegaStructure" + game_data_info_list[1].version)) {
+            json_file_name += "_" + mod_guid_list[i];
+            data.MoreMegaStructureEnable = true;
+            mod_name_list.push("MoreMegaStructure");
+        } else if (mod_guid_list[i].startsWith("TheyComeFromVoid" + game_data_info_list[2].version)) {
+            json_file_name += "_" + mod_guid_list[i];
+            data.TheyComeFromVoidEnable = true;
+            mod_name_list.push("TheyComeFromVoid");
+        } else if (mod_guid_list[i].startsWith("GenesisBook" + game_data_info_list[3].version)
+            || mod_guid_list[i].startsWith("GenesisBook" + game_data_info_list[4].version)) {
+            json_file_name += "_" + mod_guid_list[i];
+            data.GenesisBookEnable = true;
+            mod_name_list.push("GenesisBook");
+        } else if (mod_guid_list[i].startsWith("FractionateEverything" + game_data_info_list[5].version)
+            || mod_guid_list[i].startsWith("FractionateEverything" + game_data_info_list[6].version)) {
+            json_file_name += "_" + mod_guid_list[i];
+            data.FractionateEverythingEnable = true;
+            mod_name_list.push("FractionateEverything");
+        }
     }
-    json_file_name = json_file_name === "" ? "Vanilla" : json_file_name.substring(1);
+    json_file_name = json_file_name === "" ? VanillaGUID : json_file_name.substring(1);
     let json_data = data_indices[json_file_name];
     //将json转换为需要的数据结构
+    data.mod_name_list = mod_name_list;
     data.mod_guid_list = mod_guid_list;
-    data.mods = mod_names;
     data.game_name = json_file_name;
     data.item_grid = {};
     data.item_icon_name = {};
