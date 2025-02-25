@@ -115,26 +115,34 @@ export function get_game_data(mod_guid_list) {
     data.FractionateEverythingEnable = false;
     //mod_name_list存储mod英文名，用于在指定文件夹寻找图标
     let mod_name_list = []
-    for (let i = 0; i < mod_guid_list.length; i++) {
-        if (mod_guid_list[i].includes("MoreMegaStructure" + game_data_info_list[1].version)) {
-            json_file_name += "_" + mod_guid_list[i];
-            data.MoreMegaStructureEnable = true;
-            mod_name_list.push("MoreMegaStructure");
-        } else if (mod_guid_list[i].startsWith("TheyComeFromVoid" + game_data_info_list[2].version)) {
-            json_file_name += "_" + mod_guid_list[i];
-            data.TheyComeFromVoidEnable = true;
-            mod_name_list.push("TheyComeFromVoid");
-        } else if (mod_guid_list[i].startsWith("GenesisBook" + game_data_info_list[3].version)
-            || mod_guid_list[i].startsWith("GenesisBook" + game_data_info_list[4].version)) {
-            json_file_name += "_" + mod_guid_list[i];
-            data.GenesisBookEnable = true;
-            mod_name_list.push("GenesisBook");
-        } else if (mod_guid_list[i].startsWith("FractionateEverything" + game_data_info_list[5].version)
-            || mod_guid_list[i].startsWith("FractionateEverything" + game_data_info_list[6].version)) {
-            json_file_name += "_" + mod_guid_list[i];
-            data.FractionateEverythingEnable = true;
-            mod_name_list.push("FractionateEverything");
-        }
+    //这里要注意顺序，否则文件名会不对
+    if (mod_guid_list.includes("MoreMegaStructure" + game_data_info_list[1].version)) {
+        json_file_name += "_" + "MoreMegaStructure" + game_data_info_list[1].version;
+        data.MoreMegaStructureEnable = true;
+        mod_name_list.push("MoreMegaStructure");
+    }
+    if (mod_guid_list.includes("TheyComeFromVoid" + game_data_info_list[2].version)) {
+        json_file_name += "_" + "TheyComeFromVoid" + game_data_info_list[2].version;
+        data.TheyComeFromVoidEnable = true;
+        mod_name_list.push("TheyComeFromVoid");
+    }
+    if (mod_guid_list.includes("GenesisBook" + game_data_info_list[3].version)) {
+        json_file_name += "_" + "GenesisBook" + game_data_info_list[3].version;
+        data.GenesisBookEnable = true;
+        mod_name_list.push("GenesisBook");
+    } else if (mod_guid_list.includes("GenesisBook" + game_data_info_list[4].version)) {
+        json_file_name += "_" + "GenesisBook" + game_data_info_list[4].version;
+        data.GenesisBookEnable = true;
+        mod_name_list.push("GenesisBook");
+    }
+    if (mod_guid_list.includes("FractionateEverything" + game_data_info_list[5].version)) {
+        json_file_name += "_" + "FractionateEverything" + game_data_info_list[5].version;
+        data.FractionateEverythingEnable = true;
+        mod_name_list.push("FractionateEverything");
+    } else if (mod_guid_list.includes("FractionateEverything" + game_data_info_list[6].version)) {
+        json_file_name += "_" + "FractionateEverything" + game_data_info_list[6].version;
+        data.FractionateEverythingEnable = true;
+        mod_name_list.push("FractionateEverything");
     }
     json_file_name = json_file_name === "" ? VanillaGUID : json_file_name.substring(1);
     let json_data = data_indices[json_file_name];

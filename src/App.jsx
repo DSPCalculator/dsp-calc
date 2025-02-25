@@ -32,40 +32,64 @@ function GameVersion({needs_list, set_needs_list}) {
         //巨构是深空的前置依赖
         let MMSGUID = game_data_info_list[1].name_en + game_data_info_list[1].version;
         let TCFVGUID = game_data_info_list[2].name_en + game_data_info_list[2].version;
-        let b1 = mods.includes(MMSGUID);
-        let b2 = mods.includes(TCFVGUID);
-        let b3 = modList.includes(MMSGUID);
-        let b4 = modList.includes(TCFVGUID);
-        if (!b1 && !b2 && !b3 && b4) {
+        let mms_old = mods.includes(MMSGUID);
+        let tcfv_old = mods.includes(TCFVGUID);
+        let mms_new = modList.includes(MMSGUID);
+        let tcfv_new = modList.includes(TCFVGUID);
+        if (!mms_old && !tcfv_old && !mms_new && tcfv_new) {
             modList.push(MMSGUID);
         }
-        if (b1 && b2 && !b3 && b4) {
+        if (mms_old && tcfv_old && !mms_new && tcfv_new) {
             modList = modList.filter((mod) => mod !== TCFVGUID);
         }
-        //创世和分馏只能选择一个
+        //创世和分馏只能各自选择一个，并且只能同时选择旧版或者同时选择新版
         let GBGUID1 = game_data_info_list[3].name_en + game_data_info_list[3].version;
         let GBGUID2 = game_data_info_list[4].name_en + game_data_info_list[4].version;
-        b1 = mods.includes(GBGUID1);
-        b2 = mods.includes(GBGUID2);
-        b3 = modList.includes(GBGUID1);
-        b4 = modList.includes(GBGUID2);
-        if (b1 && !b2 && b3 && b4) {
-            modList = modList.filter((mod) => mod !== GBGUID1);
-        }
-        if (!b1 && b2 && b3 && b4) {
-            modList = modList.filter((mod) => mod !== GBGUID2);
-        }
+        let gb1_old = mods.includes(GBGUID1);
+        let gb2_old = mods.includes(GBGUID2);
+        let gb1_new = modList.includes(GBGUID1);
+        let gb2_new = modList.includes(GBGUID2);
         let FEGUID1 = game_data_info_list[5].name_en + game_data_info_list[5].version;
         let FEGUID2 = game_data_info_list[6].name_en + game_data_info_list[6].version;
-        b1 = mods.includes(FEGUID1);
-        b2 = mods.includes(FEGUID2);
-        b3 = modList.includes(FEGUID1);
-        b4 = modList.includes(FEGUID2);
-        if (b1 && !b2 && b3 && b4) {
-            modList = modList.filter((mod) => mod !== FEGUID1);
+        let fe1_old = mods.includes(FEGUID1);
+        let fe2_old = mods.includes(FEGUID2);
+        let fe1_new = modList.includes(FEGUID1);
+        let fe2_new = modList.includes(FEGUID2);
+        if (!gb1_old && gb1_new) {
+            if (gb2_old) {
+                modList = modList.filter((mod) => mod !== GBGUID2);
+            }
+            if (fe2_old) {
+                modList = modList.filter((mod) => mod !== FEGUID2);
+                modList.push(FEGUID1);
+            }
         }
-        if (!b1 && b2 && b3 && b4) {
-            modList = modList.filter((mod) => mod !== FEGUID2);
+        if (!gb2_old && gb2_new) {
+            if (gb1_old) {
+                modList = modList.filter((mod) => mod !== GBGUID1);
+            }
+            if (fe1_old) {
+                modList = modList.filter((mod) => mod !== FEGUID1);
+                modList.push(FEGUID2);
+            }
+        }
+        if (!fe1_old && fe1_new) {
+            if (fe2_old) {
+                modList = modList.filter((mod) => mod !== FEGUID2);
+            }
+            if (gb2_old) {
+                modList = modList.filter((mod) => mod !== GBGUID2);
+                modList.push(GBGUID1);
+            }
+        }
+        if (!fe2_old && fe2_new) {
+            if (fe1_old) {
+                modList = modList.filter((mod) => mod !== FEGUID1);
+            }
+            if (gb1_old) {
+                modList = modList.filter((mod) => mod !== GBGUID1);
+                modList.push(GBGUID2);
+            }
         }
 
         //按照规定的顺序排序mods
