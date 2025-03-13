@@ -255,7 +255,7 @@ export function Settings() {
                 </td>
             </tr>
             <tr>
-                <td>增产剂加速效率修正</td>
+                <td>增产剂加速效率补偿</td>
                 <td className="ps-2">
                     <input type="number" value={percent_val["acc_rate"]} step={5}
                            style={{maxWidth: '5em'}}
@@ -264,7 +264,7 @@ export function Settings() {
                 <td className="ps-2">{"%"}</td>
             </tr>
             <tr>
-                <td>增产剂增产效率修正</td>
+                <td>增产剂增产效率补偿</td>
                 <td className="ps-2">
                     <input type="number" value={percent_val["inc_rate"]} step={5}
                            style={{maxWidth: '5em'}}
