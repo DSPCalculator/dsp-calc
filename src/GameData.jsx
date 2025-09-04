@@ -145,11 +145,11 @@ export function get_game_data(mod_guid_list) {
         let grid_index = item["GridIndex"];
         if (data.GenesisBookEnable) {
             data.item_grid_index_valid[item["Name"]] =
-                grid_index % 1000 / 100 >= 1 && grid_index % 1000 / 100 <= 7
+                Math.floor(grid_index % 1000 / 100) >= 1 && Math.floor(grid_index % 1000 / 100) <= 7
                 && grid_index % 100 >= 1 && grid_index % 100 <= 17;
         } else {
             data.item_grid_index_valid[item["Name"]] =
-                grid_index % 1000 / 100 >= 1 && grid_index % 1000 / 100 <= 8
+                Math.floor(grid_index % 1000 / 100) >= 1 && Math.floor(grid_index % 1000 / 100) <= 8
                 && grid_index % 100 >= 1 && grid_index % 100 <= 14;
         }
         data.item_icon_name[item["Name"]] = item["IconName"];
