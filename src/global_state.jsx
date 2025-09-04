@@ -27,14 +27,13 @@ export class GameInfo {
 
     init_icon_layout() {
         let loc_item = {};
-        for (let [item, loc] of Object.entries(this.game_data.item_grid)) {
-            //移除沙土、伊卡洛斯、行星基地、巨构星际组装厂
-            if (item === "沙土" || item === "伊卡洛斯" || item === "行星基地" || item === "巨构星际组装厂") {
-                continue;
+        for (let [item, gridIndex] of Object.entries(this.game_data.item_grid)) {
+            //只显示GridIndex超限的物品
+            if (this.game_data.item_grid_index_valid[item]) {
+                let x = gridIndex % 100;
+                let y = (gridIndex - x) / 100;
+                loc_item[[x, y]] = {item: item, x: x, y: y};
             }
-            let x = loc % 100;
-            let y = (loc - x) / 100;
-            loc_item[[x, y]] = {item: item, x: x, y: y};
         }
         let xs = Object.values(loc_item).map(({item, x, y}) => x);
         let ys = Object.values(loc_item).map(({item, x, y}) => y);
@@ -264,13 +263,23 @@ export class GlobalState {
                     item_graph[item]["原料"][material] *= self_used;
                 }
             }
+            // console.log("item_graph", item_graph)
             for (let material in item_graph[item]["原料"]) {
-                //console.log("item_graph[" + material + "]", item_graph[material])
-                //console.log("material", material)
-                //console.log("item_graph", item_graph)
-                //console.log("item", item)
+                // console.log("item_graph[" + material + "]", item_graph[material])
+                // console.log("item_graph[" + item + "]", item_graph[item])
+                // if (item_graph[material] === undefined){
+                //     //原始数据有问题，所有物品都需要有一个配方，确实没有的也要生成一个伊卡洛斯的采集配方
+                //     item_graph[material] = {
+                //         "产出倍率": 0,
+                //         "副产物": {},
+                //         "原料": {},
+                //         "可生产": {}
+                //     }
+                // }
                 item_graph[material]["可生产"][item] = 1 / item_graph[item]["原料"][material];
+                // console.log("item_graph[" + material + "]新", item_graph[material])
             }
+            // console.log("item_graph", item_graph)
             if (Object.keys(game_data.recipe_data[recipe_id]["产物"]).length > 1) {
                 let self_cost = 0;
                 if ("自消耗" in item_graph[item]) {
@@ -340,7 +349,9 @@ export class GlobalState {
             } else if (factory_name === "行星基地") {
                 item_graph[item]["产出倍率"] *= settings.enemy_drop_multiple;
             } //采矿设备需算上科技加成
-            else if (factory_name.endsWith("分馏塔")) {
+            else if (factory_name === "分馏塔" || factory_name === "交互塔"
+                || factory_name === "矿物复制塔" || factory_name === "点数聚集塔" || factory_name === "量子复制塔"
+                || factory_name === "点金塔" || factory_name === "分解塔" || factory_name === "转化塔") {
                 item_graph[item]["产出倍率"] *= settings.fractionating_speed;
             }//分馏塔流速加成计算
             else if (factory_name === "伊卡洛斯") {
@@ -399,6 +410,7 @@ export class GlobalState {
         }
 
         function find_item(name, isProduction, P_item_list) {
+            // console.log("item_data[" + name + "]", item_data[name])
             if (!isProduction) {
                 if (product_graph[name] && Object.keys(product_graph[name]["原料"]).length == 0) {
                     const production = product_graph[name]["可生产"];
