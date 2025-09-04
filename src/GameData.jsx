@@ -52,32 +52,22 @@ export const game_data_info_list = [
     {
         "name_en": "MoreMegaStructure",
         "name_cn": "更多巨构",
-        "version": "1.8.3",
+        "version": "1.8.4",
     },
     {
         "name_en": "TheyComeFromVoid",
         "name_cn": "深空来敌",
-        "version": "3.4.10",
+        "version": "3.4.14",
     },
     {
         "name_en": "GenesisBook",
         "name_cn": "创世之书",
-        "version": "3.0.14",
-    },
-    {
-        "name_en": "GenesisBook",
-        "name_cn": "创世之书",
-        "version": "3.1.0-alpha2.2",
+        "version": "3.1.0",
     },
     {
         "name_en": "FractionateEverything",
         "name_cn": "万物分馏",
-        "version": "1.4.5",
-    },
-    {
-        "name_en": "FractionateEverything",
-        "name_cn": "万物分馏",
-        "version": "2.0.0",
+        "version": "2.1.3",
     },
 ]
 
@@ -130,17 +120,9 @@ export function get_game_data(mod_guid_list) {
         json_file_name += "_" + "GenesisBook" + game_data_info_list[3].version;
         data.GenesisBookEnable = true;
         mod_name_list.push("GenesisBook");
-    } else if (mod_guid_list.includes("GenesisBook" + game_data_info_list[4].version)) {
-        json_file_name += "_" + "GenesisBook" + game_data_info_list[4].version;
-        data.GenesisBookEnable = true;
-        mod_name_list.push("GenesisBook");
     }
-    if (mod_guid_list.includes("FractionateEverything" + game_data_info_list[5].version)) {
-        json_file_name += "_" + "FractionateEverything" + game_data_info_list[5].version;
-        data.FractionateEverythingEnable = true;
-        mod_name_list.push("FractionateEverything");
-    } else if (mod_guid_list.includes("FractionateEverything" + game_data_info_list[6].version)) {
-        json_file_name += "_" + "FractionateEverything" + game_data_info_list[6].version;
+    if (mod_guid_list.includes("FractionateEverything" + game_data_info_list[4].version)) {
+        json_file_name += "_" + "FractionateEverything" + game_data_info_list[4].version;
         data.FractionateEverythingEnable = true;
         mod_name_list.push("FractionateEverything");
     }
@@ -151,6 +133,7 @@ export function get_game_data(mod_guid_list) {
     data.mod_guid_list = mod_guid_list;
     data.game_name = json_file_name;
     data.item_grid = {};
+    data.item_grid_index_valid = {};
     data.item_icon_name = {};
     data.recipe_data = [];
     data.factory_data = [];
@@ -158,21 +141,34 @@ export function get_game_data(mod_guid_list) {
     data.proliferator_effect = [];
     //data.item_grid
     json_data.items.forEach(function (item) {
-        data.item_grid[item.Name] = item["GridIndex"];
-        data.item_icon_name[item.Name] = item["IconName"];
+        data.item_grid[item["Name"]] = item["GridIndex"];
+        let grid_index = item["GridIndex"];
+        if (data.GenesisBookEnable) {
+            data.item_grid_index_valid[item["Name"]] =
+                grid_index % 1000 / 100 >= 1 && grid_index % 1000 / 100 <= 7
+                && grid_index % 100 >= 1 && grid_index % 100 <= 17;
+        } else {
+            data.item_grid_index_valid[item["Name"]] =
+                grid_index % 1000 / 100 >= 1 && grid_index % 1000 / 100 <= 8
+                && grid_index % 100 >= 1 && grid_index % 100 <= 14;
+        }
+        data.item_icon_name[item["Name"]] = item["IconName"];
     })
 
     //data.recipe_data & data.factory_data
     function get_item_by_id(itemID) {
-        let ret = null;
+        let ret = undefined;
         json_data.items.forEach(function (item) {
-            if (ret !== null) {
+            if (ret !== undefined) {
                 return;
             }
             if (item["ID"] === itemID) {
                 ret = item;
             }
         })
+        if (ret === undefined) {
+            console.log("get_item_by_id error, ID" + itemID);
+        }
         return ret;
     }
 
@@ -182,13 +178,25 @@ export function get_game_data(mod_guid_list) {
         for (let i = 0; i < recipe["Items"].length; i++) {
             let itemID = recipe.Items[i];
             let item = get_item_by_id(itemID);
-            原料[item.Name] = recipe.ItemCounts[i];
+            // if (item === undefined) {
+            //     console.log("原料item " + itemID + " undefined, recipe", recipe);
+            //     continue;
+            // } else {
+            //     console.log("原料item", item);
+            // }
+            原料[item["Name"]] = recipe.ItemCounts[i];
         }
         let 产物 = {};
         for (let i = 0; i < recipe["Results"].length; i++) {
             let itemID = recipe.Results[i];
             let item = get_item_by_id(itemID);
-            产物[item.Name] = recipe.ResultCounts[i];
+            // if (item === undefined) {
+            //     console.log("产物item " + itemID + " undefined, recipe", recipe);
+            //     continue;
+            // } else {
+            //     console.log("产物item", item);
+            // }
+            产物[item["Name"]] = recipe.ResultCounts[i];
         }
         let 设施 = -1;
         for (let i = 0; i < FactoriesArr.length; i++) {
@@ -339,7 +347,7 @@ export function get_game_data(mod_guid_list) {
     })
     if (data.FractionateEverythingEnable) {
         data.proliferator_data.push({
-            "名称": "点数聚集分馏塔",
+            "名称": "点数聚集塔",
             "增产剂": data.GenesisBookEnable ? "增产剂" : "增产剂 Mk.III",
             "喷涂次数": 24,// 60/(10/4)
             "增产点数": 10,
