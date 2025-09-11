@@ -67,7 +67,7 @@ export const game_data_info_list = [
     {
         "name_en": "FractionateEverything",
         "name_cn": "万物分馏",
-        "version": "2.1.3",
+        "version": "2.1.4",
     },
 ]
 
