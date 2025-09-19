@@ -1,0 +1,1170 @@
+{
+  "三元弹药箱": {
+    "x": 0,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "三元精金_新": {
+    "x": 80,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "三氯化铁": {
+    "x": 0,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "丙烯_新": {
+    "x": 80,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "丙烯循环": {
+    "x": 160,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "中继信号干扰": {
+    "x": 160,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "二氧化硫还原": {
+    "x": 0,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "二氧化碳": {
+    "x": 80,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "人造恒星MK2": {
+    "x": 160,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "偏二甲肼燃料棒": {
+    "x": 240,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "先进机械组件_新": {
+    "x": 240,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "先进机械组件": {
+    "x": 240,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "光学主机": {
+    "x": 0,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "光学信息传输纤维": {
+    "x": 80,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "光学基板": {
+    "x": 160,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "光学芯片": {
+    "x": 240,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "创世之书": {
+    "x": 320,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "剧毒有机液体": {
+    "x": 320,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "加农炮MK2": {
+    "x": 320,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "反物质发电机_新": {
+    "x": 320,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "反物质导弹组": {
+    "x": 0,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "反物质湮灭单元": {
+    "x": 80,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "反物质炮弹": {
+    "x": 160,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "反物质约束单元_新": {
+    "x": 240,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "反物质能量炉": {
+    "x": 320,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "回收塔": {
+    "x": 400,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "基础机械组件": {
+    "x": 400,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "塑料基板": {
+    "x": 400,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "大型强子对撞机": {
+    "x": 400,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "尖端机械组件_新": {
+    "x": 400,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "尖端机械组件": {
+    "x": 0,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "微型核弹组": {
+    "x": 80,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "恶意代码攻击": {
+    "x": 160,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "放射性同位素温差电池": {
+    "x": 240,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "放射晶体矿_新": {
+    "x": 320,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志01": {
+    "x": 400,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志02": {
+    "x": 480,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志03": {
+    "x": 480,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志04": {
+    "x": 480,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志05": {
+    "x": 480,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志06": {
+    "x": 480,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志07": {
+    "x": 480,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志08": {
+    "x": 0,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志09": {
+    "x": 80,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志10": {
+    "x": 160,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "日志11": {
+    "x": 240,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "星球飞升-光伏发电": {
+    "x": 320,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "星球飞升-吞食帝国": {
+    "x": 400,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "星球飞升-天穹巨构": {
+    "x": 480,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "星球飞升-火力发电": {
+    "x": 560,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "星球飞升-科学枢纽": {
+    "x": 560,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "星球飞升-聚变驱动": {
+    "x": 560,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "星球飞升-风力发电": {
+    "x": 560,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "有机晶体重组": {
+    "x": 560,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "机枪塔MK2": {
+    "x": 560,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "机枪塔MK3": {
+    "x": 560,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "机械组件MK5": {
+    "x": 0,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "核子爆破单元": {
+    "x": 80,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氘氦三混合聚变燃料棒": {
+    "x": 160,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氚": {
+    "x": 240,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氢氧化钠": {
+    "x": 320,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氢氯酸_新新": {
+    "x": 400,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氦_新": {
+    "x": 480,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氦三_新": {
+    "x": 560,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氦三燃料棒": {
+    "x": 640,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氧气": {
+    "x": 640,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氨": {
+    "x": 640,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氮气_新": {
+    "x": 640,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氯化钠_新": {
+    "x": 640,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氯苯": {
+    "x": 640,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "氯苯循环": {
+    "x": 640,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "沙土回收_新": {
+    "x": 640,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "洲际导弹组": {
+    "x": 0,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "混凝土": {
+    "x": 80,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "湮灭弹药箱": {
+    "x": 160,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "火箭燃料棒": {
+    "x": 240,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "焦油循环": {
+    "x": 320,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "煤焦油": {
+    "x": 400,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "煤矿粉": {
+    "x": 480,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "物流运输机升级": {
+    "x": 560,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "特征向量模拟": {
+    "x": 640,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "环氧树脂_新": {
+    "x": 720,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "生宇宙矩阵_新": {
+    "x": 720,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "生宇宙矩阵": {
+    "x": 720,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "电解水_新": {
+    "x": 720,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "盐水": {
+    "x": 720,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "相位元件": {
+    "x": 720,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "石粉": {
+    "x": 720,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "矿物处理厂": {
+    "x": 720,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "硅矿粉": {
+    "x": 720,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "硝基柴油": {
+    "x": 0,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "硝基柴油燃料棒": {
+    "x": 80,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "硝酸": {
+    "x": 160,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "硫化氢": {
+    "x": 240,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "硫矿": {
+    "x": 320,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "硫矿粉": {
+    "x": 400,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "硫酸": {
+    "x": 480,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "神经元重编程": {
+    "x": 560,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "离心角标": {
+    "x": 640,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "稳定矩阵": {
+    "x": 720,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "空燃料棒": {
+    "x": 800,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "等离子脉冲炮": {
+    "x": 800,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "紫激光": {
+    "x": 800,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "聚合离子晶体": {
+    "x": 800,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "聚苯并咪唑": {
+    "x": 800,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "能量碎片制作": {
+    "x": 800,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "虚空之书": {
+    "x": 800,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "虚空矩阵": {
+    "x": 800,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "行星化工厂": {
+    "x": 800,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "行星熔炉": {
+    "x": 800,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "行星精密组装厂": {
+    "x": 0,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "行星组装站": {
+    "x": 80,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "行星采集器": {
+    "x": 160,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "裂变发电升级": {
+    "x": 240,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "起源之书": {
+    "x": 320,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "起源矩阵": {
+    "x": 400,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "超级机械组件": {
+    "x": 480,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "超级纳米电脑": {
+    "x": 560,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "量子储液罐": {
+    "x": 640,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "量子箱": {
+    "x": 720,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "金属氢单元": {
+    "x": 800,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钚燃料棒": {
+    "x": 880,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钚矿": {
+    "x": 880,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钚铀混合氧化物燃料棒": {
+    "x": 880,
+    "y": 160,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钛矿粉": {
+    "x": 880,
+    "y": 240,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钢芯弹药箱": {
+    "x": 880,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钨块": {
+    "x": 880,
+    "y": 400,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钨复合金属_修复": {
+    "x": 880,
+    "y": 480,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钨强化玻璃": {
+    "x": 880,
+    "y": 560,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钨矿": {
+    "x": 880,
+    "y": 640,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钨矿粉": {
+    "x": 880,
+    "y": 720,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "钨芯弹药箱": {
+    "x": 880,
+    "y": 800,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "铀235燃料棒": {
+    "x": 0,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "铀矿": {
+    "x": 80,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "铁矿粉": {
+    "x": 160,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "铜矿粉": {
+    "x": 240,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "铝合金": {
+    "x": 320,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "铝板": {
+    "x": 400,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "铝矿石": {
+    "x": 480,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "铝矿粉": {
+    "x": 560,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "高效反物质": {
+    "x": 640,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "高效处理器": {
+    "x": 720,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "高效钛晶石": {
+    "x": 800,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "高效黑塑料": {
+    "x": 880,
+    "y": 880,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "高纯钚块": {
+    "x": 960,
+    "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  },
+  "高纯铀块": {
+    "x": 960,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 1040,
+    "total_height": 960
+  }
+}
