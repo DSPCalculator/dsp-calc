@@ -30,67 +30,46 @@ function GameVersion({needs_list, set_needs_list}) {
         set_needs_list({});
         //判断modList是否合理
         //巨构是深空的前置依赖
-        let MMSGUID = game_data_info_list[1].name_en + game_data_info_list[1].version;
-        let TCFVGUID = game_data_info_list[2].name_en + game_data_info_list[2].version;
-        let mms_old = mods.includes(MMSGUID);
-        let tcfv_old = mods.includes(TCFVGUID);
-        let mms_new = modList.includes(MMSGUID);
-        let tcfv_new = modList.includes(TCFVGUID);
-        if (!mms_old && !tcfv_old && !mms_new && tcfv_new) {
-            modList.push(MMSGUID);
+        let MSGUID = game_data_info_list[1].name_en + game_data_info_list[1].version;
+        let VDGUID = game_data_info_list[2].name_en + game_data_info_list[2].version;
+        let ms_old = mods.includes(MSGUID);
+        let vd_old = mods.includes(VDGUID);
+        let ms_new = modList.includes(MSGUID);
+        let vd_new = modList.includes(VDGUID);
+        if (!ms_old && !vd_old && !ms_new && vd_new) {
+            modList.push(MSGUID);
         }
-        if (mms_old && tcfv_old && !mms_new && tcfv_new) {
-            modList = modList.filter((mod) => mod !== TCFVGUID);
+        if (ms_old && vd_old && !ms_new && vd_new) {
+            modList = modList.filter((mod) => mod !== VDGUID);
         }
-        // //创世和分馏只能各自选择一个，并且只能同时选择旧版或者同时选择新版
-        // let GBGUID1 = game_data_info_list[3].name_en + game_data_info_list[3].version;
-        // let GBGUID2 = game_data_info_list[4].name_en + game_data_info_list[4].version;
-        // let gb1_old = mods.includes(GBGUID1);
-        // let gb2_old = mods.includes(GBGUID2);
-        // let gb1_new = modList.includes(GBGUID1);
-        // let gb2_new = modList.includes(GBGUID2);
-        // let FEGUID1 = game_data_info_list[5].name_en + game_data_info_list[5].version;
-        // let FEGUID2 = game_data_info_list[6].name_en + game_data_info_list[6].version;
-        // let fe1_old = mods.includes(FEGUID1);
-        // let fe2_old = mods.includes(FEGUID2);
-        // let fe1_new = modList.includes(FEGUID1);
-        // let fe2_new = modList.includes(FEGUID2);
-        // if (!gb1_old && gb1_new) {
-        //     if (gb2_old) {
-        //         modList = modList.filter((mod) => mod !== GBGUID2);
-        //     }
-        //     if (fe2_old) {
-        //         modList = modList.filter((mod) => mod !== FEGUID2);
-        //         modList.push(FEGUID1);
-        //     }
-        // }
-        // if (!gb2_old && gb2_new) {
-        //     if (gb1_old) {
-        //         modList = modList.filter((mod) => mod !== GBGUID1);
-        //     }
-        //     if (fe1_old) {
-        //         modList = modList.filter((mod) => mod !== FEGUID1);
-        //         modList.push(FEGUID2);
-        //     }
-        // }
-        // if (!fe1_old && fe1_new) {
-        //     if (fe2_old) {
-        //         modList = modList.filter((mod) => mod !== FEGUID2);
-        //     }
-        //     if (gb2_old) {
-        //         modList = modList.filter((mod) => mod !== GBGUID2);
-        //         modList.push(GBGUID1);
-        //     }
-        // }
-        // if (!fe2_old && fe2_new) {
-        //     if (fe1_old) {
-        //         modList = modList.filter((mod) => mod !== FEGUID1);
-        //     }
-        //     if (gb1_old) {
-        //         modList = modList.filter((mod) => mod !== GBGUID1);
-        //         modList.push(GBGUID2);
-        //     }
-        // }
+        //创世和星环只能选择之一
+        let GBGUID = game_data_info_list[3].name_en + game_data_info_list[3].version;
+        let gb_old = mods.includes(GBGUID);
+        let gb_new = modList.includes(GBGUID);
+        let ORGUID = game_data_info_list[4].name_en + game_data_info_list[4].version;
+        let or_old = mods.includes(ORGUID);
+        let or_new = modList.includes(ORGUID);
+        if (!gb_old && gb_new) {
+            if (or_old) {
+                modList = modList.filter((mod) => mod !== ORGUID);
+            }
+        }
+        if (!or_old && or_new) {
+            if (gb_old) {
+                modList = modList.filter((mod) => mod !== GBGUID);
+            }
+        }
+        //深空和星环只能选择之一（星环目前不兼容深空）
+        if (!vd_old && vd_new) {
+            if (or_old) {
+                modList = modList.filter((mod) => mod !== ORGUID);
+            }
+        }
+        if (!or_old && or_new) {
+            if (vd_old) {
+                modList = modList.filter((mod) => mod !== VDGUID);
+            }
+        }
 
         //按照规定的顺序排序mods
         let modList2 = [];

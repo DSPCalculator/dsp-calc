@@ -65,6 +65,11 @@ export const game_data_info_list = [
         "version": "3.1.0",
     },
     {
+        "name_en": "OrbitalRing",
+        "name_cn": "星环",
+        "version": "0.8.8",
+    },
+    {
         "name_en": "FractionateEverything",
         "name_cn": "万物分馏",
         "version": "2.1.4",
@@ -102,6 +107,7 @@ export function get_game_data(mod_guid_list) {
     data.MoreMegaStructureEnable = false;
     data.TheyComeFromVoidEnable = false;
     data.GenesisBookEnable = false;
+    data.OrbitalRingEnable = false;
     data.FractionateEverythingEnable = false;
     //mod_name_list存储mod英文名，用于在指定文件夹寻找图标
     let mod_name_list = []
@@ -121,8 +127,13 @@ export function get_game_data(mod_guid_list) {
         data.GenesisBookEnable = true;
         mod_name_list.push("GenesisBook");
     }
-    if (mod_guid_list.includes("FractionateEverything" + game_data_info_list[4].version)) {
-        json_file_name += "_" + "FractionateEverything" + game_data_info_list[4].version;
+    if (mod_guid_list.includes("OrbitalRing" + game_data_info_list[4].version)) {
+        json_file_name += "_" + "OrbitalRing" + game_data_info_list[4].version;
+        data.OrbitalRingEnable = true;
+        mod_name_list.push("OrbitalRing");
+    }
+    if (mod_guid_list.includes("FractionateEverything" + game_data_info_list[5].version)) {
+        json_file_name += "_" + "FractionateEverything" + game_data_info_list[5].version;
         data.FractionateEverythingEnable = true;
         mod_name_list.push("FractionateEverything");
     }
