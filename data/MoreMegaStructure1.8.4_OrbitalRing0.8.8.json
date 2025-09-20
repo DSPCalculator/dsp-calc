@@ -79,7 +79,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "iron-plate"
     },
@@ -106,7 +106,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "magnetism-wire"
     },
@@ -189,7 +189,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "copper-plate"
     },
@@ -214,7 +214,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "煤矿粉"
     },
@@ -243,7 +243,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "stone-brick"
     },
@@ -270,7 +270,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "circuit-board"
     },
@@ -297,7 +297,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "wind-turbine"
     },
@@ -326,7 +326,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "tesla-coil"
     },
@@ -351,7 +351,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "t-matrix"
     },
@@ -382,7 +382,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "lab"
     },
@@ -407,7 +407,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "prism"
     },
@@ -434,7 +434,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "plasma-generator"
     },
@@ -461,7 +461,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 1,
       "IconName": "charging-pole"
     },
@@ -490,7 +490,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "oil-extractor"
     },
@@ -519,7 +519,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "oil-refinery"
     },
@@ -545,7 +545,7 @@
         2,
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "plasma-refining"
     },
@@ -610,7 +610,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "graphite"
     },
@@ -635,7 +635,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "e-matrix"
     },
@@ -662,7 +662,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "engine"
     },
@@ -691,7 +691,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "fuel-thruster"
     },
@@ -718,7 +718,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "ion-thruster"
     },
@@ -749,7 +749,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "chemical-plant"
     },
@@ -771,7 +771,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "plastic"
     },
@@ -793,7 +793,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "plastic"
     },
@@ -837,7 +837,7 @@
         4,
         3
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "sulphuric-acid"
     },
@@ -863,7 +863,7 @@
         8,
         6
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "sulphuric-acid"
     },
@@ -947,7 +947,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "mono-mag-ore"
     },
@@ -970,7 +970,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "nanotube"
     },
@@ -995,7 +995,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "c-matrix"
     },
@@ -1064,7 +1064,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "casimir-crystal"
     },
@@ -1089,7 +1089,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "quantum-processor"
     },
@@ -1116,7 +1116,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "titan-glass"
     },
@@ -1140,7 +1140,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "graphene"
     },
@@ -1164,7 +1164,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "graphene"
     },
@@ -1206,7 +1206,7 @@
         1,
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "graphene-lv2"
     },
@@ -1230,7 +1230,7 @@
         2,
         2
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "graphene-lv2"
     },
@@ -1254,7 +1254,7 @@
         1,
         3
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "nanotube"
     },
@@ -1278,7 +1278,7 @@
         2,
         6
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "nanotube"
     },
@@ -1307,7 +1307,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "ion-thruster"
     },
@@ -1329,7 +1329,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "nanotube-lv2"
     },
@@ -1351,7 +1351,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "nanotube-lv2"
     },
@@ -1380,7 +1380,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "particle-wide-band"
     },
@@ -1407,7 +1407,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "silicium-high-purity"
     },
@@ -1434,7 +1434,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "plane-filter"
     },
@@ -1463,7 +1463,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "900",
+      "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "hadron-collider"
     },
@@ -1504,7 +1504,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "deuterium"
     },
@@ -1531,7 +1531,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "hydrogen-energy-fuel"
     },
@@ -1560,7 +1560,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "fusion-capacitor"
     },
@@ -1593,7 +1593,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "3600",
+      "TimeSpend": 3600,
       "Proliferator": 3,
       "IconName": "fusion-reactor"
     },
@@ -1620,7 +1620,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 1,
       "IconName": "antimatter-energy-fuel"
     },
@@ -1649,7 +1649,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 1,
       "IconName": "assembler-1"
     },
@@ -1680,7 +1680,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "assembler-2"
     },
@@ -1709,7 +1709,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "270",
+      "TimeSpend": 270,
       "Proliferator": 1,
       "IconName": "assembler-3"
     },
@@ -1738,7 +1738,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "mining-drill"
     },
@@ -1767,7 +1767,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "water-pump"
     },
@@ -1792,7 +1792,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "glass"
     },
@@ -1821,7 +1821,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "processor"
     },
@@ -1848,7 +1848,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "quantum-processor"
     },
@@ -1875,7 +1875,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "micro-component"
     },
@@ -1900,7 +1900,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "micro-component"
     },
@@ -1925,7 +1925,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "i-matrix"
     },
@@ -1954,7 +1954,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "smelter"
     },
@@ -1981,7 +1981,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "三元精金_新"
     },
@@ -2005,7 +2005,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "X-ray"
     },
@@ -2070,7 +2070,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "silicium-single-crystal"
     },
@@ -2095,7 +2095,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "diamond"
     },
@@ -2120,7 +2120,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "diamond-lv2"
     },
@@ -2145,7 +2145,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "silicium-high-purity-lv2"
     },
@@ -2170,7 +2170,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "steel-plate"
     },
@@ -2203,7 +2203,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "fuel-plant"
     },
@@ -2268,7 +2268,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "titanium-plate"
     },
@@ -2295,7 +2295,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "titanium-alloy"
     },
@@ -2326,7 +2326,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "solar-panel"
     },
@@ -2353,7 +2353,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "photo-shifter"
     },
@@ -2380,7 +2380,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "photo-shifter-lv2"
     },
@@ -2409,7 +2409,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "solar-collector"
     },
@@ -2440,7 +2440,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "em-rail-ejector"
     },
@@ -2473,7 +2473,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "ray-receiver"
     },
@@ -2502,7 +2502,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "orbital-substation"
     },
@@ -2527,7 +2527,7 @@
         2,
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 1,
       "IconName": "photon-formula"
     },
@@ -2556,7 +2556,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "900",
+      "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "u-matrix"
     },
@@ -2585,7 +2585,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "accumulator"
     },
@@ -2618,7 +2618,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "900",
+      "TimeSpend": 900,
       "Proliferator": 1,
       "IconName": "energy-exchanger"
     },
@@ -2643,7 +2643,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "space-warper"
     },
@@ -2670,7 +2670,7 @@
       "ResultCounts": [
         10
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "space-warper-lv2"
     },
@@ -2699,7 +2699,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "frame-material"
     },
@@ -2726,7 +2726,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "dyson-sphere-component"
     },
@@ -2752,7 +2752,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 3,
       "IconName": "vertical-launching-silo"
     },
@@ -2780,7 +2780,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "rocket"
     },
@@ -2805,7 +2805,7 @@
       "ResultCounts": [
         3
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "belt-1"
     },
@@ -2832,7 +2832,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "inserter-1"
     },
@@ -2857,7 +2857,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "storage-1"
     },
@@ -2884,7 +2884,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "splitter-4dir"
     },
@@ -2911,7 +2911,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 1,
       "IconName": "inserter-2"
     },
@@ -2938,7 +2938,7 @@
       "ResultCounts": [
         3
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "belt-2"
     },
@@ -2965,7 +2965,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 1,
       "IconName": "inserter-3"
     },
@@ -2990,7 +2990,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "storage-2"
     },
@@ -3017,7 +3017,7 @@
       "ResultCounts": [
         3
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "belt-3"
     },
@@ -3044,7 +3044,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "900",
+      "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "logistic-station"
     },
@@ -3073,7 +3073,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "logistic-drone"
     },
@@ -3101,7 +3101,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 1,
       "IconName": "interstellar-logistic-station"
     },
@@ -3129,7 +3129,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "logistic-vessel"
     },
@@ -3156,7 +3156,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "electric-motor"
     },
@@ -3183,7 +3183,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "mag-turbine"
     },
@@ -3212,7 +3212,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "partical-capacitor"
     },
@@ -3239,7 +3239,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "partical-capacitor-lv2"
     },
@@ -3264,7 +3264,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "gravity-lens"
     },
@@ -3289,7 +3289,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "1440",
+      "TimeSpend": 1440,
       "Proliferator": 3,
       "IconName": "g-matrix"
     },
@@ -3318,7 +3318,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "hyper-magnetism-ring"
     },
@@ -3347,7 +3347,7 @@
         1,
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "strange-matter-generator"
     },
@@ -3369,7 +3369,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "100",
+      "TimeSpend": 100.0,
       "Proliferator": 1,
       "IconName": "盐水"
     },
@@ -3391,7 +3391,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "100",
+      "TimeSpend": 100.0,
       "Proliferator": 1,
       "IconName": "deuterium"
     },
@@ -3417,7 +3417,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "accelerator-3"
     },
@@ -3443,7 +3443,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "accelerator-3"
     },
@@ -3474,7 +3474,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "spray-coater"
     },
@@ -3502,7 +3502,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "3600",
+      "TimeSpend": 3600,
       "Proliferator": 1,
       "IconName": "人造恒星MK2"
     },
@@ -3530,7 +3530,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 1,
       "IconName": "orbital-collector"
     },
@@ -3555,7 +3555,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "terrain-tool"
     },
@@ -3588,7 +3588,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "900",
+      "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "fusion-power-station"
     },
@@ -3615,7 +3615,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "storage-tank"
     },
@@ -3642,7 +3642,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "金属氢单元"
     },
@@ -3673,7 +3673,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "smelter-2"
     },
@@ -3702,7 +3702,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "monitor"
     },
@@ -3733,7 +3733,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "geothermal-power-station"
     },
@@ -3762,7 +3762,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1200",
+      "TimeSpend": 1200,
       "Proliferator": 1,
       "IconName": "mining-drill-mk2"
     },
@@ -3789,7 +3789,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "piler"
     },
@@ -3818,7 +3818,7 @@
         4,
         4
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "strange-matter-generator"
     },
@@ -3847,7 +3847,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "delivery-machine"
     },
@@ -3876,7 +3876,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "delivery-drone"
     },
@@ -3905,7 +3905,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 1,
       "IconName": "chemical-plant-2"
     },
@@ -3936,7 +3936,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "turret-gauss"
     },
@@ -3969,7 +3969,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "turret-laser"
     },
@@ -4000,7 +4000,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "turret-cannon"
     },
@@ -4031,7 +4031,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "turret-plasma"
     },
@@ -4060,7 +4060,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "turret-missile"
     },
@@ -4091,7 +4091,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "turret-disturb"
     },
@@ -4122,7 +4122,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "turret-signal"
     },
@@ -4153,7 +4153,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 1,
       "IconName": "turret-shield"
     },
@@ -4181,7 +4181,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "2700",
+      "TimeSpend": 2700,
       "Proliferator": 1,
       "IconName": "行星采集器"
     },
@@ -4207,7 +4207,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "high-explosive"
     },
@@ -4233,7 +4233,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "high-explosive"
     },
@@ -4260,7 +4260,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "particle-explosive"
     },
@@ -4285,7 +4285,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "bullet"
     },
@@ -4312,7 +4312,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "bullet-titanium"
     },
@@ -4339,7 +4339,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 1,
       "IconName": "尖端机械组件_新"
     },
@@ -4367,7 +4367,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "rocket"
     },
@@ -4394,7 +4394,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "cannonball-cluster"
     },
@@ -4421,7 +4421,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "cannonball-alloy"
     },
@@ -4448,7 +4448,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "capsule-energy"
     },
@@ -4475,7 +4475,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "capsule-antimatter"
     },
@@ -4504,7 +4504,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "missile-supersonic"
     },
@@ -4533,7 +4533,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "missile"
     },
@@ -4560,7 +4560,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1200",
+      "TimeSpend": 1200,
       "Proliferator": 3,
       "IconName": "missile-graviton"
     },
@@ -4584,7 +4584,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "warship-plasma"
     },
@@ -4612,7 +4612,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "2160",
+      "TimeSpend": 2160,
       "Proliferator": 1,
       "IconName": "warship-laser"
     },
@@ -4638,7 +4638,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "硝基柴油燃料棒"
     },
@@ -4669,7 +4669,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "battle-base"
     },
@@ -4698,7 +4698,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "lab-2"
     },
@@ -4727,7 +4727,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 1,
       "IconName": "assembler-4"
     },
@@ -4756,7 +4756,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 1,
       "IconName": "smelter-3"
     },
@@ -4783,7 +4783,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1440",
+      "TimeSpend": 1440,
       "Proliferator": 1,
       "IconName": "virtual-energy-fuel"
     },
@@ -4812,7 +4812,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "turret-plasma-ground"
     },
@@ -4841,7 +4841,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "em-disturb"
     },
@@ -4870,7 +4870,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "em-suppress"
     },
@@ -4897,7 +4897,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "inserter-4"
     },
@@ -4922,7 +4922,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "gravitygenerator"
     },
@@ -4947,7 +4947,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "constrainring"
     },
@@ -4974,7 +4974,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 1,
       "IconName": "gravitydrill2"
     },
@@ -4999,7 +4999,7 @@
       "ResultCounts": [
         6
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "tunnelingexciter2"
     },
@@ -5026,7 +5026,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "resonancedisc"
     },
@@ -5051,7 +5051,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "photonprobeflipsmall"
     },
@@ -5078,7 +5078,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 1,
       "IconName": "quantumcomputer3"
     },
@@ -5105,7 +5105,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "iacomponent"
     },
@@ -5130,7 +5130,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "integratedcomponents"
     },
@@ -5158,7 +5158,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "rocketMatter"
     },
@@ -5186,7 +5186,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "rocketScience"
     },
@@ -5214,7 +5214,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "rocketWarp"
     },
@@ -5240,7 +5240,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "rocketAssembly"
     },
@@ -5268,7 +5268,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "rocketCrystal"
     },
@@ -5293,7 +5293,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "forceGen"
     },
@@ -5324,7 +5324,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "compoCrystal"
     },
@@ -5351,7 +5351,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "elemaginhibitor2"
     },
@@ -5380,7 +5380,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "gluonGen"
     },
@@ -5407,7 +5407,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1200",
+      "TimeSpend": 1200,
       "Proliferator": 1,
       "IconName": "strIntOverloader"
     },
@@ -5436,7 +5436,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 1,
       "IconName": "starcannonframe"
     },
@@ -5461,7 +5461,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "starcannoncompo"
     },
@@ -5489,7 +5489,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "rocketStarcannon"
     },
@@ -5518,7 +5518,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "3600",
+      "TimeSpend": 3600,
       "Proliferator": 1,
       "IconName": "drop1"
     },
@@ -5542,7 +5542,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "三氯化铁"
     },
@@ -5566,7 +5566,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "三氯化铁"
     },
@@ -5593,7 +5593,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "钚铀混合氧化物燃料棒"
     },
@@ -5619,7 +5619,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "光学主机"
     },
@@ -5644,7 +5644,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "graphite"
     },
@@ -5666,16 +5666,33 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "143",
+      "TimeSpend": 143.0,
       "Proliferator": 1,
       "IconName": "丙烯_新"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306
+      ],
+      "Name": "[无中生有]岩浆",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6251
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "石粉"
     },
     {
       "Type": 11,
       "Factories": [
         2315,
-        2319,
-        6501
+        2319
       ],
       "Name": "深层熔岩处理",
       "Items": [
@@ -5692,7 +5709,7 @@
         2,
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "石粉"
     },
@@ -5700,8 +5717,7 @@
       "Type": 11,
       "Factories": [
         2315,
-        2319,
-        6501
+        2319
       ],
       "Name": "液态金属制造",
       "Items": [
@@ -5720,7 +5736,7 @@
         4,
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "钨矿"
     },
@@ -5749,7 +5765,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "铀235燃料棒"
     },
@@ -5779,7 +5795,7 @@
         1,
         2
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 1,
       "IconName": "铁矿粉"
     },
@@ -5822,7 +5838,7 @@
       "ResultCounts": [
         8
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "water"
     },
@@ -5846,7 +5862,7 @@
       "ResultCounts": [
         16
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "water"
     },
@@ -5871,7 +5887,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "iron-plate"
     },
@@ -5896,7 +5912,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "copper-plate"
     },
@@ -5921,7 +5937,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 1,
       "IconName": "steel-plate"
     },
@@ -5965,7 +5981,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 1,
       "IconName": "stone-ore"
     },
@@ -6009,7 +6025,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "silicium-ore"
     },
@@ -6038,7 +6054,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "accumulator"
     },
@@ -6082,7 +6098,7 @@
         1,
         3
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "硫化氢"
     },
@@ -6106,7 +6122,7 @@
         2,
         6
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "硫化氢"
     },
@@ -6135,7 +6151,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "fractionator"
     },
@@ -6143,8 +6159,7 @@
       "Type": 11,
       "Factories": [
         2315,
-        2319,
-        6501
+        2319
       ],
       "Name": "高级岩浆炼磁铁",
       "Items": [
@@ -6161,7 +6176,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 1,
       "IconName": "magnet"
     },
@@ -6169,8 +6184,7 @@
       "Type": 11,
       "Factories": [
         2315,
-        2319,
-        6501
+        2319
       ],
       "Name": "磁流体",
       "Items": [
@@ -6191,7 +6205,7 @@
         1,
         2
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "钨块"
     },
@@ -6199,8 +6213,7 @@
       "Type": 11,
       "Factories": [
         2315,
-        2319,
-        6501
+        2319
       ],
       "Name": "熔融金属",
       "Items": [
@@ -6215,7 +6228,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "铝板"
     },
@@ -6223,8 +6236,7 @@
       "Type": 11,
       "Factories": [
         2315,
-        2319,
-        6501
+        2319
       ],
       "Name": "高级岩浆炼钛",
       "Items": [
@@ -6239,7 +6251,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "titanium-plate"
     },
@@ -6268,7 +6280,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "回收塔"
     },
@@ -6294,7 +6306,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "3600",
+      "TimeSpend": 3600,
       "Proliferator": 3,
       "IconName": "光学主机"
     },
@@ -6323,7 +6335,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "高纯铀块"
     },
@@ -6348,7 +6360,7 @@
       "ResultCounts": [
         20
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 1,
       "IconName": "沙土回收_新"
     },
@@ -6373,7 +6385,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "magnet"
     },
@@ -6399,7 +6411,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "环氧树脂_新"
     },
@@ -6425,7 +6437,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "环氧树脂_新"
     },
@@ -6451,7 +6463,7 @@
       "ResultCounts": [
         16
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "wood"
     },
@@ -6477,7 +6489,7 @@
       "ResultCounts": [
         24
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "plant-fuel"
     },
@@ -6506,7 +6518,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1200",
+      "TimeSpend": 1200,
       "Proliferator": 1,
       "IconName": "行星组装站"
     },
@@ -6533,7 +6545,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "硝基柴油燃料棒"
     },
@@ -6562,7 +6574,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "高效处理器"
     },
@@ -6588,7 +6600,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "光学芯片"
     },
@@ -6612,7 +6624,7 @@
       "ResultCounts": [
         40
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "煤焦油"
     },
@@ -6638,7 +6650,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1440",
+      "TimeSpend": 1440,
       "Proliferator": 3,
       "IconName": "logistic-vessel"
     },
@@ -6665,7 +6677,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 1,
       "IconName": "氯苯"
     },
@@ -6710,7 +6722,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "crystal-rubber-lv0"
     },
@@ -6740,7 +6752,7 @@
         2,
         4
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "titan-crystal"
     },
@@ -6767,7 +6779,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "30",
+      "TimeSpend": 30,
       "Proliferator": 3,
       "IconName": "steel-plate"
     },
@@ -6800,7 +6812,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "orbital-substation"
     },
@@ -6828,7 +6840,7 @@
         1,
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "硝基柴油"
     },
@@ -6850,7 +6862,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "电解水_新"
     },
@@ -6872,7 +6884,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "电解水_新"
     },
@@ -6894,7 +6906,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "deuterium"
     },
@@ -6916,7 +6928,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "deuterium"
     },
@@ -6938,7 +6950,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "30",
+      "TimeSpend": 30,
       "Proliferator": 3,
       "IconName": "energy-fragment"
     },
@@ -6961,7 +6973,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "graphene"
     },
@@ -6985,7 +6997,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 3,
       "IconName": "焦油循环"
     },
@@ -7009,7 +7021,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 3,
       "IconName": "焦油循环"
     },
@@ -7017,8 +7029,7 @@
       "Type": 11,
       "Factories": [
         2315,
-        2319,
-        6501
+        2319
       ],
       "Name": "钛晶石",
       "Items": [
@@ -7037,7 +7048,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "titan-crystal"
     },
@@ -7063,7 +7074,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "virtual-particle"
     },
@@ -7087,7 +7098,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "硫化氢"
     },
@@ -7111,7 +7122,7 @@
       "ResultCounts": [
         3
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "plastic"
     },
@@ -7137,7 +7148,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "negentropy"
     },
@@ -7168,7 +7179,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1440",
+      "TimeSpend": 1440,
       "Proliferator": 3,
       "IconName": "放射性同位素温差电池"
     },
@@ -7196,7 +7207,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "silicon-neuron"
     },
@@ -7222,7 +7233,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "memory"
     },
@@ -7250,7 +7261,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "reassembler"
     },
@@ -7277,7 +7288,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "silicium-ore"
     },
@@ -7303,7 +7314,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "混凝土"
     },
@@ -7329,7 +7340,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "硝基柴油"
     },
@@ -7353,7 +7364,7 @@
       "ResultCounts": [
         48
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "plant-fuel"
     },
@@ -7377,7 +7388,7 @@
       "ResultCounts": [
         32
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "wood"
     },
@@ -7403,7 +7414,7 @@
       "ResultCounts": [
         96
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "plant-fuel"
     },
@@ -7429,7 +7440,7 @@
       "ResultCounts": [
         64
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "wood"
     },
@@ -7456,7 +7467,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "钢芯弹药箱"
     },
@@ -7483,7 +7494,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "钨芯弹药箱"
     },
@@ -7512,7 +7523,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "三元弹药箱"
     },
@@ -7539,7 +7550,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "missile-graviton"
     },
@@ -7561,7 +7572,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "graphite"
     },
@@ -7588,7 +7599,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "反物质导弹组"
     },
@@ -7616,7 +7627,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "rocket"
     },
@@ -7641,7 +7652,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "iron-plate"
     },
@@ -7670,7 +7681,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "光学信息传输纤维"
     },
@@ -7699,7 +7710,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "光学信息传输纤维"
     },
@@ -7726,7 +7737,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 3,
       "IconName": "超级纳米电脑"
     },
@@ -7754,7 +7765,7 @@
         4,
         4
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "环氧树脂_新"
     },
@@ -7782,7 +7793,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 1,
       "IconName": "interstellar-logistic-station"
     },
@@ -7804,7 +7815,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "能量碎片制作"
     },
@@ -7829,7 +7840,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "960",
+      "TimeSpend": 960,
       "Proliferator": 3,
       "IconName": "稳定矩阵"
     },
@@ -7858,7 +7869,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "虚空矩阵"
     },
@@ -7886,7 +7897,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "900",
+      "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "orbital-substation"
     },
@@ -7910,7 +7921,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1080",
+      "TimeSpend": 1080,
       "Proliferator": 3,
       "IconName": "warship-plasma"
     },
@@ -7938,7 +7949,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "7200",
+      "TimeSpend": 7200,
       "Proliferator": 1,
       "IconName": "行星采集器"
     },
@@ -7969,7 +7980,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1500",
+      "TimeSpend": 1500,
       "Proliferator": 1,
       "IconName": "行星熔炉"
     },
@@ -7994,7 +8005,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 1,
       "IconName": "prism"
     },
@@ -8019,7 +8030,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 1,
       "IconName": "belt-1"
     },
@@ -8065,7 +8076,7 @@
         6,
         18
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "二氧化碳"
     },
@@ -8091,7 +8102,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "2700",
+      "TimeSpend": 2700,
       "Proliferator": 1,
       "IconName": "interstellar-logistic-station"
     },
@@ -8118,7 +8129,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "硝基柴油燃料棒"
     },
@@ -8146,7 +8157,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 3,
       "IconName": "行星化工厂"
     },
@@ -8174,7 +8185,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "3600",
+      "TimeSpend": 3600,
       "Proliferator": 3,
       "IconName": "大型强子对撞机"
     },
@@ -8202,7 +8213,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "7200",
+      "TimeSpend": 7200,
       "Proliferator": 1,
       "IconName": "fusion-reactor"
     },
@@ -8230,7 +8241,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "日志02"
     },
@@ -8263,7 +8274,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "em-rail-ejector"
     },
@@ -8294,7 +8305,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 1,
       "IconName": "logistic-station"
     },
@@ -8321,7 +8332,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "circuit-board"
     },
@@ -8348,7 +8359,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "circuit-board"
     },
@@ -8373,7 +8384,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rassembly"
     },
@@ -8398,7 +8409,7 @@
       "ResultCounts": [
         60
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rbelt"
     },
@@ -8423,7 +8434,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rchemical2"
     },
@@ -8448,7 +8459,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rcollider"
     },
@@ -8475,7 +8486,7 @@
         1,
         10
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rstellalogistic"
     },
@@ -8500,7 +8511,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rlab"
     },
@@ -8527,7 +8538,7 @@
         1,
         30
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rlogistic"
     },
@@ -8552,7 +8563,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rpower"
     },
@@ -8577,7 +8588,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rreactor"
     },
@@ -8604,7 +8615,7 @@
         1,
         4
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rrefinery"
     },
@@ -8629,7 +8640,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rsmelter"
     },
@@ -8654,7 +8665,7 @@
       "ResultCounts": [
         10
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rsorter"
     },
@@ -8679,7 +8690,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rsorter4"
     },
@@ -8704,7 +8715,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rassembly4"
     },
@@ -8729,7 +8740,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rsmelter3"
     },
@@ -8754,7 +8765,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rlab2"
     },
@@ -8779,7 +8790,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rmining2"
     },
@@ -8804,7 +8815,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rpump"
     },
@@ -8835,7 +8846,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Ciron"
     },
@@ -8866,7 +8877,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Ccopper"
     },
@@ -8897,7 +8908,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Csilicon"
     },
@@ -8928,7 +8939,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Ctitanium"
     },
@@ -8959,7 +8970,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Cmagore"
     },
@@ -8990,7 +9001,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Ccrystal"
     },
@@ -9021,7 +9032,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Cic"
     },
@@ -9052,7 +9063,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Ccoal"
     },
@@ -9083,7 +9094,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Cgrating"
     },
@@ -9110,7 +9121,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "exchangeLS"
     },

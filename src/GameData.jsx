@@ -72,7 +72,7 @@ export const game_data_info_list = [
     {
         "name_en": "FractionateEverything",
         "name_cn": "万物分馏",
-        "version": "2.1.4",
+        "version": "2.2.0",
     },
 ]
 
@@ -318,11 +318,19 @@ export function get_game_data(mod_guid_list) {
     if (name_icon_list === undefined) {
         name_icon_list = {};
     }
+    let proliferator_1143_name = "";
     json_data.items.forEach(function (item) {
+        //存储名称与icon的关系
+        //console.log("name:" + item["Name"] + " icon:" + item["IconName"])
+        name_icon_list[item["Name"]] = item["IconName"];
+        if (!data.item_grid_index_valid[item["Name"]]) {
+            return;
+        }
+        //设置可用的增产剂
         if (item.ID === 1141) {
             data.proliferator_data.push({
-                "名称": "增产剂 Mk.I",
-                "增产剂": "增产剂 Mk.I",
+                "名称": item["Name"],
+                "增产剂": item["Name"],
                 "喷涂次数": 12,
                 "增产点数": 1,
                 "增产效果": proliferator_effect[1].增产效果,
@@ -332,8 +340,8 @@ export function get_game_data(mod_guid_list) {
         }
         if (item.ID === 1142) {
             data.proliferator_data.push({
-                "名称": "增产剂 Mk.II",
-                "增产剂": "增产剂 Mk.II",
+                "名称": item["Name"],
+                "增产剂": item["Name"],
                 "喷涂次数": 24,
                 "增产点数": 2,
                 "增产效果": proliferator_effect[2].增产效果,
@@ -342,9 +350,10 @@ export function get_game_data(mod_guid_list) {
             })
         }
         if (item.ID === 1143) {
+            proliferator_1143_name = item["Name"];
             data.proliferator_data.push({
-                "名称": data.GenesisBookEnable ? "增产剂" : "增产剂 Mk.III",
-                "增产剂": data.GenesisBookEnable ? "增产剂" : "增产剂 Mk.III",
+                "名称": item["Name"],
+                "增产剂": item["Name"],
                 "喷涂次数": 60,
                 "增产点数": 4,
                 "增产效果": proliferator_effect[4].增产效果,
@@ -352,21 +361,18 @@ export function get_game_data(mod_guid_list) {
                 "耗电倍率": proliferator_effect[4].耗电倍率
             })
         }
-        //存储名称与icon的关系
-        //console.log("name:" + item["Name"] + " icon:" + item["IconName"])
-        name_icon_list[item["Name"]] = item["IconName"];
+        if (item.ID === 8023) {
+            data.proliferator_data.push({
+                "名称": item["Name"],
+                "增产剂": proliferator_1143_name,
+                "喷涂次数": 24,// 60/(10/4)
+                "增产点数": 10,
+                "增产效果": proliferator_effect[10].增产效果,
+                "加速效果": proliferator_effect[10].加速效果,
+                "耗电倍率": proliferator_effect[10].耗电倍率
+            })
+        }
     })
-    if (data.FractionateEverythingEnable) {
-        data.proliferator_data.push({
-            "名称": "点数聚集塔",
-            "增产剂": data.GenesisBookEnable ? "增产剂" : "增产剂 Mk.III",
-            "喷涂次数": 24,// 60/(10/4)
-            "增产点数": 10,
-            "增产效果": proliferator_effect[10].增产效果,
-            "加速效果": proliferator_effect[10].加速效果,
-            "耗电倍率": proliferator_effect[10].耗电倍率
-        })
-    }
 
     //下载data
     //saveJSONToFile(data, json_file_name + "_convert.json");

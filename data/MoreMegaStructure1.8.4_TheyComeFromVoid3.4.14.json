@@ -3566,7 +3566,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 100,
+      "TimeSpend": 100.0,
       "Proliferator": 1,
       "IconName": "deuterium-formula"
     },
@@ -7190,6 +7190,24 @@
     {
       "Type": -1,
       "Factories": [
+        0
+      ],
+      "Name": "[无中生有]临界光子",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1208
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "photon-capacitor-full"
+    },
+    {
+      "Type": -1,
+      "Factories": [
         2208
       ],
       "Name": "[无中生有]临界光子",
@@ -7536,6 +7554,7 @@
     {
       "Type": -1,
       "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]黑雾矩阵",
@@ -7554,6 +7573,7 @@
     {
       "Type": -1,
       "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]硅基神经元",
@@ -7572,6 +7592,7 @@
     {
       "Type": -1,
       "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]物质重组器",
@@ -7590,6 +7611,7 @@
     {
       "Type": -1,
       "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]负熵奇点",
@@ -7608,6 +7630,7 @@
     {
       "Type": -1,
       "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]核心素",
@@ -7626,6 +7649,7 @@
     {
       "Type": -1,
       "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]能量碎片",
@@ -7640,6 +7664,24 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "energy-fragment"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]蓄电器（满）",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        2207
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "accumulator-full"
     },
     {
       "Type": -1,
@@ -7684,6 +7726,42 @@
       "TimeSpend": 600,
       "Proliferator": 1,
       "IconName": "accumulator-full"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]沙土",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1099
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "soil-pile"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]水滴额外伤害",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        8035
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "r0-10"
     },
     {
       "Type": -1,

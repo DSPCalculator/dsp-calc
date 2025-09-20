@@ -78,7 +78,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "iron-plate"
     },
@@ -102,7 +102,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "90",
+      "TimeSpend": 90,
       "Proliferator": 3,
       "IconName": "magnet"
     },
@@ -184,7 +184,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "copper-plate"
     },
@@ -208,7 +208,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "stone-brick"
     },
@@ -233,7 +233,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "gear-wheel"
     },
@@ -260,7 +260,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "magnetism-wire"
     },
@@ -289,7 +289,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "wind-turbine"
     },
@@ -316,7 +316,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "tesla-coil"
     },
@@ -341,7 +341,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "t-matrix"
     },
@@ -372,7 +372,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "lab"
     },
@@ -397,7 +397,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "prism"
     },
@@ -424,7 +424,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "plasma-generator"
     },
@@ -451,7 +451,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 1,
       "IconName": "charging-pole"
     },
@@ -482,7 +482,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "oil-extractor"
     },
@@ -513,7 +513,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "oil-refinery"
     },
@@ -556,7 +556,7 @@
         1,
         2
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "plasma-refining"
     },
@@ -638,7 +638,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "graphite"
     },
@@ -663,7 +663,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "e-matrix"
     },
@@ -690,7 +690,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "hydrogen-energy-fuel"
     },
@@ -717,7 +717,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "fuel-thruster"
     },
@@ -744,7 +744,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "ion-thruster"
     },
@@ -775,7 +775,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "chemical-plant"
     },
@@ -800,7 +800,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "plastic"
     },
@@ -845,7 +845,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "sulphuric-acid"
     },
@@ -891,7 +891,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "crystal-rubber"
     },
@@ -918,7 +918,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "titan-crystal"
     },
@@ -943,7 +943,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "c-matrix"
     },
@@ -1030,7 +1030,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "casimir-crystal"
     },
@@ -1059,7 +1059,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "casimir-crystal-lv2"
     },
@@ -1088,7 +1088,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "titan-glass"
     },
@@ -1113,7 +1113,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "graphene"
     },
@@ -1138,7 +1138,7 @@
         2,
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "graphene-lv2"
     },
@@ -1163,7 +1163,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "nanotube"
     },
@@ -1206,7 +1206,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "silicium-ore"
     },
@@ -1229,7 +1229,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "nanotube-lv2"
     },
@@ -1258,7 +1258,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "particle-wide-band"
     },
@@ -1282,7 +1282,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "silicium-high-purity"
     },
@@ -1309,7 +1309,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "plane-filter"
     },
@@ -1342,7 +1342,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "900",
+      "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "hadron-collider"
     },
@@ -1383,7 +1383,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "150",
+      "TimeSpend": 150,
       "Proliferator": 1,
       "IconName": "deuterium"
     },
@@ -1412,7 +1412,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "deuterium-energy-fuel"
     },
@@ -1439,7 +1439,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1200",
+      "TimeSpend": 1200,
       "Proliferator": 3,
       "IconName": "fusion-capacitor"
     },
@@ -1470,7 +1470,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 3,
       "IconName": "fusion-reactor"
     },
@@ -1501,7 +1501,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "1440",
+      "TimeSpend": 1440,
       "Proliferator": 1,
       "IconName": "antimatter-energy-fuel"
     },
@@ -1530,7 +1530,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "assembler-1"
     },
@@ -1559,7 +1559,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 1,
       "IconName": "assembler-2"
     },
@@ -1588,7 +1588,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "assembler-3"
     },
@@ -1619,7 +1619,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "mining-drill"
     },
@@ -1650,7 +1650,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "water-pump"
     },
@@ -1677,7 +1677,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "circuit-board"
     },
@@ -1704,7 +1704,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "processor"
     },
@@ -1731,7 +1731,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "quantum-processor"
     },
@@ -1758,7 +1758,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "micro-component"
     },
@@ -1787,7 +1787,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "crystal-rubber-lv0"
     },
@@ -1812,7 +1812,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "i-matrix"
     },
@@ -1843,7 +1843,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "smelter"
     },
@@ -1867,7 +1867,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "glass"
     },
@@ -1893,7 +1893,7 @@
         3,
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "X-ray"
     },
@@ -1975,7 +1975,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "silicium-single-crystal"
     },
@@ -1999,7 +1999,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "diamond"
     },
@@ -2023,7 +2023,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "90",
+      "TimeSpend": 90,
       "Proliferator": 3,
       "IconName": "diamond-lv2"
     },
@@ -2048,7 +2048,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "90",
+      "TimeSpend": 90,
       "Proliferator": 3,
       "IconName": "silicium-high-purity-lv2"
     },
@@ -2072,7 +2072,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "steel-plate"
     },
@@ -2103,7 +2103,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "fuel-plant"
     },
@@ -2185,7 +2185,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "titanium-plate"
     },
@@ -2213,7 +2213,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "titanium-alloy"
     },
@@ -2242,7 +2242,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "solar-panel"
     },
@@ -2269,7 +2269,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "photo-shifter"
     },
@@ -2296,7 +2296,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "photo-shifter-lv2"
     },
@@ -2323,7 +2323,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "solar-collector"
     },
@@ -2354,7 +2354,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "em-rail-ejector"
     },
@@ -2387,7 +2387,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "ray-receiver"
     },
@@ -2416,7 +2416,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 1,
       "IconName": "orbital-substation"
     },
@@ -2440,7 +2440,7 @@
         2,
         2
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 1,
       "IconName": "photon-formula"
     },
@@ -2473,7 +2473,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "900",
+      "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "u-matrix"
     },
@@ -2502,7 +2502,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "accumulator"
     },
@@ -2533,7 +2533,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "900",
+      "TimeSpend": 900,
       "Proliferator": 3,
       "IconName": "energy-exchanger"
     },
@@ -2558,7 +2558,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "space-warper"
     },
@@ -2583,7 +2583,7 @@
       "ResultCounts": [
         8
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "space-warper-lv2"
     },
@@ -2612,7 +2612,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "frame-material"
     },
@@ -2641,7 +2641,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "dyson-sphere-component"
     },
@@ -2672,7 +2672,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 3,
       "IconName": "vertical-launching-silo"
     },
@@ -2701,7 +2701,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "rocket"
     },
@@ -2728,7 +2728,7 @@
       "ResultCounts": [
         3
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "belt-1"
     },
@@ -2755,7 +2755,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "inserter-1"
     },
@@ -2782,7 +2782,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "storage-1"
     },
@@ -2811,7 +2811,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "splitter-4dir"
     },
@@ -2838,7 +2838,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "inserter-2"
     },
@@ -2865,7 +2865,7 @@
       "ResultCounts": [
         3
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "belt-2"
     },
@@ -2892,7 +2892,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "inserter-3"
     },
@@ -2919,7 +2919,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "storage-2"
     },
@@ -2948,7 +2948,7 @@
       "ResultCounts": [
         3
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "belt-3"
     },
@@ -2979,7 +2979,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1200",
+      "TimeSpend": 1200,
       "Proliferator": 3,
       "IconName": "logistic-station"
     },
@@ -3008,7 +3008,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "logistic-drone"
     },
@@ -3037,7 +3037,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 1,
       "IconName": "interstellar-logistic-station"
     },
@@ -3066,7 +3066,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "logistic-vessel"
     },
@@ -3095,7 +3095,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "electric-motor"
     },
@@ -3122,7 +3122,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "mag-turbine"
     },
@@ -3151,7 +3151,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "partical-capacitor"
     },
@@ -3178,7 +3178,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "partical-capacitor-lv2"
     },
@@ -3205,7 +3205,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "gravity-lens"
     },
@@ -3230,7 +3230,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "1440",
+      "TimeSpend": 1440,
       "Proliferator": 3,
       "IconName": "g-matrix"
     },
@@ -3259,7 +3259,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "hyper-magnetism-ring"
     },
@@ -3285,7 +3285,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "strange-matter-generator"
     },
@@ -3310,7 +3310,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "30",
+      "TimeSpend": 30,
       "Proliferator": 3,
       "IconName": "accelerator-1"
     },
@@ -3337,7 +3337,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "accelerator-2"
     },
@@ -3364,7 +3364,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "accelerator-3"
     },
@@ -3395,7 +3395,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "spray-coater"
     },
@@ -3426,7 +3426,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "fractionator"
     },
@@ -3457,7 +3457,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 1,
       "IconName": "orbital-collector"
     },
@@ -3484,7 +3484,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "terrain-tool"
     },
@@ -3515,7 +3515,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "fusion-power-station"
     },
@@ -3544,7 +3544,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "storage-tank"
     },
@@ -3566,7 +3566,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "100",
+      "TimeSpend": 100.0,
       "Proliferator": 1,
       "IconName": "deuterium-formula"
     },
@@ -3597,7 +3597,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 1,
       "IconName": "smelter-2"
     },
@@ -3628,7 +3628,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "monitor"
     },
@@ -3659,7 +3659,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "geothermal-power-station"
     },
@@ -3692,7 +3692,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1200",
+      "TimeSpend": 1200,
       "Proliferator": 3,
       "IconName": "mining-drill-mk2"
     },
@@ -3723,7 +3723,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "piler"
     },
@@ -3749,7 +3749,7 @@
       "ResultCounts": [
         3
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "reforming-refine"
     },
@@ -3778,7 +3778,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "delivery-machine"
     },
@@ -3807,7 +3807,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "delivery-drone"
     },
@@ -3838,7 +3838,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 1,
       "IconName": "chemical-plant-2"
     },
@@ -3869,7 +3869,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "turret-gauss"
     },
@@ -3900,7 +3900,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "turret-laser"
     },
@@ -3931,7 +3931,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "turret-cannon"
     },
@@ -3964,7 +3964,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "turret-plasma"
     },
@@ -3995,7 +3995,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "turret-missile"
     },
@@ -4026,7 +4026,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "turret-disturb"
     },
@@ -4055,7 +4055,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "turret-signal"
     },
@@ -4086,7 +4086,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "turret-shield"
     },
@@ -4111,7 +4111,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "explosive"
     },
@@ -4138,7 +4138,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "high-explosive"
     },
@@ -4165,7 +4165,7 @@
       "ResultCounts": [
         8
       ],
-      "TimeSpend": "1440",
+      "TimeSpend": 1440,
       "Proliferator": 3,
       "IconName": "particle-explosive"
     },
@@ -4190,7 +4190,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "bullet"
     },
@@ -4217,7 +4217,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "bullet-titanium"
     },
@@ -4244,7 +4244,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "bullet-alloy"
     },
@@ -4271,7 +4271,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "90",
+      "TimeSpend": 90,
       "Proliferator": 3,
       "IconName": "cannonball"
     },
@@ -4300,7 +4300,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "cannonball-cluster"
     },
@@ -4329,7 +4329,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "cannonball-alloy"
     },
@@ -4358,7 +4358,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "capsule-energy"
     },
@@ -4389,7 +4389,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "capsule-antimatter"
     },
@@ -4420,7 +4420,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "missile"
     },
@@ -4451,7 +4451,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "missile-supersonic"
     },
@@ -4480,7 +4480,7 @@
       "ResultCounts": [
         3
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "missile-graviton"
     },
@@ -4511,7 +4511,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "fighter-shield"
     },
@@ -4542,7 +4542,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "fighter-plasma"
     },
@@ -4573,7 +4573,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "fighter-laser"
     },
@@ -4604,7 +4604,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 3,
       "IconName": "warship-plasma"
     },
@@ -4635,7 +4635,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "warship-laser"
     },
@@ -4662,7 +4662,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "engine"
     },
@@ -4693,7 +4693,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "battle-base"
     },
@@ -4724,7 +4724,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "lab-2"
     },
@@ -4755,7 +4755,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 1,
       "IconName": "assembler-4"
     },
@@ -4786,7 +4786,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "smelter-3"
     },
@@ -4817,7 +4817,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1920",
+      "TimeSpend": 1920,
       "Proliferator": 1,
       "IconName": "virtual-energy-fuel"
     },
@@ -4848,7 +4848,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "turret-plasma-ground"
     },
@@ -4877,7 +4877,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "em-disturb"
     },
@@ -4906,7 +4906,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "em-suppress"
     },
@@ -4935,7 +4935,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "inserter-4"
     },
@@ -4962,7 +4962,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "gravitygenerator"
     },
@@ -4989,7 +4989,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "constrainring"
     },
@@ -5018,7 +5018,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "gravitydrill2"
     },
@@ -5045,7 +5045,7 @@
       "ResultCounts": [
         6
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "tunnelingexciter2"
     },
@@ -5074,7 +5074,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "resonancedisc"
     },
@@ -5101,7 +5101,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 3,
       "IconName": "photonprobeflipsmall"
     },
@@ -5130,7 +5130,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "720",
+      "TimeSpend": 720,
       "Proliferator": 3,
       "IconName": "quantumcomputer3"
     },
@@ -5159,7 +5159,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "iacomponent"
     },
@@ -5184,7 +5184,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "integratedcomponents"
     },
@@ -5213,7 +5213,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "rocketMatter"
     },
@@ -5242,7 +5242,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "rocketScience"
     },
@@ -5271,7 +5271,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "rocketWarp"
     },
@@ -5298,7 +5298,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "rocketAssembly"
     },
@@ -5327,7 +5327,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "rocketCrystal"
     },
@@ -5354,7 +5354,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "forceGen"
     },
@@ -5384,7 +5384,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 3,
       "IconName": "compoCrystal"
     },
@@ -5411,7 +5411,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 3,
       "IconName": "elemaginhibitor2"
     },
@@ -5440,7 +5440,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "gluonGen"
     },
@@ -5467,7 +5467,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1200",
+      "TimeSpend": 1200,
       "Proliferator": 1,
       "IconName": "strIntOverloader"
     },
@@ -5496,7 +5496,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 1,
       "IconName": "starcannonframe"
     },
@@ -5523,7 +5523,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "starcannoncompo"
     },
@@ -5552,7 +5552,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "360",
+      "TimeSpend": 360,
       "Proliferator": 1,
       "IconName": "rocketStarcannon"
     },
@@ -5581,7 +5581,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "3600",
+      "TimeSpend": 3600,
       "Proliferator": 1,
       "IconName": "drop1"
     },
@@ -5605,7 +5605,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 3,
       "IconName": "rank10"
     },
@@ -5630,7 +5630,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "120",
+      "TimeSpend": 120,
       "Proliferator": 1,
       "IconName": "electromagnetic-ticket"
     },
@@ -5655,7 +5655,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "150",
+      "TimeSpend": 150,
       "Proliferator": 1,
       "IconName": "energy-ticket"
     },
@@ -5680,7 +5680,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "180",
+      "TimeSpend": 180,
       "Proliferator": 1,
       "IconName": "structure-ticket"
     },
@@ -5705,7 +5705,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "210",
+      "TimeSpend": 210,
       "Proliferator": 1,
       "IconName": "information-ticket"
     },
@@ -5730,7 +5730,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "240",
+      "TimeSpend": 240,
       "Proliferator": 1,
       "IconName": "gravity-ticket"
     },
@@ -5755,7 +5755,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "300",
+      "TimeSpend": 300,
       "Proliferator": 1,
       "IconName": "universe-ticket"
     },
@@ -5780,7 +5780,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "600",
+      "TimeSpend": 600,
       "Proliferator": 1,
       "IconName": "dark-fog-ticket"
     },
@@ -5805,7 +5805,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "interaction-tower"
     },
@@ -5830,7 +5830,7 @@
       "ResultCounts": [
         10
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "mineral-copy-tower"
     },
@@ -5855,7 +5855,7 @@
       "ResultCounts": [
         3
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "point-aggregate-tower"
     },
@@ -5880,7 +5880,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "quantum-copy-tower"
     },
@@ -5905,7 +5905,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "alchemy-tower"
     },
@@ -5930,7 +5930,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "deconstruction-tower"
     },
@@ -5955,7 +5955,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "60",
+      "TimeSpend": 60,
       "Proliferator": 1,
       "IconName": "conversion-tower"
     },
@@ -5982,7 +5982,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1200",
+      "TimeSpend": 1200,
       "Proliferator": 1,
       "IconName": "interaction-station"
     },
@@ -6009,7 +6009,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "1800",
+      "TimeSpend": 1800,
       "Proliferator": 1,
       "IconName": "interstellar-interaction-station"
     },
@@ -6034,7 +6034,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rassembly"
     },
@@ -6059,7 +6059,7 @@
       "ResultCounts": [
         60
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rbelt"
     },
@@ -6084,7 +6084,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rchemical2"
     },
@@ -6109,7 +6109,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rcollider"
     },
@@ -6136,7 +6136,7 @@
         1,
         10
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rstellalogistic"
     },
@@ -6161,7 +6161,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rlab"
     },
@@ -6188,7 +6188,7 @@
         1,
         30
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rlogistic"
     },
@@ -6213,7 +6213,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rpower"
     },
@@ -6238,7 +6238,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rreactor"
     },
@@ -6265,7 +6265,7 @@
         1,
         4
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rrefinery"
     },
@@ -6290,7 +6290,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rsmelter"
     },
@@ -6315,7 +6315,7 @@
       "ResultCounts": [
         10
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rsorter"
     },
@@ -6340,7 +6340,7 @@
       "ResultCounts": [
         4
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rsorter4"
     },
@@ -6365,7 +6365,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rassembly4"
     },
@@ -6390,7 +6390,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rsmelter3"
     },
@@ -6415,7 +6415,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rlab2"
     },
@@ -6440,7 +6440,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rmining2"
     },
@@ -6465,7 +6465,7 @@
       "ResultCounts": [
         5
       ],
-      "TimeSpend": "6",
+      "TimeSpend": 6,
       "Proliferator": 1,
       "IconName": "Rpump"
     },
@@ -6496,7 +6496,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Ciron"
     },
@@ -6527,7 +6527,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Ccopper"
     },
@@ -6558,7 +6558,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Csilicon"
     },
@@ -6589,7 +6589,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Ctitanium"
     },
@@ -6620,7 +6620,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Cmagore"
     },
@@ -6651,7 +6651,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Ccrystal"
     },
@@ -6682,7 +6682,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Cic"
     },
@@ -6713,7 +6713,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Ccoal"
     },
@@ -6744,7 +6744,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "Cgrating"
     },
@@ -6771,7 +6771,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": "480",
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "exchangeLS"
     },
@@ -6814,7 +6814,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "iron-ore"
     },
@@ -6844,7 +6844,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "iron-ore"
     },
@@ -6868,7 +6868,7 @@
         0.12890619,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "iron-ore"
     },
@@ -6892,7 +6892,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "iron-ore"
     },
@@ -6935,7 +6935,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "copper-ore"
     },
@@ -6965,7 +6965,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "copper-ore"
     },
@@ -6989,7 +6989,7 @@
         0.12890619,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "copper-ore"
     },
@@ -7013,7 +7013,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "copper-ore"
     },
@@ -7058,7 +7058,7 @@
         0.049999997,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "silicium-ore"
     },
@@ -7088,7 +7088,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "silicium-ore"
     },
@@ -7112,7 +7112,7 @@
         0.257812381,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "silicium-ore"
     },
@@ -7136,7 +7136,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "silicium-ore"
     },
@@ -7179,7 +7179,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "titanium-ore"
     },
@@ -7209,7 +7209,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "titanium-ore"
     },
@@ -7233,7 +7233,7 @@
         0.257812381,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "titanium-ore"
     },
@@ -7257,7 +7257,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "titanium-ore"
     },
@@ -7304,7 +7304,7 @@
         0.049999997,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "stone-ore"
     },
@@ -7334,7 +7334,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "stone-ore"
     },
@@ -7358,7 +7358,7 @@
         0.12890619,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "stone-ore"
     },
@@ -7382,7 +7382,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "stone-ore"
     },
@@ -7427,7 +7427,7 @@
         0.049999997,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "coal-ore"
     },
@@ -7457,7 +7457,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "coal-ore"
     },
@@ -7481,7 +7481,7 @@
         0.12890619,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "coal-ore"
     },
@@ -7505,7 +7505,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "coal-ore"
     },
@@ -7548,7 +7548,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "wood"
     },
@@ -7578,7 +7578,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "wood"
     },
@@ -7602,7 +7602,7 @@
         0.12890619,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "wood"
     },
@@ -7626,7 +7626,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "wood"
     },
@@ -7669,7 +7669,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "plant-fuel"
     },
@@ -7699,7 +7699,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "plant-fuel"
     },
@@ -7723,7 +7723,7 @@
         0.12890619,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "plant-fuel"
     },
@@ -7747,7 +7747,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "plant-fuel"
     },
@@ -7791,7 +7791,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "gas-hydrate"
     },
@@ -7821,7 +7821,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "gas-hydrate"
     },
@@ -7845,7 +7845,7 @@
         0.644530952,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gas-hydrate"
     },
@@ -7869,7 +7869,7 @@
         12.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gas-hydrate"
     },
@@ -7912,7 +7912,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "diamond-ore"
     },
@@ -7942,7 +7942,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "diamond-ore"
     },
@@ -7966,7 +7966,7 @@
         1.03124952,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "diamond-ore"
     },
@@ -7990,7 +7990,7 @@
         19.2,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "diamond-ore"
     },
@@ -8014,7 +8014,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "fractal-silica"
     },
@@ -8044,7 +8044,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "fractal-silica"
     },
@@ -8068,7 +8068,7 @@
         1.03124952,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fractal-silica"
     },
@@ -8092,7 +8092,7 @@
         19.2,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fractal-silica"
     },
@@ -8176,7 +8176,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "grating-ore"
     },
@@ -8206,7 +8206,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "grating-ore"
     },
@@ -8230,7 +8230,7 @@
         2.57812381,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "grating-ore"
     },
@@ -8254,7 +8254,7 @@
         48.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "grating-ore"
     },
@@ -8297,7 +8297,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "bamboo-crystal"
     },
@@ -8327,7 +8327,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "bamboo-crystal"
     },
@@ -8351,7 +8351,7 @@
         2.57812381,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bamboo-crystal"
     },
@@ -8375,7 +8375,7 @@
         48.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bamboo-crystal"
     },
@@ -8459,7 +8459,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "mono-mag-ore"
     },
@@ -8489,7 +8489,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "mono-mag-ore"
     },
@@ -8513,7 +8513,7 @@
         25.7812386,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "mono-mag-ore"
     },
@@ -8537,7 +8537,7 @@
         480.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "mono-mag-ore"
     },
@@ -8567,7 +8567,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "iron-plate"
     },
@@ -8591,7 +8591,7 @@
         0.326132655,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "iron-plate"
     },
@@ -8615,7 +8615,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "iron-plate"
     },
@@ -8645,7 +8645,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "copper-plate"
     },
@@ -8669,7 +8669,7 @@
         0.326132655,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "copper-plate"
     },
@@ -8693,7 +8693,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "copper-plate"
     },
@@ -8723,7 +8723,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "silicium-single-crystal"
     },
@@ -8747,7 +8747,7 @@
         0.933280766,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "silicium-single-crystal"
     },
@@ -8771,7 +8771,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "silicium-single-crystal"
     },
@@ -8801,7 +8801,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "titanium-plate"
     },
@@ -8825,7 +8825,7 @@
         0.592714,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "titanium-plate"
     },
@@ -8849,7 +8849,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "titanium-plate"
     },
@@ -8897,7 +8897,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "stone-brick"
     },
@@ -8921,7 +8921,7 @@
         0.326132655,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "stone-brick"
     },
@@ -8945,7 +8945,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "stone-brick"
     },
@@ -8975,7 +8975,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "graphite"
     },
@@ -8999,7 +8999,7 @@
         0.5849935,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "graphite"
     },
@@ -9023,7 +9023,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "graphite"
     },
@@ -9071,7 +9071,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "steel-plate"
     },
@@ -9095,7 +9095,7 @@
         1.6465317,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "steel-plate"
     },
@@ -9119,7 +9119,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "steel-plate"
     },
@@ -9167,7 +9167,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "titanium-alloy"
     },
@@ -9191,7 +9191,7 @@
         1.34687388,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "titanium-alloy"
     },
@@ -9219,7 +9219,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "titanium-alloy"
     },
@@ -9267,7 +9267,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "glass"
     },
@@ -9291,7 +9291,7 @@
         0.659999669,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "glass"
     },
@@ -9315,7 +9315,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "glass"
     },
@@ -9363,7 +9363,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "titan-glass"
     },
@@ -9387,7 +9387,7 @@
         0.56808,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "titan-glass"
     },
@@ -9433,7 +9433,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "titan-glass"
     },
@@ -9481,7 +9481,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "prism"
     },
@@ -9505,7 +9505,7 @@
         1.24275875,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "prism"
     },
@@ -9529,7 +9529,7 @@
         1.44,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "prism"
     },
@@ -9577,7 +9577,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "diamond"
     },
@@ -9601,7 +9601,7 @@
         0.434302181,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "diamond"
     },
@@ -9625,7 +9625,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "diamond"
     },
@@ -9673,7 +9673,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "silicium-high-purity"
     },
@@ -9697,7 +9697,7 @@
         0.434302181,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "silicium-high-purity"
     },
@@ -9721,7 +9721,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "silicium-high-purity"
     },
@@ -9769,7 +9769,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "gear-wheel"
     },
@@ -9793,7 +9793,7 @@
         0.5292759,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gear-wheel"
     },
@@ -9817,7 +9817,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gear-wheel"
     },
@@ -9865,7 +9865,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "magnet"
     },
@@ -9889,7 +9889,7 @@
         0.2697504,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "magnet"
     },
@@ -9913,7 +9913,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "magnet"
     },
@@ -9961,7 +9961,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "magnetism-wire"
     },
@@ -9985,7 +9985,7 @@
         0.7021262,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "magnetism-wire"
     },
@@ -10011,7 +10011,7 @@
         0.480000049,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "magnetism-wire"
     },
@@ -10059,7 +10059,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "electric-motor"
     },
@@ -10083,7 +10083,7 @@
         2.38340616,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "electric-motor"
     },
@@ -10111,7 +10111,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "electric-motor"
     },
@@ -10159,7 +10159,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "mag-turbine"
     },
@@ -10183,7 +10183,7 @@
         4.399909,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "mag-turbine"
     },
@@ -10209,7 +10209,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "mag-turbine"
     },
@@ -10257,7 +10257,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "hyper-magnetism-ring"
     },
@@ -10281,7 +10281,7 @@
         11.2472429,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "hyper-magnetism-ring"
     },
@@ -10309,7 +10309,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "hyper-magnetism-ring"
     },
@@ -10357,7 +10357,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "partical-capacitor"
     },
@@ -10381,7 +10381,7 @@
         11.6422777,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "partical-capacitor"
     },
@@ -10409,7 +10409,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "partical-capacitor"
     },
@@ -10457,7 +10457,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "strange-matter-generator"
     },
@@ -10481,7 +10481,7 @@
         12.8677282,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "strange-matter-generator"
     },
@@ -10509,7 +10509,7 @@
         9.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "strange-matter-generator"
     },
@@ -10557,7 +10557,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "circuit-board"
     },
@@ -10581,7 +10581,7 @@
         0.600554645,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "circuit-board"
     },
@@ -10607,7 +10607,7 @@
         0.480000049,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "circuit-board"
     },
@@ -10655,7 +10655,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "processor"
     },
@@ -10679,7 +10679,7 @@
         7.799211,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "processor"
     },
@@ -10705,7 +10705,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "processor"
     },
@@ -10753,7 +10753,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "quantum-processor"
     },
@@ -10777,7 +10777,7 @@
         4.3025775,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "quantum-processor"
     },
@@ -10803,7 +10803,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "quantum-processor"
     },
@@ -10851,7 +10851,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "micro-component"
     },
@@ -10875,7 +10875,7 @@
         2.71097445,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "micro-component"
     },
@@ -10901,7 +10901,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "micro-component"
     },
@@ -10949,7 +10949,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "plane-filter"
     },
@@ -10973,7 +10973,7 @@
         1.35906231,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "plane-filter"
     },
@@ -10999,7 +10999,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "plane-filter"
     },
@@ -11047,7 +11047,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "particle-wide-band"
     },
@@ -11071,7 +11071,7 @@
         2.39778638,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "particle-wide-band"
     },
@@ -11099,7 +11099,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "particle-wide-band"
     },
@@ -11147,7 +11147,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "plasma-generator"
     },
@@ -11171,7 +11171,7 @@
         5.998382,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "plasma-generator"
     },
@@ -11197,7 +11197,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "plasma-generator"
     },
@@ -11245,7 +11245,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "photo-shifter"
     },
@@ -11269,7 +11269,7 @@
         2.5047152,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "photo-shifter"
     },
@@ -11295,7 +11295,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "photo-shifter"
     },
@@ -11325,7 +11325,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "solar-collector"
     },
@@ -11349,7 +11349,7 @@
         1.85607219,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "solar-collector"
     },
@@ -11375,7 +11375,7 @@
         0.480000019,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "solar-collector"
     },
@@ -11399,7 +11399,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "water"
     },
@@ -11429,7 +11429,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "water"
     },
@@ -11453,7 +11453,7 @@
         0.12890619,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "water"
     },
@@ -11477,7 +11477,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "water"
     },
@@ -11519,7 +11519,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "oil"
     },
@@ -11549,7 +11549,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "oil"
     },
@@ -11573,7 +11573,7 @@
         0.12890619,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "oil"
     },
@@ -11597,7 +11597,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "oil"
     },
@@ -11627,7 +11627,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "refined-oil"
     },
@@ -11651,7 +11651,7 @@
         0.224860191,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "refined-oil"
     },
@@ -11677,7 +11677,7 @@
         1.2,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "refined-oil"
     },
@@ -11701,7 +11701,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "sulphuric-acid"
     },
@@ -11731,7 +11731,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "sulphuric-acid"
     },
@@ -11755,7 +11755,7 @@
         0.644530952,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "sulphuric-acid"
     },
@@ -11783,7 +11783,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "sulphuric-acid"
     },
@@ -11809,7 +11809,7 @@
         0.049999997,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "hydrogen"
     },
@@ -11839,7 +11839,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "hydrogen"
     },
@@ -11863,7 +11863,7 @@
         0.257812381,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "hydrogen"
     },
@@ -11887,7 +11887,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "hydrogen"
     },
@@ -11913,7 +11913,7 @@
         0.049999997,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "deuterium"
     },
@@ -11943,7 +11943,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "deuterium"
     },
@@ -11967,7 +11967,7 @@
         0.409332871,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "deuterium"
     },
@@ -11991,7 +11991,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "deuterium"
     },
@@ -12033,7 +12033,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "anti-matter"
     },
@@ -12063,7 +12063,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "anti-matter"
     },
@@ -12087,7 +12087,7 @@
         0.425727,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "anti-matter"
     },
@@ -12111,7 +12111,7 @@
         510.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "anti-matter"
     },
@@ -12193,7 +12193,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 1500,
+      "TimeSpend": 1500.0,
       "Proliferator": 1,
       "IconName": "photon-capacitor-full"
     },
@@ -12223,7 +12223,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "photon-capacitor-full"
     },
@@ -12247,7 +12247,7 @@
         0.8004268,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "photon-capacitor-full"
     },
@@ -12271,7 +12271,7 @@
         960.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "photon-capacitor-full"
     },
@@ -12319,7 +12319,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "hydrogen-energy-fuel"
     },
@@ -12343,7 +12343,7 @@
         1.6841265,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "hydrogen-energy-fuel"
     },
@@ -12369,7 +12369,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "hydrogen-energy-fuel"
     },
@@ -12393,7 +12393,7 @@
         0.2044505,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "hydrogen-energy-fuel"
     },
@@ -12441,7 +12441,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "deuterium-energy-fuel"
     },
@@ -12465,7 +12465,7 @@
         5.98091745,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "deuterium-energy-fuel"
     },
@@ -12493,7 +12493,7 @@
         0.480000019,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "deuterium-energy-fuel"
     },
@@ -12519,7 +12519,7 @@
         0.155330569,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "deuterium-energy-fuel"
     },
@@ -12567,7 +12567,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "antimatter-energy-fuel"
     },
@@ -12591,7 +12591,7 @@
         5.158604,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "antimatter-energy-fuel"
     },
@@ -12621,7 +12621,7 @@
         0.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "antimatter-energy-fuel"
     },
@@ -12647,7 +12647,7 @@
         0.121091776,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "antimatter-energy-fuel"
     },
@@ -12677,7 +12677,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "virtual-energy-fuel"
     },
@@ -12701,7 +12701,7 @@
         34000.6328,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "virtual-energy-fuel"
     },
@@ -12731,7 +12731,7 @@
         1.2,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "virtual-energy-fuel"
     },
@@ -12755,7 +12755,7 @@
         32.9728432,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "virtual-energy-fuel"
     },
@@ -12803,7 +12803,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "plastic"
     },
@@ -12827,7 +12827,7 @@
         1.98957658,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "plastic"
     },
@@ -12853,7 +12853,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "plastic"
     },
@@ -12901,7 +12901,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "graphene"
     },
@@ -12925,7 +12925,7 @@
         0.5843747,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "graphene"
     },
@@ -12951,7 +12951,7 @@
         0.480000019,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "graphene"
     },
@@ -12999,7 +12999,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "nanotube"
     },
@@ -13023,7 +13023,7 @@
         0.4360135,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "nanotube"
     },
@@ -13049,7 +13049,7 @@
         0.480000019,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "nanotube"
     },
@@ -13073,7 +13073,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "crystal-rubber"
     },
@@ -13103,7 +13103,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "crystal-rubber"
     },
@@ -13127,7 +13127,7 @@
         0.6549326,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "crystal-rubber"
     },
@@ -13155,7 +13155,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "crystal-rubber"
     },
@@ -13203,7 +13203,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "titan-crystal"
     },
@@ -13227,7 +13227,7 @@
         3.216243,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "titan-crystal"
     },
@@ -13253,7 +13253,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "titan-crystal"
     },
@@ -13283,7 +13283,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "casimir-crystal"
     },
@@ -13307,7 +13307,7 @@
         2.58674741,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "casimir-crystal"
     },
@@ -13335,7 +13335,7 @@
         11.52,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "casimir-crystal"
     },
@@ -13383,7 +13383,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "explosive"
     },
@@ -13407,7 +13407,7 @@
         1.0016011,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "explosive"
     },
@@ -13431,7 +13431,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "explosive"
     },
@@ -13455,7 +13455,7 @@
         0.4461534,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "explosive"
     },
@@ -13503,7 +13503,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "high-explosive"
     },
@@ -13527,7 +13527,7 @@
         2.85150051,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "high-explosive"
     },
@@ -13555,7 +13555,7 @@
         0.480000019,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "high-explosive"
     },
@@ -13581,7 +13581,7 @@
         0.7165453,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "high-explosive"
     },
@@ -13629,7 +13629,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "particle-explosive"
     },
@@ -13653,7 +13653,7 @@
         0.6655878,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "particle-explosive"
     },
@@ -13681,7 +13681,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "particle-explosive"
     },
@@ -13705,7 +13705,7 @@
         5.296803,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "particle-explosive"
     },
@@ -13753,7 +13753,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "gravity-lens"
     },
@@ -13777,7 +13777,7 @@
         16.1955967,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gravity-lens"
     },
@@ -13803,7 +13803,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gravity-lens"
     },
@@ -13851,7 +13851,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "space-warper"
     },
@@ -13875,7 +13875,7 @@
         4.882753,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "space-warper"
     },
@@ -13899,7 +13899,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "space-warper"
     },
@@ -13947,7 +13947,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "fusion-capacitor"
     },
@@ -13971,7 +13971,7 @@
         0.709060848,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fusion-capacitor"
     },
@@ -13997,7 +13997,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fusion-capacitor"
     },
@@ -14045,7 +14045,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "engine"
     },
@@ -14069,7 +14069,7 @@
         2.05636454,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "engine"
     },
@@ -14095,7 +14095,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "engine"
     },
@@ -14143,7 +14143,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "fuel-thruster"
     },
@@ -14167,7 +14167,7 @@
         3.5294764,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fuel-thruster"
     },
@@ -14193,7 +14193,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fuel-thruster"
     },
@@ -14241,7 +14241,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "ion-thruster"
     },
@@ -14265,7 +14265,7 @@
         48.58535,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "ion-thruster"
     },
@@ -14291,7 +14291,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "ion-thruster"
     },
@@ -14321,7 +14321,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "delivery-drone"
     },
@@ -14345,7 +14345,7 @@
         7.3193903,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "delivery-drone"
     },
@@ -14373,7 +14373,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "delivery-drone"
     },
@@ -14397,7 +14397,7 @@
         0.7088236,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "delivery-drone"
     },
@@ -14427,7 +14427,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "logistic-drone"
     },
@@ -14451,7 +14451,7 @@
         20.65222,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "logistic-drone"
     },
@@ -14479,7 +14479,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "logistic-drone"
     },
@@ -14505,7 +14505,7 @@
         0.174751148,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "logistic-drone"
     },
@@ -14535,7 +14535,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "logistic-vessel"
     },
@@ -14559,7 +14559,7 @@
         79.0055847,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "logistic-vessel"
     },
@@ -14587,7 +14587,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "logistic-vessel"
     },
@@ -14611,7 +14611,7 @@
         21.0751057,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "logistic-vessel"
     },
@@ -14641,7 +14641,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "frame-material"
     },
@@ -14665,7 +14665,7 @@
         4.16868973,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frame-material"
     },
@@ -14693,7 +14693,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frame-material"
     },
@@ -14723,7 +14723,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "dyson-sphere-component"
     },
@@ -14747,7 +14747,7 @@
         25.060051,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "dyson-sphere-component"
     },
@@ -14775,7 +14775,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "dyson-sphere-component"
     },
@@ -14805,7 +14805,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "rocket"
     },
@@ -14829,7 +14829,7 @@
         31.4303188,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocket"
     },
@@ -14857,7 +14857,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocket"
     },
@@ -14901,7 +14901,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "terrain-tool"
     },
@@ -14931,7 +14931,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "accelerator-1"
     },
@@ -14955,7 +14955,7 @@
         0.227519423,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accelerator-1"
     },
@@ -14979,7 +14979,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accelerator-1"
     },
@@ -15003,7 +15003,7 @@
         0.3330173,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accelerator-1"
     },
@@ -15033,7 +15033,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "accelerator-2"
     },
@@ -15057,7 +15057,7 @@
         0.8677898,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accelerator-2"
     },
@@ -15083,7 +15083,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accelerator-2"
     },
@@ -15109,7 +15109,7 @@
         0.5029402,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accelerator-2"
     },
@@ -15139,7 +15139,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "accelerator-3"
     },
@@ -15163,7 +15163,7 @@
         1.21922112,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accelerator-3"
     },
@@ -15189,7 +15189,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accelerator-3"
     },
@@ -15213,7 +15213,7 @@
         7.740101,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accelerator-3"
     },
@@ -15243,7 +15243,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "bullet"
     },
@@ -15267,7 +15267,7 @@
         1.20110929,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bullet"
     },
@@ -15291,7 +15291,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bullet"
     },
@@ -15315,7 +15315,7 @@
         0.660231352,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bullet"
     },
@@ -15345,7 +15345,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "bullet-titanium"
     },
@@ -15369,7 +15369,7 @@
         2.31073,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bullet-titanium"
     },
@@ -15395,7 +15395,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bullet-titanium"
     },
@@ -15421,7 +15421,7 @@
         0.6229047,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bullet-titanium"
     },
@@ -15451,7 +15451,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "bullet-alloy"
     },
@@ -15475,7 +15475,7 @@
         2.516216,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bullet-alloy"
     },
@@ -15501,7 +15501,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bullet-alloy"
     },
@@ -15525,7 +15525,7 @@
         5.99897957,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "bullet-alloy"
     },
@@ -15555,7 +15555,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "cannonball"
     },
@@ -15579,7 +15579,7 @@
         3.46164227,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "cannonball"
     },
@@ -15605,7 +15605,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "cannonball"
     },
@@ -15629,7 +15629,7 @@
         0.486383438,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "cannonball"
     },
@@ -15659,7 +15659,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "cannonball-cluster"
     },
@@ -15683,7 +15683,7 @@
         14.234211,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "cannonball-cluster"
     },
@@ -15711,7 +15711,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "cannonball-cluster"
     },
@@ -15737,7 +15737,7 @@
         0.5614564,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "cannonball-cluster"
     },
@@ -15767,7 +15767,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "cannonball-alloy"
     },
@@ -15791,7 +15791,7 @@
         4.2735877,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "cannonball-alloy"
     },
@@ -15819,7 +15819,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "cannonball-alloy"
     },
@@ -15843,7 +15843,7 @@
         6.813043,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "cannonball-alloy"
     },
@@ -15873,7 +15873,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "capsule-energy"
     },
@@ -15897,7 +15897,7 @@
         0.4891308,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "capsule-energy"
     },
@@ -15925,7 +15925,7 @@
         9.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "capsule-energy"
     },
@@ -15949,7 +15949,7 @@
         0.054190293,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "capsule-energy"
     },
@@ -15979,7 +15979,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "capsule-antimatter"
     },
@@ -16003,7 +16003,7 @@
         5.006572,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "capsule-antimatter"
     },
@@ -16033,7 +16033,7 @@
         9.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "capsule-antimatter"
     },
@@ -16057,7 +16057,7 @@
         73.81396,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "capsule-antimatter"
     },
@@ -16087,7 +16087,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "missile"
     },
@@ -16111,7 +16111,7 @@
         8.673827,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "missile"
     },
@@ -16141,7 +16141,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "missile"
     },
@@ -16165,7 +16165,7 @@
         0.395582169,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "missile"
     },
@@ -16195,7 +16195,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "missile-supersonic"
     },
@@ -16219,7 +16219,7 @@
         10.1108627,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "missile-supersonic"
     },
@@ -16249,7 +16249,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "missile-supersonic"
     },
@@ -16275,7 +16275,7 @@
         0.5785233,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "missile-supersonic"
     },
@@ -16305,7 +16305,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "missile-graviton"
     },
@@ -16329,7 +16329,7 @@
         2.26725435,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "missile-graviton"
     },
@@ -16357,7 +16357,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "missile-graviton"
     },
@@ -16381,7 +16381,7 @@
         6.660983,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "missile-graviton"
     },
@@ -16411,7 +16411,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "em-disturb"
     },
@@ -16435,7 +16435,7 @@
         9.468236,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "em-disturb"
     },
@@ -16463,7 +16463,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "em-disturb"
     },
@@ -16487,7 +16487,7 @@
         0.895534039,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "em-disturb"
     },
@@ -16517,7 +16517,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "em-suppress"
     },
@@ -16541,7 +16541,7 @@
         7.67658854,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "em-suppress"
     },
@@ -16569,7 +16569,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "em-suppress"
     },
@@ -16593,7 +16593,7 @@
         4.46660852,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "em-suppress"
     },
@@ -16623,7 +16623,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "fighter-shield"
     },
@@ -16647,7 +16647,7 @@
         11.2350273,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fighter-shield"
     },
@@ -16677,7 +16677,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fighter-shield"
     },
@@ -16703,7 +16703,7 @@
         0.275103778,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fighter-shield"
     },
@@ -16733,7 +16733,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "fighter-plasma"
     },
@@ -16757,7 +16757,7 @@
         19.8754444,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fighter-plasma"
     },
@@ -16787,7 +16787,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fighter-plasma"
     },
@@ -16815,7 +16815,7 @@
         0.20953849,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fighter-plasma"
     },
@@ -16845,7 +16845,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "fighter-laser"
     },
@@ -16869,7 +16869,7 @@
         11.6162663,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fighter-laser"
     },
@@ -16899,7 +16899,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fighter-laser"
     },
@@ -16927,7 +16927,7 @@
         0.375751585,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fighter-laser"
     },
@@ -16957,7 +16957,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "warship-plasma"
     },
@@ -16981,7 +16981,7 @@
         11.40271,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "warship-plasma"
     },
@@ -17011,7 +17011,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "warship-plasma"
     },
@@ -17039,7 +17039,7 @@
         0.391073048,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "warship-plasma"
     },
@@ -17069,7 +17069,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "warship-laser"
     },
@@ -17093,7 +17093,7 @@
         14.549921,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "warship-laser"
     },
@@ -17123,7 +17123,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "warship-laser"
     },
@@ -17149,7 +17149,7 @@
         0.0200273953,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "warship-laser"
     },
@@ -17192,7 +17192,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "memory"
     },
@@ -17222,7 +17222,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "memory"
     },
@@ -17246,7 +17246,7 @@
         6.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "memory"
     },
@@ -17272,7 +17272,7 @@
         0.519750535,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "memory"
     },
@@ -17315,7 +17315,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "silicon-neuron"
     },
@@ -17345,7 +17345,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "silicon-neuron"
     },
@@ -17369,7 +17369,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "silicon-neuron"
     },
@@ -17393,7 +17393,7 @@
         14.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "silicon-neuron"
     },
@@ -17419,7 +17419,7 @@
         1.15606928,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "silicon-neuron"
     },
@@ -17462,7 +17462,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "reassembler"
     },
@@ -17492,7 +17492,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "reassembler"
     },
@@ -17516,7 +17516,7 @@
         3.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "reassembler"
     },
@@ -17540,7 +17540,7 @@
         10.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "reassembler"
     },
@@ -17566,7 +17566,7 @@
         0.9782608,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "reassembler"
     },
@@ -17609,7 +17609,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "negentropy"
     },
@@ -17639,7 +17639,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "negentropy"
     },
@@ -17663,7 +17663,7 @@
         6.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "negentropy"
     },
@@ -17687,7 +17687,7 @@
         18.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "negentropy"
     },
@@ -17713,7 +17713,7 @@
         0.443262428,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "negentropy"
     },
@@ -17756,7 +17756,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "virtual-particle"
     },
@@ -17786,7 +17786,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "virtual-particle"
     },
@@ -17810,7 +17810,7 @@
         24.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "virtual-particle"
     },
@@ -17834,7 +17834,7 @@
         72.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "virtual-particle"
     },
@@ -17858,7 +17858,7 @@
         8.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "virtual-particle"
     },
@@ -17901,7 +17901,7 @@
         4.0,
         0.049999997
       ],
-      "TimeSpend": 3000,
+      "TimeSpend": 3000.0,
       "Proliferator": 1,
       "IconName": "energy-fragment"
     },
@@ -17931,7 +17931,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "energy-fragment"
     },
@@ -17955,7 +17955,7 @@
         1.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "energy-fragment"
     },
@@ -17979,7 +17979,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "energy-fragment"
     },
@@ -18003,7 +18003,7 @@
         1.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "energy-fragment"
     },
@@ -18029,7 +18029,7 @@
         0.320000023,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "belt-1"
     },
@@ -18053,7 +18053,7 @@
         0.3211938,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "belt-1"
     },
@@ -18079,7 +18079,7 @@
         0.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "belt-2"
     },
@@ -18105,7 +18105,7 @@
         0.605976164,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "belt-2"
     },
@@ -18133,7 +18133,7 @@
         0.400000036,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "belt-3"
     },
@@ -18157,7 +18157,7 @@
         6.395356,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "belt-3"
     },
@@ -18183,7 +18183,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "inserter-1"
     },
@@ -18207,7 +18207,7 @@
         0.915927052,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "inserter-1"
     },
@@ -18233,7 +18233,7 @@
         0.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "inserter-2"
     },
@@ -18259,7 +18259,7 @@
         0.718082845,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "inserter-2"
     },
@@ -18285,7 +18285,7 @@
         0.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "inserter-3"
     },
@@ -18311,7 +18311,7 @@
         0.305148542,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "inserter-3"
     },
@@ -18339,7 +18339,7 @@
         1.2,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "inserter-4"
     },
@@ -18363,7 +18363,7 @@
         12.5947475,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "inserter-4"
     },
@@ -18391,7 +18391,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "splitter-4dir"
     },
@@ -18419,7 +18419,7 @@
         0.07661778,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "splitter-4dir"
     },
@@ -18449,7 +18449,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "piler"
     },
@@ -18477,7 +18477,7 @@
         2.2834444,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "piler"
     },
@@ -18507,7 +18507,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "monitor"
     },
@@ -18535,7 +18535,7 @@
         0.117034696,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "monitor"
     },
@@ -18565,7 +18565,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "spray-coater"
     },
@@ -18593,7 +18593,7 @@
         0.964042544,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "spray-coater"
     },
@@ -18621,7 +18621,7 @@
         3.84000015,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "delivery-machine"
     },
@@ -18645,7 +18645,7 @@
         0.116706312,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "delivery-machine"
     },
@@ -18671,7 +18671,7 @@
         3.84000015,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "storage-1"
     },
@@ -18695,7 +18695,7 @@
         0.3417429,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "storage-1"
     },
@@ -18721,7 +18721,7 @@
         7.68000031,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "storage-2"
     },
@@ -18745,7 +18745,7 @@
         11.7047052,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "storage-2"
     },
@@ -18773,7 +18773,7 @@
         3.84000015,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "storage-tank"
     },
@@ -18801,7 +18801,7 @@
         3.84000015,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "assembler-1"
     },
@@ -18825,7 +18825,7 @@
         0.357333153,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "assembler-1"
     },
@@ -18853,7 +18853,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "assembler-2"
     },
@@ -18879,7 +18879,7 @@
         0.301419139,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "assembler-2"
     },
@@ -18907,7 +18907,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "assembler-3"
     },
@@ -18933,7 +18933,7 @@
         0.8333335,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "assembler-3"
     },
@@ -18963,7 +18963,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "assembler-4"
     },
@@ -18987,7 +18987,7 @@
         4.60370827,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "assembler-4"
     },
@@ -19013,7 +19013,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "tesla-coil"
     },
@@ -19037,7 +19037,7 @@
         0.144884944,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "tesla-coil"
     },
@@ -19063,7 +19063,7 @@
         3.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "charging-pole"
     },
@@ -19089,7 +19089,7 @@
         0.159568027,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "charging-pole"
     },
@@ -19117,7 +19117,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "orbital-substation"
     },
@@ -19141,7 +19141,7 @@
         24.75859,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "orbital-substation"
     },
@@ -19169,7 +19169,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "wind-turbine"
     },
@@ -19195,7 +19195,7 @@
         0.296557635,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "wind-turbine"
     },
@@ -19225,7 +19225,7 @@
         3.84000015,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fuel-plant"
     },
@@ -19249,7 +19249,7 @@
         0.306579471,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fuel-plant"
     },
@@ -19279,7 +19279,7 @@
         3.84000015,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fusion-power-station"
     },
@@ -19305,7 +19305,7 @@
         0.227792576,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fusion-power-station"
     },
@@ -19335,7 +19335,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "geothermal-power-station"
     },
@@ -19361,7 +19361,7 @@
         0.396365553,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "geothermal-power-station"
     },
@@ -19391,7 +19391,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "mining-drill"
     },
@@ -19415,7 +19415,7 @@
         0.008442194,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "mining-drill"
     },
@@ -19447,7 +19447,7 @@
         38.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "mining-drill-mk2"
     },
@@ -19471,7 +19471,7 @@
         473.8105,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "mining-drill-mk2"
     },
@@ -19501,7 +19501,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "water-pump"
     },
@@ -19531,7 +19531,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "smelter"
     },
@@ -19555,7 +19555,7 @@
         0.0205069873,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "smelter"
     },
@@ -19585,7 +19585,7 @@
         18.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "smelter-2"
     },
@@ -19611,7 +19611,7 @@
         1.1356436,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "smelter-2"
     },
@@ -19641,7 +19641,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "smelter-3"
     },
@@ -19665,7 +19665,7 @@
         3.509107,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "smelter-3"
     },
@@ -19695,7 +19695,7 @@
         3.84000015,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "oil-extractor"
     },
@@ -19719,7 +19719,7 @@
         1.83029759,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "oil-extractor"
     },
@@ -19749,7 +19749,7 @@
         5.76,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "oil-refinery"
     },
@@ -19773,7 +19773,7 @@
         2.185437,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "oil-refinery"
     },
@@ -19803,7 +19803,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "chemical-plant"
     },
@@ -19827,7 +19827,7 @@
         0.09068516,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "chemical-plant"
     },
@@ -19857,7 +19857,7 @@
         3.60000014,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "chemical-plant-2"
     },
@@ -19881,7 +19881,7 @@
         44.10865,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "chemical-plant-2"
     },
@@ -19911,7 +19911,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fractionator"
     },
@@ -19939,7 +19939,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "solar-panel"
     },
@@ -19965,7 +19965,7 @@
         1.34990871,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "solar-panel"
     },
@@ -19993,7 +19993,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accumulator"
     },
@@ -20021,7 +20021,7 @@
         0.0424373671,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accumulator"
     },
@@ -20107,7 +20107,7 @@
         903.0875,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "accumulator-full"
     },
@@ -20137,7 +20137,7 @@
         9.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "em-rail-ejector"
     },
@@ -20165,7 +20165,7 @@
         0.121382371,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "em-rail-ejector"
     },
@@ -20197,7 +20197,7 @@
         19.2,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "ray-receiver"
     },
@@ -20225,7 +20225,7 @@
         0.244417816,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "ray-receiver"
     },
@@ -20255,7 +20255,7 @@
         9.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "vertical-launching-silo"
     },
@@ -20283,7 +20283,7 @@
         4.841736,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "vertical-launching-silo"
     },
@@ -20313,7 +20313,7 @@
         7.68000031,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "energy-exchanger"
     },
@@ -20337,7 +20337,7 @@
         90.89445,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "energy-exchanger"
     },
@@ -20369,7 +20369,7 @@
         7.68,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "hadron-collider"
     },
@@ -20397,7 +20397,7 @@
         0.3514589,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "hadron-collider"
     },
@@ -20427,7 +20427,7 @@
         9.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fusion-reactor"
     },
@@ -20451,7 +20451,7 @@
         16.9130745,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "fusion-reactor"
     },
@@ -20481,7 +20481,7 @@
         19.2,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "logistic-station"
     },
@@ -20509,7 +20509,7 @@
         0.282269359,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "logistic-station"
     },
@@ -20537,7 +20537,7 @@
         24.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "interstellar-logistic-station"
     },
@@ -20565,7 +20565,7 @@
         0.391182274,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "interstellar-logistic-station"
     },
@@ -20595,7 +20595,7 @@
         24.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "orbital-collector"
     },
@@ -20621,7 +20621,7 @@
         3.03745985,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "orbital-collector"
     },
@@ -20651,7 +20651,7 @@
         3.84000015,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "lab"
     },
@@ -20675,7 +20675,7 @@
         0.06399483,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "lab"
     },
@@ -20705,7 +20705,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "lab-2"
     },
@@ -20729,7 +20729,7 @@
         62.5050468,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "lab-2"
     },
@@ -20759,7 +20759,7 @@
         3.84000015,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-gauss"
     },
@@ -20785,7 +20785,7 @@
         0.176972926,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-gauss"
     },
@@ -20815,7 +20815,7 @@
         8.64,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-laser"
     },
@@ -20841,7 +20841,7 @@
         0.359439045,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-laser"
     },
@@ -20871,7 +20871,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-cannon"
     },
@@ -20897,7 +20897,7 @@
         2.57204962,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-cannon"
     },
@@ -20929,7 +20929,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-plasma"
     },
@@ -20955,7 +20955,7 @@
         2.04081869,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-plasma"
     },
@@ -20985,7 +20985,7 @@
         5.76,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-missile"
     },
@@ -21011,7 +21011,7 @@
         1.10630119,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-missile"
     },
@@ -21041,7 +21041,7 @@
         2.88,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-disturb"
     },
@@ -21069,7 +21069,7 @@
         0.3169855,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-disturb"
     },
@@ -21097,7 +21097,7 @@
         7.20000029,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-signal"
     },
@@ -21125,7 +21125,7 @@
         0.204541,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-signal"
     },
@@ -21155,7 +21155,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-shield"
     },
@@ -21183,7 +21183,7 @@
         5.537898,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-shield"
     },
@@ -21213,7 +21213,7 @@
         11.52,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "battle-base"
     },
@@ -21241,7 +21241,7 @@
         0.217072934,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "battle-base"
     },
@@ -21271,7 +21271,7 @@
         4.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-plasma-ground"
     },
@@ -21297,7 +21297,7 @@
         0.7422953,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "turret-plasma-ground"
     },
@@ -21327,7 +21327,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "t-matrix"
     },
@@ -21353,7 +21353,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "t-matrix"
     },
@@ -21377,7 +21377,7 @@
         1.270173,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "t-matrix"
     },
@@ -21407,7 +21407,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "e-matrix"
     },
@@ -21433,7 +21433,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "e-matrix"
     },
@@ -21459,7 +21459,7 @@
         0.6327126,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "e-matrix"
     },
@@ -21489,7 +21489,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "c-matrix"
     },
@@ -21515,7 +21515,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "c-matrix"
     },
@@ -21541,7 +21541,7 @@
         0.459616631,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "c-matrix"
     },
@@ -21571,7 +21571,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "i-matrix"
     },
@@ -21597,7 +21597,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "i-matrix"
     },
@@ -21623,7 +21623,7 @@
         0.531759,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "i-matrix"
     },
@@ -21653,7 +21653,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "g-matrix"
     },
@@ -21679,7 +21679,7 @@
         0.480000019,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "g-matrix"
     },
@@ -21703,7 +21703,7 @@
         7.21145773,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "g-matrix"
     },
@@ -21733,7 +21733,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "u-matrix"
     },
@@ -21767,7 +21767,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "u-matrix"
     },
@@ -21833,7 +21833,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "gravitygenerator"
     },
@@ -21857,7 +21857,7 @@
         15.62766,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gravitygenerator"
     },
@@ -21883,7 +21883,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gravitygenerator"
     },
@@ -21913,7 +21913,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "constrainring"
     },
@@ -21937,7 +21937,7 @@
         1.83741307,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "constrainring"
     },
@@ -21963,7 +21963,7 @@
         0.480000049,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "constrainring"
     },
@@ -21993,7 +21993,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "gravitydrill2"
     },
@@ -22017,7 +22017,7 @@
         43.0707626,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gravitydrill2"
     },
@@ -22045,7 +22045,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gravitydrill2"
     },
@@ -22075,7 +22075,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "tunnelingexciter2"
     },
@@ -22099,7 +22099,7 @@
         2.90504169,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "tunnelingexciter2"
     },
@@ -22125,7 +22125,7 @@
         0.160000011,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "tunnelingexciter2"
     },
@@ -22155,7 +22155,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "resonancedisc"
     },
@@ -22179,7 +22179,7 @@
         5.80819941,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "resonancedisc"
     },
@@ -22207,7 +22207,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "resonancedisc"
     },
@@ -22237,7 +22237,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "photonprobeflipsmall"
     },
@@ -22261,7 +22261,7 @@
         42.77799,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "photonprobeflipsmall"
     },
@@ -22287,7 +22287,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "photonprobeflipsmall"
     },
@@ -22317,7 +22317,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "quantumcomputer3"
     },
@@ -22341,7 +22341,7 @@
         19.6159477,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "quantumcomputer3"
     },
@@ -22369,7 +22369,7 @@
         0.9600001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "quantumcomputer3"
     },
@@ -22399,7 +22399,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "iacomponent"
     },
@@ -22423,7 +22423,7 @@
         71.1262,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "iacomponent"
     },
@@ -22451,7 +22451,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "iacomponent"
     },
@@ -22481,7 +22481,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "rocketMatter"
     },
@@ -22505,7 +22505,7 @@
         36.8213959,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketMatter"
     },
@@ -22533,7 +22533,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketMatter"
     },
@@ -22563,7 +22563,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "rocketScience"
     },
@@ -22587,7 +22587,7 @@
         4.13197565,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketScience"
     },
@@ -22615,7 +22615,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketScience"
     },
@@ -22645,7 +22645,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "rocketWarp"
     },
@@ -22669,7 +22669,7 @@
         37.2006836,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketWarp"
     },
@@ -22697,7 +22697,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketWarp"
     },
@@ -22727,7 +22727,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "rocketAssembly"
     },
@@ -22751,7 +22751,7 @@
         180.0805,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketAssembly"
     },
@@ -22777,7 +22777,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketAssembly"
     },
@@ -22807,7 +22807,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "rocketCrystal"
     },
@@ -22831,7 +22831,7 @@
         19.03301,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketCrystal"
     },
@@ -22859,7 +22859,7 @@
         1.92000008,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketCrystal"
     },
@@ -22907,7 +22907,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "integratedcomponents"
     },
@@ -22931,7 +22931,7 @@
         77.6489,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "integratedcomponents"
     },
@@ -22955,7 +22955,7 @@
         25828.0664,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "integratedcomponents"
     },
@@ -22985,7 +22985,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "forceGen"
     },
@@ -23009,7 +23009,7 @@
         1918.4635,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "forceGen"
     },
@@ -23035,7 +23035,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "forceGen"
     },
@@ -23065,7 +23065,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "compoCrystal"
     },
@@ -23089,7 +23089,7 @@
         165.391922,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "compoCrystal"
     },
@@ -23121,7 +23121,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "compoCrystal"
     },
@@ -23151,7 +23151,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "elemaginhibitor2"
     },
@@ -23175,7 +23175,7 @@
         829.5021,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "elemaginhibitor2"
     },
@@ -23201,7 +23201,7 @@
         1.9200002,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "elemaginhibitor2"
     },
@@ -23231,7 +23231,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "gluonGen"
     },
@@ -23255,7 +23255,7 @@
         518.5295,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gluonGen"
     },
@@ -23283,7 +23283,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gluonGen"
     },
@@ -23313,7 +23313,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "strIntOverloader"
     },
@@ -23337,7 +23337,7 @@
         8643.06,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "strIntOverloader"
     },
@@ -23363,7 +23363,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "strIntOverloader"
     },
@@ -23393,7 +23393,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "starcannonframe"
     },
@@ -23417,7 +23417,7 @@
         7088.02051,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "starcannonframe"
     },
@@ -23445,7 +23445,7 @@
         3.6,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "starcannonframe"
     },
@@ -23475,7 +23475,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "starcannoncompo"
     },
@@ -23499,7 +23499,7 @@
         19209.5957,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "starcannoncompo"
     },
@@ -23525,7 +23525,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "starcannoncompo"
     },
@@ -23555,7 +23555,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "rocketStarcannon"
     },
@@ -23579,7 +23579,7 @@
         46847.6172,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketStarcannon"
     },
@@ -23607,7 +23607,7 @@
         2.4,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "rocketStarcannon"
     },
@@ -23637,7 +23637,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "drop1"
     },
@@ -23661,7 +23661,7 @@
         576845.1,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "drop1"
     },
@@ -23689,7 +23689,7 @@
         120.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "drop1"
     },
@@ -23713,7 +23713,7 @@
         198.3354,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "drop1"
     },
@@ -23779,7 +23779,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "electromagnetic-ticket"
     },
@@ -23803,7 +23803,7 @@
         12.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "electromagnetic-ticket"
     },
@@ -23827,7 +23827,7 @@
         1.25734234,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "electromagnetic-ticket"
     },
@@ -23857,7 +23857,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "energy-ticket"
     },
@@ -23881,7 +23881,7 @@
         12.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "energy-ticket"
     },
@@ -23907,7 +23907,7 @@
         0.630338848,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "energy-ticket"
     },
@@ -23937,7 +23937,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "structure-ticket"
     },
@@ -23961,7 +23961,7 @@
         12.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "structure-ticket"
     },
@@ -23987,7 +23987,7 @@
         0.455742151,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "structure-ticket"
     },
@@ -24017,7 +24017,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "information-ticket"
     },
@@ -24041,7 +24041,7 @@
         12.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "information-ticket"
     },
@@ -24067,7 +24067,7 @@
         0.525718451,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "information-ticket"
     },
@@ -24097,7 +24097,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "gravity-ticket"
     },
@@ -24121,7 +24121,7 @@
         12.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gravity-ticket"
     },
@@ -24145,7 +24145,7 @@
         7.30075455,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "gravity-ticket"
     },
@@ -24175,7 +24175,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "universe-ticket"
     },
@@ -24199,7 +24199,7 @@
         12.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "universe-ticket"
     },
@@ -24229,7 +24229,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "dark-fog-ticket"
     },
@@ -24253,7 +24253,7 @@
         240.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "dark-fog-ticket"
     },
@@ -24301,7 +24301,7 @@
         0.120000005,
         0.120000005
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-normal"
     },
@@ -24331,7 +24331,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "frac-proto-normal"
     },
@@ -24355,7 +24355,7 @@
         36.0937347,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-normal"
     },
@@ -24379,7 +24379,7 @@
         672.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-normal"
     },
@@ -24403,7 +24403,7 @@
         1.381579,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-normal"
     },
@@ -24453,7 +24453,7 @@
         0.096,
         0.096
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-uncommon"
     },
@@ -24483,7 +24483,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "frac-proto-uncommon"
     },
@@ -24507,7 +24507,7 @@
         52.2499733,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-uncommon"
     },
@@ -24531,7 +24531,7 @@
         972.7999,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-uncommon"
     },
@@ -24557,7 +24557,7 @@
         1.28161883,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-uncommon"
     },
@@ -24605,7 +24605,7 @@
         0.24000001,
         0.24000001
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-rare"
     },
@@ -24635,7 +24635,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "frac-proto-rare"
     },
@@ -24659,7 +24659,7 @@
         58.4374733,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-rare"
     },
@@ -24683,7 +24683,7 @@
         1088.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-rare"
     },
@@ -24709,7 +24709,7 @@
         1.03099036,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-rare"
     },
@@ -24757,7 +24757,7 @@
         0.72,
         0.120000005
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-epic"
     },
@@ -24787,7 +24787,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "frac-proto-epic"
     },
@@ -24811,7 +24811,7 @@
         79.9218445,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-epic"
     },
@@ -24835,7 +24835,7 @@
         1488.00012,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-epic"
     },
@@ -24861,7 +24861,7 @@
         1.07192266,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-epic"
     },
@@ -24903,7 +24903,7 @@
         0.480000019,
         0.72
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-legendary"
     },
@@ -24933,7 +24933,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "frac-proto-legendary"
     },
@@ -24957,7 +24957,7 @@
         111.718704,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-legendary"
     },
@@ -24981,7 +24981,7 @@
         2080.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-legendary"
     },
@@ -25005,7 +25005,7 @@
         2.79569864,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-legendary"
     },
@@ -25053,7 +25053,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "frac-proto-directional"
     },
@@ -25077,7 +25077,7 @@
         193.359283,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-directional"
     },
@@ -25101,7 +25101,7 @@
         3600.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "frac-proto-directional"
     },
@@ -25185,7 +25185,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "copy-essence"
     },
@@ -25209,7 +25209,7 @@
         25.7812386,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "copy-essence"
     },
@@ -25233,7 +25233,7 @@
         480.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "copy-essence"
     },
@@ -25259,7 +25259,7 @@
         0.6666666,
         0.716666639
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "copy-essence"
     },
@@ -25307,7 +25307,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "alchemy-essence"
     },
@@ -25331,7 +25331,7 @@
         25.7812386,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "alchemy-essence"
     },
@@ -25355,7 +25355,7 @@
         480.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "alchemy-essence"
     },
@@ -25381,7 +25381,7 @@
         0.6666666,
         0.716666639
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "alchemy-essence"
     },
@@ -25429,7 +25429,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "deconstruction-essence"
     },
@@ -25453,7 +25453,7 @@
         25.7812386,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "deconstruction-essence"
     },
@@ -25477,7 +25477,7 @@
         480.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "deconstruction-essence"
     },
@@ -25503,7 +25503,7 @@
         0.6666666,
         0.716666639
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "deconstruction-essence"
     },
@@ -25551,7 +25551,7 @@
       "ResultCounts": [
         4.0
       ],
-      "TimeSpend": 1091,
+      "TimeSpend": 1091.0,
       "Proliferator": 1,
       "IconName": "conversion-essence"
     },
@@ -25575,7 +25575,7 @@
         25.7812386,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "conversion-essence"
     },
@@ -25599,7 +25599,7 @@
         480.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "conversion-essence"
     },
@@ -25627,7 +25627,7 @@
         0.6666666,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "conversion-essence"
     },
@@ -25651,7 +25651,7 @@
         0.480000019,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "interaction-tower"
     },
@@ -25683,7 +25683,7 @@
         0.455926985,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "interaction-tower"
     },
@@ -25707,7 +25707,7 @@
         0.24000001,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "mineral-copy-tower"
     },
@@ -25737,7 +25737,7 @@
         0.25,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "mineral-copy-tower"
     },
@@ -25761,7 +25761,7 @@
         0.8,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "point-aggregate-tower"
     },
@@ -25793,7 +25793,7 @@
         0.658761561,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "point-aggregate-tower"
     },
@@ -25817,7 +25817,7 @@
         1.2,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "quantum-copy-tower"
     },
@@ -25841,7 +25841,7 @@
         3.0,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "quantum-copy-tower"
     },
@@ -25865,7 +25865,7 @@
         0.480000019,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "alchemy-tower"
     },
@@ -25897,7 +25897,7 @@
         0.455926985,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "alchemy-tower"
     },
@@ -25921,7 +25921,7 @@
         0.480000019,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "deconstruction-tower"
     },
@@ -25953,7 +25953,7 @@
         0.455926985,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "deconstruction-tower"
     },
@@ -25977,7 +25977,7 @@
         0.480000019,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "conversion-tower"
     },
@@ -26009,7 +26009,7 @@
         0.455926985,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "conversion-tower"
     },
@@ -26035,7 +26035,7 @@
         14.4000006,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "interaction-station"
     },
@@ -26061,7 +26061,7 @@
         14.4000006,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "interstellar-interaction-station"
     },
@@ -26087,7 +26087,7 @@
         0.960000038,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "exchangeLS"
     },
@@ -26115,7 +26115,7 @@
         0.6111622,
         0.049999997
       ],
-      "TimeSpend": 1200,
+      "TimeSpend": 1200.0,
       "Proliferator": 1,
       "IconName": "exchangeLS"
     }

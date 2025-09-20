@@ -87,7 +87,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]铁块",
+      "Name": "[负熵熔炉双倍产物]铁块",
       "Items": [
         1001
       ],
@@ -217,7 +217,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]铜块",
+      "Name": "[负熵熔炉双倍产物]铜块",
       "Items": [
         1002
       ],
@@ -263,7 +263,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]石材",
+      "Name": "[负熵熔炉双倍产物]石材",
       "Items": [
         1005
       ],
@@ -712,7 +712,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]高能石墨",
+      "Name": "[负熵熔炉双倍产物]高能石墨",
       "Items": [
         1006
       ],
@@ -964,7 +964,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]铝块",
+      "Name": "[负熵熔炉双倍产物]铝块",
       "Items": [
         6202
       ],
@@ -1012,7 +1012,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]铝合金",
+      "Name": "[负熵熔炉双倍产物]铝合金",
       "Items": [
         1101,
         6203
@@ -1395,7 +1395,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]晶格硅",
+      "Name": "[负熵熔炉双倍产物]晶格硅",
       "Items": [
         1105
       ],
@@ -1797,7 +1797,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]玻璃",
+      "Name": "[负熵熔炉双倍产物]玻璃",
       "Items": [
         1005
       ],
@@ -2120,7 +2120,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]高纯硅块",
+      "Name": "[负熵熔炉双倍产物]高纯硅块",
       "Items": [
         1003
       ],
@@ -2166,7 +2166,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]金刚石",
+      "Name": "[负熵熔炉双倍产物]金刚石",
       "Items": [
         1109
       ],
@@ -2212,7 +2212,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]金刚石（高效）",
+      "Name": "[负熵熔炉双倍产物]金刚石（高效）",
       "Items": [
         1012
       ],
@@ -2258,7 +2258,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]晶格硅（高效）",
+      "Name": "[负熵熔炉双倍产物]晶格硅（高效）",
       "Items": [
         1013
       ],
@@ -2304,7 +2304,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]钢材",
+      "Name": "[负熵熔炉双倍产物]钢材",
       "Items": [
         1101
       ],
@@ -2438,7 +2438,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]钛块",
+      "Name": "[负熵熔炉双倍产物]钛块",
       "Items": [
         1004
       ],
@@ -2488,7 +2488,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]钛合金",
+      "Name": "[负熵熔炉双倍产物]钛合金",
       "Items": [
         1103,
         1106,
@@ -3995,7 +3995,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]铝矿粉",
+      "Name": "[负熵熔炉双倍产物]铝矿粉",
       "Items": [
         6202
       ],
@@ -5795,7 +5795,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]星河卫士奖章Recipe",
+      "Name": "[负熵熔炉双倍产物]星河卫士奖章Recipe",
       "Items": [
         1104
       ],
@@ -5844,7 +5844,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]放射性矿物处理",
+      "Name": "[负熵熔炉双倍产物]放射性矿物处理",
       "Items": [
         6222,
         7020
@@ -5894,7 +5894,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]铝矿精炼",
+      "Name": "[负熵熔炉双倍产物]铝矿精炼",
       "Items": [
         6273
       ],
@@ -5940,7 +5940,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]钨矿精炼",
+      "Name": "[负熵熔炉双倍产物]钨矿精炼",
       "Items": [
         6281
       ],
@@ -5985,7 +5985,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]钨矿粉",
+      "Name": "[负熵熔炉双倍产物]钨矿粉",
       "Items": [
         6201
       ],
@@ -6030,7 +6030,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]含铀核燃料",
+      "Name": "[负熵熔炉双倍产物]含铀核燃料",
       "Items": [
         6225
       ],
@@ -6075,7 +6075,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]含钚核燃料",
+      "Name": "[负熵熔炉双倍产物]含钚核燃料",
       "Items": [
         6226
       ],
@@ -6205,7 +6205,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]铁矿精炼",
+      "Name": "[负熵熔炉双倍产物]铁矿精炼",
       "Items": [
         6252
       ],
@@ -6251,7 +6251,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]铜矿精炼",
+      "Name": "[负熵熔炉双倍产物]铜矿精炼",
       "Items": [
         6253
       ],
@@ -6297,7 +6297,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]硅矿精炼",
+      "Name": "[负熵熔炉双倍产物]硅矿精炼",
       "Items": [
         6254
       ],
@@ -6343,7 +6343,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]钛矿精炼",
+      "Name": "[负熵熔炉双倍产物]钛矿精炼",
       "Items": [
         6255
       ],
@@ -6513,7 +6513,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]石矿精炼",
+      "Name": "[负熵熔炉双倍产物]石矿精炼",
       "Items": [
         6251
       ],
@@ -6559,7 +6559,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]煤矿精炼",
+      "Name": "[负熵熔炉双倍产物]煤矿精炼",
       "Items": [
         6256
       ],
@@ -6993,7 +6993,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]铁矿粉",
+      "Name": "[负熵熔炉双倍产物]铁矿粉",
       "Items": [
         1001
       ],
@@ -7038,7 +7038,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]铜矿粉",
+      "Name": "[负熵熔炉双倍产物]铜矿粉",
       "Items": [
         1002
       ],
@@ -7083,7 +7083,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]硅矿粉",
+      "Name": "[负熵熔炉双倍产物]硅矿粉",
       "Items": [
         1003
       ],
@@ -7128,7 +7128,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]钛矿粉",
+      "Name": "[负熵熔炉双倍产物]钛矿粉",
       "Items": [
         1004
       ],
@@ -7173,7 +7173,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]石粉",
+      "Name": "[负熵熔炉双倍产物]石粉",
       "Items": [
         1005
       ],
@@ -7218,7 +7218,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]煤矿粉",
+      "Name": "[负熵熔炉双倍产物]煤矿粉",
       "Items": [
         1006
       ],
@@ -7263,7 +7263,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]硫粉",
+      "Name": "[负熵熔炉双倍产物]硫粉",
       "Items": [
         6207
       ],
@@ -8322,7 +8322,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]钨块",
+      "Name": "[负熵熔炉双倍产物]钨块",
       "Items": [
         6201
       ],
@@ -8398,7 +8398,7 @@
       "Factories": [
         2319
       ],
-      "Name": "[负熵翻倍]钨合金",
+      "Name": "[负熵熔炉双倍产物]钨合金",
       "Items": [
         1107,
         7705,
@@ -10099,6 +10099,42 @@
     {
       "Type": -1,
       "Factories": [
+        0
+      ],
+      "Name": "[无中生有]齿轮",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1201
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "gear-wheel"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]磁铁",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1102
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "magnet"
+    },
+    {
+      "Type": -1,
+      "Factories": [
         1
       ],
       "Name": "[无中生有]磁线圈",
@@ -10387,6 +10423,24 @@
     {
       "Type": -1,
       "Factories": [
+        0
+      ],
+      "Name": "[无中生有]临界光子",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1208
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "photon-capacitor-full"
+    },
+    {
+      "Type": -1,
+      "Factories": [
         2208
       ],
       "Name": "[无中生有]临界光子",
@@ -10623,6 +10677,24 @@
     {
       "Type": -1,
       "Factories": [
+        0
+      ],
+      "Name": "[无中生有]晶石爆破单元",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1130
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "particle-explosive"
+    },
+    {
+      "Type": -1,
+      "Factories": [
         1
       ],
       "Name": "[无中生有]引力透镜",
@@ -10749,6 +10821,61 @@
     {
       "Type": -1,
       "Factories": [
+        0
+      ],
+      "Name": "[无中生有]增产剂 Mk.I",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1141
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "accelerator-1"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]增产剂 Mk.II",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1142
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "accelerator-2"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]晶石炮弹组",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1606
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "cannonball-alloy"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]黑雾矩阵",
@@ -10767,6 +10894,7 @@
     {
       "Type": -1,
       "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]硅基神经元",
@@ -10785,6 +10913,7 @@
     {
       "Type": -1,
       "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]物质重组器",
@@ -10803,6 +10932,7 @@
     {
       "Type": -1,
       "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]负熵奇点",
@@ -10821,6 +10951,7 @@
     {
       "Type": -1,
       "Factories": [
+        0,
         1
       ],
       "Name": "[无中生有]核心素",
@@ -10853,6 +10984,42 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "energy-fragment"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]分馏塔",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        2314
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "fractionator"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]蓄电器（满）",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        2207
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "accumulator-full"
     },
     {
       "Type": -1,
@@ -10897,6 +11064,24 @@
       "TimeSpend": 600,
       "Proliferator": 1,
       "IconName": "accumulator-full"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]水滴额外伤害",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        8035
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "r0-10"
     },
     {
       "Type": -1,
@@ -11254,6 +11439,510 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "三元精金_新"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]超级机械组件",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6504
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "超级机械组件"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]创世之书",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6506
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "创世之书"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]虚空之书",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6507
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "虚空之书"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]起源之书",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6508
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "起源之书"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志01",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6511
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志01"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志02",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6512
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志02"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志03",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6513
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志03"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志04",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6514
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志04"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志05",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6515
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志05"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志06",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6516
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志06"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志07",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6517
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志07"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志08",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6518
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志08"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志09",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6519
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志09"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志10",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6520
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志10"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]开发者日志11",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6521
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "日志11"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]电力节约",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6522
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "星球飞升-天穹巨构"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]上传扩容",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6523
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "星球飞升-科学枢纽"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]燃料回收",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6524
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "星球飞升-火力发电"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]风力扩容",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6525
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "星球飞升-风力发电"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]光伏扩容",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6526
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "星球飞升-光伏发电"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]热聚增效",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6527
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "星球飞升-聚变驱动"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]资源采掘",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6528
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "星球飞升-吞食帝国"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]裂变增效",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6529
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "裂变发电升级"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]先进推进",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6530
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "物流运输机升级"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]特征向量模拟",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6531
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "特征向量模拟"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]中继信号干扰",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6532
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "中继信号干扰"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]神经元重编程",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6533
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "神经元重编程"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]异常代码分析",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        6534
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "恶意代码攻击"
     },
     {
       "Type": -1,
@@ -13224,7 +13913,10 @@
       "Type": 3,
       "Name": "基础机械组件",
       "GridIndex": 1401,
-      "IconName": "基础机械组件"
+      "IconName": "基础机械组件",
+      "WorkEnergyPerTick": 0,
+      "Speed": 1.0,
+      "Space": 25.0
     },
     {
       "ID": 6502,
