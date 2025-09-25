@@ -6,8 +6,10 @@ export function Settings() {
     const set_settings = useContext(SettingsSetterContext);
     const DEFAULT_SETTINGS = useContext(DefaultSettingsContext);
     const global_state = useContext(GlobalStateContext);
-    let GenesisBookEnable = global_state.game_data.GenesisBookEnable ? "" : "none";
     let TheyComeFromVoidEnable = global_state.game_data.TheyComeFromVoidEnable ? "" : "none";
+    let GenesisBookEnable = global_state.game_data.GenesisBookEnable ? "" : "none";
+    let OrbitalRingEnable = global_state.game_data.OrbitalRingEnable ? "" : "none";
+    let OrbitalRingDisable = global_state.game_data.OrbitalRingEnable ? "none" : "";
 
     let percent_val = {
         mining_efficiency_large: Math.round(settings.mining_efficiency_large * 100),
@@ -54,14 +56,36 @@ export function Settings() {
         <table>
             <tbody>
             <tr>
-                <td>原油面板</td>
+                <td>原油井面板</td>
                 <td className="ps-2">
                     <input type="number" value={settings.mining_speed_oil} step={0.10}
                            style={{maxWidth: '5em'}}
                            onChange={e => change_float_setting(e, "mining_speed_oil", 0.01)}/>
                 </td>
-                <td className="ps-2">{"/s（单个油井）"}</td>
+                <td className="ps-2">{"/s（单个井）"}</td>
             </tr>
+            </tbody>
+            <tbody style={{display: OrbitalRingEnable}}>
+            <tr>
+                <td>水井面板</td>
+                <td className="ps-2">
+                    <input type="number" value={settings.mining_speed_water} step={0.10}
+                           style={{maxWidth: '5em'}}
+                           onChange={e => change_float_setting(e, "mining_speed_water", 0.01)}/>
+                </td>
+                <td className="ps-2">{"/s（单个井）"}</td>
+            </tr>
+            <tr>
+                <td>深层熔岩井面板</td>
+                <td className="ps-2">
+                    <input type="number" value={settings.mining_speed_deep_seated_lava} step={0.10}
+                           style={{maxWidth: '5em'}}
+                           onChange={e => change_float_setting(e, "mining_speed_deep_seated_lava", 0.01)}/>
+                </td>
+                <td className="ps-2">{"/s（单个井）"}</td>
+            </tr>
+            </tbody>
+            <tbody>
             <tr>
                 <td>巨星氢面板</td>
                 <td className="ps-2">
@@ -80,6 +104,8 @@ export function Settings() {
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
+            </tbody>
+            <tbody style={{display: OrbitalRingDisable}}>
             <tr>
                 <td>巨星可燃冰面板</td>
                 <td className="ps-2">
@@ -144,6 +170,17 @@ export function Settings() {
                            step={0.10}
                            style={{maxWidth: '5em'}}
                            onChange={e => change_float_setting(e, "mining_speed_sulfur_dioxide", 0.01)}/>
+                </td>
+                <td className="ps-2">{"/s（星球资源详情）"}</td>
+            </tr>
+            </tbody>
+            <tbody style={{display: OrbitalRingEnable}}>
+            <tr>
+                <td>巨星甲烷面板</td>
+                <td className="ps-2">
+                    <input type="number" value={settings.mining_speed_methane} step={0.10}
+                           style={{maxWidth: '5em'}}
+                           onChange={e => change_float_setting(e, "mining_speed_methane", 0.01)}/>
                 </td>
                 <td className="ps-2">{"/s（星球资源详情）"}</td>
             </tr>
