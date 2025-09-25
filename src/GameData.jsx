@@ -67,7 +67,7 @@ export const game_data_info_list = [
     {
         "name_en": "OrbitalRing",
         "name_cn": "星环",
-        "version": "0.8.8",
+        "version": "0.8.12",
     },
     {
         "name_en": "FractionateEverything",
