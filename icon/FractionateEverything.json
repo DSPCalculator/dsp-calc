@@ -159,8 +159,24 @@
     "total_width": 560,
     "total_height": 480
   },
-  "interaction-tower": {
+  "interaction-station": {
     "x": 0,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 560,
+    "total_height": 480
+  },
+  "interaction-tower": {
+    "x": 80,
+    "y": 320,
+    "width": 80,
+    "height": 80,
+    "total_width": 560,
+    "total_height": 480
+  },
+  "interstellar-interaction-station": {
+    "x": 160,
     "y": 320,
     "width": 80,
     "height": 80,
@@ -168,7 +184,7 @@
     "total_height": 480
   },
   "mineral-copy-tower": {
-    "x": 80,
+    "x": 240,
     "y": 320,
     "width": 80,
     "height": 80,
@@ -176,7 +192,7 @@
     "total_height": 480
   },
   "point-aggregate-tower": {
-    "x": 160,
+    "x": 320,
     "y": 320,
     "width": 80,
     "height": 80,
@@ -184,22 +200,6 @@
     "total_height": 480
   },
   "quantum-copy-tower": {
-    "x": 240,
-    "y": 320,
-    "width": 80,
-    "height": 80,
-    "total_width": 560,
-    "total_height": 480
-  },
-  "structure-ticket": {
-    "x": 320,
-    "y": 320,
-    "width": 80,
-    "height": 80,
-    "total_width": 560,
-    "total_height": 480
-  },
-  "tech分馏塔原胚": {
     "x": 400,
     "y": 0,
     "width": 80,
@@ -207,7 +207,7 @@
     "total_width": 560,
     "total_height": 480
   },
-  "tech分馏奖券": {
+  "structure-ticket": {
     "x": 400,
     "y": 80,
     "width": 80,
@@ -215,7 +215,7 @@
     "total_width": 560,
     "total_height": 480
   },
-  "tech分馏数据中心": {
+  "tech分馏塔原胚": {
     "x": 400,
     "y": 160,
     "width": 80,
@@ -223,7 +223,7 @@
     "total_width": 560,
     "total_height": 480
   },
-  "tech增产点数聚集": {
+  "tech分馏奖券": {
     "x": 400,
     "y": 240,
     "width": 80,
@@ -231,7 +231,7 @@
     "total_width": 560,
     "total_height": 480
   },
-  "tech物品交互": {
+  "tech分馏数据中心": {
     "x": 400,
     "y": 320,
     "width": 80,
@@ -239,7 +239,7 @@
     "total_width": 560,
     "total_height": 480
   },
-  "tech物品分解": {
+  "tech增产点数聚集": {
     "x": 0,
     "y": 400,
     "width": 80,
@@ -247,7 +247,7 @@
     "total_width": 560,
     "total_height": 480
   },
-  "tech物品点金": {
+  "tech物品交互": {
     "x": 80,
     "y": 400,
     "width": 80,
@@ -255,7 +255,7 @@
     "total_width": 560,
     "total_height": 480
   },
-  "tech物品转化": {
+  "tech物品分解": {
     "x": 160,
     "y": 400,
     "width": 80,
@@ -263,7 +263,7 @@
     "total_width": 560,
     "total_height": 480
   },
-  "tech矿物复制": {
+  "tech物品点金": {
     "x": 240,
     "y": 400,
     "width": 80,
@@ -271,7 +271,7 @@
     "total_width": 560,
     "total_height": 480
   },
-  "tech超值礼包": {
+  "tech物品转化": {
     "x": 320,
     "y": 400,
     "width": 80,
@@ -279,7 +279,7 @@
     "total_width": 560,
     "total_height": 480
   },
-  "tech量子复制": {
+  "tech矿物复制": {
     "x": 400,
     "y": 400,
     "width": 80,
@@ -287,9 +287,25 @@
     "total_width": 560,
     "total_height": 480
   },
-  "universe-ticket": {
+  "tech超值礼包": {
     "x": 480,
     "y": 0,
+    "width": 80,
+    "height": 80,
+    "total_width": 560,
+    "total_height": 480
+  },
+  "tech量子复制": {
+    "x": 480,
+    "y": 80,
+    "width": 80,
+    "height": 80,
+    "total_width": 560,
+    "total_height": 480
+  },
+  "universe-ticket": {
+    "x": 480,
+    "y": 160,
     "width": 80,
     "height": 80,
     "total_width": 560,
