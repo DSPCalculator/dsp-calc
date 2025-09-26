@@ -91,13 +91,8 @@ function GameVersion({needs_list, set_needs_list}) {
         let game_data = get_game_data(modList);
         set_game_data(game_data);
         set_scheme_data(init_scheme_data(game_data));
-        //根据创世是否启用，设定采矿速率初始值
-        if (!game_data.GenesisBookEnable) {
-            set_settings({"mining_speed_oil": 3.0});
-            set_settings({"mining_speed_hydrogen": 1.0});
-            set_settings({"mining_speed_deuterium": 0.2});
-            set_settings({"mining_speed_gas_hydrate": 0.5});
-        } else {
+        //根据模组启用状态，设定采矿速率初始值
+        if (game_data.GenesisBookEnable) {
             set_settings({"mining_speed_oil": 3.0});
             set_settings({"mining_speed_hydrogen": 1.0});
             set_settings({"mining_speed_deuterium": 0.05});
@@ -108,6 +103,18 @@ function GameVersion({needs_list, set_needs_list}) {
             set_settings({"mining_speed_oxygen": 0.6});
             set_settings({"mining_speed_carbon_dioxide": 0.4});
             set_settings({"mining_speed_sulfur_dioxide": 0.6});
+        } else if (game_data.OrbitalRingEnable) {
+            set_settings({"mining_speed_oil": 3.0});
+            set_settings({"mining_speed_water": 3.0});
+            set_settings({"mining_speed_deep_seated_lava": 3.0});
+            set_settings({"mining_speed_hydrogen": 1.2});
+            set_settings({"mining_speed_deuterium": 0.6});
+            set_settings({"mining_speed_methane": 0.6});
+        } else {
+            set_settings({"mining_speed_oil": 3.0});
+            set_settings({"mining_speed_hydrogen": 1.0});
+            set_settings({"mining_speed_deuterium": 0.2});
+            set_settings({"mining_speed_gas_hydrate": 0.5});
         }
     }
 

@@ -16,6 +16,8 @@ export const GameInfoContext = createContext(null);
 
 const DEFAULT_SETTINGS = {
     mining_speed_oil: 3.0,
+    mining_speed_water: 3.0,
+    mining_speed_deep_seated_lava: 3.0,
     mining_speed_hydrogen: 1.0,
     mining_speed_deuterium: 0.05,
     mining_speed_gas_hydrate: 0.8,
@@ -25,6 +27,7 @@ const DEFAULT_SETTINGS = {
     mining_speed_oxygen: 0.6,
     mining_speed_carbon_dioxide: 0.4,
     mining_speed_sulfur_dioxide: 0.6,
+    mining_speed_methane: 0.6,
 
     hide_mines: false,
     covered_veins_small: 8,

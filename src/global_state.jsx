@@ -29,7 +29,8 @@ export class GameInfo {
         let loc_item = {};
         for (let [item, gridIndex] of Object.entries(this.game_data.item_grid)) {
             //只显示GridIndex超限的物品
-            if (this.game_data.item_grid_index_valid[item]) {
+            if (this.game_data.item_grid_index_valid[item]
+                || (item === "沙土" && this.game_data.FractionateEverythingEnable)) {
                 let x = gridIndex % 100;
                 let y = (gridIndex - x) / 100;
                 loc_item[[x, y]] = {item: item, x: x, y: y};
@@ -320,6 +321,14 @@ export class GlobalState {
                 item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.covered_veins_large * settings.mining_efficiency_large;
             } else if (factory_name === "原油萃取站") {
                 item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.mining_speed_oil;
+            } else if (factory_name === "激光钻井平台") {
+                if (item === "原油") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.mining_speed_oil;
+                } else if (item === "水") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.mining_speed_water;
+                } else if (item === "深层熔岩") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.mining_speed_deep_seated_lava;
+                }
             } else if (factory_name === "抽水站" || factory_name === "聚束液体汲取设施") {
                 item_graph[item]["产出倍率"] *= settings.mining_speed_multiple;
             } else if (factory_name === "轨道采集器") {
@@ -334,6 +343,8 @@ export class GlobalState {
                     item_graph[item]["产出倍率"] *= settings.mining_speed_helium;
                 } else if (item === "氨") {
                     item_graph[item]["产出倍率"] *= settings.mining_speed_ammonia;
+                } else if (item === "甲烷") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_methane;
                 }
             } else if (factory_name === "大气采集站") {
                 item_graph[item]["产出倍率"] *= settings.mining_speed_multiple;
