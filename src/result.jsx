@@ -1,10 +1,37 @@
 import structuredClone from '@ungap/structured-clone';
-import {useContext} from 'react';
+import {useContext, useMemo, useState, useEffect} from 'react';
 import {GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from './contexts';
 import {ItemIcon} from './icon';
 import {NplRows} from './natural_production_line';
 import {HorizontalMultiButtonSelect, Recipe} from './recipe';
 import {AutoSizedInput} from './ui_components/auto_sized_input.jsx';
+
+const ValueWithDifference = ({currentValue, previousValue}) => {
+    const global_state = useContext(GlobalStateContext);
+    const fixedNum = global_state.settings.fixed_num;
+    // 如果没有上一次的值或者值相同，则只显示当前值
+    if (previousValue === undefined || Math.abs(currentValue - previousValue) < 1e-6) {
+        return <>
+            {currentValue.toFixed(fixedNum)}
+        </>;
+    }
+
+    // 计算差值
+    const diff = currentValue - previousValue;
+    const diffSign = diff > 0 ? '+' : '';
+
+    // 根据差值正负设置颜色
+    const color = diff > 0 ? 'red' : 'green';
+
+    return (
+        <>
+            {currentValue.toFixed(fixedNum)}
+            <span className="text-xs align-sub" style={{ fontSize: '0.7em', verticalAlign: 'sub', color: color, opacity: '0.5', marginLeft: '2px', marginRight: '2px' }}>
+                {diffSign}{diff.toFixed(fixedNum)}
+            </span>
+        </>
+    );
+};
 
 export function RecipeSelect({item, choice, onChange}) {
     const global_state = useContext(GlobalStateContext);
@@ -90,6 +117,46 @@ export function FactorySelect({recipe_id, choice, onChange, no_gap}) {
 
     return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} no_gap={no_gap}/>;
 }
+// 简易的对象相等性检查函数
+const isEqual = (obj1, obj2) => {
+    if (!obj1 || !obj2) return obj1 === obj2;
+
+    // 比较能源成本
+    if (Math.abs(obj1.energyCost - obj2.energyCost) > 1e-6 ||
+        Math.abs(obj1.totalEnergyCost - obj2.totalEnergyCost) > 1e-6) {
+        return false;
+    }
+
+    // 比较建筑数量
+    const buildings1 = Object.keys(obj1.buildingCounts);
+    const buildings2 = Object.keys(obj2.buildingCounts);
+
+    if (buildings1.length !== buildings2.length) {
+        return false;
+    }
+
+    for (const building of buildings1) {
+        if (obj1.buildingCounts[building] !== obj2.buildingCounts[building]) {
+            return false;
+        }
+    }
+
+    // 比较原矿材料
+    const materials1 = Object.keys(obj1.rawMaterials);
+    const materials2 = Object.keys(obj2.rawMaterials);
+
+    if (materials1.length !== materials2.length) {
+        return false;
+    }
+
+    for (const material of materials1) {
+        if (Math.abs(obj1.rawMaterials[material] - (obj2.rawMaterials[material] || 0)) > 1e-6) {
+            return false;
+        }
+    }
+
+    return true;
+};
 
 export function Result({needs_list, set_needs_list}) {
     const global_state = useContext(GlobalStateContext);
@@ -108,9 +175,15 @@ export function Result({needs_list, set_needs_list}) {
     let natural_production_line = settings.natural_production_line;
     console.log("result natural_production_line", natural_production_line);
 
-    console.log("CALCULATING");
-    let [result_dict, lp_surplus_list] = global_state.calculate(needs_list);
-    console.log("lp_surplus_list", lp_surplus_list);
+    const [result_dict, lp_surplus_list] = useMemo(() => {
+        console.log("CALCULATING");
+        const res = global_state.calculate(needs_list);
+        console.log("lp_surplus_list", res[1]);
+        return res;
+    }, [global_state, needs_list]);
+
+    // 用于存储历史值的数组，最多保留两个版本
+    const [historyValues, setHistoryValues] = useState([]);
 
     let fixed_num = settings.fixed_num;
     let energy_cost = 0, miner_energy_cost = 0;
@@ -364,7 +437,10 @@ export function Result({needs_list, set_needs_list}) {
                 <span className="ms-auto me-1">{building}</span>
                 <ItemIcon item={building} tooltip={false}/>
             </td>
-            <td className="ps-2 text-nowrap">x {count}</td>
+            <td className="ps-2 text-nowrap">
+              {'x '}
+              <ValueWithDifference currentValue={count} previousValue={historyValues?.[1]?.buildingCounts?.[building]}/>
+            </td>
         </tr>));
 
     function IncreaseCostWhenSurplus(item) {
@@ -383,6 +459,46 @@ export function Result({needs_list, set_needs_list}) {
                 <div>溢出</div>
             </button>
         </div>));
+
+    const isRawMaterial = (item) => {
+        // 判断物品是否为原矿：1. 在原矿化列表中，或 2. 配方没有输入需求且输出产物只有一种
+        if (item in mineralize_list) return true;
+        try {
+            const recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
+            const recipe = game_data.recipe_data[recipe_id];
+            // 检查配方是否没有输入需求且输出产物只有一种
+            const hasNoInputs = Object.keys(recipe["原料"]).length === 0;
+            const hasSingleOutput = Object.keys(recipe["产物"]).length === 1;
+            return hasNoInputs && hasSingleOutput;
+        } catch (e) {
+            return false;
+        }
+    };
+
+    // 计算数值变化的差值
+    // 更新历史值
+    useEffect(() => {
+        // 构建新的值对象
+        const currentValues = {
+            energyCost: energy_cost,
+            totalEnergyCost: energy_cost + miner_energy_cost,
+            buildingCounts: { ...building_list },
+            rawMaterials: {}
+        };
+
+        Object.entries(result_dict).forEach(([item, amount]) => {
+            if (isRawMaterial(item)) {
+                currentValues.rawMaterials[item] = amount;
+            }
+        });
+
+        // 如果historyValues为空或者第一个元素与当前值不同，则更新
+        if (historyValues.length === 0 || !isEqual(historyValues[0], currentValues)) {
+            // 将当前值添加到数组开头，最多保留两个版本
+            const newHistory = [currentValues, ...historyValues].slice(0, 2);
+            setHistoryValues(newHistory);
+        }
+    }, [result_dict, energy_cost, miner_energy_cost, building_list]);
 
     return <div className="my-3 d-flex gap-5">
         {/* 结果表格 */}
@@ -427,21 +543,6 @@ export function Result({needs_list, set_needs_list}) {
 
             {/* 原矿输入总需求 */}
             {(() => {
-                // 判断物品是否为原矿：1. 在原矿化列表中，或 2. 配方没有输入需求且输出产物只有一种
-                const isRawMaterial = (item) => {
-                    if (item in mineralize_list) return true;
-                    try {
-                        const recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
-                        const recipe = game_data.recipe_data[recipe_id];
-                        // 检查配方是否没有输入需求且输出产物只有一种
-                        const hasNoInputs = Object.keys(recipe["原料"]).length === 0;
-                        const hasSingleOutput = Object.keys(recipe["产物"]).length === 1;
-                        return hasNoInputs && hasSingleOutput;
-                    } catch (e) {
-                        return false;
-                    }
-                };
-                
                 const rawMaterials = Object.entries(result_dict).filter(([item]) => isRawMaterial(item));
                 return rawMaterials.length > 0 && (
                     <fieldset className="w-fit">
@@ -455,7 +556,13 @@ export function Result({needs_list, set_needs_list}) {
                                             <small className="ms-1">{item}</small>
                                         </td>
                                         <td className="ps-2 text-nowrap">
-                                            <small>{amount.toFixed(fixed_num)}/{time_tick === 60 ? 'min' : 'sec'}</small>
+                                            <small>
+                                                <ValueWithDifference
+                                                    currentValue={amount}
+                                                    previousValue={historyValues?.[1]?.rawMaterials?.[item]}
+                                                    key={`raw-material-${item}`}
+                                                />/{time_tick === 60 ? 'min' : 'sec'}
+                                            </small>
                                         </td>
                                     </tr>
                                 ))}
@@ -477,10 +584,18 @@ export function Result({needs_list, set_needs_list}) {
                     <span className="d-inline-flex gap-1 text-nowrap">
                         <span className="me-1">预估电力</span>
                         <span className="fast-tooltip" data-tooltip="不包含采集设备">
-                            {energy_cost.toFixed(fixed_num)}
+                            <ValueWithDifference
+                                currentValue={energy_cost}
+                                previousValue={historyValues?.[1]?.energyCost}
+                                key="energy-cost"
+                            />
                         </span>/
                         <span className="fast-tooltip" data-tooltip="包含采集设备">
-                            {(energy_cost + miner_energy_cost).toFixed(fixed_num)}
+                            <ValueWithDifference
+                                currentValue={energy_cost + miner_energy_cost}
+                                previousValue={historyValues?.[1]?.totalEnergyCost}
+                                key="total-energy-cost"
+                            />
                         </span>
                         MW
                     </span>
