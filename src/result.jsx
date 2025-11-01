@@ -425,6 +425,47 @@ export function Result({needs_list, set_needs_list}) {
                     {surplus_doms}
                 </fieldset>}
 
+            {/* 原矿输入总需求 */}
+            {(() => {
+                // 判断物品是否为原矿：1. 在原矿化列表中，或 2. 配方没有输入需求且输出产物只有一种
+                const isRawMaterial = (item) => {
+                    if (item in mineralize_list) return true;
+                    try {
+                        const recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
+                        const recipe = game_data.recipe_data[recipe_id];
+                        // 检查配方是否没有输入需求且输出产物只有一种
+                        const hasNoInputs = Object.keys(recipe["原料"]).length === 0;
+                        const hasSingleOutput = Object.keys(recipe["产物"]).length === 1;
+                        return hasNoInputs && hasSingleOutput;
+                    } catch (e) {
+                        return false;
+                    }
+                };
+                
+                const rawMaterials = Object.entries(result_dict).filter(([item]) => isRawMaterial(item));
+                return rawMaterials.length > 0 && (
+                    <fieldset className="w-fit">
+                        <legend><small>原矿输入总需求</small></legend>
+                        <table>
+                            <tbody>
+                                {rawMaterials.map(([item, amount]) => (
+                                    <tr key={item}>
+                                        <td className="d-flex align-items-center text-nowrap">
+                                            <ItemIcon item={item} tooltip={false} size={24}/>
+                                            <small className="ms-1">{item}</small>
+                                        </td>
+                                        <td className="ps-2 text-nowrap">
+                                            <small>{amount.toFixed(fixed_num)}/{time_tick === 60 ? 'min' : 'sec'}</small>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </fieldset>
+                );
+            })()}
+
+
             {building_rows.length > 0 &&
                 <>
                     <fieldset className="w-fit">
