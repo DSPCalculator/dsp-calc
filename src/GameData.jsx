@@ -47,32 +47,32 @@ export const game_data_info_list = [
     {
         "name_en": "Vanilla",
         "name_cn": "原版游戏",
-        "version": "0.10.32.25699",
+        "version": "0.10.33.27026",
     },
     {
         "name_en": "MoreMegaStructure",
         "name_cn": "更多巨构",
-        "version": "1.8.4",
+        "version": "1.8.7",
     },
     {
         "name_en": "TheyComeFromVoid",
         "name_cn": "深空来敌",
-        "version": "3.4.14",
+        "version": "3.4.17",
     },
     {
         "name_en": "GenesisBook",
         "name_cn": "创世之书",
-        "version": "3.1.0",
+        "version": "3.1.4",
     },
     {
         "name_en": "OrbitalRing",
         "name_cn": "星环",
-        "version": "0.8.12",
+        "version": "0.8.21",
     },
     {
         "name_en": "FractionateEverything",
         "name_cn": "万物分馏",
-        "version": "2.2.0",
+        "version": "2.2.2",
     },
 ]
 
