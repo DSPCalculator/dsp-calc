@@ -215,8 +215,8 @@
         1
       ],
       "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": "煤矿粉"
+      "Proliferator": 1,
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -255,24 +255,26 @@
         2305,
         2318
       ],
-      "Name": "玻璃基板电路",
+      "Name": "真空电子管",
       "Items": [
-        1110,
-        1104
+        1101,
+        1104,
+        1110
       ],
       "ItemCounts": [
-        2,
-        1
+        1,
+        1,
+        2
       ],
       "Results": [
-        1301
+        1302
       ],
       "ResultCounts": [
         1
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
-      "IconName": "circuit-board"
+      "IconName": "micro-component"
     },
     {
       "Type": 4,
@@ -339,7 +341,7 @@
       "Name": "电气矩阵",
       "Items": [
         1202,
-        1301
+        1302
       ],
       "ItemCounts": [
         1,
@@ -367,7 +369,7 @@
       "Items": [
         1101,
         1110,
-        1301,
+        1302,
         1202
       ],
       "ItemCounts": [
@@ -476,7 +478,7 @@
       "Name": "激光钻井平台",
       "Items": [
         1108,
-        1301,
+        1302,
         1401
       ],
       "ItemCounts": [
@@ -505,7 +507,7 @@
       "Name": "原油精炼厂",
       "Items": [
         1108,
-        1301,
+        1302,
         1110
       ],
       "ItemCounts": [
@@ -542,8 +544,8 @@
         1114
       ],
       "ResultCounts": [
-        2,
-        1
+        1,
+        2
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -649,7 +651,7 @@
       ],
       "Name": "动力引擎",
       "Items": [
-        1109,
+        1101,
         1203
       ],
       "ItemCounts": [
@@ -678,11 +680,11 @@
       "Items": [
         1103,
         1204,
-        1301
+        7006
       ],
       "ItemCounts": [
+        3,
         2,
-        1,
         1
       ],
       "Results": [
@@ -705,12 +707,12 @@
       "Items": [
         1118,
         6243,
-        1303
+        1301
       ],
       "ItemCounts": [
-        5,
-        2,
-        1
+        8,
+        4,
+        4
       ],
       "Results": [
         1406
@@ -735,7 +737,7 @@
         1108,
         1110,
         1109,
-        1301
+        1302
       ],
       "ItemCounts": [
         8,
@@ -763,7 +765,7 @@
         7009
       ],
       "ItemCounts": [
-        2
+        3
       ],
       "Results": [
         1115
@@ -785,7 +787,7 @@
         7009
       ],
       "ItemCounts": [
-        2
+        3
       ],
       "Results": [
         1115
@@ -834,8 +836,8 @@
         1101
       ],
       "ResultCounts": [
-        4,
-        3
+        6,
+        1
       ],
       "TimeSpend": 360,
       "Proliferator": 3,
@@ -860,8 +862,8 @@
         1101
       ],
       "ResultCounts": [
-        8,
-        6
+        12,
+        2
       ],
       "TimeSpend": 360,
       "Proliferator": 3,
@@ -1077,10 +1079,12 @@
       "Name": "光量子比特",
       "Items": [
         1014,
-        1304
+        1304,
+        1401
       ],
       "ItemCounts": [
         8,
+        1,
         1
       ],
       "Results": [
@@ -1089,7 +1093,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 240,
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "quantum-processor"
     },
@@ -1299,7 +1303,7 @@
       "ItemCounts": [
         5,
         5,
-        2
+        4
       ],
       "Results": [
         6277
@@ -1366,12 +1370,12 @@
       "Name": "粒子宽带",
       "Items": [
         7708,
-        7705,
-        7804
+        1120,
+        6201
       ],
       "ItemCounts": [
-        2,
         1,
+        8,
         1
       ],
       "Results": [
@@ -1419,13 +1423,11 @@
       ],
       "Name": "位面过滤器",
       "Items": [
-        1205,
-        1120,
+        1402,
         1119
       ],
       "ItemCounts": [
-        2,
-        12,
+        1,
         2
       ],
       "Results": [
@@ -1449,7 +1451,7 @@
         1118,
         6243,
         1206,
-        1303
+        7501
       ],
       "ItemCounts": [
         20,
@@ -1544,13 +1546,11 @@
       "Name": "湮灭约束球",
       "Items": [
         1016,
-        1303,
         6271,
-        6243
+        1402
       ],
       "ItemCounts": [
         12,
-        4,
         2,
         4
       ],
@@ -1575,7 +1575,7 @@
         1118,
         1205,
         1126,
-        1303,
+        7501,
         1401,
         6201
       ],
@@ -1635,7 +1635,7 @@
       "Name": "基础制造台",
       "Items": [
         2011,
-        1301,
+        1302,
         1401
       ],
       "ItemCounts": [
@@ -1665,7 +1665,7 @@
       "Items": [
         2303,
         1124,
-        1303,
+        7501,
         1112
       ],
       "ItemCounts": [
@@ -1724,7 +1724,7 @@
       "Name": "采矿机",
       "Items": [
         1101,
-        1301,
+        1302,
         1202
       ],
       "ItemCounts": [
@@ -1784,7 +1784,7 @@
         1005
       ],
       "ItemCounts": [
-        1
+        2
       ],
       "Results": [
         1110
@@ -1792,7 +1792,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "glass"
     },
@@ -1804,24 +1804,24 @@
         2305,
         2318
       ],
-      "Name": "主板",
+      "Name": "芯片",
       "Items": [
-        1301,
-        1302,
+        1113,
+        1104,
         1115
       ],
       "ItemCounts": [
-        1,
-        2,
-        2
+        10,
+        3,
+        1
       ],
       "Results": [
         1303
       ],
       "ResultCounts": [
-        1
+        5
       ],
-      "TimeSpend": 120,
+      "TimeSpend": 2400,
       "Proliferator": 3,
       "IconName": "processor"
     },
@@ -1848,7 +1848,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 240,
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "quantum-processor"
     },
@@ -1860,22 +1860,22 @@
         2305,
         2318
       ],
-      "Name": "碳化硅晶圆",
+      "Name": "半导体晶体管",
       "Items": [
-        1113,
-        1104
+        1104,
+        1105
       ],
       "ItemCounts": [
-        2,
-        1
+        1,
+        2
       ],
       "Results": [
         1302
       ],
       "ResultCounts": [
-        1
+        2
       ],
-      "TimeSpend": 480,
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "micro-component"
     },
@@ -1885,24 +1885,26 @@
         2305,
         2318
       ],
-      "Name": "金刚石晶圆",
+      "Name": "芯片（四代半导体）",
       "Items": [
         1112,
-        1104
+        1104,
+        1115
       ],
       "ItemCounts": [
-        1,
+        10,
+        4,
         1
       ],
       "Results": [
-        1302
+        1303
       ],
       "ResultCounts": [
-        1
+        8
       ],
-      "TimeSpend": 240,
+      "TimeSpend": 2400,
       "Proliferator": 3,
-      "IconName": "micro-component"
+      "IconName": "processor"
     },
     {
       "Type": 15,
@@ -1941,7 +1943,7 @@
       "Items": [
         1101,
         1202,
-        1301
+        1302
       ],
       "ItemCounts": [
         4,
@@ -1983,7 +1985,7 @@
       ],
       "TimeSpend": 720,
       "Proliferator": 3,
-      "IconName": "三元精金_新"
+      "IconName": ""
     },
     {
       "Type": 3,
@@ -1997,13 +1999,13 @@
       ],
       "ItemCounts": [
         1,
-        3
+        2
       ],
       "Results": [
         7009
       ],
       "ResultCounts": [
-        2
+        1
       ],
       "TimeSpend": 60,
       "Proliferator": 1,
@@ -2365,22 +2367,24 @@
         2305,
         2318
       ],
-      "Name": "光子合并器（高效）",
+      "Name": "银透镜合并器",
       "Items": [
-        1014,
-        1301
+        1111,
+        1301,
+        7101
       ],
       "ItemCounts": [
-        1,
+        4,
+        3,
         1
       ],
       "Results": [
         1404
       ],
       "ResultCounts": [
-        1
+        3
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "photo-shifter-lv2"
     },
@@ -2424,7 +2428,7 @@
       "Name": "电磁轨道弹射器",
       "Items": [
         1108,
-        1303,
+        7501,
         1203,
         1205
       ],
@@ -2457,7 +2461,7 @@
         1108,
         1119,
         1404,
-        1303,
+        7501,
         1205
       ],
       "ItemCounts": [
@@ -2601,7 +2605,7 @@
       "Items": [
         1107,
         1108,
-        1303,
+        7501,
         2202,
         1126
       ],
@@ -2631,7 +2635,7 @@
       "Name": "空间翘曲器",
       "Items": [
         1127,
-        1303
+        7501
       ],
       "ItemCounts": [
         1,
@@ -2655,7 +2659,7 @@
       ],
       "Name": "空间翘曲器（高级）",
       "Items": [
-        1303,
+        7501,
         7804,
         1209
       ],
@@ -2713,12 +2717,12 @@
       "Items": [
         1125,
         7805,
-        6271
+        1501
       ],
       "ItemCounts": [
-        3,
+        4,
         1,
-        1
+        3
       ],
       "Results": [
         1502
@@ -2726,7 +2730,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 240,
+      "TimeSpend": 480,
       "Proliferator": 3,
       "IconName": "dyson-sphere-component"
     },
@@ -2739,7 +2743,7 @@
       "Items": [
         1125,
         1205,
-        1303
+        7501
       ],
       "ItemCounts": [
         15,
@@ -2820,7 +2824,7 @@
       "Name": "分拣器",
       "Items": [
         1101,
-        1301
+        1302
       ],
       "ItemCounts": [
         2,
@@ -2846,10 +2850,10 @@
       ],
       "Name": "小型储物仓",
       "Items": [
-        1108
+        1101
       ],
       "ItemCounts": [
-        4
+        12
       ],
       "Results": [
         2101
@@ -2872,10 +2876,10 @@
       "Name": "四向分流器",
       "Items": [
         1101,
-        1301
+        1302
       ],
       "ItemCounts": [
-        1,
+        4,
         1
       ],
       "Results": [
@@ -2899,7 +2903,7 @@
       "Name": "高速分拣器",
       "Items": [
         2011,
-        1203
+        1301
       ],
       "ItemCounts": [
         2,
@@ -2953,7 +2957,7 @@
       "Name": "极速分拣器",
       "Items": [
         2012,
-        1204
+        7501
       ],
       "ItemCounts": [
         2,
@@ -2979,7 +2983,7 @@
       ],
       "Name": "大型储物仓",
       "Items": [
-        1108
+        1103
       ],
       "ItemCounts": [
         8
@@ -3059,7 +3063,7 @@
       "Name": "物流运输机",
       "Items": [
         1106,
-        1303,
+        7501,
         1405
       ],
       "ItemCounts": [
@@ -3085,7 +3089,7 @@
       "Name": "太空物流港",
       "Items": [
         1107,
-        1303,
+        7501,
         2206,
         2013
       ],
@@ -3113,7 +3117,7 @@
       "Name": "星际物流运输船",
       "Items": [
         1107,
-        1303,
+        7501,
         1802,
         6277
       ],
@@ -3371,29 +3375,34 @@
       ],
       "TimeSpend": 100.0,
       "Proliferator": 1,
-      "IconName": "盐水"
+      "IconName": ""
     },
     {
-      "Type": 8,
+      "Type": 10,
       "Factories": [
-        2314
+        2305,
+        2318
       ],
-      "Name": "重氢分馏",
+      "Name": "太空损管包",
       "Items": [
-        1120
+        1123,
+        6201,
+        1301
       ],
       "ItemCounts": [
+        2,
+        2,
         1
       ],
       "Results": [
-        1121
+        6263
       ],
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 100.0,
-      "Proliferator": 1,
-      "IconName": "deuterium"
+      "TimeSpend": 240,
+      "Proliferator": 3,
+      "IconName": ""
     },
     {
       "Type": 2,
@@ -3402,14 +3411,14 @@
       ],
       "Name": "增产剂",
       "Items": [
-        7708,
+        7006,
         1112,
-        1114
+        7708
       ],
       "ItemCounts": [
         1,
         1,
-        2
+        1
       ],
       "Results": [
         1143
@@ -3428,14 +3437,14 @@
       ],
       "Name": "[量子化工厂双倍产物]增产剂",
       "Items": [
-        7708,
+        7006,
         1112,
-        1114
+        7708
       ],
       "ItemCounts": [
         1,
         1,
-        2
+        1
       ],
       "Results": [
         1143
@@ -3460,7 +3469,7 @@
         1108,
         1401,
         1119,
-        1303
+        7501
       ],
       "ItemCounts": [
         4,
@@ -3487,12 +3496,10 @@
       "Items": [
         9486,
         1403,
-        6271,
-        1016
+        1125
       ],
       "ItemCounts": [
-        2,
-        10,
+        4,
         10,
         20
       ],
@@ -3504,7 +3511,7 @@
       ],
       "TimeSpend": 3600,
       "Proliferator": 1,
-      "IconName": "人造恒星MK2"
+      "IconName": ""
     },
     {
       "Type": 9,
@@ -3515,13 +3522,13 @@
       "Items": [
         2104,
         1205,
-        6277,
+        2314,
         6221
       ],
       "ItemCounts": [
         1,
         50,
-        20,
+        10,
         20
       ],
       "Results": [
@@ -3569,18 +3576,14 @@
       ],
       "Name": "裂变重水堆",
       "Items": [
-        1108,
-        1303,
-        7018,
-        1203,
-        1113
+        2204,
+        7501,
+        7018
       ],
       "ItemCounts": [
-        20,
+        2,
         6,
-        50,
-        10,
-        4
+        50
       ],
       "Results": [
         2211
@@ -3589,7 +3592,7 @@
         1
       ],
       "TimeSpend": 900,
-      "Proliferator": 3,
+      "Proliferator": 1,
       "IconName": "fusion-power-station"
     },
     {
@@ -3620,31 +3623,26 @@
       "IconName": "storage-tank"
     },
     {
-      "Type": 10,
+      "Type": 8,
       "Factories": [
-        2305,
-        2318
+        2314
       ],
-      "Name": "太空损管包",
+      "Name": "重氢分馏",
       "Items": [
-        1123,
-        6201,
-        1301
+        1120
       ],
       "ItemCounts": [
-        2,
-        2,
         1
       ],
       "Results": [
-        6263
+        1121
       ],
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 240,
-      "Proliferator": 3,
-      "IconName": "金属氢单元"
+      "TimeSpend": 100.0,
+      "Proliferator": 1,
+      "IconName": "deuterium-formula"
     },
     {
       "Type": 4,
@@ -3658,7 +3656,7 @@
       "Items": [
         1108,
         1205,
-        1303,
+        7501,
         1120
       ],
       "ItemCounts": [
@@ -3777,7 +3775,7 @@
       "Name": "自动集装机",
       "Items": [
         1103,
-        1303
+        7501
       ],
       "ItemCounts": [
         2,
@@ -3833,7 +3831,7 @@
       "Name": "物流配送器",
       "Items": [
         1101,
-        1303,
+        1301,
         1202
       ],
       "ItemCounts": [
@@ -3921,7 +3919,7 @@
       "Items": [
         1108,
         1203,
-        1301,
+        1302,
         1202
       ],
       "ItemCounts": [
@@ -3952,7 +3950,7 @@
       "Items": [
         1108,
         1203,
-        1303,
+        7501,
         1401,
         1404
       ],
@@ -4013,7 +4011,7 @@
       "Name": "磁化电浆炮",
       "Items": [
         1108,
-        1303,
+        7501,
         6243,
         1401,
         1125
@@ -4047,7 +4045,7 @@
       "Items": [
         1108,
         1204,
-        1303
+        7501
       ],
       "ItemCounts": [
         8,
@@ -4076,7 +4074,7 @@
       "Items": [
         1108,
         1205,
-        1303,
+        7501,
         7804
       ],
       "ItemCounts": [
@@ -4107,7 +4105,7 @@
       "Items": [
         2202,
         1108,
-        1303,
+        7501,
         1123
       ],
       "ItemCounts": [
@@ -4183,7 +4181,7 @@
       ],
       "TimeSpend": 2700,
       "Proliferator": 1,
-      "IconName": "行星采集器"
+      "IconName": ""
     },
     {
       "Type": 2,
@@ -4290,48 +4288,21 @@
       "IconName": "bullet"
     },
     {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "钛化弹箱",
-      "Items": [
-        1601,
-        1106
-      ],
-      "ItemCounts": [
-        1,
-        1
-      ],
-      "Results": [
-        1602
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": "bullet-titanium"
-    },
-    {
       "Type": 10,
       "Factories": [
         2305,
         2318
       ],
-      "Name": "数学率引擎-算力架构组件",
+      "Name": "数学率引擎-起振焦点组件",
       "Items": [
-        9486,
+        9485,
         9484,
-        6271
+        6243
       ],
       "ItemCounts": [
-        1,
-        2,
-        4
+        50,
+        4,
+        2
       ],
       "Results": [
         6503
@@ -4341,14 +4312,14 @@
       ],
       "TimeSpend": 720,
       "Proliferator": 1,
-      "IconName": "尖端机械组件_新"
+      "IconName": ""
     },
     {
       "Type": 9,
       "Factories": [
         6257
       ],
-      "Name": "数学率引擎-算力架构-运载火箭",
+      "Name": "数学率引擎-起振焦点-运载火箭",
       "Items": [
         6503,
         1802,
@@ -4416,7 +4387,7 @@
         2
       ],
       "Results": [
-        7612
+        7613
       ],
       "ResultCounts": [
         1
@@ -4495,7 +4466,7 @@
       ],
       "ItemCounts": [
         2,
-        3,
+        1,
         1
       ],
       "Results": [
@@ -4637,7 +4608,7 @@
       "Name": "攻击无人机",
       "Items": [
         5101,
-        1303,
+        7501,
         1404,
         6256
       ],
@@ -4691,13 +4662,15 @@
         6512,
         1406,
         6271,
-        3004
+        3004,
+        3003
       ],
       "ItemCounts": [
         10,
         4,
-        12,
-        1
+        8,
+        1,
+        6
       ],
       "Results": [
         5112
@@ -4733,7 +4706,7 @@
       ],
       "TimeSpend": 720,
       "Proliferator": 3,
-      "IconName": "硝基柴油燃料棒"
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -4746,7 +4719,7 @@
       "Name": "战场分析基站",
       "Items": [
         1108,
-        1301,
+        1302,
         1407,
         2102
       ],
@@ -4889,7 +4862,7 @@
       "Name": "近程电浆塔",
       "Items": [
         1125,
-        1303,
+        7501,
         1401,
         6243
       ],
@@ -4978,10 +4951,12 @@
       "Name": "集装分拣器",
       "Items": [
         2013,
-        1303
+        7501,
+        7006
       ],
       "ItemCounts": [
         2,
+        1,
         1
       ],
       "Results": [
@@ -5157,12 +5132,12 @@
       "Name": "量子计算机",
       "Items": [
         7805,
-        1402,
+        7019,
         9483
       ],
       "ItemCounts": [
         3,
-        2,
+        8,
         1
       ],
       "Results": [
@@ -5201,31 +5176,6 @@
       "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "iacomponent"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "多功能集成组件",
-      "Items": [
-        9500
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        9500
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 1,
-      "IconName": "integratedcomponents"
     },
     {
       "Type": 9,
@@ -5637,7 +5587,7 @@
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
-      "IconName": "三氯化铁"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -5661,7 +5611,7 @@
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
-      "IconName": "三氯化铁"
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -5688,23 +5638,32 @@
       ],
       "TimeSpend": 240,
       "Proliferator": 3,
-      "IconName": "钚铀混合氧化物燃料棒"
+      "IconName": ""
     },
     {
-      "Type": 12,
+      "Type": 18,
       "Factories": [
+        2303,
+        2304,
+        2305,
         2318
       ],
-      "Name": "掌中工厂",
+      "Name": "黑盒",
       "Items": [
-        5204,
-        6221,
-        2318
+        1001,
+        1002,
+        1005,
+        1030,
+        1004,
+        1000
       ],
       "ItemCounts": [
-        1,
-        8,
-        1
+        260,
+        100,
+        300,
+        480,
+        120,
+        160
       ],
       "Results": [
         6215
@@ -5712,9 +5671,9 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 480,
-      "Proliferator": 1,
-      "IconName": "光学主机"
+      "TimeSpend": 14400,
+      "Proliferator": 3,
+      "IconName": "storage-1"
     },
     {
       "Type": 1,
@@ -5724,22 +5683,26 @@
         2319,
         6501
       ],
-      "Name": "石墨（高效）",
+      "Name": "银矿冶炼",
       "Items": [
-        7706
+        7706,
+        1000
       ],
       "ItemCounts": [
-        1
+        2,
+        2
       ],
       "Results": [
-        1109
+        7504,
+        1116
       ],
       "ResultCounts": [
+        1,
         1
       ],
       "TimeSpend": 60,
       "Proliferator": 3,
-      "IconName": "graphite"
+      "IconName": ""
     },
     {
       "Type": 8,
@@ -5761,7 +5724,7 @@
       ],
       "TimeSpend": 143.0,
       "Proliferator": 1,
-      "IconName": "丙烯_新"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -5779,7 +5742,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "石粉"
+      "IconName": ""
     },
     {
       "Type": 11,
@@ -5804,7 +5767,7 @@
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
-      "IconName": "石粉"
+      "IconName": ""
     },
     {
       "Type": 11,
@@ -5831,7 +5794,7 @@
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
-      "IconName": "钨矿"
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -5860,7 +5823,7 @@
       ],
       "TimeSpend": 600,
       "Proliferator": 3,
-      "IconName": "铀235燃料棒"
+      "IconName": ""
     },
     {
       "Type": 14,
@@ -5870,15 +5833,15 @@
       "Name": "菌丝神经网络",
       "Items": [
         6245,
-        1000,
-        1031,
-        6208
+        1007,
+        6521,
+        6206
       ],
       "ItemCounts": [
         2,
-        12,
-        18,
-        1
+        6,
+        1,
+        6
       ],
       "Results": [
         6252,
@@ -5890,7 +5853,7 @@
       ],
       "TimeSpend": 720,
       "Proliferator": 1,
-      "IconName": "铁矿粉"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -6079,46 +6042,52 @@
       "IconName": "stone-ore"
     },
     {
-      "Type": -1,
+      "Type": 2,
       "Factories": [
-        2301,
-        2316
+        2309
       ],
-      "Name": "[无中生有]硅石",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1003
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "silicium-ore"
-    },
-    {
-      "Type": 11,
-      "Factories": [
-        2315,
-        2319
-      ],
-      "Name": "岩浆炼硅",
+      "Name": "电解冶银",
       "Items": [
-        6251
+        7504,
+        1116
       ],
       "ItemCounts": [
+        2,
         4
       ],
       "Results": [
-        1003
+        7101
       ],
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 360,
-      "Proliferator": 1,
-      "IconName": "silicium-ore"
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2317
+      ],
+      "Name": "[量子化工厂双倍产物]电解冶银",
+      "Items": [
+        7504,
+        1116
+      ],
+      "ItemCounts": [
+        2,
+        4
+      ],
+      "Results": [
+        7101
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -6166,7 +6135,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "硫化氢"
+      "IconName": ""
     },
     {
       "Type": 2,
@@ -6178,7 +6147,7 @@
         1011
       ],
       "ItemCounts": [
-        4
+        2
       ],
       "Results": [
         6205,
@@ -6186,11 +6155,11 @@
       ],
       "ResultCounts": [
         1,
-        3
+        1
       ],
       "TimeSpend": 60,
       "Proliferator": 3,
-      "IconName": "硫化氢"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -6202,7 +6171,7 @@
         1011
       ],
       "ItemCounts": [
-        4
+        2
       ],
       "Results": [
         6205,
@@ -6210,11 +6179,11 @@
       ],
       "ResultCounts": [
         2,
-        6
+        2
       ],
       "TimeSpend": 60,
       "Proliferator": 3,
-      "IconName": "硫化氢"
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -6228,12 +6197,14 @@
       "Items": [
         1108,
         1110,
-        1303
+        7501,
+        1104
       ],
       "ItemCounts": [
         4,
         4,
-        1
+        1,
+        2
       ],
       "Results": [
         2314
@@ -6246,12 +6217,10 @@
       "IconName": "fractionator"
     },
     {
-      "Type": 1,
+      "Type": 11,
       "Factories": [
-        2302,
         2315,
-        2319,
-        6501
+        2319
       ],
       "Name": "高级岩浆炼磁铁",
       "Items": [
@@ -6299,7 +6268,7 @@
       ],
       "TimeSpend": 240,
       "Proliferator": 3,
-      "IconName": "钨块"
+      "IconName": ""
     },
     {
       "Type": 11,
@@ -6322,15 +6291,13 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 1,
-      "IconName": "铝板"
+      "IconName": ""
     },
     {
-      "Type": 1,
+      "Type": 11,
       "Factories": [
-        2302,
         2315,
-        2319,
-        6501
+        2319
       ],
       "Name": "钛铁联产处理",
       "Items": [
@@ -6364,7 +6331,7 @@
       "Name": "生态穹顶",
       "Items": [
         1108,
-        1301,
+        1302,
         1110
       ],
       "ItemCounts": [
@@ -6380,21 +6347,30 @@
       ],
       "TimeSpend": 600,
       "Proliferator": 3,
-      "IconName": "回收塔"
+      "IconName": ""
     },
     {
-      "Type": 12,
+      "Type": 18,
       "Factories": [
+        2303,
+        2304,
+        2305,
         2318
       ],
       "Name": "次级维度工厂",
       "Items": [
         6215,
+        2901,
+        6264,
+        2318,
         1125,
         6227
       ],
       "ItemCounts": [
-        24,
+        1,
+        12,
+        15,
+        4,
         16,
         4
       ],
@@ -6405,8 +6381,8 @@
         1
       ],
       "TimeSpend": 3600,
-      "Proliferator": 3,
-      "IconName": "光学主机"
+      "Proliferator": 1,
+      "IconName": ""
     },
     {
       "Type": 10,
@@ -6435,7 +6411,92 @@
       ],
       "TimeSpend": 360,
       "Proliferator": 1,
-      "IconName": "高纯铀块"
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "高速连接器",
+      "Items": [
+        1301,
+        7014
+      ],
+      "ItemCounts": [
+        1,
+        2
+      ],
+      "Results": [
+        7019
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "多板架构",
+      "Items": [
+        1303,
+        1301,
+        7019
+      ],
+      "ItemCounts": [
+        2,
+        3,
+        1
+      ],
+      "Results": [
+        7501
+      ],
+      "ResultCounts": [
+        3
+      ],
+      "TimeSpend": 240,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "润滑电动机",
+      "Items": [
+        1101,
+        1202,
+        7006
+      ],
+      "ItemCounts": [
+        8,
+        4,
+        1
+      ],
+      "Results": [
+        1203
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 240,
+      "Proliferator": 3,
+      "IconName": "electric-motor"
     },
     {
       "Type": 4,
@@ -6450,17 +6511,17 @@
         1005
       ],
       "ItemCounts": [
-        1
+        9
       ],
       "Results": [
         1099
       ],
       "ResultCounts": [
-        20
+        9
       ],
       "TimeSpend": 120,
       "Proliferator": 1,
-      "IconName": "沙土回收_新"
+      "IconName": ""
     },
     {
       "Type": 1,
@@ -6488,6 +6549,108 @@
       "IconName": "magnet"
     },
     {
+      "Type": -1,
+      "Factories": [
+        2301,
+        2316
+      ],
+      "Name": "[无中生有]煤矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1006
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "coal-ore"
+    },
+    {
+      "Type": 1,
+      "Factories": [
+        2302,
+        2315,
+        2319,
+        6501
+      ],
+      "Name": "木炭",
+      "Items": [
+        1030
+      ],
+      "ItemCounts": [
+        3
+      ],
+      "Results": [
+        1006
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": "coal-ore"
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "银面太阳帆",
+      "Items": [
+        1107,
+        1123,
+        1404,
+        7101
+      ],
+      "ItemCounts": [
+        8,
+        24,
+        12,
+        1
+      ],
+      "Results": [
+        1501
+      ],
+      "ResultCounts": [
+        10
+      ],
+      "TimeSpend": 1800,
+      "Proliferator": 3,
+      "IconName": "solar-collector"
+    },
+    {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "永固型节点构造",
+      "Items": [
+        1125,
+        7805,
+        6271
+      ],
+      "ItemCounts": [
+        3,
+        1,
+        3
+      ],
+      "Results": [
+        1502
+      ],
+      "ResultCounts": [
+        3
+      ],
+      "TimeSpend": 480,
+      "Proliferator": 3,
+      "IconName": "dyson-sphere-component"
+    },
+    {
       "Type": 2,
       "Factories": [
         2309
@@ -6511,7 +6674,7 @@
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
-      "IconName": "环氧树脂_新"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -6537,59 +6700,284 @@
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
-      "IconName": "环氧树脂_新"
+      "IconName": ""
+    },
+    {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "纳米晶体管",
+      "Items": [
+        1124,
+        1106,
+        7101
+      ],
+      "ItemCounts": [
+        2,
+        3,
+        1
+      ],
+      "Results": [
+        1302
+      ],
+      "ResultCounts": [
+        6
+      ],
+      "TimeSpend": 180,
+      "Proliferator": 3,
+      "IconName": "micro-component"
+    },
+    {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "纳米晶体管处理器",
+      "Items": [
+        1112,
+        7101,
+        1124,
+        1106
+      ],
+      "ItemCounts": [
+        30,
+        4,
+        20,
+        10
+      ],
+      "Results": [
+        1303
+      ],
+      "ResultCounts": [
+        20
+      ],
+      "TimeSpend": 3600,
+      "Proliferator": 3,
+      "IconName": "processor"
+    },
+    {
+      "Type": 2,
+      "Factories": [
+        2309
+      ],
+      "Name": "富勒烯",
+      "Items": [
+        6519,
+        1123,
+        1120
+      ],
+      "ItemCounts": [
+        3,
+        1,
+        1
+      ],
+      "Results": [
+        6520,
+        6205
+      ],
+      "ResultCounts": [
+        3,
+        1
+      ],
+      "TimeSpend": 180,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2317
+      ],
+      "Name": "[量子化工厂双倍产物]富勒烯",
+      "Items": [
+        6519,
+        1123,
+        1120
+      ],
+      "ItemCounts": [
+        3,
+        1,
+        1
+      ],
+      "Results": [
+        6520,
+        6205
+      ],
+      "ResultCounts": [
+        6,
+        2
+      ],
+      "TimeSpend": 180,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 2,
+      "Factories": [
+        2309
+      ],
+      "Name": "气云超精炼",
+      "Items": [
+        6519,
+        1123,
+        1120
+      ],
+      "ItemCounts": [
+        3,
+        1,
+        1
+      ],
+      "Results": [
+        6520,
+        6205,
+        6521,
+        6522
+      ],
+      "ResultCounts": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "TimeSpend": 3600,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2317
+      ],
+      "Name": "[量子化工厂双倍产物]气云超精炼",
+      "Items": [
+        6519,
+        1123,
+        1120
+      ],
+      "ItemCounts": [
+        3,
+        1,
+        1
+      ],
+      "Results": [
+        6520,
+        6205,
+        6521,
+        6522
+      ],
+      "ResultCounts": [
+        6,
+        2,
+        2,
+        2
+      ],
+      "TimeSpend": 3600,
+      "Proliferator": 3,
+      "IconName": ""
     },
     {
       "Type": 14,
       "Factories": [
         6264
       ],
-      "Name": "植物纤维",
+      "Name": "水生植物培养",
       "Items": [
         1031,
         1000,
         1099
       ],
       "ItemCounts": [
-        12,
-        5,
-        40
-      ],
-      "Results": [
-        1030
-      ],
-      "ResultCounts": [
-        16
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "wood"
-    },
-    {
-      "Type": 14,
-      "Factories": [
-        6264
-      ],
-      "Name": "生物质",
-      "Items": [
-        1030,
-        1000,
-        1099
-      ],
-      "ItemCounts": [
-        8,
-        5,
-        40
+        1,
+        2,
+        1
       ],
       "Results": [
         1031
       ],
       "ResultCounts": [
-        24
+        9
       ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
+      "TimeSpend": 240,
+      "Proliferator": 1,
       "IconName": "plant-fuel"
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "培养皿",
+      "Items": [
+        1031,
+        1110,
+        1000
+      ],
+      "ItemCounts": [
+        2,
+        1,
+        1
+      ],
+      "Results": [
+        7020
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2306,
+        2307
+      ],
+      "Name": "[无中生有]原油",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1007
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "oil"
+    },
+    {
+      "Type": 1,
+      "Factories": [
+        2302,
+        2315,
+        2319,
+        6501
+      ],
+      "Name": "热解",
+      "Items": [
+        1031
+      ],
+      "ItemCounts": [
+        6
+      ],
+      "Results": [
+        1007,
+        1120
+      ],
+      "ResultCounts": [
+        2,
+        1
+      ],
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": "oil"
     },
     {
       "Type": 4,
@@ -6603,12 +6991,14 @@
       "Items": [
         2304,
         1107,
-        7708
+        7501,
+        7006
       ],
       "ItemCounts": [
         5,
+        40,
         15,
-        10
+        20
       ],
       "Results": [
         6257
@@ -6618,7 +7008,7 @@
       ],
       "TimeSpend": 1200,
       "Proliferator": 1,
-      "IconName": "行星组装站"
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -6645,7 +7035,67 @@
       ],
       "TimeSpend": 360,
       "Proliferator": 3,
-      "IconName": "硝基柴油燃料棒"
+      "IconName": ""
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "速生苗培养",
+      "Items": [
+        7021,
+        7020,
+        1031,
+        1000,
+        1099
+      ],
+      "ItemCounts": [
+        4,
+        2,
+        20,
+        60,
+        60
+      ],
+      "Results": [
+        7022
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 3600,
+      "Proliferator": 1,
+      "IconName": ""
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "速生林种植",
+      "Items": [
+        7022,
+        1000,
+        1099
+      ],
+      "ItemCounts": [
+        3,
+        8,
+        9
+      ],
+      "Results": [
+        1030,
+        1031,
+        7022
+      ],
+      "ResultCounts": [
+        12,
+        8,
+        3
+      ],
+      "TimeSpend": 480,
+      "Proliferator": 1,
+      "IconName": "wood"
     },
     {
       "Type": 4,
@@ -6655,40 +7105,94 @@
         2305,
         2318
       ],
-      "Name": "主板（金属封装）",
+      "Name": "主板",
       "Items": [
-        1301,
-        1302,
-        1106
+        1303,
+        1301
       ],
       "ItemCounts": [
-        1,
         2,
         1
       ],
       "Results": [
-        1303
+        7501
       ],
       "ResultCounts": [
         1
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
-      "IconName": "高效处理器"
+      "IconName": ""
+    },
+    {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "永磁涡轮",
+      "Items": [
+        1202,
+        1203,
+        6522
+      ],
+      "ItemCounts": [
+        3,
+        6,
+        1
+      ],
+      "Results": [
+        1204
+      ],
+      "ResultCounts": [
+        6
+      ],
+      "TimeSpend": 360,
+      "Proliferator": 3,
+      "IconName": "mag-turbine"
+    },
+    {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "富勒银量子比特",
+      "Items": [
+        1206,
+        6522,
+        1304
+      ],
+      "ItemCounts": [
+        2,
+        1,
+        2
+      ],
+      "Results": [
+        1305
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 1080,
+      "Proliferator": 3,
+      "IconName": "quantum-processor"
     },
     {
       "Type": 14,
       "Factories": [
         6264
       ],
-      "Name": "神经芯片",
+      "Name": "湿件主机",
       "Items": [
         6252,
-        5202,
-        1303
+        1104,
+        1119,
+        1301
       ],
       "ItemCounts": [
-        24,
+        1,
+        2,
         4,
         1
       ],
@@ -6700,12 +7204,12 @@
       ],
       "TimeSpend": 720,
       "Proliferator": 3,
-      "IconName": "光学芯片"
+      "IconName": ""
     },
     {
-      "Type": 12,
+      "Type": 3,
       "Factories": [
-        2318
+        2308
       ],
       "Name": "碳基裂解",
       "Items": [
@@ -6724,7 +7228,7 @@
       ],
       "TimeSpend": 360,
       "Proliferator": 3,
-      "IconName": "煤焦油"
+      "IconName": ""
     },
     {
       "Type": 9,
@@ -6753,33 +7257,6 @@
       "IconName": "logistic-vessel"
     },
     {
-      "Type": 15,
-      "Factories": [
-        2901,
-        2902
-      ],
-      "Name": "奇点矩阵",
-      "Items": [
-        6278,
-        6279,
-        6005
-      ],
-      "ItemCounts": [
-        1,
-        1,
-        1
-      ],
-      "Results": [
-        7006
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 1,
-      "IconName": "氯苯"
-    },
-    {
       "Type": -1,
       "Factories": [
         2301,
@@ -6805,23 +7282,27 @@
       ],
       "Name": "有机晶体",
       "Items": [
+        7015,
         1030,
         1031,
-        1000
+        7101
       ],
       "ItemCounts": [
-        12,
-        18,
-        10
+        1,
+        4,
+        8,
+        3
       ],
       "Results": [
-        1117
+        1117,
+        7101
       ],
       "ResultCounts": [
-        1
+        2,
+        3
       ],
-      "TimeSpend": 240,
-      "Proliferator": 3,
+      "TimeSpend": 120,
+      "Proliferator": 1,
       "IconName": "crystal-rubber-lv0"
     },
     {
@@ -6838,8 +7319,8 @@
       ],
       "ItemCounts": [
         1,
-        48,
-        72,
+        24,
+        16,
         12
       ],
       "Results": [
@@ -6848,10 +7329,10 @@
       ],
       "ResultCounts": [
         2,
-        4
+        1
       ],
       "TimeSpend": 240,
-      "Proliferator": 3,
+      "Proliferator": 1,
       "IconName": "titan-crystal"
     },
     {
@@ -6880,6 +7361,35 @@
       "TimeSpend": 30,
       "Proliferator": 3,
       "IconName": "steel-plate"
+    },
+    {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "突触凝练机",
+      "Items": [
+        7017,
+        1303,
+        7804,
+        6523
+      ],
+      "ItemCounts": [
+        100,
+        50,
+        50,
+        10
+      ],
+      "Results": [
+        7803
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 3600,
+      "Proliferator": 3,
+      "IconName": "turret-signal"
     },
     {
       "Type": 4,
@@ -6926,21 +7436,19 @@
       ],
       "ItemCounts": [
         2,
-        2
+        1
       ],
       "Results": [
         7009,
-        1114,
-        1116
+        1114
       ],
       "ResultCounts": [
-        4,
-        1,
-        2
+        2,
+        1
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
-      "IconName": "硝基柴油"
+      "IconName": ""
     },
     {
       "Type": 2,
@@ -6962,7 +7470,7 @@
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
-      "IconName": "电解水_新"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -6984,7 +7492,7 @@
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
-      "IconName": "电解水_新"
+      "IconName": ""
     },
     {
       "Type": 2,
@@ -7029,6 +7537,138 @@
       "TimeSpend": 180,
       "Proliferator": 3,
       "IconName": "deuterium"
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "转基因工具",
+      "Items": [
+        7020,
+        7021,
+        7501,
+        1401,
+        7804
+      ],
+      "ItemCounts": [
+        4,
+        2,
+        4,
+        8,
+        4
+      ],
+      "Results": [
+        7611
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 960,
+      "Proliferator": 1,
+      "IconName": ""
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "糖料作物种",
+      "Items": [
+        7021,
+        7611,
+        1031
+      ],
+      "ItemCounts": [
+        2,
+        1,
+        20
+      ],
+      "Results": [
+        7612,
+        7611
+      ],
+      "ResultCounts": [
+        1,
+        1
+      ],
+      "TimeSpend": 960,
+      "Proliferator": 1,
+      "IconName": ""
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "糖料作物（满周期）",
+      "Items": [
+        7612,
+        6206
+      ],
+      "ItemCounts": [
+        2,
+        4
+      ],
+      "Results": [
+        7612
+      ],
+      "ResultCounts": [
+        6
+      ],
+      "TimeSpend": 960,
+      "Proliferator": 1,
+      "IconName": ""
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "糖料作物（半周期）",
+      "Items": [
+        7612,
+        6206
+      ],
+      "ItemCounts": [
+        2,
+        2
+      ],
+      "Results": [
+        7017
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 480,
+      "Proliferator": 1,
+      "IconName": ""
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "工业醇",
+      "Items": [
+        7017,
+        1000,
+        1031
+      ],
+      "ItemCounts": [
+        1,
+        2,
+        8
+      ],
+      "Results": [
+        7015
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 240,
+      "Proliferator": 3,
+      "IconName": "accelerator-2"
     },
     {
       "Type": 12,
@@ -7097,7 +7737,7 @@
       ],
       "TimeSpend": 6,
       "Proliferator": 3,
-      "IconName": "焦油循环"
+      "IconName": "hydrogen"
     },
     {
       "Type": -1,
@@ -7121,7 +7761,7 @@
       ],
       "TimeSpend": 6,
       "Proliferator": 3,
-      "IconName": "焦油循环"
+      "IconName": "hydrogen"
     },
     {
       "Type": 11,
@@ -7159,12 +7799,12 @@
       "Items": [
         5203,
         5204,
-        1016
+        6523
       ],
       "ItemCounts": [
         2,
         2,
-        15
+        1
       ],
       "Results": [
         5205
@@ -7198,31 +7838,183 @@
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
-      "IconName": "硫化氢"
+      "IconName": ""
+    },
+    {
+      "Type": 2,
+      "Factories": [
+        2309
+      ],
+      "Name": "富勒醇增产剂",
+      "Items": [
+        6521,
+        1112
+      ],
+      "ItemCounts": [
+        1,
+        2
+      ],
+      "Results": [
+        1143
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": "accelerator-3"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2317
+      ],
+      "Name": "[量子化工厂双倍产物]富勒醇增产剂",
+      "Items": [
+        6521,
+        1112
+      ],
+      "ItemCounts": [
+        1,
+        2
+      ],
+      "Results": [
+        1143
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": "accelerator-3"
+    },
+    {
+      "Type": 2,
+      "Factories": [
+        2309
+      ],
+      "Name": "富勒醇",
+      "Items": [
+        7015,
+        6520,
+        6522
+      ],
+      "ItemCounts": [
+        1,
+        1,
+        1
+      ],
+      "Results": [
+        6521
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 180,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2317
+      ],
+      "Name": "[量子化工厂双倍产物]富勒醇",
+      "Items": [
+        7015,
+        6520,
+        6522
+      ],
+      "ItemCounts": [
+        1,
+        1,
+        1
+      ],
+      "Results": [
+        6521
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 180,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 2,
+      "Factories": [
+        2309
+      ],
+      "Name": "富勒烯内嵌银",
+      "Items": [
+        7101,
+        6520,
+        6521
+      ],
+      "ItemCounts": [
+        1,
+        1,
+        1
+      ],
+      "Results": [
+        6522
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 180,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2317
+      ],
+      "Name": "[量子化工厂双倍产物]富勒烯内嵌银",
+      "Items": [
+        7101,
+        6520,
+        6521
+      ],
+      "ItemCounts": [
+        1,
+        1,
+        1
+      ],
+      "Results": [
+        6522
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 180,
+      "Proliferator": 3,
+      "IconName": ""
     },
     {
       "Type": 14,
       "Factories": [
         6264
       ],
-      "Name": "生物塑料",
+      "Name": "湿件主机超频",
       "Items": [
-        1030,
-        1000
+        6253,
+        7017
       ],
       "ItemCounts": [
-        9,
-        4
+        1,
+        1
       ],
       "Results": [
-        1115
+        7501
       ],
       "ResultCounts": [
         3
       ],
-      "TimeSpend": 180,
+      "TimeSpend": 60,
       "Proliferator": 3,
-      "IconName": "plastic"
+      "IconName": ""
     },
     {
       "Type": 12,
@@ -7232,12 +8024,12 @@
       "Name": "负熵奇点",
       "Items": [
         1127,
-        1121,
+        1016,
         5206
       ],
       "ItemCounts": [
         2,
-        12,
+        6,
         12
       ],
       "Results": [
@@ -7279,7 +8071,34 @@
       ],
       "TimeSpend": 1440,
       "Proliferator": 3,
-      "IconName": "放射性同位素温差电池"
+      "IconName": ""
+    },
+    {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "有机磁胶",
+      "Items": [
+        6521,
+        6522,
+        7705
+      ],
+      "ItemCounts": [
+        1,
+        1,
+        1
+      ],
+      "Results": [
+        6523
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": ""
     },
     {
       "Type": 12,
@@ -7291,11 +8110,11 @@
         1105,
         1114,
         5206,
-        1030
+        1301
       ],
       "ItemCounts": [
         2,
-        4,
+        2,
         2,
         1
       ],
@@ -7310,6 +8129,31 @@
       "IconName": "silicon-neuron"
     },
     {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "磁胶粒子宽带",
+      "Items": [
+        6523,
+        7804
+      ],
+      "ItemCounts": [
+        1,
+        1
+      ],
+      "Results": [
+        1402
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": "particle-wide-band"
+    },
+    {
       "Type": 12,
       "Factories": [
         2318
@@ -7322,16 +8166,16 @@
       ],
       "ItemCounts": [
         1,
-        4,
-        2
+        32,
+        16
       ],
       "Results": [
         5201
       ],
       "ResultCounts": [
-        1
+        8
       ],
-      "TimeSpend": 360,
+      "TimeSpend": 2880,
       "Proliferator": 3,
       "IconName": "memory"
     },
@@ -7348,20 +8192,39 @@
         5203
       ],
       "ItemCounts": [
-        4,
+        16,
         1,
-        1,
+        2,
         1
       ],
       "Results": [
         5203
       ],
       "ResultCounts": [
-        2
+        5
       ],
-      "TimeSpend": 240,
+      "TimeSpend": 480,
       "Proliferator": 1,
       "IconName": "reassembler"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2301,
+        2316
+      ],
+      "Name": "[无中生有]硅石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        1003
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "silicium-ore"
     },
     {
       "Type": 1,
@@ -7398,12 +8261,12 @@
       "Name": "定向筛选培育",
       "Items": [
         1031,
-        1000,
+        7020,
         6208
       ],
       "ItemCounts": [
-        9,
-        2,
+        8,
+        1,
         1
       ],
       "Results": [
@@ -7413,134 +8276,200 @@
         2
       ],
       "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "混凝土"
+      "Proliferator": 1,
+      "IconName": ""
     },
     {
       "Type": 14,
       "Factories": [
         6264
       ],
-      "Name": "辐射诱变迭代",
+      "Name": "共生繁育",
       "Items": [
         7002,
         6226,
-        6212
+        6212,
+        7017,
+        7022
       ],
       "ItemCounts": [
         4,
         4,
+        1,
+        1,
+        3
+      ],
+      "Results": [
+        6212,
+        7022
+      ],
+      "ResultCounts": [
+        5,
+        3
+      ],
+      "TimeSpend": 240,
+      "Proliferator": 1,
+      "IconName": ""
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "速生林扩张",
+      "Items": [
+        7022,
+        6206
+      ],
+      "ItemCounts": [
+        3,
+        4
+      ],
+      "Results": [
+        7022,
+        1030,
+        1031
+      ],
+      "ResultCounts": [
+        5,
+        12,
+        8
+      ],
+      "TimeSpend": 960,
+      "Proliferator": 1,
+      "IconName": ""
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "营养水培林",
+      "Items": [
+        7022,
+        6206
+      ],
+      "ItemCounts": [
+        3,
+        2
+      ],
+      "Results": [
+        1030,
+        1031,
+        7022
+      ],
+      "ResultCounts": [
+        24,
+        16,
+        3
+      ],
+      "TimeSpend": 480,
+      "Proliferator": 1,
+      "IconName": "wood"
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "超速生林",
+      "Items": [
+        6212,
+        7022
+      ],
+      "ItemCounts": [
+        6,
         1
       ],
       "Results": [
-        6212
+        1030,
+        1031,
+        7002
       ],
       "ResultCounts": [
-        5
+        48,
+        32,
+        6
+      ],
+      "TimeSpend": 480,
+      "Proliferator": 1,
+      "IconName": "wood"
+    },
+    {
+      "Type": 3,
+      "Factories": [
+        2308
+      ],
+      "Name": "醇润滑油",
+      "Items": [
+        7009,
+        7015
+      ],
+      "ItemCounts": [
+        1,
+        1
+      ],
+      "Results": [
+        7006
+      ],
+      "ResultCounts": [
+        2
       ],
       "TimeSpend": 240,
       "Proliferator": 3,
-      "IconName": "硝基柴油"
+      "IconName": "accelerator-1"
     },
     {
-      "Type": 14,
+      "Type": 2,
       "Factories": [
-        6264
+        2309
       ],
-      "Name": "激素生长生物质",
+      "Name": "醇塑料",
       "Items": [
-        1030,
-        6206
-      ],
-      "ItemCounts": [
-        16,
-        1
-      ],
-      "Results": [
-        1031
-      ],
-      "ResultCounts": [
-        48
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "plant-fuel"
-    },
-    {
-      "Type": 14,
-      "Factories": [
-        6264
-      ],
-      "Name": "激素生长纤维",
-      "Items": [
-        1031,
-        6206
-      ],
-      "ItemCounts": [
-        24,
-        1
-      ],
-      "Results": [
+        7015,
+        7009,
         1030
       ],
-      "ResultCounts": [
-        32
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "wood"
-    },
-    {
-      "Type": 14,
-      "Factories": [
-        6264
-      ],
-      "Name": "高速生长生物质",
-      "Items": [
-        1030,
-        1000,
-        6212
-      ],
       "ItemCounts": [
-        32,
-        5,
-        1
+        1,
+        3,
+        3
       ],
       "Results": [
-        1031
+        1115
       ],
       "ResultCounts": [
-        96
+        3
       ],
-      "TimeSpend": 480,
+      "TimeSpend": 180,
       "Proliferator": 3,
-      "IconName": "plant-fuel"
+      "IconName": "plastic"
     },
     {
-      "Type": 14,
+      "Type": -1,
       "Factories": [
-        6264
+        2317
       ],
-      "Name": "高速生长纤维",
+      "Name": "[量子化工厂双倍产物]醇塑料",
       "Items": [
-        1031,
-        1000,
-        6212
-      ],
-      "ItemCounts": [
-        48,
-        5,
-        1
-      ],
-      "Results": [
+        7015,
+        7009,
         1030
       ],
-      "ResultCounts": [
-        64
+      "ItemCounts": [
+        1,
+        3,
+        3
       ],
-      "TimeSpend": 480,
+      "Results": [
+        1115
+      ],
+      "ResultCounts": [
+        6
+      ],
+      "TimeSpend": 180,
       "Proliferator": 3,
-      "IconName": "wood"
+      "IconName": "plastic"
     },
     {
       "Type": 4,
@@ -7567,7 +8496,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 3,
-      "IconName": "钢芯弹药箱"
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -7594,7 +8523,7 @@
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
-      "IconName": "钨芯弹药箱"
+      "IconName": ""
     },
     {
       "Type": 10,
@@ -7623,7 +8552,35 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 3,
-      "IconName": "三元弹药箱"
+      "IconName": ""
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "辐射诱变迭代",
+      "Items": [
+        6212,
+        6208,
+        6226,
+        7017
+      ],
+      "ItemCounts": [
+        1,
+        4,
+        30,
+        32
+      ],
+      "Results": [
+        6212
+      ],
+      "ResultCounts": [
+        2
+      ],
+      "TimeSpend": 1920,
+      "Proliferator": 1,
+      "IconName": ""
     },
     {
       "Type": 10,
@@ -7634,7 +8591,7 @@
       "Name": "重力鱼雷",
       "Items": [
         1127,
-        1303,
+        7501,
         6277
       ],
       "ItemCounts": [
@@ -7653,26 +8610,29 @@
       "IconName": "missile-graviton"
     },
     {
-      "Type": 3,
+      "Type": 1,
       "Factories": [
-        2308
+        2302,
+        2315,
+        2319,
+        6501
       ],
-      "Name": "煅烧石油焦",
+      "Name": "石英砂玻璃",
       "Items": [
-        1114
+        1099
       ],
       "ItemCounts": [
-        2
+        3
       ],
       "Results": [
-        1109
+        1110
       ],
       "ResultCounts": [
-        1
+        2
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
-      "IconName": "graphite"
+      "IconName": "glass"
     },
     {
       "Type": 10,
@@ -7699,7 +8659,7 @@
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
-      "IconName": "反物质导弹组"
+      "IconName": ""
     },
     {
       "Type": 9,
@@ -7715,17 +8675,17 @@
       ],
       "ItemCounts": [
         1,
-        4,
-        4,
-        4
+        20,
+        20,
+        20
       ],
       "Results": [
         6502
       ],
       "ResultCounts": [
-        1
+        5
       ],
-      "TimeSpend": 720,
+      "TimeSpend": 3600,
       "Proliferator": 3,
       "IconName": "rocket"
     },
@@ -7742,7 +8702,7 @@
         6207
       ],
       "ItemCounts": [
-        1
+        2
       ],
       "Results": [
         1101
@@ -7762,14 +8722,16 @@
         2305,
         2318
       ],
-      "Name": "光纤（高效）",
+      "Name": "光纤（重水除羟基）",
       "Items": [
-        1302,
-        1014,
-        1115
+        1111,
+        1115,
+        7019,
+        7018
       ],
       "ItemCounts": [
-        1,
+        3,
+        2,
         1,
         1
       ],
@@ -7777,11 +8739,11 @@
         7804
       ],
       "ResultCounts": [
-        1
+        4
       ],
-      "TimeSpend": 240,
+      "TimeSpend": 360,
       "Proliferator": 3,
-      "IconName": "光学信息传输纤维"
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -7791,15 +8753,15 @@
         2305,
         2318
       ],
-      "Name": "光纤",
+      "Name": "光导纤维",
       "Items": [
-        1302,
+        1303,
         1111,
         1115
       ],
       "ItemCounts": [
         1,
-        2,
+        1,
         1
       ],
       "Results": [
@@ -7810,7 +8772,7 @@
       ],
       "TimeSpend": 240,
       "Proliferator": 3,
-      "IconName": "光学信息传输纤维"
+      "IconName": ""
     },
     {
       "Type": 10,
@@ -7822,7 +8784,7 @@
       "Items": [
         1305,
         7804,
-        1303
+        7501
       ],
       "ItemCounts": [
         1,
@@ -7835,9 +8797,64 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 1800,
+      "TimeSpend": 240,
       "Proliferator": 3,
-      "IconName": "超级纳米电脑"
+      "IconName": ""
+    },
+    {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "高速量子计算机",
+      "Items": [
+        1305,
+        7019,
+        7501
+      ],
+      "ItemCounts": [
+        2,
+        3,
+        1
+      ],
+      "Results": [
+        7805
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 960,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 14,
+      "Factories": [
+        6264
+      ],
+      "Name": "绿肥营养液",
+      "Items": [
+        6208,
+        1000,
+        1031
+      ],
+      "ItemCounts": [
+        12,
+        5,
+        16
+      ],
+      "Results": [
+        6206,
+        6208
+      ],
+      "ResultCounts": [
+        8,
+        12
+      ],
+      "TimeSpend": 480,
+      "Proliferator": 1,
+      "IconName": ""
     },
     {
       "Type": 14,
@@ -7852,20 +8869,20 @@
       ],
       "ItemCounts": [
         1,
-        48,
-        72
+        24,
+        16
       ],
       "Results": [
         7708,
         7002
       ],
       "ResultCounts": [
-        4,
-        4
+        2,
+        1
       ],
       "TimeSpend": 240,
-      "Proliferator": 3,
-      "IconName": "环氧树脂_新"
+      "Proliferator": 1,
+      "IconName": ""
     },
     {
       "Type": 9,
@@ -7876,13 +8893,13 @@
       "Items": [
         2302,
         1107,
-        1303,
-        1104
+        7501,
+        7708
       ],
       "ItemCounts": [
-        24,
         40,
-        8,
+        40,
+        20,
         40
       ],
       "Results": [
@@ -7891,7 +8908,7 @@
       "ResultCounts": [
         1
       ],
-      "TimeSpend": 1800,
+      "TimeSpend": 3600,
       "Proliferator": 1,
       "IconName": "interstellar-logistic-station"
     },
@@ -7915,7 +8932,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 1,
-      "IconName": "能量碎片制作"
+      "IconName": ""
     },
     {
       "Type": 15,
@@ -7925,7 +8942,7 @@
       ],
       "Name": "信息矩阵",
       "Items": [
-        1303,
+        7501,
         7804
       ],
       "ItemCounts": [
@@ -7940,7 +8957,7 @@
       ],
       "TimeSpend": 960,
       "Proliferator": 3,
-      "IconName": "稳定矩阵"
+      "IconName": ""
     },
     {
       "Type": 15,
@@ -7969,7 +8986,7 @@
       ],
       "TimeSpend": 600,
       "Proliferator": 3,
-      "IconName": "虚空矩阵"
+      "IconName": ""
     },
     {
       "Type": 0,
@@ -7994,7 +9011,36 @@
       ],
       "TimeSpend": 600,
       "Proliferator": 1,
-      "IconName": "氦三_新"
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "空轨",
+      "Items": [
+        1103,
+        1204,
+        1301
+      ],
+      "ItemCounts": [
+        2,
+        1,
+        1
+      ],
+      "Results": [
+        6235
+      ],
+      "ResultCounts": [
+        10
+      ],
+      "TimeSpend": 1500,
+      "Proliferator": 3,
+      "IconName": "belt-3"
     },
     {
       "Type": 9,
@@ -8004,7 +9050,7 @@
       "Name": "轨道观测站",
       "Items": [
         1107,
-        1303,
+        7501,
         1119,
         7804
       ],
@@ -8074,7 +9120,7 @@
       ],
       "TimeSpend": 7200,
       "Proliferator": 1,
-      "IconName": "行星采集器"
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -8088,7 +9134,7 @@
       "Items": [
         1108,
         1124,
-        1303,
+        7501,
         5001
       ],
       "ItemCounts": [
@@ -8105,7 +9151,7 @@
       ],
       "TimeSpend": 1500,
       "Proliferator": 1,
-      "IconName": "行星熔炉"
+      "IconName": ""
     },
     {
       "Type": 1,
@@ -8171,19 +9217,19 @@
       "ItemCounts": [
         18,
         5,
-        40
+        9
       ],
       "Results": [
         6206,
         6208
       ],
       "ResultCounts": [
-        6,
+        4,
         18
       ],
       "TimeSpend": 480,
       "Proliferator": 1,
-      "IconName": "二氧化碳"
+      "IconName": ""
     },
     {
       "Type": 9,
@@ -8236,35 +9282,37 @@
       ],
       "TimeSpend": 360,
       "Proliferator": 3,
-      "IconName": "硝基柴油燃料棒"
+      "IconName": ""
     },
     {
       "Type": 9,
       "Factories": [
         6257
       ],
-      "Name": "星环电网枢纽",
+      "Name": "星环电网组件",
       "Items": [
-        1118,
-        1303,
-        1205,
-        7804
+        2201,
+        2202,
+        1103,
+        7804,
+        6522
       ],
       "ItemCounts": [
-        40,
-        15,
-        20,
-        20
-      ],
-      "Results": [
-        6259
-      ],
-      "ResultCounts": [
+        3,
+        1,
+        10,
+        5,
         1
       ],
+      "Results": [
+        6517
+      ],
+      "ResultCounts": [
+        5
+      ],
       "TimeSpend": 1800,
-      "Proliferator": 3,
-      "IconName": "行星化工厂"
+      "Proliferator": 1,
+      "IconName": ""
     },
     {
       "Type": 9,
@@ -8274,15 +9322,11 @@
       "Name": "星环对撞机总控站",
       "Items": [
         1125,
-        7805,
-        1206,
-        6243
+        9486
       ],
       "ItemCounts": [
         50,
-        8,
-        20,
-        50
+        4
       ],
       "Results": [
         6265
@@ -8291,8 +9335,8 @@
         1
       ],
       "TimeSpend": 3600,
-      "Proliferator": 3,
-      "IconName": "大型强子对撞机"
+      "Proliferator": 1,
+      "IconName": ""
     },
     {
       "Type": 9,
@@ -8302,13 +9346,15 @@
       "Name": "超空间中继器核心",
       "Items": [
         6227,
+        9482,
         9486,
         1210,
         1016
       ],
       "ItemCounts": [
-        60,
-        40,
+        50,
+        80,
+        30,
         100,
         80
       ],
@@ -8330,7 +9376,7 @@
       "Name": "预制星舰模块",
       "Items": [
         1125,
-        1303,
+        7501,
         6263,
         7804
       ],
@@ -8348,7 +9394,7 @@
       ],
       "TimeSpend": 720,
       "Proliferator": 3,
-      "IconName": "日志02"
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -8361,7 +9407,7 @@
       "Name": "重型电磁弹射器",
       "Items": [
         1125,
-        1303,
+        7501,
         1205,
         1203,
         1143
@@ -8395,7 +9441,7 @@
       "Items": [
         1108,
         1401,
-        1303,
+        7501,
         5001
       ],
       "ItemCounts": [
@@ -8424,12 +9470,14 @@
       ],
       "Name": "电路板",
       "Items": [
+        1302,
         1115,
         1104
       ],
       "ItemCounts": [
-        1,
-        1
+        2,
+        3,
+        2
       ],
       "Results": [
         1301
@@ -8437,7 +9485,7 @@
       "ResultCounts": [
         2
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "circuit-board"
     },
@@ -8449,22 +9497,24 @@
         2305,
         2318
       ],
-      "Name": "石墨烯基板电路",
+      "Name": "银浆印刷电路",
       "Items": [
-        1123,
-        1104
+        1302,
+        1115,
+        7014
       ],
       "ItemCounts": [
-        1,
+        2,
+        2,
         1
       ],
       "Results": [
         1301
       ],
       "ResultCounts": [
-        2
+        3
       ],
-      "TimeSpend": 60,
+      "TimeSpend": 120,
       "Proliferator": 3,
       "IconName": "circuit-board"
     },
@@ -8478,24 +9528,26 @@
       ],
       "Name": "轨道连接组件",
       "Items": [
-        1118,
+        1103,
         1301,
-        7804
+        7804,
+        1203
       ],
       "ItemCounts": [
-        5,
+        25,
         3,
-        2
+        2,
+        1
       ],
       "Results": [
         6515
       ],
       "ResultCounts": [
-        10
+        5
       ],
-      "TimeSpend": 300,
+      "TimeSpend": 900,
       "Proliferator": 3,
-      "IconName": "日志05"
+      "IconName": ""
     },
     {
       "Type": 11,
@@ -8525,6 +9577,41 @@
       "IconName": "titanium-plate"
     },
     {
+      "Type": 18,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "电磁矩阵（黑盒）",
+      "Items": [
+        6207,
+        1002,
+        1005,
+        1004,
+        1006,
+        1007
+      ],
+      "ItemCounts": [
+        10,
+        5,
+        20,
+        10,
+        30,
+        5
+      ],
+      "Results": [
+        6279
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 1200,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
       "Type": 4,
       "Factories": [
         2303,
@@ -8532,26 +9619,474 @@
         2305,
         2318
       ],
-      "Name": "优质混凝土",
+      "Name": "粒子加速轨道",
       "Items": [
-        1005,
-        1103,
-        1003
+        1107,
+        6523,
+        6243
       ],
       "ItemCounts": [
-        3,
+        5,
+        2,
+        5
+      ],
+      "Results": [
+        6516
+      ],
+      "ResultCounts": [
+        5
+      ],
+      "TimeSpend": 1500,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "星环护盾",
+      "Items": [
+        3008,
+        7805,
+        6523
+      ],
+      "ItemCounts": [
+        7,
+        6,
+        20
+      ],
+      "Results": [
+        6518
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 2700,
+      "Proliferator": 1,
+      "IconName": "turret-shield"
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "天枢座",
+      "Items": [
+        1125,
+        9486,
+        1205
+      ],
+      "ItemCounts": [
+        50,
+        2,
+        40
+      ],
+      "Results": [
+        6259
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 3600,
+      "Proliferator": 1,
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "光栅激发器",
+      "Items": [
+        1014,
+        1202
+      ],
+      "ItemCounts": [
+        1,
+        10
+      ],
+      "Results": [
+        1401
+      ],
+      "ResultCounts": [
+        5
+      ],
+      "TimeSpend": 300,
+      "Proliferator": 3,
+      "IconName": "plasma-generator"
+    },
+    {
+      "Type": 3,
+      "Factories": [
+        2308
+      ],
+      "Name": "润滑油",
+      "Items": [
+        7009,
+        1114
+      ],
+      "ItemCounts": [
         1,
         1
       ],
       "Results": [
-        1108
+        7006
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 120,
+      "Proliferator": 3,
+      "IconName": "accelerator-1"
+    },
+    {
+      "Type": 2,
+      "Factories": [
+        2309
+      ],
+      "Name": "导电银浆",
+      "Items": [
+        7101,
+        7015
+      ],
+      "ItemCounts": [
+        3,
+        1
+      ],
+      "Results": [
+        7014
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 240,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2317
+      ],
+      "Name": "[量子化工厂双倍产物]导电银浆",
+      "Items": [
+        7101,
+        7015
+      ],
+      "ItemCounts": [
+        3,
+        1
+      ],
+      "Results": [
+        7014
+      ],
+      "ResultCounts": [
+        8
+      ],
+      "TimeSpend": 240,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 2,
+      "Factories": [
+        2309
+      ],
+      "Name": "银铜混合浆料",
+      "Items": [
+        7504,
+        1104,
+        7015
+      ],
+      "ItemCounts": [
+        3,
+        3,
+        1
+      ],
+      "Results": [
+        7014
+      ],
+      "ResultCounts": [
+        4
+      ],
+      "TimeSpend": 360,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        2317
+      ],
+      "Name": "[量子化工厂双倍产物]银铜混合浆料",
+      "Items": [
+        7504,
+        1104,
+        7015
+      ],
+      "ItemCounts": [
+        3,
+        3,
+        1
+      ],
+      "Results": [
+        7014
+      ],
+      "ResultCounts": [
+        8
+      ],
+      "TimeSpend": 360,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "预加工伺服器",
+      "Items": [
+        7501,
+        1303,
+        1203,
+        1101
+      ],
+      "ItemCounts": [
+        2,
+        1,
+        1,
+        4
+      ],
+      "Results": [
+        7617
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 240,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "超高效过滤器",
+      "Items": [
+        1203,
+        1110,
+        1115,
+        1101
+      ],
+      "ItemCounts": [
+        1,
+        2,
+        1,
+        4
+      ],
+      "Results": [
+        7616
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 240,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "水冷伺服器",
+      "Items": [
+        7501,
+        1000,
+        1203,
+        1101
+      ],
+      "ItemCounts": [
+        6,
+        6,
+        3,
+        12
+      ],
+      "Results": [
+        7617
       ],
       "ResultCounts": [
         3
       ],
-      "TimeSpend": 180,
+      "TimeSpend": 1200,
       "Proliferator": 3,
-      "IconName": "stone-brick"
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "智能伺服器",
+      "Items": [
+        7805,
+        7019,
+        7006,
+        1203
+      ],
+      "ItemCounts": [
+        1,
+        2,
+        6,
+        1
+      ],
+      "Results": [
+        7618
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 360,
+      "Proliferator": 3,
+      "IconName": ""
+    },
+    {
+      "Type": 4,
+      "Factories": [
+        2303,
+        2304,
+        2305,
+        2318
+      ],
+      "Name": "伺服天穹组件",
+      "Items": [
+        7617,
+        1123,
+        1107,
+        3007
+      ],
+      "ItemCounts": [
+        75,
+        50,
+        20,
+        4
+      ],
+      "Results": [
+        7619
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 2700,
+      "Proliferator": 1,
+      "IconName": "turret-signal"
+    },
+    {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "智能方尖碑",
+      "Items": [
+        7618,
+        6523,
+        3007
+      ],
+      "ItemCounts": [
+        50,
+        20,
+        12
+      ],
+      "Results": [
+        7620
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 3600,
+      "Proliferator": 1,
+      "IconName": "turret-signal"
+    },
+    {
+      "Type": 10,
+      "Factories": [
+        2305,
+        2318
+      ],
+      "Name": "亿万械国",
+      "Items": [
+        6530,
+        7620,
+        9486
+      ],
+      "ItemCounts": [
+        1,
+        1,
+        4
+      ],
+      "Results": [
+        7621
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 4500,
+      "Proliferator": 1,
+      "IconName": "turret-signal"
+    },
+    {
+      "Type": 9,
+      "Factories": [
+        6257
+      ],
+      "Name": "乾坤",
+      "Items": [
+        1125,
+        6271,
+        6523,
+        9480,
+        6227
+      ],
+      "ItemCounts": [
+        75,
+        6,
+        12,
+        4,
+        1
+      ],
+      "Results": [
+        7806
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 720,
+      "Proliferator": 1,
+      "IconName": ""
     },
     {
       "Type": 4,
@@ -9017,285 +10552,6 @@
         2305,
         2318
       ],
-      "Name": "星际组装厂生产机器图标专用",
-      "Items": [
-        1103,
-        1404,
-        1303,
-        9481
-      ],
-      "ItemCounts": [
-        20,
-        10,
-        5,
-        2
-      ],
-      "Results": [
-        9493
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "Ciron"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "铜金属重构装置",
-      "Items": [
-        1103,
-        1404,
-        1303,
-        9481
-      ],
-      "ItemCounts": [
-        20,
-        10,
-        5,
-        2
-      ],
-      "Results": [
-        9494
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "Ccopper"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "高纯硅重构装置",
-      "Items": [
-        1103,
-        1404,
-        1303,
-        9481
-      ],
-      "ItemCounts": [
-        20,
-        10,
-        5,
-        2
-      ],
-      "Results": [
-        9495
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "Csilicon"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "钛金属重构装置",
-      "Items": [
-        1103,
-        1404,
-        1303,
-        9481
-      ],
-      "ItemCounts": [
-        20,
-        10,
-        5,
-        2
-      ],
-      "Results": [
-        9496
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "Ctitanium"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "单极磁石重构装置",
-      "Items": [
-        1103,
-        1404,
-        1303,
-        9481
-      ],
-      "ItemCounts": [
-        20,
-        10,
-        5,
-        2
-      ],
-      "Results": [
-        9497
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "Cmagore"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "晶体接收器",
-      "Items": [
-        1107,
-        1404,
-        1303,
-        1206
-      ],
-      "ItemCounts": [
-        10,
-        10,
-        5,
-        5
-      ],
-      "Results": [
-        9498
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "Ccrystal"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "组件集成装置",
-      "Items": [
-        1125,
-        1404,
-        1303,
-        1206
-      ],
-      "ItemCounts": [
-        10,
-        10,
-        5,
-        5
-      ],
-      "Results": [
-        9499
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "Cic"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "石墨提炼装置",
-      "Items": [
-        1103,
-        1404,
-        1303,
-        9481
-      ],
-      "ItemCounts": [
-        20,
-        10,
-        5,
-        2
-      ],
-      "Results": [
-        9501
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "Ccoal"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "光栅晶体接收器",
-      "Items": [
-        1107,
-        1404,
-        1303,
-        1206
-      ],
-      "ItemCounts": [
-        10,
-        10,
-        5,
-        5
-      ],
-      "Results": [
-        9502
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 480,
-      "Proliferator": 3,
-      "IconName": "Cgrating"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
       "Name": "物资交换物流站",
       "Items": [
         2104,
@@ -9371,25 +10627,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "titanium-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2301,
-        2316
-      ],
-      "Name": "[无中生有]煤矿",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1006
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "coal-ore"
     },
     {
       "Type": -1,
@@ -9615,25 +10852,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "magnet"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2306,
-        2307
-      ],
-      "Name": "[无中生有]原油",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1007
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "oil"
     },
     {
       "Type": -1,
@@ -9933,7 +11151,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "铝矿石"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -9952,7 +11170,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "硫矿"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -10033,7 +11251,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "放射晶体矿_新"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -10051,7 +11269,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "高纯钚块"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -10069,7 +11287,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "量子储液罐"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -10087,7 +11305,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "量子箱"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -10105,25 +11323,25 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "氦_新"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]十七公斤重的文明",
+      "Name": "[无中生有]手动研究加速",
       "Items": [],
       "ItemCounts": [],
       "Results": [
-        6235
+        6254
       ],
       "ResultCounts": [
         1
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "氦三_新"
+      "IconName": "3904"
     },
     {
       "Type": -1,
@@ -10141,14 +11359,14 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "煤矿粉"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]精密结构组装厂",
+      "Name": "[无中生有]SCP-310恒燃之火",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10159,7 +11377,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "行星精密组装厂"
+      "IconName": "fusion-reactor"
     },
     {
       "Type": -1,
@@ -10220,61 +11438,7 @@
       "Factories": [
         0
       ],
-      "Name": "[无中生有]开发者日志06",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6516
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "日志06"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志07",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6517
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "日志07"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志08",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6518
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "日志08"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志09",
+      "Name": "[无中生有]气云",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10285,86 +11449,14 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "日志09"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]开发者日志10",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6520
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "日志10"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志11",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6521
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "日志11"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]电力节约",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6522
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "星球飞升-天穹巨构"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]上传扩容",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6523
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "星球飞升-科学枢纽"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]燃料回收",
+      "Name": "[无中生有]汲水地基",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10375,14 +11467,14 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "星球飞升-火力发电"
+      "IconName": "terrain-tool"
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]风力扩容",
+      "Name": "[无中生有]自然降温",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10393,14 +11485,14 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "星球飞升-风力发电"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]光伏扩容",
+      "Name": "[无中生有]母星特质",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10411,14 +11503,14 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "星球飞升-光伏发电"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]热聚增效",
+      "Name": "[无中生有]信息素",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10429,14 +11521,14 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "星球飞升-聚变驱动"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]资源采掘",
+      "Name": "[无中生有]真空冶炼",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10447,14 +11539,14 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "星球飞升-吞食帝国"
+      "IconName": "1401"
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]裂变增效",
+      "Name": "[无中生有]拥有隐藏",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10465,14 +11557,14 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "裂变发电升级"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]先进推进",
+      "Name": "[无中生有]量子虚拟生命",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10483,14 +11575,14 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "物流运输机升级"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]特征向量模拟",
+      "Name": "[无中生有]黑萝卜",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10501,7 +11593,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "特征向量模拟"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -10519,7 +11611,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "中继信号干扰"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -10537,7 +11629,7 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "神经元重编程"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -10555,241 +11647,25 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "恶意代码攻击"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]盐酸",
+      "Name": "[无中生有]种子",
       "Items": [],
       "ItemCounts": [],
       "Results": [
-        7014
+        7021
       ],
       "ResultCounts": [
         1
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "氢氯酸_新新"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]三氯化铁",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7015
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "三氯化铁"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]硝酸",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7017
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "硝酸"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]氧",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7019
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氧气"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]氢氧化钠",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7020
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氢氧化钠"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]氯化钠",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7101
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "氯化钠_新"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]塑料基板",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7501
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "塑料基板"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]光学基板",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7504
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "光学基板"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]反物质湮灭单元",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7611
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "反物质湮灭单元"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]反物质炮弹",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7613
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "反物质炮弹"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]湮灭弹药箱",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7616
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "湮灭弹药箱"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]聚爆加农炮MK2",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7617
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "加农炮MK2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]高频激光塔MK2",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        7618
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "紫激光"
+      "IconName": ""
     },
     {
       "Type": -1,
@@ -10797,7 +11673,7 @@
         2301,
         2316
       ],
-      "Name": "[无中生有]石墨矿",
+      "Name": "[无中生有]辉银矿",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10808,14 +11684,14 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "钨矿"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]聚酰亚胺",
+      "Name": "[无中生有]轨道设施说明书",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -10826,43 +11702,331 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "聚苯并咪唑"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]光学处理器",
+      "Name": "[无中生有]星环说明书",
       "Items": [],
       "ItemCounts": [],
       "Results": [
-        7803
+        7710
       ],
       "ResultCounts": [
         1
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "光学芯片"
+      "IconName": ""
     },
     {
       "Type": -1,
       "Factories": [
         0
       ],
-      "Name": "[无中生有]光学计算机",
+      "Name": "[无中生有]数学率引擎建设说明书",
       "Items": [],
       "ItemCounts": [],
       "Results": [
-        7806
+        7711
       ],
       "ResultCounts": [
         1
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "光学主机"
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]飞行舱说明书",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7712
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-铁矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7807
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "iron-ore"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-黄铁矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7808
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-铜矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7809
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "copper-ore"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-煤矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7810
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "coal-ore"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-金伯利矿石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7811
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "diamond-ore"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-石矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7812
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "stone-ore"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-硅石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7813
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "silicium-ore"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-莫桑石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7814
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "fractal-silica"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-钛矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7815
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "titanium-ore"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-辉银矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7816
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-铀矿",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7817
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": ""
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-光栅石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7818
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "grating-ore"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-单极磁石",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7819
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "mono-mag-ore"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-可燃冰",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7820
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "gas-hydrate"
+    },
+    {
+      "Type": -1,
+      "Factories": [
+        0
+      ],
+      "Name": "[无中生有]乾坤-刺笋结晶",
+      "Items": [],
+      "ItemCounts": [],
+      "Results": [
+        7821
+      ],
+      "ResultCounts": [
+        1
+      ],
+      "TimeSpend": 60,
+      "Proliferator": 0,
+      "IconName": "bamboo-crystal"
     }
   ],
   "items": [
@@ -10877,91 +12041,91 @@
       "ID": 1002,
       "Type": 1,
       "Name": "铜矿",
-      "GridIndex": 4802,
+      "GridIndex": 4803,
       "IconName": "copper-ore"
     },
     {
       "ID": 1003,
       "Type": 1,
       "Name": "硅石",
-      "GridIndex": 4803,
+      "GridIndex": 4806,
       "IconName": "silicium-ore"
     },
     {
       "ID": 1004,
       "Type": 1,
       "Name": "钛矿",
-      "GridIndex": 4804,
+      "GridIndex": 4807,
       "IconName": "titanium-ore"
     },
     {
       "ID": 1005,
       "Type": 1,
       "Name": "石矿",
-      "GridIndex": 4806,
+      "GridIndex": 4805,
       "IconName": "stone-ore"
     },
     {
       "ID": 1006,
       "Type": 1,
       "Name": "煤矿",
-      "GridIndex": 4805,
+      "GridIndex": 4804,
       "IconName": "coal-ore"
     },
     {
       "ID": 1030,
       "Type": 1,
       "Name": "植物纤维",
-      "GridIndex": 5414,
+      "GridIndex": 5314,
       "IconName": "wood"
     },
     {
       "ID": 1031,
       "Type": 1,
       "Name": "生物质",
-      "GridIndex": 5413,
+      "GridIndex": 5114,
       "IconName": "plant-fuel"
     },
     {
       "ID": 1011,
       "Type": 1,
       "Name": "可燃冰",
-      "GridIndex": 5114,
+      "GridIndex": 5502,
       "IconName": "gas-hydrate"
     },
     {
       "ID": 1012,
       "Type": 1,
       "Name": "金伯利矿石",
-      "GridIndex": 4706,
+      "GridIndex": 4704,
       "IconName": "diamond-ore"
     },
     {
       "ID": 1013,
       "Type": 1,
       "Name": "莫桑石",
-      "GridIndex": 4703,
+      "GridIndex": 4706,
       "IconName": "fractal-silica"
     },
     {
       "ID": 1014,
       "Type": 1,
       "Name": "光栅石",
-      "GridIndex": 4807,
+      "GridIndex": 4810,
       "IconName": "grating-ore"
     },
     {
       "ID": 1015,
       "Type": 1,
       "Name": "刺笋结晶",
-      "GridIndex": 5112,
+      "GridIndex": 5403,
       "IconName": "bamboo-crystal"
     },
     {
       "ID": 1016,
       "Type": 1,
       "Name": "单极磁石",
-      "GridIndex": 4808,
+      "GridIndex": 4811,
       "IconName": "mono-mag-ore"
     },
     {
@@ -10982,28 +12146,28 @@
       "ID": 1105,
       "Type": 2,
       "Name": "高纯硅块",
-      "GridIndex": 4104,
+      "GridIndex": 4106,
       "IconName": "silicium-single-crystal"
     },
     {
       "ID": 1106,
       "Type": 2,
       "Name": "钛块",
-      "GridIndex": 4105,
+      "GridIndex": 4107,
       "IconName": "titanium-plate"
     },
     {
       "ID": 1108,
       "Type": 2,
       "Name": "钢筋混凝土",
-      "GridIndex": 1103,
+      "GridIndex": 1105,
       "IconName": "stone-brick"
     },
     {
       "ID": 1109,
       "Type": 2,
       "Name": "石墨",
-      "GridIndex": 4106,
+      "GridIndex": 4104,
       "IconName": "graphite"
     },
     {
@@ -11017,42 +12181,42 @@
       "ID": 1107,
       "Type": 2,
       "Name": "碳化钛合金",
-      "GridIndex": 4205,
+      "GridIndex": 4207,
       "IconName": "titanium-alloy"
     },
     {
       "ID": 1110,
       "Type": 2,
       "Name": "玻璃",
-      "GridIndex": 4107,
+      "GridIndex": 4105,
       "IconName": "glass"
     },
     {
       "ID": 1119,
       "Type": 2,
       "Name": "钛化玻璃",
-      "GridIndex": 4207,
+      "GridIndex": 4205,
       "IconName": "titan-glass"
     },
     {
       "ID": 1111,
       "Type": 2,
       "Name": "棱镜",
-      "GridIndex": 1301,
+      "GridIndex": 1201,
       "IconName": "prism"
     },
     {
       "ID": 1112,
       "Type": 2,
       "Name": "金刚石",
-      "GridIndex": 4206,
+      "GridIndex": 4204,
       "IconName": "diamond"
     },
     {
       "ID": 1113,
       "Type": 2,
       "Name": "碳化硅",
-      "GridIndex": 4204,
+      "GridIndex": 4206,
       "IconName": "silicium-high-purity"
     },
     {
@@ -11080,91 +12244,91 @@
       "ID": 1203,
       "Type": 3,
       "Name": "电动机",
-      "GridIndex": 1201,
+      "GridIndex": 1102,
       "IconName": "electric-motor"
     },
     {
       "ID": 1204,
       "Type": 3,
       "Name": "电磁涡轮",
-      "GridIndex": 1202,
+      "GridIndex": 1103,
       "IconName": "mag-turbine"
     },
     {
       "ID": 1205,
       "Type": 3,
       "Name": "超级磁场环",
-      "GridIndex": 1203,
+      "GridIndex": 1104,
       "IconName": "hyper-magnetism-ring"
     },
     {
       "ID": 1206,
       "Type": 3,
       "Name": "粒子容器",
-      "GridIndex": 1306,
+      "GridIndex": 1309,
       "IconName": "partical-capacitor"
     },
     {
       "ID": 1127,
       "Type": 2,
       "Name": "奇异物质",
-      "GridIndex": 1312,
+      "GridIndex": 5702,
       "IconName": "strange-matter-generator"
     },
     {
       "ID": 1301,
       "Type": 3,
       "Name": "电路板",
-      "GridIndex": 1102,
+      "GridIndex": 1303,
       "IconName": "circuit-board"
     },
     {
       "ID": 1303,
       "Type": 3,
-      "Name": "主板",
-      "GridIndex": 1305,
+      "Name": "芯片",
+      "GridIndex": 1304,
       "IconName": "processor"
     },
     {
       "ID": 1305,
       "Type": 3,
       "Name": "量子芯片",
-      "GridIndex": 1307,
+      "GridIndex": 1308,
       "IconName": "quantum-processor"
     },
     {
       "ID": 1302,
       "Type": 3,
-      "Name": "晶圆",
-      "GridIndex": 1304,
+      "Name": "电路控制元件",
+      "GridIndex": 1302,
       "IconName": "micro-component"
     },
     {
       "ID": 1304,
       "Type": 3,
       "Name": "位面过滤器",
-      "GridIndex": 1206,
+      "GridIndex": 1208,
       "IconName": "plane-filter"
     },
     {
       "ID": 1402,
       "Type": 3,
       "Name": "粒子宽带",
-      "GridIndex": 1506,
+      "GridIndex": 1310,
       "IconName": "particle-wide-band"
     },
     {
       "ID": 1401,
       "Type": 3,
       "Name": "激光发生器",
-      "GridIndex": 1401,
+      "GridIndex": 1301,
       "IconName": "plasma-generator"
     },
     {
       "ID": 1404,
       "Type": 3,
       "Name": "光子合并器",
-      "GridIndex": 1302,
+      "GridIndex": 1509,
       "IconName": "photo-shifter"
     },
     {
@@ -11178,28 +12342,28 @@
       "ID": 1000,
       "Type": 1,
       "Name": "水",
-      "GridIndex": 5802,
+      "GridIndex": 5506,
       "IconName": "water"
     },
     {
       "ID": 1007,
       "Type": 1,
       "Name": "原油",
-      "GridIndex": 5113,
+      "GridIndex": 5101,
       "IconName": "oil"
     },
     {
       "ID": 1114,
       "Type": 2,
       "Name": "重油",
-      "GridIndex": 5103,
-      "IconName": "煤焦油"
+      "GridIndex": 5301,
+      "IconName": ""
     },
     {
       "ID": 1116,
       "Type": 2,
       "Name": "硫酸",
-      "GridIndex": 5801,
+      "GridIndex": 5406,
       "IconName": "sulphuric-acid"
     },
     {
@@ -11213,21 +12377,21 @@
       "ID": 1121,
       "Type": 2,
       "Name": "重氢",
-      "GridIndex": 5105,
+      "GridIndex": 5205,
       "IconName": "deuterium"
     },
     {
       "ID": 1122,
       "Type": 2,
       "Name": "反物质",
-      "GridIndex": 1313,
+      "GridIndex": 5703,
       "IconName": "anti-matter"
     },
     {
       "ID": 1208,
       "Type": 2,
       "Name": "临界光子",
-      "GridIndex": 1413,
+      "GridIndex": 5803,
       "IconName": "photon-capacitor-full"
     },
     {
@@ -11241,63 +12405,63 @@
       "ID": 1802,
       "Type": 4,
       "Name": "氘核燃料棒",
-      "GridIndex": 1314,
+      "GridIndex": 1414,
       "IconName": "hydrogen-energy-fuel"
     },
     {
       "ID": 1803,
       "Type": 4,
       "Name": "反物质燃料棒",
-      "GridIndex": 1414,
+      "GridIndex": 1514,
       "IconName": "antimatter-energy-fuel"
     },
     {
       "ID": 1804,
       "Type": 4,
       "Name": "奇异湮灭燃料棒",
-      "GridIndex": 1514,
+      "GridIndex": 1614,
       "IconName": "virtual-energy-fuel"
     },
     {
       "ID": 1115,
       "Type": 2,
       "Name": "塑料",
-      "GridIndex": 5401,
+      "GridIndex": 5102,
       "IconName": "plastic"
     },
     {
       "ID": 1123,
       "Type": 2,
       "Name": "石墨烯",
-      "GridIndex": 5101,
+      "GridIndex": 5302,
       "IconName": "graphene"
     },
     {
       "ID": 1124,
       "Type": 2,
       "Name": "碳纳米管",
-      "GridIndex": 5102,
+      "GridIndex": 5303,
       "IconName": "nanotube"
     },
     {
       "ID": 1117,
       "Type": 2,
       "Name": "有机晶体",
-      "GridIndex": 5714,
+      "GridIndex": 5612,
       "IconName": "crystal-rubber"
     },
     {
       "ID": 1118,
       "Type": 2,
       "Name": "钛晶石",
-      "GridIndex": 4305,
+      "GridIndex": 4307,
       "IconName": "titan-crystal"
     },
     {
       "ID": 1126,
       "Type": 2,
       "Name": "金属氢",
-      "GridIndex": 1205,
+      "GridIndex": 1603,
       "IconName": "casimir-crystal"
     },
     {
@@ -11325,14 +12489,14 @@
       "ID": 1209,
       "Type": 3,
       "Name": "引力透镜",
-      "GridIndex": 1512,
+      "GridIndex": 1312,
       "IconName": "gravity-lens"
     },
     {
       "ID": 1210,
       "Type": 3,
       "Name": "空间翘曲器",
-      "GridIndex": 1308,
+      "GridIndex": 1311,
       "IconName": "space-warper"
     },
     {
@@ -11346,42 +12510,42 @@
       "ID": 1407,
       "Type": 3,
       "Name": "动力引擎",
-      "GridIndex": 1108,
+      "GridIndex": 1110,
       "IconName": "engine"
     },
     {
       "ID": 1405,
       "Type": 3,
       "Name": "推进器",
-      "GridIndex": 1109,
+      "GridIndex": 1111,
       "IconName": "fuel-thruster"
     },
     {
       "ID": 1406,
       "Type": 3,
       "Name": "加力推进器",
-      "GridIndex": 1111,
+      "GridIndex": 1113,
       "IconName": "ion-thruster"
     },
     {
       "ID": 5003,
       "Type": 5,
       "Name": "配送运输机",
-      "GridIndex": 1208,
+      "GridIndex": 1210,
       "IconName": "delivery-drone"
     },
     {
       "ID": 5001,
       "Type": 5,
       "Name": "物流运输机",
-      "GridIndex": 1209,
+      "GridIndex": 1211,
       "IconName": "logistic-drone"
     },
     {
       "ID": 5002,
       "Type": 5,
       "Name": "太空运输船",
-      "GridIndex": 1210,
+      "GridIndex": 1212,
       "IconName": "logistic-vessel"
     },
     {
@@ -11395,7 +12559,7 @@
       "ID": 1502,
       "Type": 3,
       "Name": "戴森球组件",
-      "GridIndex": 1812,
+      "GridIndex": 1811,
       "IconName": "dyson-sphere-component"
     },
     {
@@ -11409,7 +12573,7 @@
       "ID": 1131,
       "Type": 3,
       "Name": "地基",
-      "GridIndex": 1105,
+      "GridIndex": 1205,
       "IconName": "terrain-tool"
     },
     {
@@ -11430,7 +12594,7 @@
       "ID": 1143,
       "Type": 2,
       "Name": "增产剂",
-      "GridIndex": 5701,
+      "GridIndex": 5501,
       "IconName": "accelerator-3"
     },
     {
@@ -11722,7 +12886,7 @@
       "Name": "高速装配线",
       "GridIndex": 2402,
       "IconName": "assembler-2",
-      "WorkEnergyPerTick": 12000,
+      "WorkEnergyPerTick": 24000,
       "Speed": 2.0,
       "Space": 10.24
     },
@@ -11732,7 +12896,7 @@
       "Name": "粒子打印车间",
       "GridIndex": 2403,
       "IconName": "assembler-3",
-      "WorkEnergyPerTick": 24000,
+      "WorkEnergyPerTick": 96000,
       "Speed": 2.0,
       "Space": 10.24
     },
@@ -11742,7 +12906,7 @@
       "Name": "物质重组工厂",
       "GridIndex": 2404,
       "IconName": "assembler-4",
-      "WorkEnergyPerTick": 48000,
+      "WorkEnergyPerTick": 192000,
       "Speed": 3.0,
       "Space": 10.24
     },
@@ -11799,7 +12963,7 @@
       "ID": 2301,
       "Type": 6,
       "Name": "采矿机",
-      "GridIndex": 2411,
+      "GridIndex": 2412,
       "IconName": "mining-drill",
       "WorkEnergyPerTick": 7000,
       "Speed": 0.5,
@@ -11809,7 +12973,7 @@
       "ID": 2316,
       "Type": 6,
       "Name": "大型采矿机",
-      "GridIndex": 2412,
+      "GridIndex": 2413,
       "IconName": "mining-drill-mk2",
       "WorkEnergyPerTick": 49000,
       "Speed": 1.0,
@@ -11829,7 +12993,7 @@
       "ID": 2302,
       "Type": 6,
       "Name": "电弧熔炉",
-      "GridIndex": 2405,
+      "GridIndex": 2406,
       "IconName": "smelter",
       "WorkEnergyPerTick": 8000,
       "Speed": 1.0,
@@ -11839,9 +13003,9 @@
       "ID": 2315,
       "Type": 6,
       "Name": "等离子熔炉",
-      "GridIndex": 2406,
+      "GridIndex": 2407,
       "IconName": "smelter-2",
-      "WorkEnergyPerTick": 24000,
+      "WorkEnergyPerTick": 48000,
       "Speed": 2.0,
       "Space": 5.76
     },
@@ -11849,7 +13013,7 @@
       "ID": 2319,
       "Type": 6,
       "Name": "负熵熔炉",
-      "GridIndex": 2407,
+      "GridIndex": 2408,
       "IconName": "smelter-3",
       "WorkEnergyPerTick": 1600,
       "Speed": 3.0,
@@ -11861,7 +13025,7 @@
       "Name": "激光钻井平台",
       "GridIndex": 2308,
       "IconName": "oil-extractor",
-      "WorkEnergyPerTick": 14000,
+      "WorkEnergyPerTick": 20000,
       "Speed": 2.0,
       "Space": 50.0
     },
@@ -11871,7 +13035,7 @@
       "Name": "原油精炼厂",
       "GridIndex": 2309,
       "IconName": "oil-refinery",
-      "WorkEnergyPerTick": 16000,
+      "WorkEnergyPerTick": 30000,
       "Speed": 1.0,
       "Space": 18.0
     },
@@ -11879,7 +13043,7 @@
       "ID": 2309,
       "Type": 6,
       "Name": "化工厂",
-      "GridIndex": 2409,
+      "GridIndex": 2410,
       "IconName": "chemical-plant",
       "WorkEnergyPerTick": 18000,
       "Speed": 1.0,
@@ -11889,9 +13053,9 @@
       "ID": 2317,
       "Type": 6,
       "Name": "量子化工厂",
-      "GridIndex": 2410,
+      "GridIndex": 2411,
       "IconName": "chemical-plant-2",
-      "WorkEnergyPerTick": 36000,
+      "WorkEnergyPerTick": 144000,
       "Speed": 1.0,
       "Space": 23.76
     },
@@ -11972,7 +13136,7 @@
       "Name": "微型粒子对撞机",
       "GridIndex": 2311,
       "IconName": "hadron-collider",
-      "WorkEnergyPerTick": 200000,
+      "WorkEnergyPerTick": 400000,
       "Speed": 1.0,
       "Space": 45.12
     },
@@ -11994,7 +13158,7 @@
       "ID": 2104,
       "Type": 5,
       "Name": "太空物流港",
-      "GridIndex": 2705,
+      "GridIndex": 2704,
       "IconName": "interstellar-logistic-station"
     },
     {
@@ -12311,92 +13475,92 @@
       "ID": 6201,
       "Type": 1,
       "Name": "液态金属",
-      "GridIndex": 4308,
-      "IconName": "钨矿"
+      "GridIndex": 4309,
+      "IconName": ""
     },
     {
       "ID": 6202,
       "Type": 1,
       "Name": "深层熔岩",
-      "GridIndex": 4108,
-      "IconName": "铝矿石"
+      "GridIndex": 4109,
+      "IconName": ""
     },
     {
       "ID": 6203,
       "Type": 2,
       "Name": "熔融金属",
-      "GridIndex": 4208,
-      "IconName": "铝板"
+      "GridIndex": 4209,
+      "IconName": ""
     },
     {
       "ID": 6204,
       "Type": 2,
       "Name": "金属废液",
-      "GridIndex": 4408,
-      "IconName": "铝合金"
+      "GridIndex": 4509,
+      "IconName": ""
     },
     {
       "ID": 6205,
       "Type": 1,
       "Name": "甲烷",
-      "GridIndex": 5412,
-      "IconName": "硫化氢"
+      "GridIndex": 5113,
+      "IconName": ""
     },
     {
       "ID": 6206,
       "Type": 1,
       "Name": "激素营养液",
-      "GridIndex": 5313,
-      "IconName": "二氧化碳"
+      "GridIndex": 5212,
+      "IconName": ""
     },
     {
       "ID": 6207,
       "Type": 1,
       "Name": "黄铁矿",
-      "GridIndex": 4810,
-      "IconName": "硫矿"
+      "GridIndex": 4802,
+      "IconName": ""
     },
     {
       "ID": 6208,
-      "Type": 2,
+      "Type": 1,
       "Name": "激素生长菌群",
-      "GridIndex": 5314,
-      "IconName": "混凝土"
+      "GridIndex": 5112,
+      "IconName": ""
     },
     {
       "ID": 6212,
       "Type": 2,
-      "Name": "高速生长菌群",
-      "GridIndex": 5312,
-      "IconName": "硝基柴油"
+      "Name": "共生菌核",
+      "GridIndex": 5111,
+      "IconName": ""
     },
     {
       "ID": 6214,
       "Type": 12,
       "Name": "次级维度工厂",
-      "GridIndex": 1411,
-      "IconName": "光学主机"
+      "GridIndex": 1706,
+      "IconName": ""
     },
     {
       "ID": 6215,
       "Type": 12,
-      "Name": "掌中工厂",
-      "GridIndex": 1311,
-      "IconName": "光学主机"
+      "Name": "黑盒",
+      "GridIndex": 2405,
+      "IconName": "storage-1"
     },
     {
       "ID": 6216,
       "Type": 12,
       "Name": "未知射线遗留样本",
-      "GridIndex": 1310,
-      "IconName": "硝基柴油燃料棒"
+      "GridIndex": 1704,
+      "IconName": ""
     },
     {
       "ID": 6217,
       "Type": 4,
       "Name": "化学燃料棒",
-      "GridIndex": 1114,
-      "IconName": "硝基柴油燃料棒"
+      "GridIndex": 1214,
+      "IconName": ""
     },
     {
       "ID": 6218,
@@ -12417,7 +13581,7 @@
       "Type": 6,
       "Name": "同位素温差发电机",
       "GridIndex": 2108,
-      "IconName": "放射性同位素温差电池",
+      "IconName": "",
       "WorkEnergyPerTick": 0,
       "Speed": 1.0,
       "Space": 4.0
@@ -12427,48 +13591,48 @@
       "Type": 1,
       "Name": "铀矿",
       "GridIndex": 4809,
-      "IconName": "放射晶体矿_新"
+      "IconName": ""
     },
     {
       "ID": 6225,
       "Type": 1,
       "Name": "铀238溶液",
-      "GridIndex": 5207,
-      "IconName": "三氯化铁"
+      "GridIndex": 5106,
+      "IconName": ""
     },
     {
       "ID": 6226,
       "Type": 1,
       "Name": "铀235溶液",
-      "GridIndex": 5107,
-      "IconName": "丙烯_新"
+      "GridIndex": 5206,
+      "IconName": ""
     },
     {
       "ID": 6227,
       "Type": 10,
       "Name": "曲率引擎",
-      "GridIndex": 1508,
-      "IconName": "高纯铀块"
+      "GridIndex": 1511,
+      "IconName": ""
     },
     {
       "ID": 6228,
       "Type": 2,
       "Name": "占位物",
       "GridIndex": 0,
-      "IconName": "高纯钚块"
+      "IconName": ""
     },
     {
       "ID": 6229,
       "Type": 5,
       "Name": "量子储液罐",
       "GridIndex": 0,
-      "IconName": "量子储液罐"
+      "IconName": ""
     },
     {
       "ID": 6230,
       "Type": 5,
       "Name": "深空货舰",
-      "GridIndex": 1211,
+      "GridIndex": 1213,
       "IconName": "logistic-vessel",
       "WorkEnergyPerTick": 0,
       "Speed": 1.0,
@@ -12479,77 +13643,77 @@
       "Type": 5,
       "Name": "量子储物仓",
       "GridIndex": 0,
-      "IconName": "量子箱"
+      "IconName": ""
     },
     {
       "ID": 6234,
       "Type": 1,
       "Name": "文明遗物",
       "GridIndex": 1701,
-      "IconName": "氦_新"
+      "IconName": ""
     },
     {
       "ID": 6235,
-      "Type": 2,
-      "Name": "十七公斤重的文明",
-      "GridIndex": 0,
-      "IconName": "氦三_新"
+      "Type": 5,
+      "Name": "空轨",
+      "GridIndex": 2211,
+      "IconName": "belt-3"
     },
     {
       "ID": 6241,
       "Type": 2,
       "Name": "文明的定义",
       "GridIndex": 1703,
-      "IconName": "氦三_新"
+      "IconName": ""
     },
     {
       "ID": 6242,
       "Type": 4,
       "Name": "铀燃料棒",
-      "GridIndex": 1214,
-      "IconName": "铀235燃料棒"
+      "GridIndex": 1314,
+      "IconName": ""
     },
     {
       "ID": 6243,
       "Type": 3,
       "Name": "粒子加速器",
-      "GridIndex": 1507,
-      "IconName": "钚铀混合氧化物燃料棒"
+      "GridIndex": 1510,
+      "IconName": ""
     },
     {
       "ID": 6244,
       "Type": 1,
       "Name": "奇夸克样本",
-      "GridIndex": 1412,
-      "IconName": "氦三燃料棒"
+      "GridIndex": 5802,
+      "IconName": ""
     },
     {
       "ID": 6245,
       "Type": 1,
       "Name": "菌丝母株",
-      "GridIndex": 5814,
-      "IconName": "silicon-neuron"
+      "GridIndex": 5713,
+      "IconName": ""
     },
     {
       "ID": 6251,
       "Type": 1,
       "Name": "岩浆",
       "GridIndex": 4501,
-      "IconName": "石粉"
+      "IconName": ""
     },
     {
       "ID": 6252,
       "Type": 14,
       "Name": "大型神经网络",
-      "GridIndex": 5813,
-      "IconName": "铁矿粉"
+      "GridIndex": 5714,
+      "IconName": ""
     },
     {
       "ID": 6253,
       "Type": 14,
-      "Name": "神经芯片",
-      "GridIndex": 5812,
-      "IconName": "光学芯片"
+      "Name": "湿件主机",
+      "GridIndex": 5814,
+      "IconName": ""
     },
     {
       "ID": 6254,
@@ -12569,15 +13733,15 @@
       "ID": 6256,
       "Type": 2,
       "Name": "碳粉",
-      "GridIndex": 1501,
-      "IconName": "煤矿粉"
+      "GridIndex": 1106,
+      "IconName": ""
     },
     {
       "ID": 6257,
       "Type": 6,
       "Name": "太空船坞",
       "GridIndex": 2702,
-      "IconName": "行星组装站",
+      "IconName": "",
       "WorkEnergyPerTick": 150000,
       "Speed": 1.0,
       "Space": 50.0
@@ -12587,7 +13751,7 @@
       "Type": 6,
       "Name": "太空电梯",
       "GridIndex": 2701,
-      "IconName": "行星熔炉",
+      "IconName": "",
       "WorkEnergyPerTick": 200000,
       "Speed": 1.0,
       "Space": 50.0
@@ -12595,19 +13759,19 @@
     {
       "ID": 6259,
       "Type": 6,
-      "Name": "星环电网枢纽",
-      "GridIndex": 2707,
-      "IconName": "行星化工厂",
+      "Name": "天枢座",
+      "GridIndex": 2708,
+      "IconName": "",
       "WorkEnergyPerTick": 1000000,
       "Speed": 1.0,
       "Space": 50.0
     },
     {
       "ID": 6260,
-      "Type": 6,
-      "Name": "精密结构组装厂",
+      "Type": 1,
+      "Name": "SCP-310恒燃之火",
       "GridIndex": 0,
-      "IconName": "行星精密组装厂",
+      "IconName": "fusion-reactor",
       "WorkEnergyPerTick": 0,
       "Speed": 1.0,
       "Space": 50.0
@@ -12616,22 +13780,22 @@
       "ID": 6261,
       "Type": 6,
       "Name": "轨道反物质堆核心",
-      "GridIndex": 2610,
-      "IconName": "人造恒星MK2"
+      "GridIndex": 2611,
+      "IconName": ""
     },
     {
       "ID": 6263,
       "Type": 3,
       "Name": "太空损管包",
-      "GridIndex": 1112,
-      "IconName": "金属氢单元"
+      "GridIndex": 1711,
+      "IconName": ""
     },
     {
       "ID": 6264,
       "Type": 6,
       "Name": "生态穹顶",
-      "GridIndex": 2408,
-      "IconName": "回收塔",
+      "GridIndex": 2409,
+      "IconName": "",
       "WorkEnergyPerTick": 12000,
       "Speed": 1.0,
       "Space": 50.0
@@ -12640,10 +13804,10 @@
       "ID": 6265,
       "Type": 6,
       "Name": "星环对撞机总控站",
-      "GridIndex": 2708,
-      "IconName": "大型强子对撞机",
-      "WorkEnergyPerTick": 12000000,
-      "Speed": 30.0,
+      "GridIndex": 2709,
+      "IconName": "",
+      "WorkEnergyPerTick": 12500000,
+      "Speed": 1.0,
       "Space": 50.0
     },
     {
@@ -12660,8 +13824,8 @@
       "ID": 6267,
       "Type": 5,
       "Name": "深空物流港",
-      "GridIndex": 2706,
-      "IconName": "行星采集器",
+      "GridIndex": 2705,
+      "IconName": "",
       "WorkEnergyPerTick": 1000000,
       "Speed": 1.0,
       "Space": 50.0
@@ -12670,21 +13834,21 @@
       "ID": 6271,
       "Type": 2,
       "Name": "零素装甲",
-      "GridIndex": 1811,
-      "IconName": "三元精金_新"
+      "GridIndex": 5801,
+      "IconName": ""
     },
     {
       "ID": 6273,
       "Type": 5,
       "Name": "轨道观测站",
-      "GridIndex": 2703,
+      "GridIndex": 2706,
       "IconName": "orbital-substation"
     },
     {
       "ID": 6277,
       "Type": 2,
       "Name": "离子推进器",
-      "GridIndex": 1110,
+      "GridIndex": 1112,
       "IconName": "ion-thruster"
     },
     {
@@ -12692,20 +13856,20 @@
       "Type": 11,
       "Name": "信息矩阵",
       "GridIndex": 1804,
-      "IconName": "稳定矩阵"
+      "IconName": ""
     },
     {
       "ID": 6279,
       "Type": 11,
       "Name": "电磁矩阵",
       "GridIndex": 1805,
-      "IconName": "虚空矩阵"
+      "IconName": ""
     },
     {
       "ID": 6280,
       "Type": 9,
       "Name": "勘探船",
-      "GridIndex": 1113,
+      "GridIndex": 1610,
       "IconName": "warship-plasma"
     },
     {
@@ -12713,44 +13877,44 @@
       "Type": 5,
       "Name": "超空间中继器基座",
       "GridIndex": 2714,
-      "IconName": "行星采集器"
+      "IconName": ""
     },
     {
       "ID": 6501,
       "Type": 5,
       "Name": "轨道熔炼站",
-      "GridIndex": 2704,
+      "GridIndex": 2703,
       "IconName": "interstellar-logistic-station",
-      "WorkEnergyPerTick": 200000,
-      "Speed": 12.0,
+      "WorkEnergyPerTick": 700000,
+      "Speed": 1.0,
       "Space": 25.0
     },
     {
       "ID": 6502,
       "Type": 10,
       "Name": "数学率引擎-深蓝之井-运载火箭",
-      "GridIndex": 1714,
+      "GridIndex": 1712,
       "IconName": "rocket"
     },
     {
       "ID": 6503,
       "Type": 10,
-      "Name": "数学率引擎-算力架构组件",
-      "GridIndex": 1712,
-      "IconName": "尖端机械组件_新"
+      "Name": "数学率引擎-起振焦点组件",
+      "GridIndex": 1713,
+      "IconName": ""
     },
     {
       "ID": 6504,
       "Type": 10,
-      "Name": "数学率引擎-算力架构-运载火箭",
-      "GridIndex": 1713,
+      "Name": "数学率引擎-起振焦点-运载火箭",
+      "GridIndex": 1714,
       "IconName": "rocket"
     },
     {
       "ID": 6506,
       "Type": 6,
       "Name": "轨道反物质堆基座",
-      "GridIndex": 2710,
+      "GridIndex": 2711,
       "IconName": "interstellar-logistic-station"
     },
     {
@@ -12786,266 +13950,280 @@
       "Type": 3,
       "Name": "预制星舰模块",
       "GridIndex": 1710,
-      "IconName": "日志02"
+      "IconName": ""
     },
     {
       "ID": 6513,
       "Type": 6,
       "Name": "重型电磁弹射器",
-      "GridIndex": 2603,
+      "GridIndex": 2606,
       "IconName": "em-rail-ejector"
     },
     {
       "ID": 6514,
       "Type": 5,
       "Name": "轨道空投引导站",
-      "GridIndex": 2605,
+      "GridIndex": 2604,
       "IconName": "logistic-station"
     },
     {
       "ID": 6515,
       "Type": 7,
       "Name": "轨道连接组件",
-      "GridIndex": 0,
-      "IconName": "日志05"
+      "GridIndex": 2707,
+      "IconName": ""
     },
     {
       "ID": 6516,
       "Type": 7,
-      "Name": "开发者日志06",
-      "GridIndex": 0,
-      "IconName": "日志06"
+      "Name": "粒子加速轨道",
+      "GridIndex": 2609,
+      "IconName": ""
     },
     {
       "ID": 6517,
       "Type": 7,
-      "Name": "开发者日志07",
-      "GridIndex": 0,
-      "IconName": "日志07"
+      "Name": "星环电网组件",
+      "GridIndex": 2710,
+      "IconName": ""
     },
     {
       "ID": 6518,
       "Type": 7,
-      "Name": "开发者日志08",
-      "GridIndex": 0,
-      "IconName": "日志08"
+      "Name": "星环护盾组件",
+      "GridIndex": 2608,
+      "IconName": "turret-shield"
     },
     {
       "ID": 6519,
-      "Type": 7,
-      "Name": "开发者日志09",
-      "GridIndex": 0,
-      "IconName": "日志09"
+      "Type": 1,
+      "Name": "气云",
+      "GridIndex": 5107,
+      "IconName": ""
     },
     {
       "ID": 6520,
       "Type": 7,
-      "Name": "开发者日志10",
-      "GridIndex": 0,
-      "IconName": "日志10"
+      "Name": "富勒烯",
+      "GridIndex": 5207,
+      "IconName": ""
     },
     {
       "ID": 6521,
       "Type": 7,
-      "Name": "开发者日志11",
-      "GridIndex": 0,
-      "IconName": "日志11"
+      "Name": "富勒醇",
+      "GridIndex": 5307,
+      "IconName": ""
     },
     {
       "ID": 6522,
       "Type": 1,
-      "Name": "电力节约",
-      "GridIndex": 4213,
-      "IconName": "星球飞升-天穹巨构"
+      "Name": "富勒烯内嵌银",
+      "GridIndex": 5407,
+      "IconName": ""
     },
     {
       "ID": 6523,
       "Type": 1,
-      "Name": "上传扩容",
-      "GridIndex": 4214,
-      "IconName": "星球飞升-科学枢纽"
+      "Name": "有机磁胶",
+      "GridIndex": 1708,
+      "IconName": ""
     },
     {
       "ID": 6524,
       "Type": 1,
-      "Name": "燃料回收",
-      "GridIndex": 4113,
-      "IconName": "星球飞升-火力发电"
+      "Name": "汲水地基",
+      "GridIndex": 0,
+      "IconName": "terrain-tool"
     },
     {
       "ID": 6525,
       "Type": 1,
-      "Name": "风力扩容",
-      "GridIndex": 4114,
-      "IconName": "星球飞升-风力发电"
+      "Name": "自然降温",
+      "GridIndex": 0,
+      "IconName": ""
     },
     {
       "ID": 6526,
       "Type": 1,
-      "Name": "光伏扩容",
-      "GridIndex": 4115,
-      "IconName": "星球飞升-光伏发电"
+      "Name": "母星特质",
+      "GridIndex": 0,
+      "IconName": ""
     },
     {
       "ID": 6527,
       "Type": 1,
-      "Name": "热聚增效",
-      "GridIndex": 4117,
-      "IconName": "星球飞升-聚变驱动"
+      "Name": "信息素",
+      "GridIndex": 0,
+      "IconName": ""
     },
     {
       "ID": 6528,
       "Type": 1,
-      "Name": "资源采掘",
-      "GridIndex": 4215,
-      "IconName": "星球飞升-吞食帝国"
+      "Name": "真空冶炼",
+      "GridIndex": 0,
+      "IconName": "1401"
     },
     {
       "ID": 6529,
       "Type": 1,
-      "Name": "裂变增效",
-      "GridIndex": 4116,
-      "IconName": "裂变发电升级"
+      "Name": "拥有隐藏",
+      "GridIndex": 0,
+      "IconName": ""
     },
     {
       "ID": 6530,
       "Type": 1,
-      "Name": "先进推进",
-      "GridIndex": 4216,
-      "IconName": "物流运输机升级"
+      "Name": "量子虚拟生命",
+      "GridIndex": 0,
+      "IconName": ""
     },
     {
       "ID": 6531,
       "Type": 1,
-      "Name": "特征向量模拟",
-      "GridIndex": 4313,
-      "IconName": "特征向量模拟"
+      "Name": "黑萝卜",
+      "GridIndex": 0,
+      "IconName": ""
     },
     {
       "ID": 6532,
       "Type": 1,
       "Name": "中继信号干扰",
-      "GridIndex": 4314,
-      "IconName": "中继信号干扰"
+      "GridIndex": 0,
+      "IconName": ""
     },
     {
       "ID": 6533,
       "Type": 1,
       "Name": "神经元重编程",
-      "GridIndex": 4315,
-      "IconName": "神经元重编程"
+      "GridIndex": 0,
+      "IconName": ""
     },
     {
       "ID": 6534,
       "Type": 1,
       "Name": "异常代码分析",
-      "GridIndex": 4316,
-      "IconName": "恶意代码攻击"
+      "GridIndex": 0,
+      "IconName": ""
     },
     {
       "ID": 7002,
       "Type": 1,
       "Name": "增生组织",
-      "GridIndex": 5311,
-      "IconName": "氨"
+      "GridIndex": 5211,
+      "IconName": ""
     },
     {
       "ID": 7006,
       "Type": 2,
-      "Name": "苯",
-      "GridIndex": 0,
-      "IconName": "氯苯"
+      "Name": "润滑油",
+      "GridIndex": 5401,
+      "IconName": "accelerator-1"
     },
     {
       "ID": 7009,
       "Type": 2,
       "Name": "轻油",
-      "GridIndex": 5203,
-      "IconName": "硝基柴油"
+      "GridIndex": 5201,
+      "IconName": ""
     },
     {
       "ID": 7014,
       "Type": 2,
-      "Name": "盐酸",
-      "GridIndex": 0,
-      "IconName": "氢氯酸_新新"
+      "Name": "导电银浆",
+      "GridIndex": 5208,
+      "IconName": ""
     },
     {
       "ID": 7015,
       "Type": 2,
-      "Name": "三氯化铁",
-      "GridIndex": 0,
-      "IconName": "三氯化铁"
+      "Name": "工业醇",
+      "GridIndex": 5412,
+      "IconName": "accelerator-2"
     },
     {
       "ID": 7017,
       "Type": 2,
-      "Name": "硝酸",
-      "GridIndex": 0,
-      "IconName": "硝酸"
+      "Name": "工业糖",
+      "GridIndex": 5513,
+      "IconName": ""
     },
     {
       "ID": 7018,
       "Type": 1,
       "Name": "重水",
-      "GridIndex": 5106,
-      "IconName": "盐水"
+      "GridIndex": 5105,
+      "IconName": ""
     },
     {
       "ID": 7019,
       "Type": 1,
-      "Name": "氧",
-      "GridIndex": 0,
-      "IconName": "氧气"
+      "Name": "高速连接器",
+      "GridIndex": 1206,
+      "IconName": ""
     },
     {
       "ID": 7020,
       "Type": 2,
-      "Name": "氢氧化钠",
-      "GridIndex": 0,
-      "IconName": "氢氧化钠"
+      "Name": "培养皿",
+      "GridIndex": 1501,
+      "IconName": ""
+    },
+    {
+      "ID": 7021,
+      "Type": 1,
+      "Name": "种子",
+      "GridIndex": 5213,
+      "IconName": ""
+    },
+    {
+      "ID": 7022,
+      "Type": 2,
+      "Name": "速生苗",
+      "GridIndex": 5214,
+      "IconName": ""
     },
     {
       "ID": 7101,
       "Type": 2,
-      "Name": "氯化钠",
-      "GridIndex": 0,
-      "IconName": "氯化钠_新"
+      "Name": "纯银",
+      "GridIndex": 5108,
+      "IconName": ""
     },
     {
       "ID": 7501,
-      "Type": 2,
-      "Name": "塑料基板",
-      "GridIndex": 0,
-      "IconName": "塑料基板"
+      "Type": 3,
+      "Name": "主板",
+      "GridIndex": 1305,
+      "IconName": ""
     },
     {
       "ID": 7504,
       "Type": 2,
-      "Name": "光学基板",
-      "GridIndex": 0,
-      "IconName": "光学基板"
+      "Name": "粗银",
+      "GridIndex": 4108,
+      "IconName": ""
     },
     {
       "ID": 7607,
       "Type": 4,
       "Name": "钢芯弹箱",
       "GridIndex": 6302,
-      "IconName": "钢芯弹药箱"
+      "IconName": ""
     },
     {
       "ID": 7608,
       "Type": 4,
       "Name": "贫铀弹箱",
       "GridIndex": 6303,
-      "IconName": "钨芯弹药箱"
+      "IconName": ""
     },
     {
       "ID": 7609,
       "Type": 4,
       "Name": "零素矢",
       "GridIndex": 6304,
-      "IconName": "三元弹药箱"
+      "IconName": ""
     },
     {
       "ID": 7610,
@@ -13057,65 +14235,86 @@
     {
       "ID": 7611,
       "Type": 3,
-      "Name": "反物质湮灭单元",
-      "GridIndex": 0,
-      "IconName": "反物质湮灭单元"
+      "Name": "转基因工具",
+      "GridIndex": 5414,
+      "IconName": ""
     },
     {
       "ID": 7612,
+      "Type": 4,
+      "Name": "糖料作物种",
+      "GridIndex": 5514,
+      "IconName": ""
+    },
+    {
+      "ID": 7613,
       "Type": 4,
       "Name": "金属氢炮弹组",
       "GridIndex": 6502,
       "IconName": "cannonball-alloy"
     },
     {
-      "ID": 7613,
-      "Type": 4,
-      "Name": "反物质炮弹",
-      "GridIndex": 0,
-      "IconName": "反物质炮弹"
-    },
-    {
       "ID": 7615,
       "Type": 4,
       "Name": "启示录聚变弹",
       "GridIndex": 6604,
-      "IconName": "反物质导弹组"
+      "IconName": ""
     },
     {
       "ID": 7616,
-      "Type": 4,
-      "Name": "湮灭弹药箱",
-      "GridIndex": 0,
-      "IconName": "湮灭弹药箱"
+      "Type": 3,
+      "Name": "超高效过滤器",
+      "GridIndex": 2801,
+      "IconName": ""
     },
     {
       "ID": 7617,
-      "Type": 8,
-      "Name": "聚爆加农炮MK2",
-      "GridIndex": 0,
-      "IconName": "加农炮MK2"
+      "Type": 3,
+      "Name": "预加工伺服器",
+      "GridIndex": 2802,
+      "IconName": ""
     },
     {
       "ID": 7618,
-      "Type": 8,
-      "Name": "高频激光塔MK2",
-      "GridIndex": 0,
-      "IconName": "紫激光"
+      "Type": 3,
+      "Name": "智能伺服器",
+      "GridIndex": 2804,
+      "IconName": ""
+    },
+    {
+      "ID": 7619,
+      "Type": 3,
+      "Name": "伺服天穹组件",
+      "GridIndex": 2807,
+      "IconName": "turret-signal"
+    },
+    {
+      "ID": 7620,
+      "Type": 3,
+      "Name": "智能方尖碑",
+      "GridIndex": 2808,
+      "IconName": "turret-signal"
+    },
+    {
+      "ID": 7621,
+      "Type": 3,
+      "Name": "亿万械国",
+      "GridIndex": 2809,
+      "IconName": "turret-signal"
     },
     {
       "ID": 7705,
       "Type": 2,
       "Name": "磁流体",
-      "GridIndex": 4508,
-      "IconName": "钨块"
+      "GridIndex": 4409,
+      "IconName": ""
     },
     {
       "ID": 7706,
       "Type": 1,
-      "Name": "石墨矿",
-      "GridIndex": 4705,
-      "IconName": "钨矿"
+      "Name": "辉银矿",
+      "GridIndex": 4808,
+      "IconName": ""
     },
     {
       "ID": 7707,
@@ -13128,43 +14327,169 @@
       "ID": 7708,
       "Type": 2,
       "Name": "纳米塑料纤维",
-      "GridIndex": 5601,
-      "IconName": "环氧树脂_新"
+      "GridIndex": 5103,
+      "IconName": ""
     },
     {
       "ID": 7709,
-      "Type": 2,
-      "Name": "聚酰亚胺",
+      "Type": 1,
+      "Name": "轨道设施说明书",
       "GridIndex": 0,
-      "IconName": "聚苯并咪唑"
+      "IconName": ""
+    },
+    {
+      "ID": 7710,
+      "Type": 1,
+      "Name": "星环说明书",
+      "GridIndex": 0,
+      "IconName": ""
+    },
+    {
+      "ID": 7711,
+      "Type": 1,
+      "Name": "数学率引擎建设说明书",
+      "GridIndex": 0,
+      "IconName": ""
+    },
+    {
+      "ID": 7712,
+      "Type": 1,
+      "Name": "飞行舱说明书",
+      "GridIndex": 0,
+      "IconName": ""
     },
     {
       "ID": 7803,
       "Type": 3,
-      "Name": "光学处理器",
-      "GridIndex": 0,
-      "IconName": "光学芯片"
+      "Name": "突触凝练机",
+      "GridIndex": 5812,
+      "IconName": "turret-signal"
     },
     {
       "ID": 7804,
       "Type": 3,
-      "Name": "光纤",
-      "GridIndex": 1303,
-      "IconName": "光学信息传输纤维"
+      "Name": "光导纤维",
+      "GridIndex": 1306,
+      "IconName": ""
     },
     {
       "ID": 7805,
       "Type": 4,
       "Name": "量子计算机550MAGI",
-      "GridIndex": 1207,
-      "IconName": "超级纳米电脑"
+      "GridIndex": 1307,
+      "IconName": ""
     },
     {
       "ID": 7806,
       "Type": 4,
-      "Name": "光学计算机",
-      "GridIndex": 0,
-      "IconName": "光学主机"
+      "Name": "乾坤",
+      "GridIndex": 1313,
+      "IconName": ""
+    },
+    {
+      "ID": 7807,
+      "Type": 4,
+      "Name": "乾坤-铁矿",
+      "GridIndex": 4701,
+      "IconName": "iron-ore"
+    },
+    {
+      "ID": 7808,
+      "Type": 4,
+      "Name": "乾坤-黄铁矿",
+      "GridIndex": 4702,
+      "IconName": ""
+    },
+    {
+      "ID": 7809,
+      "Type": 4,
+      "Name": "乾坤-铜矿",
+      "GridIndex": 4703,
+      "IconName": "copper-ore"
+    },
+    {
+      "ID": 7810,
+      "Type": 4,
+      "Name": "乾坤-煤矿",
+      "GridIndex": 4604,
+      "IconName": "coal-ore"
+    },
+    {
+      "ID": 7811,
+      "Type": 4,
+      "Name": "乾坤-金伯利矿石",
+      "GridIndex": 4504,
+      "IconName": "diamond-ore"
+    },
+    {
+      "ID": 7812,
+      "Type": 4,
+      "Name": "乾坤-石矿",
+      "GridIndex": 4705,
+      "IconName": "stone-ore"
+    },
+    {
+      "ID": 7813,
+      "Type": 4,
+      "Name": "乾坤-硅石",
+      "GridIndex": 4606,
+      "IconName": "silicium-ore"
+    },
+    {
+      "ID": 7814,
+      "Type": 4,
+      "Name": "乾坤-莫桑石",
+      "GridIndex": 4506,
+      "IconName": "fractal-silica"
+    },
+    {
+      "ID": 7815,
+      "Type": 4,
+      "Name": "乾坤-钛矿",
+      "GridIndex": 4707,
+      "IconName": "titanium-ore"
+    },
+    {
+      "ID": 7816,
+      "Type": 4,
+      "Name": "乾坤-辉银矿",
+      "GridIndex": 4708,
+      "IconName": ""
+    },
+    {
+      "ID": 7817,
+      "Type": 4,
+      "Name": "乾坤-铀矿",
+      "GridIndex": 4709,
+      "IconName": ""
+    },
+    {
+      "ID": 7818,
+      "Type": 4,
+      "Name": "乾坤-光栅石",
+      "GridIndex": 4710,
+      "IconName": "grating-ore"
+    },
+    {
+      "ID": 7819,
+      "Type": 4,
+      "Name": "乾坤-单极磁石",
+      "GridIndex": 4711,
+      "IconName": "mono-mag-ore"
+    },
+    {
+      "ID": 7820,
+      "Type": 4,
+      "Name": "乾坤-可燃冰",
+      "GridIndex": 4712,
+      "IconName": "gas-hydrate"
+    },
+    {
+      "ID": 7821,
+      "Type": 4,
+      "Name": "乾坤-刺笋结晶",
+      "GridIndex": 4713,
+      "IconName": "bamboo-crystal"
     },
     {
       "ID": 9493,
