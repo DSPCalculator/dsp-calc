@@ -1,1266 +1,314 @@
 {
-  "accelerator-1-accelerator-2-formula-v2": {
+  "alchemy-essence": {
     "x": 0,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "accelerator-2-accelerator-3-formula-v2": {
+  "alchemy-tower": {
     "x": 80,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "accelerator-3-accelerator-3-formula-v2": {
+  "building-increase-chip": {
     "x": 0,
     "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "accumulator-accumulator-full-formula-v2": {
+  "conversion-essence": {
     "x": 80,
     "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "accumulator-full-energy-exchanger-formula-v2": {
+  "conversion-tower": {
     "x": 160,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "antimatter-energy-fuel-virtual-energy-fuel-formula-v2": {
+  "copy-essence": {
     "x": 160,
     "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "assembler-1-assembler-2-formula-v2": {
+  "dark-fog-ticket": {
     "x": 0,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "assembler-2-assembler-3-formula-v2": {
+  "deconstruction-essence": {
     "x": 80,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "assembler-3-assembler-4-formula-v2": {
+  "deconstruction-tower": {
     "x": 160,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "bamboo-crystal-bamboo-crystal-formula-v2": {
+  "electromagnetic-ticket": {
     "x": 240,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "battle-base-turret-signal-formula-v2": {
+  "energy-ticket": {
     "x": 240,
     "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "belt-1-belt-2-formula-v2": {
+  "frac-proto-directional": {
     "x": 240,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "belt-2-belt-3-formula-v2": {
+  "frac-proto-epic": {
     "x": 0,
     "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "bullet-bullet-titanium-formula-v2": {
+  "frac-proto-legendary": {
     "x": 80,
     "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "bullet-titanium-bullet-alloy-formula-v2": {
+  "frac-proto-normal": {
     "x": 160,
     "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "bullet-titanium-钨芯弹药箱-formula-v2": {
+  "frac-proto-rare": {
     "x": 240,
     "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "bullet-钢芯弹药箱-formula-v2": {
+  "frac-proto-uncommon": {
     "x": 320,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "c-matrix-i-matrix-formula-v2": {
+  "frac-recipe-core": {
     "x": 320,
     "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "cannonball-cannonball-cluster-formula-v2": {
+  "gravity-ticket": {
     "x": 320,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "cannonball-cluster-cannonball-alloy-formula-v2": {
+  "information-ticket": {
     "x": 320,
     "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "cannonball-cluster-微型核弹组-formula-v2": {
+  "interaction-station": {
     "x": 0,
     "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "capsule-energy-capsule-antimatter-formula-v2": {
+  "interaction-tower": {
     "x": 80,
     "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "charging-pole-orbital-substation-formula-v2": {
+  "interstellar-interaction-station": {
     "x": 160,
     "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "chemical-plant-chemical-plant-2-formula-v2": {
+  "mineral-copy-tower": {
     "x": 240,
     "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "coal-ore-coal-ore-formula-v2": {
+  "point-aggregate-tower": {
     "x": 320,
     "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "copper-ore-copper-ore-formula-v2": {
+  "quantum-copy-tower": {
     "x": 400,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "crystal-rubber-crystal-rubber-formula-v2": {
+  "structure-ticket": {
     "x": 400,
     "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "delivery-drone-logistic-drone-formula-v2": {
+  "tech分馏塔原胚": {
     "x": 400,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "delivery-machine-logistic-station-formula-v2": {
+  "tech分馏奖券": {
     "x": 400,
     "y": 240,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "deuterium-deuterium-formula-v2": {
+  "tech分馏数据中心": {
     "x": 400,
     "y": 320,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "deuterium-energy-fuel-antimatter-energy-fuel-formula-v2": {
+  "tech增产点数聚集": {
     "x": 0,
     "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "deuterium-energy-fuel-氦三燃料棒-formula-v2": {
+  "tech物品交互": {
     "x": 80,
     "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "diamond-ore-diamond-ore-formula-v2": {
+  "tech物品分解": {
     "x": 160,
     "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "e-matrix-c-matrix-formula-v2": {
+  "tech物品点金": {
     "x": 240,
     "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "em-disturb-em-suppress-formula-v2": {
+  "tech物品转化": {
     "x": 320,
     "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "em-rail-ejector-ray-receiver-formula-v2": {
+  "tech矿物复制": {
     "x": 400,
     "y": 400,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "energy-fragment-memory-formula-v2": {
+  "tech超值礼包": {
     "x": 480,
     "y": 0,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "exchangeLS-orbital-collector-formula-v2": {
+  "tech量子复制": {
     "x": 480,
     "y": 80,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   },
-  "explosive-high-explosive-formula-v2": {
+  "universe-ticket": {
     "x": 480,
     "y": 160,
     "width": 80,
     "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fighter-plasma-fighter-laser-formula-v2": {
-    "x": 480,
-    "y": 240,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fighter-shield-fighter-plasma-formula-v2": {
-    "x": 480,
-    "y": 320,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractal-silica-fractal-silica-formula-v2": {
-    "x": 480,
-    "y": 400,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-1-fractionator-2-formula-v2": {
-    "x": 0,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-1": {
-    "x": 80,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-2-fractionator-3-formula-v2": {
-    "x": 160,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-2": {
-    "x": 240,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-3-fractionator-4-formula-v2": {
-    "x": 320,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-3": {
-    "x": 400,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-4-fractionator-5-formula-v2": {
-    "x": 480,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-4": {
-    "x": 560,
-    "y": 0,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-5-fractionator-6-formula-v2": {
-    "x": 560,
-    "y": 80,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-5": {
-    "x": 560,
-    "y": 160,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-6": {
-    "x": 560,
-    "y": 240,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-7": {
-    "x": 560,
-    "y": 320,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fractionator-hadron-collider-formula-v2": {
-    "x": 560,
-    "y": 400,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fuel-plant-geothermal-power-station-formula-v2": {
-    "x": 560,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fusion-power-station-fusion-reactor-formula-v2": {
-    "x": 0,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "fusion-reactor-人造恒星MK2-formula-v2": {
-    "x": 80,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "gas-hydrate-gas-hydrate-formula-v2": {
-    "x": 160,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "geothermal-power-station-fusion-power-station-formula-v2": {
-    "x": 240,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "grating-ore-grating-ore-formula-v2": {
-    "x": 320,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "hadron-collider-hadron-collider-formula-v2": {
-    "x": 400,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "high-explosive-核子爆破单元-formula-v2": {
-    "x": 480,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "hydrogen-energy-fuel-deuterium-energy-fuel-formula-v2": {
-    "x": 560,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "hydrogen-energy-fuel-火箭燃料棒-formula-v2": {
-    "x": 640,
-    "y": 0,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "hydrogen-hydrogen-formula-v2": {
-    "x": 640,
-    "y": 80,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "i-matrix-g-matrix-formula-v2": {
-    "x": 640,
-    "y": 160,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "inserter-1-inserter-2-formula-v2": {
-    "x": 640,
-    "y": 240,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "inserter-2-inserter-3-formula-v2": {
-    "x": 640,
-    "y": 320,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "inserter-3-inserter-4-formula-v2": {
-    "x": 640,
-    "y": 400,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "interstellar-logistic-station-exchangeLS-formula-v2": {
-    "x": 640,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "interstellar-logistic-station-orbital-collector-formula-v2": {
-    "x": 640,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "iron-ore-iron-ore-formula-v2": {
-    "x": 0,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "lab-lab-2-formula-v2": {
-    "x": 80,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "logistic-drone-logistic-vessel-formula-v2": {
-    "x": 160,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "logistic-station-interstellar-logistic-station-formula-v2": {
-    "x": 240,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "memory-reassembler-formula-v2": {
-    "x": 320,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "mining-drill-mining-drill-mk2-formula-v2": {
-    "x": 400,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "missile-graviton-反物质导弹组-formula-v2": {
-    "x": 480,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "missile-missile-supersonic-formula-v2": {
-    "x": 560,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "missile-supersonic-missile-graviton-formula-v2": {
-    "x": 640,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "monitor-splitter-4dir-formula-v2": {
-    "x": 720,
-    "y": 0,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "monitor-行星采集器-formula-v2": {
-    "x": 720,
-    "y": 80,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "mono-mag-ore-mono-mag-ore-formula-v2": {
-    "x": 720,
-    "y": 160,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "negentropy-virtual-particle-formula-v2": {
-    "x": 720,
-    "y": 240,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "oil-extractor-oil-refinery-formula-v2": {
-    "x": 720,
-    "y": 320,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "oil-oil-formula-v2": {
-    "x": 720,
-    "y": 400,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "ray-receiver-vertical-launching-silo-formula-v2": {
-    "x": 720,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "reassembler-silicon-neuron-formula-v2": {
-    "x": 720,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "silicium-ore-silicium-ore-formula-v2": {
-    "x": 720,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "silicon-neuron-negentropy-formula-v2": {
-    "x": 0,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "smelter-2-smelter-3-formula-v2": {
-    "x": 80,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "smelter-smelter-2-formula-v2": {
-    "x": 160,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "smelter-矿物处理厂-formula-v2": {
-    "x": 240,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "solar-panel-accumulator-formula-v2": {
-    "x": 320,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "solar-panel-放射性同位素温差电池-formula-v2": {
-    "x": 400,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "splitter-4dir-monitor-formula-v2": {
-    "x": 480,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "splitter-4dir-spray-coater-formula-v2": {
-    "x": 560,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "spray-coater-piler-formula-v2": {
-    "x": 640,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "stone-ore-stone-ore-formula-v2": {
-    "x": 720,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "storage-1-storage-2-formula-v2": {
-    "x": 800,
-    "y": 0,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "storage-1-storage-tank-formula-v2": {
-    "x": 800,
-    "y": 80,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "storage-2-量子箱-formula-v2": {
-    "x": 800,
-    "y": 160,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "storage-tank-storage-2-formula-v2": {
-    "x": 800,
-    "y": 240,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "storage-tank-量子储液罐-formula-v2": {
-    "x": 800,
-    "y": 320,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "sulphuric-acid-sulphuric-acid-formula-v2": {
-    "x": 800,
-    "y": 400,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "t-matrix-e-matrix-formula-v2": {
-    "x": 800,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "tesla-coil-charging-pole-formula-v2": {
-    "x": 800,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "titanium-ore-titanium-ore-formula-v2": {
-    "x": 800,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-cannon-加农炮MK2-formula-v2": {
-    "x": 800,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-disturb-turret-shield-formula-v2": {
-    "x": 0,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-gauss-turret-gauss-formula-v2": {
-    "x": 80,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-gauss-turret-missile-formula-v2": {
-    "x": 160,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-laser-turret-plasma-formula-v2": {
-    "x": 240,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-laser-紫激光-formula-v2": {
-    "x": 320,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-missile-turret-cannon-formula-v2": {
-    "x": 400,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-missile-turret-missile-formula-v2": {
-    "x": 480,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-plasma-ground-turret-plasma-formula-v2": {
-    "x": 560,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-plasma-turret-plasma-ground-formula-v2": {
-    "x": 640,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "turret-signal-turret-disturb-formula-v2": {
-    "x": 720,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "warship-laser-drop1-formula-v2": {
-    "x": 800,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "warship-plasma-warship-laser-formula-v2": {
-    "x": 880,
-    "y": 0,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "water-pump-fractionator-formula-v2": {
-    "x": 880,
-    "y": 80,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "water-pump-oil-extractor-formula-v2": {
-    "x": 880,
-    "y": 160,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "water-water-formula-v2": {
-    "x": 880,
-    "y": 240,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "wind-turbine-solar-panel-formula-v2": {
-    "x": 880,
-    "y": 320,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "三元弹药箱-湮灭弹药箱-formula-v2": {
-    "x": 880,
-    "y": 400,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "回收塔-行星精密组装厂-formula-v2": {
-    "x": 880,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "微型核弹组-反物质炮弹-formula-v2": {
-    "x": 880,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "放射性同位素温差电池-accumulator-formula-v2": {
-    "x": 880,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "放射晶体矿_新-放射晶体矿_新-formula-v2": {
-    "x": 880,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "核子爆破单元-反物质湮灭单元-formula-v2": {
-    "x": 880,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "氘氦三混合聚变燃料棒-antimatter-energy-fuel-formula-v2": {
-    "x": 0,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "氦_新-氦_新-formula-v2": {
-    "x": 80,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "氦三燃料棒-氘氦三混合聚变燃料棒-formula-v2": {
-    "x": 160,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "氧气-氧气-formula-v2": {
-    "x": 240,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "氨-氨-formula-v2": {
-    "x": 320,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "氮气_新-氮气_新-formula-v2": {
-    "x": 400,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "火箭燃料棒-硝基柴油燃料棒-formula-v2": {
-    "x": 480,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "矿物处理厂-smelter-2-formula-v2": {
-    "x": 560,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "硝基柴油燃料棒-铀235燃料棒-formula-v2": {
-    "x": 640,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "硫矿-硫矿-formula-v2": {
-    "x": 720,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "空燃料棒-hydrogen-energy-fuel-formula-v2": {
-    "x": 800,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "紫激光-turret-plasma-ground-formula-v2": {
-    "x": 880,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "行星化工厂-回收塔-formula-v2": {
-    "x": 960,
-    "y": 0,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "行星熔炉-行星组装站-formula-v2": {
-    "x": 960,
-    "y": 80,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "行星精密组装厂-大型强子对撞机-formula-v2": {
-    "x": 960,
-    "y": 160,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "行星组装站-行星化工厂-formula-v2": {
-    "x": 960,
-    "y": 240,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "行星采集器-spray-coater-formula-v2": {
-    "x": 960,
-    "y": 320,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "钚燃料棒-钚铀混合氧化物燃料棒-formula-v2": {
-    "x": 960,
-    "y": 400,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "钚矿-钚矿-formula-v2": {
-    "x": 960,
-    "y": 480,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "钚铀混合氧化物燃料棒-deuterium-energy-fuel-formula-v2": {
-    "x": 960,
-    "y": 560,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "钢芯弹药箱-bullet-titanium-formula-v2": {
-    "x": 960,
-    "y": 640,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "钨矿-钨矿-formula-v2": {
-    "x": 960,
-    "y": 720,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "钨芯弹药箱-三元弹药箱-formula-v2": {
-    "x": 960,
-    "y": 800,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "铀235燃料棒-钚燃料棒-formula-v2": {
-    "x": 960,
-    "y": 880,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "铀矿-铀矿-formula-v2": {
-    "x": 0,
-    "y": 960,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
-  },
-  "铝矿石-铝矿石-formula-v2": {
-    "x": 80,
-    "y": 960,
-    "width": 80,
-    "height": 80,
-    "total_width": 1040,
-    "total_height": 1040
+    "total_width": 560,
+    "total_height": 480
   }
 }

@@ -18,16 +18,23 @@ export class GameInfo {
         this.init_icon_layout();
     }
 
+    reinit(game_data) {
+        this.game_data = game_data;
+        this.init_item_data();
+        this.all_target_items = uniq(this.game_data.recipe_data.flatMap(recipe => Object.keys(recipe["产物"])));
+        this.init_icon_layout();
+    }
+
     init_icon_layout() {
         let loc_item = {};
-        for (let [item, loc] of Object.entries(this.game_data.item_grid)) {
-            //移除沙土、伊卡洛斯、行星基地、巨构星际组装厂
-            if (item === "沙土" || item === "伊卡洛斯" || item === "行星基地" || item === "巨构星际组装厂") {
-                continue;
+        for (let [item, gridIndex] of Object.entries(this.game_data.item_grid)) {
+            //只显示GridIndex超限的物品
+            if (this.game_data.item_grid_index_valid[item]
+                || (item === "沙土" && this.game_data.FractionateEverythingEnable)) {
+                let x = gridIndex % 100;
+                let y = (gridIndex - x) / 100;
+                loc_item[[x, y]] = {item: item, x: x, y: y};
             }
-            let x = loc % 100;
-            let y = (loc - x) / 100;
-            loc_item[[x, y]] = {item: item, x: x, y: y};
         }
         let xs = Object.values(loc_item).map(({item, x, y}) => x);
         let ys = Object.values(loc_item).map(({item, x, y}) => y);
@@ -89,7 +96,7 @@ export class GlobalState {
     key_item_list;
 
     constructor(game_info, scheme_data, settings) {
-        console.log("mods", game_info.game_data.mods);
+        console.log("mods", game_info.game_data.mod_guid_list);
         this.game_data = game_info.game_data;
         this.item_data = game_info.item_data;
         this.scheme_data = scheme_data;
@@ -101,6 +108,33 @@ export class GlobalState {
         for (let i = 0; i < scheme_data.scheme_for_recipe.length; i++) {
             //选择增产塔对应配方时，如果未选择增产策略，强制选择增产策略为增产分馏
             if (game_info.game_data.recipe_data[i].增产 == 8//8也就是bit4，增产分馏策略的位置
+                && scheme_data.scheme_for_recipe[i].增产模式 == 0) {
+                scheme_data.scheme_for_recipe[i].增产模式 = 4;//模式就是对应的bit，也就是4
+            }
+            //选择增产策略但是未选择增产剂时，强制选择最后一个增产剂；但是选择增产剂时，不会强制选择增产策略
+            if (scheme_data.scheme_for_recipe[i].增产模式 > 0
+                && scheme_data.scheme_for_recipe[i].增产点数 == 0) {
+                scheme_data.scheme_for_recipe[i].增产点数 = maxProliferatorPoint;
+            }
+        }
+
+        this.#init_pro_proliferator(settings.proliferate_itself);
+        this.#init_item_graph();
+        this.#init_item_list();
+    }
+
+    #reinit(game_data) {
+        console.log("mods", game_data.mod_guid_list);
+        this.game_data = game_data;
+        let scheme_data = this.scheme_data;
+        let settings = this.settings;
+
+        //获取最后一个增产剂对应的点数值
+        //懒得比较获取最大值了，直接用最后一个增产剂作为最大值
+        let maxProliferatorPoint = game_data.proliferator_data[game_data.proliferator_data.length - 1].增产点数;
+        for (let i = 0; i < scheme_data.scheme_for_recipe.length; i++) {
+            //选择增产塔对应配方时，如果未选择增产策略，强制选择增产策略为增产分馏
+            if (game_data.recipe_data[i].增产 == 8//8也就是bit4，增产分馏策略的位置
                 && scheme_data.scheme_for_recipe[i].增产模式 == 0) {
                 scheme_data.scheme_for_recipe[i].增产模式 = 4;//模式就是对应的bit，也就是4
             }
@@ -182,7 +216,7 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    item_graph[item]["产出倍率"] *= game_data.proliferator_effect[proliferate_num]["加速效果"] * this.settings.acc_rate;
+                    item_graph[item]["产出倍率"] *= game_data.proliferator_effect[proliferate_num]["加速效果"] + this.settings.acc_rate;
                 } else if (proliferate_mode == 2) {
                     //增产
                     for (let proliferate in proliferator_price[proliferate_num]) {
@@ -192,7 +226,7 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    produce_rate *= game_data.proliferator_effect[proliferate_num]["增产效果"] * this.settings.inc_rate;
+                    produce_rate *= game_data.proliferator_effect[proliferate_num]["增产效果"] + this.settings.inc_rate;
                     item_graph[item]["产出倍率"] *= produce_rate;
                 } else if (proliferate_mode == 3) {
                     //接收站透镜喷涂效果，按加速效果计算额外产出
@@ -203,7 +237,7 @@ export class GlobalState {
                             item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
                         }
                     }
-                    produce_rate *= game_data.proliferator_effect[proliferate_num]["加速效果"] * this.settings.acc_rate;
+                    produce_rate *= game_data.proliferator_effect[proliferate_num]["加速效果"] + this.settings.acc_rate;
                     item_graph[item]["产出倍率"] *= produce_rate;
                 } else if (proliferate_mode == 4) {
                     //增产分馏塔，按点数计算产出
@@ -230,13 +264,23 @@ export class GlobalState {
                     item_graph[item]["原料"][material] *= self_used;
                 }
             }
+            // console.log("item_graph", item_graph)
             for (let material in item_graph[item]["原料"]) {
-                //console.log("item_graph[" + material + "]", item_graph[material])
-                //console.log("material", material)
-                //console.log("item_graph", item_graph)
-                //console.log("item", item)
+                // console.log("item_graph[" + material + "]", item_graph[material])
+                // console.log("item_graph[" + item + "]", item_graph[item])
+                // if (item_graph[material] === undefined){
+                //     //原始数据有问题，所有物品都需要有一个配方，确实没有的也要生成一个伊卡洛斯的采集配方
+                //     item_graph[material] = {
+                //         "产出倍率": 0,
+                //         "副产物": {},
+                //         "原料": {},
+                //         "可生产": {}
+                //     }
+                // }
                 item_graph[material]["可生产"][item] = 1 / item_graph[item]["原料"][material];
+                // console.log("item_graph[" + material + "]新", item_graph[material])
             }
+            // console.log("item_graph", item_graph)
             if (Object.keys(game_data.recipe_data[recipe_id]["产物"]).length > 1) {
                 let self_cost = 0;
                 if ("自消耗" in item_graph[item]) {
@@ -277,6 +321,14 @@ export class GlobalState {
                 item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.covered_veins_large * settings.mining_efficiency_large;
             } else if (factory_name === "原油萃取站") {
                 item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.mining_speed_oil;
+            } else if (factory_name === "激光钻井平台") {
+                if (item === "原油") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.mining_speed_oil;
+                } else if (item === "水") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.mining_speed_water;
+                } else if (item === "深层熔岩") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.mining_speed_deep_seated_lava;
+                }
             } else if (factory_name === "抽水站" || factory_name === "聚束液体汲取设施") {
                 item_graph[item]["产出倍率"] *= settings.mining_speed_multiple;
             } else if (factory_name === "轨道采集器") {
@@ -291,6 +343,8 @@ export class GlobalState {
                     item_graph[item]["产出倍率"] *= settings.mining_speed_helium;
                 } else if (item === "氨") {
                     item_graph[item]["产出倍率"] *= settings.mining_speed_ammonia;
+                } else if (item === "甲烷") {
+                    item_graph[item]["产出倍率"] *= settings.mining_speed_methane;
                 }
             } else if (factory_name === "大气采集站") {
                 item_graph[item]["产出倍率"] *= settings.mining_speed_multiple;
@@ -306,7 +360,9 @@ export class GlobalState {
             } else if (factory_name === "行星基地") {
                 item_graph[item]["产出倍率"] *= settings.enemy_drop_multiple;
             } //采矿设备需算上科技加成
-            else if (factory_name.endsWith("分馏塔")) {
+            else if (factory_name === "分馏塔" || factory_name === "交互塔"
+                || factory_name === "矿物复制塔" || factory_name === "点数聚集塔" || factory_name === "量子复制塔"
+                || factory_name === "点金塔" || factory_name === "分解塔" || factory_name === "转化塔") {
                 item_graph[item]["产出倍率"] *= settings.fractionating_speed;
             }//分馏塔流速加成计算
             else if (factory_name === "伊卡洛斯") {
@@ -365,6 +421,7 @@ export class GlobalState {
         }
 
         function find_item(name, isProduction, P_item_list) {
+            // console.log("item_data[" + name + "]", item_data[name])
             if (!isProduction) {
                 if (product_graph[name] && Object.keys(product_graph[name]["原料"]).length == 0) {
                     const production = product_graph[name]["可生产"];
@@ -490,8 +547,39 @@ export class GlobalState {
 
     /** 主要计算逻辑 */
     calculate(needs_list) {
-        let game_data = this.game_data;
         let settings = this.settings;
+        //忽略原有的配方等数据，直接从json重新读取
+        let game_data = get_game_data(this.game_data.mod_guid_list);
+        //根据是否启用蓝buff，修改recipe
+        if (game_data.TheyComeFromVoidEnable && settings.blue_buff) {
+            for (let i = 0; i < game_data.recipe_data.length; i++) {
+                let recipe = game_data.recipe_data[i];
+                //排除不生效的配方（分馏配方包含在其中，因为分馏原料只有一个）
+                if (Object.keys(recipe["原料"]).length < 2) {
+                    continue;
+                }
+                //排除所有糖
+                let outputName = Object.keys(recipe["产物"])[0];
+                if (outputName.endsWith("矩阵")) {
+                    continue;
+                }
+                let inputName = Object.keys(recipe["原料"])[0];
+                let inputCount = Object.values(recipe["原料"])[0];
+                let outputCount = Object.values(recipe["产物"])[0];
+                //蓝buff有两个特性：
+                //1.新增加的物品会直接填充到第一个格子里面，并且增产点数按照4点进行补充
+                //2.如果第一个格子已满，则不再回填物品
+                //3.由于游戏本身特性，低增产点数的物品会先被消耗，所以即使无增产剂，第一个格子也会逐渐变为平均4点增产
+                if (inputCount > outputCount) {
+                    recipe["原料"][inputName] -= outputCount;
+                } else {
+                    delete recipe["原料"][inputName];
+                }
+            }
+        }
+        //重新初始化
+        this.#reinit(game_data);
+
         let natural_production_line = this.settings.natural_production_line;
 
         let item_data = this.item_data;
@@ -509,31 +597,6 @@ export class GlobalState {
         let lp_item_dict = {};
         let in_out_list = {};
 
-        //重新读取一遍game_data.recipe_data
-        let game_data2 = get_game_data(this.game_data.mod_guid_list);
-        game_data["recipe_data"] = game_data2["recipe_data"];
-        //根据是否启用蓝buff，修改recipe
-        if (game_data.TheyComeFromVoidEnable && settings.blue_buff) {
-            for (let i = 0; i < game_data.recipe_data.length; i++) {
-                let recipe = game_data.recipe_data[i];
-                //排除不生效的配方（分馏配方包含在其中，因为分馏原料只有一个）
-                if (Object.keys(recipe["原料"]).length < 2) {
-                    continue;
-                }
-                //排除所有糖
-                let outputName = Object.keys(recipe["产物"])[0];
-                if (outputName.endsWith("矩阵")) {
-                    continue;
-                }
-                let inputName = Object.keys(recipe["原料"])[0];
-                let outputCount = Object.values(recipe["产物"])[0];
-                if (recipe["产物"][inputName] === undefined) {
-                    recipe["产物"][inputName] = outputCount;
-                } else {
-                    recipe["产物"][inputName] += outputCount;
-                }
-            }
-        }
 
         for (let item in needs_list) {
             in_out_list[item] = needs_list[item];

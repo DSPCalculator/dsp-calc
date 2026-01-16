@@ -11,14 +11,7 @@ import {NeedsList, NeedsListStorage} from './needs_list.jsx';
 import {Result} from './result.jsx';
 import {init_scheme_data, SchemeStorage} from './scheme_data.jsx';
 import {Settings} from './settings.jsx';
-import {
-    game_data_info_list,
-    get_game_data,
-    get_mod_options,
-    MoreMegaStructureGUID,
-    TheyComeFromVoidGUID,
-    vanilla_game_version
-} from "./GameData.jsx";
+import {game_data_info_list, get_game_data, get_mod_options, vanilla_game_version} from "./GameData.jsx";
 import {Select} from "antd";
 
 function GameVersion({needs_list, set_needs_list}) {
@@ -35,40 +28,55 @@ function GameVersion({needs_list, set_needs_list}) {
         }
         //清除原有产线，否则会出现找不到配方而导致白屏的bug
         set_needs_list({});
-        //判断modList是否合理，并调整顺序
+        //判断modList是否合理
         //巨构是深空的前置依赖
-        let b1 = false;
-        let b2 = false;
-        for (let i = 0; i < mods.length; i++) {
-            if (mods[i] === MoreMegaStructureGUID) {
-                b1 = true;
-            }
-            if (mods[i] === TheyComeFromVoidGUID) {
-                b2 = true;
+        let MSGUID = game_data_info_list[1].name_en + game_data_info_list[1].version;
+        let VDGUID = game_data_info_list[2].name_en + game_data_info_list[2].version;
+        let ms_old = mods.includes(MSGUID);
+        let vd_old = mods.includes(VDGUID);
+        let ms_new = modList.includes(MSGUID);
+        let vd_new = modList.includes(VDGUID);
+        if (!ms_old && !vd_old && !ms_new && vd_new) {
+            modList.push(MSGUID);
+        }
+        if (ms_old && vd_old && !ms_new && vd_new) {
+            modList = modList.filter((mod) => mod !== VDGUID);
+        }
+        //创世和星环只能选择之一
+        let GBGUID = game_data_info_list[3].name_en + game_data_info_list[3].version;
+        let gb_old = mods.includes(GBGUID);
+        let gb_new = modList.includes(GBGUID);
+        let ORGUID = game_data_info_list[4].name_en + game_data_info_list[4].version;
+        let or_old = mods.includes(ORGUID);
+        let or_new = modList.includes(ORGUID);
+        if (!gb_old && gb_new) {
+            if (or_old) {
+                modList = modList.filter((mod) => mod !== ORGUID);
             }
         }
-        let b3 = false;
-        let b4 = false;
-        for (let i = 0; i < modList.length; i++) {
-            if (modList[i] === MoreMegaStructureGUID) {
-                b3 = true;
-            }
-            if (modList[i] === TheyComeFromVoidGUID) {
-                b4 = true;
+        if (!or_old && or_new) {
+            if (gb_old) {
+                modList = modList.filter((mod) => mod !== GBGUID);
             }
         }
-        if (!b1 && !b2 && !b3 && b4) {
-            modList.push(MoreMegaStructureGUID);
+        //深空和星环只能选择之一（星环目前不兼容深空）
+        if (!vd_old && vd_new) {
+            if (or_old) {
+                modList = modList.filter((mod) => mod !== ORGUID);
+            }
         }
-        if (b1 && b2 && !b3 && b4) {
-            modList = modList.filter((mod) => mod !== TheyComeFromVoidGUID);
+        if (!or_old && or_new) {
+            if (vd_old) {
+                modList = modList.filter((mod) => mod !== VDGUID);
+            }
         }
+
         //按照规定的顺序排序mods
         let modList2 = [];
         game_data_info_list.forEach((mod_info) => {
             for (let i = 0; i < modList.length; i++) {
-                if (modList[i] === mod_info.GUID) {
-                    modList2.push(mod_info.GUID);
+                if (modList[i] === mod_info.name_en + mod_info.version) {
+                    modList2.push(modList[i]);
                 }
             }
         })
@@ -83,13 +91,8 @@ function GameVersion({needs_list, set_needs_list}) {
         let game_data = get_game_data(modList);
         set_game_data(game_data);
         set_scheme_data(init_scheme_data(game_data));
-        //根据创世是否启用，设定采矿速率初始值
-        if (!game_data.GenesisBookEnable) {
-            set_settings({"mining_speed_oil": 3.0});
-            set_settings({"mining_speed_hydrogen": 1.0});
-            set_settings({"mining_speed_deuterium": 0.2});
-            set_settings({"mining_speed_gas_hydrate": 0.5});
-        } else {
+        //根据模组启用状态，设定采矿速率初始值
+        if (game_data.GenesisBookEnable) {
             set_settings({"mining_speed_oil": 3.0});
             set_settings({"mining_speed_hydrogen": 1.0});
             set_settings({"mining_speed_deuterium": 0.05});
@@ -100,6 +103,18 @@ function GameVersion({needs_list, set_needs_list}) {
             set_settings({"mining_speed_oxygen": 0.6});
             set_settings({"mining_speed_carbon_dioxide": 0.4});
             set_settings({"mining_speed_sulfur_dioxide": 0.6});
+        } else if (game_data.OrbitalRingEnable) {
+            set_settings({"mining_speed_oil": 3.0});
+            set_settings({"mining_speed_water": 3.0});
+            set_settings({"mining_speed_deep_seated_lava": 3.0});
+            set_settings({"mining_speed_hydrogen": 1.2});
+            set_settings({"mining_speed_deuterium": 0.6});
+            set_settings({"mining_speed_methane": 0.6});
+        } else {
+            set_settings({"mining_speed_oil": 3.0});
+            set_settings({"mining_speed_hydrogen": 1.0});
+            set_settings({"mining_speed_deuterium": 0.2});
+            set_settings({"mining_speed_gas_hydrate": 0.5});
         }
     }
 

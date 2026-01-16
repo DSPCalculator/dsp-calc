@@ -89,7 +89,7 @@ export function ItemIcon({item, size, tooltip}) {
 
     const icon = get_icon_by_item(item);
 
-    let img = <Icon icon={icon} size={size} mods={global_state.game_data.mods}/>;
+    let img = <Icon icon={icon} size={size} mods={global_state.game_data.mod_name_list}/>;
 
     tooltip = tooltip === undefined ? true : tooltip;
     if (tooltip) {
