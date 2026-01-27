@@ -275,47 +275,7 @@ export class GlobalState {
             const factories_type = game_data.recipe_data[recipe_id]["设施"];
             const factory_info = game_data.factory_data[factories_type][scheme_data.scheme_for_recipe[recipe_id]["建筑"]];
             const factory_name = factory_info["名称"];
-            if (factory_name === "采矿机") {
-                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.covered_veins_small;
-            } else if (factory_name === "大型采矿机") {
-                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.covered_veins_large * settings.mining_efficiency_large;
-            } else if (factory_name === "原油萃取站") {
-                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple * settings.mining_speed_oil;
-            } else if (factory_name === "抽水站" || factory_name === "聚束液体汲取设施") {
-                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple;
-            } else if (factory_name === "轨道采集器") {
-                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple;
-                if (item === "氢") {
-                    item_graph[item]["产出倍率"] *= settings.mining_speed_hydrogen;
-                } else if (item === "重氢") {
-                    item_graph[item]["产出倍率"] *= settings.mining_speed_deuterium;
-                } else if (item === "可燃冰") {
-                    item_graph[item]["产出倍率"] *= settings.mining_speed_gas_hydrate;
-                } else if (item === "氦") {
-                    item_graph[item]["产出倍率"] *= settings.mining_speed_helium;
-                } else if (item === "氨") {
-                    item_graph[item]["产出倍率"] *= settings.mining_speed_ammonia;
-                }
-            } else if (factory_name === "大气采集站") {
-                item_graph[item]["产出倍率"] *= settings.mining_speed_multiple;
-                if (item === "氮") {
-                    item_graph[item]["产出倍率"] *= settings.mining_speed_nitrogen;
-                } else if (item === "氧") {
-                    item_graph[item]["产出倍率"] *= settings.mining_speed_oxygen;
-                } else if (item === "二氧化硫") {
-                    item_graph[item]["产出倍率"] *= settings.mining_speed_carbon_dioxide;
-                } else if (item === "二氧化碳") {
-                    item_graph[item]["产出倍率"] *= settings.mining_speed_sulfur_dioxide;
-                }
-            } else if (factory_name === "行星基地") {
-                item_graph[item]["产出倍率"] *= settings.enemy_drop_multiple;
-            } //采矿设备需算上科技加成
-            else if (factory_name.endsWith("分馏塔")) {
-                item_graph[item]["产出倍率"] *= settings.fractionating_speed;
-            }//分馏塔流速加成计算
-            else if (factory_name === "伊卡洛斯") {
-                item_graph[item]["产出倍率"] *= settings.icarus_manufacturing_speed;
-            }//毫无意义，只是我想这么干
+            item_graph[item]["产出倍率"] = ApplyBuildingMultiplier(item_graph[item]["产出倍率"], factory_name, item, settings);
         }
 
         this.item_graph = item_graph;
@@ -821,4 +781,55 @@ export class GlobalState {
 
         return lp_cost;//返回求解器求解结果
     }
+}
+
+/**
+ * 根据建筑类型应用相应的倍率
+ * @param {number} output_num - 当前产出数
+ * @param {string} building_name - 建筑名称
+ * @param {string} item - 目标物品
+ * @param {object} settings - 设置对象
+ * @returns {number} 应用倍率后的产出数
+ */
+export function ApplyBuildingMultiplier(output_num, building_name, item, settings) {
+    if (building_name === "采矿机") {
+        output_num *= settings.mining_speed_multiple * settings.covered_veins_small;
+    } else if (building_name === "大型采矿机") {
+        output_num *= settings.mining_speed_multiple * settings.covered_veins_large * settings.mining_efficiency_large;
+    } else if (building_name === "原油萃取站") {
+        output_num *= settings.mining_speed_multiple * settings.mining_speed_oil;
+    } else if (building_name === "抽水站" || building_name === "聚束液体汲取设施") {
+        output_num *= settings.mining_speed_multiple;
+    } else if (building_name === "轨道采集器") {
+        output_num *= settings.mining_speed_multiple;
+        if (item === "氢") {
+            output_num *= settings.mining_speed_hydrogen;
+        } else if (item === "重氢") {
+            output_num *= settings.mining_speed_deuterium;
+        } else if (item === "可燃冰") {
+            output_num *= settings.mining_speed_gas_hydrate;
+        } else if (item === "氦") {
+            output_num *= settings.mining_speed_helium;
+        } else if (item === "氨") {
+            output_num *= settings.mining_speed_ammonia;
+        }
+    } else if (building_name === "大气采集站") {
+        output_num *= settings.mining_speed_multiple;
+        if (item === "氮") {
+            output_num *= settings.mining_speed_nitrogen;
+        } else if (item === "氧") {
+            output_num *= settings.mining_speed_oxygen;
+        } else if (item === "二氧化硫") {
+            output_num *= settings.mining_speed_carbon_dioxide;
+        } else if (item === "二氧化碳") {
+            output_num *= settings.mining_speed_sulfur_dioxide;
+        }
+    } else if (building_name === "行星基地") {
+        output_num *= settings.enemy_drop_multiple;
+    } else if (building_name.endsWith("分馏塔")) {
+        output_num *= settings.fractionating_speed;
+    } else if (building_name === "伊卡洛斯") {
+        output_num *= settings.icarus_manufacturing_speed;
+    } //Jimmy：“毫无意义，只是我想这么干”
+    return output_num;
 }
