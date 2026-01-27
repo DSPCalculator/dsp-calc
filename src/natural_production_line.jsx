@@ -1,6 +1,7 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext} from 'react';
 import {GameInfoContext, GlobalStateContext, SettingsContext, SettingsSetterContext} from './contexts.jsx';
+import {ApplyBuildingMultiplier} from './global_state.jsx';
 import {ItemIcon} from './icon';
 import {ItemSelect} from './item_select.jsx';
 import {FactorySelect, ProModeSelect, ProNumSelect, RecipeSelect} from './result.jsx';
@@ -36,7 +37,7 @@ function NplRow({row, set_row, remove_row}) {
         set_row(row_new);
     }
 
-    function get_output_num(item, recipe, building_scale, pro_mode, pro_num) {
+    function get_output_num(item, recipe, building_scale, pro_mode, pro_num, building_name) {
         let output_num = recipe["产物"][item];
         output_num *= building_scale;
         output_num *= (settings.is_time_unit_minute ? 60 : 1) / recipe["时间"];
@@ -46,6 +47,10 @@ function NplRow({row, set_row, remove_row}) {
         } else if (pro_mode == 1 || pro_mode == 3) {
             output_num *= proliferator_data["加速效果"];
         }
+        
+        // 根据建筑类型应用相应的倍率
+        output_num = ApplyBuildingMultiplier(output_num, building_name, item, settings);
+        
         return output_num;
     }
 
@@ -54,7 +59,7 @@ function NplRow({row, set_row, remove_row}) {
     let recipe_id = game_info.item_data[item][row["配方id"]];
     let recipe = game_data.recipe_data[recipe_id];
     let selected_building = game_data.factory_data[recipe["设施"]][row["建筑"]];
-    let output_num = get_output_num(item, recipe, row["建筑数量"] * selected_building["倍率"], row["增产模式"], row["增产点数"]);
+    let output_num = get_output_num(item, recipe, row["建筑数量"] * selected_building["倍率"], row["增产模式"], row["增产点数"], selected_building["名称"]);
     return <tr className="table-info">
         <td><a className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn"
                onClick={remove_row}>删除</a></td>
