@@ -58,8 +58,8 @@ export function HorizontalMultiButtonSelect({choice, options, onChange, no_gap, 
     let gap_class = no_gap ? "" : "gap-1";
     let option_doms = options.map(({value, label, item_icon, className}) => {
         let selected_class = choice == value ? "bg-selected" : "bg-unselected";
-        // insert 1px white border if [no_gap == true]
-        let gap_class = no_gap ? "border-between border-white" : "";
+        // insert 1px border if [no_gap == true]
+        let gap_class = no_gap ? "border-between border-body" : "";
         return <div key={value}
                     className={`py-1 px-1 text-nowrap d-flex align-items-center cursor-pointer small
                 ${selected_class} ${gap_class} ${className || ""}`}
