@@ -1,9 +1,11 @@
 import React from 'react';
 import {Nav, Navbar, OverlayTrigger, Tooltip} from 'react-bootstrap';
-import {FaInfoCircle, FaQq, FaReact} from 'react-icons/fa';
+import {FaInfoCircle, FaMoon, FaQq, FaReact, FaSun} from 'react-icons/fa';
+import {useTheme} from './ThemeContext.jsx';
 
 export function Header() {
     const version = import.meta.env.VITE_APP_VERSION;
+    const {theme, toggleTheme} = useTheme();
     const renderTooltip = (props) => (
         <Tooltip id="qq-tooltip" {...props}>
             联系作者QQ:653524123<br/>
@@ -11,7 +13,7 @@ export function Header() {
         </Tooltip>
     );
     return (
-        <Navbar className="px-3 text-nowrap" bg="light" expand="lg">
+        <Navbar className="px-3 text-nowrap" bg="body-tertiary" expand="lg">
             <Navbar.Brand href="#" className="d-inline-flex align-items-baseline">
                 <FaReact className="me-2 align-self-center"/>
                 <span className="me-1">戴森球计划量化计算器</span>
@@ -36,9 +38,19 @@ export function Header() {
                     </OverlayTrigger>
                 </Nav>
 
-                <span className="navbar-text ms-auto small">
+                <span className="navbar-text ms-auto small me-3">
                     <FaInfoCircle/> 若无法加载，尝试切换浏览器为Chrome/Edge
                 </span>
+                <Nav>
+                    <Nav.Link
+                        href="#"
+                        className="d-flex align-items-center"
+                        onClick={toggleTheme}
+                        title={theme === 'light' ? '切换到深色主题' : '切换到浅色主题'}
+                    >
+                        {theme === 'light' ? <FaMoon/> : <FaSun/>}
+                    </Nav.Link>
+                </Nav>
             </Navbar.Collapse>
         </Navbar>
     );
