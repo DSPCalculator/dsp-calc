@@ -144,6 +144,318 @@ legend {
     padding: 0.1em 0.4em;
 }
 
+/* ============================================================
+   全局布局：应用式固定视口高度布局
+   ============================================================ */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* index.html 中的 .p-3 包裹层需要填充剩余空间 */
+body > .p-3 {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#root {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* App 整体纵向布局 */
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+/* 顶部面板：不参与滚动，自然高度 */
+.app-top-panel {
+    flex-shrink: 0;
+    overflow-x: auto;
+}
+
+/* 结果区域：填充剩余高度 */
+.app-result-area {
+    flex: 1;
+    min-height: 0;
+}
+
+/* 结果容器：横向双栏，各自独立滚动 */
+.result-container {
+    display: flex;
+    height: 100%;
+    gap: 1.5rem;
+    padding-top: 0.75rem;
+}
+
+/* 左侧结果表格滚动区域 */
+.result-table-scroll {
+    flex: 1;
+    min-width: 0;
+    overflow: auto;
+}
+
+/* 结果表格表头固定在滚动容器顶部 */
+.result-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: var(--bs-body-bg, #fff);
+}
+
+/* 右侧总结面板滚动区域 */
+.result-summary-scroll {
+    flex-shrink: 0;
+    width: fit-content;
+    max-width: 320px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ============================================================
+   响应式辅助类
+   ============================================================ */
+
+/* compact-show: 默认隐藏，在 compact 及以下模式显示 */
+.compact-show {
+    display: none !important;
+}
+
+/* 预估电力单位：默认显示末尾版，隐藏括号版 */
+.energy-cost-unit-inline {
+    display: none;
+}
+.energy-cost-unit-trailing {
+    display: inline;
+}
+
+/* ============================================================
+   紧凑模式：1024px ~ 1399px
+   ============================================================ */
+@media (max-width: 1399px) {
+    /* 显示图标，隐藏文字 */
+    .compact-hide-text {
+        display: none !important;
+    }
+
+    .compact-show {
+        display: inline-flex !important;
+        align-items: center;
+    }
+
+    /* 压缩间距 */
+    .result-container {
+        gap: 0.75rem;
+    }
+
+    /* 结果表格列宽压缩 */
+    .result-table th:nth-child(5) { width: 180px; } /* 配方选取 300→180 */
+    .result-table th:nth-child(6) { width: 110px; } /* 增产模式 180→110 */
+    .result-table th:nth-child(7) { width: 90px; }  /* 增产剂   160→90  */
+    .result-table th:nth-child(8) { width: 100px; } /* 工厂类型 170→100 */
+
+    /* 物品名称列隐藏文字 */
+    .result-table .item-name-text {
+        display: none;
+    }
+
+    /* 缩小物品列宽 */
+    .result-table th:nth-child(2) { width: 52px; }
+
+    /* 顶部面板标签文字在中等宽度也收起 */
+    .toolbar-label-compact {
+        display: none;
+    }
+
+    /* 预估电力改为竖排三行 */
+    .energy-cost-display {
+        flex-direction: column;
+        gap: 0;
+    }
+    .energy-cost-separator {
+        display: none;
+    }
+    .energy-cost-unit-inline {
+        display: inline;
+    }
+    .energy-cost-unit-trailing {
+        display: none;
+    }
+}
+
+/* ============================================================
+   窄屏模式：768px ~ 1023px
+   ============================================================ */
+@media (max-width: 1023px) {
+    /* 进一步压缩列宽 */
+    .result-table th:nth-child(3) { width: 90px; }  /* 产能 130→90 */
+    .result-table th:nth-child(4) { width: 80px; }  /* 工厂 110→80 */
+    .result-table th:nth-child(5) { width: 120px; } /* 配方 180→120 */
+    .result-table th:nth-child(6) { width: 90px; }  /* 增产模式 110→90 */
+    .result-table th:nth-child(7) { width: 72px; }  /* 增产剂 90→72 */
+    .result-table th:nth-child(8) { width: 80px; }  /* 工厂类型 100→80 */
+
+    /* 配方选取中只显示最简内容 */
+    .recipe-compact-inputs .recipe-output-section {
+        display: none;
+    }
+    .recipe-compact-inputs .recipe-arrow-section {
+        display: none;
+    }
+
+    /* 进一步缩小图标 */
+    .result-table td .item-icon-in-recipe {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    /* 总结面板最大宽度放宽（窄屏每个字符都珍贵） */
+    .result-summary-scroll {
+        max-width: 260px;
+    }
+}
+
+/* ============================================================
+   移动端：< 768px
+   ============================================================ */
+@media (max-width: 767px) {
+    /* 重置外层 padding */
+    body > .p-3 {
+        padding: 0.5rem !important;
+    }
+
+    /* 顶部面板允许滚动（防止内容超出屏幕）*/
+    .app-top-panel {
+        max-height: 45vh;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+
+    /* 结果区域剩余空间 */
+    .app-result-area {
+        min-height: 55vh;
+    }
+
+    /* 结果容器改为纵向堆叠 */
+    .result-container {
+        flex-direction: column;
+        gap: 0;
+        height: 100%;
+    }
+
+    /* 上半：结果表格 */
+    .result-table-scroll {
+        flex: 1;
+        min-height: 0;
+        overflow: auto;
+        border-bottom: 1px solid var(--bs-border-color);
+    }
+
+    /* 下半：总结面板 */
+    .result-summary-scroll {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        max-height: 38vh;
+        overflow-y: auto;
+        overflow-x: auto;
+        padding-top: 0.5rem;
+    }
+
+    /* 移动端表格字号缩小 */
+    .result-table {
+        font-size: 0.72em;
+    }
+
+    /* 移动端表格列宽极限压缩 */
+    .result-table th:nth-child(1) { width: 36px; }
+    .result-table th:nth-child(2) { width: 40px; }
+    .result-table th:nth-child(3) { width: 72px; }
+    .result-table th:nth-child(4) { width: 60px; }
+    .result-table th:nth-child(5) { width: 90px; }
+    .result-table th:nth-child(6) { width: 72px; }
+    .result-table th:nth-child(7) { width: 56px; }
+    .result-table th:nth-child(8) { width: 64px; }
+
+    /* 移动端隐藏生产策略/需求列表的文字标签 */
+    .storage-label {
+        display: none;
+    }
+
+    /* 移动端缩小 mineralize 按钮 */
+    .mineralize-btn {
+        font-size: 0.65em;
+        padding: 0.05em 0.25em;
+    }
+
+    /* 移动端批量预设折行显示 */
+    .batch-setting-container {
+        flex-wrap: wrap;
+        row-gap: 0.25rem;
+    }
+
+    /* ── 需求1：总结面板改为横向多列 ── */
+    .summary-panel-content {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+    }
+
+    /* ── 需求2：结果表格按钮压缩 ── */
+
+    /* raw-text-selection ::after 高度跟随缩小后的图标（18px） */
+    .result-table .raw-text-selection div::after {
+        height: 18px;
+    }
+    /* raw-text-selection 字号还原（移动端不需要放大） */
+    .result-table .raw-text-selection {
+        font-size: 0.9em !important;
+    }
+    /* 按钮内边距压缩 */
+    .result-table .raw-text-selection div {
+        padding: 0 2px !important;
+    }
+
+    /* 进一步压缩列宽 */
+    .result-table th:nth-child(1) { width: 30px; }
+    .result-table th:nth-child(2) { width: 32px; }
+    .result-table th:nth-child(3) { width: 56px; }
+    .result-table th:nth-child(4) { width: 48px; }
+    .result-table th:nth-child(5) { width: 70px; }
+    .result-table th:nth-child(6) { width: 56px; }
+    .result-table th:nth-child(7) { width: 44px; }
+    .result-table th:nth-child(8) { width: 50px; }
+
+    /* ── 需求3：批量预设行整体缩小 ── */
+    .batch-setting-container {
+        font-size: 0.8em;
+    }
+    /* 批量预设 raw-text-selection ::after 高度跟随（22px 图标） */
+    .batch-setting-container .raw-text-selection div::after {
+        height: 22px;
+    }
+}
+
+/* ============================================================
+   auto-sized input
+   ============================================================ */
+
 /* auto-sized input */
 .auto-sized-input {
     display: inline-block;

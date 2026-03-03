@@ -1,18 +1,19 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext, useState} from 'react';
-import {GlobalStateContext, SchemeDataSetterContext} from './contexts';
+import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext} from './contexts';
 import {HorizontalMultiButtonSelect} from './recipe.jsx';
 import {pro_mode_class} from './result.jsx';
 
 // TODO refactor to some other modules
-function FactorySelect({factory, list}) {
+function FactorySelect({factory, list, icon_size}) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const [cur, set_cur] = useState(0);
     let game_data = global_state.game_data;
 
     const options = list.map((data, idx) => ({
-        value: idx, item_icon: data["名称"], label: cur == idx ? data["名称"] : null
+        value: idx, item_icon: data["名称"],
+        label: cur == idx ? <span className="mx-1 compact-hide-text">{data["名称"]}</span> : null
     }));
 
     function set_factory(building) {
@@ -29,16 +30,20 @@ function FactorySelect({factory, list}) {
     }
 
     return <HorizontalMultiButtonSelect choice={cur} options={options}
-                                        onChange={set_factory} no_gap={true}/>;
+                                        onChange={set_factory} no_gap={true} icon_size={icon_size}/>;
 }
 
 export function BatchSetting() {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
+    const compact_mode = useContext(CompactModeContext);
     const [pro_num, set_pro_num] = useState(0);
     const [pro_mode, set_pro_mode] = useState(0);
     let game_data = global_state.game_data;
     let proliferator_price = global_state.proliferator_price;
+
+    const is_mobile = compact_mode === "mobile";
+    const mob_icon = is_mobile ? 22 : undefined;
 
     let pro_num_item = {};
     for (let data of game_data.proliferator_data) {
@@ -53,7 +58,7 @@ export function BatchSetting() {
         let used_num = game_data.recipe_data.filter(data => data["设施"] == factory).length;
         //只有可选工厂类型大于等于2，并且这种工厂类型至少被3个配方使用时，才允许批量预设
         if (list.length >= 2 && used_num >= 3) {
-            factory_doms.push(<FactorySelect key={factory} factory={factory} list={list}/>);
+            factory_doms.push(<FactorySelect key={factory} factory={factory} list={list} icon_size={mob_icon}/>);
         }
     });
 
@@ -103,10 +108,11 @@ export function BatchSetting() {
         {value: 2, label: "增产", className: pro_mode_class[2]},
     ];
 
-    return <div className="mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center">
+    return <div className="mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center batch-setting-container">
         <small className="fw-bold">批量预设</small>
         <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
-                                     onChange={change_pro_num} no_gap={true} className={"raw-text-selection"}/>
+                                     onChange={change_pro_num} no_gap={true} className={"raw-text-selection"}
+                                     icon_size={mob_icon}/>
         <HorizontalMultiButtonSelect choice={pro_mode} options={promode_options}
                                      onChange={change_pro_mode} no_gap={true} className={"raw-text-selection"}/>
         {factory_doms}

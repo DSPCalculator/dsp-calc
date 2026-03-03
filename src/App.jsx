@@ -21,6 +21,7 @@ import {
     vanilla_game_version
 } from "./GameData.jsx";
 import {Select} from "antd";
+import {FaTrashAlt, FaCog} from 'react-icons/fa';
 
 function GameVersion({needs_list, set_needs_list}) {
     const mod_options = get_mod_options();
@@ -137,29 +138,39 @@ function AppWithContexts() {
         window.location.reload();
     }
 
-    return <>
-        {/*游戏版本、模组选择*/}
-        <div className="d-flex column-gap-4 row-gap-2 flex-wrap">
-            <GameVersion needs_list={needs_list} set_needs_list={set_needs_list}/>
-        </div>
-        {/*生产策略、需求列表、清空数据缓存按钮、采矿参数&其他设置是否显示按钮*/}
-        <div className="d-flex column-gap-4 row-gap-2 flex-wrap">
-            <SchemeStorage/>
-            <NeedsListStorage needs_list={needs_list} set_needs_list={set_needs_list}/>
-            <button className="btn btn-outline-danger btn-sm" onClick={clearData}>清空数据缓存</button>
-            <button className="btn btn-outline-primary btn-sm" onClick={() => set_misc_show(s => !s)}>
-                采矿参数 & 其他设置
-            </button>
-        </div>
-        {/*采矿参数&其他设置*/}
-        <UserSettings show={misc_show}/>
-        {/*添加需求、批量预设、计算结果*/}
-        <div>
+    return <div className="app-layout">
+        {/* 顶部面板：不参与滚动 */}
+        <div className="app-top-panel">
+            {/*游戏版本、模组选择*/}
+            <div className="d-flex column-gap-4 row-gap-2 flex-wrap">
+                <GameVersion needs_list={needs_list} set_needs_list={set_needs_list}/>
+            </div>
+            {/*生产策略、需求列表、清空数据缓存按钮、采矿参数&其他设置是否显示按钮*/}
+            <div className="d-flex column-gap-4 row-gap-2 flex-wrap mt-2">
+                <SchemeStorage/>
+                <NeedsListStorage needs_list={needs_list} set_needs_list={set_needs_list}/>
+                <button className="btn btn-outline-danger btn-sm d-inline-flex align-items-center gap-1"
+                        onClick={clearData} title="清空数据缓存">
+                    <FaTrashAlt/>
+                    <span className="compact-hide-text">清空数据缓存</span>
+                </button>
+                <button className="btn btn-outline-primary btn-sm d-inline-flex align-items-center gap-1"
+                        onClick={() => set_misc_show(s => !s)} title="采矿参数 & 其他设置">
+                    <FaCog/>
+                    <span className="compact-hide-text">采矿参数 & 其他设置</span>
+                </button>
+            </div>
+            {/*采矿参数&其他设置*/}
+            <UserSettings show={misc_show}/>
+            {/*添加需求、批量预设*/}
             <NeedsList needs_list={needs_list} set_needs_list={set_needs_list}/>
             <BatchSetting/>
+        </div>
+        {/* 结果区域：填充剩余高度，独立滚动 */}
+        <div className="app-result-area">
             <Result needs_list={needs_list} set_needs_list={set_needs_list}/>
         </div>
-    </>;
+    </div>;
 }
 
 export default function App() {

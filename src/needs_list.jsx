@@ -1,6 +1,6 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext, useEffect, useRef, useState} from 'react';
-import {Trash} from 'react-bootstrap-icons';
+import {Save2, Folder2Open, Trash, PlusCircle, PlusSquare} from 'react-bootstrap-icons';
 import {GameInfoContext, GlobalStateContext, SettingsSetterContext} from './contexts';
 import {ItemIcon} from './icon';
 import {ItemSelect} from './item_select';
@@ -84,11 +84,15 @@ export function NeedsList({needs_list, set_needs_list}) {
             <div className="input-group input-group-sm w-fit d-inline-flex me-5">
                 <input type="text" className="form-control" style={{width: "6em"}} ref={count_ref} defaultValue={60}/>
                 <span className="input-group-text">/{is_min ? "min" : "sec"}</span>
-                <button className="btn btn-sm btn-outline-danger text-nowrap"
-                        onClick={() => set_needs_list({})}>清空需求
+                <button className="btn btn-sm btn-outline-danger d-inline-flex align-items-center gap-1 text-nowrap"
+                        onClick={() => set_needs_list({})} title="清空需求">
+                    <Trash/>
+                    <span className="compact-hide-text">清空需求</span>
                 </button>
-                <ItemSelect text="添加需求物品" set_item={add_need}/>
+                <ItemSelect text="添加需求物品" set_item={add_need}
+                            icon={<PlusCircle className="compact-show"/>}/>
                 <ItemSelect text="添加现有产线" set_item={add_npl}
+                            icon={<PlusSquare className="compact-show"/>}
                             btn_class="btn btn-sm btn-outline-success text-nowrap"/>
             </div>
 
@@ -117,13 +121,13 @@ export function NeedsListStorage({needs_list, set_needs_list}) {
         let all_scheme_init = all_scheme_data[game_name] || {};
         console.log("Loading storage", game_name, Object.keys(all_scheme_init));
         set_all_scheme(all_scheme_init);
-    }, [game_info]);
+    }, [game_info, game_name]);
 
     useEffect(() => {
         let all_scheme_saved = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
         all_scheme_saved[game_name] = all_scheme;
         localStorage.setItem(NEEDS_LIST_STORAGE_KEY, JSON.stringify(all_scheme_saved));
-    }, [all_scheme])
+    }, [all_scheme, game_name])
 
     function delete_(name) {
         if (name in all_scheme) {
@@ -170,15 +174,23 @@ export function NeedsListStorage({needs_list, set_needs_list}) {
         </li>));
 
     return <div className="d-flex gap-2 align-items-center">
-        <div className="text-nowrap">需求列表</div>
+        <div className="text-nowrap storage-label">需求列表</div>
         <div className="input-group input-group-sm">
-            <button className="btn btn-outline-secondary" type="button" onClick={save}>保存</button>
-            <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">加载
+            <button className="btn btn-outline-secondary d-inline-flex align-items-center gap-1"
+                    type="button" onClick={save} title="保存需求列表">
+                <Save2 className="compact-show"/>
+                <span className="compact-hide-text">保存</span>
+            </button>
+            <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false" title="加载需求列表">
+                <Folder2Open className="compact-show"/>
+                <span className="compact-hide-text">加载</span>
             </button>
             <ul className="dropdown-menu">{dd_load_list}</ul>
-            <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">删除
+            <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false" title="删除需求列表">
+                <Trash className="compact-show"/>
+                <span className="compact-hide-text">删除</span>
             </button>
             <ul className="dropdown-menu">{dd_delete_list}</ul>
         </div>

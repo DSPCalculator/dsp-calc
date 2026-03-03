@@ -1,6 +1,6 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext, useMemo, useState, useEffect} from 'react';
-import {GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from './contexts';
+import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from './contexts';
 import {ItemIcon} from './icon';
 import {NplRows} from './natural_production_line';
 import {HorizontalMultiButtonSelect, Recipe} from './recipe';
@@ -33,7 +33,7 @@ const ValueWithDifference = ({currentValue, previousValue}) => {
     );
 };
 
-export function RecipeSelect({item, choice, onChange}) {
+export function RecipeSelect({item, choice, onChange, compact}) {
     const global_state = useContext(GlobalStateContext);
 
     let game_data = global_state.game_data;
@@ -42,7 +42,7 @@ export function RecipeSelect({item, choice, onChange}) {
     if (item_data[item].length == 2) {
         let recipe_index = item_data[item][1];
         let recipe = game_data.recipe_data[recipe_index];
-        return <div className="my-1 px-2 py-1"><Recipe recipe={recipe}/></div>
+        return <div className="my-1 px-2 py-1"><Recipe recipe={recipe} compact={compact}/></div>
     } else {
         let doms = [];
         for (let i = 1; i < item_data[item].length; i++) {
@@ -52,7 +52,7 @@ export function RecipeSelect({item, choice, onChange}) {
             doms.push(<a key={i}
                          className={`recipe-item px-2 py-1 d-block text-decoration-none text-reset cursor-pointer ${bg_class}`}
                          onClick={() => onChange(i)}>
-                <Recipe recipe={recipe}/>
+                <Recipe recipe={recipe} compact={compact}/>
             </a>);
         }
 
@@ -60,15 +60,15 @@ export function RecipeSelect({item, choice, onChange}) {
     }
 }
 
-export function ProNumSelect({choice, onChange}) {
+export function ProNumSelect({choice, onChange, icon_size}) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
     let pro_num_text = {};
-    for (var i = 0; i < game_data.proliferator_data.length; i++) {
+    for (let i = 0; i < game_data.proliferator_data.length; i++) {
         pro_num_text[game_data.proliferator_data[i]["增产点数"]] = game_data.proliferator_data[i]["名称"];
     }
     let pro_num_options = [];
-    for (var i = 0; i < game_data.proliferator_effect.length; i++) {
+    for (let i = 0; i < game_data.proliferator_effect.length; i++) {
         if (i == 0) {
             continue;
         } else if (global_state.proliferator_price[i] != -1)
@@ -77,7 +77,7 @@ export function ProNumSelect({choice, onChange}) {
     }
 
     return <HorizontalMultiButtonSelect choice={choice} options={pro_num_options} onChange={onChange}
-                                        optionType={"proNumSelect"}/>;
+                                        icon_size={icon_size} optionType={"proNumSelect"}/>;
 }
 
 export const pro_mode_class = {
@@ -104,7 +104,7 @@ export function ProModeSelect({recipe_id, choice, onChange}) {
                                         className={"raw-text-selection"}/>;
 }
 
-export function FactorySelect({recipe_id, choice, onChange, no_gap}) {
+export function FactorySelect({recipe_id, choice, onChange, no_gap, icon_size}) {
     const global_state = useContext(GlobalStateContext);
     let game_data = global_state.game_data;
 
@@ -115,7 +115,8 @@ export function FactorySelect({recipe_id, choice, onChange, no_gap}) {
         {value: idx, item_icon: factory_data["名称"]}
     ));
 
-    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange} no_gap={no_gap}/>;
+    return <HorizontalMultiButtonSelect choice={choice} options={options} onChange={onChange}
+                                        no_gap={no_gap} icon_size={icon_size}/>;
 }
 // 简易的对象相等性检查函数
 const isEqual = (obj1, obj2) => {
@@ -162,6 +163,11 @@ export function Result({needs_list, set_needs_list}) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const set_settings = useContext(SettingsSetterContext);
+    const compact_mode = useContext(CompactModeContext);
+    const is_compact = compact_mode !== "full";
+    const is_mobile = compact_mode === "mobile";
+    const mob_icon = is_mobile ? 20 : undefined;   // 总结面板/主图标
+    const mob_btn_icon = is_mobile ? 18 : undefined; // 表格内按钮图标
     // const [result_dict, set_result_dict] = useState(global_state.calculate());
     let game_data = global_state.game_data;
     let scheme_data = global_state.scheme_data;
@@ -278,7 +284,7 @@ export function Result({needs_list, set_needs_list}) {
     }
 
     let mineralize_doms = Object.keys(mineralize_list).map(item => (
-        <a key={item} className="m-1 cursor-pointer" onClick={() => unmineralize(item)}><ItemIcon item={item}/></a>
+        <a key={item} className="m-1 cursor-pointer" onClick={() => unmineralize(item)}><ItemIcon item={item} size={mob_icon}/></a>
     ));
 
     let result_table_rows = [];
@@ -292,46 +298,46 @@ export function Result({needs_list, set_needs_list}) {
         }
         let factory_number = get_factory_number(result_dict[i], i);
         let from_side_products = Object.entries(side_products[i]).map(([from, amount]) =>
-            <div key={from} className="text-nowrap">+{amount.toFixed(fixed_num)} (<ItemIcon item={from} size={26}/>)
+            <div key={from} className="text-nowrap">+{amount.toFixed(fixed_num)} (<ItemIcon item={from} size={is_mobile ? 18 : 26}/>)
             </div>
         );
         let factory_name = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"];
         let is_mineralized = i in mineralize_list;
         let row_class = is_mineralized ? "table-secondary" : "";
 
-        function change_recipe(value) {
+        const change_recipe = (value) => {
             set_scheme_data(old_scheme_data => {
                 let scheme_data = structuredClone(old_scheme_data);
                 scheme_data.item_recipe_choices[i] = value;
                 return scheme_data;
             })
-        }
+        };
 
-        function change_pro_num(value) {
+        const change_pro_num = (value) => {
             set_scheme_data(old_scheme_data => {
                 let scheme_data = structuredClone(old_scheme_data);
                 scheme_data.scheme_for_recipe[recipe_id]["增产点数"] = value;
                 return scheme_data;
             })
-        }
+        };
 
-        function change_pro_mode(value) {
+        const change_pro_mode = (value) => {
             set_scheme_data(old_scheme_data => {
                 let scheme_data = structuredClone(old_scheme_data);
                 scheme_data.scheme_for_recipe[recipe_id]["增产模式"] = value;
                 return scheme_data;
             })
-        }
+        };
 
-        function change_factory(value) {
+        const change_factory = (value) => {
             set_scheme_data(old_scheme_data => {
                 let scheme_data = structuredClone(old_scheme_data);
                 scheme_data.scheme_for_recipe[recipe_id]["建筑"] = value;
                 return scheme_data;
             })
-        }
+        };
 
-        function RatioAdjustInput({value}) {
+        const RatioAdjustInput = ({value}) => {
             let disp_value = value.toFixed(fixed_num);
             let base_value = +disp_value;
 
@@ -355,7 +361,7 @@ export function Result({needs_list, set_needs_list}) {
                     value={disp_value}
                     onChange={set_needs_in_row()}/>
             </span>;
-        }
+        };
 
         result_table_rows.push(<tr className={row_class} key={i}>
             {/* 操作 */}
@@ -373,8 +379,8 @@ export function Result({needs_list, set_needs_list}) {
             {/* 目标物品 */}
             <td>
                 <div className="d-flex align-items-center text-nowrap">
-                    <ItemIcon item={i} tooltip={false}/>
-                    <small className="ms-1">{i}</small>
+                    <ItemIcon item={i} tooltip={is_compact} size={mob_icon}/>
+                    <small className="ms-1 item-name-text">{i}</small>
                 </div>
             </td>
             {/* 分钟毛产出 */}
@@ -387,7 +393,7 @@ export function Result({needs_list, set_needs_list}) {
                 {is_mineralized ||
                     <>
                         <div className="d-inline-flex align-items-center gap-1">
-                            <ItemIcon item={factory_name} size={30}/>
+                            <ItemIcon item={factory_name} size={is_mobile ? 18 : 30}/>
                             <RatioAdjustInput value={factory_number}/>
                         </div>
                     </>
@@ -395,16 +401,19 @@ export function Result({needs_list, set_needs_list}) {
             </td>
             {/* 所选配方 */}
             <td><RecipeSelect item={i} onChange={change_recipe}
-                              choice={scheme_data.item_recipe_choices[i]}/></td>
+                              choice={scheme_data.item_recipe_choices[i]}
+                              compact={compact_mode}/></td>
             {/* 所选增产模式 */}
             <td><ProModeSelect recipe_id={recipe_id} onChange={change_pro_mode}
                                choice={scheme_data.scheme_for_recipe[recipe_id]["增产模式"]}/></td>
             {/* 所选增产剂 */}
             <td><ProNumSelect onChange={change_pro_num}
-                              choice={scheme_data.scheme_for_recipe[recipe_id]["增产点数"]}/></td>
+                              choice={scheme_data.scheme_for_recipe[recipe_id]["增产点数"]}
+                              icon_size={mob_btn_icon}/></td>
             {/* 所选工厂种类 */}
             <td><FactorySelect recipe_id={recipe_id} onChange={change_factory}
-                               choice={scheme_data.scheme_for_recipe[recipe_id]["建筑"]}/></td>
+                               choice={scheme_data.scheme_for_recipe[recipe_id]["建筑"]}
+                               icon_size={mob_btn_icon}/></td>
         </tr>);
     }
 
@@ -434,8 +443,8 @@ export function Result({needs_list, set_needs_list}) {
     let building_rows = Object.entries(building_list).map(([building, count]) => (
         <tr key={building}>
             <td className="d-flex align-items-center text-nowrap">
-                <span className="ms-auto me-1">{building}</span>
-                <ItemIcon item={building} tooltip={false}/>
+                <span className="ms-auto me-1 compact-hide-text">{building}</span>
+                <ItemIcon item={building} tooltip={false} size={mob_icon}/>
             </td>
             <td className="ps-2 text-nowrap">
               {'x '}
@@ -452,7 +461,7 @@ export function Result({needs_list, set_needs_list}) {
     }
 
     let surplus_doms = Object.entries(lp_surplus_list).map(([item, quant]) =>
-        (<div key={item} className="text-nowrap"><ItemIcon item={item}/> x{quant.toFixed(fixed_num)}
+        (<div key={item} className="text-nowrap"><ItemIcon item={item} size={mob_icon}/> x{quant.toFixed(fixed_num)}
             <button className="ms-2 btn btn-outline-primary ssmall text-nowrap mineralize-btn"
                     onClick={() => IncreaseCostWhenSurplus(item)}>
                 <div>避免</div>
@@ -498,10 +507,12 @@ export function Result({needs_list, set_needs_list}) {
             const newHistory = [currentValues, ...historyValues].slice(0, 2);
             setHistoryValues(newHistory);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [result_dict, energy_cost, miner_energy_cost, building_list]);
 
-    return <div className="my-3 d-flex gap-5">
-        {/* 结果表格 */}
+    return <div className="result-container">
+        {/* 左侧：结果表格独立滚动区域 */}
+        <div className="result-table-scroll">
         <table className="table table-sm align-middle w-auto result-table">
             <thead>
             <tr className="text-center text-nowrap">
@@ -520,26 +531,52 @@ export function Result({needs_list, set_needs_list}) {
             {result_table_rows}
             </tbody>
         </table>
-        {/* 结果右侧悬浮栏 */}
-        <div className="sticky-top mt-3 align-self-start d-flex flex-column gap-2">
+        </div>
+        {/* 右侧：总结面板独立滚动区域 */}
+        <div className="result-summary-scroll">
+        <div className="d-flex flex-column gap-2 summary-panel-content">
 
-            {mineralize_doms.length > 0 &&
-                <fieldset className="w-fit">
-                    <legend><small>原矿化列表</small></legend>
-                    <div className="d-flex flex-wrap align-items-center">
-                        {mineralize_doms}
-                        <button className="ms-2 btn btn-sm btn-outline-danger text-nowrap"
-                                onClick={clear_mineralize_list}>清空
-                        </button>
-                    </div>
-                </fieldset>
-            }
+            {/* 第一列：原矿化列表 + 多余产物（mobile 时还包含预估电力） */}
+            <div className="d-flex flex-column gap-2 summary-col-1">
+                {mineralize_doms.length > 0 &&
+                    <fieldset className="w-fit">
+                        <legend><small>原矿化列表</small></legend>
+                        <div className="d-flex flex-wrap align-items-center">
+                            {mineralize_doms}
+                            <button className="ms-2 btn btn-sm btn-outline-danger text-nowrap"
+                                    onClick={clear_mineralize_list}>清空
+                            </button>
+                        </div>
+                    </fieldset>
+                }
 
-            {surplus_doms.length > 0 &&
-                <fieldset className="w-fit">
-                    <legend><small>多余产物</small></legend>
-                    {surplus_doms}
-                </fieldset>}
+                {surplus_doms.length > 0 &&
+                    <fieldset className="w-fit">
+                        <legend><small>多余产物</small></legend>
+                        {surplus_doms}
+                    </fieldset>}
+
+                {/* 预估电力：仅 mobile 布局时显示在第一列 */}
+                {is_mobile && building_rows.length > 0 &&
+                    <span className="d-inline-flex gap-1 text-nowrap energy-cost-display">
+                        <span className="me-1">预估电力<span className="energy-cost-unit-inline"> (MW)</span></span>
+                        <span className="fast-tooltip" data-tooltip="不包含采集设备">
+                            <ValueWithDifference
+                                currentValue={energy_cost}
+                                previousValue={historyValues?.[1]?.energyCost}
+                                key="energy-cost"
+                            />
+                        </span><span className="energy-cost-separator">/</span>
+                        <span className="fast-tooltip" data-tooltip="包含采集设备">
+                            <ValueWithDifference
+                                currentValue={energy_cost + miner_energy_cost}
+                                previousValue={historyValues?.[1]?.totalEnergyCost}
+                                key="total-energy-cost"
+                            />
+                        </span>
+                        <span className="energy-cost-unit-trailing">MW</span>
+                    </span>}
+            </div>
 
             {/* 原矿输入总需求 */}
             {(() => {
@@ -552,8 +589,8 @@ export function Result({needs_list, set_needs_list}) {
                                 {rawMaterials.map(([item, amount]) => (
                                     <tr key={item}>
                                         <td className="d-flex align-items-center text-nowrap">
-                                            <ItemIcon item={item} tooltip={false} size={24}/>
-                                            <small className="ms-1">{item}</small>
+                                            <ItemIcon item={item} tooltip={false} size={is_mobile ? 18 : 24}/>
+                                            <small className="ms-1 compact-hide-text">{item}</small>
                                         </td>
                                         <td className="ps-2 text-nowrap">
                                             <small>
@@ -572,34 +609,36 @@ export function Result({needs_list, set_needs_list}) {
                 );
             })()}
 
-
+            {/* 建筑统计 */}
             {building_rows.length > 0 &&
-                <>
-                    <fieldset className="w-fit">
-                        <legend><small>建筑统计</small></legend>
-                        <table>
-                            <tbody>{building_rows}</tbody>
-                        </table>
-                    </fieldset>
-                    <span className="d-inline-flex gap-1 text-nowrap">
-                        <span className="me-1">预估电力</span>
-                        <span className="fast-tooltip" data-tooltip="不包含采集设备">
-                            <ValueWithDifference
-                                currentValue={energy_cost}
-                                previousValue={historyValues?.[1]?.energyCost}
-                                key="energy-cost"
-                            />
-                        </span>/
-                        <span className="fast-tooltip" data-tooltip="包含采集设备">
-                            <ValueWithDifference
-                                currentValue={energy_cost + miner_energy_cost}
-                                previousValue={historyValues?.[1]?.totalEnergyCost}
-                                key="total-energy-cost"
-                            />
-                        </span>
-                        MW
+                <fieldset className="w-fit">
+                    <legend><small>建筑统计</small></legend>
+                    <table>
+                        <tbody>{building_rows}</tbody>
+                    </table>
+                </fieldset>}
+
+            {/* 预估电力：非 mobile 布局时显示在最下方 */}
+            {!is_mobile && building_rows.length > 0 &&
+                <span className="d-inline-flex gap-1 text-nowrap energy-cost-display">
+                    <span className="me-1">预估电力<span className="energy-cost-unit-inline"> (MW)</span></span>
+                    <span className="fast-tooltip" data-tooltip="不包含采集设备">
+                        <ValueWithDifference
+                            currentValue={energy_cost}
+                            previousValue={historyValues?.[1]?.energyCost}
+                            key="energy-cost"
+                        />
+                    </span><span className="energy-cost-separator">/</span>
+                    <span className="fast-tooltip" data-tooltip="包含采集设备">
+                        <ValueWithDifference
+                            currentValue={energy_cost + miner_energy_cost}
+                            previousValue={historyValues?.[1]?.totalEnergyCost}
+                            key="total-energy-cost"
+                        />
                     </span>
-                </>}
+                    <span className="energy-cost-unit-trailing">MW</span>
+                </span>}
+        </div>
         </div>
     </div>;
 }

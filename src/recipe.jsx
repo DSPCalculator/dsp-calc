@@ -1,7 +1,7 @@
 import React from 'react';
 import {ItemIcon} from './icon';
 
-export function Recipe({recipe}) {
+export function Recipe({recipe, compact}) {
     function findNonZeroPosition(num) {
         const numStr = num.toString();
         const dotIndex = numStr.indexOf('.');//1
@@ -29,11 +29,38 @@ export function Recipe({recipe}) {
         </React.Fragment>;
     }
 
-    const input_doms = Object.entries(recipe["原料"]).map(item_to_doms);
+    const input_entries = Object.entries(recipe["原料"]);
+    const input_doms = input_entries.map(item_to_doms);
     const output_doms = Object.entries(recipe["产物"]).map(item_to_doms);
     //时间向上取整，因为工厂也是向上取整
     const time = Math.ceil(recipe["时间"] * 100) / 100;
 
+    // mobile 模式：极简显示，只有第一个原料图标 + 数量提示
+    if (compact === "mobile") {
+        if (input_entries.length === 0) {
+            return <small className="text-recipe-time">({time}s)</small>;
+        }
+        return <span className="d-inline-flex align-items-center gap-1">
+            <ItemIcon item={input_entries[0][0]} size={20}/>
+            {input_entries.length > 1 &&
+                <small className="text-muted ssmall">+{input_entries.length - 1}</small>}
+        </span>;
+    }
+
+    // narrow/compact 模式：只显示原料图标（无数量无箭头无产物），加上时间
+    if (compact === "narrow" || compact === "compact") {
+        if (input_entries.length === 0) {
+            return <small className="text-recipe-time">({time}s)</small>;
+        }
+        return <span className="d-inline-flex align-items-center flex-wrap gap-1">
+            {input_entries.map(([item]) =>
+                <ItemIcon key={item} item={item} size={24}/>
+            )}
+            <small className="text-recipe-time ssmall">({time}s)</small>
+        </span>;
+    }
+
+    // full 模式：完整显示
     return <span className="d-inline-flex">
         {input_doms.length > 0 && <>
             {input_doms}
@@ -54,8 +81,9 @@ export function Recipe({recipe}) {
     </span>;
 }
 
-export function HorizontalMultiButtonSelect({choice, options, onChange, no_gap, className}) {
+export function HorizontalMultiButtonSelect({choice, options, onChange, no_gap, className, icon_size}) {
     let gap_class = no_gap ? "" : "gap-1";
+    let resolved_icon_size = icon_size || 32;
     let option_doms = options.map(({value, label, item_icon, className}) => {
         let selected_class = choice == value ? "bg-selected" : "bg-unselected";
         // insert 1px white border if [no_gap == true]
@@ -64,8 +92,8 @@ export function HorizontalMultiButtonSelect({choice, options, onChange, no_gap, 
                     className={`py-1 px-1 text-nowrap d-flex align-items-center cursor-pointer small
                 ${selected_class} ${gap_class} ${className || ""}`}
                     onClick={() => onChange(value)}
-        >{item_icon && <ItemIcon item={item_icon} size={32}/>}
-            {label && <span className="mx-1">{label}</span>}
+        >{item_icon && <ItemIcon item={item_icon} size={resolved_icon_size}/>}
+            {label && (typeof label === 'string' ? <span className="mx-1">{label}</span> : label)}
         </div>;
     })
 

@@ -1,12 +1,12 @@
 import {Modal} from 'bootstrap';
 import {useContext, useEffect, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
-import {GameInfoContext} from './contexts.jsx';
+import {CompactModeContext, GameInfoContext} from './contexts.jsx';
 import {ItemIcon} from './icon';
 import fuzzysort from 'fuzzysort'
 import {pinyin} from 'pinyin-pro';
 
-function ItemSelectPanel({fuzz_result, onSelect, icon_grid}) {
+function ItemSelectPanel({fuzz_result, onSelect, icon_grid, icon_size}) {
     let fuzz_set = new Set(fuzz_result);
 
     const doms = icon_grid.icons.map(({col, row, item}) => {
@@ -15,7 +15,7 @@ function ItemSelectPanel({fuzz_result, onSelect, icon_grid}) {
                     className={`bg-body-secondary bg-opacity-10 cursor-pointer hover-bg-opacity-50 ${class_opacity}`}
                     style={{gridRow: row, gridColumn: col}}
                     onClick={() => onSelect(item)}>
-            <ItemIcon item={item} size={48}/>
+            <ItemIcon item={item} size={icon_size}/>
         </div>;
     })
 
@@ -29,12 +29,15 @@ function ItemSelectPanel({fuzz_result, onSelect, icon_grid}) {
     </div>;
 }
 
-export function ItemSelect({item, set_item, text, btn_class}) {
+export function ItemSelect({item, set_item, text, btn_class, icon}) {
     const ref = useRef();
     const ref_modal = useRef();
     const input_ref = useRef();
 
     const game_info = useContext(GameInfoContext);
+    const compact_mode = useContext(CompactModeContext);
+    const icon_size = compact_mode === "mobile" ? 28 : compact_mode === "narrow" ? 40 : 48;
+    const search_icon_size = compact_mode === "mobile" ? 24 : compact_mode === "narrow" ? 32 : 40;
     const all_target_items = game_info.all_target_items;
     const [fuzz_result, set_fuzz_result] = useState([]);
 
@@ -73,7 +76,7 @@ export function ItemSelect({item, set_item, text, btn_class}) {
             <div key={item} className={`text-white bg-secondary ${hl_class} rounded-3\
       p-1 d-flex align-items-center gap-2 cursor-pointer`}
                  onClick={() => on_select_item(item)}>
-                <ItemIcon item={item} tooltip={false}/>
+                <ItemIcon item={item} tooltip={false} size={search_icon_size}/>
                 <small>{item}</small>
             </div>
         </>
@@ -100,26 +103,30 @@ export function ItemSelect({item, set_item, text, btn_class}) {
     }
 
     return <>
-        <button className={`btn py-1 px-2 ${btn_class} d-inline-flex align-items-center`}
-                onClick={show}>
+        <button className={`btn py-1 px-2 ${btn_class} d-inline-flex align-items-center gap-1`}
+                onClick={show} title={text}>
             {item && <><ItemIcon item={item} size={24} tooltip={false}/>
                 <span className="ms-1"></span></>}
+            {icon}
             {(item) ?
                 <small className="text-nowrap">{item}</small>
-                : <span className="text-nowrap">{text}</span>}
+                : <span className="text-nowrap compact-hide-text">{text}</span>}
         </button>
 
         {createPortal(
             <div ref={ref} className="modal" tabIndex="-1">
                 <div className="modal-dialog mw-fit">
-                    <div className="modal-content bg-dark flex-row" style={{"--bs-bg-opacity": 0.85}}>
-                        <ItemSelectPanel fuzz_result={fuzz_result} icon_grid={game_info.icon_grid}
-                                         onSelect={on_select_item}/>
-                        <div className="p-3 d-flex flex-column gap-2">
-                            <input ref={input_ref} className="round rounded-3 py-1 px-2 my-1"
+                    <div className="modal-content bg-dark flex-column" style={{"--bs-bg-opacity": 0.85}}>
+                        <div className="px-3 pt-3 pb-1 d-flex flex-column gap-2">
+                            <input ref={input_ref} className="round rounded-3 py-1 px-2"
                                    placeholder="搜索（支持拼音）"
                                    onChange={e => do_search(e.target.value)} onKeyDown={on_search_keydown}/>
-                            {search_result_doms}
+                            {search_result_doms.length > 0 &&
+                                <div className="d-flex flex-column gap-1">{search_result_doms}</div>}
+                        </div>
+                        <div className="overflow-x-auto">
+                            <ItemSelectPanel fuzz_result={fuzz_result} icon_grid={game_info.icon_grid}
+                                             onSelect={on_select_item} icon_size={icon_size}/>
                         </div>
                     </div>
                 </div>

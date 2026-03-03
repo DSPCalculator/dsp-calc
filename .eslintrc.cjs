@@ -12,9 +12,15 @@ module.exports = {
     settings: {react: {version: '18.2'}},
     plugins: ['react-refresh'],
     rules: {
-        'react-refresh/only-export-components': [
-            'warn',
-            {allowConstantExport: true},
-        ],
+        'react-refresh/only-export-components': 'off',
+        'react/prop-types': 'off',
+        'no-constant-condition': ['error', {checkLoops: false}],
     },
+    overrides: [
+        {
+            // vite.config.js runs in Node.js, not the browser
+            files: ['vite.config.js'],
+            env: {node: true, browser: false},
+        },
+    ],
 }

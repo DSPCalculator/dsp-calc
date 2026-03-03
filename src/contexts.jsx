@@ -1,5 +1,5 @@
 //import structuredClone from '@ungap/structured-clone';
-import {createContext, useState} from 'react';
+import {createContext, useEffect, useState} from 'react';
 import {GameInfo, GlobalState} from './global_state';
 import {init_scheme_data} from './scheme_data';
 import {default_game_data} from "./GameData.jsx";
@@ -48,12 +48,40 @@ const DEFAULT_SETTINGS = {
 };
 export const DefaultSettingsContext = createContext(DEFAULT_SETTINGS);
 
+// "full" >= 1400px | "compact" 1024-1399px | "narrow" 768-1023px | "mobile" < 768px
+function get_compact_mode(width) {
+    if (width >= 1400) return "full";
+    if (width >= 1024) return "compact";
+    if (width >= 768) return "narrow";
+    return "mobile";
+}
+
+export const CompactModeContext = createContext("full");
+
 export function ContextProvider({children}) {
     const [game_info, set_game_info] = useState(new GameInfo(default_game_data));
-
     const [scheme_data, set_scheme_data] = useState(init_scheme_data(default_game_data));
-
     const [settings, set_settings] = useSetState(DEFAULT_SETTINGS);
+    const [compact_mode, set_compact_mode] = useState(() => get_compact_mode(window.innerWidth));
+
+    useEffect(() => {
+        const mql_full = window.matchMedia("(min-width: 1400px)");
+        const mql_compact = window.matchMedia("(min-width: 1024px)");
+        const mql_narrow = window.matchMedia("(min-width: 768px)");
+
+        function on_resize() {
+            set_compact_mode(get_compact_mode(window.innerWidth));
+        }
+
+        mql_full.addEventListener("change", on_resize);
+        mql_compact.addEventListener("change", on_resize);
+        mql_narrow.addEventListener("change", on_resize);
+        return () => {
+            mql_full.removeEventListener("change", on_resize);
+            mql_compact.removeEventListener("change", on_resize);
+            mql_narrow.removeEventListener("change", on_resize);
+        };
+    }, []);
 
     console.log("[+] new GlobalState");
     let global_state = new GlobalState(game_info, scheme_data, settings);
@@ -62,17 +90,19 @@ export function ContextProvider({children}) {
         set_game_info(new GameInfo(game_data));
     }
 
-    return <GameInfoContext.Provider value={game_info}>
-        <GlobalStateContext.Provider value={global_state}>
-            <GameInfoSetterContext.Provider value={set_game_data}>
-                <SchemeDataSetterContext.Provider value={set_scheme_data}>
-                    <SettingsSetterContext.Provider value={set_settings}>
-                        <SettingsContext.Provider value={settings}>
-                            {children}
-                        </SettingsContext.Provider>
-                    </SettingsSetterContext.Provider>
-                </SchemeDataSetterContext.Provider>
-            </GameInfoSetterContext.Provider>
-        </GlobalStateContext.Provider>
-    </GameInfoContext.Provider>
+    return <CompactModeContext.Provider value={compact_mode}>
+        <GameInfoContext.Provider value={game_info}>
+            <GlobalStateContext.Provider value={global_state}>
+                <GameInfoSetterContext.Provider value={set_game_data}>
+                    <SchemeDataSetterContext.Provider value={set_scheme_data}>
+                        <SettingsSetterContext.Provider value={set_settings}>
+                            <SettingsContext.Provider value={settings}>
+                                {children}
+                            </SettingsContext.Provider>
+                        </SettingsSetterContext.Provider>
+                    </SchemeDataSetterContext.Provider>
+                </GameInfoSetterContext.Provider>
+            </GlobalStateContext.Provider>
+        </GameInfoContext.Provider>
+    </CompactModeContext.Provider>
 }

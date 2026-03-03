@@ -61,7 +61,7 @@ function get_icon_from_one_mod(icon, size, mod) {
     //console.log("mod", mod);
     //console.log("icon", icon);
     try {
-        const {x, y, width, height, total_width, total_height} = image_indices[mod][icon];
+        const {x, y, height, total_width, total_height} = image_indices[mod][icon];
         //console.log("find " + icon + " from " + mod + " success.");
         const scale = size / height;
 

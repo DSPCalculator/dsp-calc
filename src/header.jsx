@@ -1,4 +1,3 @@
-import React from 'react';
 import {Nav, Navbar, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import {FaInfoCircle, FaQq, FaReact} from 'react-icons/fa';
 

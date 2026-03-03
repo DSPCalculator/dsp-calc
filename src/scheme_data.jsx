@@ -1,6 +1,7 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext, useEffect, useState} from 'react';
 import {GameInfoContext, GlobalStateContext, SchemeDataSetterContext} from './contexts.jsx';
+import {Save2, Folder2Open, Trash} from 'react-bootstrap-icons';
 
 const DEFAULT_SCHEME_DATA = {
     "item_recipe_choices": {"氢": 1},
@@ -59,7 +60,7 @@ export function init_scheme_data(game_data) {
             "溢出时处理成本": 0
         };
     }
-    for (var item in item_data) {
+    for (let item in item_data) {
         scheme_data.item_recipe_choices[item] = 1;
     }
     for (var i = 0; i < game_data.recipe_data.length; i++) {
@@ -84,13 +85,13 @@ export function SchemeStorage() {
         let all_scheme_init = all_scheme_data[game_name] || {};
         console.log("Loading storage", game_name, Object.keys(all_scheme_init));
         set_all_scheme(all_scheme_init);
-    }, [game_info]);
+    }, [game_info, game_name]);
 
     useEffect(() => {
         let all_scheme_saved = JSON.parse(localStorage.getItem("scheme_data")) || {};
         all_scheme_saved[game_name] = all_scheme;
         localStorage.setItem("scheme_data", JSON.stringify(all_scheme_saved));
-    }, [all_scheme])
+    }, [all_scheme, game_name])
 
     //删除当前保存的策略
     function delete_(name) {
@@ -140,16 +141,23 @@ export function SchemeStorage() {
         </li>));
 
     return <div className="d-flex gap-2 align-items-center">
-
-        <div className="text-nowrap">生产策略</div>
+        <div className="text-nowrap storage-label">生产策略</div>
         <div className="input-group input-group-sm">
-            <button className="btn btn-outline-secondary" type="button" onClick={save}>保存</button>
-            <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">加载
+            <button className="btn btn-outline-secondary d-inline-flex align-items-center gap-1"
+                    type="button" onClick={save} title="保存生产策略">
+                <Save2 className="compact-show"/>
+                <span className="compact-hide-text">保存</span>
+            </button>
+            <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false" title="加载生产策略">
+                <Folder2Open className="compact-show"/>
+                <span className="compact-hide-text">加载</span>
             </button>
             <ul className="dropdown-menu">{dd_load_list}</ul>
-            <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">删除
+            <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false" title="删除生产策略">
+                <Trash className="compact-show"/>
+                <span className="compact-hide-text">删除</span>
             </button>
             <ul className="dropdown-menu">{dd_delete_list}</ul>
         </div>
