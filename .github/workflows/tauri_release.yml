@@ -1,0 +1,55 @@
+name: Build Tauri desktop app on tag
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Rust stable toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      # Cache Rust build artifacts to speed up subsequent runs
+      - name: Cache Rust build artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            src-tauri/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('src-tauri/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Build Tauri app (NSIS + MSI installers)
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: "dsp-calc ${{ github.ref_name }}"
+          releaseBody: |
+            ## 戴森球计划量化计算器 — Windows 桌面版
+
+            ### 下载说明
+            - **`*-setup.exe`** — NSIS 安装程序（推荐）
+            - **`*.msi`** — MSI 安装程序
+
+            Windows 10 1803+ 和 Windows 11 已内置 WebView2，无需额外安装。
+            更早版本的 Windows 会在安装时自动下载 WebView2 运行时。
+          releaseDraft: true
+          prerelease: false
+          args: --target x86_64-pc-windows-msvc --bundles nsis,msi

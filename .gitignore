@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .vite/
+
+# Tauri — Rust build artifacts (large, fully reproducible)
+src-tauri/target/

@@ -1,14 +1,19 @@
 import react from '@vitejs/plugin-react';
 import {lstatSync, readdirSync} from 'fs';
 import fsp from 'fs/promises';
+import {createRequire} from 'module';
 import glob from 'glob';
 import imagemin from 'imagemin';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminWebp from 'imagemin-webp';
 import path from 'path';
+import {fileURLToPath} from 'url';
 import Spritesmith from 'spritesmith';
 import {defineConfig} from 'vite';
 import legacy from '@vitejs/plugin-legacy';
+
+const require = createRequire(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** This generates one sprite image per game name when `mode == "development"` (`npm run dev`) */
 function get_sprite_plugins(mode) {
@@ -72,6 +77,10 @@ function get_sprite_plugins(mode) {
     });
 }
 
+// When building inside Tauri, TAURI_ENV_PLATFORM is set by the Tauri CLI.
+// WebView2 (Chromium-based) does not need the IE11 legacy polyfill bundle.
+const is_tauri_build = !!process.env.TAURI_ENV_PLATFORM;
+
 // https://vitejs.dev/config/
 export default defineConfig(({mode}) => ({
     base: "./",
@@ -86,9 +95,9 @@ export default defineConfig(({mode}) => ({
     plugins: [
         react(),
         ...get_sprite_plugins(mode),
-        legacy({
+        ...(!is_tauri_build ? [legacy({
             targets: ['ie>=11'],
             additionalLegacyPolyfills:['regenerator-runtime/runtime'],
-        })
+        })] : []),
     ]
 }))
