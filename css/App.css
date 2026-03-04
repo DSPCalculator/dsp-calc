@@ -193,6 +193,7 @@ body > .p-3 {
 .app-result-area {
     flex: 1;
     min-height: 0;
+    overflow-x: auto;
 }
 
 /* 结果容器：横向双栏，各自独立滚动 */
@@ -205,7 +206,8 @@ body > .p-3 {
 
 /* 左侧结果表格滚动区域 */
 .result-table-scroll {
-    flex: 1;
+    flex: 0 0 auto;
+    width: fit-content;
     min-width: 0;
     overflow: auto;
 }
@@ -361,6 +363,7 @@ body > .p-3 {
     /* 上半：结果表格 */
     .result-table-scroll {
         flex: 1;
+        width: 100%;
         min-height: 0;
         overflow: auto;
         border-bottom: 1px solid var(--bs-border-color);
