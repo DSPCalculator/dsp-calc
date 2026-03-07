@@ -1,4 +1,5 @@
 import 'javascript-lp-solver/src/solver';
+import structuredClone from '@ungap/structured-clone';
 /* global solver */
 
 function uniq(arr) {
@@ -92,22 +93,23 @@ export class GlobalState {
         console.log("mods", game_info.game_data.mods);
         this.game_data = game_info.game_data;
         this.item_data = game_info.item_data;
-        this.scheme_data = scheme_data;
+        // 使用 scheme_data 的副本，避免直接 mutate React state 对象
+        this.scheme_data = structuredClone(scheme_data);
         this.settings = settings;
 
         //获取最后一个增产剂对应的点数值
         //懒得比较获取最大值了，直接用最后一个增产剂作为最大值
         let maxProliferatorPoint = game_info.game_data.proliferator_data[game_info.game_data.proliferator_data.length - 1].增产点数;
-        for (let i = 0; i < scheme_data.scheme_for_recipe.length; i++) {
+        for (let i = 0; i < this.scheme_data.scheme_for_recipe.length; i++) {
             //选择增产塔对应配方时，如果未选择增产策略，强制选择增产策略为增产分馏
             if (game_info.game_data.recipe_data[i].增产 == 8//8也就是bit4，增产分馏策略的位置
-                && scheme_data.scheme_for_recipe[i].增产模式 == 0) {
-                scheme_data.scheme_for_recipe[i].增产模式 = 4;//模式就是对应的bit，也就是4
+                && this.scheme_data.scheme_for_recipe[i].增产模式 == 0) {
+                this.scheme_data.scheme_for_recipe[i].增产模式 = 4;//模式就是对应的bit，也就是4
             }
             //选择增产策略但是未选择增产剂时，强制选择最后一个增产剂；但是选择增产剂时，不会强制选择增产策略
-            if (scheme_data.scheme_for_recipe[i].增产模式 > 0
-                && scheme_data.scheme_for_recipe[i].增产点数 == 0) {
-                scheme_data.scheme_for_recipe[i].增产点数 = maxProliferatorPoint;
+            if (this.scheme_data.scheme_for_recipe[i].增产模式 > 0
+                && this.scheme_data.scheme_for_recipe[i].增产点数 == 0) {
+                this.scheme_data.scheme_for_recipe[i].增产点数 = maxProliferatorPoint;
             }
         }
 
