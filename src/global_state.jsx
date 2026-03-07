@@ -1,4 +1,4 @@
-import 'javascript-lp-solver/src/solver';
+import solver from "javascript-lp-solver";
 /* global solver */
 
 function uniq(arr) {

@@ -92,6 +92,52 @@ export default defineConfig(({mode}) => ({
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
         }
     },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                silenceDeprecations: [
+                    'import',
+                    'global-builtin',
+                    'color-functions',
+                    'if-function',
+                ],
+                quietDeps: true,
+            },
+        },
+    },
+    build: {
+        chunkSizeWarningLimit: 1800,
+        rollupOptions: {
+            output: {
+                manualChunks(id) {
+                    if (id.includes('node_modules')) {
+                        if (id.includes('react-dom') || id.includes('/react/') || id.includes('/scheduler/')) {
+                            return 'vendor-react';
+                        }
+                        if (id.includes('/antd/') || id.includes('/@ant-design/') || id.includes('/rc-')) {
+                            return 'vendor-antd';
+                        }
+                        if (id.includes('/bootstrap/') || id.includes('/react-bootstrap/') || id.includes('/@popperjs/')) {
+                            return 'vendor-bootstrap';
+                        }
+                        if (id.includes('/pinyin-pro/')) {
+                            return 'vendor-pinyin';
+                        }
+                        if (id.includes('/react-icons/') || id.includes('/react-bootstrap-icons/')) {
+                            return 'vendor-icons';
+                        }
+                        if (id.includes('/javascript-lp-solver/')) {
+                            return 'vendor-solver';
+                        }
+                    }
+                    // 将游戏数据 JSON 文件分割到单独的 chunk
+                    if (id.includes('/data/') && id.endsWith('.json')) {
+                        return 'game-data';
+                    }
+                },
+            },
+        },
+    },
     plugins: [
         react(),
         ...get_sprite_plugins(mode),

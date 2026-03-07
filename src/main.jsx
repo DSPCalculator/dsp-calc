@@ -6,7 +6,6 @@ import {IconStyles} from './icon.jsx';
 import {ThemeProvider} from './ThemeContext.jsx';
 
 import 'bootstrap/dist/js/bootstrap.min.js';
-import 'bootstrap/js/dist/dropdown.js';
 
 import '../css/styles.scss';
 // app-specific CSS
