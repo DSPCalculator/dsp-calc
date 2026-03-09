@@ -18,11 +18,17 @@ function FactorySelect({factory, list, icon_size}) {
 
     function set_factory(building) {
         set_cur(building);
+        // 取本设施类型选中建筑的名称，用于跨设施类型匹配
+        const building_name = list[building]["名称"];
         set_scheme_data(old_scheme_data => {
             let scheme_data = structuredClone(old_scheme_data);
             for (var i = 0; i < game_data.recipe_data.length; i++) {
-                if (game_data.recipe_data[i]["设施"] == factory) {
-                    scheme_data.scheme_for_recipe[i]["建筑"] = building;
+                const facility = game_data.recipe_data[i]["设施"];
+                const facility_list = game_data.factory_data[facility];
+                // 找同名建筑在该设施类型中的索引
+                const matched_idx = facility_list.findIndex(b => b["名称"] === building_name);
+                if (matched_idx !== -1) {
+                    scheme_data.scheme_for_recipe[i]["建筑"] = matched_idx;
                 }
             }
             return scheme_data;
