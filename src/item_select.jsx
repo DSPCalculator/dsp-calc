@@ -1,5 +1,5 @@
 import {Modal} from 'bootstrap';
-import {useContext, useEffect, useRef, useState} from 'react';
+import {useContext, useEffect, useMemo, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
 import {CompactModeContext, GameInfoContext} from './contexts.jsx';
 import {ItemIcon} from './icon';
@@ -41,11 +41,11 @@ export function ItemSelect({item, set_item, text, btn_class, icon}) {
     const all_target_items = game_info.all_target_items;
     const [fuzz_result, set_fuzz_result] = useState([]);
 
-    const search_targets = all_target_items.map(item => ({
+    const search_targets = useMemo(() => all_target_items.map(item => ({
         item: item,
         py_first: pinyin(item, {pattern: 'first', type: 'array'}).join(""),
         py_full: pinyin(item, {toneType: 'none'})
-    }));
+    })), [all_target_items]);
 
     const RESULT_LIMIT = 10;
 
@@ -71,19 +71,17 @@ export function ItemSelect({item, set_item, text, btn_class, icon}) {
     }
 
     let search_result_doms = fuzz_result.length > RESULT_LIMIT ? [] : fuzz_result.map((item, i) => {
-        let hl_class = i == 0 ? "bg-opacity-75" : "bg-opacity-25";
-        return <>
-            <div key={item} className={`text-white bg-secondary ${hl_class} rounded-3\
+        let hl_class = i === 0 ? "bg-opacity-75" : "bg-opacity-25";
+        return <div key={item} className={`text-white bg-secondary ${hl_class} rounded-3\
       p-1 d-flex align-items-center gap-2 cursor-pointer`}
                  onClick={() => on_select_item(item)}>
                 <ItemIcon item={item} tooltip={false} size={search_icon_size}/>
                 <small>{item}</small>
-            </div>
-        </>
+            </div>;
     });
 
     function on_search_keydown(e) {
-        if (e.keyCode == 13 && fuzz_result.length > 0 && fuzz_result.length <= RESULT_LIMIT) {
+        if (e.key === 'Enter' && fuzz_result.length > 0 && fuzz_result.length <= RESULT_LIMIT) {
             on_select_item(fuzz_result[0]);
         }
     }

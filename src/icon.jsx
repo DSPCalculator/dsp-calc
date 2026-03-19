@@ -16,7 +16,6 @@ const image_indices = Object.fromEntries(
 
 export function IconStyles() {
     function get_icon_style(mod_name) {
-        //console.log("mod_name", mod_name)
         return `
 .icon-${mod_name} {
     vertical-align: bottom;
@@ -33,7 +32,6 @@ export function IconStyles() {
 }
 
 function Icon({icon, size, mods}) {
-    //console.log("Icon(" + icon + ", " + size + ", " + mods + ")");
     if (!mods.includes("Vanilla")) {
         mods = ["Vanilla", ...mods];
     }
@@ -56,13 +54,8 @@ function Icon({icon, size, mods}) {
 }
 
 function get_icon_from_one_mod(icon, size, mod) {
-    //console.log("Icon1(" + icon + ", " + size + ", " + mod + ")");
-    //console.log("image_indices", image_indices);
-    //console.log("mod", mod);
-    //console.log("icon", icon);
     try {
         const {x, y, height, total_width, total_height} = image_indices[mod][icon];
-        //console.log("find " + icon + " from " + mod + " success.");
         const scale = size / height;
 
         const tw = total_width * scale, th = total_height * scale;
@@ -78,7 +71,6 @@ function get_icon_from_one_mod(icon, size, mod) {
             />
         </>;
     } catch {
-        //console.log("find " + icon + " from " + mod + " fail.");
         return null;
     }
 }

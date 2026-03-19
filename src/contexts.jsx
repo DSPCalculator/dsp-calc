@@ -1,5 +1,4 @@
-//import structuredClone from '@ungap/structured-clone';
-import {createContext, useEffect, useState} from 'react';
+import {createContext, useEffect, useMemo, useState} from 'react';
 import {GameInfo, GlobalState} from './global_state';
 import {init_scheme_data} from './scheme_data';
 import {default_game_data} from "./GameData.jsx";
@@ -83,8 +82,10 @@ export function ContextProvider({children}) {
         };
     }, []);
 
-    console.log("[+] new GlobalState");
-    let global_state = new GlobalState(game_info, scheme_data, settings);
+    const global_state = useMemo(
+        () => new GlobalState(game_info, scheme_data, settings),
+        [game_info, scheme_data, settings]
+    );
 
     function set_game_data(game_data) {
         set_game_info(new GameInfo(game_data));

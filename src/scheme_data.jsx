@@ -76,21 +76,35 @@ export function SchemeStorage() {
     let scheme_data = global_state.scheme_data;
     let game_name = global_state.game_data.game_name;
 
-    const all_saved = JSON.parse(localStorage.getItem("scheme_data")) || {};
-    const [all_scheme, set_all_scheme] = useState(all_saved[game_name] || {});
-    // TODO implement 实时保存
+    const SCHEME_STORAGE_KEY = "scheme_data";
+
+    function safe_load_storage() {
+        try {
+            return JSON.parse(localStorage.getItem(SCHEME_STORAGE_KEY)) || {};
+        } catch {
+            return {};
+        }
+    }
+
+    const [all_scheme, set_all_scheme] = useState(() => {
+        const all_saved = safe_load_storage();
+        return all_saved[game_name] || {};
+    });
 
     useEffect(() => {
-        let all_scheme_data = JSON.parse(localStorage.getItem("scheme_data")) || {};
+        let all_scheme_data = safe_load_storage();
         let all_scheme_init = all_scheme_data[game_name] || {};
-        console.log("Loading storage", game_name, Object.keys(all_scheme_init));
         set_all_scheme(all_scheme_init);
     }, [game_info, game_name]);
 
     useEffect(() => {
-        let all_scheme_saved = JSON.parse(localStorage.getItem("scheme_data")) || {};
-        all_scheme_saved[game_name] = all_scheme;
-        localStorage.setItem("scheme_data", JSON.stringify(all_scheme_saved));
+        try {
+            let all_scheme_saved = safe_load_storage();
+            all_scheme_saved[game_name] = all_scheme;
+            localStorage.setItem(SCHEME_STORAGE_KEY, JSON.stringify(all_scheme_saved));
+        } catch {
+            console.warn("Failed to save scheme data to localStorage");
+        }
     }, [all_scheme, game_name])
 
     //删除当前保存的策略

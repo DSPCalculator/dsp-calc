@@ -31,7 +31,7 @@ function GameVersion({needs_list, set_needs_list}) {
     const set_settings = useContext(SettingsSetterContext);
 
     async function mods_change(modList) {
-        if (JSON.stringify(needs_list) !== '{}'
+        if (Object.keys(needs_list).length > 0
             && !confirm(`检测到计算器内有产线，确认继续切换mod吗？切换后将清空产线！`)) {
             return;// 用户取消
         }
@@ -75,33 +75,34 @@ function GameVersion({needs_list, set_needs_list}) {
             }
         })
         //避免递归
-        if (JSON.stringify(modList2) === JSON.stringify(mods)) {
-            console.log("有递归，取消执行，当前list", modList2)
+        if (modList2.length === mods.length && modList2.every((mod, i) => mod === mods[i])) {
             return;
         }
-        console.log("无递归，继续执行，原list", mods)
-        console.log("无递归，继续执行，新list", modList2)
         set_mods(modList2);
         let game_data = modList.length === 0 ? default_game_data : get_game_data(modList);
         set_game_data(game_data);
         set_scheme_data(init_scheme_data(game_data));
         //根据创世是否启用，设定采矿速率初始值
         if (!game_data.GenesisBookEnable) {
-            set_settings({"mining_speed_oil": 3.0});
-            set_settings({"mining_speed_hydrogen": 1.0});
-            set_settings({"mining_speed_deuterium": 0.2});
-            set_settings({"mining_speed_gas_hydrate": 0.5});
+            set_settings({
+                mining_speed_oil: 3.0,
+                mining_speed_hydrogen: 1.0,
+                mining_speed_deuterium: 0.2,
+                mining_speed_gas_hydrate: 0.5,
+            });
         } else {
-            set_settings({"mining_speed_oil": 3.0});
-            set_settings({"mining_speed_hydrogen": 1.0});
-            set_settings({"mining_speed_deuterium": 0.05});
-            set_settings({"mining_speed_gas_hydrate": 0.8});
-            set_settings({"mining_speed_helium": 0.02});
-            set_settings({"mining_speed_ammonia": 0.3});
-            set_settings({"mining_speed_nitrogen": 1.2});
-            set_settings({"mining_speed_oxygen": 0.6});
-            set_settings({"mining_speed_carbon_dioxide": 0.4});
-            set_settings({"mining_speed_sulfur_dioxide": 0.6});
+            set_settings({
+                mining_speed_oil: 3.0,
+                mining_speed_hydrogen: 1.0,
+                mining_speed_deuterium: 0.05,
+                mining_speed_gas_hydrate: 0.8,
+                mining_speed_helium: 0.02,
+                mining_speed_ammonia: 0.3,
+                mining_speed_nitrogen: 1.2,
+                mining_speed_oxygen: 0.6,
+                mining_speed_carbon_dioxide: 0.4,
+                mining_speed_sulfur_dioxide: 0.6,
+            });
         }
     }
 

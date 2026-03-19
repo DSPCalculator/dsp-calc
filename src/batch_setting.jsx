@@ -4,8 +4,7 @@ import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext} from '.
 import {HorizontalMultiButtonSelect} from './recipe.jsx';
 import {pro_mode_class} from './result.jsx';
 
-// TODO refactor to some other modules
-function FactorySelect({factory, list, icon_size}) {
+function FactorySelect({list, icon_size}) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const [cur, set_cur] = useState(0);
@@ -13,7 +12,7 @@ function FactorySelect({factory, list, icon_size}) {
 
     const options = list.map((data, idx) => ({
         value: idx, item_icon: data["名称"],
-        label: cur == idx ? <span className="mx-1 compact-hide-text">{data["名称"]}</span> : null
+        label: cur === idx ? <span className="mx-1 compact-hide-text">{data["名称"]}</span> : null
     }));
 
     function set_factory(building) {
@@ -61,7 +60,7 @@ export function BatchSetting() {
     // TODO rename to [factory_kind]
     Object.keys(game_data.factory_data).forEach(factory => {
         let list = game_data.factory_data[factory];
-        let used_num = game_data.recipe_data.filter(data => data["设施"] == factory).length;
+        let used_num = game_data.recipe_data.filter(data => data["设施"] === Number(factory)).length;
         //只有可选工厂类型大于等于2，并且这种工厂类型至少被3个配方使用时，才允许批量预设
         if (list.length >= 2 && used_num >= 3) {
             factory_doms.push(<FactorySelect key={factory} factory={factory} list={list} icon_size={mob_icon}/>);
@@ -74,7 +73,7 @@ export function BatchSetting() {
             let item = pro_num_item[idx];
             if (item) {
                 proliferate_options.push({
-                    value: idx, label: idx == 0 ? "无" : null,
+                    value: idx, label: idx === 0 ? "无" : null,
                     item_icon: idx != 0 ? item : null
                 })
             } else {

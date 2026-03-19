@@ -42,9 +42,9 @@ function NplRow({row, set_row, remove_row}) {
         output_num *= building_scale;
         output_num *= (settings.is_time_unit_minute ? 60 : 1) / recipe["时间"];
         let proliferator_data = game_data.proliferator_effect[Number(pro_num)];
-        if (pro_mode == 2) {
+        if (pro_mode === 2) {
             output_num *= proliferator_data["增产效果"];
-        } else if (pro_mode == 1 || pro_mode == 3) {
+        } else if (pro_mode === 1 || pro_mode === 3) {
             output_num *= proliferator_data["加速效果"];
         }
         
@@ -54,7 +54,6 @@ function NplRow({row, set_row, remove_row}) {
         return output_num;
     }
 
-    console.log("NplRow", row);
     let item = row["目标物品"];
     let recipe_id = game_info.item_data[item][row["配方id"]];
     let recipe = game_data.recipe_data[recipe_id];
@@ -103,7 +102,6 @@ export function NplRows() {
 
     function set_npl(new_npl) {
         set_settings({"natural_production_line": new_npl});
-        console.log("set_npl", new_npl);
     }
 
     let rows = npl.map((npl_row, idx_row) => {
@@ -115,7 +113,7 @@ export function NplRows() {
 
         function remove_row() {
             let new_npl = structuredClone(npl);
-            delete new_npl[idx_row];
+            new_npl.splice(idx_row, 1);
             set_npl(new_npl);
         }
 

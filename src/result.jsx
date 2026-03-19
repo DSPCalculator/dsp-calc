@@ -39,7 +39,7 @@ export function RecipeSelect({item, choice, onChange, compact}) {
     let game_data = global_state.game_data;
     let item_data = global_state.item_data;
 
-    if (item_data[item].length == 2) {
+    if (item_data[item].length === 2) {
         let recipe_index = item_data[item][1];
         let recipe = game_data.recipe_data[recipe_index];
         return <div className="my-1 px-2 py-1"><Recipe recipe={recipe} compact={compact}/></div>
@@ -48,7 +48,7 @@ export function RecipeSelect({item, choice, onChange, compact}) {
         for (let i = 1; i < item_data[item].length; i++) {
             let recipe_index = item_data[item][i];
             let recipe = game_data.recipe_data[recipe_index];
-            let bg_class = (i == choice) ? "selected" : "";
+            let bg_class = (i === choice) ? "selected" : "";
             doms.push(<a key={i}
                          className={`recipe-item px-2 py-1 d-block text-decoration-none text-reset cursor-pointer ${bg_class}`}
                          onClick={() => onChange(i)}>
@@ -69,9 +69,9 @@ export function ProNumSelect({choice, onChange, icon_size}) {
     }
     let pro_num_options = [];
     for (let i = 0; i < game_data.proliferator_effect.length; i++) {
-        if (i == 0) {
+        if (i === 0) {
             continue;
-        } else if (global_state.proliferator_price[i] != -1)
+        } else if (global_state.proliferator_price[i] !== -1)
             pro_num_options.push({value: i, item_icon: pro_num_text[i]});
 
     }
@@ -179,13 +179,8 @@ export function Result({needs_list, set_needs_list}) {
     // TODO refactor to a simple list
     let mineralize_list = settings.mineralize_list;
     let natural_production_line = settings.natural_production_line;
-    console.log("result natural_production_line", natural_production_line);
-
     const [result_dict, lp_surplus_list] = useMemo(() => {
-        console.log("CALCULATING");
-        const res = global_state.calculate(needs_list);
-        console.log("lp_surplus_list", res[1]);
-        return res;
+        return global_state.calculate(needs_list);
     }, [global_state, needs_list]);
 
     // 用于存储历史值的数组，最多保留两个版本
@@ -226,7 +221,7 @@ export function Result({needs_list, set_needs_list}) {
                     }
                 }
             }
-            if (scheme_recipe["增产模式"] != 0 && scheme_recipe["增产点数"] != 0) {
+            if (scheme_recipe["增产模式"] !== 0 && scheme_recipe["增产点数"] !== 0) {
                 e_cost *= game_data.proliferator_effect[scheme_recipe["增产点数"]]["耗电倍率"];
             }
             if (factory_name === "采矿机" || factory_name === "大型采矿机"
@@ -249,37 +244,30 @@ export function Result({needs_list, set_needs_list}) {
     }
 
     // Dict<item, Dict<from, quantity>>
-    let side_products = {};
-    Object.entries(result_dict).forEach(([item, item_count]) => {
-        Object.entries(item_graph[item]["副产物"]).forEach(([side_product, amount]) => {
-            side_products[side_product] = side_products[side_product] || {};
-            side_products[side_product][item] = item_count * amount;
+    const side_products = useMemo(() => {
+        let sp = {};
+        Object.entries(result_dict).forEach(([item, item_count]) => {
+            Object.entries(item_graph[item]["副产物"]).forEach(([side_product, amount]) => {
+                sp[side_product] = sp[side_product] || {};
+                sp[side_product][item] = item_count * amount;
+            });
         });
-    })
+        return sp;
+    }, [result_dict, item_graph]);
 
     function mineralize(item) {
         let new_mineralize_list = structuredClone(mineralize_list);
-        new_mineralize_list[item] = structuredClone(item_graph[item]);
-        // editing item_graph!
-        item_graph[item]["原料"] = {};
-
-        console.log("mineralize_list", new_mineralize_list);
+        new_mineralize_list[item] = true;
         set_settings({"mineralize_list": new_mineralize_list});
     }
 
     function unmineralize(item) {
         let new_mineralize_list = structuredClone(mineralize_list);
-        // editing item_graph!
-        item_graph[item] = structuredClone(mineralize_list[item]);
         delete new_mineralize_list[item];
         set_settings({"mineralize_list": new_mineralize_list});
     }
 
     function clear_mineralize_list() {
-        for (let item in mineralize_list) {
-            // editing item_graph!
-            item_graph[item] = structuredClone(mineralize_list[item]);
-        }
         set_settings({"mineralize_list": {}});
     }
 
@@ -344,7 +332,7 @@ export function Result({needs_list, set_needs_list}) {
             function set_needs_in_row() {
                 return function (e_or_value) {
                     // Either an event [e] or a raw [value] is supported
-                    if (base_value != 0) {
+                    if (base_value !== 0) {
                         let new_value = e_or_value.target ? e_or_value.target.value : e_or_value;
                         let new_needs_list = {};
                         for (let i in needs_list) {
@@ -428,7 +416,7 @@ export function Result({needs_list, set_needs_list}) {
         }
         if (factory_name !== "轨道采集器") {
             let e_cost = natural_production_line[NPId]["建筑数量"] * factory_info["耗能"];
-            if (natural_production_line[NPId]["增产点数"] != 0 && natural_production_line[NPId]["增产模式"] != 0) {
+            if (natural_production_line[NPId]["增产点数"] !== 0 && natural_production_line[NPId]["增产模式"] !== 0) {
                 e_cost *= game_data.proliferator_effect[natural_production_line[NPId]["增产点数"]]["耗电倍率"];
             }
             if (factory_name === "采矿机" || factory_name === "大型采矿机"
@@ -485,30 +473,33 @@ export function Result({needs_list, set_needs_list}) {
     };
 
     // 计算数值变化的差值
-    // 更新历史值
-    useEffect(() => {
-        // 构建新的值对象
-        const currentValues = {
+    // 构建当前值快照（基于 result_dict 等已稳定的渲染产物）
+    const currentValues = useMemo(() => {
+        const vals = {
             energyCost: energy_cost,
             totalEnergyCost: energy_cost + miner_energy_cost,
             buildingCounts: { ...building_list },
             rawMaterials: {}
         };
-
         Object.entries(result_dict).forEach(([item, amount]) => {
             if (isRawMaterial(item)) {
-                currentValues.rawMaterials[item] = amount;
+                vals.rawMaterials[item] = amount;
             }
         });
+        return vals;
+    // energy_cost / miner_energy_cost / building_list 均由 result_dict 派生，
+    // 此处用 result_dict 作为唯一依赖即可保证语义正确
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [result_dict]);
 
-        // 如果historyValues为空或者第一个元素与当前值不同，则更新
+    // 更新历史值
+    useEffect(() => {
         if (historyValues.length === 0 || !isEqual(historyValues[0], currentValues)) {
-            // 将当前值添加到数组开头，最多保留两个版本
             const newHistory = [currentValues, ...historyValues].slice(0, 2);
             setHistoryValues(newHistory);
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [result_dict, energy_cost, miner_energy_cost, building_list]);
+    }, [currentValues]);
 
     return <div className="result-container">
         {/* 左侧：结果表格独立滚动区域 */}

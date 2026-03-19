@@ -5,29 +5,11 @@ import {GameInfoContext, GlobalStateContext, SettingsSetterContext} from './cont
 import {ItemIcon} from './icon';
 import {ItemSelect} from './item_select';
 
-function get_item_data(game_data) {
-    //通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，键值为
-    //此物品在计算器中的id与用于生产此物品的配方在配方表中的序号
-    var item_data = {};
-    var i = 0;
-    for (var num = 0; num < game_data.recipe_data.length; num++) {
-        for (var item in game_data.recipe_data[num].产物) {
-            if (!(item in item_data)) {
-                item_data[item] = [i];
-                i++;
-            }
-            item_data[item].push(num);
-        }
-    }
-    return item_data;
-}
-
 export function NeedsList({needs_list, set_needs_list}) {
     const global_state = useContext(GlobalStateContext);
     const count_ref = useRef(60);
     const set_settings = useContext(SettingsSetterContext);
-    let game_data = global_state.game_data;
-    let item_data = get_item_data(game_data);
+    let item_data = global_state.item_data;
     let natural_production_line = global_state.settings.natural_production_line;
     let needs_doms = Object.entries(needs_list).map(([item, count]) => {
         function edit_count(e) {
@@ -96,7 +78,7 @@ export function NeedsList({needs_list, set_needs_list}) {
                             btn_class="btn btn-sm btn-outline-success text-nowrap"/>
             </div>
 
-            {Object.keys(needs_list).length == 0 ||
+            {Object.keys(needs_list).length === 0 ||
                 <div className="d-inline-flex flex-wrap gap-4 row-gap-0 align-items-center flex-grow-1">
                     {needs_doms}
                 </div>
@@ -112,21 +94,33 @@ export function NeedsListStorage({needs_list, set_needs_list}) {
 
     const NEEDS_LIST_STORAGE_KEY = "needs_list";
 
-    const all_saved = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
-    const [all_scheme, set_all_scheme] = useState(all_saved[game_name] || {});
-    // TODO implement 实时保存
+    function safe_load_storage() {
+        try {
+            return JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
+        } catch {
+            return {};
+        }
+    }
+
+    const [all_scheme, set_all_scheme] = useState(() => {
+        const all_saved = safe_load_storage();
+        return all_saved[game_name] || {};
+    });
 
     useEffect(() => {
-        let all_scheme_data = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
+        let all_scheme_data = safe_load_storage();
         let all_scheme_init = all_scheme_data[game_name] || {};
-        console.log("Loading storage", game_name, Object.keys(all_scheme_init));
         set_all_scheme(all_scheme_init);
     }, [game_info, game_name]);
 
     useEffect(() => {
-        let all_scheme_saved = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
-        all_scheme_saved[game_name] = all_scheme;
-        localStorage.setItem(NEEDS_LIST_STORAGE_KEY, JSON.stringify(all_scheme_saved));
+        try {
+            let all_scheme_saved = safe_load_storage();
+            all_scheme_saved[game_name] = all_scheme;
+            localStorage.setItem(NEEDS_LIST_STORAGE_KEY, JSON.stringify(all_scheme_saved));
+        } catch {
+            console.warn("Failed to save needs list to localStorage");
+        }
     }, [all_scheme, game_name])
 
     function delete_(name) {
