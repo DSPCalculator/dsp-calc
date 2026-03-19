@@ -4,7 +4,7 @@ import {GameInfoContext, GlobalStateContext, SettingsContext, SettingsSetterCont
 import {ApplyBuildingMultiplier} from './global_state.jsx';
 import {ItemIcon} from './icon';
 import {ItemSelect} from './item_select.jsx';
-import {FactorySelect, ProModeSelect, ProNumSelect, RecipeSelect} from './result.jsx';
+import {FactorySelect, ProModeSelect, ProNumSelect, RecipeSelect} from './recipe_selects.jsx';
 import {AutoSizedInput} from './ui_components/auto_sized_input.jsx';
 
 // { "目标物品": "氢", "建筑数量": 0, "配方id": 1, "增产点数": 0, "增产模式": 0, "建筑": 0 }

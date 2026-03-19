@@ -114,9 +114,6 @@ export default defineConfig(({mode}) => ({
                         if (id.includes('react-dom') || id.includes('/react/') || id.includes('/scheduler/')) {
                             return 'vendor-react';
                         }
-                        if (id.includes('/antd/') || id.includes('/@ant-design/') || id.includes('/rc-')) {
-                            return 'vendor-antd';
-                        }
                         if (id.includes('/bootstrap/') || id.includes('/react-bootstrap/') || id.includes('/@popperjs/')) {
                             return 'vendor-bootstrap';
                         }

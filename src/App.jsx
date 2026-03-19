@@ -20,8 +20,37 @@ import {
     TheyComeFromVoidGUID,
     vanilla_game_version
 } from "./GameData.jsx";
-import {Select} from "antd";
 import {FaTrashAlt, FaCog} from 'react-icons/fa';
+
+function ModSelect({options, value, onChange}) {
+    function toggle_mod(mod_guid) {
+        if (value.includes(mod_guid)) {
+            onChange(value.filter(m => m !== mod_guid));
+        } else {
+            onChange([...value, mod_guid]);
+        }
+    }
+    const label_text = value.length === 0
+        ? "无模组"
+        : options.filter(o => value.includes(o.value)).map(o => o.label).join(", ");
+    return <div className="dropdown d-inline-block" style={{minWidth: 250}}>
+        <button className="btn btn-outline-secondary btn-sm dropdown-toggle text-start w-100"
+                type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+            {label_text}
+        </button>
+        <ul className="dropdown-menu">
+            {options.map(opt => (
+                <li key={opt.value}>
+                    <label className="dropdown-item d-flex align-items-center gap-2 cursor-pointer">
+                        <input type="checkbox" checked={value.includes(opt.value)}
+                               onChange={() => toggle_mod(opt.value)}/>
+                        {opt.label}
+                    </label>
+                </li>
+            ))}
+        </ul>
+    </div>;
+}
 
 function GameVersion({needs_list, set_needs_list}) {
     const mod_options = get_mod_options();
@@ -109,7 +138,7 @@ function GameVersion({needs_list, set_needs_list}) {
     return <div className="d-flex gap-2 align-items-center">
         <div className="text-nowrap">游戏版本 v{vanilla_game_version}</div>
         <div className="text-nowrap">模组选择</div>
-        <Select style={{minWidth: 250}} mode={"multiple"} options={mod_options} value={mods} onChange={mods_change}/>
+        <ModSelect options={mod_options} value={mods} onChange={mods_change}/>
     </div>;
 }
 
