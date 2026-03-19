@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import React, {useContext} from 'react';
 import {GlobalStateContext} from './contexts';
 import {get_icon_by_item} from "./GameData.jsx";
 
@@ -75,7 +75,7 @@ function get_icon_from_one_mod(icon, size, mod) {
     }
 }
 
-export function ItemIcon({item, size, tooltip}) {
+export const ItemIcon = React.memo(function ItemIcon({item, size, tooltip}) {
     const global_state = useContext(GlobalStateContext);
     size = size || 40;
 
@@ -93,4 +93,4 @@ export function ItemIcon({item, size, tooltip}) {
     } else {
         return img;
     }
-}
+});

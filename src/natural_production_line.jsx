@@ -1,5 +1,5 @@
 import structuredClone from '@ungap/structured-clone';
-import {useContext} from 'react';
+import React, {useContext} from 'react';
 import {GameInfoContext, GlobalStateContext, SettingsContext, SettingsSetterContext} from './contexts.jsx';
 import {ApplyBuildingMultiplier} from './global_state.jsx';
 import {ItemIcon} from './icon';
@@ -9,7 +9,7 @@ import {AutoSizedInput} from './ui_components/auto_sized_input.jsx';
 
 // { "目标物品": "氢", "建筑数量": 0, "配方id": 1, "增产点数": 0, "增产模式": 0, "建筑": 0 }
 
-function NplRow({row, set_row, remove_row}) {
+const NplRow = React.memo(function NplRow({row, set_row, remove_row}) {
     // TODO performance issue (dependency loop?)
     const settings = useContext(SettingsContext);
     const game_info = useContext(GameInfoContext);
@@ -92,7 +92,7 @@ function NplRow({row, set_row, remove_row}) {
             <FactorySelect recipe_id={recipe_id} choice={row["建筑"]} onChange={set_row_prop("建筑", true)}/>
         </td>
     </tr>;
-}
+});
 
 export function NplRows() {
     const settings = useContext(SettingsContext);

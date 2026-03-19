@@ -1,6 +1,7 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext, useMemo, useState, useEffect} from 'react';
 import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from './contexts';
+import {dict_add} from './global_state.jsx';
 import {ItemIcon} from './icon';
 import {NplRows} from './natural_production_line';
 import {HorizontalMultiButtonSelect, Recipe} from './recipe';
@@ -200,11 +201,7 @@ export function Result({needs_list, set_needs_list}) {
         const offset = 0.49994 * 0.1 ** fixed_num;//未显示的部分进一法取整
         const build_number = amount / time_tick * factory_per_yield + offset;
         if (Math.ceil(build_number - 0.5 * 0.1 ** fixed_num) !== 0) {
-            if (factory_name in building_list) {
-                building_list[factory_name] = Number(building_list[factory_name]) + Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
-            } else {
-                building_list[factory_name] = Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
-            }
+            dict_add(building_list, factory_name, Math.ceil(build_number - 0.5 * 0.1 ** fixed_num));
         }
         if (factory_name !== "轨道采集器") {
             let e_cost = (build_number - offset) * factory_info["耗能"];
@@ -409,11 +406,7 @@ export function Result({needs_list, set_needs_list}) {
         let recipe = game_data.recipe_data[item_data[natural_production_line[NPId]["目标物品"]][natural_production_line[NPId]["配方id"]]];
         let factory_info = game_data.factory_data[recipe["设施"]][natural_production_line[NPId]["建筑"]];
         const factory_name = factory_info["名称"];
-        if (factory_name in building_list) {
-            building_list[factory_name] = Number(building_list[factory_name]) + Math.ceil(natural_production_line[NPId]["建筑数量"]);
-        } else {
-            building_list[factory_name] = Math.ceil(natural_production_line[NPId]["建筑数量"]);
-        }
+        dict_add(building_list, factory_name, Math.ceil(natural_production_line[NPId]["建筑数量"]));
         if (factory_name !== "轨道采集器") {
             let e_cost = natural_production_line[NPId]["建筑数量"] * factory_info["耗能"];
             if (natural_production_line[NPId]["增产点数"] !== 0 && natural_production_line[NPId]["增产模式"] !== 0) {

@@ -5,6 +5,11 @@ function uniq(arr) {
     return Array.from(new Set(arr));
 }
 
+/** Accumulate value into dict: dict[key] += value, initializing to 0 if absent */
+export function dict_add(dict, key, value) {
+    dict[key] = (dict[key] || 0) + value;
+}
+
 export class GameInfo {
     game_data;
     item_data;
@@ -178,47 +183,25 @@ export class GlobalState {
             }
             //如果有用增产剂且有增产效果，计算增产剂效果带来的变化
             if (proliferate_mode && proliferate_num) {
+                // Common: accumulate proliferator costs (identical for all modes)
+                for (let proliferate in proliferator_price[proliferate_num]) {
+                    dict_add(item_graph[item]["原料"], proliferate,
+                        total_material_num * proliferator_price[proliferate_num][proliferate]);
+                }
+                // Mode-specific: apply output multiplier
                 if (proliferate_mode === 1) {
                     //加速
-                    for (let proliferate in proliferator_price[proliferate_num]) {
-                        if (proliferate in item_graph[item]["原料"]) {
-                            item_graph[item]["原料"][proliferate] += total_material_num * proliferator_price[proliferate_num][proliferate];
-                        } else {
-                            item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
-                        }
-                    }
                     item_graph[item]["产出倍率"] *= game_data.proliferator_effect[proliferate_num]["加速效果"] * this.settings.acc_rate;
                 } else if (proliferate_mode === 2) {
                     //增产
-                    for (let proliferate in proliferator_price[proliferate_num]) {
-                        if (proliferate in item_graph[item]["原料"]) {
-                            item_graph[item]["原料"][proliferate] += total_material_num * proliferator_price[proliferate_num][proliferate];
-                        } else {
-                            item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
-                        }
-                    }
                     produce_rate *= game_data.proliferator_effect[proliferate_num]["增产效果"] * this.settings.inc_rate;
                     item_graph[item]["产出倍率"] *= produce_rate;
                 } else if (proliferate_mode === 3) {
                     //接收站透镜喷涂效果，按加速效果计算额外产出
-                    for (let proliferate in proliferator_price[proliferate_num]) {
-                        if (proliferate in item_graph[item]["原料"]) {
-                            item_graph[item]["原料"][proliferate] += total_material_num * proliferator_price[proliferate_num][proliferate];
-                        } else {
-                            item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
-                        }
-                    }
                     produce_rate *= game_data.proliferator_effect[proliferate_num]["加速效果"] * this.settings.acc_rate;
                     item_graph[item]["产出倍率"] *= produce_rate;
                 } else if (proliferate_mode === 4) {
                     //增产分馏塔，按点数计算产出
-                    for (let proliferate in proliferator_price[proliferate_num]) {
-                        if (proliferate in item_graph[item]["原料"]) {
-                            item_graph[item]["原料"][proliferate] += total_material_num * proliferator_price[proliferate_num][proliferate];
-                        } else {
-                            item_graph[item]["原料"][proliferate] = total_material_num * proliferator_price[proliferate_num][proliferate];
-                        }
-                    }
                     item_graph[item]["产出倍率"] *= proliferate_num / 10;
                 }
             }
@@ -394,17 +377,9 @@ export class GlobalState {
         let item_price = {};
 
         function count_total_material(dict, material, num) {
-            if (material in dict) {
-                dict[material] = Number(dict[material]) + num;
-            } else {
-                dict[material] = num;
-            }
-            for (var sub_material in item_price[material]["原料"]) {
-                if (sub_material in dict) {
-                    dict[sub_material] = Number(dict[sub_material]) + item_price[material]["原料"][sub_material] * num;
-                } else {
-                    dict[sub_material] = item_price[material]["原料"][sub_material] * num;
-                }
+            dict_add(dict, material, num);
+            for (let sub_material in item_price[material]["原料"]) {
+                dict_add(dict, sub_material, item_price[material]["原料"][sub_material] * num);
             }
             return dict;
         }
@@ -476,18 +451,10 @@ export class GlobalState {
             let recipe_time = 60 * natural_production_line[id]["建筑数量"] * game_data.factory_data[recipe["设施"]][natural_production_line[id]["建筑"]]["倍率"] / recipe["时间"];
             if ((natural_production_line[id]["增产点数"] === 0) || (natural_production_line[id]["增产模式"] === 0)) {
                 for (let item in recipe["原料"]) {
-                    if (item in in_out_list) {
-                        in_out_list[item] = Number(in_out_list[item]) + recipe["原料"][item] * recipe_time;
-                    } else {
-                        in_out_list[item] = recipe["原料"][item] * recipe_time;
-                    }
+                    dict_add(in_out_list, item, recipe["原料"][item] * recipe_time);
                 }
                 for (let item in recipe["产物"]) {
-                    if (item in in_out_list) {
-                        in_out_list[item] = Number(in_out_list[item]) - recipe["产物"][item] * recipe_time;
-                    } else {
-                        in_out_list[item] = -1 * recipe["产物"][item] * recipe_time;
-                    }
+                    dict_add(in_out_list, item, -recipe["产物"][item] * recipe_time);
                 }
             } else {
                 let num = 0;//单次配方喷涂的物品量
@@ -495,75 +462,32 @@ export class GlobalState {
                     num += recipe["原料"][item];
                 }
                 num = Number(num) * recipe_time;
-                if (natural_production_line[id]["增产模式"] === 1) {//加速
-                    let pro_time = game_data.proliferator_effect[natural_production_line[id]["增产点数"]]["加速效果"];
-                    for (let item in recipe["原料"]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) + recipe["原料"][item] * recipe_time * pro_time;
-                        } else {
-                            in_out_list[item] = recipe["原料"][item] * recipe_time * pro_time;
-                        }
-                    }
-                    for (let item in proliferator_price[natural_production_line[id]["增产点数"]]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) + proliferator_price[natural_production_line[id]["增产点数"]][item] * num * pro_time;
-                        } else {
-                            in_out_list[item] = proliferator_price[natural_production_line[id]["增产点数"]][item] * num * pro_time;
-                        }
-                    }
-                    for (let item in recipe["产物"]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) - recipe["产物"][item] * recipe_time * pro_time;
-                        } else {
-                            in_out_list[item] = -1 * recipe["产物"][item] * recipe_time * pro_time;
-                        }
-                    }
-                } else if (natural_production_line[id]["增产模式"] === 2) {//增产
-                    let pro_time = game_data.proliferator_effect[natural_production_line[id]["增产点数"]]["增产效果"];
-                    for (let item in recipe["原料"]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) + recipe["原料"][item] * recipe_time;
-                        } else {
-                            in_out_list[item] = recipe["原料"][item] * recipe_time;
-                        }
-                    }
-                    for (let item in proliferator_price[natural_production_line[id]["增产点数"]]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) + proliferator_price[natural_production_line[id]["增产点数"]][item] * num;
-                        } else {
-                            in_out_list[item] = proliferator_price[natural_production_line[id]["增产点数"]][item] * num;
-                        }
-                    }
-                    for (let item in recipe["产物"]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) - recipe["产物"][item] * recipe_time * pro_time;
-                        } else {
-                            in_out_list[item] = -1 * recipe["产物"][item] * recipe_time * pro_time;
-                        }
-                    }
-                } else if (natural_production_line[id]["增产模式"] === 3) {
-                    let pro_time = game_data.proliferator_effect[natural_production_line[id]["增产点数"]]["加速效果"];
-                    for (let item in recipe["原料"]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) + recipe["原料"][item] * recipe_time;
-                        } else {
-                            in_out_list[item] = recipe["原料"][item] * recipe_time;
-                        }
-                    }
-                    for (let item in proliferator_price[natural_production_line[id]["增产点数"]]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) + proliferator_price[natural_production_line[id]["增产点数"]][item] * num;
-                        } else {
-                            in_out_list[item] = proliferator_price[natural_production_line[id]["增产点数"]][item] * num;
-                        }
-                    }
-                    for (let item in recipe["产物"]) {
-                        if (item in in_out_list) {
-                            in_out_list[item] = Number(in_out_list[item]) - recipe["产物"][item] * recipe_time * pro_time;
-                        } else {
-                            in_out_list[item] = -1 * recipe["产物"][item] * recipe_time * pro_time;
-                        }
-                    }
+                let npl_prolif_num = natural_production_line[id]["增产点数"];
+                let pro_effect = game_data.proliferator_effect[npl_prolif_num];
+                let mode = natural_production_line[id]["增产模式"];
+                let material_mult, pro_cost_mult, product_mult;
+                if (mode === 1) {//加速
+                    let accel = pro_effect["加速效果"];
+                    material_mult = accel;
+                    pro_cost_mult = accel;
+                    product_mult = accel;
+                } else if (mode === 2) {//增产
+                    material_mult = 1;
+                    pro_cost_mult = 1;
+                    product_mult = pro_effect["增产效果"];
+                } else if (mode === 3) {
+                    material_mult = 1;
+                    pro_cost_mult = 1;
+                    product_mult = pro_effect["加速效果"];
+                }
+                for (let item in recipe["原料"]) {
+                    dict_add(in_out_list, item, recipe["原料"][item] * recipe_time * material_mult);
+                }
+                for (let item in proliferator_price[npl_prolif_num]) {
+                    dict_add(in_out_list, item, proliferator_price[npl_prolif_num][item] * num * pro_cost_mult);
+                }
+                for (let item in recipe["产物"]) {
+                    dict_add(in_out_list, item, -recipe["产物"][item] * recipe_time * product_mult);
                 }
             }
         }//将现有产线的输入输出添至计算的实际需求列表中
@@ -582,17 +506,9 @@ export class GlobalState {
         */
         for (let item in in_out_list) {
             if (in_out_list[item] > 0) {
-                if (item in result_dict) {
-                    result_dict[item] = Number(result_dict[item]) + in_out_list[item];
-                } else {
-                    result_dict[item] = in_out_list[item];
-                }
+                dict_add(result_dict, item, in_out_list[item]);
                 for (let material in item_price[item]["原料"]) {
-                    if (material in result_dict) {
-                        result_dict[material] = Number(result_dict[material]) + item_price[item]["原料"][material] * in_out_list[item];
-                    } else {
-                        result_dict[material] = item_price[item]["原料"][material] * in_out_list[item];
-                    }
+                    dict_add(result_dict, material, item_price[item]["原料"][material] * in_out_list[item]);
                 }
             }
         }//遍历物品的item_price降可迭代物品的生产结果和副产物产出结果放入输出结果内
@@ -608,12 +524,12 @@ export class GlobalState {
                 if (item in result_dict) {
                     if (result_dict[item] + in_out_list[item] > 0) {
                         for (let i in item_price[item]["原料"]) {
-                            result_dict[i] = Number(result_dict[i]) + item_price[item]["原料"][i] * in_out_list[item];
+                            dict_add(result_dict, i, item_price[item]["原料"][i] * in_out_list[item]);
                         }
-                        result_dict[item] = Number(result_dict[item]) + in_out_list[item];
+                        dict_add(result_dict, item, in_out_list[item]);
                     } else {
                         for (let i in item_price[item]["原料"]) {
-                            result_dict[i] = Number(result_dict[i]) - item_price[item]["原料"][i] * result_dict[item];
+                            dict_add(result_dict, i, -item_price[item]["原料"][i] * result_dict[item]);
                         }
                         lp_item_dict[item] = result_dict[item] + in_out_list[item];
                         result_dict[item] = 0;
@@ -622,7 +538,7 @@ export class GlobalState {
                     lp_item_dict[item] = in_out_list[item];
                 }
             } else {
-                lp_item_dict[item] = Number(lp_item_dict[item]) + in_out_list[item];
+                dict_add(lp_item_dict, item, in_out_list[item]);
             }
         }//将定量外部供应的物品放入线性规划相关物品表
         for (let item in key_item_list) {
@@ -731,21 +647,13 @@ export class GlobalState {
             result_dict[item] = 0;//将原矿化过的线规相关物品置为0，之后用线规结果的历史产出填补
         }
         for (let item in results) {
-            result_dict[item] = Number(result_dict[item]) + results[item];
+            dict_add(result_dict, item, results[item]);
             for (let material in item_graph[item]["原料"]) {
                 if (!(material in lp_item_dict)) {
-                    if (material in result_dict) {
-                        result_dict[material] = Number(result_dict[material]) + results[item] * item_graph[item]["原料"][material];
-                    } else {
-                        result_dict[material] = results[item] * item_graph[item]["原料"][material];
-                    }
+                    dict_add(result_dict, material, results[item] * item_graph[item]["原料"][material]);
                     for (let sub_material in item_price[material]["原料"]) {
                         if (!(sub_material in lp_item_dict)) {
-                            if (sub_material in result_dict) {
-                                result_dict[sub_material] = Number(result_dict[sub_material]) + results[item] * item_graph[item]["原料"][material] * item_price[material]["原料"][sub_material];
-                            } else {
-                                result_dict[sub_material] = results[item] * item_graph[item]["原料"][material] * item_price[material]["原料"][sub_material];
-                            }
+                            dict_add(result_dict, sub_material, results[item] * item_graph[item]["原料"][material] * item_price[material]["原料"][sub_material]);
                         }
                     }
                 }
