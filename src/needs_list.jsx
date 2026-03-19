@@ -1,9 +1,10 @@
 import structuredClone from '@ungap/structured-clone';
-import {useContext, useEffect, useRef, useState} from 'react';
+import {useContext, useRef} from 'react';
 import {Save2, Folder2Open, Trash, PlusCircle, PlusSquare} from 'react-bootstrap-icons';
-import {GameInfoContext, GlobalStateContext, SettingsSetterContext} from './contexts';
+import {GlobalStateContext, SettingsSetterContext} from './contexts';
 import {ItemIcon} from './icon';
 import {ItemSelect} from './item_select';
+import {useStorageManager} from './hooks/use_storage_manager.jsx';
 
 export function NeedsList({needs_list, set_needs_list}) {
     const global_state = useContext(GlobalStateContext);
@@ -89,89 +90,31 @@ export function NeedsList({needs_list, set_needs_list}) {
 
 export function NeedsListStorage({needs_list, set_needs_list}) {
     const global_state = useContext(GlobalStateContext);
-    const game_info = useContext(GameInfoContext);
     let game_name = global_state.game_data.game_name;
 
-    const NEEDS_LIST_STORAGE_KEY = "needs_list";
+    const {all_items: all_scheme, save, load, delete_} = useStorageManager("needs_list", game_name);
 
-    function safe_load_storage() {
-        try {
-            return JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
-        } catch {
-            return {};
-        }
-    }
-
-    const [all_scheme, set_all_scheme] = useState(() => {
-        const all_saved = safe_load_storage();
-        return all_saved[game_name] || {};
-    });
-
-    useEffect(() => {
-        let all_scheme_data = safe_load_storage();
-        let all_scheme_init = all_scheme_data[game_name] || {};
-        set_all_scheme(all_scheme_init);
-    }, [game_info, game_name]);
-
-    useEffect(() => {
-        try {
-            let all_scheme_saved = safe_load_storage();
-            all_scheme_saved[game_name] = all_scheme;
-            localStorage.setItem(NEEDS_LIST_STORAGE_KEY, JSON.stringify(all_scheme_saved));
-        } catch {
-            console.warn("Failed to save needs list to localStorage");
-        }
-    }, [all_scheme, game_name])
-
-    function delete_(name) {
-        if (name in all_scheme) {
-            if (!confirm(`即将删除名为${name}的需求列表，是否继续`)) {
-                return;// 用户取消保存
-            }
-            let all_scheme_copy = structuredClone(all_scheme);
-            delete all_scheme_copy[name];
-            set_all_scheme(all_scheme_copy);
-        }
-    }//删除当前保存的策略
-
-    function load(name) {
-        if (all_scheme[name]) {
-            set_needs_list(all_scheme[name]);
-        } else {
-            alert(`未找到名为${name}的需求列表`);
-        }
-    }//读取生产策略
-
-    function save() {
-        let name = prompt("输入需求列表名");
-        if (!name) return;
-        if (name in all_scheme) {
-            if (!confirm(`已存在名为${name}的需求列表，继续保存将覆盖原需求列表`)) {
-                return;// 用户取消保存
-            }
-        }
-        let all_scheme_copy = structuredClone(all_scheme);
-        all_scheme_copy[name] = structuredClone(needs_list);
-        set_all_scheme(all_scheme_copy);
-    }//保存生产策略
+    const handle_save = () => save(needs_list, "需求列表");
+    const handle_load = (name) => load(name, set_needs_list, "需求列表");
+    const handle_delete = (name) => delete_(name, "需求列表");
 
     let dd_load_list = Object.keys(all_scheme).map(scheme_name => (
         <li key={scheme_name}>
             <a className="dropdown-item cursor-pointer"
-               onClick={() => load(scheme_name)}>{scheme_name}</a>
+               onClick={() => handle_load(scheme_name)}>{scheme_name}</a>
         </li>));
 
     let dd_delete_list = Object.keys(all_scheme).map(scheme_name => (
         <li key={scheme_name}>
             <a className="dropdown-item cursor-pointer"
-               onClick={() => delete_(scheme_name)}>{scheme_name}</a>
+               onClick={() => handle_delete(scheme_name)}>{scheme_name}</a>
         </li>));
 
     return <div className="d-flex gap-2 align-items-center">
         <div className="text-nowrap storage-label">需求列表</div>
         <div className="input-group input-group-sm">
             <button className="btn btn-outline-secondary d-inline-flex align-items-center gap-1"
-                    type="button" onClick={save} title="保存需求列表">
+                    type="button" onClick={handle_save} title="保存需求列表">
                 <Save2 className="compact-show"/>
                 <span className="compact-hide-text">保存</span>
             </button>

@@ -1,5 +1,5 @@
 import structuredClone from '@ungap/structured-clone';
-import {useContext, useMemo, useState, useEffect} from 'react';
+import {useCallback, useContext, useMemo, useState, useEffect} from 'react';
 import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from './contexts';
 import {dict_add} from './global_state.jsx';
 import {ItemIcon} from './icon';
@@ -160,6 +160,26 @@ const isEqual = (obj1, obj2) => {
     return true;
 };
 
+function RatioAdjustInput({value, fixed_num, needs_list, set_needs_list}) {
+    let disp_value = value.toFixed(fixed_num);
+    let base_value = +disp_value;
+
+    function on_change(e_or_value) {
+        if (base_value !== 0) {
+            let new_value = e_or_value.target ? e_or_value.target.value : e_or_value;
+            let new_needs_list = {};
+            for (let i in needs_list) {
+                new_needs_list[i] = needs_list[i] * new_value / base_value;
+            }
+            set_needs_list(new_needs_list);
+        }
+    }
+
+    return <span data-tooltip="等比例调整需求" className="fast-tooltip">
+        <AutoSizedInput delayed={true} value={disp_value} onChange={on_change}/>
+    </span>;
+}
+
 export function Result({needs_list, set_needs_list}) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
@@ -188,48 +208,76 @@ export function Result({needs_list, set_needs_list}) {
     const [historyValues, setHistoryValues] = useState([]);
 
     let fixed_num = settings.fixed_num;
-    let energy_cost = 0, miner_energy_cost = 0;
-    let building_list = {};
 
-    function get_factory_number(amount, item) {
-        const recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
-        const scheme_recipe = scheme_data.scheme_for_recipe[recipe_id];
-        const factories_type = game_data.recipe_data[recipe_id]["设施"];
-        const factory_info = game_data.factory_data[factories_type][scheme_recipe["建筑"]];
-        const factory_name = factory_info["名称"];
-        const factory_per_yield = 1 / item_graph[item]["产出倍率"] / factory_info["倍率"];
-        const offset = 0.49994 * 0.1 ** fixed_num;//未显示的部分进一法取整
-        const build_number = amount / time_tick * factory_per_yield + offset;
-        if (Math.ceil(build_number - 0.5 * 0.1 ** fixed_num) !== 0) {
-            dict_add(building_list, factory_name, Math.ceil(build_number - 0.5 * 0.1 ** fixed_num));
-        }
-        if (factory_name !== "轨道采集器") {
-            let e_cost = (build_number - offset) * factory_info["耗能"];
-            if (factory_name === "大型采矿机") {
-                e_cost = settings.mining_efficiency_large / 100.0 * settings.mining_efficiency_large / 100.0 * (2.94 - 0.168) + 0.168;
-            } else if (factory_name.endsWith("分馏塔")) {
-                if (game_data.mods.GenesisBookEnable) {
-                    if (settings.fractionating_speed > 60) {
-                        e_cost *= (settings.fractionating_speed * 0.036 - 0.72) / 1.44;
-                    }
-                } else {
-                    if (settings.fractionating_speed > 30) {
-                        e_cost *= (settings.fractionating_speed * 0.036 - 0.36) / 0.72;
+    const {factory_numbers, building_list, energy_cost, miner_energy_cost} = useMemo(() => {
+        let energy_cost = 0, miner_energy_cost = 0;
+        let building_list = {};
+        let factory_numbers = {};
+
+        for (let item in result_dict) {
+            const recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
+            const scheme_recipe = scheme_data.scheme_for_recipe[recipe_id];
+            const factories_type = game_data.recipe_data[recipe_id]["设施"];
+            const factory_info = game_data.factory_data[factories_type][scheme_recipe["建筑"]];
+            const factory_name = factory_info["名称"];
+            const factory_per_yield = 1 / item_graph[item]["产出倍率"] / factory_info["倍率"];
+            const offset = 0.49994 * 0.1 ** fixed_num;//未显示的部分进一法取整
+            const build_number = result_dict[item] / time_tick * factory_per_yield + offset;
+            factory_numbers[item] = build_number;
+
+            if (Math.ceil(build_number - 0.5 * 0.1 ** fixed_num) !== 0) {
+                dict_add(building_list, factory_name, Math.ceil(build_number - 0.5 * 0.1 ** fixed_num));
+            }
+            if (factory_name !== "轨道采集器") {
+                let e_cost = (build_number - offset) * factory_info["耗能"];
+                if (factory_name === "大型采矿机") {
+                    e_cost = settings.mining_efficiency_large / 100.0 * settings.mining_efficiency_large / 100.0 * (2.94 - 0.168) + 0.168;
+                } else if (factory_name.endsWith("分馏塔")) {
+                    if (game_data.mods.GenesisBookEnable) {
+                        if (settings.fractionating_speed > 60) {
+                            e_cost *= (settings.fractionating_speed * 0.036 - 0.72) / 1.44;
+                        }
+                    } else {
+                        if (settings.fractionating_speed > 30) {
+                            e_cost *= (settings.fractionating_speed * 0.036 - 0.36) / 0.72;
+                        }
                     }
                 }
-            }
-            if (scheme_recipe["增产模式"] !== 0 && scheme_recipe["增产点数"] !== 0) {
-                e_cost *= game_data.proliferator_effect[scheme_recipe["增产点数"]]["耗电倍率"];
-            }
-            if (factory_name === "采矿机" || factory_name === "大型采矿机"
-                || factory_name === "抽水机" || factory_name === "聚束液体汲取设施" || factory_name === "原油萃取站") {
-                miner_energy_cost += e_cost;
-            } else {
-                energy_cost += e_cost;
+                if (scheme_recipe["增产模式"] !== 0 && scheme_recipe["增产点数"] !== 0) {
+                    e_cost *= game_data.proliferator_effect[scheme_recipe["增产点数"]]["耗电倍率"];
+                }
+                if (factory_name === "采矿机" || factory_name === "大型采矿机"
+                    || factory_name === "抽水机" || factory_name === "聚束液体汲取设施" || factory_name === "原油萃取站") {
+                    miner_energy_cost += e_cost;
+                } else {
+                    energy_cost += e_cost;
+                }
             }
         }
-        return build_number;
-    }
+
+        // Also accumulate NPL buildings
+        for (let NPId in natural_production_line) {
+            const npl_recipe_id = item_data[natural_production_line[NPId]["目标物品"]][natural_production_line[NPId]["配方id"]];
+            const npl_recipe = game_data.recipe_data[npl_recipe_id];
+            const npl_factory_info = game_data.factory_data[npl_recipe["设施"]][natural_production_line[NPId]["建筑"]];
+            const npl_factory_name = npl_factory_info["名称"];
+            dict_add(building_list, npl_factory_name, Math.ceil(natural_production_line[NPId]["建筑数量"]));
+            if (npl_factory_name !== "轨道采集器") {
+                let e_cost = natural_production_line[NPId]["建筑数量"] * npl_factory_info["耗能"];
+                if (natural_production_line[NPId]["增产点数"] !== 0 && natural_production_line[NPId]["增产模式"] !== 0) {
+                    e_cost *= game_data.proliferator_effect[natural_production_line[NPId]["增产点数"]]["耗电倍率"];
+                }
+                if (npl_factory_name === "采矿机" || npl_factory_name === "大型采矿机"
+                    || npl_factory_name === "抽水机" || npl_factory_name === "聚束液体汲取设施" || npl_factory_name === "原油萃取站") {
+                    miner_energy_cost += e_cost;
+                } else {
+                    energy_cost += e_cost;
+                }
+            }
+        }
+
+        return {factory_numbers, building_list, energy_cost, miner_energy_cost};
+    }, [result_dict, natural_production_line, scheme_data, settings, item_data, item_graph, game_data, fixed_num, time_tick]);
 
     function get_gross_output(amount, item) {
         var offset = 0;
@@ -251,6 +299,22 @@ export function Result({needs_list, set_needs_list}) {
         });
         return sp;
     }, [result_dict, item_graph]);
+
+    const change_recipe = useCallback((item, value) => {
+        set_scheme_data(old => {
+            let s = structuredClone(old);
+            s.item_recipe_choices[item] = value;
+            return s;
+        });
+    }, [set_scheme_data]);
+
+    const change_scheme_prop = useCallback((recipe_id, prop, value) => {
+        set_scheme_data(old => {
+            let s = structuredClone(old);
+            s.scheme_for_recipe[recipe_id][prop] = value;
+            return s;
+        });
+    }, [set_scheme_data]);
 
     function mineralize(item) {
         let new_mineralize_list = structuredClone(mineralize_list);
@@ -281,7 +345,7 @@ export function Result({needs_list, set_needs_list}) {
         if (settings.hide_mines && ((i in mineralize_list) || Object.keys(game_data.recipe_data[recipe_id]["原料"]).length < 1)) {
             continue;
         }
-        let factory_number = get_factory_number(result_dict[i], i);
+        let factory_number = factory_numbers[i];
         let from_side_products = Object.entries(side_products[i]).map(([from, amount]) =>
             <div key={from} className="text-nowrap">+{amount.toFixed(fixed_num)} (<ItemIcon item={from} size={is_mobile ? 18 : 26}/>)
             </div>
@@ -289,64 +353,6 @@ export function Result({needs_list, set_needs_list}) {
         let factory_name = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"];
         let is_mineralized = i in mineralize_list;
         let row_class = is_mineralized ? "table-secondary" : "";
-
-        const change_recipe = (value) => {
-            set_scheme_data(old_scheme_data => {
-                let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.item_recipe_choices[i] = value;
-                return scheme_data;
-            })
-        };
-
-        const change_pro_num = (value) => {
-            set_scheme_data(old_scheme_data => {
-                let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.scheme_for_recipe[recipe_id]["增产点数"] = value;
-                return scheme_data;
-            })
-        };
-
-        const change_pro_mode = (value) => {
-            set_scheme_data(old_scheme_data => {
-                let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.scheme_for_recipe[recipe_id]["增产模式"] = value;
-                return scheme_data;
-            })
-        };
-
-        const change_factory = (value) => {
-            set_scheme_data(old_scheme_data => {
-                let scheme_data = structuredClone(old_scheme_data);
-                scheme_data.scheme_for_recipe[recipe_id]["建筑"] = value;
-                return scheme_data;
-            })
-        };
-
-        const RatioAdjustInput = ({value}) => {
-            let disp_value = value.toFixed(fixed_num);
-            let base_value = +disp_value;
-
-            function set_needs_in_row() {
-                return function (e_or_value) {
-                    // Either an event [e] or a raw [value] is supported
-                    if (base_value !== 0) {
-                        let new_value = e_or_value.target ? e_or_value.target.value : e_or_value;
-                        let new_needs_list = {};
-                        for (let i in needs_list) {
-                            new_needs_list[i] = needs_list[i] * new_value / base_value;
-                        }
-                        set_needs_list(new_needs_list);
-                    }
-                }
-            }
-
-            return <span data-tooltip="等比例调整需求" className="fast-tooltip">
-                <AutoSizedInput
-                    delayed={true}
-                    value={disp_value}
-                    onChange={set_needs_in_row()}/>
-            </span>;
-        };
 
         result_table_rows.push(<tr className={row_class} key={i}>
             {/* 操作 */}
@@ -370,7 +376,7 @@ export function Result({needs_list, set_needs_list}) {
             </td>
             {/* 分钟毛产出 */}
             <td className="text-center">
-                <RatioAdjustInput value={get_gross_output(result_dict[i], i)}/>
+                <RatioAdjustInput value={get_gross_output(result_dict[i], i)} fixed_num={fixed_num} needs_list={needs_list} set_needs_list={set_needs_list}/>
                 {from_side_products}
             </td>
             {/* 所需工厂*数目 */}
@@ -379,46 +385,27 @@ export function Result({needs_list, set_needs_list}) {
                     <>
                         <div className="d-inline-flex align-items-center gap-1">
                             <ItemIcon item={factory_name} size={is_mobile ? 18 : 30}/>
-                            <RatioAdjustInput value={factory_number}/>
+                            <RatioAdjustInput value={factory_number} fixed_num={fixed_num} needs_list={needs_list} set_needs_list={set_needs_list}/>
                         </div>
                     </>
                 }
             </td>
             {/* 所选配方 */}
-            <td><RecipeSelect item={i} onChange={change_recipe}
+            <td><RecipeSelect item={i} onChange={(v) => change_recipe(i, v)}
                               choice={scheme_data.item_recipe_choices[i]}
                               compact={compact_mode}/></td>
             {/* 所选增产模式 */}
-            <td><ProModeSelect recipe_id={recipe_id} onChange={change_pro_mode}
+            <td><ProModeSelect recipe_id={recipe_id} onChange={(v) => change_scheme_prop(recipe_id, "增产模式", v)}
                                choice={scheme_data.scheme_for_recipe[recipe_id]["增产模式"]}/></td>
             {/* 所选增产剂 */}
-            <td><ProNumSelect onChange={change_pro_num}
+            <td><ProNumSelect onChange={(v) => change_scheme_prop(recipe_id, "增产点数", v)}
                               choice={scheme_data.scheme_for_recipe[recipe_id]["增产点数"]}
                               icon_size={mob_btn_icon}/></td>
             {/* 所选工厂种类 */}
-            <td><FactorySelect recipe_id={recipe_id} onChange={change_factory}
+            <td><FactorySelect recipe_id={recipe_id} onChange={(v) => change_scheme_prop(recipe_id, "建筑", v)}
                                choice={scheme_data.scheme_for_recipe[recipe_id]["建筑"]}
                                icon_size={mob_btn_icon}/></td>
         </tr>);
-    }
-
-    for (let NPId in natural_production_line) {
-        let recipe = game_data.recipe_data[item_data[natural_production_line[NPId]["目标物品"]][natural_production_line[NPId]["配方id"]]];
-        let factory_info = game_data.factory_data[recipe["设施"]][natural_production_line[NPId]["建筑"]];
-        const factory_name = factory_info["名称"];
-        dict_add(building_list, factory_name, Math.ceil(natural_production_line[NPId]["建筑数量"]));
-        if (factory_name !== "轨道采集器") {
-            let e_cost = natural_production_line[NPId]["建筑数量"] * factory_info["耗能"];
-            if (natural_production_line[NPId]["增产点数"] !== 0 && natural_production_line[NPId]["增产模式"] !== 0) {
-                e_cost *= game_data.proliferator_effect[natural_production_line[NPId]["增产点数"]]["耗电倍率"];
-            }
-            if (factory_name === "采矿机" || factory_name === "大型采矿机"
-                || factory_name === "抽水机" || factory_name === "聚束液体汲取设施" || factory_name === "原油萃取站") {
-                miner_energy_cost += e_cost;
-            } else {
-                energy_cost += e_cost;
-            }
-        }
     }
 
     let building_rows = Object.entries(building_list).map(([building, count]) => (
@@ -480,10 +467,8 @@ export function Result({needs_list, set_needs_list}) {
             }
         });
         return vals;
-    // energy_cost / miner_energy_cost / building_list 均由 result_dict 派生，
-    // 此处用 result_dict 作为唯一依赖即可保证语义正确
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [result_dict]);
+    }, [energy_cost, miner_energy_cost, building_list, result_dict]);
 
     // 更新历史值
     useEffect(() => {

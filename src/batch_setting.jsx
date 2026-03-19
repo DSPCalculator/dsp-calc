@@ -1,12 +1,12 @@
-import structuredClone from '@ungap/structured-clone';
 import {useContext, useState} from 'react';
-import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext} from './contexts';
+import {CompactModeContext, GlobalStateContext} from './contexts';
 import {HorizontalMultiButtonSelect} from './recipe.jsx';
 import {pro_mode_class} from './result.jsx';
+import {useSchemeUpdater} from './hooks/use_scheme_updater.jsx';
 
 function FactorySelect({list, icon_size}) {
     const global_state = useContext(GlobalStateContext);
-    const set_scheme_data = useContext(SchemeDataSetterContext);
+    const update_scheme = useSchemeUpdater();
     const [cur, set_cur] = useState(0);
     let game_data = global_state.game_data;
 
@@ -19,8 +19,7 @@ function FactorySelect({list, icon_size}) {
         set_cur(building);
         // 取本设施类型选中建筑的名称，用于跨设施类型匹配
         const building_name = list[building]["名称"];
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
+        update_scheme(scheme_data => {
             for (var i = 0; i < game_data.recipe_data.length; i++) {
                 const facility = game_data.recipe_data[i]["设施"];
                 const facility_list = game_data.factory_data[facility];
@@ -30,7 +29,6 @@ function FactorySelect({list, icon_size}) {
                     scheme_data.scheme_for_recipe[i]["建筑"] = matched_idx;
                 }
             }
-            return scheme_data;
         });
     }
 
@@ -40,7 +38,7 @@ function FactorySelect({list, icon_size}) {
 
 export function BatchSetting() {
     const global_state = useContext(GlobalStateContext);
-    const set_scheme_data = useContext(SchemeDataSetterContext);
+    const update_scheme = useSchemeUpdater();
     const compact_mode = useContext(CompactModeContext);
     const [pro_num, set_pro_num] = useState(0);
     const [pro_mode, set_pro_mode] = useState(0);
@@ -84,26 +82,22 @@ export function BatchSetting() {
 
     function change_pro_num(pro_num) {
         set_pro_num(pro_num);
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
+        update_scheme(scheme_data => {
             for (var i = 0; i < game_data.recipe_data.length; i++) {
                 scheme_data.scheme_for_recipe[i]["增产点数"] = pro_num;
             }
-            return scheme_data;
         });
     }
 
     function change_pro_mode(pro_mode) {
         set_pro_mode(pro_mode);
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
+        update_scheme(scheme_data => {
             for (var i = 0; i < game_data.recipe_data.length; i++) {
                 if (pro_mode != 0 && !(pro_mode & game_data.recipe_data[i]["增产"])) {
                     continue;
                 }
                 scheme_data.scheme_for_recipe[i]["增产模式"] = Number(pro_mode);
             }
-            return scheme_data;
         });
     }
 

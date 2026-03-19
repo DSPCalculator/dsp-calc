@@ -1,7 +1,7 @@
-import structuredClone from '@ungap/structured-clone';
-import {useContext, useEffect, useState} from 'react';
-import {GameInfoContext, GlobalStateContext, SchemeDataSetterContext} from './contexts.jsx';
+import {useContext} from 'react';
+import {GlobalStateContext, SchemeDataSetterContext} from './contexts.jsx';
 import {Save2, Folder2Open, Trash} from 'react-bootstrap-icons';
+import {useStorageManager} from './hooks/use_storage_manager.jsx';
 
 const DEFAULT_SCHEME_DATA = {
     "item_recipe_choices": {"氢": 1},
@@ -71,94 +71,33 @@ export function init_scheme_data(game_data) {
 
 export function SchemeStorage() {
     const global_state = useContext(GlobalStateContext);
-    const game_info = useContext(GameInfoContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     let scheme_data = global_state.scheme_data;
     let game_name = global_state.game_data.game_name;
 
-    const SCHEME_STORAGE_KEY = "scheme_data";
+    const {all_items: all_scheme, save, load, delete_} = useStorageManager("scheme_data", game_name);
 
-    function safe_load_storage() {
-        try {
-            return JSON.parse(localStorage.getItem(SCHEME_STORAGE_KEY)) || {};
-        } catch {
-            return {};
-        }
-    }
-
-    const [all_scheme, set_all_scheme] = useState(() => {
-        const all_saved = safe_load_storage();
-        return all_saved[game_name] || {};
-    });
-
-    useEffect(() => {
-        let all_scheme_data = safe_load_storage();
-        let all_scheme_init = all_scheme_data[game_name] || {};
-        set_all_scheme(all_scheme_init);
-    }, [game_info, game_name]);
-
-    useEffect(() => {
-        try {
-            let all_scheme_saved = safe_load_storage();
-            all_scheme_saved[game_name] = all_scheme;
-            localStorage.setItem(SCHEME_STORAGE_KEY, JSON.stringify(all_scheme_saved));
-        } catch {
-            console.warn("Failed to save scheme data to localStorage");
-        }
-    }, [all_scheme, game_name])
-
-    //删除当前保存的策略
-    function delete_(name) {
-        if (name in all_scheme) {
-            if (!confirm(`即将删除名为${name}的方案，是否继续`)) {
-                return;// 用户取消保存
-            }
-            let all_scheme_copy = structuredClone(all_scheme);
-            delete all_scheme_copy[name];
-            set_all_scheme(all_scheme_copy);
-        }
-    }
-
-    //读取生产策略
-    function load(name) {
-        if (all_scheme[name]) {
-            set_scheme_data(all_scheme[name]);
-        } else {
-            alert(`未找到名为${name}的方案`);
-        }
-    }
-
-    //保存生产策略
-    function save() {
-        let name = prompt("输入方案名");
-        if (!name) return;
-        if (name in all_scheme) {
-            if (!confirm(`已存在名为${name}的方案，继续保存将覆盖原方案`)) {
-                return;// 用户取消保存
-            }
-        }
-        let all_scheme_copy = structuredClone(all_scheme);
-        all_scheme_copy[name] = structuredClone(scheme_data);
-        set_all_scheme(all_scheme_copy);
-    }
+    const handle_save = () => save(scheme_data, "方案");
+    const handle_load = (name) => load(name, set_scheme_data, "方案");
+    const handle_delete = (name) => delete_(name, "方案");
 
     let dd_load_list = Object.keys(all_scheme).map(scheme_name => (
         <li key={scheme_name}>
             <a className="dropdown-item cursor-pointer"
-               onClick={() => load(scheme_name)}>{scheme_name}</a>
+               onClick={() => handle_load(scheme_name)}>{scheme_name}</a>
         </li>));
 
     let dd_delete_list = Object.keys(all_scheme).map(scheme_name => (
         <li key={scheme_name}>
             <a className="dropdown-item cursor-pointer"
-               onClick={() => delete_(scheme_name)}>{scheme_name}</a>
+               onClick={() => handle_delete(scheme_name)}>{scheme_name}</a>
         </li>));
 
     return <div className="d-flex gap-2 align-items-center">
         <div className="text-nowrap storage-label">生产策略</div>
         <div className="input-group input-group-sm">
             <button className="btn btn-outline-secondary d-inline-flex align-items-center gap-1"
-                    type="button" onClick={save} title="保存生产策略">
+                    type="button" onClick={handle_save} title="保存生产策略">
                 <Save2 className="compact-show"/>
                 <span className="compact-hide-text">保存</span>
             </button>
