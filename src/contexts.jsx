@@ -58,10 +58,30 @@ function get_compact_mode(width) {
 
 export const CompactModeContext = createContext("full");
 
+function safe_parse_json(str) {
+    try {
+        return JSON.parse(str);
+    } catch {
+        return null;
+    }
+}
+
 export function ContextProvider({children}) {
     const [game_info, set_game_info] = useState(new GameInfo(default_game_data));
-    const [scheme_data, set_scheme_data] = useState(init_scheme_data(default_game_data));
-    const [settings, set_settings] = useSetState(DEFAULT_SETTINGS);
+    const [scheme_data, set_scheme_data] = useState(() => {
+        const game_name = default_game_data.game_name;
+        const all = safe_parse_json(localStorage.getItem("auto_scheme")) || {};
+        const saved = all[game_name];
+        if (saved && saved.scheme_for_recipe &&
+            saved.scheme_for_recipe.length === default_game_data.recipe_data.length) {
+            return saved;
+        }
+        return init_scheme_data(default_game_data);
+    });
+    const [settings, set_settings] = useSetState(() => {
+        const saved = safe_parse_json(localStorage.getItem("auto_settings"));
+        return saved ? {...DEFAULT_SETTINGS, ...saved} : DEFAULT_SETTINGS;
+    });
     const [compact_mode, set_compact_mode] = useState(() => get_compact_mode(window.innerWidth));
 
     useEffect(() => {
@@ -82,6 +102,19 @@ export function ContextProvider({children}) {
             mql_narrow.removeEventListener("change", on_resize);
         };
     }, []);
+
+    // Auto-save scheme_data
+    const game_name = game_info.game_data.game_name;
+    useEffect(() => {
+        let all = safe_parse_json(localStorage.getItem("auto_scheme")) || {};
+        all[game_name] = scheme_data;
+        localStorage.setItem("auto_scheme", JSON.stringify(all));
+    }, [scheme_data, game_name]);
+
+    // Auto-save settings
+    useEffect(() => {
+        localStorage.setItem("auto_settings", JSON.stringify(settings));
+    }, [settings]);
 
     console.log("[+] new GlobalState");
     let global_state = new GlobalState(game_info, scheme_data, settings);

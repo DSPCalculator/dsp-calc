@@ -23,12 +23,38 @@ import {
 import {Select} from "antd";
 import {FaTrashAlt, FaCog} from 'react-icons/fa';
 
+function safe_parse_json(str) {
+    try { return JSON.parse(str); } catch { return null; }
+}
+
 function GameVersion({needs_list, set_needs_list}) {
     const mod_options = get_mod_options();
     const set_game_data = useContext(GameInfoSetterContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
-    const [mods, set_mods] = useState([]);
+    const [mods, set_mods] = useState(() => {
+        const saved = safe_parse_json(localStorage.getItem("auto_mods"));
+        return Array.isArray(saved) ? saved : [];
+    });
     const set_settings = useContext(SettingsSetterContext);
+
+    useEffect(() => {
+        localStorage.setItem("auto_mods", JSON.stringify(mods));
+    }, [mods]);
+
+    useEffect(() => {
+        const saved_mods = safe_parse_json(localStorage.getItem("auto_mods"));
+        if (!Array.isArray(saved_mods) || saved_mods.length === 0) return;
+        const game_data = get_game_data(saved_mods);
+        set_game_data(game_data);
+        const all_schemes = safe_parse_json(localStorage.getItem("auto_scheme")) || {};
+        const saved_scheme = all_schemes[game_data.game_name];
+        if (saved_scheme && saved_scheme.scheme_for_recipe &&
+            saved_scheme.scheme_for_recipe.length === game_data.recipe_data.length) {
+            set_scheme_data(saved_scheme);
+        } else {
+            set_scheme_data(init_scheme_data(game_data));
+        }
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     async function mods_change(modList) {
         if (JSON.stringify(needs_list) !== '{}'
@@ -84,7 +110,14 @@ function GameVersion({needs_list, set_needs_list}) {
         set_mods(modList2);
         let game_data = modList.length === 0 ? default_game_data : get_game_data(modList);
         set_game_data(game_data);
-        set_scheme_data(init_scheme_data(game_data));
+        const all_schemes = safe_parse_json(localStorage.getItem("auto_scheme")) || {};
+        const saved_scheme = all_schemes[game_data.game_name];
+        if (saved_scheme && saved_scheme.scheme_for_recipe &&
+            saved_scheme.scheme_for_recipe.length === game_data.recipe_data.length) {
+            set_scheme_data(saved_scheme);
+        } else {
+            set_scheme_data(init_scheme_data(game_data));
+        }
         //根据创世是否启用，设定采矿速率初始值
         if (!game_data.GenesisBookEnable) {
             set_settings({"mining_speed_oil": 3.0});
