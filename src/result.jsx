@@ -1,4 +1,3 @@
-import structuredClone from '@ungap/structured-clone';
 import {useContext, useMemo, useState, useEffect} from 'react';
 import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from './contexts';
 import {ItemIcon} from './icon';

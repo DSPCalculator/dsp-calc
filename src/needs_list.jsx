@@ -1,6 +1,5 @@
-import structuredClone from '@ungap/structured-clone';
 import {useContext, useEffect, useRef, useState} from 'react';
-import {Save2, Folder2Open, Trash, PlusCircle, PlusSquare} from 'react-bootstrap-icons';
+import {FaRegSave, FaRegFolderOpen, FaTrash, FaPlusCircle, FaPlusSquare} from 'react-icons/fa';
 import {GameInfoContext, GlobalStateContext, SettingsSetterContext} from './contexts';
 import {ItemIcon} from './icon';
 import {ItemSelect} from './item_select';
@@ -48,7 +47,7 @@ export function NeedsList({needs_list, set_needs_list}) {
             <div key={item} className="input-group input-group-sm w-fit d-inline-flex">
                 <input type="text" className="form-control" style={{width: "6em"}} value={count} onChange={edit_count}/>
                 <button className="btn btn-outline-danger d-inline-flex align-items-center" onClick={remove}>
-                    <Trash/>
+                    <FaTrash/>
                 </button>
             </div>
         </div>
@@ -86,13 +85,13 @@ export function NeedsList({needs_list, set_needs_list}) {
                 <span className="input-group-text">/{is_min ? "min" : "sec"}</span>
                 <button className="btn btn-sm btn-outline-danger d-inline-flex align-items-center gap-1 text-nowrap"
                         onClick={() => set_needs_list({})} title="清空需求">
-                    <Trash/>
+                    <FaTrash/>
                     <span className="compact-hide-text">清空需求</span>
                 </button>
                 <ItemSelect text="添加需求物品" set_item={add_need}
-                            icon={<PlusCircle className="compact-show"/>}/>
+                            icon={<FaPlusCircle className="compact-show"/>}/>
                 <ItemSelect text="添加现有产线" set_item={add_npl}
-                            icon={<PlusSquare className="compact-show"/>}
+                            icon={<FaPlusSquare className="compact-show"/>}
                             btn_class="btn btn-sm btn-outline-success text-nowrap"/>
             </div>
 
@@ -178,18 +177,18 @@ export function NeedsListStorage({needs_list, set_needs_list}) {
         <div className="input-group input-group-sm">
             <button className="btn btn-outline-secondary d-inline-flex align-items-center gap-1"
                     type="button" onClick={save} title="保存需求列表">
-                <Save2 className="compact-show"/>
+                <FaRegSave className="compact-show"/>
                 <span className="compact-hide-text">保存</span>
             </button>
             <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
                     type="button" data-bs-toggle="dropdown" aria-expanded="false" title="加载需求列表">
-                <Folder2Open className="compact-show"/>
+                <FaRegFolderOpen className="compact-show"/>
                 <span className="compact-hide-text">加载</span>
             </button>
             <ul className="dropdown-menu">{dd_load_list}</ul>
             <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
                     type="button" data-bs-toggle="dropdown" aria-expanded="false" title="删除需求列表">
-                <Trash className="compact-show"/>
+                <FaTrash className="compact-show"/>
                 <span className="compact-hide-text">删除</span>
             </button>
             <ul className="dropdown-menu">{dd_delete_list}</ul>

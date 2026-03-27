@@ -124,7 +124,7 @@ export default defineConfig(({mode}) => ({
                         if (id.includes('/pinyin-pro/')) {
                             return 'vendor-pinyin';
                         }
-                        if (id.includes('/react-icons/') || id.includes('/react-bootstrap-icons/')) {
+                        if (id.includes('/react-icons/')) {
                             return 'vendor-icons';
                         }
                         if (id.includes('/javascript-lp-solver/')) {
@@ -143,7 +143,7 @@ export default defineConfig(({mode}) => ({
         react(),
         ...get_sprite_plugins(mode),
         ...(!is_tauri_build ? [legacy({
-            targets: ['ie>=11'],
+            targets: ['edge>=79', 'firefox>=67', 'chrome>=64', 'safari>=12'],
             additionalLegacyPolyfills:['regenerator-runtime/runtime'],
         })] : []),
         ...(!is_tauri_build ? [VitePWA({

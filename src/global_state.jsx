@@ -1,5 +1,4 @@
 import solver from "javascript-lp-solver";
-import structuredClone from '@ungap/structured-clone';
 
 function uniq(arr) {
     return Array.from(new Set(arr));

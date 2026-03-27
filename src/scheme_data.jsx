@@ -1,7 +1,6 @@
-import structuredClone from '@ungap/structured-clone';
 import {useContext, useEffect, useState} from 'react';
 import {GameInfoContext, GlobalStateContext, SchemeDataSetterContext} from './contexts.jsx';
-import {Save2, Folder2Open, Trash} from 'react-bootstrap-icons';
+import {FaRegSave, FaRegFolderOpen, FaTrash} from 'react-icons/fa';
 
 const DEFAULT_SCHEME_DATA = {
     "item_recipe_choices": {"氢": 1},
@@ -145,18 +144,18 @@ export function SchemeStorage() {
         <div className="input-group input-group-sm">
             <button className="btn btn-outline-secondary d-inline-flex align-items-center gap-1"
                     type="button" onClick={save} title="保存生产策略">
-                <Save2 className="compact-show"/>
+                <FaRegSave className="compact-show"/>
                 <span className="compact-hide-text">保存</span>
             </button>
             <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
                     type="button" data-bs-toggle="dropdown" aria-expanded="false" title="加载生产策略">
-                <Folder2Open className="compact-show"/>
+                <FaRegFolderOpen className="compact-show"/>
                 <span className="compact-hide-text">加载</span>
             </button>
             <ul className="dropdown-menu">{dd_load_list}</ul>
             <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
                     type="button" data-bs-toggle="dropdown" aria-expanded="false" title="删除生产策略">
-                <Trash className="compact-show"/>
+                <FaTrash className="compact-show"/>
                 <span className="compact-hide-text">删除</span>
             </button>
             <ul className="dropdown-menu">{dd_delete_list}</ul>

@@ -1,4 +1,3 @@
-import structuredClone from '@ungap/structured-clone';
 import {useContext, useState} from 'react';
 import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext} from './contexts';
 import {HorizontalMultiButtonSelect} from './recipe.jsx';
