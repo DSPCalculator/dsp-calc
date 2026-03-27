@@ -184,9 +184,11 @@ body > .p-3 {
 }
 
 /* 顶部面板：不参与滚动，自然高度 */
+/* 使用 clip 而非 auto：clip 不会创建滚动容器，
+   overflow-y 保持 visible，tooltip 可正常溢出到下方区域 */
 .app-top-panel {
     flex-shrink: 0;
-    overflow-x: auto;
+    overflow-x: clip;
 }
 
 /* 结果区域：填充剩余高度 */

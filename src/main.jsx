@@ -5,7 +5,8 @@ import {Header} from './header.jsx';
 import {IconStyles} from './icon.jsx';
 import {ThemeProvider} from './ThemeContext.jsx';
 
-import 'bootstrap/dist/js/bootstrap.min.js';
+// Not using 'bootstrap/dist/js/bootstrap.min.js' here, because it breaks dropdown-list
+import 'bootstrap';
 
 import '../css/styles.scss';
 // app-specific CSS

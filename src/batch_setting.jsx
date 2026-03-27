@@ -1,5 +1,5 @@
 import structuredClone from '@ungap/structured-clone';
-import {useContext, useState} from 'react';
+import {useContext} from 'react';
 import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext} from './contexts';
 import {HorizontalMultiButtonSelect} from './recipe.jsx';
 import {pro_mode_class} from './result.jsx';
@@ -8,8 +8,17 @@ import {pro_mode_class} from './result.jsx';
 function FactorySelect({factory, list, icon_size}) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
-    const [cur, set_cur] = useState(0);
     let game_data = global_state.game_data;
+    let scheme_data = global_state.scheme_data;
+
+    // 从 scheme_data 推导当前选中建筑（取该设施类型下第一个配方的建筑索引）
+    let cur = 0;
+    for (let i = 0; i < game_data.recipe_data.length; i++) {
+        if (game_data.recipe_data[i]["设施"] == factory) {
+            cur = scheme_data.scheme_for_recipe[i]["建筑"];
+            break;
+        }
+    }
 
     const options = list.map((data, idx) => ({
         value: idx, item_icon: data["名称"],
@@ -17,7 +26,6 @@ function FactorySelect({factory, list, icon_size}) {
     }));
 
     function set_factory(building) {
-        set_cur(building);
         // 取本设施类型选中建筑的名称，用于跨设施类型匹配
         const building_name = list[building]["名称"];
         set_scheme_data(old_scheme_data => {
@@ -43,10 +51,17 @@ export function BatchSetting() {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const compact_mode = useContext(CompactModeContext);
-    const [pro_num, set_pro_num] = useState(0);
-    const [pro_mode, set_pro_mode] = useState(0);
     let game_data = global_state.game_data;
+    let scheme_data = global_state.scheme_data;
     let proliferator_price = global_state.proliferator_price;
+
+    // 从 scheme_data 推导当前增产点数和增产模式（取第一个配方的值）
+    let pro_num = 0;
+    let pro_mode = 0;
+    if (scheme_data.scheme_for_recipe.length > 0) {
+        pro_num = scheme_data.scheme_for_recipe[0]["增产点数"];
+        pro_mode = scheme_data.scheme_for_recipe[0]["增产模式"];
+    }
 
     const is_mobile = compact_mode === "mobile";
     const mob_icon = is_mobile ? 22 : undefined;
@@ -84,7 +99,6 @@ export function BatchSetting() {
     });
 
     function change_pro_num(pro_num) {
-        set_pro_num(pro_num);
         set_scheme_data(old_scheme_data => {
             let scheme_data = structuredClone(old_scheme_data);
             for (var i = 0; i < game_data.recipe_data.length; i++) {
@@ -95,7 +109,6 @@ export function BatchSetting() {
     }
 
     function change_pro_mode(pro_mode) {
-        set_pro_mode(pro_mode);
         set_scheme_data(old_scheme_data => {
             let scheme_data = structuredClone(old_scheme_data);
             for (var i = 0; i < game_data.recipe_data.length; i++) {
