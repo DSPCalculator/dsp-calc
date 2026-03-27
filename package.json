@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "node --no-deprecation node_modules/vite/bin/vite.js build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "tauri:dev": "tauri dev",
     "tauri:build": "tauri build"
@@ -38,10 +38,13 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
     "imagemin": "^9.0.1",
     "imagemin-pngquant": "^10.0.0",
     "imagemin-webp": "^8.0.0",
     "sass": "^1.97.3",
-    "vite": "7.3.1"
+    "vite": "7.3.1",
+    "vite-plugin-pwa": "^1.2.0",
+    "workbox-window": "^7.4.0"
   }
 }

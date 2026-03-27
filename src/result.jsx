@@ -479,7 +479,7 @@ export function Result({needs_list, set_needs_list}) {
             const hasNoInputs = Object.keys(recipe["原料"]).length === 0;
             const hasSingleOutput = Object.keys(recipe["产物"]).length === 1;
             return hasNoInputs && hasSingleOutput;
-        } catch (e) {
+        } catch {
             return false;
         }
     };

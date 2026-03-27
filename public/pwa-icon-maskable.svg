@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Maskable icon: content within safe zone (center 80% circle) -->
+  <rect width="512" height="512" fill="#212529"/>
+  <circle cx="256" cy="256" r="56" fill="#ffc107" opacity="0.9"/>
+  <ellipse cx="256" cy="256" rx="124" ry="38" fill="none" stroke="#0d6efd" stroke-width="8" transform="rotate(-60 256 256)"/>
+  <ellipse cx="256" cy="256" rx="124" ry="38" fill="none" stroke="#0d6efd" stroke-width="8" transform="rotate(0 256 256)"/>
+  <ellipse cx="256" cy="256" rx="124" ry="38" fill="none" stroke="#0d6efd" stroke-width="8" transform="rotate(60 256 256)"/>
+</svg>

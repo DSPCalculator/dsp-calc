@@ -32,3 +32,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </ThemeProvider>
     </React.StrictMode>,
 )
+
+// PWA registration requires Service Worker support — skip entirely on legacy
+// browsers (e.g. IE11) so the rest of the app still renders.
+if ('serviceWorker' in navigator) {
+    import('./reload_prompt.jsx').then(({ReloadPrompt}) => {
+        ReactDOM.createRoot(document.getElementById('pwa-prompt')).render(
+            <React.StrictMode>
+                <ThemeProvider>
+                    <ReloadPrompt/>
+                </ThemeProvider>
+            </React.StrictMode>,
+        )
+    }).catch(e => {
+        console.warn('PWA registration unavailable:', e);
+    });
+}
