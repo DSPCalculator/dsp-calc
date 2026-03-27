@@ -5,7 +5,7 @@ import {HorizontalMultiButtonSelect} from './recipe.jsx';
 import {pro_mode_class} from './result.jsx';
 
 // TODO refactor to some other modules
-function FactorySelect({factory, list, icon_size}) {
+function FactorySelect({list, icon_size}) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const [cur, set_cur] = useState(0);

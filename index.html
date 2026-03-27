@@ -4,16 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#212529"/>
+    <meta name="description" content="戴森球计划生产线量化计算工具"/>
     <link rel="icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/pwa-icon.svg"/>
     <title>戴森球计划量化计算器</title>
 </head>
 
 <body>
 <div id="icon-styles"></div>
-<div id="header"></div>
+<div id="header">
+    <div style="padding:.5rem 1rem;background:#f8f9fa;border-bottom:1px solid #dee2e6;font-family:system-ui,sans-serif;">
+        <strong>戴森球计划量化计算器</strong>
+        <span style="float:right;font-size:14px;color:#6c757d;">&#9432; 若无法加载，尝试切换浏览器为Chrome/Edge</span>
+    </div>
+</div>
 <div class="p-3">
     <div id="root"></div>
 </div>
+<div id="pwa-prompt"></div>
 <script type="module" src="src/main.jsx"></script>
 </body>
 

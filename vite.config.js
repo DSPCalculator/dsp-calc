@@ -11,6 +11,7 @@ import {fileURLToPath} from 'url';
 import Spritesmith from 'spritesmith';
 import {defineConfig} from 'vite';
 import legacy from '@vitejs/plugin-legacy';
+import {VitePWA} from 'vite-plugin-pwa';
 
 const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -144,6 +145,74 @@ export default defineConfig(({mode}) => ({
         ...(!is_tauri_build ? [legacy({
             targets: ['ie>=11'],
             additionalLegacyPolyfills:['regenerator-runtime/runtime'],
+        })] : []),
+        ...(!is_tauri_build ? [VitePWA({
+            registerType: 'prompt',
+            injectRegister: false,
+            manifest: {
+                name: '戴森球计划量化计算器',
+                short_name: 'DSP计算器',
+                description: '戴森球计划生产线量化计算工具',
+                theme_color: '#212529',
+                background_color: '#212529',
+                display: 'standalone',
+                orientation: 'any',
+                categories: ['utilities', 'games'],
+                icons: [
+                    {
+                        src: 'pwa-icon.svg',
+                        sizes: 'any',
+                        type: 'image/svg+xml',
+                        purpose: 'any',
+                    },
+                    {
+                        src: 'pwa-icon-maskable.svg',
+                        sizes: 'any',
+                        type: 'image/svg+xml',
+                        purpose: 'maskable',
+                    },
+                    {
+                        src: 'favicon.ico',
+                        sizes: '64x64 32x32 16x16',
+                        type: 'image/x-icon',
+                    },
+                ],
+            },
+            workbox: {
+                globPatterns: ['**/*.{js,css,html,ico,svg,woff2}'],
+                maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+                navigateFallback: 'index.html',
+                cleanupOutdatedCaches: true,
+                runtimeCaching: [
+                    {
+                        urlPattern: /\.json$/i,
+                        handler: 'StaleWhileRevalidate',
+                        options: {
+                            cacheName: 'game-data-cache',
+                            expiration: {
+                                maxEntries: 50,
+                                maxAgeSeconds: 60 * 60 * 24 * 30,
+                            },
+                            cacheableResponse: {statuses: [0, 200]},
+                        },
+                    },
+                    {
+                        urlPattern: /\/icon\/.*\.(png|webp)$/i,
+                        handler: 'CacheFirst',
+                        options: {
+                            cacheName: 'sprite-cache',
+                            expiration: {
+                                maxEntries: 30,
+                                maxAgeSeconds: 60 * 60 * 24 * 365,
+                            },
+                            cacheableResponse: {statuses: [0, 200]},
+                        },
+                    },
+                ],
+            },
+            devOptions: {
+                enabled: false,
+            },
         })] : []),
     ]
 }))

@@ -25,5 +25,8 @@ dist-ssr
 
 .vite/
 
+# PWA dev mode artifacts
+dev-dist/
+
 # Tauri — Rust build artifacts (large, fully reproducible)
 src-tauri/target/
