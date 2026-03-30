@@ -7,10 +7,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Generated files
 node_modules
 dist
 dist-ssr
 *.local
+/icon/*.png
+/icon/*.json
+/public/icon/
 
 # Editor directories and files
 .vscode/*
@@ -28,5 +32,5 @@ dist-ssr
 # PWA dev mode artifacts
 dev-dist/
 
-# Tauri — Rust build artifacts (large, fully reproducible)
+# Tauri / Rust build artifacts (large, fully reproducible)
 src-tauri/target/

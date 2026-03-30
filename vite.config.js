@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react';
-import {lstatSync, readdirSync} from 'fs';
+import {existsSync, lstatSync, readdirSync} from 'fs';
 import fsp from 'fs/promises';
 import {createRequire} from 'module';
 import sharp from 'sharp';
@@ -73,18 +73,26 @@ async function generateSpriteSheet(pngFiles) {
     return {image, coordinates, properties: {width: totalWidth, height: totalHeight}};
 }
 
-/** This generates one sprite image per game name when `mode == "development"` (`npm run dev`) */
+/** Generate one sprite image per game sub-directory under `icon/`.
+ *  In development mode, skip generation if sprite files already exist (so the
+ *  dev server starts fast on subsequent runs while still working on first run). */
 function get_sprite_plugins(mode) {
-    if (mode == "development") return [];
-
     return readdirSync('./icon').map(dir => {
         if (lstatSync(`./icon/${dir}`).isDirectory()) {
             const output_icon = `./icon/${dir}.png`;
 
             return {
                 // generate sprite sheet, then compress to png and webp
-                name: "spritesmith_and_postprocess_image",
+                name: `spritesmith_${dir}`,
                 async buildStart() {
+                    // In dev mode, skip if sprite files already exist
+                    if (mode === "development") {
+                        const jsonExists = existsSync(`./icon/${dir}.json`);
+                        const pngExists = existsSync(`./public/icon/${dir}.png`);
+                        if (jsonExists && pngExists) return;
+                        console.log(`[sprite] Generating missing icon atlas for "${dir}"...`);
+                    }
+
                     const pngFiles = readdirSync(`./icon/${dir}`)
                         .filter(f => f.endsWith('.png'))
                         .sort()

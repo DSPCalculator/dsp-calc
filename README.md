@@ -15,7 +15,14 @@
 
 ## 本地开发环境
 
-- 下载nodejs，并确认npm指令可以运行
+- 安装 Node.js (最低支持的版本为 20.19+ 或 22.12+ 或 任意更高的偶数大版本)，可以选择以下两种方式之一：
+    - 直接下载 [Node.js](https://nodejs.org/zh-cn/download) 并安装
+    - 使用 nvm (Node Version Manager，长期开发推荐)
+        - 如果是 Linux、macOS、WSL 等 POSIX 环境按照说明安装 [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+        - 如果是 Windows 下载 [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/latest)
+        - 安装后在命令行输入以下命令：`nvm install 24` (安装Node.js)，然后`nvm use 24` (使用刚才安装的Node.js)
+            - 可以将 `24` 换成你要的大版本
+- 确认 `npm` 指令可以运行
 - `npm install`
 - `npm run dev`，然后根据提示打开浏览器链接即可
 
@@ -50,7 +57,7 @@
 
 ### 部署平台
 
-- [ ] PWA
-- [ ] 桌面端应用
-- [ ] 移动端UI适配
+- [x] PWA
+- [x] 桌面端应用
+- [x] 移动端UI适配 (基本完成，但可能还需要根据用户体验调整布局)
 - [ ] 游戏内插件
