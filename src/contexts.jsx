@@ -1,4 +1,3 @@
-//import structuredClone from '@ungap/structured-clone';
 import {createContext, useEffect, useState} from 'react';
 import {GameInfo, GlobalState} from './global_state';
 import {init_scheme_data} from './scheme_data';

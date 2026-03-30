@@ -1,4 +1,3 @@
-import structuredClone from '@ungap/structured-clone';
 import {useContext} from 'react';
 import {GameInfoContext, GlobalStateContext, SettingsContext, SettingsSetterContext} from './contexts.jsx';
 import {ApplyBuildingMultiplier} from './global_state.jsx';

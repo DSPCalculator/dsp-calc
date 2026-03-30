@@ -2,19 +2,76 @@ import react from '@vitejs/plugin-react';
 import {lstatSync, readdirSync} from 'fs';
 import fsp from 'fs/promises';
 import {createRequire} from 'module';
-import glob from 'glob';
-import imagemin from 'imagemin';
-import imageminPngquant from 'imagemin-pngquant';
-import imageminWebp from 'imagemin-webp';
+import sharp from 'sharp';
 import path from 'path';
 import {fileURLToPath} from 'url';
-import Spritesmith from 'spritesmith';
 import {defineConfig} from 'vite';
 import legacy from '@vitejs/plugin-legacy';
 import {VitePWA} from 'vite-plugin-pwa';
 
 const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+/** Generate a sprite sheet from an array of PNG files using sharp.
+ *  Returns {image: Buffer, coordinates: {[file]: {x, y, width, height}}, properties: {width, height}} */
+async function generateSpriteSheet(pngFiles) {
+    // Read all images and get their dimensions
+    const imageInfos = await Promise.all(pngFiles.map(async (file) => {
+        const meta = await sharp(file).metadata();
+        return {file, width: meta.width, height: meta.height};
+    }));
+
+    if (imageInfos.length === 0) {
+        throw new Error('No images to process for sprite sheet');
+    }
+
+    // Row-based packing: place images left-to-right, wrap to next row
+    // For uniform-sized game icons this produces a compact grid layout
+    const maxRowWidth = Math.ceil(Math.sqrt(imageInfos.length)) *
+        Math.max(...imageInfos.map(i => i.width));
+
+    let x = 0, y = 0, rowHeight = 0, totalWidth = 0;
+    const placements = [];
+
+    for (const info of imageInfos) {
+        if (x + info.width > maxRowWidth && x > 0) {
+            y += rowHeight;
+            x = 0;
+            rowHeight = 0;
+        }
+        placements.push({...info, x, y});
+        x += info.width;
+        rowHeight = Math.max(rowHeight, info.height);
+        totalWidth = Math.max(totalWidth, x);
+    }
+    const totalHeight = y + rowHeight;
+
+    // Composite all images onto a transparent canvas
+    const composites = placements.map(p => ({
+        input: p.file,
+        left: p.x,
+        top: p.y,
+    }));
+
+    const image = await sharp({
+        create: {
+            width: totalWidth,
+            height: totalHeight,
+            channels: 4,
+            background: {r: 0, g: 0, b: 0, alpha: 0},
+        }
+    })
+        .composite(composites)
+        .png()
+        .toBuffer();
+
+    const coordinates = {};
+    for (const p of placements) {
+        coordinates[p.file] = {x: p.x, y: p.y, width: p.width, height: p.height};
+    }
+
+    return {image, coordinates, properties: {width: totalWidth, height: totalHeight}};
+}
 
 /** This generates one sprite image per game name when `mode == "development"` (`npm run dev`) */
 function get_sprite_plugins(mode) {
@@ -25,26 +82,23 @@ function get_sprite_plugins(mode) {
             const output_icon = `./icon/${dir}.png`;
 
             return {
-                // convert `output_icon` to webp and compressed png
+                // generate sprite sheet, then compress to png and webp
                 name: "spritesmith_and_postprocess_image",
                 async buildStart() {
-                    let {image, coord} = await new Promise((resolve, reject) => {
-                        Spritesmith.run({src: glob.sync(`./icon/${dir}/*.png`)}, function (err, result) {
-                            if (err) {
-                                reject(err);
-                            }
+                    const pngFiles = readdirSync(`./icon/${dir}`)
+                        .filter(f => f.endsWith('.png'))
+                        .sort()
+                        .map(f => `./icon/${dir}/${f}`);
 
-                            let {width, height} = result.properties;
-                            let coord_entries = Object.entries(result.coordinates).map(([img, coord]) =>
-                                [path.basename(img, ".png"), {...coord, total_width: width, total_height: height}]);
-                            let coord = Object.fromEntries(coord_entries);
+                    const result = await generateSpriteSheet(pngFiles);
+                    const {width, height} = result.properties;
 
-                            resolve({image: result.image, coord: coord});
-                        });
-                    });
+                    const coord_entries = Object.entries(result.coordinates).map(([img, coord]) =>
+                        [path.basename(img, ".png"), {...coord, total_width: width, total_height: height}]);
+                    const coord = Object.fromEntries(coord_entries);
 
                     // write the sprite png and json coord
-                    await fsp.writeFile(output_icon, image);
+                    await fsp.writeFile(output_icon, result.image);
                     await fsp.writeFile(`./icon/${dir}.json`, JSON.stringify(coord, null, 2));
 
                     // compress the png to png and webp, and report the size diff
@@ -54,19 +108,31 @@ function get_sprite_plugins(mode) {
 
                     let size_before = filesize_mb(output_icon);
 
-                    const plugin_options = [
-                        imageminPngquant({quality: [0.1, 0.5], strip: true, speed: 5}),
-                        imageminWebp({quality: 75})
-                    ];
-                    for (let plugin of plugin_options) {
-                        await imagemin([output_icon],
-                            {destination: './public/icon', plugins: [plugin]});
-                    }
+                    // Ensure destination directory exists
+                    await fsp.mkdir('./public/icon', {recursive: true});
 
-                    let output_png = output_icon.replace("/icon/", "/public/icon/");
+                    const iconBasename = path.basename(output_icon, path.extname(output_icon));
+                    const output_png = path.join('./public/icon', path.basename(output_icon));
+                    const output_webp = path.join('./public/icon', `${iconBasename}.webp`);
+
+                    // Compress PNG
+                    await sharp(output_icon)
+                        .png({
+                            palette: true,
+                            quality: 50,
+                            effort: 6,
+                            dither: 1.0,
+                            compressionLevel: 9,
+                        })
+                        .toFile(output_png);
+
+                    // Convert to WebP
+                    await sharp(output_icon)
+                        .webp({quality: 75})
+                        .toFile(output_webp);
 
                     let size_after_png = filesize_mb(output_png);
-                    let size_after_webp = filesize_mb(output_png.replace(".png", ".webp"));
+                    let size_after_webp = filesize_mb(output_webp);
                     console.log("icon sprite:", dir, size_before, "->",
                         size_after_png, "MB", "(png)",
                         size_after_webp, "MB", "(webp)");
@@ -147,7 +213,7 @@ export default defineConfig(({mode}) => ({
                         if (id.includes('/pinyin-pro/')) {
                             return 'vendor-pinyin';
                         }
-                        if (id.includes('/react-icons/') || id.includes('/react-bootstrap-icons/')) {
+                        if (id.includes('/react-icons/')) {
                             return 'vendor-icons';
                         }
                         if (id.includes('/javascript-lp-solver/')) {
@@ -166,7 +232,7 @@ export default defineConfig(({mode}) => ({
         react(),
         ...get_sprite_plugins(mode),
         ...(!is_tauri_build ? [legacy({
-            targets: ['ie>=11'],
+            targets: ['edge>=79', 'firefox>=67', 'chrome>=64', 'safari>=12'],
             additionalLegacyPolyfills:['regenerator-runtime/runtime'],
         })] : []),
         ...(is_tauri_build ? [pwaStubPlugin()] : []),
