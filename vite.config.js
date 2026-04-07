@@ -13,22 +13,63 @@ function get_manual_chunks(id) {
         return 'vendor';
     }
 
-    if (id.includes('/src/global_state.jsx')
-        || id.includes('/src/vendor/javascript_lp_solver_browser.js')
-        || id.includes('/src/GameData.jsx')) {
+    if (id.includes('/src/shared/icons/ItemIcon.jsx')) {
+        return 'icon-ui';
+    }
+
+    if (id.includes('/src/shared/icons/iconRegistryLoader.js')
+        || id.includes('/src/shared/icons/iconRegistryHelpers.js')) {
+        return 'icon-ui';
+    }
+
+    if (id.includes('/src/shared/icons/registries/Vanilla.js')) {
+        return 'icon-registry-vanilla';
+    }
+
+    if (id.includes('/src/shared/icons/registries/MoreMegaStructure.js')) {
+        return 'icon-registry-mms';
+    }
+
+    if (id.includes('/src/shared/icons/registries/TheyComeFromVoid.js')) {
+        return 'icon-registry-tcfv';
+    }
+
+    if (id.includes('/src/shared/icons/registries/GenesisBook.js')) {
+        return 'icon-registry-genesis';
+    }
+
+    if (id.includes('/src/shared/icons/registries/OrbitalRing.js')) {
+        return 'icon-registry-orbital';
+    }
+
+    if (id.includes('/src/shared/icons/registries/FractionateEverything.js')) {
+        return 'icon-registry-fractionate';
+    }
+
+    if (id.includes('/src/shared/selectors/ItemPickerButton.jsx')) {
+        return 'item-select-ui';
+    }
+
+    if (id.includes('/src/core/calculation/globalState.js')
+        || id.includes('/src/core/calculation/globalStateDerivations.js')
+        || id.includes('/src/core/vendor/javascriptLpSolverBrowser.js')
+        || id.includes('/src/core/game-data/gameData.js')) {
         return 'calc-core';
     }
 
-    if (id.includes('/src/result.jsx')
-        || id.includes('/src/settings.jsx')
-        || id.includes('/src/batch_setting.jsx')
-        || id.includes('/src/natural_production_line.jsx')) {
+    if (id.includes('/src/features/result/ResultPanel.jsx')
+        || id.includes('/src/features/result/ResultRecipeSelectors.jsx')
+        || id.includes('/src/features/result/resultSelectorClasses.js')
+        || id.includes('/src/features/result/RecipeDisplay.jsx')
+        || id.includes('/src/features/result/BatchPresetControls.jsx')
+        || id.includes('/src/features/result/NaturalProductionLinesTable.jsx')
+        || id.includes('/src/features/settings/SettingsPanel.jsx')
+        || id.includes('/src/shared/ui/HorizontalMultiButtonSelect.jsx')) {
         return 'calc-ui';
     }
 
-    if (id.includes('/src/item_select.jsx')
-        || id.includes('/src/icon.jsx')
-        || id.includes('/src/needs_list.jsx')) {
+    if (id.includes('/src/features/needs/NeedsPanel.jsx')
+        || id.includes('/src/features/needs/NeedsStorageControls.jsx')) {
         return 'selection-ui';
     }
 }

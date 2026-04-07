@@ -53,14 +53,20 @@ npm run lint
 
 **构建范围建议：**
 
-- 修改 `src/`、`css/`、`data/`、`icon/`、`public/`、`vite.config.js`、`package.json`、`.eslintrc.cjs`、`.github/workflows/` 后，至少执行 `npm run build`。
-- 修改前端逻辑、状态管理、数据装配、样式或构建配置后，提交前执行 `npm run lint` 和 `npm run build`。
+- 修改 `src/`、`css/`、`data/`、`icon/`、`public/`、`vite.config.js`、`package.json`、`.eslintrc.cjs`、`.github/workflows/` 后，不代表必须立刻执行 `npm run build`；应先判断当前任务是否真的需要生产构建验证。
+- 对前端逻辑、状态管理、数据装配、样式或构建配置改动，默认先依赖 `npm run dev` 的热重载观察效果；只有命中下文“允许执行 build 的场景”时，才执行 `npm run build`。
 - 纯文档变更（如 `README.md`、`AGENTS.md`）可以不跑构建，但最终汇报时必须明确写“未验证”。
 
 **Web 热重载规则：**
 
 - 本项目是 Web 前端项目，开发期默认依赖 `npm run dev` 的热重载观察修改效果。
-- 除非用户明确要求执行 `npm run build`、需要验证生产构建、或当前任务本身涉及构建/发布链路，否则不要主动运行 `npm run build`。
+- **硬性规则：默认禁止因为“刚改了代码”就执行 `npm run build`。**
+- **只有在以下场景才允许执行 `npm run build`：**
+  - 用户明确要求执行 `npm run build`
+  - 当前任务明确要求验证生产构建结果
+  - 当前任务涉及构建链路、发布链路、打包产物、chunk 分析、资源生成、`vite.config.js` 行为验证
+  - 当前准备提交，并且该提交必须以生产构建通过作为验收条件
+- 不满足上述条件时，即使修改了 `src/`、`css/`、`data/`、`icon/`、`public/` 等文件，也**禁止**主动执行 `npm run build`。
 - 如果只是为了查看界面改动或迭代样式，优先使用现有开发态而不是额外触发一次生产构建。
 
 ## 验证规则
@@ -73,8 +79,9 @@ npm run lint
 **完成前验证门槛：**
 
 - 代码、数据、构建配置改动：
-  - 先跑 `npm run lint`
-  - 再跑 `npm run build`
+  - 至少执行与当前任务匹配的验证命令
+  - 若任务命中了上文“允许执行 build 的场景”，则先跑 `npm run lint`，再跑 `npm run build`
+  - 若任务未命中 build 场景，则不要为了“形式完整”补跑 `npm run build`；最终汇报中明确写明“未做 build 验证，原因是当前任务依赖热重载开发态”
 - 需要人工确认构建产物时，再补 `npm run preview`
 - 如果只运行了其中一部分命令，必须在结论里明确缺失项。
 
@@ -129,14 +136,14 @@ public/                       # 静态资源
 
 1. 优先从 `App.jsx`、`contexts.jsx`、`global_state.jsx`、相关功能组件定位入口。
 2. 涉及计算结果、需求列表、配方展示时，确认是否影响 `result.jsx`、`needs_list.jsx`、`recipe.jsx`、`scheme_data.jsx`。
-3. 修改完成后至少执行 `npm run lint` 和 `npm run build`。
+3. 修改完成后默认先用 `npm run dev` 热重载验证；只有命中“允许执行 build 的场景”时，才补 `npm run lint` 和 `npm run build`。
 
 ### 修改数据或模组兼容
 
 1. 先检查 `GameData.jsx` 中的版本号、GUID 组合顺序和启用逻辑。
 2. 再检查 `data/` 下对应 JSON 是否存在、命名是否匹配。
 3. 涉及图标时，检查 `icon/` 与 `public/icon/` 是否需要通过构建重新生成。
-4. 修改完成后执行 `npm run build`，必要时再跑 `npm run preview` 做人工确认。
+4. 只有当本轮任务需要验证资源生成、生产产物或构建链路时，才执行 `npm run build`；必要时再跑 `npm run preview` 做人工确认。
 
 ### 修改构建或发布流程
 
@@ -169,7 +176,9 @@ public/                       # 静态资源
 - 提交前必须先验证作者身份可用：优先使用本机已配置身份的 Git 执行 `git var GIT_AUTHOR_IDENT` 与 `git var GIT_COMMITTER_IDENT`；在当前 WSL 环境下，如本机 Windows Git 已配置身份，应优先使用 `/mnt/c/Program Files/Git/cmd/git.exe` 完成提交。
 - 如果当前 shell 的 Git 没有读取到有效 `user.name` / `user.email`，禁止用 `git -c user.name=... -c user.email=...` 临时覆盖提交身份；应改用已配置身份的本机 Git，或先向用户确认后再处理。
 - 提交前不要回滚用户已有的未提交改动；当前仓库可能处于脏工作树状态，必须只处理本次任务相关文件。
-- 对代码、数据、构建配置的改动，应在 `npm run lint` 和 `npm run build` 成功后再提交。
+- 对代码、数据、构建配置的改动，应先按“Web 热重载规则”判断是否允许执行 `npm run build`：
+  - 若允许，则在 `npm run lint` 和 `npm run build` 成功后再提交
+  - 若不允许，则至少确保已经完成与当前任务匹配的验证，并在提交说明或最终汇报中明确“未做 build 验证”
 - 对纯文档改动，如果没有运行验证命令，提交说明或最终汇报中必须明确标记“未验证”。
 
 ## 代理工作注意事项
