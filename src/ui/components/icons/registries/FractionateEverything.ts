@@ -1,6 +1,6 @@
 import {groupIconUrls} from '../iconRegistryHelpers';
 
-const icon_modules = import.meta.glob('../../../../icon/FractionateEverything/*.png', {
+const icon_modules = import.meta.glob('../assets/FractionateEverything/*.png', {
     import: 'default',
     eager: true,
 });

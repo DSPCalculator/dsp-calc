@@ -18,11 +18,12 @@ export function HorizontalMultiButtonSelect<TValue extends string | number>({
     const option_doms = options.map(({value, label, item_icon, className: optionClassName}) => {
         const selected_class = choice == value ? "bg-selected" : "bg-unselected";
         const gap_class = no_gap ? "border-between border-white" : "";
+        const option_padding_class = item_icon ? (label ? "py-0 px-1" : "p-0") : "py-1 px-1";
         return <div key={value}
-                    className={`py-1 px-1 text-nowrap d-flex align-items-center cursor-pointer small
+                    className={`${option_padding_class} text-nowrap d-flex align-items-center cursor-pointer small
                 ${selected_class} ${gap_class} ${optionClassName || ""}`}
                     onClick={() => onChange(value)}
-        >{item_icon && <ItemIcon item={item_icon} size={40}/>}
+        >{item_icon && <ItemIcon item={item_icon}/>}
             {label && <span className="mx-1">{label}</span>}
         </div>;
     });

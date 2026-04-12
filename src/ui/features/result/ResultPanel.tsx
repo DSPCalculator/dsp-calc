@@ -9,6 +9,7 @@ import {buildResultRowsViewModel} from './resultRowsViewModel';
 import {ResultTableRow} from './ResultTableRow';
 import {ceilFromDisplayed, roundToFixed} from '@lib/number';
 import type {GameData, ItemDataIndex, ItemGraph, NaturalProductionLineRow, NumericMap, ResultRowViewModel, SchemeData, Settings} from '@engine/types/domain';
+import {ITEM_ICON_CONTENT_SIZE} from '@ui/components/icons/ItemIcon';
 
 function collectResultMetrics({
     fixed_num,
@@ -119,7 +120,7 @@ function collectResultMetrics({
 }
 
 export function Result({needs_list, set_needs_list}) {
-    const RESULT_ICON_SIZE = 40;
+    const RESULT_ICON_SIZE = ITEM_ICON_CONTENT_SIZE;
 
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);

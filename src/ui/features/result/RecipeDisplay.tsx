@@ -1,8 +1,8 @@
 import React from 'react';
-import {ItemIcon} from '@ui/components/icons/ItemIcon';
+import {ItemIcon, ITEM_ICON_CONTENT_SIZE} from '@ui/components/icons/ItemIcon';
 
 export function Recipe({recipe}) {
-    const RECIPE_ITEM_ICON_SIZE = 40;
+    const RECIPE_ITEM_ICON_SIZE = ITEM_ICON_CONTENT_SIZE;
 
     function RecipeItemIcon({item, count}) {
         return <span className="recipe-item-icon me-1">

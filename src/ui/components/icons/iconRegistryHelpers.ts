@@ -2,7 +2,7 @@ export type IconRegistryGroups = Record<string, Record<string, string>>;
 
 export function groupIconUrls(icon_modules: Record<string, unknown>): IconRegistryGroups {
     return Object.entries(icon_modules).reduce<IconRegistryGroups>((groups, [modulePath, url]) => {
-        const match = modulePath.match(/icon\/([^/]+)\/(.+)\.png$/);
+        const match = modulePath.match(/(?:^|\/)(?:icon|assets)\/([^/]+)\/(.+)\.png$/);
         if (!match) {
             return groups;
         }

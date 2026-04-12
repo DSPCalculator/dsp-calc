@@ -1,2 +1,0 @@
-打开AssetStudio，File -> Load file，选择资源包
-点击Asset List，点击Type，选择所有Texture2D，右键Export selected assets

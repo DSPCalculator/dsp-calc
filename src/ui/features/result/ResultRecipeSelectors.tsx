@@ -32,7 +32,7 @@ export function RecipeSelect({item, choice, onChange, show_effective_recipe, sch
     if (item_data[item].length == 2) {
         const recipe_index = item_data[item][1];
         const recipe = display_recipes[recipe_index];
-        return <div className="my-1 px-2 py-1"><Recipe recipe={recipe}/></div>;
+        return <div className="px-2 py-0"><Recipe recipe={recipe}/></div>;
     }
 
     const doms = [];
@@ -41,7 +41,7 @@ export function RecipeSelect({item, choice, onChange, show_effective_recipe, sch
         const recipe = display_recipes[recipe_index];
         const bg_class = (i == choice) ? "selected" : "";
         doms.push(<a key={i}
-                     className={`recipe-item px-2 py-1 d-block text-decoration-none text-reset cursor-pointer ${bg_class}`}
+                     className={`recipe-item px-2 py-0 d-block text-decoration-none text-reset cursor-pointer ${bg_class}`}
                      onClick={() => onChange(i)}>
             <Recipe recipe={recipe}/>
         </a>);

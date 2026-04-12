@@ -8,7 +8,7 @@ import 'bootstrap/js/dist/dropdown.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // app-specific CSS
-import '../../../css/App.css';
+import '../styles/App.css';
 
 const headerRoot = document.getElementById('header');
 const appRoot = document.getElementById('root');

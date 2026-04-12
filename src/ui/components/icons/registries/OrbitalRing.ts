@@ -1,6 +1,6 @@
 import {groupIconUrls} from '../iconRegistryHelpers';
 
-const icon_modules = import.meta.glob('../../../../icon/OrbitalRing/*.png', {
+const icon_modules = import.meta.glob('../assets/OrbitalRing/*.png', {
     import: 'default',
     eager: true,
 });

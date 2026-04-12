@@ -6,7 +6,7 @@ import {
     SettingsSetterContext
 } from '@ui/app/providers/app-contexts';
 import {get_factory_speed_multiplier} from '@engine/calculation/equivalentRecipe';
-import {ItemIcon} from '@ui/components/icons/ItemIcon';
+import {ItemIcon, ITEM_ICON_CONTENT_SIZE} from '@ui/components/icons/ItemIcon';
 import {ItemSelect} from '@ui/components/selectors/ItemPickerButton';
 import {FactorySelect, ProModeSelect, ProNumSelect, RecipeSelect} from './ResultRecipeSelectors';
 import {AutoSizedInput} from '@ui/components/controls/AutoSizedInput';
@@ -14,7 +14,7 @@ import {AutoSizedInput} from '@ui/components/controls/AutoSizedInput';
 // { "目标物品": "氢", "建筑数量": 0, "配方id": 1, "增产点数": 0, "增产模式": 0, "建筑": 0 }
 
 function NplRow({row, set_row, remove_row}) {
-    const RESULT_ICON_SIZE = 40;
+    const RESULT_ICON_SIZE = ITEM_ICON_CONTENT_SIZE;
 
     // TODO performance issue (dependency loop?)
     const settings = useContext(SettingsContext);

@@ -17,11 +17,10 @@
     font-size: 1.1em !important;
 }
 
-/* 40px is the height of the image icon */
-.raw-text-selection div::after {
-    content: '';
-    display: block;
-    height: 40px;
+/* Keep mixed text/icon options aligned to the same 40px outer box height. */
+.raw-text-selection > div {
+    min-height: 40px;
+    box-sizing: border-box;
 }
 
 .pro-mode-speedup:hover,

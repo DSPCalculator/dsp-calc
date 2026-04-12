@@ -1,4 +1,4 @@
-import VanillaData from '../../../data/Vanilla.json';
+import VanillaData from './raw/Vanilla.json';
 import type {
     FactoryInfo,
     FractionateOutput,
@@ -48,7 +48,7 @@ import type {
                     面积定义为游戏中一纬线间隔的平方（即游戏内的约1.256637m），之后通过其他数据结构来给涉及物品数目不同的相同建筑通过算法将进出货物时的分拣
                     器与传送带的占地也考虑上，届时会有不同的铺设模式对应不同的分拣器传送带占地。建筑占地本身也会因是否使用建筑偏移而有所改动。
 */
-const data_index_modules = import.meta.glob<RawGameDataFile>(['../../../data/*.json', '!../../../data/Vanilla.json'], {
+const data_index_modules = import.meta.glob<RawGameDataFile>(['./raw/*.json', '!./raw/Vanilla.json'], {
     import: 'default',
 });
 const data_indices: Record<string, RawGameDataFile> = {
@@ -123,11 +123,11 @@ function build_fractionate_outputs(
     });
 }
 
+const name_icon_list: Record<string, string> = {};
+
 const VanillaGUID = "Vanilla";
 export const default_game_data = build_game_data([VanillaGUID], VanillaData as RawGameDataFile);
 export const vanilla_game_version = game_data_info_list[0].version;
-
-const name_icon_list: Record<string, string> = {};
 
 function get_json_file_name(mod_guid_list: string[]): string {
     //guid 指 name_en + version
@@ -461,7 +461,7 @@ async function load_json_data(json_file_name: string): Promise<RawGameDataFile> 
         return data_indices[json_file_name];
     }
 
-    const loader = data_index_modules[`../../../data/${json_file_name}.json`];
+    const loader = data_index_modules[`./raw/${json_file_name}.json`];
     if (!loader) {
         throw new Error(`未找到数据文件: ${json_file_name}.json`);
     }

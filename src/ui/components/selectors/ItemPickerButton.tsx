@@ -7,7 +7,7 @@ import {createPortal} from 'react-dom';
 import {GameInfoContext} from '@ui/app/providers/app-contexts';
 import type {ItemName} from '@engine/types/domain';
 import type {ItemSelectPanelProps, ItemSelectProps, SearchKeyEvent, StyleWithVars} from '@ui/types/ui';
-import {ItemIcon} from '../icons/ItemIcon';
+import {ItemIcon, ITEM_ICON_OUTER_SIZE} from '../icons/ItemIcon';
 
 function ItemSelectPanel({fuzz_result, onSelect, icon_grid}: ItemSelectPanelProps) {
     const fuzz_set = new Set(fuzz_result);
@@ -16,9 +16,17 @@ function ItemSelectPanel({fuzz_result, onSelect, icon_grid}: ItemSelectPanelProp
         const class_opacity = fuzz_set.has(item) ? "" : "opacity-25";
         return <div key={col + "#" + row}
                     className={`bg-body-secondary bg-opacity-10 cursor-pointer hover-bg-opacity-50 ${class_opacity}`}
-                    style={{gridRow: row, gridColumn: col}}
+                    style={{
+                        gridRow: row,
+                        gridColumn: col,
+                        width: ITEM_ICON_OUTER_SIZE,
+                        height: ITEM_ICON_OUTER_SIZE,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
                     onClick={() => onSelect(item)}>
-            <ItemIcon item={item} size={48}/>
+            <ItemIcon item={item} tooltip={false}/>
         </div>;
     });
 
@@ -114,9 +122,10 @@ export function ItemSelect({
     }
 
     const modalContentStyle: StyleWithVars = {"--bs-bg-opacity": 0.85};
+    const trigger_padding_class = icon_only ? "p-0" : "py-1 px-2";
 
     return <>
-        <button className={`btn py-1 px-2 ${btn_class} d-inline-flex align-items-center`}
+        <button className={`btn ${trigger_padding_class} ${btn_class} d-inline-flex align-items-center`}
                 onClick={show}>
             {item && <><ItemIcon item={item} size={icon_size} tooltip={!icon_only}/>
                 {!icon_only && <span className="ms-1"></span>}</>}

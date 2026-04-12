@@ -1,6 +1,6 @@
 import {groupIconUrls} from '../iconRegistryHelpers';
 
-const icon_modules = import.meta.glob('../../../../icon/TheyComeFromVoid/*.png', {
+const icon_modules = import.meta.glob('../assets/TheyComeFromVoid/*.png', {
     import: 'default',
     eager: true,
 });
