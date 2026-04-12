@@ -37,7 +37,7 @@ export function ResultTableRow({
                 <ResultRatioInput fixed_num={fixed_num}
                                   needs_list={needs_list}
                                   set_needs_list={set_needs_list}
-                                  value={getGrossOutput(result_amount, item_graph, row.item_name, fixed_num)}/>
+                                  value={getGrossOutput(result_amount, item_graph, row.item_name)}/>
             </div>
             {row.from_side_products.map(({from, amount_text}) => (
                 <div key={from} className="text-nowrap">

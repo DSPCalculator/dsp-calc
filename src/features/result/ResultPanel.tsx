@@ -7,6 +7,7 @@ import {addMineralizedItem, clearMineralizedItems, removeMineralizedItem} from '
 import {buildResultRowActions} from './resultRowActions';
 import {buildResultRowsViewModel} from './resultRowsViewModel';
 import {ResultTableRow} from './ResultTableRow';
+import {ceilFromDisplayed, roundToFixed} from '../../lib/number';
 
 export function Result({needs_list, set_needs_list}) {
     const RESULT_ICON_SIZE = 40;
@@ -59,17 +60,18 @@ export function Result({needs_list, set_needs_list}) {
         const factories_type = game_data.recipe_data[recipe_id]["设施"];
         const factory_info = game_data.factory_data[factories_type][scheme_recipe["建筑"]];
         const factory_name = factory_info["名称"];
-        const offset = 0.49994 * 0.1 ** fixed_num;
-        const build_number = amount / time_tick / item_graph[item]["产出倍率"] / factory_info["倍率"] + offset;
-        if (Math.ceil(build_number - 0.5 * 0.1 ** fixed_num) !== 0) {
+        const raw_build_number = amount / time_tick / item_graph[item]["产出倍率"] / factory_info["倍率"];
+        const build_number = roundToFixed(raw_build_number, fixed_num);
+        const building_count = ceilFromDisplayed(raw_build_number, fixed_num);
+        if (building_count !== 0) {
             if (factory_name in building_list) {
-                building_list[factory_name] = Number(building_list[factory_name]) + Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
+                building_list[factory_name] = Number(building_list[factory_name]) + building_count;
             } else {
-                building_list[factory_name] = Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
+                building_list[factory_name] = building_count;
             }
         }
         if (factory_name !== "轨道采集器") {
-            let e_cost = (build_number - offset) * factory_info["耗能"];
+            let e_cost = raw_build_number * factory_info["耗能"];
             if (factory_name === "大型采矿机") {
                 e_cost = settings.mining_efficiency_large / 100.0 * settings.mining_efficiency_large / 100.0 * (2.94 - 0.168) + 0.168;
             } else if (factory_name.endsWith("分馏塔")) {

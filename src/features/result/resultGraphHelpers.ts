@@ -1,11 +1,10 @@
 import type {ItemGraph, NumericMap} from '../../types/domain';
 
-export function getGrossOutput(amount: number, item_graph: ItemGraph, item: string, fixed_num: number): number {
-    const offset = 0.49994 * 0.1 ** fixed_num;
+export function getGrossOutput(amount: number, item_graph: ItemGraph, item: string): number {
     if (item_graph[item]["自消耗"]) {
-        return Number(amount * (1 + item_graph[item]["自消耗"])) + offset;
+        return Number(amount * (1 + item_graph[item]["自消耗"]));
     }
-    return Number(amount) + offset;
+    return Number(amount);
 }
 
 export function buildSideProducts(result_dict: NumericMap, item_graph: ItemGraph): Record<string, NumericMap> {
