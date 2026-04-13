@@ -9,8 +9,8 @@ jobs:
     environment: branch-preview
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: 20
 
@@ -23,4 +23,20 @@ jobs:
           zip -q -r ../dist.zip *
 
       - name: Deploy branch site (https://b.dsp-calc.pro)
-        run: "curl --fail --no-progress-meter --location 'https://publish.b.dsp-calc.pro/u?branch=${{ github.ref_name }}' --header 'Authorization: ${{ secrets.B_AUTH_TOKEN }}' --form 'file=@dist.zip'"
+        run: |
+          response_file="$(mktemp)"
+          http_code="$(
+            curl --silent --show-error --location \
+              --output "$response_file" \
+              --write-out '%{http_code}' \
+              'https://publish.b.dsp-calc.pro/u?branch=${{ github.ref_name }}' \
+              --header 'Authorization: ${{ secrets.B_AUTH_TOKEN }}' \
+              --form 'file=@dist.zip'
+          )"
+          if [ "${http_code}" -ge 400 ]; then
+            echo "Preview deploy failed with HTTP ${http_code}"
+            echo "Response body:"
+            cat "$response_file"
+            exit 1
+          fi
+          rm -f "$response_file"
