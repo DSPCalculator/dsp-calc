@@ -1,4 +1,5 @@
 import {lazy, Suspense, useState} from 'react';
+import {FaCog, FaTrashAlt} from 'react-icons/fa';
 import {ContextProvider} from './providers/AppProviders';
 import {NeedsList} from '@ui/features/needs/NeedsPanel';
 import {NeedsListStorage} from '@ui/features/needs/NeedsStorageControls';
@@ -43,8 +44,13 @@ function AppWithContexts() {
         <div className="d-flex column-gap-4 row-gap-2 flex-wrap">
             <SchemeStorage/>
             <NeedsListStorage needs_list={needs_list} set_needs_list={set_needs_list}/>
-            <button className="btn btn-outline-danger btn-sm" onClick={clearData}>清空数据缓存</button>
-            <button className="btn btn-outline-primary btn-sm" onClick={() => set_misc_show(s => !s)}>
+            <button className="btn btn-outline-danger btn-sm d-inline-flex align-items-center gap-1" onClick={clearData}>
+                <FaTrashAlt/>
+                <span>清空数据缓存</span>
+            </button>
+            <button className="btn btn-outline-primary btn-sm d-inline-flex align-items-center gap-1"
+                    onClick={() => set_misc_show(s => !s)}>
+                <FaCog/>
                 采矿参数 & 其他设置
             </button>
         </div>

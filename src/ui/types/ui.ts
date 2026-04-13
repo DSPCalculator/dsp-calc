@@ -1,4 +1,4 @@
-import type {CSSProperties, ChangeEvent, KeyboardEvent} from 'react';
+import type {CSSProperties, ChangeEvent, KeyboardEvent, ReactNode} from 'react';
 import type {IconGrid, ItemName, NumericMap, Settings} from '@engine/types/domain';
 
 export interface HorizontalOption<TValue extends string | number = string | number> {
@@ -21,6 +21,7 @@ export interface ItemSelectProps {
     btn_class?: string;
     icon_size?: number;
     icon_only?: boolean;
+    icon?: ReactNode;
 }
 
 export interface ItemSelectPanelProps {

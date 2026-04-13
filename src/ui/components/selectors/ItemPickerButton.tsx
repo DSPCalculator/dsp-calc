@@ -30,7 +30,7 @@ function ItemSelectPanel({fuzz_result, onSelect, icon_grid}: ItemSelectPanelProp
         </div>;
     });
 
-    return <div className="p-3 py-4 w-fit rounded-3 gap-1"
+    return <div className="px-3 pb-3 pt-0 w-fit rounded-3 gap-1"
                 style={{
                     display: "grid",
                     gridTemplateColumns: `repeat(${icon_grid.ncol}, max-content)`,
@@ -47,6 +47,7 @@ export function ItemSelect({
     btn_class = 'btn-outline-primary',
     icon_size = 24,
     icon_only = false,
+    icon,
 }: ItemSelectProps) {
     const modal_ref = useRef<HTMLDivElement | null>(null);
     const modal_instance_ref = useRef<Modal | null>(null);
@@ -125,10 +126,11 @@ export function ItemSelect({
     const trigger_padding_class = icon_only ? "p-0" : "py-1 px-2";
 
     return <>
-        <button className={`btn ${trigger_padding_class} ${btn_class} d-inline-flex align-items-center`}
+        <button className={`btn ${trigger_padding_class} ${btn_class} d-inline-flex align-items-center gap-1`}
                 onClick={show}>
             {item && <><ItemIcon item={item} size={icon_size} tooltip={!icon_only}/>
                 {!icon_only && <span className="ms-1"></span>}</>}
+            {!item && icon}
             {(item && !icon_only) ?
                 <small className="text-nowrap">{item}</small>
                 : <span className="text-nowrap">{text}</span>}
@@ -137,16 +139,16 @@ export function ItemSelect({
         {createPortal(
             <div ref={modal_ref} className="modal" tabIndex={-1}>
                 <div className="modal-dialog mw-fit">
-                    <div className="modal-content bg-dark flex-row" style={modalContentStyle}>
-                        <ItemSelectPanel fuzz_result={fuzz_result} icon_grid={game_info.icon_grid}
-                                         onSelect={on_select_item}/>
-                        <div className="p-3 d-flex flex-column gap-2">
+                    <div className="modal-content bg-dark d-flex flex-column" style={modalContentStyle}>
+                        <div className="px-3 pt-3 pb-1 d-flex flex-column gap-2">
                             <input ref={input_ref} className="round rounded-3 py-1 px-2 my-1"
                                    placeholder="搜索（支持拼音）"
                                    onChange={(e: ChangeEvent<HTMLInputElement>) => do_search(e.target.value)}
                                    onKeyDown={on_search_keydown}/>
                             {search_result_doms}
                         </div>
+                        <ItemSelectPanel fuzz_result={fuzz_result} icon_grid={game_info.icon_grid}
+                                         onSelect={on_select_item}/>
                     </div>
                 </div>
             </div>,
