@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   deploy:
+    if: github.repository == 'DSPCalculator/dsp-calc'
     runs-on: ubuntu-latest
 
     steps:

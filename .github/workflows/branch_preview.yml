@@ -4,6 +4,7 @@ on: [ push, workflow_dispatch ]
 
 jobs:
   build:
+    if: github.repository == 'DSPCalculator/dsp-calc'
 
     runs-on: ubuntu-latest
     environment: branch-preview
