@@ -95,9 +95,9 @@ export function ResultSidebar({
         return entries.map(({key, item, value, previousValue}) => (
             <tr key={key}>
                 <td className="text-end text-nowrap">
-                    <span className="d-inline-flex align-items-center">
-                        <span className="me-1">{item}</span>
-                        <ItemIcon item={item} size={RESULT_ICON_SIZE} tooltip={false}/>
+                        <span className="d-inline-flex align-items-center">
+                            <span className="me-1">{item}</span>
+                            <ItemIcon item={item} size={RESULT_ICON_SIZE}/>
                     </span>
                 </td>
                 <td className="ps-2 text-nowrap">
@@ -130,7 +130,7 @@ export function ResultSidebar({
                     {row.map(({key, item, value, previousValue}) => (
                         <td key={key} className="text-nowrap pe-3">
                             <span className="d-inline-flex align-items-center">
-                                <ItemIcon item={item} size={RESULT_ICON_SIZE} tooltip={false}/>
+                                <ItemIcon item={item} size={RESULT_ICON_SIZE}/>
                                 <span className="ms-1">
                                     {renderMetricValue(value, previousValue, suffix, digits)}
                                 </span>
@@ -158,7 +158,7 @@ export function ResultSidebar({
                 <td className="text-end text-nowrap">
                     <span className="d-inline-flex align-items-center">
                         <span className="me-1">{item}</span>
-                        <ItemIcon item={item} size={RESULT_ICON_SIZE} tooltip={false}/>
+                        <ItemIcon item={item} size={RESULT_ICON_SIZE}/>
                     </span>
                 </td>
                 <td className="ps-2 text-nowrap">
@@ -194,7 +194,7 @@ export function ResultSidebar({
                     {row.map(({key, item, value}) => (
                         <td key={key} className="text-nowrap pe-3">
                             <span className="d-inline-flex align-items-center">
-                                <ItemIcon item={item} size={RESULT_ICON_SIZE} tooltip={false}/>
+                                <ItemIcon item={item} size={RESULT_ICON_SIZE}/>
                                 <span className="ms-1">x{value.toFixed(fixed_num)}</span>
                                 <button className="ms-2 btn btn-outline-primary ssmall text-nowrap mineralize-btn"
                                         onClick={() => IncreaseCostWhenSurplus(item)}>
