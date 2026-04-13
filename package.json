@@ -28,6 +28,7 @@
     "terser": "^5.46.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.4",
     "@types/bootstrap": "^5.2.10",
     "@types/node": "^25.6.0",
     "@types/react": "^18.3.28",
@@ -35,14 +36,17 @@
     "@types/ungap__structured-clone": "^1.2.0",
     "@typescript-eslint/eslint-plugin": "^8.58.1",
     "@typescript-eslint/parser": "^8.58.1",
-    "@vitejs/plugin-legacy": "^5.4.3",
-    "@vitejs/plugin-react": "^4.7.0",
-    "eslint": "^8.57.1",
+    "@vitejs/plugin-legacy": "^8.0.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "esbuild": "^0.28.0",
+    "eslint": "^9.39.4",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.26",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "rollup": "^4.60.1",
     "sass": "^1.99.0",
     "typescript": "^6.0.2",
-    "vite": "5.4.6"
+    "vite": "^8.0.8"
   }
 }

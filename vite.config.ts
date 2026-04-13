@@ -14,63 +14,63 @@ function get_manual_chunks(id: string): string | undefined {
         return 'vendor';
     }
 
-    if (id.includes('/src/shared/icons/ItemIcon')) {
+    if (id.includes('/src/ui/components/icons/ItemIcon')) {
         return 'icon-ui';
     }
 
-    if (id.includes('/src/shared/icons/iconRegistryLoader')
-        || id.includes('/src/shared/icons/iconRegistryHelpers')) {
+    if (id.includes('/src/ui/components/icons/iconRegistryLoader')
+        || id.includes('/src/ui/components/icons/iconRegistryHelpers')) {
         return 'icon-ui';
     }
 
-    if (id.includes('/src/shared/icons/registries/Vanilla')) {
+    if (id.includes('/src/ui/components/icons/registries/Vanilla')) {
         return 'icon-registry-vanilla';
     }
 
-    if (id.includes('/src/shared/icons/registries/MoreMegaStructure')) {
+    if (id.includes('/src/ui/components/icons/registries/MoreMegaStructure')) {
         return 'icon-registry-mms';
     }
 
-    if (id.includes('/src/shared/icons/registries/TheyComeFromVoid')) {
+    if (id.includes('/src/ui/components/icons/registries/TheyComeFromVoid')) {
         return 'icon-registry-tcfv';
     }
 
-    if (id.includes('/src/shared/icons/registries/GenesisBook')) {
+    if (id.includes('/src/ui/components/icons/registries/GenesisBook')) {
         return 'icon-registry-genesis';
     }
 
-    if (id.includes('/src/shared/icons/registries/OrbitalRing')) {
+    if (id.includes('/src/ui/components/icons/registries/OrbitalRing')) {
         return 'icon-registry-orbital';
     }
 
-    if (id.includes('/src/shared/icons/registries/FractionateEverything')) {
+    if (id.includes('/src/ui/components/icons/registries/FractionateEverything')) {
         return 'icon-registry-fractionate';
     }
 
-    if (id.includes('/src/shared/selectors/ItemPickerButton')) {
+    if (id.includes('/src/ui/components/selectors/ItemPickerButton')) {
         return 'item-select-ui';
     }
 
-    if (id.includes('/src/core/calculation/globalState')
-        || id.includes('/src/core/calculation/globalStateDerivations')
-        || id.includes('/src/core/vendor/javascriptLpSolverBrowser')
-        || id.includes('/src/core/game-data/gameData')) {
+    if (id.includes('/src/engine/calculation/globalState')
+        || id.includes('/src/engine/calculation/globalStateDerivations')
+        || id.includes('/src/engine/solver/javascriptLpSolverBrowser')
+        || id.includes('/src/engine/data/gameData')) {
         return 'calc-core';
     }
 
-    if (id.includes('/src/features/result/ResultPanel')
-        || id.includes('/src/features/result/ResultRecipeSelectors')
-        || id.includes('/src/features/result/resultSelectorClasses')
-        || id.includes('/src/features/result/RecipeDisplay')
-        || id.includes('/src/features/result/BatchPresetControls')
-        || id.includes('/src/features/result/NaturalProductionLinesTable')
-        || id.includes('/src/features/settings/SettingsPanel')
-        || id.includes('/src/shared/ui/HorizontalMultiButtonSelect')) {
+    if (id.includes('/src/ui/features/result/ResultPanel')
+        || id.includes('/src/ui/features/result/ResultRecipeSelectors')
+        || id.includes('/src/ui/features/result/resultSelectorClasses')
+        || id.includes('/src/ui/features/result/RecipeDisplay')
+        || id.includes('/src/ui/features/result/BatchPresetControls')
+        || id.includes('/src/ui/features/result/NaturalProductionLinesTable')
+        || id.includes('/src/ui/features/settings/SettingsPanel')
+        || id.includes('/src/ui/components/controls/HorizontalMultiButtonSelect')) {
         return 'calc-ui';
     }
 
-    if (id.includes('/src/features/needs/NeedsPanel')
-        || id.includes('/src/features/needs/NeedsStorageControls')) {
+    if (id.includes('/src/ui/features/needs/NeedsPanel')
+        || id.includes('/src/ui/features/needs/NeedsStorageControls')) {
         return 'selection-ui';
     }
 }
@@ -82,6 +82,9 @@ export default defineConfig(() => ({
     },
     resolve: {
         alias: {
+            '@engine': path.resolve(process.cwd(), 'src/engine'),
+            '@ui': path.resolve(process.cwd(), 'src/ui'),
+            '@lib': path.resolve(process.cwd(), 'src/lib'),
             '~bootstrap': path.resolve(process.cwd(), 'node_modules/bootstrap'),
         },
     },
