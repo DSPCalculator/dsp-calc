@@ -83,7 +83,6 @@ export function NeedsList({needs_list, set_needs_list}: {
                             icon={<FaPlusSquare/>}
                             btn_class="btn btn-sm btn-outline-success text-nowrap"/>
             </div>
-
             {Object.keys(needs_list).length == 0 ||
                 <div className="d-inline-flex flex-wrap gap-4 row-gap-0 align-items-center flex-grow-1">
                     {needs_doms}
