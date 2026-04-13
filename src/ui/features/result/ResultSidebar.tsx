@@ -39,10 +39,12 @@ export function ResultSidebar({
     energy_cost,
     fixed_num,
     IncreaseCostWhenSurplus,
+    is_time_unit_minute,
     mineralize_list,
     miner_energy_cost,
     previous_sidebar_metrics,
     raw_material_list,
+    show_item_names,
     surplus_list,
     unmineralize,
 }) {
@@ -52,34 +54,98 @@ export function ResultSidebar({
         </a>
     ));
 
-    const building_rows = (Object.entries(building_list) as Array<[string, number]>).map(([building, count]) => (
-        <tr key={building}>
-            <td className="d-flex align-items-center text-nowrap">
-                <span className="ms-auto me-1">{building}</span>
-                <ItemIcon item={building} size={RESULT_ICON_SIZE} tooltip={false}/>
-            </td>
-            <td className="ps-2 text-nowrap">x <ValueWithDifference
-                currentValue={count}
-                previousValue={previous_sidebar_metrics?.buildingCounts?.[building]}
-            /></td>
-        </tr>
-    ));
+    const unit_text = is_time_unit_minute ? '/min' : '/sec';
 
-    const raw_material_rows = (Object.entries(raw_material_list) as Array<[string, number]>).map(([item, amount]) => (
-        <tr key={item}>
-            <td className="d-flex align-items-center text-nowrap">
-                <ItemIcon item={item} size={RESULT_ICON_SIZE} tooltip={false}/>
-                <span className="ms-1">{item}</span>
-            </td>
-            <td className="ps-2 text-nowrap">
-                <ValueWithDifference
-                    currentValue={amount}
-                    previousValue={previous_sidebar_metrics?.rawMaterials?.[item]}
-                    digits={fixed_num}
-                />
-            </td>
-        </tr>
-    ));
+    function renderMetricValue(currentValue: number, previousValue: number | undefined, suffix = '', digits = fixed_num) {
+        return <>
+            x
+            <ValueWithDifference
+                currentValue={currentValue}
+                previousValue={previousValue}
+                digits={digits}
+            />
+            {suffix}
+        </>;
+    }
+
+    const building_entries = (Object.entries(building_list) as Array<[string, number]>).map(([building, count]) => ({
+        key: building,
+        item: building,
+        value: count,
+        previousValue: previous_sidebar_metrics?.buildingCounts?.[building],
+    }));
+
+    const raw_material_entries = (Object.entries(raw_material_list) as Array<[string, number]>).map(([item, amount]) => ({
+        key: item,
+        item,
+        value: amount,
+        previousValue: previous_sidebar_metrics?.rawMaterials?.[item],
+    }));
+
+    function renderNamedRows(
+        entries: Array<{key: string; item: string; value: number; previousValue?: number}>,
+        digits: number,
+        suffix = ''
+    ) {
+        return entries.map(({key, item, value, previousValue}) => (
+            <tr key={key}>
+                <td className="text-end text-nowrap">
+                    <span className="d-inline-flex align-items-center">
+                        <span className="me-1">{item}</span>
+                        <ItemIcon item={item} size={RESULT_ICON_SIZE} tooltip={false}/>
+                    </span>
+                </td>
+                <td className="ps-2 text-nowrap">
+                    {renderMetricValue(value, previousValue, suffix, digits)}
+                </td>
+            </tr>
+        ));
+    }
+
+    function renderCompactRows(
+        entries: Array<{key: string; item: string; value: number; previousValue?: number}>,
+        digits: number,
+        suffix = ''
+    ) {
+        const rows: Array<Array<{key: string; item: string; value: number; previousValue?: number}>> = [];
+        for (let i = 0; i < entries.length; i += 2) {
+            const current = entries[i];
+            const next = entries[i + 1];
+            if (next) {
+                rows.push([current, next]);
+            } else {
+                rows.push([current]);
+            }
+        }
+
+        return <table>
+            <tbody>
+            {rows.map((row, rowIdx) => (
+                <tr key={rowIdx}>
+                    {row.map(({key, item, value, previousValue}) => (
+                        <td key={key} className="text-nowrap pe-3">
+                            <span className="d-inline-flex align-items-center">
+                                <ItemIcon item={item} size={RESULT_ICON_SIZE} tooltip={false}/>
+                                <span className="ms-1">
+                                    {renderMetricValue(value, previousValue, suffix, digits)}
+                                </span>
+                            </span>
+                        </td>
+                    ))}
+                    {row.length === 1 && <td></td>}
+                </tr>
+            ))}
+            </tbody>
+        </table>;
+    }
+
+    const building_display = show_item_names
+        ? <table><tbody>{renderNamedRows(building_entries, 0)}</tbody></table>
+        : renderCompactRows(building_entries, 0);
+
+    const raw_material_display = show_item_names
+        ? <table><tbody>{renderNamedRows(raw_material_entries, fixed_num)}</tbody></table>
+        : renderCompactRows(raw_material_entries, fixed_num);
 
     const surplus_doms = (Object.entries(surplus_list) as Array<[string, number]>).map(([item, quant]) =>
         <div key={item} className="text-nowrap"><ItemIcon item={item}
@@ -111,21 +177,17 @@ export function ResultSidebar({
                 {surplus_doms}
             </fieldset>}
 
-        {raw_material_rows.length > 0 &&
+        {raw_material_entries.length > 0 &&
             <fieldset className="w-fit">
-                <legend><small>原矿输入总需求</small></legend>
-                <table>
-                    <tbody>{raw_material_rows}</tbody>
-                </table>
+                <legend><small>原矿输入总需求{unit_text}</small></legend>
+                {raw_material_display}
             </fieldset>}
 
-        {building_rows.length > 0 &&
+        {building_entries.length > 0 &&
             <>
                 <fieldset className="w-fit">
                     <legend><small>建筑统计</small></legend>
-                    <table>
-                        <tbody>{building_rows}</tbody>
-                    </table>
+                    {building_display}
                 </fieldset>
                 <span className="d-inline-flex gap-1 text-nowrap">
                     <span className="me-1">预估电力</span>

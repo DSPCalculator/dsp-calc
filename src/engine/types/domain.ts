@@ -126,6 +126,7 @@ export interface Settings {
     is_time_unit_minute: boolean;
     fixed_num: number;
     show_effective_recipe: boolean;
+    show_sidebar_item_names: boolean;
     stack_research_lab: number;
     proliferate_itself: boolean;
     acc_rate: number;

@@ -386,10 +386,12 @@ export function Result({
             energy_cost={energy_cost}
             fixed_num={fixed_num}
             IncreaseCostWhenSurplus={IncreaseCostWhenSurplus}
+            is_time_unit_minute={settings.is_time_unit_minute}
             mineralize_list={mineralize_list}
             miner_energy_cost={miner_energy_cost}
             previous_sidebar_metrics={previous_sidebar_metrics}
             raw_material_list={raw_material_list}
+            show_item_names={settings.show_sidebar_item_names}
             surplus_list={lp_surplus_list}
             unmineralize={unmineralize}
         />

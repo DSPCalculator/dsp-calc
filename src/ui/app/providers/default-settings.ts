@@ -27,6 +27,7 @@ export const DEFAULT_SETTINGS: Settings = {
     is_time_unit_minute: true,
     fixed_num: 2,
     show_effective_recipe: true,
+    show_sidebar_item_names: true,
     stack_research_lab: 15,
     proliferate_itself: true,
     acc_rate: 0.0,

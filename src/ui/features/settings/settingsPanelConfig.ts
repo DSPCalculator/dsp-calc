@@ -61,6 +61,7 @@ export const DISPLAY_AND_PROLIFERATION_ROWS: BaseSettingRow[] = [
     {type: 'time_unit'},
     {type: 'int', label: '精度位数', key: 'fixed_num', step: 1, min: 0},
     {type: 'toggle', label: '配方显示', key: 'show_effective_recipe', enabledLabel: '等效配方', disabledLabel: '原始配方', enabledAction: '改为原始配方', disabledAction: '改为等效配方'},
+    {type: 'toggle', label: '侧栏名称显示', key: 'show_sidebar_item_names', enabledLabel: '显示名称', disabledLabel: '隐藏名称', enabledAction: '改为隐藏名称', disabledAction: '改为显示名称'},
     {type: 'int', label: '研究站层数', key: 'stack_research_lab', step: 1, min: 1},
     {type: 'toggle', label: '增产剂自喷涂', key: 'proliferate_itself', enabledLabel: '启用', disabledLabel: '禁用', enabledAction: '改为禁用', disabledAction: '改为启用'},
     {type: 'percent', label: '增产剂加速效率补偿', key: 'acc_rate', step: 5, min: 1, unit: '%'},
