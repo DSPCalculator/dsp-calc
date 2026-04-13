@@ -1,5 +1,8 @@
 import {useContext} from 'react';
-import {GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from '@ui/app/providers/app-contexts';
+import {GlobalState} from '@engine/calculation/globalState';
+import structuredClone from '@ungap/structured-clone';
+import {GameInfoContext, GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from '@ui/app/providers/app-contexts';
+import type {ComparisonBaseline} from './BatchPresetControls';
 import {NplRows} from './NaturalProductionLinesTable';
 import {ResultSidebar} from './ResultSidebar';
 import {buildSideProducts} from './resultGraphHelpers';
@@ -10,6 +13,47 @@ import {ResultTableRow} from './ResultTableRow';
 import {ceilFromDisplayed, roundToFixed} from '@lib/number';
 import type {GameData, ItemDataIndex, ItemGraph, NaturalProductionLineRow, NumericMap, ResultRowViewModel, SchemeData, Settings} from '@engine/types/domain';
 import {ITEM_ICON_CONTENT_SIZE} from '@ui/components/icons/ItemIcon';
+
+type SidebarMetrics = {
+    buildingCounts: NumericMap;
+    energyCost: number;
+    rawMaterials: NumericMap;
+    totalEnergyCost: number;
+};
+
+function areSidebarMetricsEqual(left?: SidebarMetrics, right?: SidebarMetrics): boolean {
+    if (!left || !right) {
+        return left === right;
+    }
+    if (Math.abs(left.energyCost - right.energyCost) > 1e-6
+        || Math.abs(left.totalEnergyCost - right.totalEnergyCost) > 1e-6) {
+        return false;
+    }
+
+    const leftBuildings = Object.keys(left.buildingCounts);
+    const rightBuildings = Object.keys(right.buildingCounts);
+    if (leftBuildings.length !== rightBuildings.length) {
+        return false;
+    }
+    for (const building of leftBuildings) {
+        if ((left.buildingCounts[building] || 0) !== (right.buildingCounts[building] || 0)) {
+            return false;
+        }
+    }
+
+    const leftMaterials = Object.keys(left.rawMaterials);
+    const rightMaterials = Object.keys(right.rawMaterials);
+    if (leftMaterials.length !== rightMaterials.length) {
+        return false;
+    }
+    for (const item of leftMaterials) {
+        if (Math.abs((left.rawMaterials[item] || 0) - (right.rawMaterials[item] || 0)) > 1e-6) {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 function collectResultMetrics({
     fixed_num,
@@ -119,9 +163,20 @@ function collectResultMetrics({
     };
 }
 
-export function Result({needs_list, set_needs_list}) {
+export function Result({
+    captureComparisonBaseline,
+    comparison_baseline,
+    needs_list,
+    set_needs_list,
+}: {
+    captureComparisonBaseline: (baseline: ComparisonBaseline) => void;
+    comparison_baseline: ComparisonBaseline | null;
+    needs_list: NumericMap;
+    set_needs_list: (next_needs_list: NumericMap) => void;
+}) {
     const RESULT_ICON_SIZE = ITEM_ICON_CONTENT_SIZE;
 
+    const game_info = useContext(GameInfoContext);
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const set_settings = useContext(SettingsSetterContext);
@@ -137,7 +192,16 @@ export function Result({needs_list, set_needs_list}) {
 
     const fixed_num = settings.fixed_num;
 
+    function rememberComparisonBaseline() {
+        captureComparisonBaseline({
+            needs_list: structuredClone(needs_list),
+            scheme_data: structuredClone(global_state.raw_scheme_data),
+            settings: structuredClone(settings),
+        });
+    }
+
     function update_recipe_choice(item, value) {
+        rememberComparisonBaseline();
         set_scheme_data(old_scheme_data => ({
             ...old_scheme_data,
             item_recipe_choices: {
@@ -148,6 +212,7 @@ export function Result({needs_list, set_needs_list}) {
     }
 
     function update_recipe_setting(recipe_id, field, value) {
+        rememberComparisonBaseline();
         set_scheme_data(old_scheme_data => ({
             ...old_scheme_data,
             scheme_for_recipe: old_scheme_data.scheme_for_recipe.map((recipe_setting, idx) => {
@@ -163,14 +228,17 @@ export function Result({needs_list, set_needs_list}) {
     }
 
     function mineralize(item) {
+        rememberComparisonBaseline();
         set_settings({"mineralize_list": addMineralizedItem(mineralize_list, item)});
     }
 
     function unmineralize(item) {
+        rememberComparisonBaseline();
         set_settings({"mineralize_list": removeMineralizedItem(mineralize_list, item)});
     }
 
     function clear_mineralize_list() {
+        rememberComparisonBaseline();
         set_settings({"mineralize_list": clearMineralizedItems()});
     }
 
@@ -191,6 +259,63 @@ export function Result({needs_list, set_needs_list}) {
         time_tick,
         natural_production_line,
     });
+
+    function buildRawMaterialList(current_result_dict: NumericMap, current_scheme_data: SchemeData, current_game_data: GameData): NumericMap {
+        const raw_materials: NumericMap = {};
+        Object.entries(current_result_dict).forEach(([item, amount]) => {
+            if (Math.abs(amount) < 1e-6) {
+                return;
+            }
+            if (item in mineralize_list) {
+                raw_materials[item] = amount;
+                return;
+            }
+            const recipe_choice = current_scheme_data.item_recipe_choices[item];
+            const recipe_id = item_data[item]?.[recipe_choice];
+            const recipe = recipe_id === undefined ? undefined : current_game_data.recipe_data[recipe_id];
+            if (!recipe) {
+                return;
+            }
+            if (Object.keys(recipe["原料"]).length === 0 && Object.keys(recipe["产物"]).length === 1) {
+                raw_materials[item] = amount;
+            }
+        });
+        return raw_materials;
+    }
+
+    const raw_material_list = buildRawMaterialList(result_dict, scheme_data, game_data);
+    let previous_sidebar_metrics: SidebarMetrics | undefined = undefined;
+
+    if (comparison_baseline) {
+        const previous_global_state = new GlobalState(game_info, comparison_baseline.scheme_data, comparison_baseline.settings);
+        const [previous_result_dict] = previous_global_state.calculate(comparison_baseline.needs_list);
+        const previous_metrics = collectResultMetrics({
+            fixed_num,
+            game_data: previous_global_state.game_data,
+            item_graph: previous_global_state.item_graph,
+            item_data: previous_global_state.item_data,
+            mineralize_list,
+            result_dict: previous_result_dict,
+            scheme_data: previous_global_state.scheme_data,
+            settings: comparison_baseline.settings,
+            time_tick,
+            natural_production_line,
+        });
+        previous_sidebar_metrics = {
+            buildingCounts: {...previous_metrics.building_list},
+            energyCost: previous_metrics.energy_cost,
+            rawMaterials: buildRawMaterialList(previous_result_dict, previous_global_state.scheme_data, previous_global_state.game_data),
+            totalEnergyCost: previous_metrics.energy_cost + previous_metrics.miner_energy_cost,
+        };
+        if (areSidebarMetricsEqual(previous_sidebar_metrics, {
+            buildingCounts: building_list,
+            energyCost: energy_cost,
+            rawMaterials: raw_material_list,
+            totalEnergyCost: energy_cost + miner_energy_cost,
+        })) {
+            previous_sidebar_metrics = undefined;
+        }
+    }
 
     const result_table_rows = row_view_models.map((row) => {
         const row_actions = buildResultRowActions(
@@ -220,6 +345,7 @@ export function Result({needs_list, set_needs_list}) {
     });
 
     function IncreaseCostWhenSurplus(item) {
+        rememberComparisonBaseline();
         set_scheme_data(old_scheme_data => ({
             ...old_scheme_data,
             cost_weight: {
@@ -262,6 +388,8 @@ export function Result({needs_list, set_needs_list}) {
             IncreaseCostWhenSurplus={IncreaseCostWhenSurplus}
             mineralize_list={mineralize_list}
             miner_energy_cost={miner_energy_cost}
+            previous_sidebar_metrics={previous_sidebar_metrics}
+            raw_material_list={raw_material_list}
             surplus_list={lp_surplus_list}
             unmineralize={unmineralize}
         />
