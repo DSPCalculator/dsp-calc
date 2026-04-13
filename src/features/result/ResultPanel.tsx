@@ -1,0 +1,222 @@
+import {useContext} from 'react';
+import {GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from '../../app/providers/app-contexts';
+import {NplRows} from './NaturalProductionLinesTable';
+import {ResultSidebar} from './ResultSidebar';
+import {buildSideProducts} from './resultGraphHelpers';
+import {addMineralizedItem, clearMineralizedItems, removeMineralizedItem} from '../../core/calculation/mineralizeState';
+import {buildResultRowActions} from './resultRowActions';
+import {buildResultRowsViewModel} from './resultRowsViewModel';
+import {ResultTableRow} from './ResultTableRow';
+
+export function Result({needs_list, set_needs_list}) {
+    const RESULT_ICON_SIZE = 40;
+
+    const global_state = useContext(GlobalStateContext);
+    const set_scheme_data = useContext(SchemeDataSetterContext);
+    const set_settings = useContext(SettingsSetterContext);
+    const game_data = global_state.game_data;
+    const scheme_data = global_state.scheme_data;
+    const settings = global_state.settings;
+    const item_data = global_state.item_data;
+    const item_graph = global_state.item_graph;
+    const time_tick = settings.is_time_unit_minute ? 60 : 1;
+    const mineralize_list = settings.mineralize_list;
+    const natural_production_line = settings.natural_production_line;
+    const [result_dict, lp_surplus_list] = global_state.calculate(needs_list);
+
+    const fixed_num = settings.fixed_num;
+    let energy_cost = 0, miner_energy_cost = 0;
+    const building_list = {};
+
+    function update_recipe_choice(item, value) {
+        set_scheme_data(old_scheme_data => ({
+            ...old_scheme_data,
+            item_recipe_choices: {
+                ...old_scheme_data.item_recipe_choices,
+                [item]: value,
+            },
+        }));
+    }
+
+    function update_recipe_setting(recipe_id, field, value) {
+        set_scheme_data(old_scheme_data => ({
+            ...old_scheme_data,
+            scheme_for_recipe: old_scheme_data.scheme_for_recipe.map((recipe_setting, idx) => {
+                if (idx !== recipe_id) {
+                    return recipe_setting;
+                }
+                return {
+                    ...recipe_setting,
+                    [field]: value,
+                };
+            }),
+        }));
+    }
+
+    function get_factory_number(amount, item) {
+        const recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
+        const scheme_recipe = scheme_data.scheme_for_recipe[recipe_id];
+        const factories_type = game_data.recipe_data[recipe_id]["设施"];
+        const factory_info = game_data.factory_data[factories_type][scheme_recipe["建筑"]];
+        const factory_name = factory_info["名称"];
+        const offset = 0.49994 * 0.1 ** fixed_num;
+        const build_number = amount / time_tick / item_graph[item]["产出倍率"] / factory_info["倍率"] + offset;
+        if (Math.ceil(build_number - 0.5 * 0.1 ** fixed_num) !== 0) {
+            if (factory_name in building_list) {
+                building_list[factory_name] = Number(building_list[factory_name]) + Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
+            } else {
+                building_list[factory_name] = Math.ceil(build_number - 0.5 * 0.1 ** fixed_num);
+            }
+        }
+        if (factory_name !== "轨道采集器") {
+            let e_cost = (build_number - offset) * factory_info["耗能"];
+            if (factory_name === "大型采矿机") {
+                e_cost = settings.mining_efficiency_large / 100.0 * settings.mining_efficiency_large / 100.0 * (2.94 - 0.168) + 0.168;
+            } else if (factory_name.endsWith("分馏塔")) {
+                if (game_data.GenesisBookEnable) {
+                    if (settings.fractionating_speed > 60) {
+                        e_cost *= (settings.fractionating_speed * 0.036 - 0.72) / 1.44;
+                    }
+                } else {
+                    if (settings.fractionating_speed > 30) {
+                        e_cost *= (settings.fractionating_speed * 0.036 - 0.36) / 0.72;
+                    }
+                }
+            }
+            if (scheme_recipe["增产模式"] != 0 && scheme_recipe["增产点数"] != 0) {
+                e_cost *= game_data.proliferator_effect[scheme_recipe["增产点数"]]["耗电倍率"];
+            }
+            if (factory_name === "采矿机" || factory_name === "大型采矿机"
+                || factory_name === "抽水机" || factory_name === "聚束液体汲取设施" || factory_name === "原油萃取站") {
+                miner_energy_cost += e_cost;
+            } else {
+                energy_cost += e_cost;
+            }
+        }
+        return build_number;
+    }
+
+    const side_products = buildSideProducts(result_dict, item_graph);
+
+    function mineralize(item) {
+        set_settings({"mineralize_list": addMineralizedItem(mineralize_list, item)});
+    }
+
+    function unmineralize(item) {
+        set_settings({"mineralize_list": removeMineralizedItem(mineralize_list, item)});
+    }
+
+    function clear_mineralize_list() {
+        set_settings({"mineralize_list": clearMineralizedItems()});
+    }
+
+    const row_view_models = buildResultRowsViewModel({
+        fixed_num,
+        game_data,
+        item_data,
+        mineralize_list,
+        result_dict,
+        scheme_data,
+        settings,
+        side_products,
+        getFactoryNumber: get_factory_number,
+    });
+
+    const result_table_rows = row_view_models.map((row) => {
+        const row_actions = buildResultRowActions(
+            row.item_name,
+            row.recipe_id,
+            update_recipe_choice,
+            update_recipe_setting
+        );
+
+        return <ResultTableRow
+            key={row.item_name}
+            RESULT_ICON_SIZE={RESULT_ICON_SIZE}
+            fixed_num={fixed_num}
+            item_graph={item_graph}
+            needs_list={needs_list}
+            row={row}
+            set_needs_list={set_needs_list}
+            settings={settings}
+            onChangeFactory={row_actions.change_factory}
+            onChangeProMode={row_actions.change_pro_mode}
+            onChangeProNum={row_actions.change_pro_num}
+            onChangeRecipe={row_actions.change_recipe}
+            onMineralize={mineralize}
+            onUnmineralize={unmineralize}
+            result_amount={result_dict[row.item_name]}
+        />;
+    });
+
+    for (const NPId in natural_production_line) {
+        const recipe = game_data.recipe_data[item_data[natural_production_line[NPId]["目标物品"]][natural_production_line[NPId]["配方id"]]];
+        const factory_info = game_data.factory_data[recipe["设施"]][natural_production_line[NPId]["建筑"]];
+        const factory_name = factory_info["名称"];
+        if (factory_name in building_list) {
+            building_list[factory_name] = Number(building_list[factory_name]) + Math.ceil(natural_production_line[NPId]["建筑数量"]);
+        } else {
+            building_list[factory_name] = Math.ceil(natural_production_line[NPId]["建筑数量"]);
+        }
+        if (factory_name !== "轨道采集器") {
+            let e_cost = natural_production_line[NPId]["建筑数量"] * factory_info["耗能"];
+            if (natural_production_line[NPId]["增产点数"] != 0 && natural_production_line[NPId]["增产模式"] != 0) {
+                e_cost *= game_data.proliferator_effect[natural_production_line[NPId]["增产点数"]]["耗电倍率"];
+            }
+            if (factory_name === "采矿机" || factory_name === "大型采矿机"
+                || factory_name === "抽水机" || factory_name === "聚束液体汲取设施" || factory_name === "原油萃取站") {
+                miner_energy_cost += e_cost;
+            } else {
+                energy_cost += e_cost;
+            }
+        }
+    }
+
+    function IncreaseCostWhenSurplus(item) {
+        set_scheme_data(old_scheme_data => ({
+            ...old_scheme_data,
+            cost_weight: {
+                ...old_scheme_data.cost_weight,
+                "物品额外成本": {
+                    ...old_scheme_data.cost_weight["物品额外成本"],
+                    [item]: {
+                        ...old_scheme_data.cost_weight["物品额外成本"][item],
+                        "溢出时处理成本": old_scheme_data.cost_weight["物品额外成本"][item]["溢出时处理成本"] + 5000,
+                    },
+                },
+            },
+        }));
+    }
+
+    return <div className="my-3 d-flex gap-5">
+        <table className="table table-sm align-middle w-auto result-table">
+            <thead>
+            <tr className="text-center text-nowrap">
+                <th style={{width: 60}}>操作</th>
+                <th style={{width: 140}}>需求</th>
+                <th style={{width: 110}}>工厂</th>
+                <th style={{width: 300}}>{settings.show_effective_recipe ? "等效配方" : "原始配方"}</th>
+                <th style={{width: 180}}>增产模式</th>
+                <th style={{width: 160}}>增产剂</th>
+                <th style={{width: 170}}>工厂类型</th>
+            </tr>
+            </thead>
+            <tbody className="table-group-divider">
+            <NplRows/>
+            {result_table_rows}
+            </tbody>
+        </table>
+        <ResultSidebar
+            RESULT_ICON_SIZE={RESULT_ICON_SIZE}
+            building_list={building_list}
+            clear_mineralize_list={clear_mineralize_list}
+            energy_cost={energy_cost}
+            fixed_num={fixed_num}
+            IncreaseCostWhenSurplus={IncreaseCostWhenSurplus}
+            mineralize_list={mineralize_list}
+            miner_energy_cost={miner_energy_cost}
+            surplus_list={lp_surplus_list}
+            unmineralize={unmineralize}
+        />
+    </div>;
+}
