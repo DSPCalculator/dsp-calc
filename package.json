@@ -4,11 +4,11 @@
   "version": "0.6.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "node scripts/ensure-platform-build-deps.cjs && vite build",
+    "dev": "node scripts/ensure-platform-build-deps.cjs && node node_modules/vite/bin/vite.js",
+    "build": "node scripts/ensure-platform-build-deps.cjs && node node_modules/vite/bin/vite.js build",
     "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "typecheck": "tsc --noEmit",
-    "preview": "vite preview"
+    "preview": "node scripts/ensure-platform-build-deps.cjs && node node_modules/vite/bin/vite.js preview"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
@@ -36,9 +36,9 @@
     "@types/ungap__structured-clone": "^1.2.0",
     "@typescript-eslint/eslint-plugin": "^8.58.1",
     "@typescript-eslint/parser": "^8.58.1",
-    "@vitejs/plugin-legacy": "^8.0.1",
-    "@vitejs/plugin-react": "^6.0.1",
-    "esbuild": "^0.28.0",
+    "@vitejs/plugin-legacy": "^5.4.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "esbuild": "^0.21.5",
     "eslint": "^9.39.4",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
@@ -47,6 +47,12 @@
     "rollup": "^4.60.1",
     "sass": "^1.99.0",
     "typescript": "^6.0.2",
-    "vite": "^8.0.8"
+    "vite": "^5.4.6"
+  },
+  "optionalDependencies": {
+    "@esbuild/linux-x64": "0.21.5",
+    "@esbuild/win32-x64": "0.21.5",
+    "@rollup/rollup-linux-x64-gnu": "4.60.1",
+    "@rollup/rollup-win32-x64-msvc": "4.60.1"
   }
 }

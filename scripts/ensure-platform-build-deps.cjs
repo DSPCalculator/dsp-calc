@@ -1,5 +1,4 @@
 const fs = require('fs');
-const os = require('os');
 const path = require('path');
 const {spawnSync} = require('child_process');
 
@@ -18,57 +17,27 @@ function ensureScopeDir(scopeName) {
     fs.mkdirSync(path.join(process.cwd(), 'node_modules', scopeName), {recursive: true});
 }
 
-function copyDirectoryContents(sourceDir, targetDir) {
-    fs.mkdirSync(targetDir, {recursive: true});
-    for (const entry of fs.readdirSync(sourceDir, {withFileTypes: true})) {
-        const sourcePath = path.join(sourceDir, entry.name);
-        const targetPath = path.join(targetDir, entry.name);
-        if (entry.isDirectory()) {
-            copyDirectoryContents(sourcePath, targetPath);
-        } else {
-            fs.copyFileSync(sourcePath, targetPath);
-        }
+function installPackageIntoProject(spec) {
+    if (process.env.npm_execpath) {
+        run(process.execPath, [
+            process.env.npm_execpath,
+            'install',
+            '--ignore-scripts',
+            '--no-save',
+            '--package-lock=false',
+            spec,
+        ]);
+        return;
     }
-}
 
-function replaceDirectoryAtomically(sourceDir, targetDir) {
-    const parentDir = path.dirname(targetDir);
-    const tempTargetDir = path.join(parentDir, `.${path.basename(targetDir)}-staging-${process.pid}`);
-    fs.rmSync(tempTargetDir, {recursive: true, force: true});
-    copyDirectoryContents(sourceDir, tempTargetDir);
-    fs.rmSync(targetDir, {recursive: true, force: true});
-    fs.renameSync(tempTargetDir, targetDir);
-}
-
-function installPackageIntoTemp(spec) {
-    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'dsp-calc-build-deps-'));
-    try {
-        if (process.env.npm_execpath) {
-            run(process.execPath, [
-                process.env.npm_execpath,
-                'install',
-                '--ignore-scripts',
-                '--no-save',
-                '--prefix',
-                tempDir,
-                spec,
-            ]);
-        } else {
-            const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
-            run(npmCommand, [
-                'install',
-                '--ignore-scripts',
-                '--no-save',
-                '--prefix',
-                tempDir,
-                spec,
-            ]);
-        }
-        return tempDir;
-    } catch (error) {
-        fs.rmSync(tempDir, {recursive: true, force: true});
-        throw error;
-    }
+    const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+    run(npmCommand, [
+        'install',
+        '--ignore-scripts',
+        '--no-save',
+        '--package-lock=false',
+        spec,
+    ]);
 }
 
 function getInstalledPackageVersion(packageName) {
@@ -135,6 +104,35 @@ function getCurrentEsbuildPackage() {
     return null;
 }
 
+function getCurrentRolldownPackage() {
+    if (process.platform === 'win32') {
+        if (process.arch === 'x64') return '@rolldown/binding-win32-x64-msvc';
+        if (process.arch === 'arm64') return '@rolldown/binding-win32-arm64-msvc';
+        return null;
+    }
+
+    if (process.platform === 'linux') {
+        const report = process.report?.getReport?.();
+        const isGlibc = Boolean(report?.header?.glibcVersionRuntime);
+        if (process.arch === 'x64') {
+            return isGlibc ? '@rolldown/binding-linux-x64-gnu' : '@rolldown/binding-linux-x64-musl';
+        }
+        if (process.arch === 'arm64') {
+            return isGlibc ? '@rolldown/binding-linux-arm64-gnu' : '@rolldown/binding-linux-arm64-musl';
+        }
+        if (process.arch === 'arm') return '@rolldown/binding-linux-arm-gnueabihf';
+        return null;
+    }
+
+    if (process.platform === 'darwin') {
+        if (process.arch === 'x64') return '@rolldown/binding-darwin-x64';
+        if (process.arch === 'arm64') return '@rolldown/binding-darwin-arm64';
+        return null;
+    }
+
+    return null;
+}
+
 function ensurePackageBinary(packageName, version, scopeName) {
     const targetDir = path.join(process.cwd(), 'node_modules', ...packageName.split('/'));
     if (fs.existsSync(path.join(targetDir, 'package.json'))) {
@@ -143,13 +141,7 @@ function ensurePackageBinary(packageName, version, scopeName) {
 
     ensureScopeDir(scopeName);
     console.warn(`[ensure-platform-build-deps] Missing ${packageName}, installing ${packageName}@${version}`);
-    const tempDir = installPackageIntoTemp(`${packageName}@${version}`);
-    try {
-        const sourceDir = path.join(tempDir, 'node_modules', ...packageName.split('/'));
-        replaceDirectoryAtomically(sourceDir, targetDir);
-    } finally {
-        fs.rmSync(tempDir, {recursive: true, force: true});
-    }
+    installPackageIntoProject(`${packageName}@${version}`);
 }
 
 function ensureRollupBinary() {
@@ -164,5 +156,19 @@ function ensureEsbuildBinary() {
     ensurePackageBinary(esbuildPackage, getInstalledPackageVersion('esbuild'), '@esbuild');
 }
 
+function ensureRolldownBinary() {
+    let rolldownVersion;
+    try {
+        rolldownVersion = getInstalledPackageVersion('rolldown');
+    } catch {
+        return;
+    }
+
+    const rolldownPackage = getCurrentRolldownPackage();
+    if (!rolldownPackage) return;
+    ensurePackageBinary(rolldownPackage, rolldownVersion, '@rolldown');
+}
+
 ensureEsbuildBinary();
 ensureRollupBinary();
+ensureRolldownBinary();
