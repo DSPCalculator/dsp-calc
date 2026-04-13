@@ -12,8 +12,15 @@ import {
     RESOURCE_PANEL_GROUPS,
     THEY_COME_FROM_VOID_ROWS
 } from './settingsPanelConfig';
+import type {NumericMap} from '@engine/types/domain';
 
-export function Settings() {
+export function Settings({
+    needs_list,
+    set_needs_list,
+}: {
+    needs_list: NumericMap;
+    set_needs_list: (next_needs_list: NumericMap) => void;
+}) {
     const settings = useContext(SettingsContext);
     const set_settings = useContext(SettingsSetterContext);
     const DEFAULT_SETTINGS = useContext(DefaultSettingsContext);
@@ -48,6 +55,23 @@ export function Settings() {
 
     function toggleSetting(name) {
         set_settings({[name]: !settings[name]});
+    }
+
+    function toggleTimeUnit() {
+        const next_is_minute = !settings.is_time_unit_minute;
+        const ratio = settings.is_time_unit_minute ? 1 / 60 : 60;
+        const next_needs_list = Object.fromEntries(
+            Object.entries(needs_list).map(([item, count]) => [item, count * ratio])
+        );
+        const next_natural_production_line = settings.natural_production_line.map((row) => ({
+            ...row,
+            "目标产量": row["目标产量"] === undefined ? row["目标产量"] : row["目标产量"] * ratio,
+        }));
+        set_needs_list(next_needs_list);
+        set_settings({
+            "is_time_unit_minute": next_is_minute,
+            "natural_production_line": next_natural_production_line,
+        });
     }
 
     function changeFractionatingSpeed(raw_value) {
@@ -118,7 +142,7 @@ export function Settings() {
                 <td>速率单位</td>
                 <td className="ps-2">{settings.is_time_unit_minute ? "个/min" : "个/sec"}</td>
                 <td className="ps-2">
-                    <button onClick={() => toggleSetting("is_time_unit_minute")}>
+                    <button onClick={toggleTimeUnit}>
                         {settings.is_time_unit_minute ? "转化为秒" : "转化为分"}
                     </button>
                 </td>

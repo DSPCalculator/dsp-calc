@@ -12,13 +12,21 @@ const BatchSetting = lazy(() => import('@ui/features/result/BatchPresetControls'
 const Result = lazy(() => import('@ui/features/result/ResultPanel').then(module => ({default: module.Result})));
 const Settings = lazy(() => import('@ui/features/settings/SettingsPanel').then(module => ({default: module.Settings})));
 
-function UserSettings({show}: {show: boolean}) {
+function UserSettings({
+    needs_list,
+    set_needs_list,
+    show,
+}: {
+    needs_list: NumericMap;
+    set_needs_list: (next_needs_list: NumericMap) => void;
+    show: boolean;
+}) {
     const class_show = show ? "" : "d-none";
     return <div className={`d-flex gap-3 ${class_show}`}>
         <fieldset>
             <legend><small>设置</small></legend>
             <Suspense fallback={<div className="small text-muted">加载设置中...</div>}>
-                <Settings/>
+                <Settings needs_list={needs_list} set_needs_list={set_needs_list}/>
             </Suspense>
         </fieldset>
     </div>;
@@ -62,7 +70,7 @@ function AppWithContexts() {
             </button>
         </div>
         {/*采矿参数&其他设置*/}
-        <UserSettings show={misc_show}/>
+        <UserSettings needs_list={needs_list} set_needs_list={update_needs_list} show={misc_show}/>
         {/*添加需求、批量预设、计算结果*/}
         <div>
             <NeedsList needs_list={needs_list} set_needs_list={update_needs_list}/>

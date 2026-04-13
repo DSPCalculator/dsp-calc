@@ -81,6 +81,11 @@ export function ResultSidebar({
         value: amount,
         previousValue: previous_sidebar_metrics?.rawMaterials?.[item],
     }));
+    const surplus_entries = (Object.entries(surplus_list) as Array<[string, number]>).map(([item, quant]) => ({
+        key: item,
+        item,
+        value: quant,
+    }));
 
     function renderNamedRows(
         entries: Array<{key: string; item: string; value: number; previousValue?: number}>,
@@ -147,16 +152,68 @@ export function ResultSidebar({
         ? <table><tbody>{renderNamedRows(raw_material_entries, fixed_num)}</tbody></table>
         : renderCompactRows(raw_material_entries, fixed_num);
 
-    const surplus_doms = (Object.entries(surplus_list) as Array<[string, number]>).map(([item, quant]) =>
-        <div key={item} className="text-nowrap"><ItemIcon item={item}
-                                                          size={RESULT_ICON_SIZE}/> x{quant.toFixed(fixed_num)}
-            <button className="ms-2 btn btn-outline-primary ssmall text-nowrap mineralize-btn"
-                    onClick={() => IncreaseCostWhenSurplus(item)}>
-                <div>避免</div>
-                <div>溢出</div>
-            </button>
-        </div>
-    );
+    function renderSurplusNamedRows(entries: Array<{key: string; item: string; value: number}>) {
+        return entries.map(({key, item, value}) => (
+            <tr key={key}>
+                <td className="text-end text-nowrap">
+                    <span className="d-inline-flex align-items-center">
+                        <span className="me-1">{item}</span>
+                        <ItemIcon item={item} size={RESULT_ICON_SIZE} tooltip={false}/>
+                    </span>
+                </td>
+                <td className="ps-2 text-nowrap">
+                    x{value.toFixed(fixed_num)}
+                </td>
+                <td className="ps-2 text-nowrap">
+                    <button className="btn btn-outline-primary ssmall text-nowrap mineralize-btn"
+                            onClick={() => IncreaseCostWhenSurplus(item)}>
+                        <div>避免</div>
+                        <div>溢出</div>
+                    </button>
+                </td>
+            </tr>
+        ));
+    }
+
+    function renderSurplusCompactRows(entries: Array<{key: string; item: string; value: number}>) {
+        const rows: Array<Array<{key: string; item: string; value: number}>> = [];
+        for (let i = 0; i < entries.length; i += 2) {
+            const current = entries[i];
+            const next = entries[i + 1];
+            if (next) {
+                rows.push([current, next]);
+            } else {
+                rows.push([current]);
+            }
+        }
+
+        return <table>
+            <tbody>
+            {rows.map((row, rowIdx) => (
+                <tr key={rowIdx}>
+                    {row.map(({key, item, value}) => (
+                        <td key={key} className="text-nowrap pe-3">
+                            <span className="d-inline-flex align-items-center">
+                                <ItemIcon item={item} size={RESULT_ICON_SIZE} tooltip={false}/>
+                                <span className="ms-1">x{value.toFixed(fixed_num)}</span>
+                                <button className="ms-2 btn btn-outline-primary ssmall text-nowrap mineralize-btn"
+                                        onClick={() => IncreaseCostWhenSurplus(item)}>
+                                    <div>避免</div>
+                                    <div>溢出</div>
+                                </button>
+                            </span>
+                        </td>
+                    ))}
+                    {row.length === 1 && <td></td>}
+                </tr>
+            ))}
+            </tbody>
+        </table>;
+    }
+
+    const surplus_display = show_item_names
+        ? <table><tbody>{renderSurplusNamedRows(surplus_entries)}</tbody></table>
+        : renderSurplusCompactRows(surplus_entries);
 
     return <div className="sticky-top mt-3 align-self-start d-flex flex-column gap-2">
         {mineralize_doms.length > 0 &&
@@ -171,10 +228,10 @@ export function ResultSidebar({
             </fieldset>
         }
 
-        {surplus_doms.length > 0 &&
+        {surplus_entries.length > 0 &&
             <fieldset className="w-fit">
                 <legend><small>多余产物</small></legend>
-                {surplus_doms}
+                {surplus_display}
             </fieldset>}
 
         {raw_material_entries.length > 0 &&
