@@ -151,6 +151,38 @@
     border-left: none;
 }
 
+.calculator-toolbar-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.calculator-toolbar-row {
+    margin: 0;
+}
+
+.calculator-toolbar-stack > .calculator-toolbar-row:first-child {
+    margin-top: -0.25rem;
+}
+
+.needs-chip {
+    min-height: 31px;
+}
+
+.needs-chip-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.needs-chip-icon > * {
+    transform: scale(1.65);
+    transform-origin: center;
+}
+
 fieldset,
 legend {
     all: revert;

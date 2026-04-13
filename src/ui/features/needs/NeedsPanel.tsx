@@ -30,8 +30,10 @@ export function NeedsList({needs_list, set_needs_list}: {
             set_needs_list(rest_needs_list);
         }
 
-        return <div key={item} className="d-inline-flex align-items-center">
-            <ItemIcon item={item}/>
+        return <div key={item} className="needs-chip d-inline-flex align-items-center">
+            <span className="needs-chip-icon">
+                <ItemIcon item={item} size={24}/>
+            </span>
             <span className="ms-1 me-2">x</span>
             <div key={item} className="input-group input-group-sm w-fit d-inline-flex">
                 <input type="text" className="form-control" style={{width: "6em"}} value={count} onChange={edit_count}/>

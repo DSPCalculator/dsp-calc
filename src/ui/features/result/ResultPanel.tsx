@@ -361,7 +361,7 @@ export function Result({
         }));
     }
 
-    return <div className="my-3 d-flex gap-5">
+    return <div className="mt-2 mb-3 d-flex gap-5">
         <table className="table table-sm align-middle w-auto result-table">
             <thead>
             <tr className="text-center text-nowrap">
