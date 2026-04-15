@@ -79,7 +79,12 @@ export function ContextProvider({children}) {
     });
     const [settings, set_settings] = useSetState(() => {
         const saved = safe_parse_json(localStorage.getItem("auto_settings"));
-        return saved ? {...DEFAULT_SETTINGS, ...saved} : DEFAULT_SETTINGS;
+        const merged = saved ? {...DEFAULT_SETTINGS, ...saved} : DEFAULT_SETTINGS;
+        // 清理 delete arr[i] 导致的 null 空洞
+        if (Array.isArray(merged.natural_production_line)) {
+            merged.natural_production_line = merged.natural_production_line.filter(e => e != null);
+        }
+        return merged;
     });
     const [compact_mode, set_compact_mode] = useState(() => get_compact_mode(window.innerWidth));
 

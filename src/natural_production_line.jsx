@@ -114,7 +114,7 @@ export function NplRows() {
 
         function remove_row() {
             let new_npl = structuredClone(npl);
-            delete new_npl[idx_row];
+            new_npl.splice(idx_row, 1);
             set_npl(new_npl);
         }
 
