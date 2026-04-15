@@ -35,7 +35,7 @@ export function NeedsList({needs_list, set_needs_list}: {
                 <ItemIcon item={item} size={24}/>
             </span>
             <span className="ms-1 me-2">x</span>
-            <div key={item} className="input-group input-group-sm w-fit d-inline-flex">
+            <div key={item} className="input-group input-group-sm needs-chip-input d-inline-flex">
                 <input type="text" className="form-control" style={{width: "6em"}} value={count} onChange={edit_count}/>
                 <button className="btn btn-outline-danger d-inline-flex align-items-center" onClick={remove}>
                     <Trash/>
@@ -69,27 +69,33 @@ export function NeedsList({needs_list, set_needs_list}: {
     const is_min = global_state.settings.is_time_unit_minute;
 
     return <>
-        <div className="w-fit mt-3 d-flex align-items-center row-gap-1 flex-wrap">
-            <small className="me-3 fw-bold text-nowrap">添加需求</small>
-            <div className="input-group input-group-sm w-fit d-inline-flex me-5">
-                <input type="text" className="form-control" style={{width: "6em"}} ref={count_ref} defaultValue={60}/>
-                <span className="input-group-text">/{is_min ? "min" : "sec"}</span>
-                <button className="btn btn-sm btn-outline-danger text-nowrap d-inline-flex align-items-center gap-1"
-                        onClick={() => set_needs_list({})}>
-                    <FaTrashAlt/>
-                    <span>清空需求</span>
-                </button>
-                <ItemSelect text="添加需求物品" set_item={add_need}
-                            icon={<FaPlusCircle/>}/>
-                <ItemSelect text="添加现有产线" set_item={add_npl}
-                            icon={<FaPlusSquare/>}
-                            btn_class="btn btn-sm btn-outline-success text-nowrap"/>
-            </div>
-            {Object.keys(needs_list).length == 0 ||
-                <div className="d-inline-flex flex-wrap gap-4 row-gap-0 align-items-center flex-grow-1">
-                    {needs_doms}
+        <div className="needs-panel mt-3">
+            <div className="needs-entry-row d-flex align-items-center row-gap-1 flex-wrap">
+                <small className="me-3 fw-bold text-nowrap">添加需求</small>
+                <div className="input-group input-group-sm needs-entry-group d-inline-flex">
+                    <input type="text" className="form-control" style={{width: "6em"}} ref={count_ref} defaultValue={60}/>
+                    <span className="input-group-text">/{is_min ? "min" : "sec"}</span>
+                    <button className="btn btn-sm btn-outline-danger text-nowrap d-inline-flex align-items-center gap-1 mobile-icon-button"
+                            title="清空需求"
+                            aria-label="清空需求"
+                            onClick={() => set_needs_list({})}>
+                        <FaTrashAlt/>
+                        <span className="mobile-icon-button-label">清空需求</span>
+                    </button>
+                    <ItemSelect text="添加需求物品" set_item={add_need}
+                                icon={<FaPlusCircle/>}
+                                compact_on_mobile={true}/>
+                    <ItemSelect text="添加现有产线" set_item={add_npl}
+                                icon={<FaPlusSquare/>}
+                                btn_class="btn btn-sm btn-outline-success text-nowrap"
+                                compact_on_mobile={true}/>
                 </div>
-            }
+                {Object.keys(needs_list).length == 0 ||
+                    <div className="needs-chip-list d-inline-flex flex-wrap gap-4 row-gap-0 align-items-center flex-grow-1">
+                        {needs_doms}
+                    </div>
+                }
+            </div>
         </div>
     </>;
 }

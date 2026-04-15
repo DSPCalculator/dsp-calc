@@ -1,5 +1,6 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext, useEffect, useState} from 'react';
+import {FaFolderOpen, FaSave, FaTrashAlt} from 'react-icons/fa';
 import {GlobalStateContext, SchemeDataSetterContext} from '@ui/app/providers/app-contexts';
 
 const SCHEME_STORAGE_KEY = "scheme_data";
@@ -72,16 +73,23 @@ export function SchemeStorage() {
                onClick={() => delete_(scheme_name)}>{scheme_name}</a>
         </li>));
 
-    return <div className="d-flex gap-2 align-items-center">
-        <div className="text-nowrap">生产策略</div>
-        <div className="input-group input-group-sm">
-            <button className="btn btn-outline-secondary" type="button" onClick={save}>保存</button>
+    return <div className="d-flex gap-2 align-items-center toolbar-storage-group">
+        <div className="text-nowrap toolbar-storage-title">生产策略</div>
+        <div className="input-group input-group-sm toolbar-storage-input-group">
+            <button className="btn btn-outline-secondary toolbar-icon-button" type="button" onClick={save} title="保存生产策略" aria-label="保存生产策略">
+                <FaSave/>
+                <span className="toolbar-icon-button-label">保存</span>
+            </button>
             <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">加载
+                    aria-expanded="false" title="加载生产策略" aria-label="加载生产策略">
+                <FaFolderOpen/>
+                <span className="toolbar-icon-button-label">加载</span>
             </button>
             <ul className="dropdown-menu">{dd_load_list}</ul>
             <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">删除
+                    aria-expanded="false" title="删除生产策略" aria-label="删除生产策略">
+                <FaTrashAlt/>
+                <span className="toolbar-icon-button-label">删除</span>
             </button>
             <ul className="dropdown-menu">{dd_delete_list}</ul>
         </div>

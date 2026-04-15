@@ -22,6 +22,7 @@ export interface ItemSelectProps {
     icon_size?: number;
     icon_only?: boolean;
     icon?: ReactNode;
+    compact_on_mobile?: boolean;
 }
 
 export interface ItemSelectPanelProps {

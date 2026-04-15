@@ -1,4 +1,4 @@
-import {lazy, Suspense, useState} from 'react';
+import {lazy, Suspense, useLayoutEffect, useRef, useState} from 'react';
 import {FaCog, FaTrashAlt} from 'react-icons/fa';
 import {ContextProvider} from './providers/AppProviders';
 import {NeedsList} from '@ui/features/needs/NeedsPanel';
@@ -12,6 +12,31 @@ const BatchSetting = lazy(() => import('@ui/features/result/BatchPresetControls'
 const Result = lazy(() => import('@ui/features/result/ResultPanel').then(module => ({default: module.Result})));
 const Settings = lazy(() => import('@ui/features/settings/SettingsPanel').then(module => ({default: module.Settings})));
 
+type ToolbarActionsMode = 'full' | 'buttons-compact' | 'icons-only';
+
+function measureToolbarActionsWidth(toolbarRow: HTMLDivElement, mode: ToolbarActionsMode): number {
+    const clone = toolbarRow.cloneNode(true) as HTMLDivElement;
+    clone.classList.remove('calculator-toolbar-actions-buttons-compact', 'calculator-toolbar-actions-icons-only');
+    if (mode === 'buttons-compact') {
+        clone.classList.add('calculator-toolbar-actions-buttons-compact');
+    } else if (mode === 'icons-only') {
+        clone.classList.add('calculator-toolbar-actions-icons-only');
+    }
+    clone.style.position = 'absolute';
+    clone.style.left = '-99999px';
+    clone.style.top = '0';
+    clone.style.width = 'max-content';
+    clone.style.maxWidth = 'none';
+    clone.style.flexWrap = 'nowrap';
+    clone.style.overflow = 'visible';
+    clone.style.visibility = 'hidden';
+    clone.style.pointerEvents = 'none';
+    document.body.appendChild(clone);
+    const width = Math.ceil(clone.getBoundingClientRect().width);
+    document.body.removeChild(clone);
+    return width;
+}
+
 function UserSettings({
     needs_list,
     set_needs_list,
@@ -22,8 +47,8 @@ function UserSettings({
     show: boolean;
 }) {
     const class_show = show ? "" : "d-none";
-    return <div className={`d-flex gap-3 ${class_show}`}>
-        <fieldset>
+    return <div className={`calculator-settings-panel ${class_show}`}>
+        <fieldset className="calculator-settings-fieldset">
             <legend><small>设置</small></legend>
             <Suspense fallback={<div className="small text-muted">加载设置中...</div>}>
                 <Settings needs_list={needs_list} set_needs_list={set_needs_list}/>
@@ -36,6 +61,8 @@ function AppWithContexts() {
     const [misc_show, set_misc_show] = useState(false);
     const [needs_list, set_needs_list] = useState<NumericMap>({});
     const [comparison_baseline, set_comparison_baseline] = useState<ComparisonBaseline | null>(null);
+    const toolbar_actions_ref = useRef<HTMLDivElement | null>(null);
+    const [toolbar_actions_mode, set_toolbar_actions_mode] = useState<ToolbarActionsMode>('full');
 
     function update_needs_list(next_needs_list: NumericMap) {
         set_comparison_baseline(null);
@@ -50,31 +77,65 @@ function AppWithContexts() {
         window.location.reload();
     }
 
-    return <>
+    useLayoutEffect(() => {
+        const toolbar_row = toolbar_actions_ref.current;
+        if (!toolbar_row) {
+            return;
+        }
+
+        const updateCompactState = () => {
+            const full_width = measureToolbarActionsWidth(toolbar_row, 'full');
+            const buttons_compact_width = measureToolbarActionsWidth(toolbar_row, 'buttons-compact');
+            const available_width = toolbar_row.clientWidth;
+            let next_mode: ToolbarActionsMode = 'full';
+
+            if (available_width > 0 && available_width < full_width) {
+                next_mode = available_width >= buttons_compact_width ? 'buttons-compact' : 'icons-only';
+            }
+
+            set_toolbar_actions_mode(prev => prev === next_mode ? prev : next_mode);
+        };
+
+        const resize_observer = new ResizeObserver(updateCompactState);
+        resize_observer.observe(toolbar_row);
+        updateCompactState();
+
+        return () => {
+            resize_observer.disconnect();
+        };
+    }, []);
+
+    return <div className="calculator-page">
         <div className="calculator-toolbar-stack">
             {/*游戏版本、模组选择*/}
             <div className="calculator-toolbar-row d-flex column-gap-4 row-gap-2 flex-wrap">
                 <GameVersion needs_list={needs_list} set_needs_list={update_needs_list}/>
             </div>
             {/*生产策略、需求列表、清空数据缓存按钮、采矿参数&其他设置是否显示按钮*/}
-            <div className="calculator-toolbar-row d-flex column-gap-4 row-gap-2 flex-wrap">
+            <div ref={toolbar_actions_ref}
+                 className={`calculator-toolbar-row calculator-toolbar-actions d-flex column-gap-4 row-gap-2 flex-wrap${toolbar_actions_mode === 'buttons-compact' ? ' calculator-toolbar-actions-buttons-compact' : ''}${toolbar_actions_mode === 'icons-only' ? ' calculator-toolbar-actions-icons-only' : ''}`}>
                 <SchemeStorage/>
                 <NeedsListStorage needs_list={needs_list} set_needs_list={update_needs_list}/>
-                <button className="btn btn-outline-danger btn-sm d-inline-flex align-items-center gap-1" onClick={clearData}>
+                <button className="btn btn-outline-danger btn-sm d-inline-flex align-items-center gap-1 mobile-icon-button"
+                        title="清空数据缓存"
+                        aria-label="清空数据缓存"
+                        onClick={clearData}>
                     <FaTrashAlt/>
-                    <span>清空数据缓存</span>
+                    <span className="mobile-icon-button-label">清空数据缓存</span>
                 </button>
-                <button className="btn btn-outline-primary btn-sm d-inline-flex align-items-center gap-1"
+                <button className="btn btn-outline-primary btn-sm d-inline-flex align-items-center gap-1 mobile-icon-button"
+                        title="采矿参数和其他设置"
+                        aria-label="采矿参数和其他设置"
                         onClick={() => set_misc_show(s => !s)}>
                     <FaCog/>
-                    采矿参数 & 其他设置
+                    <span className="mobile-icon-button-label">采矿参数 & 其他设置</span>
                 </button>
             </div>
         </div>
         {/*采矿参数&其他设置*/}
         <UserSettings needs_list={needs_list} set_needs_list={update_needs_list} show={misc_show}/>
         {/*添加需求、批量预设、计算结果*/}
-        <div>
+        <div className="calculator-main-stack">
             <NeedsList needs_list={needs_list} set_needs_list={update_needs_list}/>
             <Suspense fallback={<div className="small text-muted mt-2">加载计算模块中...</div>}>
                 <BatchSetting captureComparisonBaseline={set_comparison_baseline} needs_list={needs_list}/>
@@ -86,7 +147,7 @@ function AppWithContexts() {
                 />
             </Suspense>
         </div>
-    </>;
+    </div>;
 }
 
 export default function App() {

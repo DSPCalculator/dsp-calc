@@ -11,8 +11,8 @@ export function Header() {
         </Tooltip>
     );
     return (
-        <Navbar className="px-3 text-nowrap" bg="light" expand="lg">
-            <Navbar.Brand href="#" className="d-inline-flex align-items-baseline">
+        <Navbar className="px-3 header-navbar" bg="light" expand="lg">
+            <Navbar.Brand href="#" className="d-inline-flex align-items-baseline flex-wrap header-brand">
                 <FaReact className="me-2 align-self-center"/>
                 <span className="me-1">戴森球计划量化计算器</span>
                 <span className="text-muted ssmall">v{version}</span>
@@ -36,7 +36,7 @@ export function Header() {
                     </OverlayTrigger>
                 </Nav>
 
-                <span className="navbar-text ms-auto small">
+                <span className="navbar-text ms-auto small header-hint">
                     <FaInfoCircle/> 若无法加载，尝试切换浏览器为Chrome/Edge
                 </span>
             </Navbar.Collapse>

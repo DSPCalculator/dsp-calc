@@ -1,4 +1,5 @@
 import {ItemIcon} from '@ui/components/icons/ItemIcon';
+import {FaTrashAlt} from 'react-icons/fa';
 
 function ValueWithDifference({
     currentValue,
@@ -215,38 +216,42 @@ export function ResultSidebar({
         ? <table><tbody>{renderSurplusNamedRows(surplus_entries)}</tbody></table>
         : renderSurplusCompactRows(surplus_entries);
 
-    return <div className="sticky-top mt-3 align-self-start d-flex flex-column gap-2">
+    return <div className="result-sidebar sticky-top mt-3 align-self-start d-flex flex-column gap-2">
         {mineralize_doms.length > 0 &&
-            <fieldset className="w-fit">
+            <fieldset className="result-sidebar-card">
                 <legend><small>原矿化列表</small></legend>
                 <div className="d-flex flex-wrap align-items-center">
                     {mineralize_doms}
-                    <button className="ms-2 btn btn-sm btn-outline-danger text-nowrap"
-                            onClick={clear_mineralize_list}>清空
+                    <button className="ms-2 btn btn-sm btn-outline-danger text-nowrap d-inline-flex align-items-center gap-1 mobile-icon-button"
+                            title="清空原矿化列表"
+                            aria-label="清空原矿化列表"
+                            onClick={clear_mineralize_list}>
+                        <FaTrashAlt/>
+                        <span className="mobile-icon-button-label">清空</span>
                     </button>
                 </div>
             </fieldset>
         }
 
         {surplus_entries.length > 0 &&
-            <fieldset className="w-fit">
+            <fieldset className="result-sidebar-card">
                 <legend><small>多余产物</small></legend>
                 {surplus_display}
             </fieldset>}
 
         {raw_material_entries.length > 0 &&
-            <fieldset className="w-fit">
+            <fieldset className="result-sidebar-card">
                 <legend><small>原矿输入总需求{unit_text}</small></legend>
                 {raw_material_display}
             </fieldset>}
 
         {building_entries.length > 0 &&
             <>
-                <fieldset className="w-fit">
+                <fieldset className="result-sidebar-card">
                     <legend><small>建筑统计</small></legend>
                     {building_display}
                 </fieldset>
-                <span className="d-inline-flex gap-1 text-nowrap">
+                <span className="d-inline-flex gap-1 text-nowrap result-sidebar-power">
                     <span className="me-1">预估电力</span>
                     <span className="fast-tooltip" data-tooltip="不包含采集设备">
                         <ValueWithDifference

@@ -168,7 +168,7 @@ export function BatchSetting({
         {value: 2, label: "增产", className: pro_mode_class[2]},
     ];
 
-    return <div className="mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center">
+    return <div className="batch-setting-panel mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center">
         <small className="fw-bold">批量预设</small>
         <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
                                      onChange={change_pro_num} no_gap={true} className={"raw-text-selection"}/>

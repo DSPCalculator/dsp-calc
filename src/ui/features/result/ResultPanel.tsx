@@ -361,39 +361,45 @@ export function Result({
         }));
     }
 
-    return <div className="mt-2 mb-3 d-flex gap-5">
-        <table className="table table-sm align-middle w-auto result-table">
-            <thead>
-            <tr className="text-center text-nowrap">
-                <th style={{width: 60}}>操作</th>
-                <th style={{width: 140}}>需求</th>
-                <th style={{width: 110}}>工厂</th>
-                <th style={{width: 300}}>{settings.show_effective_recipe ? "等效配方" : "原始配方"}</th>
-                <th style={{width: 180}}>增产模式</th>
-                <th style={{width: 160}}>增产剂</th>
-                <th style={{width: 170}}>工厂类型</th>
-            </tr>
-            </thead>
-            <tbody className="table-group-divider">
-            <NplRows/>
-            {result_table_rows}
-            </tbody>
-        </table>
-        <ResultSidebar
-            RESULT_ICON_SIZE={RESULT_ICON_SIZE}
-            building_list={building_list}
-            clear_mineralize_list={clear_mineralize_list}
-            energy_cost={energy_cost}
-            fixed_num={fixed_num}
-            IncreaseCostWhenSurplus={IncreaseCostWhenSurplus}
-            is_time_unit_minute={settings.is_time_unit_minute}
-            mineralize_list={mineralize_list}
-            miner_energy_cost={miner_energy_cost}
-            previous_sidebar_metrics={previous_sidebar_metrics}
-            raw_material_list={raw_material_list}
-            show_item_names={settings.show_sidebar_item_names}
-            surplus_list={lp_surplus_list}
-            unmineralize={unmineralize}
-        />
+    return <div className="result-layout mt-2 mb-3">
+        <div className="result-table-shell">
+            <div className="result-table-scroll">
+                <table className="table table-sm align-middle w-auto result-table">
+                    <thead>
+                    <tr className="text-center text-nowrap">
+                        <th style={{width: 60}}>操作</th>
+                        <th style={{width: 140}}>需求</th>
+                        <th style={{width: 110}}>工厂</th>
+                        <th style={{width: 300}}>{settings.show_effective_recipe ? "等效配方" : "原始配方"}</th>
+                        <th style={{width: 180}}>增产模式</th>
+                        <th style={{width: 160}}>增产剂</th>
+                        <th style={{width: 170}}>工厂类型</th>
+                    </tr>
+                    </thead>
+                    <tbody className="table-group-divider">
+                    <NplRows/>
+                    {result_table_rows}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div className="result-sidebar-shell">
+            <ResultSidebar
+                RESULT_ICON_SIZE={RESULT_ICON_SIZE}
+                building_list={building_list}
+                clear_mineralize_list={clear_mineralize_list}
+                energy_cost={energy_cost}
+                fixed_num={fixed_num}
+                IncreaseCostWhenSurplus={IncreaseCostWhenSurplus}
+                is_time_unit_minute={settings.is_time_unit_minute}
+                mineralize_list={mineralize_list}
+                miner_energy_cost={miner_energy_cost}
+                previous_sidebar_metrics={previous_sidebar_metrics}
+                raw_material_list={raw_material_list}
+                show_item_names={settings.show_sidebar_item_names}
+                surplus_list={lp_surplus_list}
+                unmineralize={unmineralize}
+            />
+        </div>
     </div>;
 }

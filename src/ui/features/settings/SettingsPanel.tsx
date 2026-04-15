@@ -99,6 +99,7 @@ export function Settings({
             <td>{row.label}</td>
             <td className="ps-2">
                 <input type="number"
+                       className="settings-number-input"
                        value={value}
                        step={row.step}
                        style={{maxWidth: '5em'}}
@@ -129,7 +130,8 @@ export function Settings({
             return <tr key="fractionating_speed">
                 <td>{row.label}</td>
                 <td className="ps-2">
-                    <input value={fractionating_speed}
+                    <input className="settings-number-input"
+                           value={fractionating_speed}
                            onChange={e => changeFractionatingSpeed(e.target.value)}
                            style={{maxWidth: '5em'}}/>
                 </td>
@@ -179,26 +181,34 @@ export function Settings({
         });
     }
 
-    return <div style={{display: 'flex', flexWrap: 'wrap'}}>
-        <table>
+    return <div className="settings-panel-grid">
+        <div className="settings-table-card">
+            <table className="settings-table">
             {renderTableBodyGroups(RESOURCE_PANEL_GROUPS)}
-        </table>
-        <table>
+            </table>
+        </div>
+        <div className="settings-table-card">
+            <table className="settings-table">
             <tbody>
                 {MINING_BEHAVIOR_ROWS.map(renderRow)}
             </tbody>
-        </table>
-        <table>
+            </table>
+        </div>
+        <div className="settings-table-card">
+            <table className="settings-table">
             <tbody>
                 {DISPLAY_AND_PROLIFERATION_ROWS.map(renderRow)}
             </tbody>
-        </table>
+            </table>
+        </div>
         {visibility_flags.they_come_from_void_enabled &&
-            <table>
+            <div className="settings-table-card">
+                <table className="settings-table">
                 <tbody>
                     {THEY_COME_FROM_VOID_ROWS.map(renderRow)}
                 </tbody>
-            </table>
+                </table>
+            </div>
         }
     </div>;
 }

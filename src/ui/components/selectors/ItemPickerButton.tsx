@@ -48,6 +48,7 @@ export function ItemSelect({
     icon_size = 24,
     icon_only = false,
     icon,
+    compact_on_mobile = false,
 }: ItemSelectProps) {
     const modal_ref = useRef<HTMLDivElement | null>(null);
     const modal_instance_ref = useRef<Modal | null>(null);
@@ -124,21 +125,24 @@ export function ItemSelect({
 
     const modalContentStyle: StyleWithVars = {"--bs-bg-opacity": 0.85};
     const trigger_padding_class = icon_only ? "p-0" : "py-1 px-2";
+    const compact_trigger_class = compact_on_mobile ? " compact-on-mobile" : "";
 
     return <>
-        <button className={`btn ${trigger_padding_class} ${btn_class} d-inline-flex align-items-center gap-1`}
+        <button className={`btn ${trigger_padding_class} ${btn_class} d-inline-flex align-items-center gap-1 item-select-trigger${compact_trigger_class}`}
+                aria-label={text}
+                title={text}
                 onClick={show}>
             {item && <><ItemIcon item={item} size={icon_size} tooltip={!icon_only}/>
                 {!icon_only && <span className="ms-1"></span>}</>}
             {!item && icon}
             {(item && !icon_only) ?
-                <small className="text-nowrap">{item}</small>
-                : <span className="text-nowrap">{text}</span>}
+                <small className="text-nowrap item-select-trigger-label">{item}</small>
+                : <span className="text-nowrap item-select-trigger-label">{text}</span>}
         </button>
 
         {createPortal(
             <div ref={modal_ref} className="modal" tabIndex={-1}>
-                <div className="modal-dialog mw-fit">
+                <div className="modal-dialog mw-fit item-select-dialog">
                     <div className="modal-content bg-dark d-flex flex-column" style={modalContentStyle}>
                         <div className="px-3 pt-3 pb-1 d-flex flex-column gap-2">
                             <input ref={input_ref} className="round rounded-3 py-1 px-2 my-1"
