@@ -1,4 +1,6 @@
-import {useContext, useMemo, useState, useEffect} from 'react';
+import {useContext, useMemo, useState, useEffect, useRef} from 'react';
+import {createPortal} from 'react-dom';
+import {Modal} from 'bootstrap';
 import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from './contexts';
 import {ItemIcon} from './icon';
 import {NplRows} from './natural_production_line';
@@ -158,7 +160,7 @@ const isEqual = (obj1, obj2) => {
     return true;
 };
 
-export function Result({needs_list, set_needs_list}) {
+export function Result({needs_list, set_needs_list, show_ore_popup, set_show_ore_popup, show_building_popup, set_show_building_popup}) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const set_settings = useContext(SettingsSetterContext);
@@ -166,6 +168,59 @@ export function Result({needs_list, set_needs_list}) {
     const is_compact = compact_mode !== "full";
     const is_mobile = compact_mode === "mobile";
     const mob_icon = is_mobile ? 20 : undefined;   // 总结面板/主图标
+
+    // Refs for Bootstrap Modal instances
+    const ore_modal_ref = useRef(null);
+    const ore_modal_instance = useRef(null);
+    const building_modal_ref = useRef(null);
+    const building_modal_instance = useRef(null);
+
+    // Initialize Bootstrap Modal instances
+    useEffect(() => {
+        if (ore_modal_ref.current) {
+            ore_modal_instance.current = new Modal(ore_modal_ref.current);
+            ore_modal_ref.current.addEventListener('hidden.bs.modal', () => {
+                set_show_ore_popup(false);
+            });
+        }
+    }, [ore_modal_ref]); // eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(() => {
+        if (building_modal_ref.current) {
+            building_modal_instance.current = new Modal(building_modal_ref.current);
+            building_modal_ref.current.addEventListener('hidden.bs.modal', () => {
+                set_show_building_popup(false);
+            });
+        }
+    }, [building_modal_ref]); // eslint-disable-line react-hooks/exhaustive-deps
+
+    // Show/hide Modal A based on show_ore_popup prop
+    useEffect(() => {
+        if (!ore_modal_instance.current) return;
+        if (show_ore_popup) {
+            ore_modal_instance.current.show();
+        } else {
+            ore_modal_instance.current.hide();
+        }
+    }, [show_ore_popup]);
+
+    // Show/hide Modal B based on show_building_popup prop
+    useEffect(() => {
+        if (!building_modal_instance.current) return;
+        if (show_building_popup) {
+            building_modal_instance.current.show();
+        } else {
+            building_modal_instance.current.hide();
+        }
+    }, [show_building_popup]);
+
+    // Auto-close both modals when exiting narrow/mobile mode
+    useEffect(() => {
+        if (compact_mode !== "narrow" && compact_mode !== "mobile") {
+            set_show_ore_popup(false);
+            set_show_building_popup(false);
+        }
+    }, [compact_mode, set_show_ore_popup, set_show_building_popup]);
     const mob_btn_icon = is_mobile ? 18 : undefined; // 表格内按钮图标
     // const [result_dict, set_result_dict] = useState(global_state.calculate());
     let game_data = global_state.game_data;
@@ -533,6 +588,7 @@ export function Result({needs_list, set_needs_list}) {
         </div>
         {/* 右侧：总结面板独立滚动区域 */}
         <div className="result-summary-scroll">
+        {compact_mode !== "narrow" && compact_mode !== "mobile" &&
         <div className="d-flex flex-column gap-2 summary-panel-content">
 
             {/* 第一列：原矿化列表 + 多余产物（mobile 时还包含预估电力） */}
@@ -588,17 +644,16 @@ export function Result({needs_list, set_needs_list}) {
                                 {rawMaterials.map(([item, amount]) => (
                                     <tr key={item}>
                                         <td className="d-flex align-items-center text-nowrap">
-                                            <ItemIcon item={item} tooltip={false} size={is_mobile ? 18 : 24}/>
-                                            <small className="ms-1 compact-hide-text">{item}</small>
+                                            <span className="ms-auto me-1 compact-hide-text">{item}</span>
+                                            <ItemIcon item={item} tooltip={false} size={mob_icon}/>
                                         </td>
                                         <td className="ps-2 text-nowrap">
-                                            <small>
-                                                <ValueWithDifference
-                                                    currentValue={amount}
-                                                    previousValue={historyValues?.[1]?.rawMaterials?.[item]}
-                                                    key={`raw-material-${item}`}
-                                                />/{time_tick === 60 ? 'min' : 'sec'}
-                                            </small>
+                                            {'x '}
+                                            <ValueWithDifference
+                                                currentValue={amount}
+                                                previousValue={historyValues?.[1]?.rawMaterials?.[item]}
+                                                key={`raw-material-${item}`}
+                                            />/{time_tick === 60 ? 'min' : 'sec'}
                                         </td>
                                     </tr>
                                 ))}
@@ -637,7 +692,114 @@ export function Result({needs_list, set_needs_list}) {
                     </span>
                     <span className="energy-cost-unit-trailing">MW</span>
                 </span>}
+        </div>}
         </div>
-        </div>
+
+        {/* Modal A: 原矿化列表 + 多余产物 */}
+        {createPortal(
+            <div ref={ore_modal_ref} className="modal" tabIndex="-1">
+                <div className="modal-dialog mw-fit">
+                    <div className="modal-content bg-body flex-column" style={{"--bs-bg-opacity": 0.85}}>
+                        <div className="modal-header border-secondary">
+                            <h6 className="modal-title">原矿 &amp; 多余产物</h6>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal"/>
+                        </div>
+                        <div className="modal-body summary-modal-body">
+                            {mineralize_doms.length > 0 &&
+                                <fieldset className="w-fit">
+                                    <legend><small>原矿化列表</small></legend>
+                                    <div className="d-flex flex-wrap align-items-center">
+                                        {mineralize_doms}
+                                        <button className="ms-2 btn btn-sm btn-outline-danger text-nowrap"
+                                                onClick={clear_mineralize_list}>清空
+                                        </button>
+                                    </div>
+                                </fieldset>
+                            }
+                            {surplus_doms.length > 0 &&
+                                <fieldset className="w-fit">
+                                    <legend><small>多余产物</small></legend>
+                                    {surplus_doms}
+                                </fieldset>}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            , document.body)}
+
+        {/* Modal B: 原矿输入总需求 + 建筑统计 + 预估电力 */}
+        {createPortal(
+            <div ref={building_modal_ref} className="modal" tabIndex="-1">
+                <div className="modal-dialog mw-fit">
+                    <div className="modal-content bg-body flex-column" style={{"--bs-bg-opacity": 0.85}}>
+                        <div className="modal-header border-secondary">
+                            <h6 className="modal-title">建筑 &amp; 需求</h6>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal"/>
+                        </div>
+                        <div className="modal-body summary-modal-body">
+                            {/* 原矿输入总需求 */}
+                            {(() => {
+                                const rawMaterials = Object.entries(result_dict).filter(([item]) => isRawMaterial(item));
+                                return rawMaterials.length > 0 && (
+                                    <fieldset className="w-fit">
+                                        <legend><small>原矿输入总需求</small></legend>
+                                        <table>
+                                            <tbody>
+                                                {rawMaterials.map(([item, amount]) => (
+                                                    <tr key={item}>
+                                                        <td className="d-flex align-items-center text-nowrap">
+                                                            <span className="ms-auto me-1 compact-hide-text">{item}</span>
+                                                            <ItemIcon item={item} tooltip={false} size={mob_icon}/>
+                                                        </td>
+                                                        <td className="ps-2 text-nowrap">
+                                                            {'x '}
+                                                            <ValueWithDifference
+                                                                currentValue={amount}
+                                                                previousValue={historyValues?.[1]?.rawMaterials?.[item]}
+                                                                key={`raw-material-${item}`}
+                                                            />/{time_tick === 60 ? 'min' : 'sec'}
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </fieldset>
+                                );
+                            })()}
+                            {/* 建筑统计 */}
+                            {building_rows.length > 0 &&
+                                <fieldset className="w-fit">
+                                    <legend><small>建筑统计</small></legend>
+                                    <table>
+                                        <tbody>{building_rows}</tbody>
+                                    </table>
+                                </fieldset>}
+                        </div>
+                        {/* 预估电力 — 固定在底部 */}
+                        {building_rows.length > 0 &&
+                            <div className="modal-footer border-secondary justify-content-start">
+                                <span className="d-inline-flex gap-1 text-nowrap energy-cost-display">
+                                    <span className="me-1">预估电力<span className="energy-cost-unit-inline"> (MW)</span></span>
+                                    <span className="fast-tooltip" data-tooltip="不包含采集设备">
+                                        <ValueWithDifference
+                                            currentValue={energy_cost}
+                                            previousValue={historyValues?.[1]?.energyCost}
+                                            key="energy-cost"
+                                        />
+                                    </span><span className="energy-cost-separator">/</span>
+                                    <span className="fast-tooltip" data-tooltip="包含采集设备">
+                                        <ValueWithDifference
+                                            currentValue={energy_cost + miner_energy_cost}
+                                            previousValue={historyValues?.[1]?.totalEnergyCost}
+                                            key="total-energy-cost"
+                                        />
+                                    </span>
+                                    <span className="energy-cost-unit-trailing">MW</span>
+                                </span>
+                            </div>}
+                    </div>
+                </div>
+            </div>
+            , document.body)}
     </div>;
 }

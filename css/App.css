@@ -106,15 +106,15 @@
 
 .fast-tooltip:hover::after {
     z-index: 10000;
-    position: absolute;
+    position: fixed;
     display: block;
     content: attr(data-tooltip);
-    top: 120%;
-    left: 62%;
     width: max-content;
     background-color: #333;
     color: white;
     padding: .15em .4em;
+    margin-top: .3em;
+    pointer-events: none;
 }
 
 .border-between {
@@ -232,12 +232,38 @@ body > .p-3 {
 }
 
 /* ============================================================
-   响应式辅助类
-   ============================================================ */
+    响应式辅助类
+    ============================================================ */
 
 /* compact-show: 默认隐藏，在 compact 及以下模式显示 */
 .compact-show {
     display: none !important;
+}
+
+/* 弹出面板按钮：默认隐藏，仅 narrow/mobile 下显示 */
+.summary-popup-btn {
+    display: none !important;
+}
+
+/* 弹出面板按钮高度：匹配 input-group-sm 内按钮的高度
+   Bootstrap 5 input-group-sm 的 .form-control 高度公式:
+   line-height(1.5) * font-size(.875rem) + padding-y(.25rem*2) + border(1px*2) */
+.summary-popup-btn-item {
+    height: calc(1.5 * .875rem + .5rem + 2px);
+}
+
+/* 弹出面板 Modal 内容区布局 */
+.summary-modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+/* 确保弹出面板 Modal 内的 tooltip 不被裁剪、不产生滚动条
+   Bootstrap 的 .modal-content 默认设了 overflow: hidden，必须用 !important 覆盖 */
+.mw-fit .modal-content {
+    overflow: visible !important;
 }
 
 /* 预估电力单位：默认显示末尾版，隐藏括号版 */
@@ -328,9 +354,20 @@ body > .p-3 {
         height: 22px !important;
     }
 
-    /* 总结面板最大宽度放宽（窄屏每个字符都珍贵） */
+    /* 隐藏右侧总结面板，改为弹出按钮 */
     .result-summary-scroll {
-        max-width: 260px;
+        display: none !important;
+    }
+
+    /* 结果表格扩展至全宽 */
+    .result-table-scroll {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    /* 显示弹出面板按钮 */
+    .summary-popup-btn {
+        display: inline-flex !important;
     }
 }
 
@@ -373,13 +410,7 @@ body > .p-3 {
 
     /* 下半：总结面板 */
     .result-summary-scroll {
-        flex-shrink: 0;
-        width: 100%;
-        max-width: 100%;
-        max-height: 38vh;
-        overflow-y: auto;
-        overflow-x: auto;
-        padding-top: 0.5rem;
+        display: none !important;
     }
 
     /* 移动端表格字号缩小 */

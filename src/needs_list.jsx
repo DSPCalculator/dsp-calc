@@ -1,5 +1,5 @@
 import {useContext, useEffect, useRef, useState} from 'react';
-import {FaRegSave, FaRegFolderOpen, FaTrash, FaPlusCircle, FaPlusSquare} from 'react-icons/fa';
+import {FaRegSave, FaRegFolderOpen, FaTrash, FaPlusCircle, FaPlusSquare, FaGem, FaIndustry} from 'react-icons/fa';
 import {GameInfoContext, GlobalStateContext, SettingsSetterContext} from './contexts';
 import {ItemIcon} from './icon';
 import {ItemSelect} from './item_select';
@@ -21,7 +21,7 @@ function get_item_data(game_data) {
     return item_data;
 }
 
-export function NeedsList({needs_list, set_needs_list}) {
+export function NeedsList({needs_list, set_needs_list, set_show_ore_popup, set_show_building_popup}) {
     const global_state = useContext(GlobalStateContext);
     const count_ref = useRef(60);
     const set_settings = useContext(SettingsSetterContext);
@@ -78,7 +78,7 @@ export function NeedsList({needs_list, set_needs_list}) {
     const is_min = global_state.settings.is_time_unit_minute;
 
     return <>
-        <div className="w-fit mt-3 d-flex align-items-center row-gap-1 flex-wrap">
+        <div className="mt-3 d-flex align-items-center row-gap-1 flex-wrap">
             <small className="me-3 fw-bold text-nowrap">添加需求</small>
             <div className="input-group input-group-sm w-fit d-inline-flex me-5">
                 <input type="text" className="form-control" style={{width: "6em"}} ref={count_ref} defaultValue={60}/>
@@ -100,6 +100,20 @@ export function NeedsList({needs_list, set_needs_list}) {
                     {needs_doms}
                 </div>
             }
+
+            {/* 弹出面板按钮（narrow/mobile 下显示，compact/full 下 CSS 隐藏） */}
+            <div className="summary-popup-btn ms-auto d-inline-flex gap-1">
+                <button className="btn btn-sm btn-outline-secondary d-inline-flex align-items-center gap-1 summary-popup-btn-item"
+                        onClick={() => set_show_ore_popup(s => !s)}
+                        title="原矿化列表 & 多余产物">
+                    <FaGem/>
+                </button>
+                <button className="btn btn-sm btn-outline-secondary d-inline-flex align-items-center gap-1 summary-popup-btn-item"
+                        onClick={() => set_show_building_popup(s => !s)}
+                        title="建筑统计 & 预估电力">
+                    <FaIndustry/>
+                </button>
+            </div>
         </div>
     </>;
 }

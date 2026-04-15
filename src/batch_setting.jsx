@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react';
+import {useContext} from 'react';
 import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext} from './contexts';
 import {HorizontalMultiButtonSelect} from './recipe.jsx';
 import {pro_mode_class} from './result.jsx';

@@ -158,6 +158,8 @@ function UserSettings({show}) {
 function AppWithContexts() {
     const game_info = useContext(GameInfoContext);
     const [misc_show, set_misc_show] = useState(false);
+    const [show_ore_popup, set_show_ore_popup] = useState(false);
+    const [show_building_popup, set_show_building_popup] = useState(false);
     const [needs_list, set_needs_list] = useState({});
     useEffect(() => {
         set_needs_list({});
@@ -196,12 +198,16 @@ function AppWithContexts() {
             {/*采矿参数&其他设置*/}
             <UserSettings show={misc_show}/>
             {/*添加需求、批量预设*/}
-            <NeedsList needs_list={needs_list} set_needs_list={set_needs_list}/>
+            <NeedsList needs_list={needs_list} set_needs_list={set_needs_list}
+                       set_show_ore_popup={set_show_ore_popup}
+                       set_show_building_popup={set_show_building_popup}/>
             <BatchSetting/>
         </div>
         {/* 结果区域：填充剩余高度，独立滚动 */}
         <div className="app-result-area">
-            <Result needs_list={needs_list} set_needs_list={set_needs_list}/>
+            <Result needs_list={needs_list} set_needs_list={set_needs_list}
+                    show_ore_popup={show_ore_popup} set_show_ore_popup={set_show_ore_popup}
+                    show_building_popup={show_building_popup} set_show_building_popup={set_show_building_popup}/>
         </div>
     </div>;
 }
