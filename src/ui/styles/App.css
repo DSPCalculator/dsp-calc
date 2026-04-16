@@ -247,6 +247,7 @@
 .needs-entry-controls {
     display: flex;
     align-items: center;
+    align-self: flex-start;
     gap: 0.75rem;
     flex: 0 0 auto;
     min-width: 0;
@@ -561,10 +562,6 @@ legend {
     .horizontal-multi-button-option {
         flex: 0 0 auto;
         justify-content: center;
-    }
-
-    .needs-entry-controls {
-        align-items: flex-start;
     }
 
     .settings-table-card {
