@@ -156,7 +156,7 @@ export function NeedsList({needs_list, set_needs_list}: {
     }, [is_min, needs_list_measure_key]);
 
     return <>
-        <div className="needs-panel mt-3">
+        <div className="needs-panel">
             <div ref={needs_entry_row_ref} className="needs-entry-row">
                 <div ref={needs_entry_controls_ref}
                      className={`needs-entry-controls${controls_mode === 'icons-only' ? ' needs-entry-controls-icons-only' : ''}`}>
