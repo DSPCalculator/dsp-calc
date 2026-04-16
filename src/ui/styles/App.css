@@ -236,16 +236,53 @@
 }
 
 .needs-entry-row {
-    gap: 0.5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    width: 100%;
+}
+
+.needs-entry-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 0 0 auto;
+    min-width: 0;
 }
 
 .needs-entry-group {
+    flex: 0 0 auto;
     flex-wrap: nowrap;
     width: fit-content;
 }
 
 .needs-chip-list {
     gap: 0.75rem 1rem !important;
+    min-width: 0;
+    align-self: flex-start;
+}
+
+.needs-chip-list-inline {
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
+.needs-chip-list-stacked {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.needs-entry-controls-icons-only .item-select-trigger-label,
+.needs-entry-controls-icons-only .mobile-icon-button-label {
+    display: none;
+}
+
+.needs-entry-controls-icons-only .mobile-icon-button,
+.needs-entry-controls-icons-only .item-select-trigger {
+    min-width: 2.5rem;
+    justify-content: center;
 }
 
 .needs-chip-input {
@@ -482,12 +519,6 @@ legend {
         width: 100%;
     }
 
-    .needs-entry-row {
-        flex-wrap: nowrap !important;
-        overflow-x: auto;
-        padding-bottom: 0.25rem;
-    }
-
     .needs-chip {
         width: auto;
         justify-content: flex-start;
@@ -532,17 +563,8 @@ legend {
         justify-content: center;
     }
 
-    .compact-on-mobile .item-select-trigger-label {
-        display: none;
-    }
-
-    .compact-on-mobile {
-        flex-wrap: nowrap;
-    }
-
-    .compact-on-mobile {
-        min-width: 2.5rem;
-        justify-content: center;
+    .needs-entry-controls {
+        align-items: flex-start;
     }
 
     .settings-table-card {
