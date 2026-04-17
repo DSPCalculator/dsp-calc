@@ -537,24 +537,6 @@ legend {
         width: 6em !important;
     }
 
-    .batch-setting-panel {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto;
-        width: 100%;
-        padding-bottom: 0.25rem;
-    }
-
-    .batch-setting-panel > * {
-        width: auto;
-        flex: 0 0 auto;
-    }
-
-    .horizontal-multi-button-select {
-        width: auto;
-        flex-wrap: nowrap;
-    }
-
     .horizontal-multi-button-select.raw-text-selection {
         font-size: 1rem !important;
     }
