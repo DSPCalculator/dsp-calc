@@ -48,9 +48,9 @@
 .recipe-item-icon {
     position: relative;
     display: inline-flex;
-    width: 40px;
-    height: 40px;
-    flex: 0 0 40px;
+    width: calc(40px * var(--item-icon-responsive-scale, 1));
+    height: calc(40px * var(--item-icon-responsive-scale, 1));
+    flex: 0 0 calc(40px * var(--item-icon-responsive-scale, 1));
 }
 
 .recipe-item-icon-count {
@@ -297,8 +297,8 @@
 }
 
 .needs-chip-icon {
-    width: 24px;
-    height: 24px;
+    width: calc(24px * var(--item-icon-responsive-scale, 1));
+    height: calc(24px * var(--item-icon-responsive-scale, 1));
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -498,6 +498,7 @@ legend {
 }
 
 .item-select-dialog {
+    width: fit-content;
     max-width: min(96vw, 44rem);
 }
 
@@ -515,7 +516,22 @@ legend {
     }
 }
 
+@media (max-width: 1399.98px) {
+    .batch-factory-select .horizontal-multi-button-option-selected {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .batch-factory-select .horizontal-multi-button-option-selected .horizontal-multi-button-option-label {
+        display: none;
+    }
+}
+
 @media (max-width: 767.98px) {
+    .calculator-main-stack {
+        --item-icon-responsive-scale: 0.7692307692;
+    }
+
     .calculator-settings-panel {
         width: 100%;
     }
@@ -546,21 +562,26 @@ legend {
         justify-content: center;
     }
 
+    .batch-setting-panel {
+        flex-wrap: wrap !important;
+        row-gap: 0.25rem;
+    }
+
+    .batch-setting-panel .raw-text-selection > div {
+        min-height: calc(40px * 0.7692307692);
+    }
+
     .settings-table-card {
         flex-basis: 100%;
         min-width: 0;
     }
 
     .settings-table td {
-        display: block;
-        width: 100%;
         padding-left: 0 !important;
         padding-right: 0;
     }
 
     .settings-table tr {
-        display: block;
-        padding: 0.5rem 0;
         border-bottom: 1px dashed var(--bs-border-color);
     }
 
@@ -573,10 +594,8 @@ legend {
         min-height: 40px;
     }
 
-    .settings-table button,
-    .settings-number-input {
-        width: 100%;
-        max-width: none !important;
+    .settings-table button {
+        white-space: nowrap;
     }
 
     .result-layout {

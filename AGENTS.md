@@ -183,9 +183,24 @@ npm run lint
 npm run build
 ```
 
+### 热重载与本地运行约定
+
+- 修改完成后，必须先判断本轮改动是否真的需要编译；不要把 `typecheck` / `lint` / `build` 当成默认第一反应。
+- 大多数纯 UI / 样式 / 布局 / 文案 / 轻交互改动都属于热重载场景，默认采用 `save -> inspect -> adjust`，无需额外编译。
+- 只有当改动影响类型系统、Lint 规则、构建产物、依赖、平台原生包、构建配置、启动链路，或热重载不足以证明结果时，才执行 `typecheck` / `lint` / `build`。
+- 用户默认已经在 `5173` 持有开发服务器；除非用户明确要求，否则代理**不要额外执行** `npm run dev`、`"C:\Program Files\nodejs\npm.cmd" run dev` 或其他 `run` 类启动命令。
+
 ### Windows 运行验证
 
-对影响运行链路或依赖链路的改动，必须额外执行：
+对影响运行链路或依赖链路的改动，如需补 Windows 侧启动验证，优先复用用户已在 `5173` 运行的现有实例；不要为了验证再额外新起一个 `npm.cmd run dev`。
+
+只有在以下情况同时成立时，才允许代理自己执行：
+
+- 用户明确要求代理亲自拉起新的 Windows dev 进程
+- 现有 `5173` 实例不足以覆盖本轮问题
+- 本轮确实需要验证 Windows 启动链路
+
+此时使用：
 
 ```bat
 "C:\Program Files\nodejs\npm.cmd" run dev
@@ -269,8 +284,9 @@ npm run build
    - `src/ui/app/*`
    - `src/ui/features/*`
    - `src/ui/components/*`
-2. 若只是纯界面调整，也不要跳过 `typecheck/lint/build`
-3. 若改动影响启动或构建链路，还要补 Windows `npm.cmd run dev`
+2. 若只是纯界面 / 样式 / 布局调整，先判断是否必须编译；默认走热重载，不主动执行 `typecheck` / `lint` / `build`
+3. 只有当改动影响类型、构建、依赖、平台原生包、启动链路，或用户明确要求时，才补对应验证命令
+4. 默认不替用户额外启动 `npm run dev` / Windows `npm.cmd run dev`；用户已说明自己常驻使用 `5173`
 
 ### 修改依赖或构建链路
 

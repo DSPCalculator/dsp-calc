@@ -7,10 +7,11 @@ import {createPortal} from 'react-dom';
 import {GameInfoContext} from '@ui/app/providers/app-contexts';
 import type {ItemName} from '@engine/types/domain';
 import type {ItemSelectPanelProps, ItemSelectProps, SearchKeyEvent, StyleWithVars} from '@ui/types/ui';
-import {ItemIcon, ITEM_ICON_OUTER_SIZE} from '../icons/ItemIcon';
+import {ItemIcon, ITEM_ICON_CONTENT_SIZE, ITEM_ICON_OUTER_SIZE} from '../icons/ItemIcon';
 
-function ItemSelectPanel({fuzz_result, onSelect, icon_grid}: ItemSelectPanelProps) {
+function ItemSelectPanel({fuzz_result, onSelect, icon_grid, icon_size}: ItemSelectPanelProps) {
     const fuzz_set = new Set(fuzz_result);
+    const icon_outer_size = icon_size === ITEM_ICON_CONTENT_SIZE ? ITEM_ICON_OUTER_SIZE : icon_size;
 
     const doms = icon_grid.icons.map(({col, row, item}) => {
         const class_opacity = fuzz_set.has(item) ? "" : "opacity-25";
@@ -19,14 +20,14 @@ function ItemSelectPanel({fuzz_result, onSelect, icon_grid}: ItemSelectPanelProp
                     style={{
                         gridRow: row,
                         gridColumn: col,
-                        width: ITEM_ICON_OUTER_SIZE,
-                        height: ITEM_ICON_OUTER_SIZE,
+                        width: icon_outer_size,
+                        height: icon_outer_size,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                     }}
                     onClick={() => onSelect(item)}>
-            <ItemIcon item={item} tooltip={false}/>
+            <ItemIcon item={item} size={icon_size} tooltip={false}/>
         </div>;
     });
 
@@ -38,6 +39,41 @@ function ItemSelectPanel({fuzz_result, onSelect, icon_grid}: ItemSelectPanelProp
                 }}>
         {doms}
     </div>;
+}
+
+const ITEM_SELECT_MOBILE_MEDIA_QUERY = '(max-width: 767.98px)';
+const ITEM_SELECT_MOBILE_GRID_ICON_SIZE = 28;
+const ITEM_SELECT_MOBILE_SEARCH_ICON_SIZE = 24;
+
+function useIsMobileItemSelectViewport() {
+    const [is_mobile_viewport, set_is_mobile_viewport] = useState(() => {
+        if (typeof window === 'undefined') {
+            return false;
+        }
+        return window.matchMedia(ITEM_SELECT_MOBILE_MEDIA_QUERY).matches;
+    });
+
+    useEffect(() => {
+        if (typeof window === 'undefined') {
+            return;
+        }
+
+        const media_query = window.matchMedia(ITEM_SELECT_MOBILE_MEDIA_QUERY);
+        const update_match_state = () => set_is_mobile_viewport(media_query.matches);
+        update_match_state();
+
+        // portal 弹窗挂在 body 下，拿不到 calculator-main-stack 的缩放变量，
+        // 这里按 main 分支原来的思路，在 ItemSelect 内自己切换移动端图标尺寸。
+        if (typeof media_query.addEventListener === 'function') {
+            media_query.addEventListener('change', update_match_state);
+            return () => media_query.removeEventListener('change', update_match_state);
+        }
+
+        media_query.addListener(update_match_state);
+        return () => media_query.removeListener(update_match_state);
+    }, []);
+
+    return is_mobile_viewport;
 }
 
 export function ItemSelect({
@@ -57,6 +93,9 @@ export function ItemSelect({
     const game_info = useContext(GameInfoContext);
     const all_target_items = game_info.all_target_items;
     const [fuzz_result, set_fuzz_result] = useState<ItemName[]>([]);
+    const is_mobile_viewport = useIsMobileItemSelectViewport();
+    const panel_icon_size = is_mobile_viewport ? ITEM_SELECT_MOBILE_GRID_ICON_SIZE : ITEM_ICON_CONTENT_SIZE;
+    const search_icon_size = is_mobile_viewport ? ITEM_SELECT_MOBILE_SEARCH_ICON_SIZE : ITEM_ICON_CONTENT_SIZE;
 
     const search_targets = all_target_items.map((current_item) => ({
         item: current_item,
@@ -93,7 +132,7 @@ export function ItemSelect({
         return <div key={matched_item}
                     className={`text-white bg-secondary ${hl_class} rounded-3 p-1 d-flex align-items-center gap-2 cursor-pointer`}
                     onClick={() => on_select_item(matched_item)}>
-            <ItemIcon item={matched_item} tooltip={false}/>
+            <ItemIcon item={matched_item} size={search_icon_size} tooltip={false}/>
             <small>{matched_item}</small>
         </div>;
     });
@@ -152,6 +191,7 @@ export function ItemSelect({
                             {search_result_doms}
                         </div>
                         <ItemSelectPanel fuzz_result={fuzz_result} icon_grid={game_info.icon_grid}
+                                         icon_size={panel_icon_size}
                                          onSelect={on_select_item}/>
                     </div>
                 </div>

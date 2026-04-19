@@ -15,27 +15,18 @@ function updateSchemesForRecipes(old_scheme_data, should_update, updater) {
     };
 }
 
-function FactorySelect({captureComparisonBaseline, factory, list, needs_list}: {
+function FactorySelect({captureComparisonBaseline, current_choice, list, needs_list}: {
     captureComparisonBaseline: (baseline: ComparisonBaseline) => void;
-    factory: number;
+    current_choice: number;
     list: Array<{名称: string}>;
     needs_list: NumericMap;
 }) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const game_data = global_state.game_data;
-    const scheme_data = global_state.scheme_data;
-
-    let cur = 0;
-    for (let i = 0; i < game_data.recipe_data.length; i++) {
-        if (game_data.recipe_data[i]["设施"] == factory) {
-            cur = scheme_data.scheme_for_recipe[i]["建筑"];
-            break;
-        }
-    }
 
     const options = list.map((data, idx) => ({
-        value: idx, item_icon: data["名称"], label: cur == idx ? data["名称"] : null
+        value: idx, item_icon: data["名称"], label: current_choice == idx ? data["名称"] : null
     }));
 
     function set_factory(building) {
@@ -64,8 +55,9 @@ function FactorySelect({captureComparisonBaseline, factory, list, needs_list}: {
         ));
     }
 
-    return <HorizontalMultiButtonSelect choice={cur} options={options}
-                                        onChange={set_factory} no_gap={true}/>;
+    return <HorizontalMultiButtonSelect choice={current_choice} options={options}
+                                        onChange={set_factory} no_gap={true}
+                                        className="raw-text-selection batch-factory-select"/>;
 }
 
 export type ComparisonBaseline = {
@@ -97,7 +89,7 @@ export function BatchSetting({
         pro_num_item[pro_point] = pro_point === 0 ? "无" : data["名称"];
     }
 
-    const factory_doms = [];
+    const factory_select_configs: Array<{factory_kind: number; current_choice: number; list: Array<{名称: string}>}> = [];
     // TODO rename to [factory_kind]
     Object.keys(game_data.factory_data).forEach(factory => {
         const factory_kind = Number(factory);
@@ -105,15 +97,26 @@ export function BatchSetting({
         const used_num = game_data.recipe_data.filter(data => data["设施"] == factory_kind).length;
         //只有可选工厂类型大于等于2，并且这种工厂类型至少被3个配方使用时，才允许批量预设
         if (list.length >= 2 && used_num >= 3) {
-            factory_doms.push(<FactorySelect
-                key={factory_kind}
-                captureComparisonBaseline={captureComparisonBaseline}
-                factory={factory_kind}
-                list={list}
-                needs_list={needs_list}
-            />);
+            let current_choice = 0;
+            for (let i = 0; i < game_data.recipe_data.length; i++) {
+                if (game_data.recipe_data[i]["设施"] == factory_kind) {
+                    current_choice = scheme_data.scheme_for_recipe[i]["建筑"];
+                    break;
+                }
+            }
+            factory_select_configs.push({factory_kind, current_choice, list});
         }
     });
+
+    const factory_doms = factory_select_configs.map(({factory_kind, current_choice, list}) => (
+        <FactorySelect
+            key={factory_kind}
+            captureComparisonBaseline={captureComparisonBaseline}
+            current_choice={current_choice}
+            list={list}
+            needs_list={needs_list}
+        />
+    ));
 
     const proliferate_options = [];
     game_data.proliferator_effect.forEach((_data, idx) => {
@@ -168,7 +171,7 @@ export function BatchSetting({
         {value: 2, label: "增产", className: pro_mode_class[2]},
     ];
 
-    return <div className="batch-setting-panel mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center">
+    return <div className="batch-setting-panel mt-3 d-inline-flex flex-nowrap column-gap-3 row-gap-2 align-items-center">
         <small className="fw-bold">批量预设</small>
         <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
                                      onChange={change_pro_num} no_gap={true} className={"raw-text-selection"}/>

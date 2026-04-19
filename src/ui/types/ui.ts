@@ -29,6 +29,7 @@ export interface ItemSelectPanelProps {
     fuzz_result: ItemName[];
     onSelect: (item: ItemName) => void;
     icon_grid: IconGrid;
+    icon_size: number;
 }
 
 export interface AutoSizedInputProps {

@@ -12,6 +12,11 @@ import {
 export const ITEM_ICON_CONTENT_SIZE = 36;
 export const ITEM_ICON_OUTER_SIZE = 40;
 const ITEM_ICON_INNER_PADDING = (ITEM_ICON_OUTER_SIZE - ITEM_ICON_CONTENT_SIZE) / 2;
+const ITEM_ICON_RESPONSIVE_SCALE = 'var(--item-icon-responsive-scale, 1)';
+
+function scaledPx(size: number) {
+    return `calc(${size}px * ${ITEM_ICON_RESPONSIVE_SCALE})`;
+}
 
 function Icon({icon, size, mods}: {icon?: string; size: number; mods: string[]}) {
     useIconRegistries(mods);
@@ -19,12 +24,12 @@ function Icon({icon, size, mods}: {icon?: string; size: number; mods: string[]})
     if (areIconRegistriesLoading(mods)) {
         return <span
             style={{
-                width: size,
-                height: size,
+                width: scaledPx(size),
+                height: scaledPx(size),
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: Math.min(size / 2, 16),
+                fontSize: scaledPx(Math.min(size / 2, 16)),
                 overflow: "hidden",
             }}
         >?</span>;
@@ -35,9 +40,9 @@ function Icon({icon, size, mods}: {icon?: string; size: number; mods: string[]})
         return <img
             src={url}
             alt={icon}
-            width={size}
-            height={size}
             style={{
+                width: scaledPx(size),
+                height: scaledPx(size),
                 display: "inline-block",
                 verticalAlign: "bottom",
                 objectFit: "contain",
@@ -48,12 +53,12 @@ function Icon({icon, size, mods}: {icon?: string; size: number; mods: string[]})
     if (!areIconRegistriesReady(mods)) {
         return <span
             style={{
-                width: size,
-                height: size,
+                width: scaledPx(size),
+                height: scaledPx(size),
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: Math.min(size / 2, 16),
+                fontSize: scaledPx(Math.min(size / 2, 16)),
                 overflow: "hidden",
             }}
         >?</span>;
@@ -61,10 +66,10 @@ function Icon({icon, size, mods}: {icon?: string; size: number; mods: string[]})
 
     return <span
         style={{
-            width: size,
-            height: size,
+            width: scaledPx(size),
+            height: scaledPx(size),
             display: "inline-block",
-            fontSize: 10,
+            fontSize: scaledPx(10),
             textWrap: "pretty",
             overflow: "hidden",
         }}
@@ -78,15 +83,16 @@ export function ItemIcon({item, size = ITEM_ICON_CONTENT_SIZE, tooltip = true}: 
     const img = <Icon icon={icon} size={size} mods={global_state.game_data.mod_name_list}/>;
     const outerSize = size === ITEM_ICON_CONTENT_SIZE ? ITEM_ICON_OUTER_SIZE : size;
     const iconWithFrame = <span
+        className="item-icon-frame"
         style={{
-            width: outerSize,
-            height: outerSize,
-            padding: size === ITEM_ICON_CONTENT_SIZE ? ITEM_ICON_INNER_PADDING : 0,
+            width: scaledPx(outerSize),
+            height: scaledPx(outerSize),
+            padding: size === ITEM_ICON_CONTENT_SIZE ? scaledPx(ITEM_ICON_INNER_PADDING) : 0,
             boxSizing: "border-box",
             display: "inline-flex",
             alignItems: "center",
             justifyContent: "center",
-            flex: `0 0 ${outerSize}px`,
+            flex: `0 0 ${scaledPx(outerSize)}`,
         }}
     >
         {img}

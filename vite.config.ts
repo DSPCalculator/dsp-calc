@@ -11,7 +11,7 @@ function get_manual_chunks(id: string): string | undefined {
         if (id.includes('/react-bootstrap/') || id.includes('/bootstrap/') || id.includes('/@popperjs/core/')) return 'bootstrap-vendor';
         if (id.includes('/react/') || id.includes('/react-dom/') || id.includes('/scheduler/')) return 'react-vendor';
         if (id.includes('/ahooks/') || id.includes('/fuzzysort/') || id.includes('/pinyin-pro/')) return 'search-vendor';
-        return 'vendor';
+        return undefined;
     }
 
     if (id.includes('/src/ui/components/icons/ItemIcon')) {
@@ -47,10 +47,6 @@ function get_manual_chunks(id: string): string | undefined {
         return 'icon-registry-fractionate';
     }
 
-    if (id.includes('/src/ui/components/selectors/ItemPickerButton')) {
-        return 'item-select-ui';
-    }
-
     if (id.includes('/src/engine/calculation/globalState')
         || id.includes('/src/engine/calculation/globalStateDerivations')
         || id.includes('/src/engine/solver/javascriptLpSolverBrowser')
@@ -69,10 +65,6 @@ function get_manual_chunks(id: string): string | undefined {
         return 'calc-ui';
     }
 
-    if (id.includes('/src/ui/features/needs/NeedsPanel')
-        || id.includes('/src/ui/features/needs/NeedsStorageControls')) {
-        return 'selection-ui';
-    }
 }
 
 export default defineConfig(() => ({
