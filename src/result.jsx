@@ -515,7 +515,9 @@ export function Result({needs_list, set_needs_list, show_ore_popup, set_show_ore
     }
 
     let surplus_doms = Object.entries(lp_surplus_list).map(([item, quant]) =>
-        (<div key={item} className="text-nowrap"><ItemIcon item={item} size={mob_icon}/> x{quant.toFixed(fixed_num)}
+        (<div key={item} className="text-nowrap d-flex align-items-center">
+            <ItemIcon item={item}/>
+            <span className="ms-1">x{quant.toFixed(fixed_num)}</span>
             <button className="ms-2 btn btn-outline-primary ssmall text-nowrap mineralize-btn"
                     onClick={() => IncreaseCostWhenSurplus(item)}>
                 <div>避免</div>

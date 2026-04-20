@@ -124,7 +124,7 @@ export function ItemSelect({item, set_item, text, btn_class, icon}) {
                             {search_result_doms.length > 0 &&
                                 <div className="d-flex flex-column gap-1">{search_result_doms}</div>}
                         </div>
-                        <div className="overflow-x-auto">
+                        <div className="modal-body-scroll">
                             <ItemSelectPanel fuzz_result={fuzz_result} icon_grid={game_info.icon_grid}
                                              onSelect={on_select_item} icon_size={icon_size}/>
                         </div>
