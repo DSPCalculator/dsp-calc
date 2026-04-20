@@ -260,10 +260,46 @@ body > .p-3 {
     align-items: flex-start;
 }
 
-/* 确保弹出面板 Modal 内的 tooltip 不被裁剪、不产生滚动条
-   Bootstrap 的 .modal-content 默认设了 overflow: hidden，必须用 !important 覆盖 */
+/* ============================================================
+   弹出面板溢出处理：内容超出视口时在面板内部滚动，而非把面板顶出屏幕
+   ============================================================ */
+
+/* Modal 外层 dialog 限制在视口内
+   使用 0.5rem 外边距并覆盖 Bootstrap 默认 ≥576px 的 1.75rem auto，以便在
+   低矮窗口也能充分利用视口高度 */
+.modal-dialog.mw-fit {
+    max-height: calc(100vh - 1rem);
+    margin: 0.5rem auto;
+}
+
+/* .modal-content 保留 overflow: visible 以允许 tooltip 溢出面板
+   （Bootstrap 的 .modal-content 默认设了 overflow: hidden，必须用 !important 覆盖）
+   直接使用 calc(100vh - 1rem) 而非 100%：父级 .modal-dialog 用的是 max-height
+   而非 height，子级的百分比 max-height 在这种情况下不会解析出有效值 */
 .mw-fit .modal-content {
+    max-height: calc(100vh - 1rem);
     overflow: visible !important;
+}
+
+/* Modal 内的可滚动内容区域：
+   - .modal-body: Bootstrap 标准结构（result.jsx 的两个 modal）
+   - .summary-modal-body: 同上，额外的自定义布局类
+   - .modal-body-scroll: item_select.jsx 中无 modal-header 结构时手动标记的滚动区 */
+.mw-fit .modal-content > .modal-body,
+.mw-fit .modal-content > .summary-modal-body,
+.mw-fit .modal-content > .modal-body-scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+}
+
+.dropdown-menu {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+.ant-select-dropdown {
+    max-height: calc(100vh - 4rem) !important;
 }
 
 /* 预估电力单位：默认显示末尾版，隐藏括号版 */
@@ -274,10 +310,38 @@ body > .p-3 {
     display: inline;
 }
 
+/* 弹出面板(narrow/mobile 布局) Modal 底部的预估电力：
+   响应式会把 .energy-cost-display 改成三行竖排，但 modal-footer 空间有限，
+   这里用更高特异性覆盖回单行格式 "预估电力 x / y MW"，并略微缩小字体，
+   避免在移动设备上占据过高的底部空间 */
+.modal-footer .energy-cost-display {
+    flex-direction: row;
+    gap: 0.25rem;
+    font-size: 0.875em;
+}
+.modal-footer .energy-cost-separator {
+    display: inline;
+}
+.modal-footer .energy-cost-unit-inline {
+    display: none;
+}
+.modal-footer .energy-cost-unit-trailing {
+    display: inline;
+}
+
 /* ============================================================
    紧凑模式：1024px ~ 1399px
    ============================================================ */
 @media (max-width: 1399px) {
+    /* 在中小布局下限制顶部面板高度并允许内部滚动，避免长列表
+       （例如需求列表、批量预设、设置）把结果区顶出可视区域。
+       使用百分比而非 vh：父级 .app-layout 的高度 = 视口 - header - padding，
+       若用 vh 会超出父级导致溢出被 body > .p-3 的 overflow:hidden 裁掉。 */
+    .app-top-panel {
+        max-height: 50%;
+        overflow-y: auto;
+    }
+
     /* 显示图标，隐藏文字 */
     .compact-hide-text {
         display: none !important;
@@ -380,16 +444,11 @@ body > .p-3 {
         padding: 0.5rem !important;
     }
 
-    /* 顶部面板允许滚动（防止内容超出屏幕）*/
+    /* 移动端顶部面板：进一步收紧到父级 45%，并允许横向滚动
+       （1399px 断点已经设置了 overflow-y: auto，此处只覆盖横向） */
     .app-top-panel {
-        max-height: 45vh;
-        overflow-y: auto;
+        max-height: 45%;
         overflow-x: auto;
-    }
-
-    /* 结果区域剩余空间 */
-    .app-result-area {
-        min-height: 55vh;
     }
 
     /* 结果容器改为纵向堆叠 */
