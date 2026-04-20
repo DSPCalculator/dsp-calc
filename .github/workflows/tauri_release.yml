@@ -9,6 +9,9 @@ jobs:
   build-windows:
     runs-on: windows-latest
 
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -18,6 +21,8 @@ jobs:
 
       - name: Install Rust stable toolchain
         uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
 
       # Cache Rust build artifacts to speed up subsequent runs
       - name: Cache Rust build artifacts
@@ -34,22 +39,35 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
-      - name: Build Tauri app (NSIS + MSI installers)
-        uses: tauri-apps/tauri-action@v0
+      - name: Build frontend
+        run: npm run build
+
+      - name: Build Tauri app (exe only, no installer)
+        run: cargo tauri build --target x86_64-pc-windows-msvc --bundles none
+        working-directory: src-tauri
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ""
+
+      - name: Package exe + LICENSE into zip
+        shell: pwsh
+        run: |
+          $exePath = "src-tauri/target/x86_64-pc-windows-msvc/release/dsp-calc.exe"
+          $zipName = "dsp-calc-${{ github.ref_name }}-windows-x64.zip"
+          Compress-Archive -Path $exePath, "LICENSE" -DestinationPath $zipName
+
+      - name: Create GitHub Release and upload zip
+        uses: softprops/action-gh-release@v2
         with:
-          tagName: ${{ github.ref_name }}
-          releaseName: "dsp-calc ${{ github.ref_name }}"
-          releaseBody: |
+          tag_name: ${{ github.ref_name }}
+          name: "dsp-calc ${{ github.ref_name }}"
+          body: |
             ## 戴森球计划量化计算器 — Windows 桌面版
 
             ### 下载说明
-            - **`*-setup.exe`** — NSIS 安装程序（推荐）
-            - **`*.msi`** — MSI 安装程序
+            - **`dsp-calc-*-windows-x64.zip`** — 解压后直接运行 `dsp-calc.exe`，无需安装
 
-            Windows 10 1803+ 和 Windows 11 已内置 WebView2，无需额外安装。
-            更早版本的 Windows 会在安装时自动下载 WebView2 运行时。
-          releaseDraft: true
+            > **注意**：需要系统已安装 [WebView2 运行时](https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/)。
+            > Windows 10 1803+ 和 Windows 11 通常已内置，无需额外安装。
+          draft: true
           prerelease: false
-          args: --target x86_64-pc-windows-msvc --bundles nsis,msi
+          files: dsp-calc-${{ github.ref_name }}-windows-x64.zip
