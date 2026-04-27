@@ -1,0 +1,169 @@
+name: Deploy to Aliyun 1Panel
+
+on:
+  push:
+    branches:
+      - multi-mods
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aliyun-1panel-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.repository == 'MengLeiFudge/dsp-calc' && vars.ONEPANEL_DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-latest
+
+    env:
+      ALIYUN_HOST: ${{ secrets.ALIYUN_HOST }}
+      ALIYUN_USER: ${{ secrets.ALIYUN_USER }}
+      ALIYUN_SSH_KEY: ${{ secrets.ALIYUN_SSH_KEY }}
+      ALIYUN_KNOWN_HOSTS: ${{ secrets.ALIYUN_KNOWN_HOSTS }}
+      ALIYUN_SSH_PORT: ${{ vars.ALIYUN_SSH_PORT || '22' }}
+      ALIYUN_SSH_KEX: ${{ vars.ALIYUN_SSH_KEX || 'curve25519-sha256' }}
+      ONEPANEL_DEPLOY_PATH: ${{ vars.ONEPANEL_DEPLOY_PATH }}
+      REMOTE_TMP: /tmp/dsp-calc-dist-${{ github.run_id }}-${{ github.run_attempt }}.tar.gz
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+
+      - name: Check deploy configuration
+        run: |
+          set -euo pipefail
+
+          missing=0
+          check_required() {
+            local name="$1"
+            if [ -z "${!name:-}" ]; then
+              echo "::error::${name} is required"
+              missing=1
+            fi
+          }
+
+          check_required ALIYUN_HOST
+          check_required ALIYUN_USER
+          check_required ALIYUN_SSH_KEY
+          check_required ALIYUN_SSH_PORT
+          check_required ALIYUN_SSH_KEX
+          check_required ONEPANEL_DEPLOY_PATH
+
+          case "${ONEPANEL_DEPLOY_PATH:-}" in
+            ""|"/"|"/root"|"/home"|"/opt"|"/var"|"/www"|"/opt/1panel"|"/opt/1panel/apps")
+              echo "::error::ONEPANEL_DEPLOY_PATH is too broad: ${ONEPANEL_DEPLOY_PATH:-<empty>}"
+              missing=1
+              ;;
+          esac
+
+          exit "${missing}"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build project
+        run: npm run build
+
+      - name: Create dist archive
+        run: tar -czf dist.tar.gz -C dist .
+
+      - name: Configure SSH
+        run: |
+          set -euo pipefail
+
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "${ALIYUN_SSH_KEY}" > ~/.ssh/aliyun_1panel_deploy
+          chmod 600 ~/.ssh/aliyun_1panel_deploy
+
+          if [ -n "${ALIYUN_KNOWN_HOSTS}" ]; then
+            printf '%s\n' "${ALIYUN_KNOWN_HOSTS}" > ~/.ssh/known_hosts
+          else
+            ssh-keyscan -p "${ALIYUN_SSH_PORT}" -H "${ALIYUN_HOST}" >> ~/.ssh/known_hosts
+          fi
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Upload dist archive
+        run: |
+          set -euo pipefail
+
+          SSH_OPTIONS=(
+            -o "KexAlgorithms=${ALIYUN_SSH_KEX}"
+            -o PreferredAuthentications=publickey
+            -o PubkeyAuthentication=yes
+            -o BatchMode=yes
+            -o ConnectTimeout=10
+            -o ServerAliveInterval=10
+            -o ServerAliveCountMax=2
+          )
+
+          scp \
+            "${SSH_OPTIONS[@]}" \
+            -P "${ALIYUN_SSH_PORT}" \
+            -i ~/.ssh/aliyun_1panel_deploy \
+            dist.tar.gz \
+            "${ALIYUN_USER}@${ALIYUN_HOST}:${REMOTE_TMP}"
+
+      - name: Deploy to 1Panel site directory
+        run: |
+          set -euo pipefail
+
+          SSH_OPTIONS=(
+            -o "KexAlgorithms=${ALIYUN_SSH_KEX}"
+            -o PreferredAuthentications=publickey
+            -o PubkeyAuthentication=yes
+            -o BatchMode=yes
+            -o ConnectTimeout=10
+            -o ServerAliveInterval=10
+            -o ServerAliveCountMax=2
+          )
+
+          ssh \
+            "${SSH_OPTIONS[@]}" \
+            -p "${ALIYUN_SSH_PORT}" \
+            -i ~/.ssh/aliyun_1panel_deploy \
+            "${ALIYUN_USER}@${ALIYUN_HOST}" \
+            bash -s -- "${ONEPANEL_DEPLOY_PATH}" "${REMOTE_TMP}" <<'REMOTE_SCRIPT'
+          set -euo pipefail
+
+          deploy_path="$1"
+          remote_tmp="$2"
+
+          case "${deploy_path}" in
+            ""|"/"|"/root"|"/home"|"/opt"|"/var"|"/www"|"/opt/1panel"|"/opt/1panel/apps")
+              echo "Refuse to deploy to unsafe path: ${deploy_path:-<empty>}" >&2
+              exit 1
+              ;;
+          esac
+
+          work_dir="$(mktemp -d)"
+          cleanup() {
+            rm -rf "${work_dir}" "${remote_tmp}"
+          }
+          trap cleanup EXIT
+
+          sudo -n mkdir -p "${deploy_path}"
+          tar -xzf "${remote_tmp}" -C "${work_dir}"
+
+          # 保留 1Panel / Web 服务可能使用的站点级隐藏配置，其余内容替换为最新构建产物。
+          sudo -n find "${deploy_path}" -mindepth 1 -maxdepth 1 \
+            ! -name '.user.ini' \
+            ! -name '.well-known' \
+            -exec rm -rf {} +
+
+          sudo -n cp -a "${work_dir}"/. "${deploy_path}"/
+          REMOTE_SCRIPT
