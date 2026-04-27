@@ -15,12 +15,14 @@ export function SchemeStorage() {
     const set_scheme_data = useContext(SchemeDataSetterContext);
     const scheme_data = global_state.scheme_data;
     const game_name = global_state.game_data.game_name;
+    return <SchemeStorageForGame key={game_name}
+                                 game_name={game_name}
+                                 scheme_data={scheme_data}
+                                 set_scheme_data={set_scheme_data}/>;
+}
 
+function SchemeStorageForGame({game_name, scheme_data, set_scheme_data}) {
     const [all_scheme, set_all_scheme] = useState(() => read_scheme_storage(game_name));
-
-    useEffect(() => {
-        set_all_scheme(read_scheme_storage(game_name));
-    }, [game_name]);
 
     useEffect(() => {
         const all_scheme_saved = JSON.parse(localStorage.getItem(SCHEME_STORAGE_KEY)) || {};
