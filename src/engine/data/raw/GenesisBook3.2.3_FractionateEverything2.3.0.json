@@ -7040,7 +7040,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7095,7 +7095,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7152,7 +7152,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7213,7 +7213,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7272,7 +7272,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7340,7 +7340,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7401,7 +7401,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7456,7 +7456,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7512,7 +7512,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7567,7 +7567,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7603,7 +7603,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7659,7 +7659,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7714,7 +7714,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -7770,7 +7770,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8016,42 +8016,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "silicium-high-purity"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]齿轮",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1201
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "gear-wheel"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]磁铁",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1102
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "magnet"
     },
     {
       "Type": -1,
@@ -8328,7 +8292,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8382,7 +8346,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8418,7 +8382,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8454,7 +8418,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8492,7 +8456,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8536,7 +8500,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8596,7 +8560,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8690,7 +8654,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8748,7 +8712,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8810,7 +8774,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8882,7 +8846,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -8952,7 +8916,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9011,7 +8975,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9083,7 +9047,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9173,7 +9137,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9229,7 +9193,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9246,24 +9210,6 @@
       ],
       "OutputAppend": [],
       "IconName": "high-explosive"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]晶石爆破单元",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1130
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "particle-explosive"
     },
     {
       "Type": -1,
@@ -9396,7 +9342,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9434,7 +9380,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9475,7 +9421,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9509,42 +9455,6 @@
     {
       "Type": -1,
       "Factories": [
-        0
-      ],
-      "Name": "[无中生有]增产剂 Mk.I",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1141
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "accelerator-1"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]增产剂 Mk.II",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1142
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "accelerator-2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         8024
       ],
       "Name": "[转化]机枪弹箱",
@@ -9565,7 +9475,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9603,7 +9513,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9644,7 +9554,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9682,7 +9592,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9699,24 +9609,6 @@
       ],
       "OutputAppend": [],
       "IconName": "cannonball-cluster"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]晶石炮弹组",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1606
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "cannonball-alloy"
     },
     {
       "Type": -1,
@@ -9741,7 +9633,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9777,7 +9669,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9813,7 +9705,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9851,7 +9743,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9894,7 +9786,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9935,7 +9827,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -9971,7 +9863,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10009,7 +9901,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10054,7 +9946,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10104,7 +9996,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10154,7 +10046,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10200,7 +10092,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10255,7 +10147,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10293,7 +10185,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10353,7 +10245,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10391,7 +10283,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10451,7 +10343,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10489,7 +10381,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10549,7 +10441,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10587,7 +10479,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10647,7 +10539,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10683,7 +10575,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10737,7 +10629,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10773,7 +10665,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10809,7 +10701,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10847,7 +10739,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10888,7 +10780,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10924,7 +10816,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -10962,7 +10854,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11005,7 +10897,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11046,7 +10938,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11088,7 +10980,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11145,7 +11037,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11202,7 +11094,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11259,7 +11151,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11310,7 +11202,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11346,7 +11238,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11384,7 +11276,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11425,7 +11317,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11461,7 +11353,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11499,7 +11391,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11542,7 +11434,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11583,7 +11475,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11619,7 +11511,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11657,7 +11549,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11698,7 +11590,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11738,7 +11630,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11784,7 +11676,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11822,7 +11714,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11865,7 +11757,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11906,7 +11798,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11942,7 +11834,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -11978,7 +11870,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12014,7 +11906,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12052,7 +11944,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12093,7 +11985,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12129,7 +12021,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12165,7 +12057,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12201,7 +12093,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12237,7 +12129,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12249,24 +12141,6 @@
       ],
       "OutputAppend": [],
       "IconName": "chemical-plant-2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]分馏塔",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        2314
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "fractionator"
     },
     {
       "Type": -1,
@@ -12295,7 +12169,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12347,7 +12221,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12464,7 +12338,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12514,7 +12388,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12564,7 +12438,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12610,7 +12484,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12650,7 +12524,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12698,7 +12572,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12741,7 +12615,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12784,7 +12658,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12825,7 +12699,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12861,7 +12735,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12897,7 +12771,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12937,7 +12811,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -12987,7 +12861,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13037,7 +12911,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13087,7 +12961,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13137,7 +13011,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13187,7 +13061,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13237,7 +13111,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13287,7 +13161,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13337,7 +13211,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13387,7 +13261,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13415,42 +13289,6 @@
       "Factories": [
         8022
       ],
-      "Name": "[矿物复制]沙土",
-      "Items": [
-        1099
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1099
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1099,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "soil-pile"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
       "Name": "[矿物复制]铌矿",
       "Items": [
         6201
@@ -13469,7 +13307,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13524,7 +13362,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13598,7 +13436,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13662,7 +13500,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13733,7 +13571,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13806,7 +13644,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13878,7 +13716,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13944,7 +13782,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -13990,7 +13828,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14060,7 +13898,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14107,7 +13945,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14143,7 +13981,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14179,7 +14017,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14217,7 +14055,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14258,7 +14096,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14296,7 +14134,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14358,7 +14196,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14428,7 +14266,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14505,7 +14343,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14577,7 +14415,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14651,7 +14489,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14728,7 +14566,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14782,7 +14620,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14846,7 +14684,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14910,7 +14748,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -14974,7 +14812,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -15030,7 +14868,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -15092,7 +14930,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -15156,7 +14994,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -15212,7 +15050,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -15254,7 +15092,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -15299,276 +15137,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "I三元精金"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]超级机械组件",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6504
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I超级机械组件"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]创世之书",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6506
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I创世之书"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]虚空之书",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6507
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I虚空之书"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]起源之书",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6508
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I起源之书"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志01",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6511
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志01"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志02",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6512
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志02"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志03",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6513
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志03"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志04",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6514
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志04"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志05",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6515
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志05"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志06",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6516
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志06"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志07",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6517
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志07"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志08",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6518
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志08"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志09",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6519
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志09"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志10",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6520
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志10"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]开发者日志11",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        6521
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "I开发者日志11"
     },
     {
       "Type": -1,
@@ -15831,7 +15399,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -15878,7 +15446,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -15914,7 +15482,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -15971,7 +15539,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16015,7 +15583,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16057,7 +15625,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16095,7 +15663,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16138,7 +15706,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16181,7 +15749,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16242,7 +15810,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16283,7 +15851,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16321,7 +15889,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16362,7 +15930,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16398,7 +15966,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16434,7 +16002,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16474,7 +16042,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16524,7 +16092,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16608,7 +16176,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16667,7 +16235,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16715,42 +16283,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "I光学信息传输纤维"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]商店已刷新！",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        8048
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "1134"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]科技解锁说明",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        8049
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "1134"
     },
     {
       "Type": -1,
@@ -16813,7 +16345,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16874,7 +16406,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16935,7 +16467,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -16996,7 +16528,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -17057,7 +16589,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -17096,24 +16628,6 @@
     {
       "Type": -1,
       "Factories": [
-        0
-      ],
-      "Name": "[无中生有]分馏配方核心",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        8017
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "frac-recipe-core"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         8021
       ],
       "Name": "[建筑培养]交互塔",
@@ -17136,7 +16650,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -17179,7 +16693,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -17222,7 +16736,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -17265,7 +16779,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -17308,7 +16822,7 @@
       "SuccessRatio": 0.05,
       "DestroyRatio": 0.0,
       "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.5,
+      "DoubleOutputRatio": 0.633,
       "PointsBonus": 0.0,
       "SuccessBoost": 0.0,
       "OutputMain": [
@@ -19499,13 +19013,6 @@
       "Name": "分馏塔定向原胚",
       "GridIndex": 5206,
       "IconName": "frac-proto-directional"
-    },
-    {
-      "ID": 8017,
-      "Type": 4,
-      "Name": "分馏配方核心",
-      "GridIndex": 5207,
-      "IconName": "frac-recipe-core"
     },
     {
       "ID": 8021,

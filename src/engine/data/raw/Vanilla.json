@@ -6017,24 +6017,6 @@
       "TimeSpend": 600,
       "Proliferator": 1,
       "IconName": "accumulator-full"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]沙土",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1099
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "soil-pile"
     }
   ],
   "items": [
