@@ -12,11 +12,14 @@ function read_needs_storage(game_name) {
 export function NeedsListStorage({needs_list, set_needs_list}) {
     const global_state = useContext(GlobalStateContext);
     const game_name = global_state.game_data.game_name;
-    const [all_scheme, set_all_scheme] = useState(() => read_needs_storage(game_name));
+    return <NeedsListStorageForGame key={game_name}
+                                    game_name={game_name}
+                                    needs_list={needs_list}
+                                    set_needs_list={set_needs_list}/>;
+}
 
-    useEffect(() => {
-        set_all_scheme(read_needs_storage(game_name));
-    }, [game_name]);
+function NeedsListStorageForGame({game_name, needs_list, set_needs_list}) {
+    const [all_scheme, set_all_scheme] = useState(() => read_needs_storage(game_name));
 
     useEffect(() => {
         const all_scheme_saved = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};

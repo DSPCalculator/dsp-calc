@@ -24,6 +24,13 @@
 - 您可以使用本项目release分支内的静态文件直接部署
 - 或使用 `npm run build` 来生成静态文件
 
+## 离线包
+
+- 先执行 `npm run build`
+- 再执行 `node scripts/package-offline-release.cjs`
+- 产物会统一生成到 `offline-release/`，该目录不会进入 Git
+- 分发 zip 后，用户解压并用 Chrome / Edge 打开 `index.html` 即可离线使用
+
 ## 简介
 
 对于以戴森球计划为例的生产类游戏，通过提取循环关键物品（以下简称关键物品）简化生产关系图，

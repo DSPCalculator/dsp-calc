@@ -1,7 +1,7 @@
 import Modal from 'bootstrap/js/dist/modal';
 import fuzzysort from 'fuzzysort';
 import {pinyin} from 'pinyin-pro';
-import {useContext, useEffect, useRef, useState} from 'react';
+import {useContext, useEffect, useMemo, useRef, useState} from 'react';
 import type {ChangeEvent} from 'react';
 import {createPortal} from 'react-dom';
 import {GameInfoContext} from '@ui/app/providers/app-contexts';
@@ -92,35 +92,30 @@ export function ItemSelect({
 
     const game_info = useContext(GameInfoContext);
     const all_target_items = game_info.all_target_items;
-    const [fuzz_result, set_fuzz_result] = useState<ItemName[]>([]);
+    const [search_value, set_search_value] = useState("");
     const is_mobile_viewport = useIsMobileItemSelectViewport();
     const panel_icon_size = is_mobile_viewport ? ITEM_SELECT_MOBILE_GRID_ICON_SIZE : ITEM_ICON_CONTENT_SIZE;
     const search_icon_size = is_mobile_viewport ? ITEM_SELECT_MOBILE_SEARCH_ICON_SIZE : ITEM_ICON_CONTENT_SIZE;
 
-    const search_targets = all_target_items.map((current_item) => ({
+    const search_targets = useMemo(() => all_target_items.map((current_item) => ({
         item: current_item,
         py_first: pinyin(current_item, {pattern: 'first', type: 'array'}).join(""),
         py_full: pinyin(current_item, {toneType: 'none'}),
-    }));
+    })), [all_target_items]);
 
     const RESULT_LIMIT = 10;
 
-    useEffect(() => {
-        set_fuzz_result(game_info.all_target_items);
-    }, [game_info]);
-
-    function do_search(value: string) {
-        if (!value) {
-            set_fuzz_result(all_target_items);
-            return;
+    const fuzz_result = useMemo(() => {
+        if (!search_value) {
+            return all_target_items;
         }
 
-        const search_result = fuzzysort.go(value, search_targets, {
+        const search_result = fuzzysort.go(search_value, search_targets, {
             keys: ["item", "py_first", "py_full"],
             limit: RESULT_LIMIT,
         });
-        set_fuzz_result(search_result.map(result => result.obj.item));
-    }
+        return search_result.map(result => result.obj.item);
+    }, [all_target_items, search_targets, search_value]);
 
     function on_select_item(next_item: ItemName) {
         set_item(next_item);
@@ -186,7 +181,7 @@ export function ItemSelect({
                         <div className="px-3 pt-3 pb-1 d-flex flex-column gap-2">
                             <input ref={input_ref} className="round rounded-3 py-1 px-2 my-1"
                                    placeholder="搜索（支持拼音）"
-                                   onChange={(e: ChangeEvent<HTMLInputElement>) => do_search(e.target.value)}
+                                   onChange={(e: ChangeEvent<HTMLInputElement>) => set_search_value(e.target.value)}
                                    onKeyDown={on_search_keydown}/>
                             {search_result_doms}
                         </div>

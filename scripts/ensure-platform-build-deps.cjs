@@ -133,13 +133,49 @@ function getCurrentRolldownPackage() {
     return null;
 }
 
+function getCurrentLightningcssPackage() {
+    if (process.platform === 'win32') {
+        if (process.arch === 'x64') return 'lightningcss-win32-x64-msvc';
+        if (process.arch === 'arm64') return 'lightningcss-win32-arm64-msvc';
+        return null;
+    }
+
+    if (process.platform === 'linux') {
+        const report = process.report?.getReport?.();
+        const isGlibc = Boolean(report?.header?.glibcVersionRuntime);
+        if (process.arch === 'x64') {
+            return isGlibc ? 'lightningcss-linux-x64-gnu' : 'lightningcss-linux-x64-musl';
+        }
+        if (process.arch === 'arm64') {
+            return isGlibc ? 'lightningcss-linux-arm64-gnu' : 'lightningcss-linux-arm64-musl';
+        }
+        if (process.arch === 'arm') return 'lightningcss-linux-arm-gnueabihf';
+        return null;
+    }
+
+    if (process.platform === 'darwin') {
+        if (process.arch === 'x64') return 'lightningcss-darwin-x64';
+        if (process.arch === 'arm64') return 'lightningcss-darwin-arm64';
+        return null;
+    }
+
+    if (process.platform === 'freebsd') {
+        if (process.arch === 'x64') return 'lightningcss-freebsd-x64';
+        return null;
+    }
+
+    return null;
+}
+
 function ensurePackageBinary(packageName, version, scopeName) {
     const targetDir = path.join(process.cwd(), 'node_modules', ...packageName.split('/'));
     if (fs.existsSync(path.join(targetDir, 'package.json'))) {
         return;
     }
 
-    ensureScopeDir(scopeName);
+    if (scopeName) {
+        ensureScopeDir(scopeName);
+    }
     console.warn(`[ensure-platform-build-deps] Missing ${packageName}, installing ${packageName}@${version}`);
     installPackageIntoProject(`${packageName}@${version}`);
 }
@@ -169,6 +205,20 @@ function ensureRolldownBinary() {
     ensurePackageBinary(rolldownPackage, rolldownVersion, '@rolldown');
 }
 
+function ensureLightningcssBinary() {
+    let lightningcssVersion;
+    try {
+        lightningcssVersion = getInstalledPackageVersion('lightningcss');
+    } catch {
+        return;
+    }
+
+    const lightningcssPackage = getCurrentLightningcssPackage();
+    if (!lightningcssPackage) return;
+    ensurePackageBinary(lightningcssPackage, lightningcssVersion, null);
+}
+
 ensureEsbuildBinary();
 ensureRollupBinary();
 ensureRolldownBinary();
+ensureLightningcssBinary();

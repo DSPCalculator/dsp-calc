@@ -1,15 +1,29 @@
 import {useEffect, useSyncExternalStore} from 'react';
 
-type IconRegistry = Record<string, string>;
+export interface IconSpriteEntry {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    total_width: number;
+    total_height: number;
+}
+
+export interface IconSpriteReference {
+    modName: string;
+    entry: IconSpriteEntry;
+}
+
+type IconRegistry = Record<string, IconSpriteEntry>;
 type RegistryLoader = () => Promise<{default?: IconRegistry}>;
 
 const registryLoaders: Record<string, RegistryLoader> = {
-    Vanilla: () => import('./registries/Vanilla'),
-    MoreMegaStructure: () => import('./registries/MoreMegaStructure'),
-    TheyComeFromVoid: () => import('./registries/TheyComeFromVoid'),
-    GenesisBook: () => import('./registries/GenesisBook'),
-    OrbitalRing: () => import('./registries/OrbitalRing'),
-    FractionateEverything: () => import('./registries/FractionateEverything'),
+    Vanilla: () => import('./sprites/Vanilla.json'),
+    MoreMegaStructure: () => import('./sprites/MoreMegaStructure.json'),
+    TheyComeFromVoid: () => import('./sprites/TheyComeFromVoid.json'),
+    GenesisBook: () => import('./sprites/GenesisBook.json'),
+    OrbitalRing: () => import('./sprites/OrbitalRing.json'),
+    FractionateEverything: () => import('./sprites/FractionateEverything.json'),
 };
 
 const loadedRegistries: Record<string, IconRegistry> = {};
@@ -83,15 +97,16 @@ export function areIconRegistriesLoading(mods: string[]): boolean {
     return normalizeMods(mods).some(modName => !(modName in loadedRegistries) && !(modName in failedRegistries));
 }
 
-export function getLoadedIconUrl(icon: string | undefined, mods: string[]): string | null {
+export function getLoadedIconSprite(icon: string | undefined, mods: string[]): IconSpriteReference | null {
     if (!icon) {
         return null;
     }
     const normalizedMods = normalizeMods(mods);
     for (let i = normalizedMods.length - 1; i >= 0; i--) {
-        const url = loadedRegistries[normalizedMods[i]]?.[icon];
-        if (url) {
-            return url;
+        const modName = normalizedMods[i];
+        const entry = loadedRegistries[modName]?.[icon];
+        if (entry) {
+            return {modName, entry};
         }
     }
     return null;

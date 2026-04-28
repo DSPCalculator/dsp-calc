@@ -5,7 +5,7 @@ import type {ItemIconProps} from '@ui/types/ui';
 import {
     areIconRegistriesLoading,
     areIconRegistriesReady,
-    getLoadedIconUrl,
+    getLoadedIconSprite,
     useIconRegistries
 } from './iconRegistryLoader';
 
@@ -35,17 +35,29 @@ function Icon({icon, size, mods}: {icon?: string; size: number; mods: string[]})
         >?</span>;
     }
 
-    const url = getLoadedIconUrl(icon, mods);
-    if (url) {
-        return <img
-            src={url}
-            alt={icon}
+    const sprite = getLoadedIconSprite(icon, mods);
+    if (sprite) {
+        const {entry, modName} = sprite;
+        const scale = size / entry.height;
+        const width = entry.width * scale;
+        const height = entry.height * scale;
+        const backgroundWidth = entry.total_width * scale;
+        const backgroundHeight = entry.total_height * scale;
+        const backgroundX = -entry.x * scale;
+        const backgroundY = -entry.y * scale;
+
+        return <span
+            role="img"
+            aria-label={icon}
             style={{
-                width: scaledPx(size),
-                height: scaledPx(size),
+                width: scaledPx(width),
+                height: scaledPx(height),
                 display: "inline-block",
                 verticalAlign: "bottom",
-                objectFit: "contain",
+                backgroundImage: `url("${import.meta.env.BASE_URL}icon/${modName}.png")`,
+                backgroundPosition: `${scaledPx(backgroundX)} ${scaledPx(backgroundY)}`,
+                backgroundSize: `${scaledPx(backgroundWidth)} ${scaledPx(backgroundHeight)}`,
+                backgroundRepeat: "no-repeat",
             }}
         />;
     }
