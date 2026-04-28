@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/ensure-platform-build-deps.cjs && node node_modules/vite/bin/vite.js",
-    "build": "node scripts/ensure-platform-build-deps.cjs && node node_modules/vite/bin/vite.js build",
+    "build": "node scripts/ensure-platform-build-deps.cjs && node scripts/generate-icon-sprites.cjs && node node_modules/vite/bin/vite.js build",
+    "icons:generate": "node scripts/generate-icon-sprites.cjs",
     "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "typecheck": "tsc --noEmit",
     "preview": "node scripts/ensure-platform-build-deps.cjs && node node_modules/vite/bin/vite.js preview"
