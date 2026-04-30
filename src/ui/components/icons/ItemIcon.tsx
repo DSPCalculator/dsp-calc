@@ -1,4 +1,5 @@
 import {useContext} from 'react';
+import type {CSSProperties} from 'react';
 import {GlobalStateContext} from '@ui/app/providers/app-contexts';
 import {get_icon_by_item} from "@engine/data/gameData";
 import type {ItemIconProps} from '@ui/types/ui';
@@ -45,20 +46,24 @@ function Icon({icon, size, mods}: {icon?: string; size: number; mods: string[]})
         const backgroundHeight = entry.total_height * scale;
         const backgroundX = -entry.x * scale;
         const backgroundY = -entry.y * scale;
+        const spritePng = `url("${import.meta.env.BASE_URL}icon/${modName}.png")`;
+        const spriteWebp = `url("${import.meta.env.BASE_URL}icon/${modName}.webp")`;
 
         return <span
+            className="item-icon-sprite"
             role="img"
             aria-label={icon}
             style={{
+                '--item-icon-sprite-png': spritePng,
+                '--item-icon-sprite-webp': spriteWebp,
                 width: scaledPx(width),
                 height: scaledPx(height),
                 display: "inline-block",
                 verticalAlign: "bottom",
-                backgroundImage: `url("${import.meta.env.BASE_URL}icon/${modName}.png")`,
                 backgroundPosition: `${scaledPx(backgroundX)} ${scaledPx(backgroundY)}`,
                 backgroundSize: `${scaledPx(backgroundWidth)} ${scaledPx(backgroundHeight)}`,
                 backgroundRepeat: "no-repeat",
-            }}
+            } as CSSProperties}
         />;
     }
 

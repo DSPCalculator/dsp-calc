@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const zlib = require('node:zlib');
+const sharp = require('sharp');
 
 const PNG_SIGNATURE = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
 const ICON_SIZE = 80;
@@ -16,32 +17,16 @@ const MOD_PRIORITY_ORDER = [
     'OrbitalRing',
     'FractionateEverything',
 ];
-
-const crcTable = new Uint32Array(256);
-for (let n = 0; n < 256; n++) {
-    let c = n;
-    for (let k = 0; k < 8; k++) {
-        c = (c & 1) ? (0xedb88320 ^ (c >>> 1)) : (c >>> 1);
-    }
-    crcTable[n] = c >>> 0;
-}
-
-function crc32(buffer) {
-    let c = 0xffffffff;
-    for (const value of buffer) {
-        c = crcTable[(c ^ value) & 0xff] ^ (c >>> 8);
-    }
-    return (c ^ 0xffffffff) >>> 0;
-}
-
-function makeChunk(type, data) {
-    const typeBuffer = Buffer.from(type, 'ascii');
-    const lengthBuffer = Buffer.alloc(4);
-    const crcBuffer = Buffer.alloc(4);
-    lengthBuffer.writeUInt32BE(data.length, 0);
-    crcBuffer.writeUInt32BE(crc32(Buffer.concat([typeBuffer, data])), 0);
-    return Buffer.concat([lengthBuffer, typeBuffer, data, crcBuffer]);
-}
+const SPRITE_PNG_OPTIONS = {
+    palette: true,
+    quality: 50,
+    effort: 6,
+    dither: 1.0,
+    compressionLevel: 9,
+};
+const SPRITE_WEBP_OPTIONS = {
+    quality: 75,
+};
 
 function getChunks(buffer) {
     if (!buffer.subarray(0, PNG_SIGNATURE.length).equals(PNG_SIGNATURE)) {
@@ -145,319 +130,17 @@ function decodeRgbaPng(filePath) {
     };
 }
 
-function filterRow(row, previous, filterType) {
-    const output = Buffer.alloc(row.length + 1);
-    output[0] = filterType;
-
-    for (let x = 0; x < row.length; x++) {
-        const left = x >= 4 ? row[x - 4] : 0;
-        const up = previous ? previous[x] : 0;
-        const upLeft = previous && x >= 4 ? previous[x - 4] : 0;
-
-        switch (filterType) {
-            case 0:
-                output[x + 1] = row[x];
-                break;
-            case 1:
-                output[x + 1] = (row[x] - left) & 0xff;
-                break;
-            case 2:
-                output[x + 1] = (row[x] - up) & 0xff;
-                break;
-            case 3:
-                output[x + 1] = (row[x] - Math.floor((left + up) / 2)) & 0xff;
-                break;
-            case 4:
-                output[x + 1] = (row[x] - paethPredictor(left, up, upLeft)) & 0xff;
-                break;
-            default:
-                throw new Error(`unsupported png filter ${filterType}`);
-        }
-    }
-
-    return output;
-}
-
-function scoreFilterRow(row) {
-    let score = 0;
-    for (let i = 1; i < row.length; i++) {
-        const value = row[i];
-        score += value < 128 ? value : 256 - value;
-    }
-    return score;
-}
-
-function encodeRgbaPng(width, height, rgba) {
-    const rowBytes = width * 4;
-    const filteredRows = [];
-    let previous = null;
-
-    for (let y = 0; y < height; y++) {
-        const row = rgba.subarray(y * rowBytes, (y + 1) * rowBytes);
-        let best = null;
-        let bestScore = Number.POSITIVE_INFINITY;
-        for (let filterType = 0; filterType <= 4; filterType++) {
-            const candidate = filterRow(row, previous, filterType);
-            const score = scoreFilterRow(candidate);
-            if (score < bestScore) {
-                best = candidate;
-                bestScore = score;
-            }
-        }
-        filteredRows.push(best);
-        previous = row;
-    }
-
-    const ihdr = Buffer.alloc(13);
-    ihdr.writeUInt32BE(width, 0);
-    ihdr.writeUInt32BE(height, 4);
-    ihdr[8] = 8;
-    ihdr[9] = 6;
-    ihdr[10] = 0;
-    ihdr[11] = 0;
-    ihdr[12] = 0;
-
-    const idat = zlib.deflateSync(Buffer.concat(filteredRows), {
-        level: 9,
-        memLevel: 9,
-    });
-
-    return Buffer.concat([
-        PNG_SIGNATURE,
-        makeChunk('IHDR', ihdr),
-        makeChunk('IDAT', idat),
-        makeChunk('IEND', Buffer.alloc(0)),
-    ]);
-}
-
-function createQuantizedPalette(rgba) {
-    const transparent = {r: 0, g: 0, b: 0, a: 0, count: 0, rSum: 0, gSum: 0, bSum: 0, aSum: 0};
-    const histogram = new Map();
-
+function normalizeTransparentPixels(rgba) {
     for (let offset = 0; offset < rgba.length; offset += 4) {
-        const alpha = rgba[offset + 3];
-        if (alpha === 0) {
-            transparent.count += 1;
+        if (rgba[offset + 3] !== 0) {
             continue;
         }
 
-        const r = rgba[offset];
-        const g = rgba[offset + 1];
-        const b = rgba[offset + 2];
-        const key = `${r >> 3},${g >> 3},${b >> 3},${alpha >> 3}`;
-        let point = histogram.get(key);
-        if (!point) {
-            point = {r: 0, g: 0, b: 0, a: 0, count: 0, rSum: 0, gSum: 0, bSum: 0, aSum: 0};
-            histogram.set(key, point);
-        }
-        point.count += 1;
-        point.rSum += r;
-        point.gSum += g;
-        point.bSum += b;
-        point.aSum += alpha;
+        // 透明像素的 RGB 不参与显示，清零后能提升无损压缩率。
+        rgba[offset] = 0;
+        rgba[offset + 1] = 0;
+        rgba[offset + 2] = 0;
     }
-
-    const points = [...histogram.values()].map(point => ({
-        ...point,
-        r: point.rSum / point.count,
-        g: point.gSum / point.count,
-        b: point.bSum / point.count,
-        a: point.aSum / point.count,
-    }));
-
-    const maxPaletteSize = transparent.count > 0 ? 255 : 256;
-    const boxes = [{points}];
-
-    while (boxes.length < maxPaletteSize) {
-        let splitIndex = -1;
-        let splitScore = -1;
-
-        for (let i = 0; i < boxes.length; i++) {
-            const box = boxes[i];
-            if (box.points.length < 2) {
-                continue;
-            }
-            const bounds = getBoxBounds(box.points);
-            const score = Math.max(
-                bounds.rMax - bounds.rMin,
-                bounds.gMax - bounds.gMin,
-                bounds.bMax - bounds.bMin,
-                bounds.aMax - bounds.aMin,
-            ) * getBoxWeight(box.points);
-            if (score > splitScore) {
-                splitIndex = i;
-                splitScore = score;
-            }
-        }
-
-        if (splitIndex < 0) {
-            break;
-        }
-
-        const box = boxes.splice(splitIndex, 1)[0];
-        const bounds = getBoxBounds(box.points);
-        const channel = getWidestChannel(bounds);
-        box.points.sort((a, b) => a[channel] - b[channel]);
-
-        const halfWeight = getBoxWeight(box.points) / 2;
-        let weight = 0;
-        let splitPoint = 1;
-        for (; splitPoint < box.points.length - 1; splitPoint++) {
-            weight += box.points[splitPoint].count;
-            if (weight >= halfWeight) {
-                break;
-            }
-        }
-
-        boxes.push({points: box.points.slice(0, splitPoint + 1)});
-        boxes.push({points: box.points.slice(splitPoint + 1)});
-    }
-
-    const palette = [];
-    if (transparent.count > 0) {
-        palette.push(transparent);
-    }
-    for (const box of boxes) {
-        const weight = getBoxWeight(box.points);
-        const color = box.points.reduce((sum, point) => {
-            sum.r += point.rSum;
-            sum.g += point.gSum;
-            sum.b += point.bSum;
-            sum.a += point.aSum;
-            return sum;
-        }, {r: 0, g: 0, b: 0, a: 0});
-        palette.push({
-            r: Math.round(color.r / weight),
-            g: Math.round(color.g / weight),
-            b: Math.round(color.b / weight),
-            a: Math.round(color.a / weight),
-        });
-    }
-
-    return palette.slice(0, 256);
-}
-
-function getBoxBounds(points) {
-    return points.reduce((bounds, point) => ({
-        rMin: Math.min(bounds.rMin, point.r),
-        rMax: Math.max(bounds.rMax, point.r),
-        gMin: Math.min(bounds.gMin, point.g),
-        gMax: Math.max(bounds.gMax, point.g),
-        bMin: Math.min(bounds.bMin, point.b),
-        bMax: Math.max(bounds.bMax, point.b),
-        aMin: Math.min(bounds.aMin, point.a),
-        aMax: Math.max(bounds.aMax, point.a),
-    }), {
-        rMin: 255,
-        rMax: 0,
-        gMin: 255,
-        gMax: 0,
-        bMin: 255,
-        bMax: 0,
-        aMin: 255,
-        aMax: 0,
-    });
-}
-
-function getBoxWeight(points) {
-    return points.reduce((sum, point) => sum + point.count, 0);
-}
-
-function getWidestChannel(bounds) {
-    const ranges = [
-        ['r', bounds.rMax - bounds.rMin],
-        ['g', bounds.gMax - bounds.gMin],
-        ['b', bounds.bMax - bounds.bMin],
-        ['a', bounds.aMax - bounds.aMin],
-    ];
-    ranges.sort((a, b) => b[1] - a[1]);
-    return ranges[0][0];
-}
-
-function findNearestPaletteIndex(color, palette) {
-    let bestIndex = 0;
-    let bestDistance = Number.POSITIVE_INFINITY;
-
-    for (let i = 0; i < palette.length; i++) {
-        const candidate = palette[i];
-        const alphaDelta = color.a - candidate.a;
-        const rDelta = color.r - candidate.r;
-        const gDelta = color.g - candidate.g;
-        const bDelta = color.b - candidate.b;
-        const distance = alphaDelta * alphaDelta * 2
-            + rDelta * rDelta
-            + gDelta * gDelta
-            + bDelta * bDelta;
-        if (distance < bestDistance) {
-            bestDistance = distance;
-            bestIndex = i;
-        }
-    }
-
-    return bestIndex;
-}
-
-function encodeIndexedPng(width, height, rgba) {
-    const palette = createQuantizedPalette(rgba);
-    const indexCache = new Map();
-    const indexedRows = [];
-
-    for (let y = 0; y < height; y++) {
-        const row = Buffer.alloc(width + 1);
-        row[0] = 0;
-        for (let x = 0; x < width; x++) {
-            const offset = (y * width + x) * 4;
-            const alpha = rgba[offset + 3];
-            if (alpha === 0 && palette[0]?.a === 0) {
-                row[x + 1] = 0;
-                continue;
-            }
-
-            const r = rgba[offset];
-            const g = rgba[offset + 1];
-            const b = rgba[offset + 2];
-            const key = `${r >> 3},${g >> 3},${b >> 3},${alpha >> 3}`;
-            let paletteIndex = indexCache.get(key);
-            if (paletteIndex === undefined) {
-                paletteIndex = findNearestPaletteIndex({r, g, b, a: alpha}, palette);
-                indexCache.set(key, paletteIndex);
-            }
-            row[x + 1] = paletteIndex;
-        }
-        indexedRows.push(row);
-    }
-
-    const ihdr = Buffer.alloc(13);
-    ihdr.writeUInt32BE(width, 0);
-    ihdr.writeUInt32BE(height, 4);
-    ihdr[8] = 8;
-    ihdr[9] = 3;
-    ihdr[10] = 0;
-    ihdr[11] = 0;
-    ihdr[12] = 0;
-
-    const plte = Buffer.alloc(palette.length * 3);
-    const trns = Buffer.alloc(palette.length);
-    palette.forEach((color, index) => {
-        plte[index * 3] = color.r;
-        plte[index * 3 + 1] = color.g;
-        plte[index * 3 + 2] = color.b;
-        trns[index] = color.a;
-    });
-
-    const idat = zlib.deflateSync(Buffer.concat(indexedRows), {
-        level: 9,
-        memLevel: 9,
-    });
-
-    return Buffer.concat([
-        PNG_SIGNATURE,
-        makeChunk('IHDR', ihdr),
-        makeChunk('PLTE', plte),
-        makeChunk('tRNS', trns),
-        makeChunk('IDAT', idat),
-        makeChunk('IEND', Buffer.alloc(0)),
-    ]);
 }
 
 function readIconFiles(modDir) {
@@ -548,7 +231,7 @@ function collectRequiredIcons(sourceDir, gameDataDir) {
     };
 }
 
-function composeSprite(iconFiles) {
+async function composeSprite(iconFiles) {
     const columns = Math.ceil(Math.sqrt(iconFiles.length));
     const rows = Math.ceil(iconFiles.length / columns);
     const width = columns * ICON_SIZE;
@@ -558,6 +241,7 @@ function composeSprite(iconFiles) {
 
     iconFiles.forEach((iconFile, index) => {
         const source = decodeRgbaPng(iconFile.fullPath);
+        normalizeTransparentPixels(source.rgba);
         const column = index % columns;
         const row = Math.floor(index / columns);
         const x = column * ICON_SIZE;
@@ -579,11 +263,19 @@ function composeSprite(iconFiles) {
         };
     });
 
-    const rgbaPng = encodeRgbaPng(width, height, rgba);
-    const indexedPng = encodeIndexedPng(width, height, rgba);
+    const image = sharp(rgba, {
+        raw: {
+            width,
+            height,
+            channels: 4,
+        },
+    });
+    const png = await image.clone().png(SPRITE_PNG_OPTIONS).toBuffer();
+    const webp = await image.clone().webp(SPRITE_WEBP_OPTIONS).toBuffer();
 
     return {
-        image: indexedPng.length < rgbaPng.length ? indexedPng : rgbaPng,
+        png,
+        webp,
         coordinates,
         width,
         height,
@@ -605,7 +297,7 @@ function writeFileIfChanged(filePath, content) {
     return true;
 }
 
-function generateIconSprites(options = {}) {
+async function generateIconSprites(options = {}) {
     const sourceDir = options.sourceDir || DEFAULT_SOURCE_DIR;
     const publicDir = options.publicDir || DEFAULT_PUBLIC_DIR;
     const spriteDataDir = options.spriteDataDir || DEFAULT_SPRITE_DATA_DIR;
@@ -614,7 +306,8 @@ function generateIconSprites(options = {}) {
     const modNames = MOD_PRIORITY_ORDER.filter(modName => iconAssetIndex[modName]?.size > 0);
 
     let totalInputBytes = 0;
-    let totalSpriteBytes = 0;
+    let totalPngBytes = 0;
+    let totalWebpBytes = 0;
     let totalRequiredIcons = 0;
 
     for (const modName of modNames) {
@@ -629,15 +322,21 @@ function generateIconSprites(options = {}) {
         totalRequiredIcons += iconFiles.length;
         totalInputBytes += iconFiles.reduce((sum, iconFile) => sum + fs.statSync(iconFile.fullPath).size, 0);
 
-        const sprite = composeSprite(iconFiles);
+        const sprite = await composeSprite(iconFiles);
         const spritePath = path.join(publicDir, `${modName}.png`);
+        const webpPath = path.join(publicDir, `${modName}.webp`);
         const dataPath = path.join(spriteDataDir, `${modName}.json`);
         const json = `${JSON.stringify(sprite.coordinates)}\n`;
-        writeFileIfChanged(spritePath, sprite.image);
+        writeFileIfChanged(spritePath, sprite.png);
+        writeFileIfChanged(webpPath, sprite.webp);
         writeFileIfChanged(dataPath, json);
 
-        totalSpriteBytes += sprite.image.length;
-        console.log(`icon sprite: ${modName} ${iconFiles.length} icons ${sprite.width}x${sprite.height} ${sprite.image.length} bytes`);
+        totalPngBytes += sprite.png.length;
+        totalWebpBytes += sprite.webp.length;
+        console.log(
+            `icon sprite: ${modName} ${iconFiles.length} icons ${sprite.width}x${sprite.height} `
+            + `png ${sprite.png.length} bytes webp ${sprite.webp.length} bytes`
+        );
     }
 
     for (const missingIcon of missingIcons.values()) {
@@ -646,14 +345,26 @@ function generateIconSprites(options = {}) {
             + `(${missingIcon.dataFileCount.size} data files; ${missingIcon.examples.join('; ')})`
         );
     }
-    const saved = totalInputBytes - totalSpriteBytes;
-    const percent = totalInputBytes === 0 ? 0 : (saved / totalInputBytes) * 100;
+    const savedPng = totalInputBytes - totalPngBytes;
+    const savedWebp = totalInputBytes - totalWebpBytes;
+    const pngPercent = totalInputBytes === 0 ? 0 : (savedPng / totalInputBytes) * 100;
+    const webpPercent = totalInputBytes === 0 ? 0 : (savedWebp / totalInputBytes) * 100;
     console.log(`icon sprite data files: ${jsonFileCount}, required icons: ${totalRequiredIcons}, missing icons: ${missingIcons.size}`);
-    console.log(`icon sprite total: ${totalInputBytes} -> ${totalSpriteBytes} bytes, saved ${saved} (${percent.toFixed(2)}%)`);
+    console.log(
+        `icon sprite total png: ${totalInputBytes} -> ${totalPngBytes} bytes, `
+        + `saved ${savedPng} (${pngPercent.toFixed(2)}%)`
+    );
+    console.log(
+        `icon sprite total webp: ${totalInputBytes} -> ${totalWebpBytes} bytes, `
+        + `saved ${savedWebp} (${webpPercent.toFixed(2)}%)`
+    );
 }
 
 if (require.main === module) {
-    generateIconSprites();
+    generateIconSprites().catch(error => {
+        console.error(error);
+        process.exitCode = 1;
+    });
 }
 
 module.exports = {

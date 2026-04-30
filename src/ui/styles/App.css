@@ -53,6 +53,16 @@
     flex: 0 0 calc(40px * var(--item-icon-responsive-scale, 1));
 }
 
+.item-icon-sprite {
+    background-image: var(--item-icon-sprite-png);
+}
+
+@supports (background-image: url("icon/test.webp")) {
+    .item-icon-sprite {
+        background-image: var(--item-icon-sprite-webp);
+    }
+}
+
 .recipe-item-icon-count {
     position: absolute;
     right: -2px;
