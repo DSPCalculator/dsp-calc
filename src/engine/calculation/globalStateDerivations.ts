@@ -1,4 +1,4 @@
-import {get_equivalent_recipe_output_rate, get_factory_speed_multiplier} from './equivalentRecipe';
+import {get_equivalent_recipe_output_rate} from './equivalentRecipe';
 import {hasMineralizedItem} from './mineralizeState';
 import type {GameData, ItemDataIndex, ItemGraph, MultiSources, ProliferatorPrice, RecipeData, RecipeScheme, SchemeData, Settings} from '@engine/types/domain';
 
@@ -53,13 +53,11 @@ export function buildItemGraph({
                                    item_data,
                                    scheme_data,
                                    settings,
-                                   effective_game_data,
                                    getEquivalentRecipe,
                                }: {
     item_data: ItemDataIndex;
     scheme_data: SchemeData;
     settings: Settings;
-    effective_game_data: GameData;
     getEquivalentRecipe: (recipe_id: number, item: string, scheme_override?: Partial<RecipeScheme>) => RecipeData;
 }): {item_graph: ItemGraph; multi_sources: MultiSources} {
     const multi_sources: MultiSources = {};
@@ -119,8 +117,6 @@ export function buildItemGraph({
                 }
             }
         }
-        const factory_info = effective_game_data.factory_data[effective_game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]];
-        item_graph[item]["产出倍率"] *= get_factory_speed_multiplier(factory_info["名称"], item, settings);
     }
 
     return {item_graph, multi_sources};

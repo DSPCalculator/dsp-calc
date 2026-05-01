@@ -157,7 +157,6 @@ export function buildCalculationSnapshot({
         item_data,
         scheme_data,
         settings,
-        effective_game_data,
         getEquivalentRecipe: snapshot.getEquivalentRecipe,
     });
     const {item_list, key_item_list} = buildItemList(item_graph);

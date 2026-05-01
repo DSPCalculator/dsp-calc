@@ -5,7 +5,6 @@ import {
     SettingsContext,
     SettingsSetterContext
 } from '@ui/app/providers/app-contexts';
-import {get_factory_speed_multiplier} from '@engine/calculation/equivalentRecipe';
 import {ItemIcon, ITEM_ICON_CONTENT_SIZE} from '@ui/components/icons/ItemIcon';
 import {ItemSelect} from '@ui/components/selectors/ItemPickerButton';
 import {FactorySelect, ProModeSelect, ProNumSelect, RecipeSelect} from './ResultRecipeSelectors';
@@ -48,8 +47,7 @@ function NplRow({row, set_row, remove_row}) {
     const recipe = game_data.recipe_data[recipe_id];
     const selected_building = game_data.factory_data[recipe["设施"]][row["建筑"]];
     const equivalent_recipe = global_state.get_equivalent_recipe_for_natural_line(row);
-    const output_num = equivalent_recipe["产物"][item] * row["建筑数量"] * selected_building["倍率"]
-        * get_factory_speed_multiplier(selected_building["名称"], item, settings)
+    const output_num = equivalent_recipe["产物"][item] * row["建筑数量"]
         * (settings.is_time_unit_minute ? 60 : 1) / equivalent_recipe["时间"];
     return <tr className="table-info">
         <td><a className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn"
