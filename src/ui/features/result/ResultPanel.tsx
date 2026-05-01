@@ -237,6 +237,12 @@ export function Result({
         set_settings({"mineralize_list": removeMineralizedItem(mineralize_list, item)});
     }
 
+    function split_production_line(item: string, amount: number) {
+        rememberComparisonBaseline();
+        set_settings({"mineralize_list": removeMineralizedItem(mineralize_list, item)});
+        set_needs_list({[item]: amount});
+    }
+
     function clear_mineralize_list() {
         rememberComparisonBaseline();
         set_settings({"mineralize_list": clearMineralizedItems()});
@@ -339,6 +345,7 @@ export function Result({
             onChangeProNum={row_actions.change_pro_num}
             onChangeRecipe={row_actions.change_recipe}
             onMineralize={mineralize}
+            onSplitProductionLine={split_production_line}
             onUnmineralize={unmineralize}
             result_amount={result_dict[row.item_name]}
         />;

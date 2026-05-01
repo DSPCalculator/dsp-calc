@@ -16,20 +16,31 @@ export function ResultTableRow({
     onChangeProNum,
     onChangeRecipe,
     onMineralize,
+    onSplitProductionLine,
     onUnmineralize,
     result_amount,
 }) {
+    const gross_output = getGrossOutput(result_amount, item_graph, row.item_name);
+
     return <tr className={row.row_class}>
         <td>
-            {row.is_mineralized ?
-                <button className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn"
-                        onClick={() => onUnmineralize(row.item_name)}>恢复</button> :
-                <button className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn"
-                        onClick={() => onMineralize(row.item_name)}>
-                    <div>视为</div>
-                    <div>原矿</div>
+            <div className="d-inline-flex flex-column gap-1">
+                {row.is_mineralized ?
+                    <button className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn"
+                            onClick={() => onUnmineralize(row.item_name)}>恢复</button> :
+                    <button className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn"
+                            onClick={() => onMineralize(row.item_name)}>
+                        <div>视为</div>
+                        <div>原矿</div>
+                    </button>
+                }
+                <button className="btn btn-sm btn-outline-success ssmall text-nowrap mineralize-btn"
+                        title="清空当前需求，并把此项作为新的生产目标"
+                        onClick={() => onSplitProductionLine(row.item_name, gross_output)}>
+                    <div>拆分</div>
+                    <div>产线</div>
                 </button>
-            }
+            </div>
         </td>
         <td className="text-nowrap">
             <div className="d-inline-flex align-items-center gap-1">
@@ -37,7 +48,7 @@ export function ResultTableRow({
                 <ResultRatioInput fixed_num={fixed_num}
                                   needs_list={needs_list}
                                   set_needs_list={set_needs_list}
-                                  value={getGrossOutput(result_amount, item_graph, row.item_name)}/>
+                                  value={gross_output}/>
             </div>
             {row.from_side_products.map(({from, amount_text}) => (
                 <div key={from} className="text-nowrap">
