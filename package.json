@@ -4,7 +4,8 @@
   "version": "0.6.0",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/ensure-platform-build-deps.cjs && node node_modules/vite/bin/vite.js",
+    "dev": "node scripts/ensure-platform-build-deps.cjs && node scripts/dev-port-guard.cjs && node node_modules/vite/bin/vite.js --port 5173 --strictPort",
+    "test:dev-port-guard": "node scripts/dev-port-guard.test.cjs",
     "build": "node scripts/ensure-platform-build-deps.cjs && node scripts/generate-icon-sprites.cjs && node node_modules/vite/bin/vite.js build",
     "icons:generate": "node scripts/generate-icon-sprites.cjs",
     "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
