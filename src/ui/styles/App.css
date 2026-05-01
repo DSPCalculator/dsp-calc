@@ -329,6 +329,11 @@ legend {
     gap: 0.75rem;
 }
 
+.batch-setting-panel .horizontal-multi-button-select {
+    flex: 0 0 auto;
+    flex-wrap: nowrap !important;
+}
+
 .horizontal-multi-button-select {
     row-gap: 0.25rem;
 }
