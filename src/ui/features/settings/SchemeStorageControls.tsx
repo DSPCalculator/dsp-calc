@@ -1,6 +1,8 @@
 import structuredClone from '@ungap/structured-clone';
 import {useContext, useEffect, useState} from 'react';
 import {FaFolderOpen, FaSave, FaTrashAlt} from 'react-icons/fa';
+import {init_scheme_data} from '@engine/scheme/schemeData';
+import type {GameData, SchemeData} from '@engine/types/domain';
 import {GlobalStateContext, SchemeDataSetterContext} from '@ui/app/providers/app-contexts';
 
 const SCHEME_STORAGE_KEY = "scheme_data";
@@ -10,18 +12,53 @@ function read_scheme_storage(game_name) {
     return all_saved[game_name] || {};
 }
 
+function normalize_saved_scheme_data(saved_scheme: Partial<SchemeData>, game_data: GameData): SchemeData {
+    const default_scheme = init_scheme_data(game_data);
+    const saved_cost_weight = saved_scheme.cost_weight || default_scheme.cost_weight;
+
+    return {
+        item_recipe_choices: {
+            ...default_scheme.item_recipe_choices,
+            ...(saved_scheme.item_recipe_choices || {}),
+        },
+        scheme_for_recipe: default_scheme.scheme_for_recipe.map((default_recipe_scheme, idx) => ({
+            ...default_recipe_scheme,
+            ...(saved_scheme.scheme_for_recipe?.[idx] || {}),
+        })),
+        cost_weight: {
+            占地: saved_cost_weight.占地 ?? default_scheme.cost_weight.占地,
+            电力: saved_cost_weight.电力 ?? default_scheme.cost_weight.电力,
+            建筑成本: {
+                ...default_scheme.cost_weight.建筑成本,
+                ...(saved_cost_weight.建筑成本 || {}),
+            },
+            物品额外成本: Object.fromEntries(
+                Object.entries(default_scheme.cost_weight.物品额外成本).map(([item, default_extra_cost]) => [
+                    item,
+                    {
+                        ...default_extra_cost,
+                        ...(saved_cost_weight.物品额外成本?.[item] || {}),
+                    },
+                ])
+            ),
+        },
+    };
+}
+
 export function SchemeStorage() {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
-    const scheme_data = global_state.scheme_data;
+    const scheme_data = global_state.raw_scheme_data;
+    const game_data = global_state.game_data;
     const game_name = global_state.game_data.game_name;
     return <SchemeStorageForGame key={game_name}
                                  game_name={game_name}
+                                 game_data={game_data}
                                  scheme_data={scheme_data}
                                  set_scheme_data={set_scheme_data}/>;
 }
 
-function SchemeStorageForGame({game_name, scheme_data, set_scheme_data}) {
+function SchemeStorageForGame({game_name, game_data, scheme_data, set_scheme_data}) {
     const [all_scheme, set_all_scheme] = useState(() => read_scheme_storage(game_name));
 
     useEffect(() => {
@@ -43,7 +80,7 @@ function SchemeStorageForGame({game_name, scheme_data, set_scheme_data}) {
 
     function load(name) {
         if (all_scheme[name]) {
-            set_scheme_data(all_scheme[name]);
+            set_scheme_data(normalize_saved_scheme_data(structuredClone(all_scheme[name]), game_data));
         } else {
             alert(`未找到名为${name}的方案`);
         }
