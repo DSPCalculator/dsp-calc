@@ -1,6 +1,8 @@
-import {lazy, Suspense, useLayoutEffect, useRef, useState} from 'react';
+import {lazy, Suspense, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState} from 'react';
 import {FaCog, FaTrashAlt} from 'react-icons/fa';
 import {ContextProvider} from './providers/AppProviders';
+import {GlobalStateContext, SettingsContext} from './providers/app-contexts';
+import {clearCalculatorUrlState, readCalculatorUrlState, writeCalculatorUrlState} from './urlState';
 import {NeedsList} from '@ui/features/needs/NeedsPanel';
 import {NeedsListStorage} from '@ui/features/needs/NeedsStorageControls';
 import {GameVersion} from '@ui/features/mod-selector/GameVersionSelector';
@@ -57,9 +59,11 @@ function UserSettings({
     </div>;
 }
 
-function AppWithContexts() {
+function AppWithContexts({initial_needs_list}: {initial_needs_list?: NumericMap}) {
+    const global_state = useContext(GlobalStateContext);
+    const settings = useContext(SettingsContext);
     const [misc_show, set_misc_show] = useState(false);
-    const [needs_list, set_needs_list] = useState<NumericMap>({});
+    const [needs_list, set_needs_list] = useState<NumericMap>(() => initial_needs_list || {});
     const [comparison_baseline, set_comparison_baseline] = useState<ComparisonBaseline | null>(null);
     const toolbar_actions_ref = useRef<HTMLDivElement | null>(null);
     const [toolbar_actions_mode, set_toolbar_actions_mode] = useState<ToolbarActionsMode>('full');
@@ -74,8 +78,18 @@ function AppWithContexts() {
             return;// 用户取消保存
         }
         localStorage.clear();
+        clearCalculatorUrlState();
         window.location.reload();
     }
+
+    useEffect(() => {
+        writeCalculatorUrlState({
+            version: 1,
+            needs_list,
+            settings,
+            scheme_data: global_state.raw_scheme_data,
+        });
+    }, [global_state.raw_scheme_data, needs_list, settings]);
 
     useLayoutEffect(() => {
         const toolbar_row = toolbar_actions_ref.current;
@@ -151,7 +165,9 @@ function AppWithContexts() {
 }
 
 export default function App() {
-    return <ContextProvider>
-        <AppWithContexts/>
+    const initial_url_state = useMemo(() => readCalculatorUrlState(), []);
+
+    return <ContextProvider initial_state={initial_url_state}>
+        <AppWithContexts initial_needs_list={initial_url_state?.needs_list}/>
     </ContextProvider>;
 }
