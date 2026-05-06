@@ -54,6 +54,9 @@ function createItemCostGetter(snapshot: CalculationSnapshot) {
             }
         }
         const recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
+        if (recipe_id === undefined) {
+            return cost;
+        }
         const equivalent_recipe = snapshot.getEquivalentRecipe(recipe_id, item);
         const building_info = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]];
         const building_count_per_yield = 1 / get_equivalent_recipe_output_rate(equivalent_recipe, item) / building_info["倍率"];
