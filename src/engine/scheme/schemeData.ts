@@ -24,6 +24,12 @@ function get_item_data(game_data: GameData): ItemDataIndex {
     const item_data: ItemDataIndex = {};
     let i = 0;
     for (let num = 0; num < game_data.recipe_data.length; num++) {
+        for (const item in game_data.recipe_data[num].原料) {
+            if (!(item in item_data)) {
+                item_data[item] = [i];
+                i++;
+            }
+        }
         for (const item in game_data.recipe_data[num].产物) {
             if (!(item in item_data)) {
                 item_data[item] = [i];

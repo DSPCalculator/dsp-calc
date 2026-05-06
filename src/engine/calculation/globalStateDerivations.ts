@@ -223,6 +223,9 @@ export function buildItemGraph({
             continue;
         }
         const recipe_id = item_data[item][scheme_data.item_recipe_choices[item]];
+        if (recipe_id === undefined) {
+            continue;
+        }
         const equivalent_recipe = getEquivalentRecipe(recipe_id, item);
         item_graph[item]["产出倍率"] = get_equivalent_recipe_output_rate(equivalent_recipe, item);
         for (const material in equivalent_recipe["原料"]) {

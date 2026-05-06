@@ -9,6 +9,12 @@ function buildItemData(game_data: GameData): ItemDataIndex {
     const recipe_data = game_data.recipe_data;
     let i = 0;
     for (let num = 0; num < recipe_data.length; num++) {
+        for (const item in recipe_data[num].原料) {
+            if (!(item in item_data)) {
+                item_data[item] = [i];
+                i++;
+            }
+        }
         for (const item in recipe_data[num].产物) {
             if (!(item in item_data)) {
                 item_data[item] = [i];
