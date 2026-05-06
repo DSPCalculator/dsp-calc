@@ -1,17 +1,27 @@
 import {useContext} from 'react';
 import {GlobalState} from '@engine/calculation/globalState';
+import {getNaturalLineProliferatorPoints} from '@engine/calculation/globalStateDerivations';
 import structuredClone from '@ungap/structured-clone';
 import {GameInfoContext, GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from '@ui/app/providers/app-contexts';
 import type {ComparisonBaseline} from './BatchPresetControls';
 import {NplRows} from './NaturalProductionLinesTable';
 import {ResultSidebar} from './ResultSidebar';
 import {buildSideProducts} from './resultGraphHelpers';
-import {addMineralizedItem, clearMineralizedItems, removeMineralizedItem} from '@engine/calculation/mineralizeState';
+import {addMineralizedItem, clearMineralizedItems, hasMineralizedItem, removeMineralizedItem} from '@engine/calculation/mineralizeState';
 import {buildResultRowActions} from './resultRowActions';
 import {buildResultRowsViewModel} from './resultRowsViewModel';
 import {ResultTableRow} from './ResultTableRow';
 import {ceilFromDisplayed, roundToFixed} from '@lib/number';
-import type {GameData, ItemDataIndex, ItemGraph, NaturalProductionLineRow, NumericMap, ResultRowViewModel, SchemeData, Settings} from '@engine/types/domain';
+import type {
+    GameData,
+    ItemDataIndex,
+    ItemGraph,
+    NaturalProductionLineRow,
+    NumericMap,
+    ResultRowViewModel,
+    SchemeData,
+    Settings
+} from '@engine/types/domain';
 import {ITEM_ICON_CONTENT_SIZE} from '@ui/components/icons/ItemIcon';
 
 type SidebarMetrics = {
@@ -19,6 +29,16 @@ type SidebarMetrics = {
     energyCost: number;
     externalSupplies: NumericMap;
     totalEnergyCost: number;
+};
+
+type ExternalSupplyEntry = {
+    key: string;
+    item: string;
+    amount: number;
+    source: 'natural' | 'mineralized' | 'line';
+    sourceLabel: string;
+    proliferatorPoints: number;
+    editablePoints: boolean;
 };
 
 function areSidebarMetricsEqual(left?: SidebarMetrics, right?: SidebarMetrics): boolean {
@@ -276,19 +296,28 @@ export function Result({
         natural_production_line,
     });
 
-    function buildExternalSupplyList(
+    function buildExternalSupplyEntries(
         current_result_dict: NumericMap,
         current_scheme_data: SchemeData,
         current_game_data: GameData,
-        current_global_state: GlobalState
-    ): NumericMap {
-        const external_supplies: NumericMap = {};
+        current_global_state: GlobalState,
+        current_settings: Settings
+    ): ExternalSupplyEntry[] {
+        const entries: ExternalSupplyEntry[] = [];
         Object.entries(current_result_dict).forEach(([item, amount]) => {
             if (Math.abs(amount) < 1e-6) {
                 return;
             }
-            if (item in mineralize_list) {
-                external_supplies[item] = amount;
+            if (hasMineralizedItem(current_settings.mineralize_list, item)) {
+                entries.push({
+                    key: `mineralized:${item}`,
+                    item,
+                    amount,
+                    source: 'mineralized',
+                    sourceLabel: '原矿化补充',
+                    proliferatorPoints: current_settings.external_supply_proliferator_points?.[item] || 0,
+                    editablePoints: true,
+                });
                 return;
             }
             const recipe_choice = current_scheme_data.item_recipe_choices[item];
@@ -298,26 +327,45 @@ export function Result({
                 return;
             }
             if (Object.keys(recipe["原料"]).length === 0 && Object.keys(recipe["产物"]).length === 1) {
-                external_supplies[item] = amount;
+                entries.push({
+                    key: `natural:${item}`,
+                    item,
+                    amount,
+                    source: 'natural',
+                    sourceLabel: '自然输入',
+                    proliferatorPoints: current_settings.external_supply_proliferator_points?.[item] || 0,
+                    editablePoints: true,
+                });
             }
         });
 
-        natural_production_line.forEach(row => {
+        current_settings.natural_production_line.forEach((row, index) => {
             const equivalent_recipe = current_global_state.get_equivalent_recipe_for_natural_line(row);
             const output_amount = (equivalent_recipe["产物"][row["目标物品"]] || 0)
                 * row["建筑数量"] * time_tick / equivalent_recipe["时间"];
             if (Math.abs(output_amount) < 1e-6) {
                 return;
             }
-            external_supplies[row["目标物品"]] = Number(external_supplies[row["目标物品"]] || 0) + output_amount;
+            entries.push({
+                key: `line:${index}:${row["目标物品"]}`,
+                item: row["目标物品"],
+                amount: output_amount,
+                source: 'line',
+                sourceLabel: '现有产线',
+                proliferatorPoints: getNaturalLineProliferatorPoints(row),
+                editablePoints: false,
+            });
         });
 
-        return Object.fromEntries(
-            Object.entries(external_supplies).filter(([, amount]) => Math.abs(amount) >= 1e-6)
-        );
+        return entries.filter(entry => Math.abs(entry.amount) >= 1e-6);
     }
 
-    const external_supply_list = buildExternalSupplyList(result_dict, scheme_data, game_data, global_state);
+    function buildExternalSupplyMetric(entries: ExternalSupplyEntry[]): NumericMap {
+        return Object.fromEntries(entries.map(entry => [entry.key, entry.amount]));
+    }
+
+    const external_supply_entries = buildExternalSupplyEntries(result_dict, scheme_data, game_data, global_state, settings);
+    const external_supply_metric = buildExternalSupplyMetric(external_supply_entries);
     let previous_sidebar_metrics: SidebarMetrics | undefined = undefined;
 
     if (comparison_baseline) {
@@ -328,28 +376,29 @@ export function Result({
             game_data: previous_global_state.game_data,
             item_graph: previous_global_state.item_graph,
             item_data: previous_global_state.item_data,
-            mineralize_list,
+            mineralize_list: comparison_baseline.settings.mineralize_list,
             result_dict: previous_result_dict,
             scheme_data: previous_global_state.scheme_data,
             settings: comparison_baseline.settings,
             time_tick,
-            natural_production_line,
+            natural_production_line: comparison_baseline.settings.natural_production_line,
         });
         previous_sidebar_metrics = {
             buildingCounts: {...previous_metrics.building_list},
             energyCost: previous_metrics.energy_cost,
-            externalSupplies: buildExternalSupplyList(
+            externalSupplies: buildExternalSupplyMetric(buildExternalSupplyEntries(
                 previous_result_dict,
                 previous_global_state.scheme_data,
                 previous_global_state.game_data,
-                previous_global_state
-            ),
+                previous_global_state,
+                comparison_baseline.settings
+            )),
             totalEnergyCost: previous_metrics.energy_cost + previous_metrics.miner_energy_cost,
         };
         if (areSidebarMetricsEqual(previous_sidebar_metrics, {
             buildingCounts: building_list,
             energyCost: energy_cost,
-            externalSupplies: external_supply_list,
+            externalSupplies: external_supply_metric,
             totalEnergyCost: energy_cost + miner_energy_cost,
         })) {
             previous_sidebar_metrics = undefined;
@@ -435,8 +484,7 @@ export function Result({
                 mineralize_list={mineralize_list}
                 miner_energy_cost={miner_energy_cost}
                 previous_sidebar_metrics={previous_sidebar_metrics}
-                external_supply_list={external_supply_list}
-                external_supply_proliferator_points={settings.external_supply_proliferator_points || {}}
+                external_supply_entries={external_supply_entries}
                 onChangeExternalSupplyProliferatorPoints={update_external_supply_proliferator_points}
                 show_item_names={settings.show_sidebar_item_names}
                 surplus_list={lp_surplus_list}

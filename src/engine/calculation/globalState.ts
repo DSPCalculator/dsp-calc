@@ -1,6 +1,22 @@
 import {buildCalculationSnapshot} from './calculationSnapshot';
+import {
+    buildAverageExternalSupplyProliferatorPoints,
+    buildExternalSupplyPointSources
+} from './globalStateDerivations';
 import {solveNeeds} from './needsSolver';
-import type {CalculationSnapshot, GameInfoState, NumericMap, RecipeData, RecipeScheme, SchemeData, Settings} from '@engine/types/domain';
+import type {
+    CalculationSnapshot,
+    GameInfoState,
+    NumericMap,
+    ProliferatorSupplyPoints,
+    RecipeData,
+    RecipeScheme,
+    SchemeData,
+    Settings
+} from '@engine/types/domain';
+
+const EXTERNAL_SUPPLY_POINT_ITERATIONS = 3;
+const EXTERNAL_SUPPLY_POINT_EPSILON = 1e-6;
 
 export class GlobalState {
     game_data: GameInfoState['game_data'];
@@ -25,12 +41,13 @@ export class GlobalState {
         this.#reinit();
     }
 
-    #reinit() {
+    #reinit(external_supply_proliferator_points?: ProliferatorSupplyPoints) {
         this.snapshot = buildCalculationSnapshot({
             game_data: this.game_data,
             item_data: this.item_data,
             raw_scheme_data: this.raw_scheme_data,
             settings: this.settings,
+            external_supply_proliferator_points,
         });
         this.effective_game_data = this.snapshot.effective_game_data;
         this.scheme_data = this.snapshot.scheme_data;
@@ -39,6 +56,16 @@ export class GlobalState {
         this.multi_sources = this.snapshot.multi_sources;
         this.item_list = this.snapshot.item_list;
         this.key_item_list = this.snapshot.key_item_list;
+    }
+
+    #areExternalSupplyPointsEqual(left: ProliferatorSupplyPoints, right: ProliferatorSupplyPoints): boolean {
+        const items = new Set([...Object.keys(left), ...Object.keys(right)]);
+        for (const item of items) {
+            if (Math.abs(Number(left[item] || 0) - Number(right[item] || 0)) > EXTERNAL_SUPPLY_POINT_EPSILON) {
+                return false;
+            }
+        }
+        return true;
     }
 
     get_equivalent_recipe_for_item(item: string): RecipeData {
@@ -55,6 +82,21 @@ export class GlobalState {
 
     calculate(needs_list: NumericMap): [NumericMap, NumericMap] {
         this.#reinit();
-        return solveNeeds(this.snapshot, needs_list);
+        let result = solveNeeds(this.snapshot, needs_list);
+        let previous_external_points = this.snapshot.external_supply_proliferator_points;
+
+        for (let i = 0; i < EXTERNAL_SUPPLY_POINT_ITERATIONS; i++) {
+            const next_external_points = buildAverageExternalSupplyProliferatorPoints(
+                buildExternalSupplyPointSources(this.snapshot, result[0])
+            );
+            if (this.#areExternalSupplyPointsEqual(previous_external_points, next_external_points)) {
+                return result;
+            }
+            this.#reinit(next_external_points);
+            result = solveNeeds(this.snapshot, needs_list);
+            previous_external_points = next_external_points;
+        }
+
+        return result;
     }
 }

@@ -132,16 +132,21 @@ export function buildCalculationSnapshot({
     game_data,
     item_data,
     raw_scheme_data,
-    settings
+    settings,
+    external_supply_proliferator_points: source_external_supply_proliferator_points,
 }: {
     game_data: GameData;
     item_data: ItemDataIndex;
     raw_scheme_data: SchemeData;
     settings: Settings;
+    external_supply_proliferator_points?: CalculationSnapshot['external_supply_proliferator_points'];
 }): CalculationSnapshot {
     const effective_game_data = build_effective_game_data(game_data, settings);
     const scheme_data = buildNormalizedSchemeData(effective_game_data, raw_scheme_data);
-    const external_supply_proliferator_points = buildExternalSupplyProliferatorPoints(settings);
+    const external_supply_proliferator_points = buildExternalSupplyProliferatorPoints(
+        settings,
+        source_external_supply_proliferator_points
+    );
     const proliferator_price = buildProliferatorPrice(
         effective_game_data,
         settings,

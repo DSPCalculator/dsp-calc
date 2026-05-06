@@ -39,8 +39,7 @@ export function ResultSidebar({
     building_list,
     clear_mineralize_list,
     energy_cost,
-    external_supply_list,
-    external_supply_proliferator_points,
+    external_supply_entries,
     fixed_num,
     IncreaseCostWhenSurplus,
     is_time_unit_minute,
@@ -79,12 +78,10 @@ export function ResultSidebar({
         previousValue: previous_sidebar_metrics?.buildingCounts?.[building],
     }));
 
-    const external_supply_entries = (Object.entries(external_supply_list) as Array<[string, number]>).map(([item, amount]) => ({
-        key: item,
-        item,
-        value: amount,
-        previousValue: previous_sidebar_metrics?.externalSupplies?.[item],
-        proliferatorPoints: external_supply_proliferator_points?.[item] || 0,
+    const external_supply_rows = external_supply_entries.map(entry => ({
+        ...entry,
+        value: entry.amount,
+        previousValue: previous_sidebar_metrics?.externalSupplies?.[entry.key],
     }));
     const surplus_entries = (Object.entries(surplus_list) as Array<[string, number]>).map(([item, quant]) => ({
         key: item,
@@ -113,9 +110,17 @@ export function ResultSidebar({
     }
 
     function renderExternalSupplyNamedRows(
-        entries: Array<{key: string; item: string; value: number; previousValue?: number; proliferatorPoints: number}>
+        entries: Array<{
+            key: string;
+            item: string;
+            sourceLabel: string;
+            value: number;
+            previousValue?: number;
+            proliferatorPoints: number;
+            editablePoints: boolean;
+        }>
     ) {
-        return entries.map(({key, item, value, previousValue, proliferatorPoints}) => (
+        return entries.map(({key, item, sourceLabel, value, previousValue, proliferatorPoints, editablePoints}) => (
             <tr key={key}>
                 <td className="text-end text-nowrap">
                     <span className="d-inline-flex align-items-center">
@@ -126,12 +131,17 @@ export function ResultSidebar({
                 <td className="ps-2 text-nowrap">
                     {renderMetricValue(value, previousValue, '', fixed_num)}
                 </td>
+                <td className="ps-2 text-nowrap">
+                    <small className="text-secondary">{sourceLabel}</small>
+                </td>
                 <td className="ps-2">
-                    <ProNumSelect
-                        choice={proliferatorPoints}
-                        includeNone={true}
-                        onChange={(points) => onChangeExternalSupplyProliferatorPoints(item, points)}
-                    />
+                    {editablePoints
+                        ? <ProNumSelect
+                            choice={proliferatorPoints}
+                            includeNone={true}
+                            onChange={(points) => onChangeExternalSupplyProliferatorPoints(item, points)}
+                        />
+                        : <span className="small text-secondary">点数 {proliferatorPoints}</span>}
                 </td>
             </tr>
         ));
@@ -175,11 +185,19 @@ export function ResultSidebar({
     }
 
     function renderExternalSupplyCompactRows(
-        entries: Array<{key: string; item: string; value: number; previousValue?: number; proliferatorPoints: number}>
+        entries: Array<{
+            key: string;
+            item: string;
+            sourceLabel: string;
+            value: number;
+            previousValue?: number;
+            proliferatorPoints: number;
+            editablePoints: boolean;
+        }>
     ) {
         return <table>
             <tbody>
-            {entries.map(({key, item, value, previousValue, proliferatorPoints}) => (
+            {entries.map(({key, item, sourceLabel, value, previousValue, proliferatorPoints, editablePoints}) => (
                 <tr key={key}>
                     <td className="text-nowrap pe-2">
                         <span className="d-inline-flex align-items-center">
@@ -188,13 +206,16 @@ export function ResultSidebar({
                                 {renderMetricValue(value, previousValue, '', fixed_num)}
                             </span>
                         </span>
+                        <small className="ms-1 text-secondary">{sourceLabel}</small>
                     </td>
                     <td>
-                        <ProNumSelect
-                            choice={proliferatorPoints}
-                            includeNone={true}
-                            onChange={(points) => onChangeExternalSupplyProliferatorPoints(item, points)}
-                        />
+                        {editablePoints
+                            ? <ProNumSelect
+                                choice={proliferatorPoints}
+                                includeNone={true}
+                                onChange={(points) => onChangeExternalSupplyProliferatorPoints(item, points)}
+                            />
+                            : <span className="small text-secondary">点数 {proliferatorPoints}</span>}
                     </td>
                 </tr>
             ))}
@@ -207,8 +228,8 @@ export function ResultSidebar({
         : renderCompactRows(building_entries, 0);
 
     const external_supply_display = show_item_names
-        ? <table><tbody>{renderExternalSupplyNamedRows(external_supply_entries)}</tbody></table>
-        : renderExternalSupplyCompactRows(external_supply_entries);
+        ? <table><tbody>{renderExternalSupplyNamedRows(external_supply_rows)}</tbody></table>
+        : renderExternalSupplyCompactRows(external_supply_rows);
 
     function renderSurplusNamedRows(entries: Array<{key: string; item: string; value: number}>) {
         return entries.map(({key, item, value}) => (
@@ -296,7 +317,7 @@ export function ResultSidebar({
                 {surplus_display}
             </fieldset>}
 
-        {external_supply_entries.length > 0 &&
+        {external_supply_rows.length > 0 &&
             <fieldset className="result-sidebar-card">
                 <legend><small>外部补充需求{unit_text}</small></legend>
                 {external_supply_display}
