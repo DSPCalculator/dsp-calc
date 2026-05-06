@@ -83,9 +83,9 @@ export function GameVersion({needs_list, set_needs_list}) {
         set_settings(get_default_settings_for_game_data(game_data));
     }
 
-    return <div className="d-flex gap-2 align-items-center">
-        <div className="text-nowrap">游戏版本 v{vanilla_game_version}</div>
-        <div className="text-nowrap">模组选择</div>
-        <Select style={{minWidth: 250}} mode={"multiple"} options={mod_options} value={mods} onChange={mods_change}/>
+    return <div className="game-version-row d-flex gap-2 align-items-center">
+        <div className="text-nowrap game-version-label">游戏版本 v{vanilla_game_version}</div>
+        <div className="text-nowrap game-version-label">模组选择</div>
+        <Select className="game-version-mod-select" mode={"multiple"} options={mod_options} value={mods} onChange={mods_change}/>
     </div>;
 }

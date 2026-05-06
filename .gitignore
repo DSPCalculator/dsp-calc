@@ -25,6 +25,7 @@ dist-ssr
 *.sw?
 
 .vite/
-.codex
+.sisyphus/
 .codex/
+.claude/
 docs/

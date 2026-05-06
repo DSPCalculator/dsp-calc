@@ -42,11 +42,10 @@ export function Recipe({recipe}) {
             {input_doms}
             <span className="mx-1 d-inline-flex flex-column align-items-center justify-content-center"
                   style={{transform: "translateY(2px)"}}>
-                <small className="text-center text-recipe-time"
-                       style={{lineHeight: "10px", marginBottom: "-6px"}}>
+                <small className="text-center text-recipe-time recipe-time-label">
                     {format_fractionate_ratio(recipe["成功率"] || 0)}
                 </small>
-                <span style={{fontSize: "32px", lineHeight: "20px"}}>
+                <span className="recipe-arrow">
                     &#10230;
                 </span>
             </span>
@@ -63,11 +62,10 @@ export function Recipe({recipe}) {
             {input_doms}
             <span className="me-1 d-inline-flex flex-column align-items-center justify-content-center"
                   style={{transform: "translateY(2px)"}}>
-                <small className="text-center text-recipe-time"
-                       style={{lineHeight: "10px", marginBottom: "-6px"}}>
+                <small className="text-center text-recipe-time recipe-time-label">
                     {time}s
                 </small>
-                <span style={{fontSize: "32px", lineHeight: "20px"}}>
+                <span className="recipe-arrow">
                     &#10230;
                 </span>
             </span>
