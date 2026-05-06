@@ -539,6 +539,11 @@ legend {
     max-width: min(96vw, 44rem);
 }
 
+.item-select-dialog .modal-content {
+    max-width: min(96vw, 44rem);
+    overflow-x: auto;
+}
+
 @media (max-width: 991.98px) {
     .header-navbar .navbar-collapse {
         row-gap: 0.75rem;
