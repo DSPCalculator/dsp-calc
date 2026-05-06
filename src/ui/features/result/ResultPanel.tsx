@@ -36,7 +36,6 @@ type ExternalSupplyEntry = {
     item: string;
     amount: number;
     source: 'mineralized';
-    sourceLabel: string;
 };
 
 function areSidebarMetricsEqual(left?: SidebarMetrics, right?: SidebarMetrics): boolean {
@@ -350,7 +349,6 @@ export function Result({
                     item,
                     amount,
                     source: 'mineralized',
-                    sourceLabel: '原矿化补充',
                 });
             }
         });

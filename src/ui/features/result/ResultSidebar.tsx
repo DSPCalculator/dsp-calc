@@ -118,12 +118,11 @@ export function ResultSidebar({
         entries: Array<{
             key: string;
             item: string;
-            sourceLabel: string;
             value: number;
             previousValue?: number;
         }>
     ) {
-        return entries.map(({key, item, sourceLabel, value, previousValue}) => (
+        return entries.map(({key, item, value, previousValue}) => (
             <tr key={key}>
                 <td className="text-end text-nowrap">
                     <span className="d-inline-flex align-items-center">
@@ -133,9 +132,6 @@ export function ResultSidebar({
                 </td>
                 <td className="ps-2 text-nowrap">
                     {renderMetricValue(value, previousValue, '', fixed_num)}
-                </td>
-                <td className="ps-2 text-nowrap">
-                    <small className="text-secondary">{sourceLabel}</small>
                 </td>
             </tr>
         ));
@@ -182,14 +178,13 @@ export function ResultSidebar({
         entries: Array<{
             key: string;
             item: string;
-            sourceLabel: string;
             value: number;
             previousValue?: number;
         }>
     ) {
         return <table>
             <tbody>
-            {entries.map(({key, item, sourceLabel, value, previousValue}) => (
+            {entries.map(({key, item, value, previousValue}) => (
                 <tr key={key}>
                     <td className="text-nowrap pe-2">
                         <span className="d-inline-flex align-items-center">
@@ -198,7 +193,6 @@ export function ResultSidebar({
                                 {renderMetricValue(value, previousValue, '', fixed_num)}
                             </span>
                         </span>
-                        <small className="ms-1 text-secondary">{sourceLabel}</small>
                     </td>
                 </tr>
             ))}
