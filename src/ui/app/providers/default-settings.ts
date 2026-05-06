@@ -36,5 +36,7 @@ export const DEFAULT_SETTINGS: Settings = {
 
     mineralize_list: {},
     external_supply_proliferator_points: {},
+    external_input_proliferator_points: 0,
+    external_output_proliferator_points: 0,
     natural_production_line: [],
 };

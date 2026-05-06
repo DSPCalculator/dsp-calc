@@ -1,5 +1,29 @@
 import type {CalculationSnapshot, NumericMap} from '@engine/types/domain';
 
+function addItemCount(dict: NumericMap, item: string, count: number): void {
+    if (!count) {
+        return;
+    }
+    dict[item] = (dict[item] || 0) + count;
+}
+
+function addExternalOutputSprayDemand(snapshot: CalculationSnapshot, in_out_list: NumericMap): void {
+    const output_points = Number(snapshot.settings.external_output_proliferator_points || 0);
+    const proliferator_cost = snapshot.proliferator_price[output_points];
+    if (output_points === 0 || proliferator_cost === -1 || proliferator_cost === undefined) {
+        return;
+    }
+
+    Object.entries({...in_out_list}).forEach(([, amount]) => {
+        if (amount <= 0) {
+            return;
+        }
+        Object.entries(proliferator_cost).forEach(([proliferator_item, unit_cost]) => {
+            addItemCount(in_out_list, proliferator_item, amount * unit_cost);
+        });
+    });
+}
+
 export function aggregateNetNeeds(snapshot: CalculationSnapshot, needs_list: NumericMap): {
     in_out_list: NumericMap;
     external_supply_item: NumericMap;
@@ -13,6 +37,7 @@ export function aggregateNetNeeds(snapshot: CalculationSnapshot, needs_list: Num
     for (const item in needs_list) {
         in_out_list[item] = needs_list[item];
     }
+    addExternalOutputSprayDemand(snapshot, in_out_list);
 
     for (const id in natural_production_line) {
         const equivalent_recipe = snapshot.getEquivalentRecipeForNaturalLine(natural_production_line[id]);

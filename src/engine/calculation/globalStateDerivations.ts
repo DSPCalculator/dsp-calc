@@ -73,24 +73,12 @@ export function getNaturalLineProliferatorPoints(row: Settings['natural_producti
     return row["增产模式"] === 0 ? 0 : row["增产点数"];
 }
 
-export function getMineralizedItemProliferatorPoints(
-    settings: Settings,
-    scheme_data: SchemeData,
-    item_data: ItemDataIndex,
-    item: string
-): number {
-    const recipe_choice = scheme_data.item_recipe_choices[item];
-    const recipe_id = item_data[item]?.[recipe_choice];
-    if (recipe_id === undefined) {
-        return Number(settings.external_supply_proliferator_points?.[item] || 0);
-    }
-    return Number(scheme_data.scheme_for_recipe[recipe_id]["增产点数"] || 0);
+export function getExternalInputProliferatorPoints(settings: Settings): number {
+    return Number(settings.external_input_proliferator_points || 0);
 }
 
 export function buildExternalSupplyProliferatorPoints(
     settings: Settings,
-    scheme_data: SchemeData,
-    item_data: ItemDataIndex,
     source_points?: ProliferatorSupplyPoints
 ): ProliferatorSupplyPoints {
     if (source_points) {
@@ -99,7 +87,7 @@ export function buildExternalSupplyProliferatorPoints(
     return Object.fromEntries(
         getExternalSupplyItemNames(settings).map(item => [
             item,
-            getMineralizedItemProliferatorPoints(settings, scheme_data, item_data, item),
+            getExternalInputProliferatorPoints(settings),
         ])
     );
 }
@@ -120,12 +108,7 @@ export function buildExternalSupplyPointSources(
             sources.push({
                 item,
                 amount,
-                proliferatorPoints: getMineralizedItemProliferatorPoints(
-                    settings,
-                    snapshot.scheme_data,
-                    snapshot.item_data,
-                    item
-                ),
+                proliferatorPoints: getExternalInputProliferatorPoints(settings),
             });
             return;
         }

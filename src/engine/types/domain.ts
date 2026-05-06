@@ -134,6 +134,8 @@ export interface Settings {
     blue_buff: boolean;
     mineralize_list: MineralizeList;
     external_supply_proliferator_points: NumericMap;
+    external_input_proliferator_points: number;
+    external_output_proliferator_points: number;
     natural_production_line: NaturalProductionLineRow[];
 }
 

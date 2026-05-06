@@ -1,5 +1,6 @@
 import {ItemIcon} from '@ui/components/icons/ItemIcon';
 import {FaTrashAlt} from 'react-icons/fa';
+import {ProNumSelect} from './ResultRecipeSelectors';
 
 function ValueWithDifference({
     currentValue,
@@ -44,8 +45,11 @@ export function ResultSidebar({
     is_time_unit_minute,
     mineralize_list,
     miner_energy_cost,
+    onChangeExternalInputProliferatorPoints,
+    onChangeExternalOutputProliferatorPoints,
     previous_sidebar_metrics,
     raw_material_list,
+    settings,
     show_item_names,
     surplus_list,
     unmineralize,
@@ -93,6 +97,29 @@ export function ResultSidebar({
         item,
         value: quant,
     }));
+
+    function renderExternalProliferatorControls() {
+        return <div className="d-flex flex-column gap-1">
+            <div className="d-flex align-items-center justify-content-between gap-2">
+                <small className="text-nowrap">输入</small>
+                <ProNumSelect
+                    choice={Number(settings.external_input_proliferator_points || 0)}
+                    includeNone={true}
+                    no_gap={true}
+                    onChange={onChangeExternalInputProliferatorPoints}
+                />
+            </div>
+            <div className="d-flex align-items-center justify-content-between gap-2">
+                <small className="text-nowrap">输出</small>
+                <ProNumSelect
+                    choice={Number(settings.external_output_proliferator_points || 0)}
+                    includeNone={true}
+                    no_gap={true}
+                    onChange={onChangeExternalOutputProliferatorPoints}
+                />
+            </div>
+        </div>;
+    }
 
     function renderNamedRows(
         entries: Array<{key: string; item: string; value: number; previousValue?: number}>,
@@ -303,6 +330,11 @@ export function ResultSidebar({
                 <legend><small>外部补充需求{unit_text}</small></legend>
                 {external_supply_display}
             </fieldset>}
+
+        <fieldset className="result-sidebar-card">
+            <legend><small>外部增产</small></legend>
+            {renderExternalProliferatorControls()}
+        </fieldset>
 
         {raw_material_entries.length > 0 &&
             <fieldset className="result-sidebar-card">

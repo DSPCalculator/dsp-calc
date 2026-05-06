@@ -259,14 +259,6 @@ export function Result({
         update_recipe_settings(recipe_id, {[field]: value});
     }
 
-    function update_mineralized_pro_num(recipe_id: number, value: number) {
-        const points = Number(value);
-        update_recipe_settings(recipe_id, {
-            "增产点数": points,
-            ...(points === 0 ? {"增产模式": 0} : {}),
-        });
-    }
-
     function mineralize(item) {
         rememberComparisonBaseline();
         set_settings({"mineralize_list": addMineralizedItem(mineralize_list, item)});
@@ -286,6 +278,16 @@ export function Result({
     function clear_mineralize_list() {
         rememberComparisonBaseline();
         set_settings({"mineralize_list": clearMineralizedItems()});
+    }
+
+    function update_external_input_proliferator_points(points: number) {
+        rememberComparisonBaseline();
+        set_settings({external_input_proliferator_points: points});
+    }
+
+    function update_external_output_proliferator_points(points: number) {
+        rememberComparisonBaseline();
+        set_settings({external_output_proliferator_points: points});
     }
 
     const {
@@ -423,9 +425,7 @@ export function Result({
             settings={settings}
             onChangeFactory={row_actions.change_factory}
             onChangeProMode={row_actions.change_pro_mode}
-            onChangeProNum={row.is_mineralized
-                ? (value) => update_mineralized_pro_num(row.recipe_id, value)
-                : row_actions.change_pro_num}
+            onChangeProNum={row_actions.change_pro_num}
             onChangeRecipe={row_actions.change_recipe}
             onMineralize={mineralize}
             onSplitProductionLine={split_production_line}
@@ -484,9 +484,12 @@ export function Result({
                 is_time_unit_minute={settings.is_time_unit_minute}
                 mineralize_list={mineralize_list}
                 miner_energy_cost={miner_energy_cost}
+                onChangeExternalInputProliferatorPoints={update_external_input_proliferator_points}
+                onChangeExternalOutputProliferatorPoints={update_external_output_proliferator_points}
                 previous_sidebar_metrics={previous_sidebar_metrics}
                 external_supply_entries={external_supply_entries}
                 raw_material_list={raw_material_list}
+                settings={settings}
                 show_item_names={settings.show_sidebar_item_names}
                 surplus_list={lp_surplus_list}
                 unmineralize={unmineralize}

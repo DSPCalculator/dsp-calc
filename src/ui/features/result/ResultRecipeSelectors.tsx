@@ -53,10 +53,12 @@ export function RecipeSelect({item, choice, onChange, show_effective_recipe, sch
 export function ProNumSelect({
     choice,
     includeNone = false,
+    no_gap = false,
     onChange,
 }: {
     choice: number;
     includeNone?: boolean;
+    no_gap?: boolean;
     onChange: (value: number) => void;
 }) {
     const global_state = useContext(GlobalStateContext);
@@ -76,7 +78,7 @@ export function ProNumSelect({
         }
     }
 
-    return <HorizontalMultiButtonSelect choice={choice} options={pro_num_options} onChange={onChange}/>;
+    return <HorizontalMultiButtonSelect choice={choice} options={pro_num_options} onChange={onChange} no_gap={no_gap}/>;
 }
 
 export function ProModeSelect({recipe_id, choice, onChange}: {

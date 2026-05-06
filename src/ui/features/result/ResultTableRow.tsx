@@ -85,9 +85,9 @@ export function ResultTableRow({
             <ProModeSelect recipe_id={row.recipe_id}
                            onChange={onChangeProMode}
                            choice={row.proliferator_mode}/>}</td>
-        <td><ProNumSelect includeNone={row.is_mineralized}
-                          onChange={onChangeProNum}
-                          choice={row.proliferator_points}/></td>
+        <td>{row.is_mineralized ||
+            <ProNumSelect onChange={onChangeProNum}
+                          choice={row.proliferator_points}/>}</td>
         <td>{row.is_mineralized ||
             <FactorySelect recipe_id={row.recipe_id}
                            onChange={onChangeFactory}
