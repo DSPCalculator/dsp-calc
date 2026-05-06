@@ -142,7 +142,7 @@ export function buildCalculationSnapshot({
     external_supply_proliferator_points?: CalculationSnapshot['external_supply_proliferator_points'];
 }): CalculationSnapshot {
     const effective_game_data = build_effective_game_data(game_data, settings);
-    const scheme_data = buildNormalizedSchemeData(effective_game_data, raw_scheme_data);
+    const scheme_data = buildNormalizedSchemeData(effective_game_data, item_data, raw_scheme_data);
     const external_supply_proliferator_points = buildExternalSupplyProliferatorPoints(
         settings,
         source_external_supply_proliferator_points

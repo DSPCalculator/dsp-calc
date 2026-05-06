@@ -17,11 +17,28 @@ import type {
 
 const EXTERNAL_SUPPLY_EPSILON = 1e-6;
 
-export function buildNormalizedSchemeData(game_data: GameData, scheme_data: SchemeData): SchemeData {
+function normalizeItemRecipeChoices(item_data: ItemDataIndex, scheme_data: SchemeData): NumericMap {
+    const normalized_item_recipe_choices = {...scheme_data.item_recipe_choices};
+    for (const item in item_data) {
+        const recipe_choice = normalized_item_recipe_choices[item];
+        if (item_data[item][recipe_choice] !== undefined) {
+            continue;
+        }
+        if (item_data[item].length > 1) {
+            normalized_item_recipe_choices[item] = 1;
+        }
+    }
+    return normalized_item_recipe_choices;
+}
+
+export function buildNormalizedSchemeData(game_data: GameData, item_data: ItemDataIndex, scheme_data: SchemeData): SchemeData {
     const normalized_scheme_for_recipe = scheme_data.scheme_for_recipe.map((recipe_setting: RecipeScheme) => ({...recipe_setting}));
+    for (let i = normalized_scheme_for_recipe.length; i < game_data.recipe_data.length; i++) {
+        normalized_scheme_for_recipe.push({"建筑": 0, "增产点数": 0, "增产模式": 0});
+    }
     // 选择增产策略但未选增产剂时，统一补成当前可用的最高等级增产剂。
     const maxProliferatorPoint = game_data.proliferator_data[game_data.proliferator_data.length - 1].增产点数;
-    for (let i = 0; i < normalized_scheme_for_recipe.length; i++) {
+    for (let i = 0; i < game_data.recipe_data.length; i++) {
         if (game_data.recipe_data[i].增产 == 8 && normalized_scheme_for_recipe[i].增产模式 == 0) {
             normalized_scheme_for_recipe[i].增产模式 = 4;
         }
@@ -32,6 +49,7 @@ export function buildNormalizedSchemeData(game_data: GameData, scheme_data: Sche
     }
     return {
         ...scheme_data,
+        item_recipe_choices: normalizeItemRecipeChoices(item_data, scheme_data),
         scheme_for_recipe: normalized_scheme_for_recipe,
     };
 }
