@@ -1,6 +1,17 @@
 import {get_equivalent_recipe_output_rate} from './equivalentRecipe';
-import {hasMineralizedItem} from './mineralizeState';
-import type {GameData, ItemDataIndex, ItemGraph, MultiSources, ProliferatorPrice, RecipeData, RecipeScheme, SchemeData, Settings} from '@engine/types/domain';
+import {getMineralizedItemNames, hasMineralizedItem} from './mineralizeState';
+import type {
+    GameData,
+    ItemDataIndex,
+    ItemGraph,
+    MultiSources,
+    ProliferatorPrice,
+    ProliferatorSupplyPoints,
+    RecipeData,
+    RecipeScheme,
+    SchemeData,
+    Settings
+} from '@engine/types/domain';
 
 export function buildNormalizedSchemeData(game_data: GameData, scheme_data: SchemeData): SchemeData {
     const normalized_scheme_for_recipe = scheme_data.scheme_for_recipe.map((recipe_setting: RecipeScheme) => ({...recipe_setting}));
@@ -21,7 +32,48 @@ export function buildNormalizedSchemeData(game_data: GameData, scheme_data: Sche
     };
 }
 
-export function buildProliferatorPrice(game_data: GameData, proliferate_itself: boolean): ProliferatorPrice {
+export function getExternalSupplyItemNames(settings: Settings): string[] {
+    const items = new Set<string>(getMineralizedItemNames(settings.mineralize_list));
+    settings.natural_production_line.forEach(row => {
+        items.add(row["目标物品"]);
+    });
+    Object.keys(settings.external_supply_proliferator_points || {}).forEach(item => {
+        items.add(item);
+    });
+    return Array.from(items);
+}
+
+function getProliferatorUnitCost(
+    game_data: GameData,
+    spray_count: number,
+    proliferator_points: number,
+    proliferate_itself: boolean
+): number {
+    if (!proliferate_itself || proliferator_points === 0) {
+        return 1 / spray_count;
+    }
+    const effect = game_data.proliferator_effect[proliferator_points];
+    if (!effect) {
+        return 1 / spray_count;
+    }
+    return 1 / Math.floor(spray_count * effect["增产效果"] - 1 + 1e-6);
+}
+
+export function buildExternalSupplyProliferatorPoints(settings: Settings): ProliferatorSupplyPoints {
+    const configured_points = settings.external_supply_proliferator_points || {};
+    return Object.fromEntries(
+        getExternalSupplyItemNames(settings).map(item => [
+            item,
+            Number(configured_points[item] || 0),
+        ])
+    );
+}
+
+export function buildProliferatorPrice(
+    game_data: GameData,
+    settings: Settings,
+    external_supply_proliferator_points: ProliferatorSupplyPoints
+): ProliferatorPrice {
     const proliferator_price: ProliferatorPrice = [];
     proliferator_price.push({});
     for (let i = 1; i < game_data.proliferator_effect.length; i++) {
@@ -31,18 +83,17 @@ export function buildProliferatorPrice(game_data: GameData, proliferate_itself: 
         const proliferator = game_data.proliferator_data[i];
         if (proliferator["增产点数"] != 0) {
             proliferator_price[proliferator["增产点数"]] = {};
-            if (proliferate_itself) {
-                const current_price = proliferator_price[proliferator["增产点数"]];
-                if (current_price !== -1) {
-                    current_price[proliferator["增产剂"].toString()]
-                        = 1 / Math.floor(proliferator["喷涂次数"] *
-                        game_data.proliferator_effect[proliferator["增产点数"]]["增产效果"] - 1 + 1e-6);
-                }
-            } else {
-                const current_price = proliferator_price[proliferator["增产点数"]];
-                if (current_price !== -1) {
-                    current_price[proliferator["增产剂"].toString()] = 1 / proliferator["喷涂次数"];
-                }
+            const current_price = proliferator_price[proliferator["增产点数"]];
+            if (current_price !== -1) {
+                const proliferator_item = proliferator["增产剂"].toString();
+                const external_points = external_supply_proliferator_points[proliferator_item];
+                const supply_points = external_points ?? (settings.proliferate_itself ? proliferator["增产点数"] : 0);
+                current_price[proliferator_item] = getProliferatorUnitCost(
+                    game_data,
+                    proliferator["喷涂次数"],
+                    supply_points,
+                    supply_points > 0
+                );
             }
         }
     }

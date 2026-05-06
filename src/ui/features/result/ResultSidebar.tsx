@@ -1,5 +1,6 @@
 import {ItemIcon} from '@ui/components/icons/ItemIcon';
 import {FaTrashAlt} from 'react-icons/fa';
+import {ProNumSelect} from './ResultRecipeSelectors';
 
 function ValueWithDifference({
     currentValue,
@@ -38,13 +39,15 @@ export function ResultSidebar({
     building_list,
     clear_mineralize_list,
     energy_cost,
+    external_supply_list,
+    external_supply_proliferator_points,
     fixed_num,
     IncreaseCostWhenSurplus,
     is_time_unit_minute,
     mineralize_list,
     miner_energy_cost,
+    onChangeExternalSupplyProliferatorPoints,
     previous_sidebar_metrics,
-    raw_material_list,
     show_item_names,
     surplus_list,
     unmineralize,
@@ -76,11 +79,12 @@ export function ResultSidebar({
         previousValue: previous_sidebar_metrics?.buildingCounts?.[building],
     }));
 
-    const raw_material_entries = (Object.entries(raw_material_list) as Array<[string, number]>).map(([item, amount]) => ({
+    const external_supply_entries = (Object.entries(external_supply_list) as Array<[string, number]>).map(([item, amount]) => ({
         key: item,
         item,
         value: amount,
-        previousValue: previous_sidebar_metrics?.rawMaterials?.[item],
+        previousValue: previous_sidebar_metrics?.externalSupplies?.[item],
+        proliferatorPoints: external_supply_proliferator_points?.[item] || 0,
     }));
     const surplus_entries = (Object.entries(surplus_list) as Array<[string, number]>).map(([item, quant]) => ({
         key: item,
@@ -103,6 +107,31 @@ export function ResultSidebar({
                 </td>
                 <td className="ps-2 text-nowrap">
                     {renderMetricValue(value, previousValue, suffix, digits)}
+                </td>
+            </tr>
+        ));
+    }
+
+    function renderExternalSupplyNamedRows(
+        entries: Array<{key: string; item: string; value: number; previousValue?: number; proliferatorPoints: number}>
+    ) {
+        return entries.map(({key, item, value, previousValue, proliferatorPoints}) => (
+            <tr key={key}>
+                <td className="text-end text-nowrap">
+                    <span className="d-inline-flex align-items-center">
+                        <span className="me-1">{item}</span>
+                        <ItemIcon item={item} size={RESULT_ICON_SIZE}/>
+                    </span>
+                </td>
+                <td className="ps-2 text-nowrap">
+                    {renderMetricValue(value, previousValue, '', fixed_num)}
+                </td>
+                <td className="ps-2">
+                    <ProNumSelect
+                        choice={proliferatorPoints}
+                        includeNone={true}
+                        onChange={(points) => onChangeExternalSupplyProliferatorPoints(item, points)}
+                    />
                 </td>
             </tr>
         ));
@@ -145,13 +174,41 @@ export function ResultSidebar({
         </table>;
     }
 
+    function renderExternalSupplyCompactRows(
+        entries: Array<{key: string; item: string; value: number; previousValue?: number; proliferatorPoints: number}>
+    ) {
+        return <table>
+            <tbody>
+            {entries.map(({key, item, value, previousValue, proliferatorPoints}) => (
+                <tr key={key}>
+                    <td className="text-nowrap pe-2">
+                        <span className="d-inline-flex align-items-center">
+                            <ItemIcon item={item} size={RESULT_ICON_SIZE}/>
+                            <span className="ms-1">
+                                {renderMetricValue(value, previousValue, '', fixed_num)}
+                            </span>
+                        </span>
+                    </td>
+                    <td>
+                        <ProNumSelect
+                            choice={proliferatorPoints}
+                            includeNone={true}
+                            onChange={(points) => onChangeExternalSupplyProliferatorPoints(item, points)}
+                        />
+                    </td>
+                </tr>
+            ))}
+            </tbody>
+        </table>;
+    }
+
     const building_display = show_item_names
         ? <table><tbody>{renderNamedRows(building_entries, 0)}</tbody></table>
         : renderCompactRows(building_entries, 0);
 
-    const raw_material_display = show_item_names
-        ? <table><tbody>{renderNamedRows(raw_material_entries, fixed_num)}</tbody></table>
-        : renderCompactRows(raw_material_entries, fixed_num);
+    const external_supply_display = show_item_names
+        ? <table><tbody>{renderExternalSupplyNamedRows(external_supply_entries)}</tbody></table>
+        : renderExternalSupplyCompactRows(external_supply_entries);
 
     function renderSurplusNamedRows(entries: Array<{key: string; item: string; value: number}>) {
         return entries.map(({key, item, value}) => (
@@ -239,10 +296,10 @@ export function ResultSidebar({
                 {surplus_display}
             </fieldset>}
 
-        {raw_material_entries.length > 0 &&
+        {external_supply_entries.length > 0 &&
             <fieldset className="result-sidebar-card">
-                <legend><small>原矿输入总需求{unit_text}</small></legend>
-                {raw_material_display}
+                <legend><small>外部补充需求{unit_text}</small></legend>
+                {external_supply_display}
             </fieldset>}
 
         {building_entries.length > 0 &&

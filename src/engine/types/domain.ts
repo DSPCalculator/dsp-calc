@@ -133,6 +133,7 @@ export interface Settings {
     inc_rate: number;
     blue_buff: boolean;
     mineralize_list: MineralizeList;
+    external_supply_proliferator_points: NumericMap;
     natural_production_line: NaturalProductionLineRow[];
 }
 
@@ -182,6 +183,7 @@ export interface ItemPriceEntry {
 
 export type ItemPrice = Record<string, ItemPriceEntry>;
 export type ProliferatorPrice = Array<NumericMap | -1>;
+export type ProliferatorSupplyPoints = Record<string, number | undefined>;
 
 export interface ResultRowSideProduct {
     from: ItemName;
@@ -210,6 +212,7 @@ export interface CalculationSnapshot {
     scheme_data: SchemeData;
     settings: Settings;
     proliferator_price: ProliferatorPrice;
+    external_supply_proliferator_points: ProliferatorSupplyPoints;
     item_graph: ItemGraph;
     multi_sources: MultiSources;
     item_list: ItemName[];

@@ -1,5 +1,5 @@
 import structuredClone from '@ungap/structured-clone';
-import type {GameData, NumericMap, ProliferatorPrice, RecipeData, RecipeScheme, Settings} from '@engine/types/domain';
+import type {GameData, NumericMap, ProliferatorPrice, ProliferatorSupplyPoints, RecipeData, RecipeScheme, Settings} from '@engine/types/domain';
 
 function add_item_count(dict: NumericMap, item: string, count: number): void {
     if (!count) {
@@ -234,6 +234,7 @@ export function get_equivalent_recipe({
                                           scheme_data,
                                           settings,
                                           proliferator_price,
+                                          external_supply_proliferator_points,
                                           recipe_id,
                                           target_item,
                                           scheme_override
@@ -242,6 +243,7 @@ export function get_equivalent_recipe({
     scheme_data: {scheme_for_recipe: RecipeScheme[]};
     settings: Settings;
     proliferator_price: ProliferatorPrice;
+    external_supply_proliferator_points: ProliferatorSupplyPoints;
     recipe_id: number;
     target_item: string;
     scheme_override?: Partial<RecipeScheme>;
@@ -260,7 +262,13 @@ export function get_equivalent_recipe({
     const proliferate_mode = Number(scheme_recipe["增产模式"] || 0);
     const proliferate_num = Number(scheme_recipe["增产点数"] || 0);
     if (proliferate_mode && proliferate_num && proliferator_price[proliferate_num] !== -1) {
-        const material_total = Object.values(recipe["原料"]).reduce((sum, count) => sum + count, 0);
+        const material_total = Object.entries(recipe["原料"]).reduce((sum, [item, count]) => {
+            const supply_points = external_supply_proliferator_points[item] ?? 0;
+            if (supply_points > 0 && supply_points >= proliferate_num) {
+                return sum;
+            }
+            return sum + count;
+        }, 0);
         const proliferator_cost = proliferator_price[proliferate_num] as NumericMap;
         Object.entries(proliferator_cost).forEach(([item, count]) => {
             add_item_count(recipe["原料"], item, material_total * count);

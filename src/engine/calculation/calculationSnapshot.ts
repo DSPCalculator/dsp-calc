@@ -6,6 +6,7 @@ import {
 import {
     buildItemGraph,
     buildItemList,
+    buildExternalSupplyProliferatorPoints,
     buildNormalizedSchemeData,
     buildProliferatorPrice
 } from './globalStateDerivations';
@@ -29,6 +30,7 @@ function createEquivalentRecipeGetter(snapshot: Omit<CalculationSnapshot, 'getEq
             scheme_data: snapshot.scheme_data,
             settings: snapshot.settings,
             proliferator_price: snapshot.proliferator_price,
+            external_supply_proliferator_points: snapshot.external_supply_proliferator_points,
             recipe_id,
             target_item,
             scheme_override
@@ -139,7 +141,12 @@ export function buildCalculationSnapshot({
 }): CalculationSnapshot {
     const effective_game_data = build_effective_game_data(game_data, settings);
     const scheme_data = buildNormalizedSchemeData(effective_game_data, raw_scheme_data);
-    const proliferator_price = buildProliferatorPrice(effective_game_data, settings.proliferate_itself);
+    const external_supply_proliferator_points = buildExternalSupplyProliferatorPoints(settings);
+    const proliferator_price = buildProliferatorPrice(
+        effective_game_data,
+        settings,
+        external_supply_proliferator_points
+    );
 
     const snapshot = {
         game_data,
@@ -148,6 +155,7 @@ export function buildCalculationSnapshot({
         raw_scheme_data,
         scheme_data,
         settings,
+        external_supply_proliferator_points,
         proliferator_price,
     } as CalculationSnapshot;
 

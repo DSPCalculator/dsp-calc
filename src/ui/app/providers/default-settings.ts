@@ -35,5 +35,6 @@ export const DEFAULT_SETTINGS: Settings = {
     blue_buff: false,
 
     mineralize_list: {},
+    external_supply_proliferator_points: {},
     natural_production_line: [],
 };

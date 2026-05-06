@@ -50,7 +50,15 @@ export function RecipeSelect({item, choice, onChange, show_effective_recipe, sch
     return <div className="border-recipe-item">{doms}</div>;
 }
 
-export function ProNumSelect({choice, onChange}: {choice: number; onChange: (value: number) => void}) {
+export function ProNumSelect({
+    choice,
+    includeNone = false,
+    onChange,
+}: {
+    choice: number;
+    includeNone?: boolean;
+    onChange: (value: number) => void;
+}) {
     const global_state = useContext(GlobalStateContext);
     const game_data = global_state.game_data;
     const pro_num_text: Record<number, string> = {};
@@ -59,10 +67,12 @@ export function ProNumSelect({choice, onChange}: {choice: number; onChange: (val
     }
     const pro_num_options = [];
     for (let i = 0; i < game_data.proliferator_effect.length; i++) {
-        if (i == 0) {
+        if (i == 0 && !includeNone) {
             continue;
         } else if (global_state.proliferator_price[i] != -1) {
-            pro_num_options.push({value: i, item_icon: pro_num_text[i]});
+            pro_num_options.push(i == 0
+                ? {value: i, label: pro_num_text[i] || "无"}
+                : {value: i, item_icon: pro_num_text[i]});
         }
     }
 

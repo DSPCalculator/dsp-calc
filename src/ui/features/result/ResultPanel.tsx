@@ -17,7 +17,7 @@ import {ITEM_ICON_CONTENT_SIZE} from '@ui/components/icons/ItemIcon';
 type SidebarMetrics = {
     buildingCounts: NumericMap;
     energyCost: number;
-    rawMaterials: NumericMap;
+    externalSupplies: NumericMap;
     totalEnergyCost: number;
 };
 
@@ -41,13 +41,13 @@ function areSidebarMetricsEqual(left?: SidebarMetrics, right?: SidebarMetrics): 
         }
     }
 
-    const leftMaterials = Object.keys(left.rawMaterials);
-    const rightMaterials = Object.keys(right.rawMaterials);
-    if (leftMaterials.length !== rightMaterials.length) {
+    const leftSupplies = Object.keys(left.externalSupplies);
+    const rightSupplies = Object.keys(right.externalSupplies);
+    if (leftSupplies.length !== rightSupplies.length) {
         return false;
     }
-    for (const item of leftMaterials) {
-        if (Math.abs((left.rawMaterials[item] || 0) - (right.rawMaterials[item] || 0)) > 1e-6) {
+    for (const item of leftSupplies) {
+        if (Math.abs((left.externalSupplies[item] || 0) - (right.externalSupplies[item] || 0)) > 1e-6) {
             return false;
         }
     }
@@ -248,6 +248,16 @@ export function Result({
         set_settings({"mineralize_list": clearMineralizedItems()});
     }
 
+    function update_external_supply_proliferator_points(item: string, points: number) {
+        rememberComparisonBaseline();
+        set_settings({
+            "external_supply_proliferator_points": {
+                ...(settings.external_supply_proliferator_points || {}),
+                [item]: points,
+            },
+        });
+    }
+
     const {
         building_list,
         energy_cost,
@@ -266,14 +276,19 @@ export function Result({
         natural_production_line,
     });
 
-    function buildRawMaterialList(current_result_dict: NumericMap, current_scheme_data: SchemeData, current_game_data: GameData): NumericMap {
-        const raw_materials: NumericMap = {};
+    function buildExternalSupplyList(
+        current_result_dict: NumericMap,
+        current_scheme_data: SchemeData,
+        current_game_data: GameData,
+        current_global_state: GlobalState
+    ): NumericMap {
+        const external_supplies: NumericMap = {};
         Object.entries(current_result_dict).forEach(([item, amount]) => {
             if (Math.abs(amount) < 1e-6) {
                 return;
             }
             if (item in mineralize_list) {
-                raw_materials[item] = amount;
+                external_supplies[item] = amount;
                 return;
             }
             const recipe_choice = current_scheme_data.item_recipe_choices[item];
@@ -283,13 +298,26 @@ export function Result({
                 return;
             }
             if (Object.keys(recipe["原料"]).length === 0 && Object.keys(recipe["产物"]).length === 1) {
-                raw_materials[item] = amount;
+                external_supplies[item] = amount;
             }
         });
-        return raw_materials;
+
+        natural_production_line.forEach(row => {
+            const equivalent_recipe = current_global_state.get_equivalent_recipe_for_natural_line(row);
+            const output_amount = (equivalent_recipe["产物"][row["目标物品"]] || 0)
+                * row["建筑数量"] * time_tick / equivalent_recipe["时间"];
+            if (Math.abs(output_amount) < 1e-6) {
+                return;
+            }
+            external_supplies[row["目标物品"]] = Number(external_supplies[row["目标物品"]] || 0) + output_amount;
+        });
+
+        return Object.fromEntries(
+            Object.entries(external_supplies).filter(([, amount]) => Math.abs(amount) >= 1e-6)
+        );
     }
 
-    const raw_material_list = buildRawMaterialList(result_dict, scheme_data, game_data);
+    const external_supply_list = buildExternalSupplyList(result_dict, scheme_data, game_data, global_state);
     let previous_sidebar_metrics: SidebarMetrics | undefined = undefined;
 
     if (comparison_baseline) {
@@ -310,13 +338,18 @@ export function Result({
         previous_sidebar_metrics = {
             buildingCounts: {...previous_metrics.building_list},
             energyCost: previous_metrics.energy_cost,
-            rawMaterials: buildRawMaterialList(previous_result_dict, previous_global_state.scheme_data, previous_global_state.game_data),
+            externalSupplies: buildExternalSupplyList(
+                previous_result_dict,
+                previous_global_state.scheme_data,
+                previous_global_state.game_data,
+                previous_global_state
+            ),
             totalEnergyCost: previous_metrics.energy_cost + previous_metrics.miner_energy_cost,
         };
         if (areSidebarMetricsEqual(previous_sidebar_metrics, {
             buildingCounts: building_list,
             energyCost: energy_cost,
-            rawMaterials: raw_material_list,
+            externalSupplies: external_supply_list,
             totalEnergyCost: energy_cost + miner_energy_cost,
         })) {
             previous_sidebar_metrics = undefined;
@@ -402,7 +435,9 @@ export function Result({
                 mineralize_list={mineralize_list}
                 miner_energy_cost={miner_energy_cost}
                 previous_sidebar_metrics={previous_sidebar_metrics}
-                raw_material_list={raw_material_list}
+                external_supply_list={external_supply_list}
+                external_supply_proliferator_points={settings.external_supply_proliferator_points || {}}
+                onChangeExternalSupplyProliferatorPoints={update_external_supply_proliferator_points}
                 show_item_names={settings.show_sidebar_item_names}
                 surplus_list={lp_surplus_list}
                 unmineralize={unmineralize}
