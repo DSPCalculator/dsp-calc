@@ -71,7 +71,7 @@ export function ProNumSelect({
             continue;
         } else if (global_state.proliferator_price[i] != -1) {
             pro_num_options.push(i == 0
-                ? {value: i, label: pro_num_text[i] || "无"}
+                ? {value: i, label: "无"}
                 : {value: i, item_icon: pro_num_text[i]});
         }
     }
