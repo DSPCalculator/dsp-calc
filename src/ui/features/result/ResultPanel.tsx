@@ -35,7 +35,7 @@ type ExternalSupplyEntry = {
     key: string;
     item: string;
     amount: number;
-    source: 'natural' | 'mineralized';
+    source: 'mineralized';
     sourceLabel: string;
     proliferatorPoints: number;
     editablePoints: boolean;
@@ -354,17 +354,7 @@ export function Result({
                     proliferatorPoints: current_settings.external_supply_proliferator_points?.[item] || 0,
                     editablePoints: true,
                 });
-                return;
             }
-            entries.push({
-                key: `natural:${item}`,
-                item,
-                amount,
-                source: 'natural',
-                sourceLabel: '自然输入',
-                proliferatorPoints: current_settings.external_supply_proliferator_points?.[item] || 0,
-                editablePoints: true,
-            });
         });
 
         return entries.filter(entry => Math.abs(entry.amount) >= 1e-6);

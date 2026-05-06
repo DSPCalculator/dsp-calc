@@ -111,16 +111,6 @@ export function buildExternalSupplyPointSources(
             return;
         }
 
-        const recipe_choice = snapshot.scheme_data.item_recipe_choices[item];
-        const recipe_id = snapshot.item_data[item]?.[recipe_choice];
-        const recipe = recipe_id === undefined ? undefined : snapshot.game_data.recipe_data[recipe_id];
-        if (recipe && Object.keys(recipe["原料"]).length === 0 && Object.keys(recipe["产物"]).length === 1) {
-            sources.push({
-                item,
-                amount,
-                proliferatorPoints: Number(configured_points[item] || 0),
-            });
-        }
     });
 
     settings.natural_production_line.forEach(row => {
