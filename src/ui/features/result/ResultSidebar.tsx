@@ -47,6 +47,7 @@ export function ResultSidebar({
     miner_energy_cost,
     onChangeExternalSupplyProliferatorPoints,
     previous_sidebar_metrics,
+    raw_material_list,
     show_item_names,
     surplus_list,
     unmineralize,
@@ -82,6 +83,12 @@ export function ResultSidebar({
         ...entry,
         value: entry.amount,
         previousValue: previous_sidebar_metrics?.externalSupplies?.[entry.key],
+    }));
+    const raw_material_entries = (Object.entries(raw_material_list) as Array<[string, number]>).map(([item, amount]) => ({
+        key: item,
+        item,
+        value: amount,
+        previousValue: previous_sidebar_metrics?.rawMaterials?.[item],
     }));
     const surplus_entries = (Object.entries(surplus_list) as Array<[string, number]>).map(([item, quant]) => ({
         key: item,
@@ -231,6 +238,10 @@ export function ResultSidebar({
         ? <table><tbody>{renderExternalSupplyNamedRows(external_supply_rows)}</tbody></table>
         : renderExternalSupplyCompactRows(external_supply_rows);
 
+    const raw_material_display = show_item_names
+        ? <table><tbody>{renderNamedRows(raw_material_entries, fixed_num)}</tbody></table>
+        : renderCompactRows(raw_material_entries, fixed_num);
+
     function renderSurplusNamedRows(entries: Array<{key: string; item: string; value: number}>) {
         return entries.map(({key, item, value}) => (
             <tr key={key}>
@@ -321,6 +332,12 @@ export function ResultSidebar({
             <fieldset className="result-sidebar-card">
                 <legend><small>外部补充需求{unit_text}</small></legend>
                 {external_supply_display}
+            </fieldset>}
+
+        {raw_material_entries.length > 0 &&
+            <fieldset className="result-sidebar-card">
+                <legend><small>原矿输入总需求{unit_text}</small></legend>
+                {raw_material_display}
             </fieldset>}
 
         {building_entries.length > 0 &&

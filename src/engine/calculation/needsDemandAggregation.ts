@@ -18,11 +18,11 @@ export function aggregateNetNeeds(snapshot: CalculationSnapshot, needs_list: Num
         const equivalent_recipe = snapshot.getEquivalentRecipeForNaturalLine(natural_production_line[id]);
         const execute_count = time_tick * natural_production_line[id]["建筑数量"] / equivalent_recipe["时间"];
         for (const item in equivalent_recipe["产物"]) {
-            if (item in in_out_list) {
-                in_out_list[item] = Number(in_out_list[item]) - equivalent_recipe["产物"][item] * execute_count;
-            } else {
-                in_out_list[item] = -1 * equivalent_recipe["产物"][item] * execute_count;
+            const remaining_need = Number(in_out_list[item] || 0);
+            if (remaining_need <= 0) {
+                continue;
             }
+            in_out_list[item] = Math.max(0, remaining_need - equivalent_recipe["产物"][item] * execute_count);
         }
     }
 
