@@ -446,12 +446,15 @@ legend {
 }
 
 .game-version-row {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    min-width: 0;
+    width: 100%;
 }
 
 .game-version-mod-select {
     min-width: min(250px, 100%);
-    flex: 1 1 250px;
+    flex: 1 1 auto;
+    width: auto;
 }
 
 .toolbar-storage-group {
