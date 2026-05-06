@@ -724,6 +724,7 @@ legend {
 
     .game-version-row {
         align-items: stretch !important;
+        flex-wrap: wrap;
         gap: 0.35rem !important;
         width: 100%;
     }
