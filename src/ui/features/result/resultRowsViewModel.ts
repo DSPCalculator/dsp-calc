@@ -11,6 +11,7 @@ export function buildResultRowsViewModel({
     settings,
     side_products,
     getFactoryNumber,
+    lp_issue_items = new Set<string>(),
 }: {
     fixed_num: number;
     game_data: GameData;
@@ -21,27 +22,36 @@ export function buildResultRowsViewModel({
     settings: Settings;
     side_products: Record<string, NumericMap>;
     getFactoryNumber: (amount: number, item: string) => number;
+    lp_issue_items?: Set<string>;
 }): ResultRowViewModel[] {
     const rows: ResultRowViewModel[] = [];
     const normalized_side_products: Record<string, NumericMap> = {...side_products};
 
-    for (const item_name in result_dict) {
+    const row_items = new Set([...Object.keys(result_dict), ...lp_issue_items]);
+    row_items.forEach((item_name) => {
         normalized_side_products[item_name] = normalized_side_products[item_name] || {};
-        const total = result_dict[item_name] + (Object.values(normalized_side_products[item_name]) as number[]).reduce((a, b) => a + b, 0);
-        if (total < 1e-6) continue;
+        const result_amount = result_dict[item_name] ?? 0;
+        const total = result_amount + (Object.values(normalized_side_products[item_name]) as number[]).reduce((a, b) => a + b, 0);
+        if (total < 1e-6 && !lp_issue_items.has(item_name)) {
+            return;
+        }
         const recipe_id = item_data[item_name][scheme_data.item_recipe_choices[item_name]];
         if (settings.hide_mines
             && (hasMineralizedItem(mineralize_list, item_name) || Object.keys(game_data.recipe_data[recipe_id]["原料"]).length < 1)) {
-            continue;
+            return;
         }
 
-        const factory_number = getFactoryNumber(result_dict[item_name], item_name);
+        const factory_number = getFactoryNumber(result_amount, item_name);
         const from_side_products = (Object.entries(normalized_side_products[item_name]) as Array<[string, number]>).map(([from, amount]) => ({
             from,
             amount_text: amount.toFixed(fixed_num),
         }));
         const factory_name = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]]["名称"];
         const is_mineralized = hasMineralizedItem(mineralize_list, item_name);
+        const row_classes = [
+            is_mineralized ? "table-secondary" : "",
+            lp_issue_items.has(item_name) ? "table-danger lp-issue-row" : "",
+        ].filter(Boolean).join(" ");
 
         rows.push({
             item_name,
@@ -50,13 +60,13 @@ export function buildResultRowsViewModel({
             from_side_products,
             factory_name,
             is_mineralized,
-            row_class: is_mineralized ? "table-secondary" : "",
+            row_class: row_classes,
             proliferator_mode: scheme_data.scheme_for_recipe[recipe_id]["增产模式"],
             proliferator_points: scheme_data.scheme_for_recipe[recipe_id]["增产点数"],
             building_choice: scheme_data.scheme_for_recipe[recipe_id]["建筑"],
             recipe_choice: scheme_data.item_recipe_choices[item_name],
         });
-    }
+    });
 
     return rows;
 }

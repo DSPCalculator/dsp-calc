@@ -2,7 +2,7 @@ import solver from '../solver/javascriptLpSolverBrowser';
 import {aggregateNetNeeds, buildInitialResultDict} from './needsDemandAggregation';
 import {buildLinearProgrammingModel, buildLpInputs} from './lpModelBuilder';
 import {applyLinearProgrammingResults} from './lpResultApplier';
-import type {CalculationSnapshot, NumericMap, SolverResults} from '@engine/types/domain';
+import type {CalculationSnapshot, LinearProgrammingIssue, NumericMap, SolverResults} from '@engine/types/domain';
 
 function solveLinearProgramming(
     snapshot: CalculationSnapshot,
@@ -15,7 +15,7 @@ function solveLinearProgramming(
     applyLinearProgrammingResults(snapshot, model, results, lp_item_dict, result_dict, lp_surplus_list);
 }
 
-export function solveNeeds(snapshot: CalculationSnapshot, needs_list: NumericMap): [NumericMap, NumericMap] {
+export function solveNeeds(snapshot: CalculationSnapshot, needs_list: NumericMap): [NumericMap, NumericMap, LinearProgrammingIssue?] {
     const {in_out_list, external_supply_item} = aggregateNetNeeds(snapshot, needs_list);
     const result_dict = buildInitialResultDict(snapshot.item_price, in_out_list);
     const lp_surplus_list: NumericMap = {};

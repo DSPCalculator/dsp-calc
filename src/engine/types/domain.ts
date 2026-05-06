@@ -236,7 +236,7 @@ export interface GameInfoState {
 
 export interface GlobalStateLike extends CalculationSnapshot {
     snapshot: CalculationSnapshot;
-    calculate(needs_list: NumericMap): [NumericMap, NumericMap];
+    calculate(needs_list: NumericMap): [NumericMap, NumericMap, LinearProgrammingIssue?];
     get_equivalent_recipe_for_item(item: ItemName): RecipeData;
     get_equivalent_recipe_for_recipe(item: ItemName, recipe_id: number, scheme_override?: Partial<RecipeScheme>): RecipeData;
     get_equivalent_recipe_for_natural_line(row: NaturalProductionLineRow): RecipeData;
@@ -255,6 +255,12 @@ export interface SolverResults {
     feasible?: boolean;
     bounded?: boolean;
     isIntegral?: boolean;
+}
+
+export interface LinearProgrammingIssue {
+    kind: 'infeasible' | 'unbounded';
+    message: string;
+    items: ItemName[];
 }
 
 export interface RawFractionateOutputInfo {

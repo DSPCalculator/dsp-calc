@@ -94,6 +94,7 @@ function collectResultMetrics({
     mineralize_list,
     natural_production_line,
     result_dict,
+    lp_issue_items,
 }: {
     fixed_num: number;
     game_data: GameData;
@@ -105,6 +106,7 @@ function collectResultMetrics({
     mineralize_list: Settings['mineralize_list'];
     natural_production_line: NaturalProductionLineRow[];
     result_dict: NumericMap;
+    lp_issue_items: Set<string>;
 }) {
     let energy_cost = 0;
     let miner_energy_cost = 0;
@@ -161,6 +163,7 @@ function collectResultMetrics({
         settings,
         side_products,
         getFactoryNumber: get_factory_number,
+        lp_issue_items,
     });
 
     for (const row of natural_production_line) {
@@ -216,7 +219,11 @@ export function Result({
     const time_tick = settings.is_time_unit_minute ? 60 : 1;
     const mineralize_list = settings.mineralize_list;
     const natural_production_line = settings.natural_production_line;
-    const [result_dict, lp_surplus_list] = global_state.calculate(needs_list);
+    const [calculated_result_dict, lp_surplus_list, lp_issue] = global_state.calculate(needs_list);
+    const lp_issue_items = new Set(lp_issue?.items || []);
+    const result_dict = lp_issue
+        ? Object.fromEntries((lp_issue.items || []).map(item => [item, needs_list[item] || 0]))
+        : calculated_result_dict;
 
     const fixed_num = settings.fixed_num;
 
@@ -306,6 +313,7 @@ export function Result({
         settings,
         time_tick,
         natural_production_line,
+        lp_issue_items,
     });
 
     function buildRawMaterialList(
@@ -381,6 +389,7 @@ export function Result({
             settings: comparison_baseline.settings,
             time_tick,
             natural_production_line: comparison_baseline.settings.natural_production_line,
+            lp_issue_items: new Set<string>(),
         });
         const previous_raw_material_list = buildRawMaterialList(
             previous_result_dict,
@@ -451,8 +460,15 @@ export function Result({
         }));
     }
 
+    const lp_issue_alert = lp_issue &&
+        <div className="alert alert-danger py-2 px-3 mb-2 result-lp-issue-alert" role="alert">
+            <strong>{lp_issue.kind === 'infeasible' ? '线性规划无解' : '线性规划目标函数无界'}</strong>
+            <span className="ms-2">{lp_issue.message}</span>
+        </div>;
+
     return <div className="result-layout mt-2 mb-3">
         <div className="result-table-shell">
+            {lp_issue_alert}
             <div className="result-table-scroll">
                 <table className="table table-sm align-middle w-auto result-table">
                     <thead>

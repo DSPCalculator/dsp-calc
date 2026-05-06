@@ -4,9 +4,11 @@ import {
     buildExternalSupplyPointSources
 } from './globalStateDerivations';
 import {solveNeeds} from './needsSolver';
+import {LinearProgrammingError} from './lpResultApplier';
 import type {
     CalculationSnapshot,
     GameInfoState,
+    LinearProgrammingIssue,
     NumericMap,
     ProliferatorSupplyPoints,
     RecipeData,
@@ -80,9 +82,17 @@ export class GlobalState {
         return this.snapshot.getEquivalentRecipeForNaturalLine(row);
     }
 
-    calculate(needs_list: NumericMap): [NumericMap, NumericMap] {
+    calculate(needs_list: NumericMap): [NumericMap, NumericMap, LinearProgrammingIssue?] {
         this.#reinit();
-        let result = solveNeeds(this.snapshot, needs_list);
+        let result: [NumericMap, NumericMap, LinearProgrammingIssue?];
+        try {
+            result = solveNeeds(this.snapshot, needs_list);
+        } catch (error) {
+            if (error instanceof LinearProgrammingError) {
+                return [{}, {}, error.issue];
+            }
+            throw error;
+        }
         let previous_external_points = this.snapshot.external_supply_proliferator_points;
 
         for (let i = 0; i < EXTERNAL_SUPPLY_POINT_ITERATIONS; i++) {
@@ -93,7 +103,14 @@ export class GlobalState {
                 return result;
             }
             this.#reinit(next_external_points);
-            result = solveNeeds(this.snapshot, needs_list);
+            try {
+                result = solveNeeds(this.snapshot, needs_list);
+            } catch (error) {
+                if (error instanceof LinearProgrammingError) {
+                    return [{}, {}, error.issue];
+                }
+                throw error;
+            }
             previous_external_points = next_external_points;
         }
 
