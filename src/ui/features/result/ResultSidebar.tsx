@@ -1,6 +1,5 @@
 import {ItemIcon} from '@ui/components/icons/ItemIcon';
 import {FaTrashAlt} from 'react-icons/fa';
-import {ProNumSelect} from './ResultRecipeSelectors';
 
 function ValueWithDifference({
     currentValue,
@@ -45,7 +44,6 @@ export function ResultSidebar({
     is_time_unit_minute,
     mineralize_list,
     miner_energy_cost,
-    onChangeExternalSupplyProliferatorPoints,
     previous_sidebar_metrics,
     raw_material_list,
     show_item_names,
@@ -123,11 +121,9 @@ export function ResultSidebar({
             sourceLabel: string;
             value: number;
             previousValue?: number;
-            proliferatorPoints: number;
-            editablePoints: boolean;
         }>
     ) {
-        return entries.map(({key, item, sourceLabel, value, previousValue, proliferatorPoints, editablePoints}) => (
+        return entries.map(({key, item, sourceLabel, value, previousValue}) => (
             <tr key={key}>
                 <td className="text-end text-nowrap">
                     <span className="d-inline-flex align-items-center">
@@ -140,15 +136,6 @@ export function ResultSidebar({
                 </td>
                 <td className="ps-2 text-nowrap">
                     <small className="text-secondary">{sourceLabel}</small>
-                </td>
-                <td className="ps-2">
-                    {editablePoints
-                        ? <ProNumSelect
-                            choice={proliferatorPoints}
-                            includeNone={true}
-                            onChange={(points) => onChangeExternalSupplyProliferatorPoints(item, points)}
-                        />
-                        : <span className="small text-secondary">点数 {proliferatorPoints}</span>}
                 </td>
             </tr>
         ));
@@ -198,13 +185,11 @@ export function ResultSidebar({
             sourceLabel: string;
             value: number;
             previousValue?: number;
-            proliferatorPoints: number;
-            editablePoints: boolean;
         }>
     ) {
         return <table>
             <tbody>
-            {entries.map(({key, item, sourceLabel, value, previousValue, proliferatorPoints, editablePoints}) => (
+            {entries.map(({key, item, sourceLabel, value, previousValue}) => (
                 <tr key={key}>
                     <td className="text-nowrap pe-2">
                         <span className="d-inline-flex align-items-center">
@@ -214,15 +199,6 @@ export function ResultSidebar({
                             </span>
                         </span>
                         <small className="ms-1 text-secondary">{sourceLabel}</small>
-                    </td>
-                    <td>
-                        {editablePoints
-                            ? <ProNumSelect
-                                choice={proliferatorPoints}
-                                includeNone={true}
-                                onChange={(points) => onChangeExternalSupplyProliferatorPoints(item, points)}
-                            />
-                            : <span className="small text-secondary">点数 {proliferatorPoints}</span>}
                     </td>
                 </tr>
             ))}

@@ -1,5 +1,6 @@
 import {ItemIcon} from '@ui/components/icons/ItemIcon';
 import {FactorySelect, ProModeSelect, ProNumSelect, RecipeSelect} from './ResultRecipeSelectors';
+import {Recipe} from './RecipeDisplay';
 import {ResultRatioInput} from './ResultRatioInput';
 import {getGrossOutput} from './resultGraphHelpers';
 
@@ -21,6 +22,12 @@ export function ResultTableRow({
     result_amount,
 }) {
     const gross_output = getGrossOutput(result_amount, item_graph, row.item_name);
+    const mineralized_recipe = {
+        名称: `${row.item_name}原矿化补充`,
+        原料: {},
+        产物: {[row.item_name]: 1},
+        时间: 1,
+    };
 
     return <tr className={row.row_class}>
         <td>
@@ -67,17 +74,23 @@ export function ResultTableRow({
                 </div>
             }
         </td>
-        <td><RecipeSelect item={row.item_name}
-                          onChange={onChangeRecipe}
-                          show_effective_recipe={settings.show_effective_recipe}
-                          choice={row.recipe_choice}/></td>
-        <td><ProModeSelect recipe_id={row.recipe_id}
+        <td>
+            {row.is_mineralized ? <div className="px-2 py-0"><Recipe recipe={mineralized_recipe}/></div> :
+                <RecipeSelect item={row.item_name}
+                              onChange={onChangeRecipe}
+                              show_effective_recipe={settings.show_effective_recipe}
+                              choice={row.recipe_choice}/>}
+        </td>
+        <td>{row.is_mineralized ||
+            <ProModeSelect recipe_id={row.recipe_id}
                            onChange={onChangeProMode}
-                           choice={row.proliferator_mode}/></td>
-        <td><ProNumSelect onChange={onChangeProNum}
+                           choice={row.proliferator_mode}/>}</td>
+        <td><ProNumSelect includeNone={row.is_mineralized}
+                          onChange={onChangeProNum}
                           choice={row.proliferator_points}/></td>
-        <td><FactorySelect recipe_id={row.recipe_id}
+        <td>{row.is_mineralized ||
+            <FactorySelect recipe_id={row.recipe_id}
                            onChange={onChangeFactory}
-                           choice={row.building_choice}/></td>
+                           choice={row.building_choice}/>}</td>
     </tr>;
 }

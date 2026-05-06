@@ -37,8 +37,6 @@ type ExternalSupplyEntry = {
     amount: number;
     source: 'mineralized';
     sourceLabel: string;
-    proliferatorPoints: number;
-    editablePoints: boolean;
 };
 
 function areSidebarMetricsEqual(left?: SidebarMetrics, right?: SidebarMetrics): boolean {
@@ -279,16 +277,6 @@ export function Result({
         set_settings({"mineralize_list": clearMineralizedItems()});
     }
 
-    function update_external_supply_proliferator_points(item: string, points: number) {
-        rememberComparisonBaseline();
-        set_settings({
-            "external_supply_proliferator_points": {
-                ...(settings.external_supply_proliferator_points || {}),
-                [item]: points,
-            },
-        });
-    }
-
     const {
         building_list,
         energy_cost,
@@ -351,8 +339,6 @@ export function Result({
                     amount,
                     source: 'mineralized',
                     sourceLabel: '原矿化补充',
-                    proliferatorPoints: current_settings.external_supply_proliferator_points?.[item] || 0,
-                    editablePoints: true,
                 });
             }
         });
@@ -488,7 +474,6 @@ export function Result({
                 miner_energy_cost={miner_energy_cost}
                 previous_sidebar_metrics={previous_sidebar_metrics}
                 external_supply_entries={external_supply_entries}
-                onChangeExternalSupplyProliferatorPoints={update_external_supply_proliferator_points}
                 raw_material_list={raw_material_list}
                 show_item_names={settings.show_sidebar_item_names}
                 surplus_list={lp_surplus_list}

@@ -145,6 +145,8 @@ export function buildCalculationSnapshot({
     const scheme_data = buildNormalizedSchemeData(effective_game_data, raw_scheme_data);
     const external_supply_proliferator_points = buildExternalSupplyProliferatorPoints(
         settings,
+        scheme_data,
+        item_data,
         source_external_supply_proliferator_points
     );
     const proliferator_price = buildProliferatorPrice(

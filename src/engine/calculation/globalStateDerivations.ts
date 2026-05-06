@@ -73,18 +73,33 @@ export function getNaturalLineProliferatorPoints(row: Settings['natural_producti
     return row["增产模式"] === 0 ? 0 : row["增产点数"];
 }
 
+export function getMineralizedItemProliferatorPoints(
+    settings: Settings,
+    scheme_data: SchemeData,
+    item_data: ItemDataIndex,
+    item: string
+): number {
+    const recipe_choice = scheme_data.item_recipe_choices[item];
+    const recipe_id = item_data[item]?.[recipe_choice];
+    if (recipe_id === undefined) {
+        return Number(settings.external_supply_proliferator_points?.[item] || 0);
+    }
+    return Number(scheme_data.scheme_for_recipe[recipe_id]["增产点数"] || 0);
+}
+
 export function buildExternalSupplyProliferatorPoints(
     settings: Settings,
+    scheme_data: SchemeData,
+    item_data: ItemDataIndex,
     source_points?: ProliferatorSupplyPoints
 ): ProliferatorSupplyPoints {
     if (source_points) {
         return {...source_points};
     }
-    const configured_points = settings.external_supply_proliferator_points || {};
     return Object.fromEntries(
         getExternalSupplyItemNames(settings).map(item => [
             item,
-            Number(configured_points[item] || 0),
+            getMineralizedItemProliferatorPoints(settings, scheme_data, item_data, item),
         ])
     );
 }
@@ -94,7 +109,6 @@ export function buildExternalSupplyPointSources(
     result_dict: NumericMap
 ): Array<{item: string; amount: number; proliferatorPoints: number}> {
     const settings = snapshot.settings;
-    const configured_points = settings.external_supply_proliferator_points || {};
     const time_tick = settings.is_time_unit_minute ? 60 : 1;
     const sources: Array<{item: string; amount: number; proliferatorPoints: number}> = [];
 
@@ -106,7 +120,12 @@ export function buildExternalSupplyPointSources(
             sources.push({
                 item,
                 amount,
-                proliferatorPoints: Number(configured_points[item] || 0),
+                proliferatorPoints: getMineralizedItemProliferatorPoints(
+                    settings,
+                    snapshot.scheme_data,
+                    snapshot.item_data,
+                    item
+                ),
             });
             return;
         }
