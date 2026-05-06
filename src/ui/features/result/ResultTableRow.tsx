@@ -25,8 +25,8 @@ export function ResultTableRow({
     const mineralized_recipe = {
         名称: `${row.item_name}原矿化补充`,
         原料: {},
-        产物: {[row.item_name]: 1},
-        时间: 1,
+        产物: {[row.item_name]: gross_output},
+        时间: settings.is_time_unit_minute ? 60 : 1,
     };
 
     return <tr className={row.row_class}>

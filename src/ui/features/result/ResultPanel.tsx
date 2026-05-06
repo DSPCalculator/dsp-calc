@@ -240,7 +240,7 @@ export function Result({
         }));
     }
 
-    function update_recipe_setting(recipe_id, field, value) {
+    function update_recipe_settings(recipe_id, recipe_setting_patch) {
         rememberComparisonBaseline();
         set_scheme_data(old_scheme_data => ({
             ...old_scheme_data,
@@ -250,10 +250,22 @@ export function Result({
                 }
                 return {
                     ...recipe_setting,
-                    [field]: value,
+                    ...recipe_setting_patch,
                 };
             }),
         }));
+    }
+
+    function update_recipe_setting(recipe_id, field, value) {
+        update_recipe_settings(recipe_id, {[field]: value});
+    }
+
+    function update_mineralized_pro_num(recipe_id: number, value: number) {
+        const points = Number(value);
+        update_recipe_settings(recipe_id, {
+            "增产点数": points,
+            ...(points === 0 ? {"增产模式": 0} : {}),
+        });
     }
 
     function mineralize(item) {
@@ -413,7 +425,9 @@ export function Result({
             settings={settings}
             onChangeFactory={row_actions.change_factory}
             onChangeProMode={row_actions.change_pro_mode}
-            onChangeProNum={row_actions.change_pro_num}
+            onChangeProNum={row.is_mineralized
+                ? (value) => update_mineralized_pro_num(row.recipe_id, value)
+                : row_actions.change_pro_num}
             onChangeRecipe={row_actions.change_recipe}
             onMineralize={mineralize}
             onSplitProductionLine={split_production_line}
