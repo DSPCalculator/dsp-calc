@@ -10,28 +10,29 @@
   - `src/engine`：数据装配、方案数据、计算逻辑、求解器适配、业务类型
   - `src/ui`：React 入口、Provider、页面功能、可复用组件、UI 类型
   - `src/lib`：无业务语义的小型通用工具
-- 当前没有 `test` 脚本；真实质量门槛是：
+- 当前没有 `test` 脚本；常用质量命令是：
   - `npm run typecheck`
   - `npm run lint`
   - `npm run build`
 
 ## 硬性规则
 
-### 1. 双平台硬性验收
+### 1. 分级验证与 Windows 本机优先
 
-**凡是影响运行时代码、构建配置、脚本入口、依赖版本、锁文件、Vite 配置、平台原生包逻辑的改动，必须同时满足以下条件后，才允许声称“已完成”“已修复”“可运行”：**
+**本仓库是 Vite 热重载前端项目，不要把 `build` 当作每次代码修改后的默认验证。**
 
-1. Linux / WSL 下可通过：
-   - `npm run typecheck`
-   - `npm run lint`
-   - `npm run build`
-2. Windows 下可启动成功：
-   - `"C:\Program Files\nodejs\npm.cmd" run dev`
-3. 如果本轮任务明确涉及预览或生产产物行为，还要额外验证：
-   - Linux / WSL：`npm run preview`
-   - 或用户要求的等价验证方式
+1. 普通 UI、样式、文案、轻交互、计算逻辑、数据逻辑改动：
+   - 优先复用用户常驻的 `5173` 开发服务器，通过热重载和页面行为验证。
+   - 按改动风险补充 Windows 本机 `typecheck` / `lint`，但不默认执行 `build`。
+2. 涉及以下内容时，才必须执行 Windows 本机 `build`：
+   - `package.json`、`package-lock.json`、依赖版本、锁文件。
+   - `vite.config.ts`、`tsconfig*`、`eslint.config.js`、构建脚本、启动脚本。
+   - `scripts/ensure-platform-build-deps.cjs`、平台原生包逻辑。
+   - 图标资产、图标 sprite、`public/icon/*`、`icons:generate` 产物。
+   - 发布、预览、生产产物、分包、动态导入、`BASE_URL` 等只在构建产物中体现的行为。
+3. 如需启动链路验证，优先复用用户已在 `5173` 运行的实例；不要额外启动 `npm run dev`，除非用户明确要求。
 
-**没有同时满足 Win + Linux 验证证据时，禁止对外表述为“可运行”。**
+**没有 Windows 本机验证证据时，禁止对外表述为“已构建”“生产产物可用”“启动链路已通过”。**
 
 ### 2. 禁止凭经验假设
 
@@ -51,7 +52,15 @@
 ### 工具链规则
 
 - 默认使用 `npm`。
-- 当前 Vite 主线是 `5.4.x`，不要为了追版本号无脑切到更高大版本；必须优先保证 Win / Linux 双平台稳定运行。
+- **编译、构建、图标生成、预览和启动链路验证必须优先使用 Windows 本机 Node/npm 环境执行**，不要在 WSL 里运行这类命令作为主要验证依据。
+- WSL 只用于 `rg`、`git diff`、读取文件、轻量脚本分析等不依赖平台原生包的操作；涉及 `sharp`、`esbuild`、`rollup`、Vite 构建产物时，必须切回 Windows 本机环境。
+- 从 WSL 调用 Windows npm 时使用：
+  ```bat
+  "C:\Program Files\nodejs\npm.cmd" run typecheck
+  "C:\Program Files\nodejs\npm.cmd" run lint
+  "C:\Program Files\nodejs\npm.cmd" run build
+  ```
+- 当前 Vite 主线是 `5.4.x`，不要为了追版本号无脑切到更高大版本；必须优先保证 Windows 本机运行稳定，跨平台改动再按任务需要补充额外验证。
 - 当前 ESLint 使用 `flat config`，配置文件是 `eslint.config.js`，不要再新增 `.eslintrc.*`。
 - 当前 `dev/build/preview` 入口都依赖 `scripts/ensure-platform-build-deps.cjs` 先补齐平台原生包，再启动 Vite。
 
@@ -99,7 +108,7 @@ npm run preview
 
 ### 处理原则
 
-- **修改 `package.json`、Vite 版本、构建脚本、原生包逻辑时，必须同步考虑 Win / Linux 两侧。**
+- **修改 `package.json`、Vite 版本、构建脚本、原生包逻辑时，必须同步考虑 Windows 本机环境。**
 - 只要改动涉及：
   - `package.json`
   - `package-lock.json`
@@ -107,7 +116,7 @@ npm run preview
   - `scripts/ensure-platform-build-deps.cjs`
   - `vite.config.ts`
   - `optionalDependencies`
-  就必须做双平台验证。
+  就必须做 Windows 本机验证。
 
 ### 锁文件规则
 
@@ -173,21 +182,30 @@ src/
 
 ## 验证规则
 
-### 完成前最低门槛
+### 完成前验证分级
 
-对代码、数据、构建配置、脚本、依赖、锁文件的改动，至少执行：
+不要固定套用 `typecheck` / `lint` / `build` 三连。按改动性质选择最低充分验证：
 
-```bash
-npm run typecheck
-npm run lint
-npm run build
-```
+1. 纯 UI / 样式 / 文案 / 轻交互：
+   - 默认通过已有 `5173` 开发服务器热重载验证页面行为。
+   - 只有改动触碰类型复杂逻辑或公共组件契约时，才补 Windows 本机 `typecheck`。
+2. 计算逻辑 / 数据装配 / 状态流转：
+   - 至少执行 Windows 本机 `typecheck`。
+   - 如改动涉及 lint 敏感结构、公共工具或大范围重构，再补 Windows 本机 `lint`。
+3. 依赖版本 / 锁文件 / 构建配置 / 启动脚本 / Vite 配置 / 平台原生包：
+   - 必须执行 Windows 本机 `typecheck`、`lint`、`build`。
+4. 图标资产 / 图标 sprite / `icons:generate` / `public/icon/*`：
+   - 必须执行 Windows 本机 `npm run icons:generate` 或 `npm run build`。
+   - 验证输出中不得出现新增 `missing icon asset`。
+5. 发布、预览或生产产物行为：
+   - 必须执行 Windows 本机 `build`。
+   - 如本轮明确涉及预览行为，再执行 Windows 本机 `preview` 或用户要求的等价验证。
 
 ### 热重载与本地运行约定
 
 - 修改完成后，必须先判断本轮改动是否真的需要编译；不要把 `typecheck` / `lint` / `build` 当成默认第一反应。
 - 大多数纯 UI / 样式 / 布局 / 文案 / 轻交互改动都属于热重载场景，默认采用 `save -> inspect -> adjust`，无需额外编译。
-- 只有当改动影响类型系统、Lint 规则、构建产物、依赖、平台原生包、构建配置、启动链路，或热重载不足以证明结果时，才执行 `typecheck` / `lint` / `build`。
+- 只有当改动影响类型系统、Lint 规则、构建产物、依赖、平台原生包、构建配置、启动链路、图标 sprite，或热重载不足以证明结果时，才执行对应验证命令。
 - 用户默认已经在 `5173` 持有开发服务器；除非用户明确要求，否则代理**不要额外执行** `npm run dev`、`"C:\Program Files\nodejs\npm.cmd" run dev` 或其他 `run` 类启动命令。
 
 ### Windows 运行验证
@@ -218,7 +236,7 @@ npm run build
 
 - 改了哪些文件
 - 实际执行了哪些验证命令
-- Win / Linux 哪些验证已通过
+- Windows 本机哪些验证已通过
 - 哪些内容未验证
 
 ## Git 提交规则
@@ -246,7 +264,7 @@ npm run build
 **提交流程：**
 - 先检查 `git status --short`，明确本轮改动边界。
 - 先判断当前工作区里的改动是否属于同一个最小逻辑单元；如果不是，必须先拆分提交计划，再执行 `git add`。
-- 提交前必须先完成本仓库要求的验证；涉及运行时代码、构建链路、依赖、配置时，必须同时满足 Linux/WSL 与 Windows 的验证要求后才能声称完成。
+- 提交前必须先完成本仓库要求的分级验证；涉及构建链路、依赖、配置、图标 sprite 时，必须具备 Windows 本机验证证据后才能声称完成。
 - 提交后再次执行 `git status --short`，确认工作区状态符合预期。
 
 **职责要求：**
@@ -273,10 +291,10 @@ npm run build
    - `src/engine/data/gameData.ts`
 2. 任何计算结果变化都应联动检查：
    - `src/ui/features/result/*`
-3. 改动后必须至少通过：
-   - `npm run typecheck`
-   - `npm run lint`
-   - `npm run build`
+3. 改动后按风险执行分级验证：
+   - 至少执行 Windows 本机 `typecheck`
+   - 如触碰公共工具、大范围重构或 lint 敏感结构，再执行 Windows 本机 `lint`
+   - 不默认执行 `build`，除非计算改动同时影响生产产物、构建配置或发布行为
 
 ### 修改界面逻辑
 
@@ -297,8 +315,8 @@ npm run build
    - `vite.config.ts`
    - `eslint.config.js`
    - `scripts/ensure-platform-build-deps.cjs`
-2. 这类改动必须执行双平台验证
-3. 没有 Win / Linux 双平台证据时，禁止声称“已修复”
+2. 这类改动必须执行 Windows 本机 `typecheck`、`lint`、`build`
+3. 没有 Windows 本机验证证据时，禁止声称“已修复”
 
 ## 代理工作注意事项
 
