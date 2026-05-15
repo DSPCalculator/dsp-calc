@@ -5638,185 +5638,6 @@
         2305,
         2318
       ],
-      "Name": "交互塔",
-      "Items": [
-        8016
-      ],
-      "ItemCounts": [
-        2
-      ],
-      "Results": [
-        8021
-      ],
-      "ResultCounts": [
-        5
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 1,
-      "IconName": "interaction-tower"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "矿物复制塔",
-      "Items": [
-        8016
-      ],
-      "ItemCounts": [
-        2
-      ],
-      "Results": [
-        8022
-      ],
-      "ResultCounts": [
-        10
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 1,
-      "IconName": "mineral-copy-tower"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "点数聚集塔",
-      "Items": [
-        8016
-      ],
-      "ItemCounts": [
-        2
-      ],
-      "Results": [
-        8023
-      ],
-      "ResultCounts": [
-        3
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 1,
-      "IconName": "point-aggregate-tower"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "转化塔",
-      "Items": [
-        8016
-      ],
-      "ItemCounts": [
-        2
-      ],
-      "Results": [
-        8024
-      ],
-      "ResultCounts": [
-        5
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 1,
-      "IconName": "conversion-tower"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "精馏塔",
-      "Items": [
-        8016
-      ],
-      "ItemCounts": [
-        2
-      ],
-      "Results": [
-        8025
-      ],
-      "ResultCounts": [
-        5
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 1,
-      "IconName": "deconstruction-tower"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "行星内物流交互站",
-      "Items": [
-        2103,
-        8021
-      ],
-      "ItemCounts": [
-        1,
-        12
-      ],
-      "Results": [
-        8031
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 1200,
-      "Proliferator": 1,
-      "IconName": "interaction-station"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
-      "Name": "星际物流交互站",
-      "Items": [
-        2104,
-        8021
-      ],
-      "ItemCounts": [
-        1,
-        12
-      ],
-      "Results": [
-        8032
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 1800,
-      "Proliferator": 1,
-      "IconName": "interstellar-interaction-station"
-    },
-    {
-      "Type": 4,
-      "Factories": [
-        2303,
-        2304,
-        2305,
-        2318
-      ],
       "Name": "制造台 快速组装",
       "Items": [
         9500
@@ -6287,42 +6108,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]铁矿",
-      "Items": [
-        1001
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1001
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1001,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "iron-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2301,
         2316
       ],
@@ -6342,105 +6127,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]铜矿",
-      "Items": [
-        1002
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1002
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1002,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "copper-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        2301,
-        2316
-      ],
-      "Name": "[无中生有]分形硅石",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        1013
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "fractal-silica"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]硅石",
-      "Items": [
-        1003
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1003,
-        1013
-      ],
-      "ResultCounts": [
-        2.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1003,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [
-        {
-          "OutputID": 1013,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.01
-        }
-      ],
-      "IconName": "silicium-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2301,
         2316
       ],
@@ -6455,42 +6141,6 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "titanium-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]钛石",
-      "Items": [
-        1004
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1004
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1004,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
       "IconName": "titanium-ore"
     },
     {
@@ -6515,57 +6165,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]石矿",
-      "Items": [
-        1005
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1005,
-        1003,
-        1004
-      ],
-      "ResultCounts": [
-        2.0,
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1005,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [
-        {
-          "OutputID": 1003,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.01
-        },
-        {
-          "OutputID": 1004,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.01
-        }
-      ],
-      "IconName": "stone-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2301,
         2316
       ],
@@ -6580,50 +6179,6 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "coal-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]煤矿",
-      "Items": [
-        1006
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1006,
-        1112
-      ],
-      "ResultCounts": [
-        2.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1006,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [
-        {
-          "OutputID": 1112,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.01
-        }
-      ],
       "IconName": "coal-ore"
     },
     {
@@ -6648,42 +6203,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]木材",
-      "Items": [
-        1030
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1030
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1030,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "wood"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         0,
         1
       ],
@@ -6698,42 +6217,6 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "plant-fuel"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]植物燃料",
-      "Items": [
-        1031
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1031
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1031,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
       "IconName": "plant-fuel"
     },
     {
@@ -6759,42 +6242,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]可燃冰",
-      "Items": [
-        1011
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1011
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1011,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "gas-hydrate"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2301,
         2316
       ],
@@ -6814,73 +6261,20 @@
     {
       "Type": -1,
       "Factories": [
-        8022
+        2301,
+        2316
       ],
-      "Name": "[矿物复制]金伯利矿石",
-      "Items": [
-        1012
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1012
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1012,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "diamond-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]分形硅石",
-      "Items": [
-        1013
-      ],
-      "ItemCounts": [
-        1.0
-      ],
+      "Name": "[无中生有]分形硅石",
+      "Items": [],
+      "ItemCounts": [],
       "Results": [
         1013
       ],
       "ResultCounts": [
-        2.0
+        1
       ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1013,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
+      "TimeSpend": 60,
+      "Proliferator": 0,
       "IconName": "fractal-silica"
     },
     {
@@ -6946,42 +6340,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]光栅石",
-      "Items": [
-        1014
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1014
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1014,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "grating-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2301,
         2316
       ],
@@ -6996,42 +6354,6 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "bamboo-crystal"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]刺笋结晶",
-      "Items": [
-        1015
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1015
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1015,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
       "IconName": "bamboo-crystal"
     },
     {
@@ -7092,42 +6414,6 @@
       ],
       "TimeSpend": 300,
       "Proliferator": 4,
-      "IconName": "mono-mag-ore"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]单极磁石",
-      "Items": [
-        1016
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1016
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1016,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
       "IconName": "mono-mag-ore"
     },
     {
@@ -7583,42 +6869,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]水",
-      "Items": [
-        1000
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1000
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1000,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "water"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2307
       ],
       "Name": "[无中生有]原油",
@@ -7637,166 +6887,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]原油",
-      "Items": [
-        1007
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1007
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1007,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "oil"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]硫酸",
-      "Items": [
-        1116
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1116
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1116,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "sulphuric-acid"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]氢",
-      "Items": [
-        1120
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1120,
-        1121
-      ],
-      "ResultCounts": [
-        2.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1120,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [
-        {
-          "OutputID": 1121,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.01
-        }
-      ],
-      "IconName": "hydrogen"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]重氢",
-      "Items": [
-        1121
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1121,
-        1120
-      ],
-      "ResultCounts": [
-        2.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1121,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [
-        {
-          "OutputID": 1120,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.01
-        }
-      ],
-      "IconName": "deuterium"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         1
       ],
       "Name": "[无中生有]反物质",
@@ -7810,42 +6900,6 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "anti-matter"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]反物质",
-      "Items": [
-        1122
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1122
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1122,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
       "IconName": "anti-matter"
     },
     {
@@ -7909,42 +6963,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]临界光子",
-      "Items": [
-        1208
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1208
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1208,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "photon-capacitor-full"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         1
       ],
       "Name": "[无中生有]液氢燃料棒",
@@ -7958,42 +6976,6 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "hydrogen-energy-fuel"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]液氢燃料棒",
-      "Items": [
-        1801
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1802
-      ],
-      "ResultCounts": [
-        0.102225251
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1802,
-          "OutputCount": 0.102225251,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
       "IconName": "hydrogen-energy-fuel"
     },
     {
@@ -8017,49 +6999,6 @@
     {
       "Type": -1,
       "Factories": [
-        8024
-      ],
-      "Name": "[转化]氘核燃料棒",
-      "Items": [
-        1802
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1801,
-        1803
-      ],
-      "ResultCounts": [
-        0.09941156,
-        0.155330569
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1801,
-          "OutputCount": 0.09941156,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 1803,
-          "OutputCount": 0.155330569,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "deuterium-energy-fuel"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         1
       ],
       "Name": "[无中生有]反物质燃料棒",
@@ -8074,85 +7013,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "antimatter-energy-fuel"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]反物质燃料棒",
-      "Items": [
-        1803
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1802,
-        1804
-      ],
-      "ResultCounts": [
-        0.0464992337,
-        0.121091776
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1802,
-          "OutputCount": 0.0464992337,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 1804,
-          "OutputCount": 0.121091776,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "antimatter-energy-fuel"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]奇异湮灭燃料棒",
-      "Items": [
-        1804
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1803
-      ],
-      "ResultCounts": [
-        16.4864216
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1803,
-          "OutputCount": 16.4864216,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "virtual-energy-fuel"
     },
     {
       "Type": -1,
@@ -8211,42 +7071,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]有机晶体",
-      "Items": [
-        1117
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1117
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1117,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "crystal-rubber"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         1
       ],
       "Name": "[无中生有]钛晶石",
@@ -8283,42 +7107,6 @@
     {
       "Type": -1,
       "Factories": [
-        8024
-      ],
-      "Name": "[转化]燃烧单元",
-      "Items": [
-        1128
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1129
-      ],
-      "ResultCounts": [
-        0.2230767
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1129,
-          "OutputCount": 0.2230767,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "explosive"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         1
       ],
       "Name": "[无中生有]爆破单元",
@@ -8337,49 +7125,6 @@
     {
       "Type": -1,
       "Factories": [
-        8024
-      ],
-      "Name": "[转化]爆破单元",
-      "Items": [
-        1129
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1128,
-        1130
-      ],
-      "ResultCounts": [
-        0.458589,
-        0.7165453
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1128,
-          "OutputCount": 0.458589,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 1130,
-          "OutputCount": 0.7165453,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "high-explosive"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         1
       ],
       "Name": "[无中生有]晶石爆破单元",
@@ -8393,42 +7138,6 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "particle-explosive"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]晶石爆破单元",
-      "Items": [
-        1130
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1129
-      ],
-      "ResultCounts": [
-        2.6484015
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1129,
-          "OutputCount": 2.6484015,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
       "IconName": "particle-explosive"
     },
     {
@@ -8542,121 +7251,6 @@
     {
       "Type": -1,
       "Factories": [
-        8024
-      ],
-      "Name": "[转化]配送运输机",
-      "Items": [
-        5003
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5001
-      ],
-      "ResultCounts": [
-        0.3544118
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5001,
-          "OutputCount": 0.3544118,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "delivery-drone"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]物流运输机",
-      "Items": [
-        5001
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5003,
-        5002
-      ],
-      "ResultCounts": [
-        0.4473629,
-        0.174751148
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5003,
-          "OutputCount": 0.4473629,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 5002,
-          "OutputCount": 0.174751148,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "logistic-drone"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]星际物流运输船",
-      "Items": [
-        5002
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5001
-      ],
-      "ResultCounts": [
-        10.5375528
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5001,
-          "OutputCount": 10.5375528,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "logistic-vessel"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         1
       ],
       "Name": "[无中生有]地基",
@@ -8675,846 +7269,6 @@
     {
       "Type": -1,
       "Factories": [
-        8024
-      ],
-      "Name": "[转化]增产剂 Mk.I",
-      "Items": [
-        1141
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1142
-      ],
-      "ResultCounts": [
-        0.166508645
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1142,
-          "OutputCount": 0.166508645,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "accelerator-1"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]增产剂 Mk.II",
-      "Items": [
-        1142
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1141,
-        1143
-      ],
-      "ResultCounts": [
-        0.3218817,
-        0.5029402
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1141,
-          "OutputCount": 0.3218817,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 1143,
-          "OutputCount": 0.5029402,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "accelerator-2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]增产剂 Mk.III",
-      "Items": [
-        1143
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1142
-      ],
-      "ResultCounts": [
-        3.87005043
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1142,
-          "OutputCount": 3.87005043,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "accelerator-3"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]机枪弹箱",
-      "Items": [
-        1601
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1602
-      ],
-      "ResultCounts": [
-        0.330115676
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1602,
-          "OutputCount": 0.330115676,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "bullet"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]钛化弹箱",
-      "Items": [
-        1602
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1601,
-        1603
-      ],
-      "ResultCounts": [
-        0.398659021,
-        0.6229047
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1601,
-          "OutputCount": 0.398659021,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 1603,
-          "OutputCount": 0.6229047,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "bullet-titanium"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]超合金弹箱",
-      "Items": [
-        1603
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1602
-      ],
-      "ResultCounts": [
-        2.99948978
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1602,
-          "OutputCount": 2.99948978,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "bullet-alloy"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]炮弹组",
-      "Items": [
-        1604
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1605
-      ],
-      "ResultCounts": [
-        0.243191719
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1605,
-          "OutputCount": 0.243191719,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "cannonball"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]高爆炮弹组",
-      "Items": [
-        1605
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1604,
-        1606
-      ],
-      "ResultCounts": [
-        0.359332085,
-        0.5614564
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1604,
-          "OutputCount": 0.359332085,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 1606,
-          "OutputCount": 0.5614564,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "cannonball-cluster"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]晶石炮弹组",
-      "Items": [
-        1606
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1605
-      ],
-      "ResultCounts": [
-        3.40652156
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1605,
-          "OutputCount": 3.40652156,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "cannonball-alloy"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]等离子胶囊",
-      "Items": [
-        1607
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1608
-      ],
-      "ResultCounts": [
-        0.0270951465
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1608,
-          "OutputCount": 0.0270951465,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "capsule-energy"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]反物质胶囊",
-      "Items": [
-        1608
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1607
-      ],
-      "ResultCounts": [
-        36.90698
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1607,
-          "OutputCount": 36.90698,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "capsule-antimatter"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]导弹组",
-      "Items": [
-        1609
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1610
-      ],
-      "ResultCounts": [
-        0.197791085
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1610,
-          "OutputCount": 0.197791085,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "missile"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]超音速导弹组",
-      "Items": [
-        1610
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1609,
-        1611
-      ],
-      "ResultCounts": [
-        0.3702549,
-        0.5785233
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1609,
-          "OutputCount": 0.3702549,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 1611,
-          "OutputCount": 0.5785233,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "missile-supersonic"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]引力导弹组",
-      "Items": [
-        1611
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1610
-      ],
-      "ResultCounts": [
-        3.33049154
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1610,
-          "OutputCount": 3.33049154,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "missile-graviton"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]干扰胶囊",
-      "Items": [
-        1612
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1613
-      ],
-      "ResultCounts": [
-        0.447767019
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1613,
-          "OutputCount": 0.447767019,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "em-disturb"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]压制胶囊",
-      "Items": [
-        1613
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        1612
-      ],
-      "ResultCounts": [
-        2.23330426
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 1612,
-          "OutputCount": 2.23330426,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "em-suppress"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]原型机",
-      "Items": [
-        5101
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5102,
-        5103
-      ],
-      "ResultCounts": [
-        0.2751038,
-        0.275103778
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5102,
-          "OutputCount": 0.2751038,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 5103,
-          "OutputCount": 0.275103778,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "fighter-shield"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]精准无人机",
-      "Items": [
-        5102
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5101,
-        5103,
-        5111
-      ],
-      "ResultCounts": [
-        0.402313918,
-        0.5028924,
-        0.314307719
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5101,
-          "OutputCount": 0.402313918,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 5103,
-          "OutputCount": 0.5028924,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 5111,
-          "OutputCount": 0.314307719,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "fighter-plasma"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]攻击无人机",
-      "Items": [
-        5103
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5101,
-        5102,
-        5111
-      ],
-      "ResultCounts": [
-        0.7214431,
-        0.9018038,
-        0.563627362
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5101,
-          "OutputCount": 0.7214431,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 5102,
-          "OutputCount": 0.9018038,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 5111,
-          "OutputCount": 0.563627362,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "fighter-laser"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]护卫舰",
-      "Items": [
-        5111
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5102,
-        5103,
-        5112
-      ],
-      "ResultCounts": [
-        0.7508603,
-        0.7508603,
-        0.586609542
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5102,
-          "OutputCount": 0.7508603,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 5103,
-          "OutputCount": 0.7508603,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 5112,
-          "OutputCount": 0.586609542,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "warship-plasma"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]驱逐舰",
-      "Items": [
-        5112
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5111,
-        9511
-      ],
-      "ResultCounts": [
-        0.06466405,
-        0.0202075168
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5111,
-          "OutputCount": 0.06466405,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 9511,
-          "OutputCount": 0.0202075168,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "warship-laser"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         0,
         1
       ],
@@ -9529,85 +7283,6 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "memory"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]黑雾矩阵",
-      "Items": [
-        5201
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5201
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5201,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "memory"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]黑雾矩阵",
-      "Items": [
-        5201
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5206,
-        5203
-      ],
-      "ResultCounts": [
-        1.33056128,
-        0.519750535
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5206,
-          "OutputCount": 1.33056128,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 5203,
-          "OutputCount": 0.519750535,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
       "IconName": "memory"
     },
     {
@@ -9632,85 +7307,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]硅基神经元",
-      "Items": [
-        5202
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5202
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5202,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "silicon-neuron"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]硅基神经元",
-      "Items": [
-        5202
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5203,
-        5204
-      ],
-      "ResultCounts": [
-        0.7398844,
-        1.15606928
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5203,
-          "OutputCount": 0.7398844,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 5204,
-          "OutputCount": 1.15606928,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "silicon-neuron"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         0,
         1
       ],
@@ -9725,85 +7321,6 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "reassembler"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]物质重组器",
-      "Items": [
-        5203
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5203
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5203,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "reassembler"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]物质重组器",
-      "Items": [
-        5203
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5201,
-        5202
-      ],
-      "ResultCounts": [
-        1.2521739,
-        0.9782608
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5201,
-          "OutputCount": 1.2521739,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 5202,
-          "OutputCount": 0.9782608,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
       "IconName": "reassembler"
     },
     {
@@ -9828,85 +7345,6 @@
     {
       "Type": -1,
       "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]负熵奇点",
-      "Items": [
-        5204
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5204
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5204,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "negentropy"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]负熵奇点",
-      "Items": [
-        5204
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5202,
-        5205
-      ],
-      "ResultCounts": [
-        0.283687949,
-        0.443262428
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5202,
-          "OutputCount": 0.283687949,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 5205,
-          "OutputCount": 0.443262428,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "negentropy"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         0,
         1
       ],
@@ -9921,78 +7359,6 @@
       ],
       "TimeSpend": 60,
       "Proliferator": 0,
-      "IconName": "virtual-particle"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]核心素",
-      "Items": [
-        5205
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5205
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5205,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "virtual-particle"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]核心素",
-      "Items": [
-        5205
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5204
-      ],
-      "ResultCounts": [
-        4.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5204,
-          "OutputCount": 4.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
       "IconName": "virtual-particle"
     },
     {
@@ -10013,1521 +7379,6 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "energy-fragment"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8022
-      ],
-      "Name": "[矿物复制]能量碎片",
-      "Items": [
-        5206
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5206
-      ],
-      "ResultCounts": [
-        2.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5206,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "energy-fragment"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]能量碎片",
-      "Items": [
-        5206
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5201
-      ],
-      "ResultCounts": [
-        0.8
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5201,
-          "OutputCount": 0.8,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "energy-fragment"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]传送带",
-      "Items": [
-        2001
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2002
-      ],
-      "ResultCounts": [
-        0.1605969
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2002,
-          "OutputCount": 0.1605969,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "belt-1"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]高速传送带",
-      "Items": [
-        2002
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2001,
-        2003
-      ],
-      "ResultCounts": [
-        0.3878247,
-        0.605976164
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2001,
-          "OutputCount": 0.3878247,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2003,
-          "OutputCount": 0.605976164,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "belt-2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]极速传送带",
-      "Items": [
-        2003
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2002
-      ],
-      "ResultCounts": [
-        3.197678
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2002,
-          "OutputCount": 3.197678,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "belt-3"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]分拣器",
-      "Items": [
-        2011
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2012
-      ],
-      "ResultCounts": [
-        0.457963526
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2012,
-          "OutputCount": 0.457963526,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "inserter-1"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]高速分拣器",
-      "Items": [
-        2012
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2011,
-        2013
-      ],
-      "ResultCounts": [
-        0.45957303,
-        0.718082845
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2011,
-          "OutputCount": 0.45957303,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2013,
-          "OutputCount": 0.718082845,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "inserter-2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]极速分拣器",
-      "Items": [
-        2013
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2012,
-        2014
-      ],
-      "ResultCounts": [
-        0.195295066,
-        0.305148542
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2012,
-          "OutputCount": 0.195295066,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2014,
-          "OutputCount": 0.305148542,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "inserter-3"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]集装分拣器",
-      "Items": [
-        2014
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2013
-      ],
-      "ResultCounts": [
-        6.297374
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2013,
-          "OutputCount": 6.297374,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "inserter-4"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]四向分流器",
-      "Items": [
-        2020
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2030,
-        2313,
-        2040
-      ],
-      "ResultCounts": [
-        0.229853332,
-        0.114926673,
-        0.114926666
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2030,
-          "OutputCount": 0.229853332,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2313,
-          "OutputCount": 0.114926673,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2040,
-          "OutputCount": 0.114926666,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "splitter-4dir"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]自动集装机",
-      "Items": [
-        2040
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2020,
-        2030,
-        2313
-      ],
-      "ResultCounts": [
-        3.42516661,
-        6.85033274,
-        3.42516637
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2020,
-          "OutputCount": 3.42516661,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2030,
-          "OutputCount": 6.85033274,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2313,
-          "OutputCount": 3.42516637,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "piler"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]流速监测器",
-      "Items": [
-        2030
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2020,
-        2313,
-        2040
-      ],
-      "ResultCounts": [
-        0.17555204,
-        0.17555204,
-        0.17555204
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2020,
-          "OutputCount": 0.17555204,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2313,
-          "OutputCount": 0.17555204,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2040,
-          "OutputCount": 0.17555204,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "monitor"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]喷涂机",
-      "Items": [
-        2313
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2020,
-        2030,
-        2040
-      ],
-      "ResultCounts": [
-        1.44606376,
-        2.89212751,
-        1.44606376
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2020,
-          "OutputCount": 1.44606376,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2030,
-          "OutputCount": 2.89212751,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2040,
-          "OutputCount": 1.44606376,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "spray-coater"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]物流配送器",
-      "Items": [
-        2107
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2103
-      ],
-      "ResultCounts": [
-        0.0583531559
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2103,
-          "OutputCount": 0.0583531559,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "delivery-machine"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]小型储物仓",
-      "Items": [
-        2101
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2102
-      ],
-      "ResultCounts": [
-        0.170871451
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2102,
-          "OutputCount": 0.170871451,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "storage-1"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]大型储物仓",
-      "Items": [
-        2102
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2101
-      ],
-      "ResultCounts": [
-        5.85235262
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2101,
-          "OutputCount": 5.85235262,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "storage-2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]制造台 Mk.I",
-      "Items": [
-        2303
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2304
-      ],
-      "ResultCounts": [
-        0.178666577
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2304,
-          "OutputCount": 0.178666577,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "assembler-1"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]制造台 Mk.II",
-      "Items": [
-        2304
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2303,
-        2305
-      ],
-      "ResultCounts": [
-        0.192908242,
-        0.301419139
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2303,
-          "OutputCount": 0.192908242,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2305,
-          "OutputCount": 0.301419139,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "assembler-2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]制造台 Mk.III",
-      "Items": [
-        2305
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2304,
-        2318
-      ],
-      "ResultCounts": [
-        0.5333334,
-        0.8333335
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2304,
-          "OutputCount": 0.5333334,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2318,
-          "OutputCount": 0.8333335,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "assembler-3"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]重组式制造台",
-      "Items": [
-        2318
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2305
-      ],
-      "ResultCounts": [
-        2.30185413
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2305,
-          "OutputCount": 2.30185413,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "assembler-4"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]电力感应塔",
-      "Items": [
-        2201
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2202
-      ],
-      "ResultCounts": [
-        0.07244247
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2202,
-          "OutputCount": 0.07244247,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "tesla-coil"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]无线输电塔",
-      "Items": [
-        2202
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2201,
-        2212
-      ],
-      "ResultCounts": [
-        0.340411782,
-        0.159568027
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2201,
-          "OutputCount": 0.340411782,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2212,
-          "OutputCount": 0.159568027,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "charging-pole"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]卫星配电站",
-      "Items": [
-        2212
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2202
-      ],
-      "ResultCounts": [
-        12.3792953
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2202,
-          "OutputCount": 12.3792953,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "orbital-substation"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]风力涡轮机",
-      "Items": [
-        2203
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2205,
-        2206
-      ],
-      "ResultCounts": [
-        0.237246111,
-        0.296557635
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2205,
-          "OutputCount": 0.237246111,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2206,
-          "OutputCount": 0.296557635,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "wind-turbine"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]火力发电厂",
-      "Items": [
-        2204
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2213
-      ],
-      "ResultCounts": [
-        0.153289735
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2213,
-          "OutputCount": 0.153289735,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "fuel-plant"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]微型聚变发电站",
-      "Items": [
-        2211
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2213,
-        2210
-      ],
-      "ResultCounts": [
-        0.364468127,
-        0.227792576
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2213,
-          "OutputCount": 0.364468127,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2210,
-          "OutputCount": 0.227792576,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "fusion-power-station"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]地热发电站",
-      "Items": [
-        2213
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2204,
-        2211
-      ],
-      "ResultCounts": [
-        0.253673941,
-        0.396365553
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2204,
-          "OutputCount": 0.253673941,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2211,
-          "OutputCount": 0.396365553,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "geothermal-power-station"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]采矿机",
-      "Items": [
-        2301
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2316
-      ],
-      "ResultCounts": [
-        0.004221097
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2316,
-          "OutputCount": 0.004221097,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "mining-drill"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]大型采矿机",
-      "Items": [
-        2316
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2301
-      ],
-      "ResultCounts": [
-        236.905243
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2301,
-          "OutputCount": 236.905243,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "mining-drill-mk2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]电弧熔炉",
-      "Items": [
-        2302
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2315
-      ],
-      "ResultCounts": [
-        0.0102534937
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2315,
-          "OutputCount": 0.0102534937,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "smelter"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]位面熔炉",
-      "Items": [
-        2315
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2302,
-        2319
-      ],
-      "ResultCounts": [
-        0.726812,
-        1.1356436
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2302,
-          "OutputCount": 0.726812,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2319,
-          "OutputCount": 1.1356436,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "smelter-2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]负熵熔炉",
-      "Items": [
-        2319
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2315
-      ],
-      "ResultCounts": [
-        1.75455356
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2315,
-          "OutputCount": 1.75455356,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "smelter-3"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]原油萃取站",
-      "Items": [
-        2307
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2308
-      ],
-      "ResultCounts": [
-        0.9151488
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2308,
-          "OutputCount": 0.9151488,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "oil-extractor"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]原油精炼厂",
-      "Items": [
-        2308
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2307
-      ],
-      "ResultCounts": [
-        1.09271848
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2307,
-          "OutputCount": 1.09271848,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "oil-refinery"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]化工厂",
-      "Items": [
-        2309
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2317
-      ],
-      "ResultCounts": [
-        0.04534258
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2317,
-          "OutputCount": 0.04534258,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "chemical-plant"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]量子化工厂",
-      "Items": [
-        2317
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2309
-      ],
-      "ResultCounts": [
-        22.0543251
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2309,
-          "OutputCount": 22.0543251,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "chemical-plant-2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]太阳能板",
-      "Items": [
-        2205
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2203,
-        2206
-      ],
-      "ResultCounts": [
-        1.079927,
-        1.34990871
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2203,
-          "OutputCount": 1.079927,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 2206,
-          "OutputCount": 1.34990871,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "solar-panel"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]蓄电器",
-      "Items": [
-        2206
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2203,
-        2205,
-        2209
-      ],
-      "ResultCounts": [
-        0.101849683,
-        0.101849675,
-        0.06365605
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2203,
-          "OutputCount": 0.101849683,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2205,
-          "OutputCount": 0.101849675,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2209,
-          "OutputCount": 0.06365605,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "accumulator"
     },
     {
       "Type": -1,
@@ -11594,951 +7445,6 @@
     {
       "Type": -1,
       "Factories": [
-        8024
-      ],
-      "Name": "[转化]电磁轨道弹射器",
-      "Items": [
-        2311
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2208,
-        2312,
-        2310
-      ],
-      "ResultCounts": [
-        0.182073548,
-        0.0910367742,
-        0.182073548
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2208,
-          "OutputCount": 0.182073548,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2312,
-          "OutputCount": 0.0910367742,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2310,
-          "OutputCount": 0.182073548,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "em-rail-ejector"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]射线重构站",
-      "Items": [
-        2208
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2311,
-        2312,
-        2310
-      ],
-      "ResultCounts": [
-        0.54994005,
-        0.183313355,
-        0.3666267
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2311,
-          "OutputCount": 0.54994005,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2312,
-          "OutputCount": 0.183313355,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2310,
-          "OutputCount": 0.3666267,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "ray-receiver"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]垂直发射井",
-      "Items": [
-        2312
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2311,
-        2208,
-        2310
-      ],
-      "ResultCounts": [
-        10.8939047,
-        7.26260376,
-        7.26260328
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2311,
-          "OutputCount": 10.8939047,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2208,
-          "OutputCount": 7.26260376,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2310,
-          "OutputCount": 7.26260328,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "vertical-launching-silo"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]能量枢纽",
-      "Items": [
-        2209
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2206
-      ],
-      "ResultCounts": [
-        45.4472237
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2206,
-          "OutputCount": 45.4472237,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "energy-exchanger"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]微型粒子对撞机",
-      "Items": [
-        2310
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2311,
-        2208,
-        2312
-      ],
-      "ResultCounts": [
-        1.58156514,
-        1.05437684,
-        0.527188361
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2311,
-          "OutputCount": 1.58156514,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2208,
-          "OutputCount": 1.05437684,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2312,
-          "OutputCount": 0.527188361,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "hadron-collider"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]人造恒星",
-      "Items": [
-        2210
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2211
-      ],
-      "ResultCounts": [
-        8.456537
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2211,
-          "OutputCount": 8.456537,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "fusion-reactor"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]行星内物流运输站",
-      "Items": [
-        2103
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2107,
-        2104,
-        9512
-      ],
-      "ResultCounts": [
-        1.354893,
-        0.423404038,
-        0.423404038
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2107,
-          "OutputCount": 1.354893,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2104,
-          "OutputCount": 0.423404038,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 9512,
-          "OutputCount": 0.423404038,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "logistic-station"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]星际物流运输站",
-      "Items": [
-        2104
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2103,
-        9512,
-        2105
-      ],
-      "ResultCounts": [
-        0.375534981,
-        0.469418734,
-        0.5867734
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2103,
-          "OutputCount": 0.375534981,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 9512,
-          "OutputCount": 0.469418734,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2105,
-          "OutputCount": 0.5867734,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "interstellar-logistic-station"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]轨道采集器",
-      "Items": [
-        2105
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2104,
-        9512
-      ],
-      "ResultCounts": [
-        3.03746,
-        3.03745985
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2104,
-          "OutputCount": 3.03746,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 9512,
-          "OutputCount": 3.03745985,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "orbital-collector"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]矩阵研究站",
-      "Items": [
-        2901
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2902
-      ],
-      "ResultCounts": [
-        0.0319974162
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2902,
-          "OutputCount": 0.0319974162,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "lab"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]自演化研究站",
-      "Items": [
-        2902
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2901
-      ],
-      "ResultCounts": [
-        31.2525234
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2901,
-          "OutputCount": 31.2525234,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "lab-2"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]高斯机枪塔",
-      "Items": [
-        3001
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        3003,
-        3005
-      ],
-      "ResultCounts": [
-        0.176972911,
-        0.176972926
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 3003,
-          "OutputCount": 0.176972911,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 3005,
-          "OutputCount": 0.176972926,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "turret-gauss"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]高频激光塔",
-      "Items": [
-        3002
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        3010,
-        3004
-      ],
-      "ResultCounts": [
-        0.143775642,
-        0.359439045
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 3010,
-          "OutputCount": 0.143775642,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 3004,
-          "OutputCount": 0.359439045,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "turret-laser"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]聚爆加农炮",
-      "Items": [
-        3003
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        3001,
-        3005
-      ],
-      "ResultCounts": [
-        2.57204962,
-        2.57204962
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 3001,
-          "OutputCount": 2.57204962,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 3005,
-          "OutputCount": 2.57204962,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "turret-cannon"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]磁化电浆炮",
-      "Items": [
-        3004
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        3002,
-        3010
-      ],
-      "ResultCounts": [
-        5.10204649,
-        2.04081869
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 3002,
-          "OutputCount": 5.10204649,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 3010,
-          "OutputCount": 2.04081869,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "turret-plasma"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]导弹防御塔",
-      "Items": [
-        3005
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        3001,
-        3003
-      ],
-      "ResultCounts": [
-        1.10630131,
-        1.10630119
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 3001,
-          "OutputCount": 1.10630131,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 3003,
-          "OutputCount": 1.10630119,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "turret-missile"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]干扰塔",
-      "Items": [
-        3006
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        3009,
-        3007,
-        3008
-      ],
-      "ResultCounts": [
-        0.4754782,
-        0.4754782,
-        0.4754782
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 3009,
-          "OutputCount": 0.4754782,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 3007,
-          "OutputCount": 0.4754782,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 3008,
-          "OutputCount": 0.4754782,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "turret-disturb"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]信号塔",
-      "Items": [
-        3007
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        3009,
-        3006,
-        3008
-      ],
-      "ResultCounts": [
-        0.3068115,
-        0.7670287,
-        0.306811482
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 3009,
-          "OutputCount": 0.3068115,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 3006,
-          "OutputCount": 0.7670287,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 3008,
-          "OutputCount": 0.306811482,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "turret-signal"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]行星护盾发生器",
-      "Items": [
-        3008
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        3009,
-        3007,
-        3006
-      ],
-      "ResultCounts": [
-        3.32273865,
-        3.322739,
-        8.306847
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 3009,
-          "OutputCount": 3.32273865,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 3007,
-          "OutputCount": 3.322739,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 3006,
-          "OutputCount": 8.306847,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "turret-shield"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]战场分析基站",
-      "Items": [
-        3009
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        3007,
-        3006,
-        3008
-      ],
-      "ResultCounts": [
-        0.325609446,
-        0.8140235,
-        0.3256094
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 3007,
-          "OutputCount": 0.325609446,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 3006,
-          "OutputCount": 0.8140235,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 3008,
-          "OutputCount": 0.3256094,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "battle-base"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]近程电浆塔",
-      "Items": [
-        3010
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        3002,
-        3004
-      ],
-      "ResultCounts": [
-        0.7422954,
-        0.7422953
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 3002,
-          "OutputCount": 0.7422954,
-          "SuccessRatio": 0.5
-        },
-        {
-          "OutputID": 3004,
-          "OutputCount": 0.7422953,
-          "SuccessRatio": 0.5
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "turret-plasma-ground"
-    },
-    {
-      "Type": -1,
-      "Factories": [
         2
       ],
       "Name": "[无中生有]多功能集成组件",
@@ -12553,651 +7459,16 @@
       "TimeSpend": 60,
       "Proliferator": 0,
       "IconName": "integratedcomponents"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]水滴",
-      "Items": [
-        9511
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        5112
-      ],
-      "ResultCounts": [
-        98.277565
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 5112,
-          "OutputCount": 98.277565,
-          "SuccessRatio": 1.0
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "drop1"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8024
-      ],
-      "Name": "[转化]物资交换物流站",
-      "Items": [
-        9512
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        2103,
-        2104,
-        2105
-      ],
-      "ResultCounts": [
-        0.586715639,
-        0.733394563,
-        0.9167432
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 2103,
-          "OutputCount": 0.586715639,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2104,
-          "OutputCount": 0.733394563,
-          "SuccessRatio": 0.333333343
-        },
-        {
-          "OutputID": 2105,
-          "OutputCount": 0.9167432,
-          "SuccessRatio": 0.333333343
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "exchangeLS"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]残片",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        8060
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "copy-essence"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]交互塔原胚",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        8011
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "frac-proto-normal"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8021
-      ],
-      "Name": "[建筑培养]交互塔原胚",
-      "Items": [
-        8011
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        8021,
-        8016
-      ],
-      "ResultCounts": [
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 8021,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.96
-        },
-        {
-          "OutputID": 8016,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.04
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "frac-proto-normal"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]矿物复制塔原胚",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        8012
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "frac-proto-uncommon"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8021
-      ],
-      "Name": "[建筑培养]矿物复制塔原胚",
-      "Items": [
-        8012
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        8022,
-        8016
-      ],
-      "ResultCounts": [
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 8022,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.96
-        },
-        {
-          "OutputID": 8016,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.04
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "frac-proto-uncommon"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]点数聚集塔原胚",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        8013
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "frac-proto-rare"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8021
-      ],
-      "Name": "[建筑培养]点数聚集塔原胚",
-      "Items": [
-        8013
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        8023,
-        8016
-      ],
-      "ResultCounts": [
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 8023,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.96
-        },
-        {
-          "OutputID": 8016,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.04
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "frac-proto-rare"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]转化塔原胚",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        8014
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "frac-proto-epic"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8021
-      ],
-      "Name": "[建筑培养]转化塔原胚",
-      "Items": [
-        8014
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        8024,
-        8016
-      ],
-      "ResultCounts": [
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 8024,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.96
-        },
-        {
-          "OutputID": 8016,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.04
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "frac-proto-epic"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]精馏塔原胚",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        8015
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "frac-proto-legendary"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8021
-      ],
-      "Name": "[建筑培养]精馏塔原胚",
-      "Items": [
-        8015
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        8025,
-        8016
-      ],
-      "ResultCounts": [
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 8025,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.96
-        },
-        {
-          "OutputID": 8016,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.04
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "frac-proto-legendary"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        0
-      ],
-      "Name": "[无中生有]分馏塔定向原胚",
-      "Items": [],
-      "ItemCounts": [],
-      "Results": [
-        8016
-      ],
-      "ResultCounts": [
-        1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 0,
-      "IconName": "frac-proto-directional"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8021
-      ],
-      "Name": "[建筑培养]交互塔",
-      "Items": [
-        8021
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        8011,
-        8016
-      ],
-      "ResultCounts": [
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 8011,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.96
-        },
-        {
-          "OutputID": 8016,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.04
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "interaction-tower"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8021
-      ],
-      "Name": "[建筑培养]矿物复制塔",
-      "Items": [
-        8022
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        8012,
-        8016
-      ],
-      "ResultCounts": [
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 8012,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.96
-        },
-        {
-          "OutputID": 8016,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.04
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "mineral-copy-tower"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8021
-      ],
-      "Name": "[建筑培养]点数聚集塔",
-      "Items": [
-        8023
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        8013,
-        8016
-      ],
-      "ResultCounts": [
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 8013,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.96
-        },
-        {
-          "OutputID": 8016,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.04
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "point-aggregate-tower"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8021
-      ],
-      "Name": "[建筑培养]转化塔",
-      "Items": [
-        8024
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        8014,
-        8016
-      ],
-      "ResultCounts": [
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 8014,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.96
-        },
-        {
-          "OutputID": 8016,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.04
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "conversion-tower"
-    },
-    {
-      "Type": -1,
-      "Factories": [
-        8021
-      ],
-      "Name": "[建筑培养]精馏塔",
-      "Items": [
-        8025
-      ],
-      "ItemCounts": [
-        1.0
-      ],
-      "Results": [
-        8015,
-        8016
-      ],
-      "ResultCounts": [
-        1.0,
-        1.0
-      ],
-      "TimeSpend": 0,
-      "Proliferator": 1,
-      "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.799999952,
-      "DoubleOutputRatio": 0.633,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
-      "OutputMain": [
-        {
-          "OutputID": 8015,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.96
-        },
-        {
-          "OutputID": 8016,
-          "OutputCount": 1.0,
-          "SuccessRatio": 0.04
-        }
-      ],
-      "OutputAppend": [],
-      "IconName": "deconstruction-tower"
     }
   ],
   "items": [
+    {
+      "ID": 1000,
+      "Type": 1,
+      "Name": "水",
+      "GridIndex": 1107,
+      "IconName": "water"
+    },
     {
       "ID": 1001,
       "Type": 1,
@@ -13241,18 +7512,11 @@
       "IconName": "coal-ore"
     },
     {
-      "ID": 1030,
+      "ID": 1007,
       "Type": 1,
-      "Name": "木材",
-      "GridIndex": 1714,
-      "IconName": "wood"
-    },
-    {
-      "ID": 1031,
-      "Type": 1,
-      "Name": "植物燃料",
-      "GridIndex": 1814,
-      "IconName": "plant-fuel"
+      "Name": "原油",
+      "GridIndex": 1108,
+      "IconName": "oil"
     },
     {
       "ID": 1011,
@@ -13297,11 +7561,39 @@
       "IconName": "mono-mag-ore"
     },
     {
+      "ID": 1030,
+      "Type": 1,
+      "Name": "木材",
+      "GridIndex": 1714,
+      "IconName": "wood"
+    },
+    {
+      "ID": 1031,
+      "Type": 1,
+      "Name": "植物燃料",
+      "GridIndex": 1814,
+      "IconName": "plant-fuel"
+    },
+    {
       "ID": 1101,
       "Type": 2,
       "Name": "铁块",
       "GridIndex": 1201,
       "IconName": "iron-plate"
+    },
+    {
+      "ID": 1102,
+      "Type": 2,
+      "Name": "磁铁",
+      "GridIndex": 1301,
+      "IconName": "magnet"
+    },
+    {
+      "ID": 1103,
+      "Type": 2,
+      "Name": "钢材",
+      "GridIndex": 1401,
+      "IconName": "steel-plate"
     },
     {
       "ID": 1104,
@@ -13325,6 +7617,13 @@
       "IconName": "titanium-plate"
     },
     {
+      "ID": 1107,
+      "Type": 2,
+      "Name": "钛合金",
+      "GridIndex": 1306,
+      "IconName": "titanium-alloy"
+    },
+    {
       "ID": 1108,
       "Type": 2,
       "Name": "石材",
@@ -13339,32 +7638,11 @@
       "IconName": "graphite"
     },
     {
-      "ID": 1103,
-      "Type": 2,
-      "Name": "钢材",
-      "GridIndex": 1401,
-      "IconName": "steel-plate"
-    },
-    {
-      "ID": 1107,
-      "Type": 2,
-      "Name": "钛合金",
-      "GridIndex": 1306,
-      "IconName": "titanium-alloy"
-    },
-    {
       "ID": 1110,
       "Type": 2,
       "Name": "玻璃",
       "GridIndex": 1303,
       "IconName": "glass"
-    },
-    {
-      "ID": 1119,
-      "Type": 2,
-      "Name": "钛化玻璃",
-      "GridIndex": 1509,
-      "IconName": "titan-glass"
     },
     {
       "ID": 1111,
@@ -13388,18 +7666,158 @@
       "IconName": "silicium-high-purity"
     },
     {
+      "ID": 1114,
+      "Type": 2,
+      "Name": "精炼油",
+      "GridIndex": 1208,
+      "IconName": "refined-oil"
+    },
+    {
+      "ID": 1115,
+      "Type": 2,
+      "Name": "塑料",
+      "GridIndex": 1308,
+      "IconName": "plastic"
+    },
+    {
+      "ID": 1116,
+      "Type": 2,
+      "Name": "硫酸",
+      "GridIndex": 1207,
+      "IconName": "sulphuric-acid"
+    },
+    {
+      "ID": 1117,
+      "Type": 2,
+      "Name": "有机晶体",
+      "GridIndex": 1309,
+      "IconName": "crystal-rubber"
+    },
+    {
+      "ID": 1118,
+      "Type": 2,
+      "Name": "钛晶石",
+      "GridIndex": 1409,
+      "IconName": "titan-crystal"
+    },
+    {
+      "ID": 1119,
+      "Type": 2,
+      "Name": "钛化玻璃",
+      "GridIndex": 1509,
+      "IconName": "titan-glass"
+    },
+    {
+      "ID": 1120,
+      "Type": 2,
+      "Name": "氢",
+      "GridIndex": 1109,
+      "IconName": "hydrogen"
+    },
+    {
+      "ID": 1121,
+      "Type": 2,
+      "Name": "重氢",
+      "GridIndex": 1110,
+      "IconName": "deuterium"
+    },
+    {
+      "ID": 1122,
+      "Type": 2,
+      "Name": "反物质",
+      "GridIndex": 1111,
+      "IconName": "anti-matter"
+    },
+    {
+      "ID": 1123,
+      "Type": 2,
+      "Name": "石墨烯",
+      "GridIndex": 1310,
+      "IconName": "graphene"
+    },
+    {
+      "ID": 1124,
+      "Type": 2,
+      "Name": "碳纳米管",
+      "GridIndex": 1410,
+      "IconName": "nanotube"
+    },
+    {
+      "ID": 1125,
+      "Type": 2,
+      "Name": "框架材料",
+      "GridIndex": 1709,
+      "IconName": "frame-material"
+    },
+    {
+      "ID": 1126,
+      "Type": 2,
+      "Name": "卡西米尔晶体",
+      "GridIndex": 1508,
+      "IconName": "casimir-crystal"
+    },
+    {
+      "ID": 1127,
+      "Type": 2,
+      "Name": "奇异物质",
+      "GridIndex": 1408,
+      "IconName": "strange-matter-generator"
+    },
+    {
+      "ID": 1128,
+      "Type": 3,
+      "Name": "燃烧单元",
+      "GridIndex": 1307,
+      "IconName": "explosive"
+    },
+    {
+      "ID": 1129,
+      "Type": 3,
+      "Name": "爆破单元",
+      "GridIndex": 1407,
+      "IconName": "high-explosive"
+    },
+    {
+      "ID": 1130,
+      "Type": 3,
+      "Name": "晶石爆破单元",
+      "GridIndex": 1507,
+      "IconName": "particle-explosive"
+    },
+    {
+      "ID": 1131,
+      "Type": 7,
+      "Name": "地基",
+      "GridIndex": 1706,
+      "IconName": "terrain-tool"
+    },
+    {
+      "ID": 1141,
+      "Type": 2,
+      "Name": "增产剂 Mk.I",
+      "GridIndex": 1406,
+      "IconName": "accelerator-1"
+    },
+    {
+      "ID": 1142,
+      "Type": 2,
+      "Name": "增产剂 Mk.II",
+      "GridIndex": 1506,
+      "IconName": "accelerator-2"
+    },
+    {
+      "ID": 1143,
+      "Type": 2,
+      "Name": "增产剂 Mk.III",
+      "GridIndex": 1606,
+      "IconName": "accelerator-3"
+    },
+    {
       "ID": 1201,
       "Type": 3,
       "Name": "齿轮",
       "GridIndex": 1501,
       "IconName": "gear-wheel"
-    },
-    {
-      "ID": 1102,
-      "Type": 2,
-      "Name": "磁铁",
-      "GridIndex": 1301,
-      "IconName": "magnet"
     },
     {
       "ID": 1202,
@@ -13437,221 +7855,11 @@
       "IconName": "partical-capacitor"
     },
     {
-      "ID": 1127,
-      "Type": 2,
-      "Name": "奇异物质",
-      "GridIndex": 1408,
-      "IconName": "strange-matter-generator"
-    },
-    {
-      "ID": 1301,
-      "Type": 3,
-      "Name": "电路板",
-      "GridIndex": 1402,
-      "IconName": "circuit-board"
-    },
-    {
-      "ID": 1303,
-      "Type": 3,
-      "Name": "处理器",
-      "GridIndex": 1505,
-      "IconName": "processor"
-    },
-    {
-      "ID": 1305,
-      "Type": 3,
-      "Name": "量子芯片",
-      "GridIndex": 1511,
-      "IconName": "quantum-processor"
-    },
-    {
-      "ID": 1302,
-      "Type": 3,
-      "Name": "微晶元件",
-      "GridIndex": 1405,
-      "IconName": "micro-component"
-    },
-    {
-      "ID": 1304,
-      "Type": 3,
-      "Name": "位面过滤器",
-      "GridIndex": 1510,
-      "IconName": "plane-filter"
-    },
-    {
-      "ID": 1402,
-      "Type": 3,
-      "Name": "粒子宽带",
-      "GridIndex": 1411,
-      "IconName": "particle-wide-band"
-    },
-    {
-      "ID": 1401,
-      "Type": 3,
-      "Name": "电浆激发器",
-      "GridIndex": 1502,
-      "IconName": "plasma-generator"
-    },
-    {
-      "ID": 1404,
-      "Type": 3,
-      "Name": "光子合并器",
-      "GridIndex": 1503,
-      "IconName": "photo-shifter"
-    },
-    {
-      "ID": 1501,
-      "Type": 4,
-      "Name": "太阳帆",
-      "GridIndex": 1708,
-      "IconName": "solar-collector"
-    },
-    {
-      "ID": 1000,
-      "Type": 1,
-      "Name": "水",
-      "GridIndex": 1107,
-      "IconName": "water"
-    },
-    {
-      "ID": 1007,
-      "Type": 1,
-      "Name": "原油",
-      "GridIndex": 1108,
-      "IconName": "oil"
-    },
-    {
-      "ID": 1114,
-      "Type": 2,
-      "Name": "精炼油",
-      "GridIndex": 1208,
-      "IconName": "refined-oil"
-    },
-    {
-      "ID": 1116,
-      "Type": 2,
-      "Name": "硫酸",
-      "GridIndex": 1207,
-      "IconName": "sulphuric-acid"
-    },
-    {
-      "ID": 1120,
-      "Type": 2,
-      "Name": "氢",
-      "GridIndex": 1109,
-      "IconName": "hydrogen"
-    },
-    {
-      "ID": 1121,
-      "Type": 2,
-      "Name": "重氢",
-      "GridIndex": 1110,
-      "IconName": "deuterium"
-    },
-    {
-      "ID": 1122,
-      "Type": 2,
-      "Name": "反物质",
-      "GridIndex": 1111,
-      "IconName": "anti-matter"
-    },
-    {
       "ID": 1208,
       "Type": 2,
       "Name": "临界光子",
       "GridIndex": 1113,
       "IconName": "photon-capacitor-full"
-    },
-    {
-      "ID": 1801,
-      "Type": 4,
-      "Name": "液氢燃料棒",
-      "GridIndex": 1209,
-      "IconName": "hydrogen-energy-fuel"
-    },
-    {
-      "ID": 1802,
-      "Type": 4,
-      "Name": "氘核燃料棒",
-      "GridIndex": 1210,
-      "IconName": "deuterium-energy-fuel"
-    },
-    {
-      "ID": 1803,
-      "Type": 4,
-      "Name": "反物质燃料棒",
-      "GridIndex": 1211,
-      "IconName": "antimatter-energy-fuel"
-    },
-    {
-      "ID": 1804,
-      "Type": 4,
-      "Name": "奇异湮灭燃料棒",
-      "GridIndex": 1212,
-      "IconName": "virtual-energy-fuel"
-    },
-    {
-      "ID": 1115,
-      "Type": 2,
-      "Name": "塑料",
-      "GridIndex": 1308,
-      "IconName": "plastic"
-    },
-    {
-      "ID": 1123,
-      "Type": 2,
-      "Name": "石墨烯",
-      "GridIndex": 1310,
-      "IconName": "graphene"
-    },
-    {
-      "ID": 1124,
-      "Type": 2,
-      "Name": "碳纳米管",
-      "GridIndex": 1410,
-      "IconName": "nanotube"
-    },
-    {
-      "ID": 1117,
-      "Type": 2,
-      "Name": "有机晶体",
-      "GridIndex": 1309,
-      "IconName": "crystal-rubber"
-    },
-    {
-      "ID": 1118,
-      "Type": 2,
-      "Name": "钛晶石",
-      "GridIndex": 1409,
-      "IconName": "titan-crystal"
-    },
-    {
-      "ID": 1126,
-      "Type": 2,
-      "Name": "卡西米尔晶体",
-      "GridIndex": 1508,
-      "IconName": "casimir-crystal"
-    },
-    {
-      "ID": 1128,
-      "Type": 3,
-      "Name": "燃烧单元",
-      "GridIndex": 1307,
-      "IconName": "explosive"
-    },
-    {
-      "ID": 1129,
-      "Type": 3,
-      "Name": "爆破单元",
-      "GridIndex": 1407,
-      "IconName": "high-explosive"
-    },
-    {
-      "ID": 1130,
-      "Type": 3,
-      "Name": "晶石爆破单元",
-      "GridIndex": 1507,
-      "IconName": "particle-explosive"
     },
     {
       "ID": 1209,
@@ -13668,6 +7876,55 @@
       "IconName": "space-warper"
     },
     {
+      "ID": 1301,
+      "Type": 3,
+      "Name": "电路板",
+      "GridIndex": 1402,
+      "IconName": "circuit-board"
+    },
+    {
+      "ID": 1302,
+      "Type": 3,
+      "Name": "微晶元件",
+      "GridIndex": 1405,
+      "IconName": "micro-component"
+    },
+    {
+      "ID": 1303,
+      "Type": 3,
+      "Name": "处理器",
+      "GridIndex": 1505,
+      "IconName": "processor"
+    },
+    {
+      "ID": 1304,
+      "Type": 3,
+      "Name": "位面过滤器",
+      "GridIndex": 1510,
+      "IconName": "plane-filter"
+    },
+    {
+      "ID": 1305,
+      "Type": 3,
+      "Name": "量子芯片",
+      "GridIndex": 1511,
+      "IconName": "quantum-processor"
+    },
+    {
+      "ID": 1401,
+      "Type": 3,
+      "Name": "电浆激发器",
+      "GridIndex": 1502,
+      "IconName": "plasma-generator"
+    },
+    {
+      "ID": 1402,
+      "Type": 3,
+      "Name": "粒子宽带",
+      "GridIndex": 1411,
+      "IconName": "particle-wide-band"
+    },
+    {
       "ID": 1403,
       "Type": 3,
       "Name": "湮灭约束球",
@@ -13675,11 +7932,11 @@
       "IconName": "fusion-capacitor"
     },
     {
-      "ID": 1407,
+      "ID": 1404,
       "Type": 3,
-      "Name": "动力引擎",
-      "GridIndex": 1601,
-      "IconName": "engine"
+      "Name": "光子合并器",
+      "GridIndex": 1503,
+      "IconName": "photo-shifter"
     },
     {
       "ID": 1405,
@@ -13696,32 +7953,18 @@
       "IconName": "ion-thruster"
     },
     {
-      "ID": 5003,
-      "Type": 5,
-      "Name": "配送运输机",
-      "GridIndex": 1701,
-      "IconName": "delivery-drone"
+      "ID": 1407,
+      "Type": 3,
+      "Name": "动力引擎",
+      "GridIndex": 1601,
+      "IconName": "engine"
     },
     {
-      "ID": 5001,
-      "Type": 5,
-      "Name": "物流运输机",
-      "GridIndex": 1702,
-      "IconName": "logistic-drone"
-    },
-    {
-      "ID": 5002,
-      "Type": 5,
-      "Name": "星际物流运输船",
-      "GridIndex": 1703,
-      "IconName": "logistic-vessel"
-    },
-    {
-      "ID": 1125,
-      "Type": 2,
-      "Name": "框架材料",
-      "GridIndex": 1709,
-      "IconName": "frame-material"
+      "ID": 1501,
+      "Type": 4,
+      "Name": "太阳帆",
+      "GridIndex": 1708,
+      "IconName": "solar-collector"
     },
     {
       "ID": 1502,
@@ -13736,34 +7979,6 @@
       "Name": "小型运载火箭",
       "GridIndex": 1711,
       "IconName": "rocket"
-    },
-    {
-      "ID": 1131,
-      "Type": 7,
-      "Name": "地基",
-      "GridIndex": 1706,
-      "IconName": "terrain-tool"
-    },
-    {
-      "ID": 1141,
-      "Type": 2,
-      "Name": "增产剂 Mk.I",
-      "GridIndex": 1406,
-      "IconName": "accelerator-1"
-    },
-    {
-      "ID": 1142,
-      "Type": 2,
-      "Name": "增产剂 Mk.II",
-      "GridIndex": 1506,
-      "IconName": "accelerator-2"
-    },
-    {
-      "ID": 1143,
-      "Type": 2,
-      "Name": "增产剂 Mk.III",
-      "GridIndex": 1606,
-      "IconName": "accelerator-3"
     },
     {
       "ID": 1601,
@@ -13857,81 +8072,32 @@
       "IconName": "em-suppress"
     },
     {
-      "ID": 5101,
+      "ID": 1801,
       "Type": 4,
-      "Name": "原型机",
-      "GridIndex": 1607,
-      "IconName": "fighter-shield"
+      "Name": "液氢燃料棒",
+      "GridIndex": 1209,
+      "IconName": "hydrogen-energy-fuel"
     },
     {
-      "ID": 5102,
+      "ID": 1802,
       "Type": 4,
-      "Name": "精准无人机",
-      "GridIndex": 1608,
-      "IconName": "fighter-plasma"
+      "Name": "氘核燃料棒",
+      "GridIndex": 1210,
+      "IconName": "deuterium-energy-fuel"
     },
     {
-      "ID": 5103,
+      "ID": 1803,
       "Type": 4,
-      "Name": "攻击无人机",
-      "GridIndex": 1609,
-      "IconName": "fighter-laser"
+      "Name": "反物质燃料棒",
+      "GridIndex": 1211,
+      "IconName": "antimatter-energy-fuel"
     },
     {
-      "ID": 5111,
+      "ID": 1804,
       "Type": 4,
-      "Name": "护卫舰",
-      "GridIndex": 1610,
-      "IconName": "warship-plasma"
-    },
-    {
-      "ID": 5112,
-      "Type": 4,
-      "Name": "驱逐舰",
-      "GridIndex": 1611,
-      "IconName": "warship-laser"
-    },
-    {
-      "ID": 5201,
-      "Type": 10,
-      "Name": "黑雾矩阵",
-      "GridIndex": 1807,
-      "IconName": "memory"
-    },
-    {
-      "ID": 5202,
-      "Type": 10,
-      "Name": "硅基神经元",
-      "GridIndex": 1809,
-      "IconName": "silicon-neuron"
-    },
-    {
-      "ID": 5203,
-      "Type": 10,
-      "Name": "物质重组器",
-      "GridIndex": 1811,
-      "IconName": "reassembler"
-    },
-    {
-      "ID": 5204,
-      "Type": 10,
-      "Name": "负熵奇点",
-      "GridIndex": 1810,
-      "IconName": "negentropy"
-    },
-    {
-      "ID": 5205,
-      "Type": 10,
-      "Name": "核心素",
-      "GridIndex": 1112,
-      "IconName": "virtual-particle"
-    },
-    {
-      "ID": 5206,
-      "Type": 10,
-      "Name": "能量碎片",
-      "GridIndex": 1808,
-      "IconName": "energy-fragment"
+      "Name": "奇异湮灭燃料棒",
+      "GridIndex": 1212,
+      "IconName": "virtual-energy-fuel"
     },
     {
       "ID": 2001,
@@ -13990,13 +8156,6 @@
       "IconName": "splitter-4dir"
     },
     {
-      "ID": 2040,
-      "Type": 5,
-      "Name": "自动集装机",
-      "GridIndex": 2205,
-      "IconName": "piler"
-    },
-    {
       "ID": 2030,
       "Type": 5,
       "Name": "流速监测器",
@@ -14004,18 +8163,11 @@
       "IconName": "monitor"
     },
     {
-      "ID": 2313,
-      "Type": 6,
-      "Name": "喷涂机",
-      "GridIndex": 2207,
-      "IconName": "spray-coater"
-    },
-    {
-      "ID": 2107,
+      "ID": 2040,
       "Type": 5,
-      "Name": "物流配送器",
-      "GridIndex": 2211,
-      "IconName": "delivery-machine"
+      "Name": "自动集装机",
+      "GridIndex": 2205,
+      "IconName": "piler"
     },
     {
       "ID": 2101,
@@ -14032,11 +8184,179 @@
       "IconName": "storage-2"
     },
     {
+      "ID": 2103,
+      "Type": 5,
+      "Name": "行星内物流运输站",
+      "GridIndex": 2212,
+      "IconName": "logistic-station"
+    },
+    {
+      "ID": 2104,
+      "Type": 5,
+      "Name": "星际物流运输站",
+      "GridIndex": 2213,
+      "IconName": "interstellar-logistic-station"
+    },
+    {
+      "ID": 2105,
+      "Type": 5,
+      "Name": "轨道采集器",
+      "GridIndex": 2214,
+      "IconName": "orbital-collector",
+      "WorkEnergyPerTick": 500000,
+      "BuildIndex": 605,
+      "MultiLevel": false,
+      "Speed": 8.0,
+      "Space": 0.0
+    },
+    {
       "ID": 2106,
       "Type": 5,
       "Name": "储液罐",
       "GridIndex": 2210,
       "IconName": "storage-tank"
+    },
+    {
+      "ID": 2107,
+      "Type": 5,
+      "Name": "物流配送器",
+      "GridIndex": 2211,
+      "IconName": "delivery-machine"
+    },
+    {
+      "ID": 2201,
+      "Type": 5,
+      "Name": "电力感应塔",
+      "GridIndex": 2101,
+      "IconName": "tesla-coil"
+    },
+    {
+      "ID": 2202,
+      "Type": 5,
+      "Name": "无线输电塔",
+      "GridIndex": 2102,
+      "IconName": "charging-pole"
+    },
+    {
+      "ID": 2203,
+      "Type": 6,
+      "Name": "风力涡轮机",
+      "GridIndex": 2104,
+      "IconName": "wind-turbine"
+    },
+    {
+      "ID": 2204,
+      "Type": 6,
+      "Name": "火力发电厂",
+      "GridIndex": 2105,
+      "IconName": "fuel-plant"
+    },
+    {
+      "ID": 2205,
+      "Type": 6,
+      "Name": "太阳能板",
+      "GridIndex": 2106,
+      "IconName": "solar-panel"
+    },
+    {
+      "ID": 2206,
+      "Type": 5,
+      "Name": "蓄电器",
+      "GridIndex": 2110,
+      "IconName": "accumulator",
+      "WorkEnergyPerTick": 0,
+      "BuildIndex": 109,
+      "MultiLevel": false,
+      "Speed": 1.0,
+      "Space": 4.0
+    },
+    {
+      "ID": 2207,
+      "Type": 5,
+      "Name": "蓄电器（满）",
+      "GridIndex": 2111,
+      "IconName": "accumulator-full",
+      "WorkEnergyPerTick": 0,
+      "BuildIndex": 0,
+      "MultiLevel": false,
+      "Speed": 1.0,
+      "Space": 4.0
+    },
+    {
+      "ID": 2208,
+      "Type": 6,
+      "Name": "射线重构站",
+      "GridIndex": 2112,
+      "IconName": "ray-receiver",
+      "WorkEnergyPerTick": 0,
+      "BuildIndex": 803,
+      "MultiLevel": false,
+      "Speed": 1.0,
+      "Space": 54.82
+    },
+    {
+      "ID": 2209,
+      "Type": 5,
+      "Name": "能量枢纽",
+      "GridIndex": 2109,
+      "IconName": "energy-exchanger",
+      "WorkEnergyPerTick": 0,
+      "BuildIndex": 606,
+      "MultiLevel": false,
+      "Speed": 1.0,
+      "Space": 64.0
+    },
+    {
+      "ID": 2210,
+      "Type": 6,
+      "Name": "人造恒星",
+      "GridIndex": 2113,
+      "IconName": "fusion-reactor"
+    },
+    {
+      "ID": 2211,
+      "Type": 6,
+      "Name": "微型聚变发电站",
+      "GridIndex": 2108,
+      "IconName": "fusion-power-station"
+    },
+    {
+      "ID": 2212,
+      "Type": 5,
+      "Name": "卫星配电站",
+      "GridIndex": 2103,
+      "IconName": "orbital-substation"
+    },
+    {
+      "ID": 2213,
+      "Type": 6,
+      "Name": "地热发电站",
+      "GridIndex": 2107,
+      "IconName": "geothermal-power-station"
+    },
+    {
+      "ID": 2301,
+      "Type": 6,
+      "Name": "采矿机",
+      "GridIndex": 2305,
+      "IconName": "mining-drill",
+      "WorkEnergyPerTick": 7000,
+      "BuildIndex": 201,
+      "MultiLevel": false,
+      "Speed": 0.5,
+      "Space": 15.0
+    },
+    {
+      "ID": 2302,
+      "Type": 6,
+      "Name": "电弧熔炉",
+      "GridIndex": 2401,
+      "IconName": "smelter",
+      "WorkEnergyPerTick": 6000,
+      "BuildIndex": 501,
+      "MultiLevel": false,
+      "Speed": 1.0,
+      "Space": 5.76
     },
     {
       "ID": 2303,
@@ -14075,98 +8395,6 @@
       "Space": 10.24
     },
     {
-      "ID": 2318,
-      "Type": 6,
-      "Name": "重组式制造台",
-      "GridIndex": 2407,
-      "IconName": "assembler-4",
-      "WorkEnergyPerTick": 45000,
-      "BuildIndex": 808,
-      "MultiLevel": false,
-      "Speed": 3.0,
-      "Space": 10.24
-    },
-    {
-      "ID": 2201,
-      "Type": 5,
-      "Name": "电力感应塔",
-      "GridIndex": 2101,
-      "IconName": "tesla-coil"
-    },
-    {
-      "ID": 2202,
-      "Type": 5,
-      "Name": "无线输电塔",
-      "GridIndex": 2102,
-      "IconName": "charging-pole"
-    },
-    {
-      "ID": 2212,
-      "Type": 5,
-      "Name": "卫星配电站",
-      "GridIndex": 2103,
-      "IconName": "orbital-substation"
-    },
-    {
-      "ID": 2401,
-      "Type": 7,
-      "Name": "全息信标",
-      "GridIndex": 2410,
-      "IconName": "lighthouse"
-    },
-    {
-      "ID": 2203,
-      "Type": 6,
-      "Name": "风力涡轮机",
-      "GridIndex": 2104,
-      "IconName": "wind-turbine"
-    },
-    {
-      "ID": 2204,
-      "Type": 6,
-      "Name": "火力发电厂",
-      "GridIndex": 2105,
-      "IconName": "fuel-plant"
-    },
-    {
-      "ID": 2211,
-      "Type": 6,
-      "Name": "微型聚变发电站",
-      "GridIndex": 2108,
-      "IconName": "fusion-power-station"
-    },
-    {
-      "ID": 2213,
-      "Type": 6,
-      "Name": "地热发电站",
-      "GridIndex": 2107,
-      "IconName": "geothermal-power-station"
-    },
-    {
-      "ID": 2301,
-      "Type": 6,
-      "Name": "采矿机",
-      "GridIndex": 2305,
-      "IconName": "mining-drill",
-      "WorkEnergyPerTick": 7000,
-      "BuildIndex": 201,
-      "MultiLevel": false,
-      "Speed": 0.5,
-      "Space": 15.0
-    },
-    {
-      "ID": 2316,
-      "Type": 6,
-      "Name": "大型采矿机",
-      "GridIndex": 2306,
-      "IconName": "mining-drill-mk2",
-      "WorkEnergyPerTick": 49000,
-      "BuildIndex": 202,
-      "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 25.0
-    },
-    {
       "ID": 2306,
       "Type": 6,
       "Name": "抽水站",
@@ -14177,42 +8405,6 @@
       "MultiLevel": false,
       "Speed": 0.83333333333333337,
       "Space": 12.0
-    },
-    {
-      "ID": 2302,
-      "Type": 6,
-      "Name": "电弧熔炉",
-      "GridIndex": 2401,
-      "IconName": "smelter",
-      "WorkEnergyPerTick": 6000,
-      "BuildIndex": 501,
-      "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 5.76
-    },
-    {
-      "ID": 2315,
-      "Type": 6,
-      "Name": "位面熔炉",
-      "GridIndex": 2402,
-      "IconName": "smelter-2",
-      "WorkEnergyPerTick": 24000,
-      "BuildIndex": 502,
-      "MultiLevel": false,
-      "Speed": 2.0,
-      "Space": 5.76
-    },
-    {
-      "ID": 2319,
-      "Type": 6,
-      "Name": "负熵熔炉",
-      "GridIndex": 2403,
-      "IconName": "smelter-3",
-      "WorkEnergyPerTick": 48000,
-      "BuildIndex": 807,
-      "MultiLevel": false,
-      "Speed": 3.0,
-      "Space": 5.76
     },
     {
       "ID": 2307,
@@ -14251,16 +8443,37 @@
       "Space": 23.76
     },
     {
-      "ID": 2317,
+      "ID": 2310,
       "Type": 6,
-      "Name": "量子化工厂",
-      "GridIndex": 2312,
-      "IconName": "chemical-plant-2",
-      "WorkEnergyPerTick": 36000,
-      "BuildIndex": 509,
+      "Name": "微型粒子对撞机",
+      "GridIndex": 2313,
+      "IconName": "hadron-collider",
+      "WorkEnergyPerTick": 200000,
+      "BuildIndex": 510,
       "MultiLevel": false,
-      "Speed": 2.0,
-      "Space": 23.76
+      "Speed": 1.0,
+      "Space": 45.12
+    },
+    {
+      "ID": 2311,
+      "Type": 6,
+      "Name": "电磁轨道弹射器",
+      "GridIndex": 2411,
+      "IconName": "em-rail-ejector"
+    },
+    {
+      "ID": 2312,
+      "Type": 6,
+      "Name": "垂直发射井",
+      "GridIndex": 2412,
+      "IconName": "vertical-launching-silo"
+    },
+    {
+      "ID": 2313,
+      "Type": 6,
+      "Name": "喷涂机",
+      "GridIndex": 2207,
+      "IconName": "spray-coater"
     },
     {
       "ID": 2314,
@@ -14275,118 +8488,71 @@
       "Space": 12.96
     },
     {
-      "ID": 2205,
+      "ID": 2315,
       "Type": 6,
-      "Name": "太阳能板",
-      "GridIndex": 2106,
-      "IconName": "solar-panel"
+      "Name": "位面熔炉",
+      "GridIndex": 2402,
+      "IconName": "smelter-2",
+      "WorkEnergyPerTick": 24000,
+      "BuildIndex": 502,
+      "MultiLevel": false,
+      "Speed": 2.0,
+      "Space": 5.76
     },
     {
-      "ID": 2206,
-      "Type": 5,
-      "Name": "蓄电器",
-      "GridIndex": 2110,
-      "IconName": "accumulator",
-      "WorkEnergyPerTick": 0,
-      "BuildIndex": 109,
+      "ID": 2316,
+      "Type": 6,
+      "Name": "大型采矿机",
+      "GridIndex": 2306,
+      "IconName": "mining-drill-mk2",
+      "WorkEnergyPerTick": 49000,
+      "BuildIndex": 202,
       "MultiLevel": false,
       "Speed": 1.0,
-      "Space": 4.0
+      "Space": 25.0
     },
     {
-      "ID": 2207,
-      "Type": 5,
-      "Name": "蓄电器（满）",
-      "GridIndex": 2111,
-      "IconName": "accumulator-full",
-      "WorkEnergyPerTick": 0,
-      "BuildIndex": 0,
-      "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 4.0
-    },
-    {
-      "ID": 2311,
+      "ID": 2317,
       "Type": 6,
-      "Name": "电磁轨道弹射器",
-      "GridIndex": 2411,
-      "IconName": "em-rail-ejector"
-    },
-    {
-      "ID": 2208,
-      "Type": 6,
-      "Name": "射线重构站",
-      "GridIndex": 2112,
-      "IconName": "ray-receiver",
-      "WorkEnergyPerTick": 0,
-      "BuildIndex": 803,
+      "Name": "量子化工厂",
+      "GridIndex": 2312,
+      "IconName": "chemical-plant-2",
+      "WorkEnergyPerTick": 36000,
+      "BuildIndex": 509,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 54.82
+      "Speed": 2.0,
+      "Space": 23.76
     },
     {
-      "ID": 2312,
+      "ID": 2318,
       "Type": 6,
-      "Name": "垂直发射井",
-      "GridIndex": 2412,
-      "IconName": "vertical-launching-silo"
-    },
-    {
-      "ID": 2209,
-      "Type": 5,
-      "Name": "能量枢纽",
-      "GridIndex": 2109,
-      "IconName": "energy-exchanger",
-      "WorkEnergyPerTick": 0,
-      "BuildIndex": 606,
+      "Name": "重组式制造台",
+      "GridIndex": 2407,
+      "IconName": "assembler-4",
+      "WorkEnergyPerTick": 45000,
+      "BuildIndex": 808,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 64.0
+      "Speed": 3.0,
+      "Space": 10.24
     },
     {
-      "ID": 2310,
+      "ID": 2319,
       "Type": 6,
-      "Name": "微型粒子对撞机",
-      "GridIndex": 2313,
-      "IconName": "hadron-collider",
-      "WorkEnergyPerTick": 200000,
-      "BuildIndex": 510,
+      "Name": "负熵熔炉",
+      "GridIndex": 2403,
+      "IconName": "smelter-3",
+      "WorkEnergyPerTick": 48000,
+      "BuildIndex": 807,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 45.12
+      "Speed": 3.0,
+      "Space": 5.76
     },
     {
-      "ID": 2210,
-      "Type": 6,
-      "Name": "人造恒星",
-      "GridIndex": 2113,
-      "IconName": "fusion-reactor"
-    },
-    {
-      "ID": 2103,
-      "Type": 5,
-      "Name": "行星内物流运输站",
-      "GridIndex": 2212,
-      "IconName": "logistic-station"
-    },
-    {
-      "ID": 2104,
-      "Type": 5,
-      "Name": "星际物流运输站",
-      "GridIndex": 2213,
-      "IconName": "interstellar-logistic-station"
-    },
-    {
-      "ID": 2105,
-      "Type": 5,
-      "Name": "轨道采集器",
-      "GridIndex": 2214,
-      "IconName": "orbital-collector",
-      "WorkEnergyPerTick": 500000,
-      "BuildIndex": 605,
-      "MultiLevel": false,
-      "Speed": 8.0,
-      "Space": 0.0
+      "ID": 2401,
+      "Type": 7,
+      "Name": "全息信标",
+      "GridIndex": 2410,
+      "IconName": "lighthouse"
     },
     {
       "ID": 2901,
@@ -14483,6 +8649,104 @@
       "IconName": "turret-plasma-ground"
     },
     {
+      "ID": 5001,
+      "Type": 5,
+      "Name": "物流运输机",
+      "GridIndex": 1702,
+      "IconName": "logistic-drone"
+    },
+    {
+      "ID": 5002,
+      "Type": 5,
+      "Name": "星际物流运输船",
+      "GridIndex": 1703,
+      "IconName": "logistic-vessel"
+    },
+    {
+      "ID": 5003,
+      "Type": 5,
+      "Name": "配送运输机",
+      "GridIndex": 1701,
+      "IconName": "delivery-drone"
+    },
+    {
+      "ID": 5101,
+      "Type": 4,
+      "Name": "原型机",
+      "GridIndex": 1607,
+      "IconName": "fighter-shield"
+    },
+    {
+      "ID": 5102,
+      "Type": 4,
+      "Name": "精准无人机",
+      "GridIndex": 1608,
+      "IconName": "fighter-plasma"
+    },
+    {
+      "ID": 5103,
+      "Type": 4,
+      "Name": "攻击无人机",
+      "GridIndex": 1609,
+      "IconName": "fighter-laser"
+    },
+    {
+      "ID": 5111,
+      "Type": 4,
+      "Name": "护卫舰",
+      "GridIndex": 1610,
+      "IconName": "warship-plasma"
+    },
+    {
+      "ID": 5112,
+      "Type": 4,
+      "Name": "驱逐舰",
+      "GridIndex": 1611,
+      "IconName": "warship-laser"
+    },
+    {
+      "ID": 5201,
+      "Type": 10,
+      "Name": "黑雾矩阵",
+      "GridIndex": 1807,
+      "IconName": "memory"
+    },
+    {
+      "ID": 5202,
+      "Type": 10,
+      "Name": "硅基神经元",
+      "GridIndex": 1809,
+      "IconName": "silicon-neuron"
+    },
+    {
+      "ID": 5203,
+      "Type": 10,
+      "Name": "物质重组器",
+      "GridIndex": 1811,
+      "IconName": "reassembler"
+    },
+    {
+      "ID": 5204,
+      "Type": 10,
+      "Name": "负熵奇点",
+      "GridIndex": 1810,
+      "IconName": "negentropy"
+    },
+    {
+      "ID": 5205,
+      "Type": 10,
+      "Name": "核心素",
+      "GridIndex": 1112,
+      "IconName": "virtual-particle"
+    },
+    {
+      "ID": 5206,
+      "Type": 10,
+      "Name": "能量碎片",
+      "GridIndex": 1808,
+      "IconName": "energy-fragment"
+    },
+    {
       "ID": 6001,
       "Type": 11,
       "Name": "电磁矩阵",
@@ -14523,13 +8787,6 @@
       "Name": "宇宙矩阵",
       "GridIndex": 1806,
       "IconName": "u-matrix"
-    },
-    {
-      "ID": 1099,
-      "Type": 1,
-      "Name": "沙土",
-      "GridIndex": 0,
-      "IconName": "soil-pile"
     },
     {
       "ID": 9480,
@@ -14698,206 +8955,6 @@
       "Name": "物资交换物流站",
       "GridIndex": 3409,
       "IconName": "exchangeLS"
-    },
-    {
-      "ID": 8048,
-      "Type": 7,
-      "Name": "商店已刷新！",
-      "GridIndex": 0,
-      "IconName": "1134"
-    },
-    {
-      "ID": 8049,
-      "Type": 7,
-      "Name": "科技解锁说明",
-      "GridIndex": 0,
-      "IconName": "1134"
-    },
-    {
-      "ID": 8060,
-      "Type": 2,
-      "Name": "残片",
-      "GridIndex": 4103,
-      "IconName": "copy-essence"
-    },
-    {
-      "ID": 8011,
-      "Type": 2,
-      "Name": "交互塔原胚",
-      "GridIndex": 4201,
-      "IconName": "frac-proto-normal"
-    },
-    {
-      "ID": 8012,
-      "Type": 2,
-      "Name": "矿物复制塔原胚",
-      "GridIndex": 4202,
-      "IconName": "frac-proto-uncommon"
-    },
-    {
-      "ID": 8013,
-      "Type": 2,
-      "Name": "点数聚集塔原胚",
-      "GridIndex": 4203,
-      "IconName": "frac-proto-rare"
-    },
-    {
-      "ID": 8014,
-      "Type": 2,
-      "Name": "转化塔原胚",
-      "GridIndex": 4204,
-      "IconName": "frac-proto-epic"
-    },
-    {
-      "ID": 8015,
-      "Type": 2,
-      "Name": "精馏塔原胚",
-      "GridIndex": 4205,
-      "IconName": "frac-proto-legendary"
-    },
-    {
-      "ID": 8016,
-      "Type": 4,
-      "Name": "分馏塔定向原胚",
-      "GridIndex": 4206,
-      "IconName": "frac-proto-directional"
-    },
-    {
-      "ID": 8021,
-      "Type": 6,
-      "Name": "交互塔",
-      "GridIndex": 4301,
-      "IconName": "interaction-tower",
-      "WorkEnergyPerTick": 12000,
-      "BuildIndex": 0,
-      "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 12.96
-    },
-    {
-      "ID": 8022,
-      "Type": 6,
-      "Name": "矿物复制塔",
-      "GridIndex": 4302,
-      "IconName": "mineral-copy-tower",
-      "WorkEnergyPerTick": 12000,
-      "BuildIndex": 0,
-      "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 12.96
-    },
-    {
-      "ID": 8023,
-      "Type": 6,
-      "Name": "点数聚集塔",
-      "GridIndex": 4303,
-      "IconName": "point-aggregate-tower",
-      "WorkEnergyPerTick": 12000,
-      "BuildIndex": 0,
-      "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 12.96
-    },
-    {
-      "ID": 8024,
-      "Type": 6,
-      "Name": "转化塔",
-      "GridIndex": 4304,
-      "IconName": "conversion-tower",
-      "WorkEnergyPerTick": 12000,
-      "BuildIndex": 0,
-      "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 12.96
-    },
-    {
-      "ID": 8025,
-      "Type": 6,
-      "Name": "精馏塔",
-      "GridIndex": 4305,
-      "IconName": "deconstruction-tower",
-      "WorkEnergyPerTick": 12000,
-      "BuildIndex": 0,
-      "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 12.96
-    },
-    {
-      "ID": 8031,
-      "Type": 6,
-      "Name": "行星内物流交互站",
-      "GridIndex": 4306,
-      "IconName": "interaction-station"
-    },
-    {
-      "ID": 8032,
-      "Type": 6,
-      "Name": "星际物流交互站",
-      "GridIndex": 4307,
-      "IconName": "interstellar-interaction-station"
-    },
-    {
-      "ID": 9493,
-      "Type": 6,
-      "Name": "星际组装厂生产机器图标专用",
-      "GridIndex": 13001,
-      "IconName": "planets-icon"
-    },
-    {
-      "ID": 9494,
-      "Type": 6,
-      "Name": "铜金属重构装置",
-      "GridIndex": 13002,
-      "IconName": "Ccopper"
-    },
-    {
-      "ID": 9495,
-      "Type": 6,
-      "Name": "高纯硅重构装置",
-      "GridIndex": 13003,
-      "IconName": "Csilicon"
-    },
-    {
-      "ID": 9496,
-      "Type": 6,
-      "Name": "钛金属重构装置",
-      "GridIndex": 13004,
-      "IconName": "Ctitanium"
-    },
-    {
-      "ID": 9497,
-      "Type": 6,
-      "Name": "单极磁石重构装置",
-      "GridIndex": 13005,
-      "IconName": "Cmagore"
-    },
-    {
-      "ID": 9498,
-      "Type": 6,
-      "Name": "晶体接收器",
-      "GridIndex": 13007,
-      "IconName": "Ccrystal"
-    },
-    {
-      "ID": 9499,
-      "Type": 6,
-      "Name": "组件集成装置",
-      "GridIndex": 13002,
-      "IconName": "Cic"
-    },
-    {
-      "ID": 9501,
-      "Type": 6,
-      "Name": "石墨提炼装置",
-      "GridIndex": 13006,
-      "IconName": "Ccoal"
-    },
-    {
-      "ID": 9502,
-      "Type": 6,
-      "Name": "光栅晶体接收器",
-      "GridIndex": 13008,
-      "IconName": "Cgrating"
     },
     {
       "ID": 0,
@@ -21194,128 +15251,43 @@
       ]
     },
     {
-      "ID": 1251,
-      "Name": "分馏数据中心",
-      "HashNeeded": 3600,
+      "ID": 1999,
+      "Name": "玻色子操控",
+      "HashNeeded": 72000,
+      "Level": 0,
+      "MaxLevel": 0,
+      "IsLabTech": false,
+      "UnlockFunctions": [],
+      "UnlockValues": [],
+      "UnlockRecipes": [
+        573,
+        567,
+        568,
+        569,
+        566
+      ],
+      "PreTechs": [],
+      "PreTechsImplicit": [
+        1823
+      ]
+    },
+    {
+      "ID": 1998,
+      "Name": "并入COSMO架构",
+      "HashNeeded": 299792458000,
       "Level": 0,
       "MaxLevel": 0,
       "IsLabTech": true,
       "UnlockFunctions": [],
       "UnlockValues": [],
       "UnlockRecipes": [],
-      "PreTechs": [
-        1001
-      ],
-      "PreTechsImplicit": [
-        1002
-      ]
+      "PreTechs": [],
+      "PreTechsImplicit": []
     },
     {
-      "ID": 1281,
-      "Name": "超值礼包1",
-      "HashNeeded": 3600,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": true,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [],
-      "PreTechs": [
-        1251
-      ],
-      "PreTechsImplicit": [
-        1253
-      ]
-    },
-    {
-      "ID": 1282,
-      "Name": "超值礼包2",
-      "HashNeeded": 3600,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": true,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [],
-      "PreTechs": [
-        1281
-      ],
-      "PreTechsImplicit": [
-        1111
-      ]
-    },
-    {
-      "ID": 1283,
-      "Name": "超值礼包3",
-      "HashNeeded": 3600,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": true,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [],
-      "PreTechs": [
-        1282
-      ],
-      "PreTechsImplicit": [
-        1124
-      ]
-    },
-    {
-      "ID": 1284,
-      "Name": "超值礼包4",
-      "HashNeeded": 3600,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": true,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [],
-      "PreTechs": [
-        1283
-      ],
-      "PreTechsImplicit": [
-        1312
-      ]
-    },
-    {
-      "ID": 1285,
-      "Name": "超值礼包5",
-      "HashNeeded": 3600,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": true,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [],
-      "PreTechs": [
-        1284
-      ],
-      "PreTechsImplicit": [
-        1705
-      ]
-    },
-    {
-      "ID": 1286,
-      "Name": "超值礼包6",
-      "HashNeeded": 3600,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": true,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [],
-      "PreTechs": [
-        1285
-      ],
-      "PreTechsImplicit": [
-        1507
-      ]
-    },
-    {
-      "ID": 1252,
-      "Name": "分馏塔原胚",
-      "HashNeeded": 3600,
+      "ID": 1997,
+      "Name": "微型恒星能量引导",
+      "HashNeeded": 36000,
       "Level": 0,
       "MaxLevel": 0,
       "IsLabTech": false,
@@ -21323,131 +15295,174 @@
       "UnlockValues": [],
       "UnlockRecipes": [],
       "PreTechs": [
-        1251
+        1918
       ],
       "PreTechsImplicit": []
     },
     {
-      "ID": 1253,
-      "Name": "物品交互",
-      "HashNeeded": 3600000,
-      "Level": 0,
-      "MaxLevel": 0,
+      "ID": 6601,
+      "Name": "元驱动挂载点位扩展",
+      "HashNeeded": 72000,
+      "Level": 1,
+      "MaxLevel": 1,
       "IsLabTech": false,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [
-        921
+      "UnlockFunctions": [
+        771
       ],
+      "UnlockValues": [
+        1.0
+      ],
+      "UnlockRecipes": [],
       "PreTechs": [],
       "PreTechsImplicit": [
-        1252
+        1303
       ]
     },
     {
-      "ID": 1254,
-      "Name": "矿物复制",
-      "HashNeeded": 3600000,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": false,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [
-        922
-      ],
-      "PreTechs": [],
-      "PreTechsImplicit": [
-        1252
-      ]
-    },
-    {
-      "ID": 1255,
-      "Name": "增产点数聚集",
-      "HashNeeded": 3600000,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": false,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [
-        923
-      ],
-      "PreTechs": [],
-      "PreTechsImplicit": [
-        1252
-      ]
-    },
-    {
-      "ID": 1256,
-      "Name": "物品转化",
-      "HashNeeded": 3600000,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": false,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [
-        924
-      ],
-      "PreTechs": [],
-      "PreTechsImplicit": [
-        1252
-      ]
-    },
-    {
-      "ID": 1257,
-      "Name": "物品精馏",
-      "HashNeeded": 3600000,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": false,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [
-        925
-      ],
-      "PreTechs": [],
-      "PreTechsImplicit": [
-        1252
-      ]
-    },
-    {
-      "ID": 1261,
-      "Name": "行星内物流交互",
+      "ID": 6602,
+      "Name": "元驱动挂载点位扩展",
       "HashNeeded": 144000,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": true,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [
-        931
+      "Level": 2,
+      "MaxLevel": 2,
+      "IsLabTech": false,
+      "UnlockFunctions": [
+        771
       ],
-      "PreTechs": [],
+      "UnlockValues": [
+        1.0
+      ],
+      "UnlockRecipes": [],
+      "PreTechs": [
+        6601
+      ],
       "PreTechsImplicit": [
-        1252,
-        1253,
-        1604
+        1303
       ]
     },
     {
-      "ID": 1262,
-      "Name": "星际物流交互",
-      "HashNeeded": 216000,
-      "Level": 0,
-      "MaxLevel": 0,
-      "IsLabTech": true,
-      "UnlockFunctions": [],
-      "UnlockValues": [],
-      "UnlockRecipes": [
-        932
+      "ID": 6603,
+      "Name": "元驱动挂载点位扩展",
+      "HashNeeded": 324000,
+      "Level": 3,
+      "MaxLevel": 3,
+      "IsLabTech": false,
+      "UnlockFunctions": [
+        771
       ],
-      "PreTechs": [],
+      "UnlockValues": [
+        1.0
+      ],
+      "UnlockRecipes": [],
+      "PreTechs": [
+        6602
+      ],
       "PreTechsImplicit": [
-        1252,
-        1253,
-        1605
+        1303
+      ]
+    },
+    {
+      "ID": 6604,
+      "Name": "元驱动挂载点位扩展",
+      "HashNeeded": 576000,
+      "Level": 4,
+      "MaxLevel": 4,
+      "IsLabTech": false,
+      "UnlockFunctions": [
+        771
+      ],
+      "UnlockValues": [
+        1.0
+      ],
+      "UnlockRecipes": [],
+      "PreTechs": [
+        6603
+      ],
+      "PreTechsImplicit": [
+        1303
+      ]
+    },
+    {
+      "ID": 6605,
+      "Name": "元驱动挂载点位扩展",
+      "HashNeeded": 900000,
+      "Level": 5,
+      "MaxLevel": 5,
+      "IsLabTech": false,
+      "UnlockFunctions": [
+        771
+      ],
+      "UnlockValues": [
+        1.0
+      ],
+      "UnlockRecipes": [],
+      "PreTechs": [
+        6604
+      ],
+      "PreTechsImplicit": [
+        1303
+      ]
+    },
+    {
+      "ID": 6606,
+      "Name": "元驱动挂载点位扩展",
+      "HashNeeded": 1296000,
+      "Level": 6,
+      "MaxLevel": 6,
+      "IsLabTech": false,
+      "UnlockFunctions": [
+        771
+      ],
+      "UnlockValues": [
+        1.0
+      ],
+      "UnlockRecipes": [],
+      "PreTechs": [
+        6605
+      ],
+      "PreTechsImplicit": [
+        1303
+      ]
+    },
+    {
+      "ID": 6607,
+      "Name": "元驱动挂载点位扩展",
+      "HashNeeded": 1764000,
+      "Level": 7,
+      "MaxLevel": 7,
+      "IsLabTech": false,
+      "UnlockFunctions": [
+        771
+      ],
+      "UnlockValues": [
+        1.0
+      ],
+      "UnlockRecipes": [],
+      "PreTechs": [
+        6606
+      ],
+      "PreTechsImplicit": [
+        1303
+      ]
+    },
+    {
+      "ID": 6608,
+      "Name": "元驱动挂载点位扩展",
+      "HashNeeded": 2304000,
+      "Level": 8,
+      "MaxLevel": 8,
+      "IsLabTech": false,
+      "UnlockFunctions": [
+        771
+      ],
+      "UnlockValues": [
+        1.0
+      ],
+      "UnlockRecipes": [],
+      "PreTechs": [
+        6607
+      ],
+      "PreTechsImplicit": [
+        1303
       ]
     }
   ]

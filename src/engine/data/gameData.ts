@@ -59,12 +59,12 @@ export const game_data_info_list: GameDataInfo[] = [
     {
         "name_en": "Vanilla",
         "name_cn": "原版游戏",
-        "version": "0.10.34.28524",
+        "version": "0.10.34.28529",
     },
     {
         "name_en": "MoreMegaStructure",
         "name_cn": "更多巨构",
-        "version": "1.9.0",
+        "version": "1.9.1",
     },
     {
         "name_en": "TheyComeFromVoid",
@@ -79,7 +79,7 @@ export const game_data_info_list: GameDataInfo[] = [
     {
         "name_en": "OrbitalRing",
         "name_cn": "星环",
-        "version": "1.0.3",
+        "version": "1.0.6",
     },
     {
         "name_en": "FractionateEverything",
