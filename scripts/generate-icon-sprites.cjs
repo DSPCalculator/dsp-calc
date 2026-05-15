@@ -185,9 +185,17 @@ function collectIconAssetIndex(sourceDir) {
     return iconAssetIndex;
 }
 
+function findOrbitalRingFallbackIcon(iconAssetIndex, iconName, lookupOrder) {
+    if (!lookupOrder.includes('OrbitalRing') || lookupOrder.includes('MoreMegaStructure')) {
+        return null;
+    }
+
+    return iconAssetIndex.MoreMegaStructure?.get(iconName) || null;
+}
+
 function collectRequiredIcons(sourceDir, gameDataDir) {
     const iconAssetIndex = collectIconAssetIndex(sourceDir);
-    const requiredIcons = Object.fromEntries(MOD_PRIORITY_ORDER.map(modName => [modName, new Set()]));
+    const requiredIcons = Object.fromEntries(MOD_PRIORITY_ORDER.map(modName => [modName, new Map()]));
     const missingIcons = new Map();
     const jsonFiles = fs.readdirSync(gameDataDir)
         .filter(name => name.endsWith('.json'))
@@ -207,7 +215,13 @@ function collectRequiredIcons(sourceDir, gameDataDir) {
 
             const resolvedMod = lookupOrder.find(modName => iconAssetIndex[modName]?.has(iconName));
             if (resolvedMod) {
-                requiredIcons[resolvedMod].add(iconName);
+                requiredIcons[resolvedMod].set(iconName, iconAssetIndex[resolvedMod].get(iconName));
+                continue;
+            }
+
+            const fallbackIconFile = findOrbitalRingFallbackIcon(iconAssetIndex, iconName, lookupOrder);
+            if (fallbackIconFile) {
+                requiredIcons.OrbitalRing.set(iconName, fallbackIconFile);
             } else {
                 const missingIcon = missingIcons.get(iconName) || {
                     iconName,
@@ -312,8 +326,8 @@ async function generateIconSprites(options = {}) {
 
     for (const modName of modNames) {
         const iconFiles = [...requiredIcons[modName]]
-            .sort((a, b) => a.localeCompare(b, 'zh-Hans-CN'))
-            .map(iconName => iconAssetIndex[modName].get(iconName))
+            .sort(([a], [b]) => a.localeCompare(b, 'zh-Hans-CN'))
+            .map(([, iconFile]) => iconFile)
             .filter(Boolean);
         if (iconFiles.length === 0) {
             continue;
