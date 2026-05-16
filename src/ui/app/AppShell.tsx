@@ -2,13 +2,23 @@ import {lazy, Suspense, useContext, useEffect, useLayoutEffect, useMemo, useRef,
 import {FaCog, FaTrashAlt} from 'react-icons/fa';
 import {ContextProvider} from './providers/AppProviders';
 import {GlobalStateContext, SettingsContext} from './providers/app-contexts';
-import {clearCalculatorUrlState, readCalculatorUrlState, writeCalculatorUrlState} from './urlState';
+import {
+    clearCalculatorUrlState,
+    compactCalculatorUrlState,
+    type ExpandedCalculatorUrlState,
+    expandCalculatorUrlState,
+    readCalculatorUrlState,
+    writeCalculatorUrlState
+} from './urlState';
 import {NeedsList} from '@ui/features/needs/NeedsPanel';
 import {NeedsListStorage} from '@ui/features/needs/NeedsStorageControls';
 import {GameVersion} from '@ui/features/mod-selector/GameVersionSelector';
 import type {ComparisonBaseline} from '@ui/features/result/BatchPresetControls';
 import {SchemeStorage} from '@ui/features/settings/SchemeStorageControls';
-import type {NumericMap} from '@engine/types/domain';
+import {get_default_settings_for_game_data} from './providers/default-settings';
+import {decode_mod_selection, default_game_data, encode_mod_selection, get_game_data} from '@engine/data/gameData';
+import {init_scheme_data} from '@engine/scheme/schemeData';
+import type {GameData, NumericMap} from '@engine/types/domain';
 
 const BatchSetting = lazy(() => import('@ui/features/result/BatchPresetControls').then(module => ({default: module.BatchSetting})));
 const Result = lazy(() => import('@ui/features/result/ResultPanel').then(module => ({default: module.Result})));
@@ -83,13 +93,13 @@ function AppWithContexts({initial_needs_list}: {initial_needs_list?: NumericMap}
     }
 
     useEffect(() => {
-        writeCalculatorUrlState({
-            version: 1,
+        writeCalculatorUrlState(compactCalculatorUrlState({
+            mod_selection: encode_mod_selection(global_state.game_data.mod_guid_list),
             needs_list,
             settings,
             scheme_data: global_state.raw_scheme_data,
-        });
-    }, [global_state.raw_scheme_data, needs_list, settings]);
+        }, init_scheme_data(global_state.game_data), global_state.game_data, get_default_settings_for_game_data(global_state.game_data)));
+    }, [global_state.game_data, global_state.raw_scheme_data, needs_list, settings]);
 
     useLayoutEffect(() => {
         const toolbar_row = toolbar_actions_ref.current;
@@ -165,9 +175,44 @@ function AppWithContexts({initial_needs_list}: {initial_needs_list?: NumericMap}
 }
 
 export default function App() {
-    const initial_url_state = useMemo(() => readCalculatorUrlState(), []);
+    const raw_url_state = useMemo(() => readCalculatorUrlState(), []);
+    const initial_mods = useMemo(() => decode_mod_selection(raw_url_state?.m), [raw_url_state]);
+    const [initial_game_data, set_initial_game_data] = useState<GameData | undefined>(
+        () => initial_mods.length === 0 ? default_game_data : undefined,
+    );
 
-    return <ContextProvider initial_state={initial_url_state}>
+    useEffect(() => {
+        let canceled = false;
+        if (initial_mods.length > 0) {
+            get_game_data(initial_mods).then(game_data => {
+                if (!canceled) {
+                    set_initial_game_data(game_data);
+                }
+            });
+        }
+        return () => {
+            canceled = true;
+        };
+    }, [initial_mods]);
+
+    const initial_url_state = useMemo<ExpandedCalculatorUrlState | undefined>(() => {
+        if (!initial_game_data) {
+            return undefined;
+        }
+        return expandCalculatorUrlState(raw_url_state, init_scheme_data(initial_game_data), initial_game_data);
+    }, [initial_game_data, raw_url_state]);
+
+    if (!initial_game_data) {
+        return <div className="calculator-page">
+            <div className="small text-muted">加载分享链接配置中...</div>
+        </div>;
+    }
+
+    return <ContextProvider
+        initial_game_data={initial_game_data}
+        initial_mods={initial_mods}
+        initial_state={initial_url_state}
+    >
         <AppWithContexts initial_needs_list={initial_url_state?.needs_list}/>
     </ContextProvider>;
 }

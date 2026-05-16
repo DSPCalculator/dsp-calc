@@ -3,7 +3,10 @@ import {useContext} from 'react';
 import {GlobalStateContext, SchemeDataSetterContext} from '@ui/app/providers/app-contexts';
 import {HorizontalMultiButtonSelect} from '@ui/components/controls/HorizontalMultiButtonSelect';
 import type {NumericMap, SchemeData, Settings} from '@engine/types/domain';
+import type {HorizontalOption} from '@ui/types/ui';
 import {pro_mode_class} from './resultSelectorClasses';
+
+type BatchProMode = 0 | 1 | 2 | 3;
 
 // TODO refactor to some other modules
 function updateSchemesForRecipes(old_scheme_data, should_update, updater) {
@@ -13,6 +16,25 @@ function updateSchemesForRecipes(old_scheme_data, should_update, updater) {
             should_update(idx) ? updater(recipe_setting, idx) : recipe_setting
         )),
     };
+}
+
+function getBatchProModeForRecipe(recipeProliferator: number, batchMode: BatchProMode): number {
+    if (batchMode === 0) {
+        return 0;
+    }
+    if (batchMode === 1) {
+        return recipeProliferator & 1 ? 1 : 0;
+    }
+    if (batchMode === 2) {
+        return recipeProliferator & 2 ? 2 : 0;
+    }
+    if (recipeProliferator & 2) {
+        return 2;
+    }
+    if (recipeProliferator & 1) {
+        return 1;
+    }
+    return 0;
 }
 
 function FactorySelect({captureComparisonBaseline, current_choice, list, needs_list}: {
@@ -81,7 +103,7 @@ export function BatchSetting({
 
     const first_recipe_setting = scheme_data.scheme_for_recipe[0];
     const pro_num = first_recipe_setting?.["增产点数"] ?? 0;
-    const pro_mode = first_recipe_setting?.["增产模式"] ?? 0;
+    const pro_mode = detectBatchProMode();
 
     const pro_num_item = {};
     for (const data of game_data.proliferator_data) {
@@ -149,7 +171,14 @@ export function BatchSetting({
         ));
     }
 
-    function change_pro_mode(pro_mode) {
+    function detectBatchProMode(): BatchProMode {
+        const batch_modes: BatchProMode[] = [0, 1, 2, 3];
+        return batch_modes.find(batch_mode => game_data.recipe_data.every((recipe, index) => (
+            scheme_data.scheme_for_recipe[index]["增产模式"] === getBatchProModeForRecipe(recipe["增产"], batch_mode)
+        ))) ?? 3;
+    }
+
+    function change_pro_mode(pro_mode: BatchProMode) {
         captureComparisonBaseline({
             needs_list: structuredClone(needs_list),
             scheme_data: structuredClone(global_state.raw_scheme_data),
@@ -157,18 +186,19 @@ export function BatchSetting({
         });
         set_scheme_data(old_scheme_data => updateSchemesForRecipes(
             old_scheme_data,
-            (idx) => !(pro_mode != 0 && !(pro_mode & game_data.recipe_data[idx]["增产"])),
-            (recipe_setting) => ({
+            () => true,
+            (recipe_setting, idx) => ({
                 ...recipe_setting,
-                "增产模式": Number(pro_mode),
+                "增产模式": getBatchProModeForRecipe(game_data.recipe_data[idx]["增产"], pro_mode),
             })
         ));
     }
 
-    const promode_options = [
+    const promode_options: HorizontalOption<BatchProMode>[] = [
         {value: 0, label: "无"},
-        {value: 1, label: "加速", className: pro_mode_class[1]},
-        {value: 2, label: "增产", className: pro_mode_class[2]},
+        {value: 1, label: "仅加速", className: pro_mode_class[1]},
+        {value: 2, label: "仅增产", className: pro_mode_class[2]},
+        {value: 3, label: "优先增产", className: pro_mode_class[2]},
     ];
 
     return <div className="batch-setting-panel mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center">

@@ -22,6 +22,7 @@ function createMissingObject<T extends object>(label: string): T {
 export type GameInfoSetter = (game_data: GameData) => void;
 export type SchemeDataSetter = Dispatch<SetStateAction<SchemeData>>;
 export type SettingsSetter = (patch: Partial<Settings>) => void;
+export type ModSelectionSetter = Dispatch<SetStateAction<string[]>>;
 export type ProviderChildren = {children: ReactNode};
 
 export const GameInfoSetterContext = createContext<GameInfoSetter>(
@@ -41,3 +42,7 @@ export const GameInfoContext = createContext<GameInfo>(
     createMissingObject<GameInfo>('GameInfoContext')
 );
 export const DefaultSettingsContext = createContext<Settings>(DEFAULT_SETTINGS);
+export const ModSelectionContext = createContext<string[]>([]);
+export const ModSelectionSetterContext = createContext<ModSelectionSetter>(
+    createMissingFunction<ModSelectionSetter>('ModSelectionSetterContext')
+);

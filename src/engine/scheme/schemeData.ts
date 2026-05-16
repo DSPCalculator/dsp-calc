@@ -1,5 +1,5 @@
 import structuredClone from '@ungap/structured-clone';
-import type {GameData, ItemDataIndex, SchemeData} from '@engine/types/domain';
+import type {GameData, ItemDataIndex, RecipeData, SchemeData} from '@engine/types/domain';
 
 const DEFAULT_SCHEME_DATA: SchemeData = {
     "item_recipe_choices": {"氢": 1},
@@ -41,6 +41,23 @@ function get_item_data(game_data: GameData): ItemDataIndex {
     return item_data;
 }
 
+function get_max_proliferator_points(game_data: GameData): number {
+    return game_data.proliferator_data.reduce((max_points, data) => Math.max(max_points, data["增产点数"]), 0);
+}
+
+function get_default_proliferator_mode(recipe: RecipeData): number {
+    if (recipe["增产"] & 2) {
+        return 2;
+    }
+    if (recipe["增产"] & 1) {
+        return 1;
+    }
+    if (recipe["增产"] & 4) {
+        return 4;
+    }
+    return 0;
+}
+
 export function init_scheme_data(game_data: GameData): SchemeData {
     const scheme_data = structuredClone(DEFAULT_SCHEME_DATA);
     const item_data = get_item_data(game_data);
@@ -66,8 +83,16 @@ export function init_scheme_data(game_data: GameData): SchemeData {
     for (const item_name in item_data) {
         scheme_data.item_recipe_choices[item_name] = 1;
     }
+    const max_proliferator_points = get_max_proliferator_points(game_data);
     for (let i = 0; i < game_data.recipe_data.length; i++) {
-        scheme_data.scheme_for_recipe.push({"建筑": 0, "增产点数": 0, "增产模式": 0});
+        const recipe = game_data.recipe_data[i];
+        const proliferator_mode = get_default_proliferator_mode(recipe);
+        const factory_list = game_data.factory_data[recipe["设施"]] || [];
+        scheme_data.scheme_for_recipe.push({
+            "建筑": Math.max(0, factory_list.length - 1),
+            "增产点数": proliferator_mode === 0 ? 0 : max_proliferator_points,
+            "增产模式": proliferator_mode,
+        });
     }
     return scheme_data;
 }

@@ -102,6 +102,46 @@ export function get_mod_options(): ModOption[] {
     return mod_options;
 }
 
+function get_mod_guid_by_index(index: number): string | undefined {
+    const mod = game_data_info_list[index];
+    if (!mod || mod.name_en === VanillaGUID) {
+        return undefined;
+    }
+    return mod.name_en + mod.version;
+}
+
+export function encode_mod_selection(mod_guid_list: string[] | undefined): string | undefined {
+    if (!mod_guid_list || mod_guid_list.length === 0) {
+        return undefined;
+    }
+
+    const selected_mods = new Set(mod_guid_list);
+    let encoded = "";
+    for (let index = 1; index < game_data_info_list.length; index++) {
+        const mod_guid = get_mod_guid_by_index(index);
+        if (mod_guid && selected_mods.has(mod_guid)) {
+            encoded += index.toString(36);
+        }
+    }
+    return encoded || undefined;
+}
+
+export function decode_mod_selection(encoded: string | undefined): string[] {
+    if (!encoded) {
+        return [];
+    }
+
+    const mod_guid_list: string[] = [];
+    for (const char of encoded) {
+        const index = Number.parseInt(char, 36);
+        const mod_guid = get_mod_guid_by_index(index);
+        if (mod_guid && !mod_guid_list.includes(mod_guid)) {
+            mod_guid_list.push(mod_guid);
+        }
+    }
+    return mod_guid_list;
+}
+
 function build_fractionate_outputs(
     output_infos: RawFractionateOutputInfo[] | undefined,
     get_item_by_id: (itemID: number) => RawItemData | undefined

@@ -18,6 +18,7 @@
     "ahooks": "^3.9.7",
     "antd": "^6.3.7",
     "bootstrap": "^5.3.8",
+    "fflate": "^0.8.3",
     "fuzzysort": "^3.1.0",
     "javascript-lp-solver": "^1.0.3",
     "pinyin-pro": "^3.28.1",
