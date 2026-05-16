@@ -348,9 +348,8 @@ export function buildItemList(item_graph: ItemGraph): {item_list: string[]; key_
             break;
         }
         const key_item: {name: string; count: number} = {name: '', count: 1};
-        let count = 0;
         for (const this_item in product_graph) {
-            count = Object.keys(product_graph[this_item]["原料"]).length + Object.keys(product_graph[this_item]["可生产"]).length;
+            const count = Object.keys(product_graph[this_item]["原料"]).length + Object.keys(product_graph[this_item]["可生产"]).length;
             if (count > key_item["count"]) {
                 key_item["name"] = this_item;
                 key_item["count"] = count;
