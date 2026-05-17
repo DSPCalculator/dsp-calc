@@ -1,5 +1,5 @@
 import type {CalculationSnapshot, LinearProgrammingIssue, NumericMap, SolverModel, SolverResults} from '@engine/types/domain';
-import {findLinearProgrammingBlockers} from './lpDiagnostics';
+import {buildLinearProgrammingDiagnostics} from './lpDiagnostics';
 
 export class LinearProgrammingError extends Error {
     issue: LinearProgrammingIssue;
@@ -21,24 +21,34 @@ function formatBlockedItems(items: string[]): string {
     return `${items.slice(0, 4).join('、')} 等 ${items.length} 项`;
 }
 
-function normalizeSolverResults(results: SolverResults, model: SolverModel, lp_item_dict: NumericMap): void {
+function normalizeSolverResults(
+    snapshot: CalculationSnapshot,
+    results: SolverResults,
+    model: SolverModel,
+    lp_item_dict: NumericMap
+): void {
     const lp_items = Object.keys(lp_item_dict);
     if ("result" in results) {
         delete results["result"];
     }
     if ("feasible" in results) {
         if (!results.feasible) {
-            const blockers = findLinearProgrammingBlockers(model, lp_item_dict);
+            const diagnostics = buildLinearProgrammingDiagnostics(model, lp_item_dict, {
+                item_graph: snapshot.item_graph,
+                item_price: snapshot.item_price,
+            });
+            const {blockers, related_items} = diagnostics;
             const blocker_items = blockers.map(({item}) => item);
             const issue_items = blocker_items.length > 0 ? blocker_items : lp_items;
             const blocked_text = formatBlockedItems(blocker_items);
             throw new LinearProgrammingError({
                 kind: 'infeasible',
                 message: blocked_text
-                    ? `线性规划无解：${blocked_text} 有正需求，但当前配方链没有任何净正产出来源。请检查这些物品及其上游的增产设置。`
+                    ? `线性规划无解：${blocked_text} 有正需求，但当前配方链没有任何净正产出来源。红色项是直接阻塞项，黄色项是会消耗阻塞项的相关链路，可从这些行调整上游增产设置。`
                     : "线性规划无解，请检查红色物品的来源配方设置。",
                 items: issue_items,
                 blockers,
+                related_items,
             });
         }
         delete results.feasible;
@@ -66,7 +76,7 @@ export function applyLinearProgrammingResults(
     const item_graph = snapshot.item_graph;
     const item_price = snapshot.item_price;
 
-    normalizeSolverResults(results, model, lp_item_dict);
+    normalizeSolverResults(snapshot, results, model, lp_item_dict);
 
     const lp_products: NumericMap = {};
     for (const item in model.constraints) {

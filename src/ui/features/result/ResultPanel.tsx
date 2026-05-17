@@ -95,6 +95,7 @@ function collectResultMetrics({
     natural_production_line,
     result_dict,
     lp_issue_items,
+    lp_related_items,
 }: {
     fixed_num: number;
     game_data: GameData;
@@ -107,6 +108,7 @@ function collectResultMetrics({
     natural_production_line: NaturalProductionLineRow[];
     result_dict: NumericMap;
     lp_issue_items: Set<string>;
+    lp_related_items?: Set<string>;
 }) {
     let energy_cost = 0;
     let miner_energy_cost = 0;
@@ -164,6 +166,7 @@ function collectResultMetrics({
         side_products,
         getFactoryNumber: get_factory_number,
         lp_issue_items,
+        lp_related_items,
     });
 
     for (const row of natural_production_line) {
@@ -221,8 +224,12 @@ export function Result({
     const natural_production_line = settings.natural_production_line;
     const [calculated_result_dict, lp_surplus_list, lp_issue] = global_state.calculate(needs_list);
     const lp_issue_items = new Set(lp_issue?.items || []);
+    const lp_related_items = new Set(lp_issue?.related_items || []);
     const result_dict = lp_issue
-        ? Object.fromEntries((lp_issue.blockers || []).map(({item, demand}) => [item, needs_list[item] || demand]))
+        ? {
+            ...Object.fromEntries((lp_issue.blockers || []).map(({item, demand}) => [item, needs_list[item] || demand])),
+            ...Object.fromEntries((lp_issue.related_items || []).map(item => [item, 0])),
+        }
         : calculated_result_dict;
 
     const fixed_num = settings.fixed_num;
@@ -314,6 +321,7 @@ export function Result({
         time_tick,
         natural_production_line,
         lp_issue_items,
+        lp_related_items,
     });
 
     function buildRawMaterialList(
@@ -390,6 +398,7 @@ export function Result({
             time_tick,
             natural_production_line: comparison_baseline.settings.natural_production_line,
             lp_issue_items: new Set<string>(),
+            lp_related_items: new Set<string>(),
         });
         const previous_raw_material_list = buildRawMaterialList(
             previous_result_dict,

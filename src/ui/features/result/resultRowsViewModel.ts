@@ -12,6 +12,7 @@ export function buildResultRowsViewModel({
     side_products,
     getFactoryNumber,
     lp_issue_items = new Set<string>(),
+    lp_related_items = new Set<string>(),
 }: {
     fixed_num: number;
     game_data: GameData;
@@ -23,16 +24,17 @@ export function buildResultRowsViewModel({
     side_products: Record<string, NumericMap>;
     getFactoryNumber: (amount: number, item: string) => number;
     lp_issue_items?: Set<string>;
+    lp_related_items?: Set<string>;
 }): ResultRowViewModel[] {
     const rows: ResultRowViewModel[] = [];
     const normalized_side_products: Record<string, NumericMap> = {...side_products};
 
-    const row_items = new Set([...Object.keys(result_dict), ...lp_issue_items]);
+    const row_items = new Set([...Object.keys(result_dict), ...lp_issue_items, ...lp_related_items]);
     row_items.forEach((item_name) => {
         normalized_side_products[item_name] = normalized_side_products[item_name] || {};
         const result_amount = result_dict[item_name] ?? 0;
         const total = result_amount + (Object.values(normalized_side_products[item_name]) as number[]).reduce((a, b) => a + b, 0);
-        if (total < 1e-6 && !lp_issue_items.has(item_name)) {
+        if (total < 1e-6 && !lp_issue_items.has(item_name) && !lp_related_items.has(item_name)) {
             return;
         }
         const recipe_id = item_data[item_name][scheme_data.item_recipe_choices[item_name]];
@@ -51,7 +53,13 @@ export function buildResultRowsViewModel({
         const row_classes = [
             is_mineralized ? "table-secondary" : "",
             lp_issue_items.has(item_name) ? "table-danger lp-issue-row" : "",
+            lp_related_items.has(item_name) ? "table-warning" : "",
         ].filter(Boolean).join(" ");
+        const issue_relation = lp_issue_items.has(item_name)
+            ? 'blocker'
+            : lp_related_items.has(item_name)
+                ? 'related'
+                : undefined;
 
         rows.push({
             item_name,
@@ -60,6 +68,7 @@ export function buildResultRowsViewModel({
             from_side_products,
             factory_name,
             is_mineralized,
+            issue_relation,
             row_class: row_classes,
             proliferator_mode: scheme_data.scheme_for_recipe[recipe_id]["增产模式"],
             proliferator_points: scheme_data.scheme_for_recipe[recipe_id]["增产点数"],

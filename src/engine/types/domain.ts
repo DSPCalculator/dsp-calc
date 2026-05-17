@@ -199,6 +199,7 @@ export interface ResultRowViewModel {
     from_side_products: ResultRowSideProduct[];
     factory_name: string;
     is_mineralized: boolean;
+    issue_relation?: 'blocker' | 'related';
     row_class: string;
     proliferator_mode: number;
     proliferator_points: number;
@@ -262,11 +263,17 @@ export interface LinearProgrammingIssue {
     message: string;
     items: ItemName[];
     blockers?: LinearProgrammingBlocker[];
+    related_items?: ItemName[];
 }
 
 export interface LinearProgrammingBlocker {
     item: ItemName;
     demand: number;
+}
+
+export interface LinearProgrammingDiagnostics {
+    blockers: LinearProgrammingBlocker[];
+    related_items: ItemName[];
 }
 
 export interface RawFractionateOutputInfo {
