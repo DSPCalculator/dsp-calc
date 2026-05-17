@@ -256,7 +256,7 @@ export function get_equivalent_recipe({
     const building_info = game_data.factory_data[recipe["设施"]][scheme_recipe["建筑"]];
 
     let speed_multiplier = 1;
-    let output_multiplier = 1;
+    let output_multiplier = building_info["产物倍率"] ?? 1;
     const factory_speed_multiplier = building_info["倍率"] * get_factory_speed_multiplier(building_info["名称"], target_item, settings);
 
     const proliferate_mode = Number(scheme_recipe["增产模式"] || 0);

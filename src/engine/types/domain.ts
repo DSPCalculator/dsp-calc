@@ -12,6 +12,7 @@ export interface FactoryInfo {
     名称: string;
     耗能: number;
     倍率: number;
+    产物倍率: number;
     占地: number;
 }
 
@@ -289,6 +290,7 @@ export interface RawItemData {
     IconName: string;
     WorkEnergyPerTick?: number;
     Speed?: number;
+    MultipleOutput?: number;
     Space?: number;
 }
 

@@ -4,7 +4,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258
+        6258,
+        2319
       ],
       "Name": "铁块",
       "Items": [
@@ -18,28 +19,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": "iron-plate"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]铁块",
-      "Items": [
-        1001
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1101
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 60,
       "Proliferator": 3,
@@ -75,7 +54,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258
+        6258,
+        2319
       ],
       "Name": "铜块",
       "Items": [
@@ -89,28 +69,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": "copper-plate"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]铜块",
-      "Items": [
-        1002
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1104
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 60,
       "Proliferator": 3,
@@ -489,7 +447,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258
+        6258,
+        2319
       ],
       "Name": "高能石墨",
       "Items": [
@@ -503,28 +462,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": "graphite"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]高能石墨",
-      "Items": [
-        1006
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1109
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 60,
       "Proliferator": 3,
@@ -740,7 +677,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258
+        6258,
+        2319
       ],
       "Name": "铝块",
       "Items": [
@@ -760,32 +698,11 @@
       "IconName": ""
     },
     {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]铝块",
-      "Items": [
-        6202
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        6203
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": ""
-    },
-    {
       "Type": 1,
       "Factories": [
         2302,
-        6258
+        6258,
+        2319
       ],
       "Name": "铝合金",
       "Items": [
@@ -801,30 +718,6 @@
       ],
       "ResultCounts": [
         2
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": ""
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]铝合金",
-      "Items": [
-        1101,
-        6203
-      ],
-      "ItemCounts": [
-        2,
-        2
-      ],
-      "Results": [
-        6204
-      ],
-      "ResultCounts": [
-        4
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -917,7 +810,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258
+        6258,
+        2319
       ],
       "Name": "钛化玻璃",
       "Items": [
@@ -933,30 +827,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "titan-glass"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]钛化玻璃",
-      "Items": [
-        1110,
-        1106
-      ],
-      "ItemCounts": [
-        2,
-        1
-      ],
-      "Results": [
-        1119
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -1132,7 +1002,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258
+        6258,
+        2319
       ],
       "Name": "晶格硅",
       "Items": [
@@ -1146,28 +1017,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "silicium-high-purity"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]晶格硅",
-      "Items": [
-        1105
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1113
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -1533,7 +1382,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258
+        6258,
+        2319
       ],
       "Name": "玻璃",
       "Items": [
@@ -1547,28 +1397,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": "glass"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]玻璃",
-      "Items": [
-        1005
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1110
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 60,
       "Proliferator": 3,
@@ -1797,7 +1625,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258
+        6258,
+        2319
       ],
       "Name": "高纯硅块",
       "Items": [
@@ -1817,32 +1646,11 @@
       "IconName": "silicium-single-crystal"
     },
     {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]高纯硅块",
-      "Items": [
-        1003
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1105
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": "silicium-single-crystal"
-    },
-    {
       "Type": 11,
       "Factories": [
         6230,
-        6258
+        6258,
+        2319
       ],
       "Name": "金刚石",
       "Items": [
@@ -1862,32 +1670,11 @@
       "IconName": "diamond"
     },
     {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]金刚石",
-      "Items": [
-        1109
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1112
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "diamond"
-    },
-    {
       "Type": 11,
       "Factories": [
         6230,
-        6258
+        6258,
+        2319
       ],
       "Name": "金刚石（高效）",
       "Items": [
@@ -1907,32 +1694,11 @@
       "IconName": "diamond-lv2"
     },
     {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]金刚石（高效）",
-      "Items": [
-        1012
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1112
-      ],
-      "ResultCounts": [
-        4
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": "diamond-lv2"
-    },
-    {
       "Type": 11,
       "Factories": [
         6230,
-        6258
+        6258,
+        2319
       ],
       "Name": "晶格硅（高效）",
       "Items": [
@@ -1952,32 +1718,11 @@
       "IconName": "silicium-high-purity-lv2"
     },
     {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]晶格硅（高效）",
-      "Items": [
-        1013
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1113
-      ],
-      "ResultCounts": [
-        4
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": "silicium-high-purity-lv2"
-    },
-    {
       "Type": 1,
       "Factories": [
         2302,
-        6258
+        6258,
+        2319
       ],
       "Name": "钢材",
       "Items": [
@@ -1991,28 +1736,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "steel-plate"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]钢材",
-      "Items": [
-        1101
-      ],
-      "ItemCounts": [
-        2
-      ],
-      "Results": [
-        1103
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -2052,7 +1775,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258
+        6258,
+        2319
       ],
       "Name": "钛块",
       "Items": [
@@ -2072,32 +1796,11 @@
       "IconName": "titanium-plate"
     },
     {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]钛块",
-      "Items": [
-        1004
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1106
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": "titanium-plate"
-    },
-    {
       "Type": 11,
       "Factories": [
         6230,
-        6258
+        6258,
+        2319
       ],
       "Name": "钛合金",
       "Items": [
@@ -2115,32 +1818,6 @@
       ],
       "ResultCounts": [
         2
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "titanium-alloy"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]钛合金",
-      "Items": [
-        1103,
-        1106,
-        1116
-      ],
-      "ItemCounts": [
-        2,
-        2,
-        2
-      ],
-      "Results": [
-        1107
-      ],
-      "ResultCounts": [
-        4
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -5950,7 +5627,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258
+        6258,
+        2319
       ],
       "Name": "钛晶石（高效）",
       "Items": [
@@ -5966,30 +5644,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "R钛晶石（高效）"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]钛晶石（高效）",
-      "Items": [
-        1106,
-        1117
-      ],
-      "ItemCounts": [
-        3,
-        1
-      ],
-      "Results": [
-        1118
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -6092,7 +5746,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258
+        6258,
+        2319
       ],
       "Name": "钛晶石",
       "Items": [
@@ -6108,30 +5763,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "titan-crystal"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2319
-      ],
-      "Name": "[负熵熔炉双倍产物]钛晶石",
-      "Items": [
-        1106,
-        7708
-      ],
-      "ItemCounts": [
-        3,
-        1
-      ],
-      "Results": [
-        1118
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -7027,27 +6658,27 @@
         1001
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1001
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1001,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -7082,27 +6713,27 @@
         1002
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1002
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1002,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -7137,35 +6768,35 @@
         1003
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1003,
         1013
       ],
       "ResultCounts": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1003,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 1013,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -7200,27 +6831,27 @@
         1004
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1004
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1004,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -7255,7 +6886,7 @@
         1005
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1005,
@@ -7263,34 +6894,34 @@
         1004
       ],
       "ResultCounts": [
-        2.0,
-        1.0,
-        1.0
+        2,
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1005,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 1003,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         },
         {
           "OutputID": 1004,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -7325,35 +6956,35 @@
         1006
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1006,
         1112
       ],
       "ResultCounts": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1006,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 1112,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -7388,27 +7019,27 @@
         1030
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1030
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1030,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -7443,27 +7074,27 @@
         1031
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1031
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1031,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -7499,27 +7130,27 @@
         1011
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1011
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1011,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -7554,27 +7185,27 @@
         1012
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1012
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1012,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -7590,27 +7221,27 @@
         1013
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1013
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1013,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -7646,27 +7277,27 @@
         1014
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1014
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1014,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -7701,27 +7332,27 @@
         1015
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1015
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1015,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -7757,27 +7388,27 @@
         1016
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1016
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1016,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -8279,27 +7910,27 @@
         1000
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1000
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1000,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -8333,27 +7964,27 @@
         1007
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1007
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1007,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -8369,27 +8000,27 @@
         1114
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1114
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1114,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -8405,27 +8036,27 @@
         1116
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1116
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1116,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -8441,35 +8072,35 @@
         1120
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1120,
         1121
       ],
       "ResultCounts": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1120,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 1121,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -8485,35 +8116,35 @@
         1121
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1121,
         1120
       ],
       "ResultCounts": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1121,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 1120,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -8547,27 +8178,27 @@
         1122
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1122
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1122,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -8619,7 +8250,7 @@
         1209
       ],
       "ItemCounts": [
-        0.0083333333333333332
+        0.008333333333333333
       ],
       "Results": [
         1208
@@ -8641,27 +8272,27 @@
         1208
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1208
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1208,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -8699,7 +8330,7 @@
         1801
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6217
@@ -8710,16 +8341,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6217,
           "OutputCount": 2.39437866,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -8757,7 +8388,7 @@
         1802
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6241,
@@ -8772,11 +8403,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6241,
@@ -8829,7 +8460,7 @@
         1803
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6244,
@@ -8844,11 +8475,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6244,
@@ -8901,7 +8532,7 @@
         1804
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1803,
@@ -8914,11 +8545,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1803,
@@ -8962,7 +8593,7 @@
         1115
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7708
@@ -8973,16 +8604,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7708,
           "OutputCount": 0.312816769,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9034,27 +8665,27 @@
         1117
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1117
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1117,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9124,7 +8755,7 @@
         1128
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1129
@@ -9135,16 +8766,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1129,
           "OutputCount": 0.4816156,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9178,7 +8809,7 @@
         1129
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1128,
@@ -9191,11 +8822,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1128,
@@ -9329,7 +8960,7 @@
         5003
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5001
@@ -9340,16 +8971,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5001,
           "OutputCount": 0.5110591,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9365,7 +8996,7 @@
         5001
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5003,
@@ -9378,11 +9009,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5003,
@@ -9408,7 +9039,7 @@
         5002
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5001
@@ -9419,16 +9050,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5001,
           "OutputCount": 4.20466471,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9462,7 +9093,7 @@
         1601
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7607
@@ -9473,16 +9104,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7607,
           "OutputCount": 0.317629755,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9498,7 +9129,7 @@
         1603
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7607,
@@ -9511,11 +9142,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7607,
@@ -9541,7 +9172,7 @@
         1604
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1605
@@ -9552,16 +9183,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1605,
           "OutputCount": 0.3506035,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9577,7 +9208,7 @@
         1605
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1604,
@@ -9590,11 +9221,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1604,
@@ -9620,7 +9251,7 @@
         1607
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1608
@@ -9631,16 +9262,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1608,
           "OutputCount": 0.01048632,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9656,7 +9287,7 @@
         1608
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1607
@@ -9667,16 +9298,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1607,
           "OutputCount": 95.36234,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9692,7 +9323,7 @@
         1609
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1610
@@ -9703,16 +9334,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1610,
           "OutputCount": 0.4282246,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9728,7 +9359,7 @@
         1610
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1609,
@@ -9741,11 +9372,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1609,
@@ -9771,7 +9402,7 @@
         1611
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1610,
@@ -9784,11 +9415,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1610,
@@ -9814,7 +9445,7 @@
         1612
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1613
@@ -9825,16 +9456,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1613,
           "OutputCount": 0.430359572,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9850,7 +9481,7 @@
         1613
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1612
@@ -9861,16 +9492,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1612,
           "OutputCount": 2.32363844,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -9886,7 +9517,7 @@
         5101
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5102,
@@ -9899,11 +9530,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5102,
@@ -9929,7 +9560,7 @@
         5102
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5101,
@@ -9944,11 +9575,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5101,
@@ -9979,7 +9610,7 @@
         5103
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5101,
@@ -9994,11 +9625,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5101,
@@ -10029,7 +9660,7 @@
         5111
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5102,
@@ -10044,11 +9675,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5102,
@@ -10079,7 +9710,7 @@
         5112
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5111
@@ -10090,16 +9721,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5111,
           "OutputCount": 5.490044,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10134,27 +9765,27 @@
         5201
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5201
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5201,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10170,7 +9801,7 @@
         5201
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5206,
@@ -10183,11 +9814,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5206,
@@ -10232,27 +9863,27 @@
         5202
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5202
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5202,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10268,7 +9899,7 @@
         5202
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5203,
@@ -10281,11 +9912,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5203,
@@ -10330,27 +9961,27 @@
         5203
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5203
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5203,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10366,7 +9997,7 @@
         5203
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5201,
@@ -10379,11 +10010,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5201,
@@ -10428,27 +10059,27 @@
         5204
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5204
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5204,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10464,7 +10095,7 @@
         5204
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5202,
@@ -10477,11 +10108,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5202,
@@ -10526,27 +10157,27 @@
         5205
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5205
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5205,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10562,27 +10193,27 @@
         5205
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5204
       ],
       "ResultCounts": [
-        4.0
+        4
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5204,
-          "OutputCount": 4.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 4,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10616,27 +10247,27 @@
         5206
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5206
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5206,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10652,7 +10283,7 @@
         5206
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         5201
@@ -10663,16 +10294,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 5201,
           "OutputCount": 0.8,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10688,7 +10319,7 @@
         2001
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2002
@@ -10699,16 +10330,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2002,
           "OutputCount": 0.5331999,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10724,7 +10355,7 @@
         2002
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2001,
@@ -10737,11 +10368,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2001,
@@ -10767,7 +10398,7 @@
         2003
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2002
@@ -10778,16 +10409,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2002,
           "OutputCount": 1.68106484,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10803,7 +10434,7 @@
         2011
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2012
@@ -10814,16 +10445,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2012,
           "OutputCount": 0.4934592,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10839,7 +10470,7 @@
         2012
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2011,
@@ -10852,11 +10483,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2011,
@@ -10882,7 +10513,7 @@
         2013
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2012,
@@ -10895,11 +10526,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2012,
@@ -10925,7 +10556,7 @@
         2014
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2013
@@ -10936,16 +10567,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2013,
           "OutputCount": 3.23460174,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -10961,7 +10592,7 @@
         2020
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2030,
@@ -10978,11 +10609,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2030,
@@ -11018,7 +10649,7 @@
         2040
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2020,
@@ -11035,11 +10666,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2020,
@@ -11075,7 +10706,7 @@
         2030
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2020,
@@ -11092,11 +10723,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2020,
@@ -11132,7 +10763,7 @@
         2313
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2020,
@@ -11149,11 +10780,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2020,
@@ -11189,7 +10820,7 @@
         2107
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2103
@@ -11200,16 +10831,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2103,
           "OutputCount": 0.0202440415,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11225,7 +10856,7 @@
         2101
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2102
@@ -11236,16 +10867,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2102,
           "OutputCount": 0.478820145,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11261,7 +10892,7 @@
         2102
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2101,
@@ -11274,11 +10905,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2101,
@@ -11304,7 +10935,7 @@
         2106
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6229
@@ -11315,16 +10946,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6229,
           "OutputCount": 0.0126357321,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11340,7 +10971,7 @@
         2303
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2304
@@ -11351,16 +10982,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2304,
           "OutputCount": 0.404409766,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11376,7 +11007,7 @@
         2304
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2303,
@@ -11389,11 +11020,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2303,
@@ -11419,7 +11050,7 @@
         2305
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2304,
@@ -11432,11 +11063,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2304,
@@ -11462,7 +11093,7 @@
         2318
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2305
@@ -11473,16 +11104,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2305,
           "OutputCount": 7.402228,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11498,7 +11129,7 @@
         2201
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2202
@@ -11509,16 +11140,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2202,
           "OutputCount": 0.22241509,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11534,7 +11165,7 @@
         2202
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2201,
@@ -11547,11 +11178,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2201,
@@ -11577,7 +11208,7 @@
         2212
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2202
@@ -11588,16 +11219,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2202,
           "OutputCount": 15.44641,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11613,7 +11244,7 @@
         2203
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2205,
@@ -11628,11 +11259,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2205,
@@ -11663,7 +11294,7 @@
         2204
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2213
@@ -11674,16 +11305,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2213,
           "OutputCount": 0.5366431,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11699,7 +11330,7 @@
         2211
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2213,
@@ -11712,11 +11343,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2213,
@@ -11742,7 +11373,7 @@
         2213
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2204,
@@ -11755,11 +11386,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2204,
@@ -11785,7 +11416,7 @@
         2301
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2316
@@ -11796,16 +11427,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2316,
           "OutputCount": 0.005749595,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11821,7 +11452,7 @@
         2316
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2301
@@ -11832,16 +11463,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2301,
           "OutputCount": 173.9253,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11857,7 +11488,7 @@
         2306
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6266
@@ -11868,16 +11499,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6266,
           "OutputCount": 0.0127904424,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11893,7 +11524,7 @@
         2302
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6230
@@ -11904,16 +11535,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6230,
           "OutputCount": 0.5120175,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -11929,7 +11560,7 @@
         2315
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6230,
@@ -11942,11 +11573,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6230,
@@ -11972,7 +11603,7 @@
         2319
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2315
@@ -11983,16 +11614,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2315,
           "OutputCount": 15.1344566,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -12008,7 +11639,7 @@
         2307
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2308
@@ -12019,16 +11650,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2308,
           "OutputCount": 2.11029243,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -12044,7 +11675,7 @@
         2308
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2307
@@ -12055,16 +11686,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2307,
           "OutputCount": 0.473867983,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -12080,7 +11711,7 @@
         2309
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2317
@@ -12091,16 +11722,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2317,
           "OutputCount": 0.100684918,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -12116,7 +11747,7 @@
         2317
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2309
@@ -12127,16 +11758,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2309,
           "OutputCount": 9.931974,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -12152,7 +11783,7 @@
         2205
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2203,
@@ -12167,11 +11798,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2203,
@@ -12202,7 +11833,7 @@
         2206
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2203,
@@ -12219,11 +11850,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2203,
@@ -12321,7 +11952,7 @@
         2311
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2208,
@@ -12336,11 +11967,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2208,
@@ -12371,7 +12002,7 @@
         2208
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2311,
@@ -12386,11 +12017,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2311,
@@ -12421,7 +12052,7 @@
         2312
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2311,
@@ -12436,11 +12067,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2311,
@@ -12471,7 +12102,7 @@
         2209
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2206
@@ -12482,16 +12113,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2206,
           "OutputCount": 9.84324551,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -12507,7 +12138,7 @@
         2310
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2311,
@@ -12522,11 +12153,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2311,
@@ -12557,7 +12188,7 @@
         2210
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2211,
@@ -12570,11 +12201,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2211,
@@ -12600,7 +12231,7 @@
         2103
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2107,
@@ -12613,11 +12244,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2107,
@@ -12643,7 +12274,7 @@
         2104
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2103,
@@ -12656,11 +12287,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2103,
@@ -12686,7 +12317,7 @@
         2105
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2104
@@ -12697,16 +12328,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2104,
           "OutputCount": 2.7458446,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -12722,7 +12353,7 @@
         2901
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2902
@@ -12733,16 +12364,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2902,
           "OutputCount": 0.00635253172,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -12758,7 +12389,7 @@
         2902
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2901
@@ -12769,16 +12400,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2901,
           "OutputCount": 157.417557,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -12794,7 +12425,7 @@
         3001
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3003,
@@ -12809,11 +12440,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3003,
@@ -12844,7 +12475,7 @@
         3002
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7618,
@@ -12859,11 +12490,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7618,
@@ -12894,7 +12525,7 @@
         3003
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3001,
@@ -12909,11 +12540,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3001,
@@ -12944,7 +12575,7 @@
         3004
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3002,
@@ -12959,11 +12590,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3002,
@@ -12994,7 +12625,7 @@
         3005
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3001,
@@ -13009,11 +12640,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3001,
@@ -13044,7 +12675,7 @@
         3006
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3009,
@@ -13059,11 +12690,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3009,
@@ -13094,7 +12725,7 @@
         3007
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3009,
@@ -13109,11 +12740,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3009,
@@ -13144,7 +12775,7 @@
         3008
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3009,
@@ -13159,11 +12790,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3009,
@@ -13194,7 +12825,7 @@
         3009
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3007,
@@ -13209,11 +12840,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3007,
@@ -13244,7 +12875,7 @@
         3010
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3002,
@@ -13259,11 +12890,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3002,
@@ -13294,27 +12925,27 @@
         6201
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6201
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6201,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -13349,27 +12980,27 @@
         6202
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6202
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6202,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -13421,35 +13052,35 @@
         6205
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6205,
         7019
       ],
       "ResultCounts": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6205,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 7019,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -13483,7 +13114,7 @@
         6206
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6206,
@@ -13491,34 +13122,34 @@
         1109
       ],
       "ResultCounts": [
-        2.0,
-        1.0,
-        1.0
+        2,
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6206,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 7019,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         },
         {
           "OutputID": 1109,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -13554,7 +13185,7 @@
         6207
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6207,
@@ -13562,34 +13193,34 @@
         6205
       ],
       "ResultCounts": [
-        2.0,
-        1.0,
-        1.0
+        2,
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6207,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 1116,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         },
         {
           "OutputID": 6205,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -13627,7 +13258,7 @@
         6216
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6217,
@@ -13642,11 +13273,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6217,
@@ -13699,7 +13330,7 @@
         6217
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1801,
@@ -13714,11 +13345,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1801,
@@ -13767,35 +13398,35 @@
         6220
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6220,
         7002
       ],
       "ResultCounts": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6220,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 7002,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -13811,7 +13442,7 @@
         6221
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2203,
@@ -13826,11 +13457,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2203,
@@ -13881,7 +13512,7 @@
         6222
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6222,
@@ -13889,34 +13520,34 @@
         6226
       ],
       "ResultCounts": [
-        2.0,
-        1.0,
-        1.0
+        2,
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6222,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 6225,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         },
         {
           "OutputID": 6226,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -13932,27 +13563,27 @@
         6225
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6225
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6225,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -13968,27 +13599,27 @@
         6226
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6226
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6226,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -14004,7 +13635,7 @@
         6229
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2106
@@ -14015,16 +13646,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2106,
           "OutputCount": 79.14065,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -14040,7 +13671,7 @@
         6230
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2302,
@@ -14053,11 +13684,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2302,
@@ -14083,7 +13714,7 @@
         6231
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2102
@@ -14094,16 +13725,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2102,
           "OutputCount": 2244.53174,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -14119,35 +13750,35 @@
         6234
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6234,
         6235
       ],
       "ResultCounts": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6234,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 6235,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -14181,35 +13812,35 @@
         6235
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6235,
         6234
       ],
       "ResultCounts": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6235,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 6234,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -14247,7 +13878,7 @@
         6241
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6216,
@@ -14264,11 +13895,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6216,
@@ -14326,7 +13957,7 @@
         6242
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6217,
@@ -14341,11 +13972,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6217,
@@ -14398,7 +14029,7 @@
         6243
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6241,
@@ -14413,11 +14044,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6241,
@@ -14470,7 +14101,7 @@
         6244
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1802,
@@ -14487,11 +14118,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1802,
@@ -14549,7 +14180,7 @@
         6245
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6244,
@@ -14564,11 +14195,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6244,
@@ -14599,7 +14230,7 @@
         6257
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6258,
@@ -14618,11 +14249,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6258,
@@ -14663,7 +14294,7 @@
         6258
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6257,
@@ -14682,11 +14313,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6257,
@@ -14727,7 +14358,7 @@
         6259
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6258,
@@ -14746,11 +14377,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6258,
@@ -14791,7 +14422,7 @@
         6260
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6258,
@@ -14810,11 +14441,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6258,
@@ -14855,7 +14486,7 @@
         6261
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2210
@@ -14866,16 +14497,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2210,
           "OutputCount": 6.1369977,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -14909,7 +14540,7 @@
         6264
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6258,
@@ -14928,11 +14559,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6258,
@@ -14973,7 +14604,7 @@
         6265
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6258,
@@ -14992,11 +14623,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 6258,
@@ -15037,7 +14668,7 @@
         6266
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2306
@@ -15048,16 +14679,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2306,
           "OutputCount": 78.18337,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -15073,7 +14704,7 @@
         6267
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         2020,
@@ -15090,11 +14721,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 2020,
@@ -15382,7 +15013,7 @@
         7002
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7002,
@@ -15390,34 +15021,34 @@
         1120
       ],
       "ResultCounts": [
-        2.0,
-        1.0,
-        1.0
+        2,
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7002,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 6220,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         },
         {
           "OutputID": 1120,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -15433,27 +15064,27 @@
         7014
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7014
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7014,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -15469,27 +15100,27 @@
         7017
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7017
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7017,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -15524,35 +15155,35 @@
         7018
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7018,
         7101
       ],
       "ResultCounts": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7018,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 7101,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -15568,35 +15199,35 @@
         7019
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7019,
         6206
       ],
       "ResultCounts": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7019,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [
         {
           "OutputID": 6206,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.01
         }
       ],
@@ -15612,27 +15243,27 @@
         7101
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7101
       ],
       "ResultCounts": [
-        2.0
+        2
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7101,
-          "OutputCount": 2.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 2,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -15648,7 +15279,7 @@
         7607
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1601,
@@ -15661,11 +15292,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1601,
@@ -15691,7 +15322,7 @@
         7608
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1603,
@@ -15704,11 +15335,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1603,
@@ -15734,7 +15365,7 @@
         7609
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7608,
@@ -15747,11 +15378,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7608,
@@ -15795,7 +15426,7 @@
         7610
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1129,
@@ -15808,11 +15439,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1129,
@@ -15838,7 +15469,7 @@
         7611
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7610
@@ -15849,16 +15480,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7610,
           "OutputCount": 24.7662,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -15874,7 +15505,7 @@
         7612
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1605,
@@ -15887,11 +15518,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1605,
@@ -15917,7 +15548,7 @@
         7613
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7612
@@ -15928,16 +15559,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7612,
           "OutputCount": 18.001255,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -15953,7 +15584,7 @@
         7615
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1611
@@ -15964,16 +15595,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1611,
           "OutputCount": 10.9624634,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -15989,7 +15620,7 @@
         7616
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7609
@@ -16000,16 +15631,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7609,
           "OutputCount": 30.654398,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -16025,7 +15656,7 @@
         7617
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3001,
@@ -16040,11 +15671,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3001,
@@ -16075,7 +15706,7 @@
         7618
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         3002,
@@ -16090,11 +15721,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 3002,
@@ -16161,7 +15792,7 @@
         7708
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1115,
@@ -16174,11 +15805,11 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 1115,
@@ -16222,7 +15853,7 @@
         7709
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7708
@@ -16233,16 +15864,16 @@
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 7708,
           "OutputCount": 1.53135574,
-          "SuccessRatio": 1.0
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -16330,33 +15961,33 @@
         8011
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         8021,
         8016
       ],
       "ResultCounts": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 8021,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.96
         },
         {
           "OutputID": 8016,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.04
         }
       ],
@@ -16391,33 +16022,33 @@
         8012
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         8022,
         8016
       ],
       "ResultCounts": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 8022,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.96
         },
         {
           "OutputID": 8016,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.04
         }
       ],
@@ -16452,33 +16083,33 @@
         8013
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         8023,
         8016
       ],
       "ResultCounts": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 8023,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.96
         },
         {
           "OutputID": 8016,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.04
         }
       ],
@@ -16513,33 +16144,33 @@
         8014
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         8024,
         8016
       ],
       "ResultCounts": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 8024,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.96
         },
         {
           "OutputID": 8016,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.04
         }
       ],
@@ -16574,33 +16205,33 @@
         8015
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         8025,
         8016
       ],
       "ResultCounts": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 8025,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.96
         },
         {
           "OutputID": 8016,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.04
         }
       ],
@@ -16635,33 +16266,33 @@
         8021
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         8011,
         8016
       ],
       "ResultCounts": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 8011,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.96
         },
         {
           "OutputID": 8016,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.04
         }
       ],
@@ -16678,33 +16309,33 @@
         8022
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         8012,
         8016
       ],
       "ResultCounts": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 8012,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.96
         },
         {
           "OutputID": 8016,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.04
         }
       ],
@@ -16721,33 +16352,33 @@
         8023
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         8013,
         8016
       ],
       "ResultCounts": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 8013,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.96
         },
         {
           "OutputID": 8016,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.04
         }
       ],
@@ -16764,33 +16395,33 @@
         8024
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         8014,
         8016
       ],
       "ResultCounts": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 8014,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.96
         },
         {
           "OutputID": 8016,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.04
         }
       ],
@@ -16807,33 +16438,33 @@
         8025
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         8015,
         8016
       ],
       "ResultCounts": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.05,
-      "DestroyRatio": 0.0,
+      "DestroyRatio": 0,
       "RemainInputRatio": 0.799999952,
       "DoubleOutputRatio": 0.64,
-      "PointsBonus": 0.0,
-      "SuccessBoost": 0.0,
+      "PointsBonus": 0,
+      "SuccessBoost": 0,
       "OutputMain": [
         {
           "OutputID": 8015,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.96
         },
         {
           "OutputID": 8016,
-          "OutputCount": 1.0,
+          "OutputCount": 1,
           "SuccessRatio": 0.04
         }
       ],
@@ -17544,8 +17175,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 606,
       "MultiLevel": false,
-      "Speed": 10.0,
-      "Space": 0.0
+      "Speed": 10,
+      "Space": 0
     },
     {
       "ID": 2106,
@@ -17605,8 +17236,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 608,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 4.0
+      "Speed": 1,
+      "Space": 4
     },
     {
       "ID": 2207,
@@ -17617,8 +17248,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 0,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 4.0
+      "Speed": 1,
+      "Space": 4
     },
     {
       "ID": 2208,
@@ -17629,7 +17260,7 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 803,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 54.82
     },
     {
@@ -17641,8 +17272,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 607,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 64.0
+      "Speed": 1,
+      "Space": 64
     },
     {
       "ID": 2210,
@@ -17681,8 +17312,8 @@
       "WorkEnergyPerTick": 7000,
       "BuildIndex": 201,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 15.0
+      "Speed": 1,
+      "Space": 15
     },
     {
       "ID": 2302,
@@ -17693,7 +17324,7 @@
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 501,
       "MultiLevel": false,
-      "Speed": 2.0,
+      "Speed": 2,
       "Space": 5.76
     },
     {
@@ -17705,7 +17336,7 @@
       "WorkEnergyPerTick": 9000,
       "BuildIndex": 504,
       "MultiLevel": false,
-      "Speed": 2.0,
+      "Speed": 2,
       "Space": 10.24
     },
     {
@@ -17717,7 +17348,7 @@
       "WorkEnergyPerTick": 18000,
       "BuildIndex": 505,
       "MultiLevel": false,
-      "Speed": 2.0,
+      "Speed": 2,
       "Space": 10.24
     },
     {
@@ -17729,7 +17360,7 @@
       "WorkEnergyPerTick": 36000,
       "BuildIndex": 506,
       "MultiLevel": false,
-      "Speed": 2.0,
+      "Speed": 2,
       "Space": 10.24
     },
     {
@@ -17741,8 +17372,8 @@
       "WorkEnergyPerTick": 5000,
       "BuildIndex": 203,
       "MultiLevel": false,
-      "Speed": 2.0,
-      "Space": 12.0
+      "Speed": 2,
+      "Space": 12
     },
     {
       "ID": 2307,
@@ -17753,8 +17384,8 @@
       "WorkEnergyPerTick": 14000,
       "BuildIndex": 205,
       "MultiLevel": false,
-      "Speed": 2.0,
-      "Space": 50.0
+      "Speed": 2,
+      "Space": 50
     },
     {
       "ID": 2308,
@@ -17765,8 +17396,8 @@
       "WorkEnergyPerTick": 16000,
       "BuildIndex": 507,
       "MultiLevel": false,
-      "Speed": 2.0,
-      "Space": 18.0
+      "Speed": 2,
+      "Space": 18
     },
     {
       "ID": 2309,
@@ -17777,7 +17408,7 @@
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 508,
       "MultiLevel": false,
-      "Speed": 4.0,
+      "Speed": 4,
       "Space": 23.76
     },
     {
@@ -17789,7 +17420,7 @@
       "WorkEnergyPerTick": 40000,
       "BuildIndex": 510,
       "MultiLevel": false,
-      "Speed": 4.0,
+      "Speed": 4,
       "Space": 45.12
     },
     {
@@ -17822,7 +17453,7 @@
       "WorkEnergyPerTick": 24000,
       "BuildIndex": 503,
       "MultiLevel": false,
-      "Speed": 2.0,
+      "Speed": 2,
       "Space": 5.76
     },
     {
@@ -17834,8 +17465,8 @@
       "WorkEnergyPerTick": 49000,
       "BuildIndex": 202,
       "MultiLevel": false,
-      "Speed": 2.0,
-      "Space": 25.0
+      "Speed": 2,
+      "Space": 25
     },
     {
       "ID": 2317,
@@ -17846,7 +17477,7 @@
       "WorkEnergyPerTick": 24000,
       "BuildIndex": 509,
       "MultiLevel": false,
-      "Speed": 4.0,
+      "Speed": 4,
       "Space": 23.76
     },
     {
@@ -17858,7 +17489,7 @@
       "WorkEnergyPerTick": 240000,
       "BuildIndex": 809,
       "MultiLevel": false,
-      "Speed": 8.0,
+      "Speed": 8,
       "Space": 10.24
     },
     {
@@ -17870,8 +17501,9 @@
       "WorkEnergyPerTick": 240000,
       "BuildIndex": 808,
       "MultiLevel": false,
-      "Speed": 4.0,
-      "Space": 5.76
+      "Speed": 4,
+      "Space": 5.76,
+      "MultipleOutput": 2
     },
     {
       "ID": 2401,
@@ -17889,7 +17521,7 @@
       "WorkEnergyPerTick": 8000,
       "BuildIndex": 801,
       "MultiLevel": true,
-      "Speed": 4.0,
+      "Speed": 4,
       "Space": 20.25
     },
     {
@@ -17901,7 +17533,7 @@
       "WorkEnergyPerTick": 32000,
       "BuildIndex": 807,
       "MultiLevel": true,
-      "Speed": 8.0,
+      "Speed": 8,
       "Space": 20.25
     },
     {
@@ -18200,8 +17832,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 109,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 4.0
+      "Speed": 1,
+      "Space": 4
     },
     {
       "ID": 6222,
@@ -18240,7 +17872,7 @@
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 502,
       "MultiLevel": false,
-      "Speed": 2.0,
+      "Speed": 2,
       "Space": 5.76
     },
     {
@@ -18308,8 +17940,8 @@
       "WorkEnergyPerTick": 375000,
       "BuildIndex": 1201,
       "MultiLevel": false,
-      "Speed": 30.0,
-      "Space": 50.0
+      "Speed": 30,
+      "Space": 50
     },
     {
       "ID": 6258,
@@ -18320,8 +17952,8 @@
       "WorkEnergyPerTick": 375000,
       "BuildIndex": 1202,
       "MultiLevel": false,
-      "Speed": 30.0,
-      "Space": 50.0
+      "Speed": 30,
+      "Space": 50
     },
     {
       "ID": 6259,
@@ -18332,8 +17964,8 @@
       "WorkEnergyPerTick": 375000,
       "BuildIndex": 1203,
       "MultiLevel": false,
-      "Speed": 30.0,
-      "Space": 50.0
+      "Speed": 30,
+      "Space": 50
     },
     {
       "ID": 6260,
@@ -18344,8 +17976,8 @@
       "WorkEnergyPerTick": 375000,
       "BuildIndex": 1205,
       "MultiLevel": false,
-      "Speed": 30.0,
-      "Space": 50.0
+      "Speed": 30,
+      "Space": 50
     },
     {
       "ID": 6261,
@@ -18370,8 +18002,8 @@
       "WorkEnergyPerTick": 500000,
       "BuildIndex": 1204,
       "MultiLevel": false,
-      "Speed": 30.0,
-      "Space": 50.0
+      "Speed": 30,
+      "Space": 50
     },
     {
       "ID": 6265,
@@ -18382,8 +18014,8 @@
       "WorkEnergyPerTick": 750000,
       "BuildIndex": 1206,
       "MultiLevel": false,
-      "Speed": 30.0,
-      "Space": 50.0
+      "Speed": 30,
+      "Space": 50
     },
     {
       "ID": 6266,
@@ -18394,7 +18026,7 @@
       "WorkEnergyPerTick": 500000,
       "BuildIndex": 204,
       "MultiLevel": false,
-      "Speed": 20.0,
+      "Speed": 20,
       "Space": 12.96
     },
     {
@@ -18406,8 +18038,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 605,
       "MultiLevel": false,
-      "Speed": 10.0,
-      "Space": 50.0
+      "Speed": 10,
+      "Space": 50
     },
     {
       "ID": 6271,
@@ -18446,8 +18078,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 0,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 25.0
+      "Speed": 1,
+      "Space": 25
     },
     {
       "ID": 6502,
@@ -18836,7 +18468,7 @@
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 0,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 12.96
     },
     {
@@ -18848,7 +18480,7 @@
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 0,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 12.96
     },
     {
@@ -18860,7 +18492,7 @@
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 0,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 12.96
     },
     {
@@ -18872,7 +18504,7 @@
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 0,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 12.96
     },
     {
@@ -18884,7 +18516,7 @@
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 0,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 12.96
     },
     {
@@ -18915,7 +18547,7 @@
       "GridIndex": -1,
       "IconName": "伊卡洛斯",
       "WorkEnergyPerTick": 1333.3333333333333,
-      "Speed": 10000.0,
+      "Speed": 10000,
       "MultipleOutput": 1,
       "Space": 0
     },
@@ -18925,8 +18557,8 @@
       "Name": "行星基地",
       "GridIndex": -1,
       "IconName": "行星基地",
-      "WorkEnergyPerTick": 0.0,
-      "Speed": 10000.0,
+      "WorkEnergyPerTick": 0,
+      "Speed": 10000,
       "MultipleOutput": 1,
       "Space": 0
     }
@@ -19801,7 +19433,7 @@
         37
       ],
       "UnlockValues": [
-        2203.0
+        2203
       ],
       "UnlockRecipes": [
         63,
@@ -20026,7 +19658,7 @@
         8
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -20083,7 +19715,7 @@
         99
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -20162,7 +19794,7 @@
         37
       ],
       "UnlockValues": [
-        2316.0
+        2316
       ],
       "UnlockRecipes": [
         80,
@@ -20210,7 +19842,7 @@
         26
       ],
       "UnlockValues": [
-        15.0
+        15
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -20376,7 +20008,7 @@
         32
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [
         122,
@@ -20494,7 +20126,7 @@
         42
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [
         103
@@ -20902,8 +20534,8 @@
         78
       ],
       "UnlockValues": [
-        1.0,
-        4.0
+        1,
+        4
       ],
       "UnlockRecipes": [
         147
@@ -20968,8 +20600,8 @@
         80
       ],
       "UnlockValues": [
-        1.0,
-        4.0
+        1,
+        4
       ],
       "UnlockRecipes": [
         150
@@ -21126,9 +20758,9 @@
         82
       ],
       "UnlockValues": [
-        80000000.0,
-        30000.0,
-        1.0
+        80000000,
+        30000,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -21148,10 +20780,10 @@
         83
       ],
       "UnlockValues": [
-        200000000.0,
-        30000.0,
-        1.0,
-        200.0
+        200000000,
+        30000,
+        1,
+        200
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21173,10 +20805,10 @@
         83
       ],
       "UnlockValues": [
-        400000000.0,
-        30000.0,
-        2.0,
-        200.0
+        400000000,
+        30000,
+        2,
+        200
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21198,10 +20830,10 @@
         83
       ],
       "UnlockValues": [
-        800000000.0,
-        30000.0,
-        2.0,
-        200.0
+        800000000,
+        30000,
+        2,
+        200
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21223,10 +20855,10 @@
         83
       ],
       "UnlockValues": [
-        1600000000.0,
-        30000.0,
-        2.0,
-        200.0
+        1600000000,
+        30000,
+        2,
+        200
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21247,9 +20879,9 @@
         83
       ],
       "UnlockValues": [
-        2400000000.0,
-        20000.0,
-        200.0
+        2400000000,
+        20000,
+        200
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21268,7 +20900,7 @@
         3
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -21287,7 +20919,7 @@
         3
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21308,7 +20940,7 @@
         3
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21329,7 +20961,7 @@
         3
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21350,7 +20982,7 @@
         3
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21371,7 +21003,7 @@
         3
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21392,7 +21024,7 @@
         3
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21413,7 +21045,7 @@
         3
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21434,7 +21066,7 @@
         5
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -21453,7 +21085,7 @@
         5
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21475,8 +21107,8 @@
         33
       ],
       "UnlockValues": [
-        1.0,
-        2.0
+        1,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21499,9 +21131,9 @@
         33
       ],
       "UnlockValues": [
-        1.0,
-        1.0,
-        2.0
+        1,
+        1,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21523,8 +21155,8 @@
         33
       ],
       "UnlockValues": [
-        2.0,
-        2.0
+        2,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21546,8 +21178,8 @@
         33
       ],
       "UnlockValues": [
-        2.0,
-        2.0
+        2,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21569,8 +21201,8 @@
         32
       ],
       "UnlockValues": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21589,7 +21221,7 @@
         1
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -21608,7 +21240,7 @@
         1
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21629,7 +21261,7 @@
         9
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21650,7 +21282,7 @@
         1
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21671,7 +21303,7 @@
         1
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21692,7 +21324,7 @@
         9
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21713,7 +21345,7 @@
         1
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21734,7 +21366,7 @@
         2
       ],
       "UnlockValues": [
-        200000.0
+        200000
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -21753,7 +21385,7 @@
         2
       ],
       "UnlockValues": [
-        200000.0
+        200000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21774,7 +21406,7 @@
         2
       ],
       "UnlockValues": [
-        200000.0
+        200000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21795,7 +21427,7 @@
         2
       ],
       "UnlockValues": [
-        200000.0
+        200000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21816,7 +21448,7 @@
         2
       ],
       "UnlockValues": [
-        800000.0
+        800000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21837,7 +21469,7 @@
         2
       ],
       "UnlockValues": [
-        1000000.0
+        1000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21858,7 +21490,7 @@
         10
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -21877,7 +21509,7 @@
         10
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21898,7 +21530,7 @@
         10
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21919,7 +21551,7 @@
         10
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21940,7 +21572,7 @@
         10
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21961,7 +21593,7 @@
         10
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -21983,8 +21615,8 @@
         44
       ],
       "UnlockValues": [
-        450.0,
-        3600.0
+        450,
+        3600
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -22004,8 +21636,8 @@
         44
       ],
       "UnlockValues": [
-        900.0,
-        7200.0
+        900,
+        7200
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22027,8 +21659,8 @@
         44
       ],
       "UnlockValues": [
-        1800.0,
-        14400.0
+        1800,
+        14400
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22050,8 +21682,8 @@
         44
       ],
       "UnlockValues": [
-        3600.0,
-        28800.0
+        3600,
+        28800
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22073,8 +21705,8 @@
         44
       ],
       "UnlockValues": [
-        1048576.0,
-        45000.0
+        1048576,
+        45000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22095,7 +21727,7 @@
         44
       ],
       "UnlockValues": [
-        1048576.0
+        1048576
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22118,9 +21750,9 @@
         66
       ],
       "UnlockValues": [
-        1.0,
-        2.0,
-        100000000.0
+        1,
+        2,
+        100000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -22141,7 +21773,7 @@
       ],
       "UnlockValues": [
         0.5,
-        200000000.0
+        200000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22165,8 +21797,8 @@
       ],
       "UnlockValues": [
         0.5,
-        200000000.0,
-        1.0
+        200000000,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22188,8 +21820,8 @@
         66
       ],
       "UnlockValues": [
-        1.0,
-        200000000.0
+        1,
+        200000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22209,8 +21841,8 @@
         66
       ],
       "UnlockValues": [
-        1.0,
-        300000000.0
+        1,
+        300000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22232,8 +21864,8 @@
         66
       ],
       "UnlockValues": [
-        1.0,
-        500000000.0
+        1,
+        500000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22254,7 +21886,7 @@
         66
       ],
       "UnlockValues": [
-        500000000.0
+        500000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22273,7 +21905,7 @@
         4
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -22292,7 +21924,7 @@
         4
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22313,7 +21945,7 @@
         11
       ],
       "UnlockValues": [
-        1000.0
+        1000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22334,7 +21966,7 @@
         4
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22356,7 +21988,7 @@
         27
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22375,7 +22007,7 @@
         27
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22394,7 +22026,7 @@
         76
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -22413,7 +22045,7 @@
         76
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22432,7 +22064,7 @@
         76
       ],
       "UnlockValues": [
-        6.0
+        6
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22451,7 +22083,7 @@
         76
       ],
       "UnlockValues": [
-        15.0
+        15
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22470,7 +22102,7 @@
         76
       ],
       "UnlockValues": [
-        30.0
+        30
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22489,7 +22121,7 @@
         76
       ],
       "UnlockValues": [
-        9999.0
+        9999
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22508,7 +22140,7 @@
         12
       ],
       "UnlockValues": [
-        300.0
+        300
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -22527,7 +22159,7 @@
         12
       ],
       "UnlockValues": [
-        300.0
+        300
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22546,7 +22178,7 @@
         12
       ],
       "UnlockValues": [
-        600.0
+        600
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22565,7 +22197,7 @@
         12
       ],
       "UnlockValues": [
-        600.0
+        600
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22584,7 +22216,7 @@
         12
       ],
       "UnlockValues": [
-        900.0
+        900
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22603,7 +22235,7 @@
         12
       ],
       "UnlockValues": [
-        900.0
+        900
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22622,7 +22254,7 @@
         43
       ],
       "UnlockValues": [
-        240.0
+        240
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -22641,7 +22273,7 @@
         43
       ],
       "UnlockValues": [
-        120.0
+        120
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22660,7 +22292,7 @@
         43
       ],
       "UnlockValues": [
-        60.0
+        60
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22679,7 +22311,7 @@
         43
       ],
       "UnlockValues": [
-        30.0
+        30
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22698,7 +22330,7 @@
         43
       ],
       "UnlockValues": [
-        15.0
+        15
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22717,7 +22349,7 @@
         43
       ],
       "UnlockValues": [
-        10.0
+        10
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22888,7 +22520,7 @@
         14
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -22907,7 +22539,7 @@
         14
       ],
       "UnlockValues": [
-        5.0
+        5
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22926,7 +22558,7 @@
         14
       ],
       "UnlockValues": [
-        6.0
+        6
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22945,7 +22577,7 @@
         14
       ],
       "UnlockValues": [
-        7.0
+        7
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22964,7 +22596,7 @@
         14
       ],
       "UnlockValues": [
-        8.0
+        8
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -22984,8 +22616,8 @@
         40
       ],
       "UnlockValues": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23006,7 +22638,7 @@
         39
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -23025,7 +22657,7 @@
         41
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23044,7 +22676,7 @@
         39
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23063,7 +22695,7 @@
         41
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23082,7 +22714,7 @@
         39
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23101,7 +22733,7 @@
         40
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23122,7 +22754,7 @@
         36
       ],
       "UnlockValues": [
-        20.0
+        20
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -23141,7 +22773,7 @@
         36
       ],
       "UnlockValues": [
-        20.0
+        20
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23160,7 +22792,7 @@
         36
       ],
       "UnlockValues": [
-        30.0
+        30
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23179,7 +22811,7 @@
         36
       ],
       "UnlockValues": [
-        30.0
+        30
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23198,7 +22830,7 @@
         36
       ],
       "UnlockValues": [
-        40.0
+        40
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23290,7 +22922,7 @@
         0.3,
         0.15,
         0.5,
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23381,8 +23013,8 @@
         18
       ],
       "UnlockValues": [
-        1.0,
-        5.0
+        1,
+        5
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -23402,8 +23034,8 @@
         18
       ],
       "UnlockValues": [
-        1.0,
-        5.0
+        1,
+        5
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23424,9 +23056,9 @@
         19
       ],
       "UnlockValues": [
-        2.0,
-        5.0,
-        100.0
+        2,
+        5,
+        100
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23449,9 +23081,9 @@
         19
       ],
       "UnlockValues": [
-        2.0,
-        10.0,
-        100.0
+        2,
+        10,
+        100
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23472,9 +23104,9 @@
         19
       ],
       "UnlockValues": [
-        2.0,
-        10.0,
-        100.0
+        2,
+        10,
+        100
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23495,9 +23127,9 @@
         19
       ],
       "UnlockValues": [
-        2.0,
-        10.0,
-        100.0
+        2,
+        10,
+        100
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23518,9 +23150,9 @@
         19
       ],
       "UnlockValues": [
-        2.0,
-        10.0,
-        200.0
+        2,
+        10,
+        200
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23540,8 +23172,8 @@
         19
       ],
       "UnlockValues": [
-        20.0,
-        200.0
+        20,
+        200
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23563,10 +23195,10 @@
         31
       ],
       "UnlockValues": [
-        20.0,
-        200.0,
-        1000.0,
-        2000.0
+        20,
+        200,
+        1000,
+        2000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23588,10 +23220,10 @@
         31
       ],
       "UnlockValues": [
-        20.0,
-        200.0,
-        1000.0,
-        2000.0
+        20,
+        200,
+        1000,
+        2000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23610,7 +23242,7 @@
         29
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -23629,7 +23261,7 @@
         29
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23650,7 +23282,7 @@
         29
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23810,8 +23442,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        2.0
+        1,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -23831,8 +23463,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        2.0
+        1,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23852,8 +23484,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        2.0
+        1,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23873,8 +23505,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        2.0
+        1,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23894,8 +23526,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        2.0
+        1,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23915,8 +23547,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        2.0
+        1,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23935,7 +23567,7 @@
         22
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -23954,7 +23586,7 @@
         22
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23973,7 +23605,7 @@
         22
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -23992,7 +23624,7 @@
         22
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24011,7 +23643,7 @@
         23
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -24028,7 +23660,7 @@
         23
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24047,7 +23679,7 @@
         23
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24066,7 +23698,7 @@
         23
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24825,7 +24457,7 @@
         78
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -24844,7 +24476,7 @@
         78
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24863,7 +24495,7 @@
         77
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24882,7 +24514,7 @@
         78
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24901,7 +24533,7 @@
         77
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24920,7 +24552,7 @@
         77
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24939,7 +24571,7 @@
         77
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24958,7 +24590,7 @@
         80
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -24977,7 +24609,7 @@
         80
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -24996,7 +24628,7 @@
         79
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -25015,7 +24647,7 @@
         79
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -25034,7 +24666,7 @@
         79
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -25053,7 +24685,7 @@
         79
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -25072,7 +24704,7 @@
         79
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [

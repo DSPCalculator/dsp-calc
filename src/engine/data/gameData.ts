@@ -349,6 +349,7 @@ function build_game_data(mod_guid_list: string[], json_data: RawGameDataFile): G
                 "名称": '',
                 "耗能": 0,
                 "倍率": 0,
+                "产物倍率": 1,
                 "占地": 0,
             };
             const item = get_item_by_id(FactoriesArr[i][j]);
@@ -359,7 +360,7 @@ function build_game_data(mod_guid_list: string[], json_data: RawGameDataFile): G
             factory["名称"] = item["Name"];
             factory["耗能"] = (item["WorkEnergyPerTick"] ?? 0) * 0.00006;
             factory["倍率"] = item["Speed"] ?? 0;
-            //factory["输出倍率"] = item["MultipleOutput"];
+            factory["产物倍率"] = item["MultipleOutput"] ?? 1;
             factory["占地"] = item["Space"] ?? 0;
             factories.push(factory);
         }

@@ -602,7 +602,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "塑料",
       "Items": [
@@ -616,28 +617,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 3,
-      "IconName": "plastic"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]塑料",
-      "Items": [
-        7009
-      ],
-      "ItemCounts": [
-        3
-      ],
-      "Results": [
-        1115
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
@@ -664,7 +643,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "硫酸",
       "Items": [
@@ -680,30 +660,6 @@
       ],
       "ResultCounts": [
         3
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 3,
-      "IconName": "sulphuric-acid"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]硫酸",
-      "Items": [
-        6207,
-        1000
-      ],
-      "ItemCounts": [
-        3,
-        4
-      ],
-      "Results": [
-        1116
-      ],
-      "ResultCounts": [
-        6
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
@@ -887,7 +843,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "石墨烯",
       "Items": [
@@ -903,30 +860,6 @@
       ],
       "ResultCounts": [
         2
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 3,
-      "IconName": "graphene"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]石墨烯",
-      "Items": [
-        1109,
-        1116
-      ],
-      "ItemCounts": [
-        4,
-        2
-      ],
-      "Results": [
-        1123
-      ],
-      "ResultCounts": [
-        4
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
@@ -953,7 +886,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "石墨烯（CVD）",
       "Items": [
@@ -975,33 +909,10 @@
       "IconName": "graphene-lv2"
     },
     {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]石墨烯（CVD）",
-      "Items": [
-        6205
-      ],
-      "ItemCounts": [
-        1
-      ],
-      "Results": [
-        1123,
-        1120
-      ],
-      "ResultCounts": [
-        2,
-        2
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "graphene-lv2"
-    },
-    {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "碳纳米管（CVD）",
       "Items": [
@@ -1017,30 +928,6 @@
       "ResultCounts": [
         1,
         3
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "nanotube"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]碳纳米管（CVD）",
-      "Items": [
-        6205
-      ],
-      "ItemCounts": [
-        4
-      ],
-      "Results": [
-        1124,
-        1120
-      ],
-      "ResultCounts": [
-        2,
-        6
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -1078,7 +965,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "碳纳米管（高效）",
       "Items": [
@@ -1092,28 +980,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "nanotube-lv2"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]碳纳米管（高效）",
-      "Items": [
-        1015
-      ],
-      "ItemCounts": [
-        2
-      ],
-      "Results": [
-        1124
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -3045,25 +2911,25 @@
         1000
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         7018
       ],
       "ResultCounts": [
-        1.0
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.01,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.0,
-      "DoubleOutputRatio": 0.0,
+      "DestroyRatio": 0,
+      "RemainInputRatio": 0,
+      "DoubleOutputRatio": 0,
       "OutputMain": [
         {
           "OutputID": 7018,
-          "OutputCount": 1.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 1,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -3099,7 +2965,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "增产剂",
       "Items": [
@@ -3117,32 +2984,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 3,
-      "IconName": "accelerator-3"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]增产剂",
-      "Items": [
-        7006,
-        1112,
-        7708
-      ],
-      "ItemCounts": [
-        1,
-        1,
-        1
-      ],
-      "Results": [
-        1143
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
@@ -3324,25 +3165,25 @@
         1120
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         1121
       ],
       "ResultCounts": [
-        1.0
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.01,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.0,
-      "DoubleOutputRatio": 0.0,
+      "DestroyRatio": 0,
+      "RemainInputRatio": 0,
+      "DoubleOutputRatio": 0,
       "OutputMain": [
         {
           "OutputID": 1121,
-          "OutputCount": 1.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 1,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -3890,7 +3731,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "爆破单元",
       "Items": [
@@ -3908,32 +3750,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 360,
-      "Proliferator": 3,
-      "IconName": "high-explosive"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]爆破单元",
-      "Items": [
-        7009,
-        1116,
-        1115
-      ],
-      "ItemCounts": [
-        6,
-        1,
-        1
-      ],
-      "Results": [
-        1129
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 360,
       "Proliferator": 3,
@@ -4707,7 +4523,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "铀矿处理",
       "Items": [
@@ -4723,30 +4540,6 @@
       ],
       "ResultCounts": [
         2
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": ""
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]铀矿处理",
-      "Items": [
-        6222,
-        1116
-      ],
-      "ItemCounts": [
-        6,
-        4
-      ],
-      "Results": [
-        6225
-      ],
-      "ResultCounts": [
-        4
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -4853,25 +4646,25 @@
         6225
       ],
       "ItemCounts": [
-        1.0
+        1
       ],
       "Results": [
         6226
       ],
       "ResultCounts": [
-        1.0
+        1
       ],
       "TimeSpend": 0,
       "Proliferator": 1,
       "SuccessRatio": 0.007,
-      "DestroyRatio": 0.0,
-      "RemainInputRatio": 0.0,
-      "DoubleOutputRatio": 0.0,
+      "DestroyRatio": 0,
+      "RemainInputRatio": 0,
+      "DoubleOutputRatio": 0,
       "OutputMain": [
         {
           "OutputID": 6226,
-          "OutputCount": 1.0,
-          "SuccessRatio": 1.0
+          "OutputCount": 1,
+          "SuccessRatio": 1
         }
       ],
       "OutputAppend": [],
@@ -5028,7 +4821,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "酸中和",
       "Items": [
@@ -5044,30 +4838,6 @@
       ],
       "ResultCounts": [
         8
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "water"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]酸中和",
-      "Items": [
-        1116,
-        1005
-      ],
-      "ItemCounts": [
-        8,
-        1
-      ],
-      "Results": [
-        1000
-      ],
-      "ResultCounts": [
-        16
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -5201,7 +4971,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "电解冶银",
       "Items": [
@@ -5217,30 +4988,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": ""
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]电解冶银",
-      "Items": [
-        7504,
-        1116
-      ],
-      "ItemCounts": [
-        2,
-        4
-      ],
-      "Results": [
-        7101
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 120,
       "Proliferator": 3,
@@ -5297,7 +5044,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "甲烷",
       "Items": [
@@ -5313,30 +5061,6 @@
       "ResultCounts": [
         1,
         1
-      ],
-      "TimeSpend": 60,
-      "Proliferator": 3,
-      "IconName": ""
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]甲烷",
-      "Items": [
-        1011
-      ],
-      "ItemCounts": [
-        2
-      ],
-      "Results": [
-        6205,
-        1000
-      ],
-      "ResultCounts": [
-        2,
-        2
       ],
       "TimeSpend": 60,
       "Proliferator": 3,
@@ -5896,7 +5620,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "富勒烯",
       "Items": [
@@ -5922,37 +5647,10 @@
       "IconName": ""
     },
     {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]富勒烯",
-      "Items": [
-        6519,
-        1123,
-        1120
-      ],
-      "ItemCounts": [
-        3,
-        1,
-        1
-      ],
-      "Results": [
-        6520,
-        6205
-      ],
-      "ResultCounts": [
-        6,
-        2
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 3,
-      "IconName": ""
-    },
-    {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "气云超精炼",
       "Items": [
@@ -5976,38 +5674,6 @@
         1,
         1,
         1
-      ],
-      "TimeSpend": 900,
-      "Proliferator": 3,
-      "IconName": "R气云超精炼"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]气云超精炼",
-      "Items": [
-        6519,
-        1123,
-        1120
-      ],
-      "ItemCounts": [
-        12,
-        1,
-        1
-      ],
-      "Results": [
-        6520,
-        6205,
-        6521,
-        6522
-      ],
-      "ResultCounts": [
-        24,
-        2,
-        2,
-        2
       ],
       "TimeSpend": 900,
       "Proliferator": 3,
@@ -6733,7 +6399,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "水电解",
       "Items": [
@@ -6753,31 +6420,10 @@
       "IconName": "电解水_新"
     },
     {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]水电解",
-      "Items": [
-        1000
-      ],
-      "ItemCounts": [
-        2
-      ],
-      "Results": [
-        1120
-      ],
-      "ResultCounts": [
-        4
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 3,
-      "IconName": "电解水_新"
-    },
-    {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "重水电解",
       "Items": [
@@ -6791,28 +6437,6 @@
       ],
       "ResultCounts": [
         2
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 3,
-      "IconName": "deuterium"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]重水电解",
-      "Items": [
-        7018
-      ],
-      "ItemCounts": [
-        2
-      ],
-      "Results": [
-        1121
-      ],
-      "ResultCounts": [
-        4
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
@@ -6998,7 +6622,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "煤气化",
       "Items": [
@@ -7014,30 +6639,6 @@
       ],
       "ResultCounts": [
         2
-      ],
-      "TimeSpend": 6,
-      "Proliferator": 3,
-      "IconName": "hydrogen"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]煤气化",
-      "Items": [
-        1006,
-        1000
-      ],
-      "ItemCounts": [
-        1,
-        2
-      ],
-      "Results": [
-        1120
-      ],
-      "ResultCounts": [
-        4
       ],
       "TimeSpend": 6,
       "Proliferator": 3,
@@ -7123,7 +6724,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "富勒醇增产剂",
       "Items": [
@@ -7145,33 +6747,10 @@
       "IconName": "R富勒醇增产剂"
     },
     {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]富勒醇增产剂",
-      "Items": [
-        6521,
-        1112
-      ],
-      "ItemCounts": [
-        1,
-        2
-      ],
-      "Results": [
-        1143
-      ],
-      "ResultCounts": [
-        4
-      ],
-      "TimeSpend": 120,
-      "Proliferator": 3,
-      "IconName": "R富勒醇增产剂"
-    },
-    {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "富勒醇",
       "Items": [
@@ -7195,35 +6774,10 @@
       "IconName": ""
     },
     {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]富勒醇",
-      "Items": [
-        7015,
-        6520,
-        6522
-      ],
-      "ItemCounts": [
-        1,
-        1,
-        1
-      ],
-      "Results": [
-        6521
-      ],
-      "ResultCounts": [
-        2
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 3,
-      "IconName": ""
-    },
-    {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "富勒烯内嵌银",
       "Items": [
@@ -7241,32 +6795,6 @@
       ],
       "ResultCounts": [
         1
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 3,
-      "IconName": ""
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]富勒烯内嵌银",
-      "Items": [
-        7101,
-        6520,
-        6521
-      ],
-      "ItemCounts": [
-        1,
-        1,
-        1
-      ],
-      "Results": [
-        6522
-      ],
-      "ResultCounts": [
-        2
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
@@ -7674,7 +7202,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "醇塑料",
       "Items": [
@@ -7692,32 +7221,6 @@
       ],
       "ResultCounts": [
         3
-      ],
-      "TimeSpend": 180,
-      "Proliferator": 3,
-      "IconName": "R醇塑料"
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]醇塑料",
-      "Items": [
-        7015,
-        7009,
-        1030
-      ],
-      "ItemCounts": [
-        1,
-        3,
-        3
-      ],
-      "Results": [
-        1115
-      ],
-      "ResultCounts": [
-        6
       ],
       "TimeSpend": 180,
       "Proliferator": 3,
@@ -8951,7 +8454,8 @@
     {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "导电银浆",
       "Items": [
@@ -8973,33 +8477,10 @@
       "IconName": "R纯银银浆"
     },
     {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]导电银浆",
-      "Items": [
-        7101,
-        7015
-      ],
-      "ItemCounts": [
-        2,
-        1
-      ],
-      "Results": [
-        7014
-      ],
-      "ResultCounts": [
-        8
-      ],
-      "TimeSpend": 240,
-      "Proliferator": 3,
-      "IconName": "R纯银银浆"
-    },
-    {
       "Type": 2,
       "Factories": [
-        2309
+        2309,
+        2317
       ],
       "Name": "银铜混合浆料",
       "Items": [
@@ -9017,32 +8498,6 @@
       ],
       "ResultCounts": [
         4
-      ],
-      "TimeSpend": 360,
-      "Proliferator": 3,
-      "IconName": ""
-    },
-    {
-      "Type": 255,
-      "Factories": [
-        2317
-      ],
-      "Name": "[量子化工厂双倍产物]银铜混合浆料",
-      "Items": [
-        7504,
-        1104,
-        7015
-      ],
-      "ItemCounts": [
-        1,
-        3,
-        1
-      ],
-      "Results": [
-        7014
-      ],
-      "ResultCounts": [
-        8
       ],
       "TimeSpend": 360,
       "Proliferator": 3,
@@ -9834,7 +9289,7 @@
         1209
       ],
       "ItemCounts": [
-        0.0083333333333333332
+        0.008333333333333333
       ],
       "Results": [
         1208
@@ -11069,8 +10524,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 205,
       "MultiLevel": false,
-      "Speed": 20.0,
-      "Space": 0.0
+      "Speed": 20,
+      "Space": 0
     },
     {
       "ID": 2106,
@@ -11130,8 +10585,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 127,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 4.0
+      "Speed": 1,
+      "Space": 4
     },
     {
       "ID": 2207,
@@ -11142,8 +10597,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 128,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 4.0
+      "Speed": 1,
+      "Space": 4
     },
     {
       "ID": 2208,
@@ -11154,7 +10609,7 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 803,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 54.82
     },
     {
@@ -11166,8 +10621,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 129,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 64.0
+      "Speed": 1,
+      "Space": 64
     },
     {
       "ID": 2210,
@@ -11207,7 +10662,7 @@
       "BuildIndex": 201,
       "MultiLevel": false,
       "Speed": 0.5,
-      "Space": 15.0
+      "Space": 15
     },
     {
       "ID": 2302,
@@ -11218,7 +10673,7 @@
       "WorkEnergyPerTick": 8000,
       "BuildIndex": 501,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 5.76
     },
     {
@@ -11230,7 +10685,7 @@
       "WorkEnergyPerTick": 6000,
       "BuildIndex": 504,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 10.24
     },
     {
@@ -11242,7 +10697,7 @@
       "WorkEnergyPerTick": 24000,
       "BuildIndex": 505,
       "MultiLevel": false,
-      "Speed": 2.0,
+      "Speed": 2,
       "Space": 10.24
     },
     {
@@ -11254,7 +10709,7 @@
       "WorkEnergyPerTick": 96000,
       "BuildIndex": 506,
       "MultiLevel": false,
-      "Speed": 2.0,
+      "Speed": 2,
       "Space": 10.24
     },
     {
@@ -11266,8 +10721,8 @@
       "WorkEnergyPerTick": 5000,
       "BuildIndex": 203,
       "MultiLevel": false,
-      "Speed": 2.0,
-      "Space": 12.0
+      "Speed": 2,
+      "Space": 12
     },
     {
       "ID": 2307,
@@ -11278,8 +10733,8 @@
       "WorkEnergyPerTick": 20000,
       "BuildIndex": 204,
       "MultiLevel": false,
-      "Speed": 2.0,
-      "Space": 50.0
+      "Speed": 2,
+      "Space": 50
     },
     {
       "ID": 2308,
@@ -11290,8 +10745,8 @@
       "WorkEnergyPerTick": 30000,
       "BuildIndex": 529,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 18.0
+      "Speed": 1,
+      "Space": 18
     },
     {
       "ID": 2309,
@@ -11302,7 +10757,7 @@
       "WorkEnergyPerTick": 18000,
       "BuildIndex": 508,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 23.76
     },
     {
@@ -11314,7 +10769,7 @@
       "WorkEnergyPerTick": 400000,
       "BuildIndex": 522,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 45.12
     },
     {
@@ -11347,7 +10802,7 @@
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 521,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 12.96
     },
     {
@@ -11359,7 +10814,7 @@
       "WorkEnergyPerTick": 48000,
       "BuildIndex": 502,
       "MultiLevel": false,
-      "Speed": 2.0,
+      "Speed": 2,
       "Space": 5.76
     },
     {
@@ -11371,8 +10826,8 @@
       "WorkEnergyPerTick": 200000,
       "BuildIndex": 202,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 25.0
+      "Speed": 1,
+      "Space": 25
     },
     {
       "ID": 2317,
@@ -11383,8 +10838,9 @@
       "WorkEnergyPerTick": 144000,
       "BuildIndex": 510,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 23.76
+      "Speed": 1,
+      "Space": 23.76,
+      "MultipleOutput": 2
     },
     {
       "ID": 2318,
@@ -11395,7 +10851,7 @@
       "WorkEnergyPerTick": 192000,
       "BuildIndex": 507,
       "MultiLevel": false,
-      "Speed": 3.0,
+      "Speed": 3,
       "Space": 10.24
     },
     {
@@ -11407,7 +10863,7 @@
       "WorkEnergyPerTick": 1600,
       "BuildIndex": 503,
       "MultiLevel": false,
-      "Speed": 3.0,
+      "Speed": 3,
       "Space": 5.76
     },
     {
@@ -11426,7 +10882,7 @@
       "WorkEnergyPerTick": 8000,
       "BuildIndex": 801,
       "MultiLevel": true,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 20.25
     },
     {
@@ -11438,7 +10894,7 @@
       "WorkEnergyPerTick": 32000,
       "BuildIndex": 806,
       "MultiLevel": true,
-      "Speed": 3.0,
+      "Speed": 3,
       "Space": 20.25
     },
     {
@@ -11765,8 +11221,8 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 110,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 4.0
+      "Speed": 1,
+      "Space": 4
     },
     {
       "ID": 6222,
@@ -11805,7 +11261,7 @@
       "WorkEnergyPerTick": 0,
       "BuildIndex": 0,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 5.76
     },
     {
@@ -11901,8 +11357,8 @@
       "WorkEnergyPerTick": 150000,
       "BuildIndex": 524,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 50.0
+      "Speed": 1,
+      "Space": 50
     },
     {
       "ID": 6258,
@@ -11913,8 +11369,8 @@
       "WorkEnergyPerTick": 200000,
       "BuildIndex": 604,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 50.0
+      "Speed": 1,
+      "Space": 50
     },
     {
       "ID": 6259,
@@ -11925,8 +11381,8 @@
       "WorkEnergyPerTick": 1000000,
       "BuildIndex": 404,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 50.0
+      "Speed": 1,
+      "Space": 50
     },
     {
       "ID": 6261,
@@ -11951,8 +11407,8 @@
       "WorkEnergyPerTick": 600000,
       "BuildIndex": 530,
       "MultiLevel": false,
-      "Speed": 40.0,
-      "Space": 50.0
+      "Speed": 40,
+      "Space": 50
     },
     {
       "ID": 6265,
@@ -11963,8 +11419,8 @@
       "WorkEnergyPerTick": 12500000,
       "BuildIndex": 527,
       "MultiLevel": false,
-      "Speed": 50.0,
-      "Space": 50.0
+      "Speed": 50,
+      "Space": 50
     },
     {
       "ID": 6266,
@@ -11975,7 +11431,7 @@
       "WorkEnergyPerTick": 400,
       "BuildIndex": 103,
       "MultiLevel": false,
-      "Speed": 1.0,
+      "Speed": 1,
       "Space": 12.96
     },
     {
@@ -11987,8 +11443,8 @@
       "WorkEnergyPerTick": 1000000,
       "BuildIndex": 606,
       "MultiLevel": false,
-      "Speed": 1.0,
-      "Space": 50.0
+      "Speed": 1,
+      "Space": 50
     },
     {
       "ID": 6271,
@@ -12048,8 +11504,8 @@
       "WorkEnergyPerTick": 700000,
       "BuildIndex": 525,
       "MultiLevel": false,
-      "Speed": 30.0,
-      "Space": 25.0
+      "Speed": 30,
+      "Space": 25
     },
     {
       "ID": 6502,
@@ -12611,7 +12067,7 @@
       "GridIndex": -1,
       "IconName": "伊卡洛斯",
       "WorkEnergyPerTick": 1333.3333333333333,
-      "Speed": 10000.0,
+      "Speed": 10000,
       "MultipleOutput": 1,
       "Space": 0
     },
@@ -12621,8 +12077,8 @@
       "Name": "行星基地",
       "GridIndex": -1,
       "IconName": "行星基地",
-      "WorkEnergyPerTick": 0.0,
-      "Speed": 10000.0,
+      "WorkEnergyPerTick": 0,
+      "Speed": 10000,
       "MultipleOutput": 1,
       "Space": 0
     }
@@ -13452,8 +12908,8 @@
         37
       ],
       "UnlockValues": [
-        2203.0,
-        2205.0
+        2203,
+        2205
       ],
       "UnlockRecipes": [
         5,
@@ -13651,7 +13107,7 @@
         8
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -13704,7 +13160,7 @@
         99
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -13776,7 +13232,7 @@
         37
       ],
       "UnlockValues": [
-        2316.0
+        2316
       ],
       "UnlockRecipes": [
         80,
@@ -13818,7 +13274,7 @@
         26
       ],
       "UnlockValues": [
-        15.0
+        15
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -13970,7 +13426,7 @@
         32
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [
         122,
@@ -14082,7 +13538,7 @@
         42
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [
         103
@@ -14453,8 +13909,8 @@
         78
       ],
       "UnlockValues": [
-        1.0,
-        4.0
+        1,
+        4
       ],
       "UnlockRecipes": [
         147
@@ -14520,8 +13976,8 @@
         80
       ],
       "UnlockValues": [
-        1.0,
-        4.0
+        1,
+        4
       ],
       "UnlockRecipes": [
         150
@@ -14676,9 +14132,9 @@
         83
       ],
       "UnlockValues": [
-        80000000.0,
-        4.0,
-        1000.0
+        80000000,
+        4,
+        1000
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -14697,9 +14153,9 @@
         83
       ],
       "UnlockValues": [
-        200000000.0,
-        4.0,
-        1000.0
+        200000000,
+        4,
+        1000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14720,9 +14176,9 @@
         83
       ],
       "UnlockValues": [
-        400000000.0,
-        4.0,
-        1000.0
+        400000000,
+        4,
+        1000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14743,9 +14199,9 @@
         83
       ],
       "UnlockValues": [
-        800000000.0,
-        4.0,
-        1000.0
+        800000000,
+        4,
+        1000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14766,9 +14222,9 @@
         83
       ],
       "UnlockValues": [
-        1600000000.0,
-        4.0,
-        1000.0
+        1600000000,
+        4,
+        1000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14788,8 +14244,8 @@
         83
       ],
       "UnlockValues": [
-        2400000000.0,
-        200.0
+        2400000000,
+        200
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14809,8 +14265,8 @@
         81
       ],
       "UnlockValues": [
-        1.0,
-        75000.0
+        1,
+        75000
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -14830,8 +14286,8 @@
         81
       ],
       "UnlockValues": [
-        1.0,
-        75000.0
+        1,
+        75000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14853,8 +14309,8 @@
         81
       ],
       "UnlockValues": [
-        1.0,
-        75000.0
+        1,
+        75000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14876,8 +14332,8 @@
         81
       ],
       "UnlockValues": [
-        1.0,
-        75000.0
+        1,
+        75000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14899,8 +14355,8 @@
         81
       ],
       "UnlockValues": [
-        1.0,
-        75000.0
+        1,
+        75000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14922,8 +14378,8 @@
         81
       ],
       "UnlockValues": [
-        1.0,
-        75000.0
+        1,
+        75000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14945,8 +14401,8 @@
         81
       ],
       "UnlockValues": [
-        2.0,
-        150000.0
+        2,
+        150000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14968,8 +14424,8 @@
         81
       ],
       "UnlockValues": [
-        2.0,
-        150000.0
+        2,
+        150000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14990,7 +14446,7 @@
         5
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15009,7 +14465,7 @@
         5
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15031,8 +14487,8 @@
         33
       ],
       "UnlockValues": [
-        1.0,
-        2.0
+        1,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15055,9 +14511,9 @@
         33
       ],
       "UnlockValues": [
-        1.0,
-        1.0,
-        2.0
+        1,
+        1,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15079,8 +14535,8 @@
         33
       ],
       "UnlockValues": [
-        2.0,
-        2.0
+        2,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15102,8 +14558,8 @@
         33
       ],
       "UnlockValues": [
-        2.0,
-        2.0
+        2,
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15125,8 +14581,8 @@
         32
       ],
       "UnlockValues": [
-        2.0,
-        1.0
+        2,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15145,7 +14601,7 @@
         1
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15164,7 +14620,7 @@
         1
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15185,7 +14641,7 @@
         9
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15206,7 +14662,7 @@
         1
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15227,7 +14683,7 @@
         1
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15248,7 +14704,7 @@
         9
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15269,7 +14725,7 @@
         1
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15290,7 +14746,7 @@
         2
       ],
       "UnlockValues": [
-        400000.0
+        400000
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15309,7 +14765,7 @@
         2
       ],
       "UnlockValues": [
-        400000.0
+        400000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15330,7 +14786,7 @@
         2
       ],
       "UnlockValues": [
-        400000.0
+        400000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15351,7 +14807,7 @@
         2
       ],
       "UnlockValues": [
-        400000.0
+        400000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15372,7 +14828,7 @@
         2
       ],
       "UnlockValues": [
-        1600000.0
+        1600000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15393,7 +14849,7 @@
         2
       ],
       "UnlockValues": [
-        2000000.0
+        2000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15414,7 +14870,7 @@
         10
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15433,7 +14889,7 @@
         10
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15454,7 +14910,7 @@
         10
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15475,7 +14931,7 @@
         10
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15496,7 +14952,7 @@
         10
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15517,7 +14973,7 @@
         10
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15539,8 +14995,8 @@
         44
       ],
       "UnlockValues": [
-        1000100.0,
-        1000100.0
+        1000100,
+        1000100
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15560,8 +15016,8 @@
         44
       ],
       "UnlockValues": [
-        1000100.0,
-        1000100.0
+        1000100,
+        1000100
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15583,8 +15039,8 @@
         44
       ],
       "UnlockValues": [
-        1000100.0,
-        1000100.0
+        1000100,
+        1000100
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15606,8 +15062,8 @@
         44
       ],
       "UnlockValues": [
-        3600.0,
-        28800.0
+        3600,
+        28800
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15629,8 +15085,8 @@
         44
       ],
       "UnlockValues": [
-        1048576.0,
-        45000.0
+        1048576,
+        45000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15651,7 +15107,7 @@
         44
       ],
       "UnlockValues": [
-        1048576.0
+        1048576
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15674,9 +15130,9 @@
         66
       ],
       "UnlockValues": [
-        1.0,
-        2.0,
-        100000000.0
+        1,
+        2,
+        100000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15697,7 +15153,7 @@
       ],
       "UnlockValues": [
         0.5,
-        200000000.0
+        200000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15721,8 +15177,8 @@
       ],
       "UnlockValues": [
         0.5,
-        200000000.0,
-        1.0
+        200000000,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15744,8 +15200,8 @@
         66
       ],
       "UnlockValues": [
-        1.0,
-        200000000.0
+        1,
+        200000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15765,8 +15221,8 @@
         66
       ],
       "UnlockValues": [
-        1.0,
-        300000000.0
+        1,
+        300000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15788,8 +15244,8 @@
         66
       ],
       "UnlockValues": [
-        1.0,
-        500000000.0
+        1,
+        500000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15810,7 +15266,7 @@
         66
       ],
       "UnlockValues": [
-        500000000.0
+        500000000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15829,7 +15285,7 @@
         4
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15848,7 +15304,7 @@
         4
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15870,7 +15326,7 @@
         11
       ],
       "UnlockValues": [
-        1000.0
+        1000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15891,7 +15347,7 @@
         4
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15913,7 +15369,7 @@
         27
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15932,7 +15388,7 @@
         27
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15951,7 +15407,7 @@
         76
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15970,7 +15426,7 @@
         76
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15989,7 +15445,7 @@
         76
       ],
       "UnlockValues": [
-        6.0
+        6
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16008,7 +15464,7 @@
         76
       ],
       "UnlockValues": [
-        15.0
+        15
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16027,7 +15483,7 @@
         76
       ],
       "UnlockValues": [
-        30.0
+        30
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16046,7 +15502,7 @@
         76
       ],
       "UnlockValues": [
-        9999.0
+        9999
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16065,7 +15521,7 @@
         12
       ],
       "UnlockValues": [
-        300.0
+        300
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16084,7 +15540,7 @@
         12
       ],
       "UnlockValues": [
-        300.0
+        300
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16103,7 +15559,7 @@
         12
       ],
       "UnlockValues": [
-        600.0
+        600
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16122,7 +15578,7 @@
         12
       ],
       "UnlockValues": [
-        600.0
+        600
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16141,7 +15597,7 @@
         12
       ],
       "UnlockValues": [
-        900.0
+        900
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16160,7 +15616,7 @@
         12
       ],
       "UnlockValues": [
-        900.0
+        900
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16179,7 +15635,7 @@
         43
       ],
       "UnlockValues": [
-        240.0
+        240
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16198,7 +15654,7 @@
         43
       ],
       "UnlockValues": [
-        120.0
+        120
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16217,7 +15673,7 @@
         43
       ],
       "UnlockValues": [
-        60.0
+        60
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16236,7 +15692,7 @@
         43
       ],
       "UnlockValues": [
-        30.0
+        30
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16255,7 +15711,7 @@
         43
       ],
       "UnlockValues": [
-        15.0
+        15
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16274,7 +15730,7 @@
         43
       ],
       "UnlockValues": [
-        10.0
+        10
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16445,7 +15901,7 @@
         14
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16464,7 +15920,7 @@
         14
       ],
       "UnlockValues": [
-        5.0
+        5
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16483,7 +15939,7 @@
         14
       ],
       "UnlockValues": [
-        6.0
+        6
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16502,7 +15958,7 @@
         14
       ],
       "UnlockValues": [
-        7.0
+        7
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16521,7 +15977,7 @@
         14
       ],
       "UnlockValues": [
-        8.0
+        8
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16541,8 +15997,8 @@
         40
       ],
       "UnlockValues": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16563,7 +16019,7 @@
         39
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16582,7 +16038,7 @@
         41
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16601,7 +16057,7 @@
         39
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16620,7 +16076,7 @@
         41
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16639,7 +16095,7 @@
         39
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16658,7 +16114,7 @@
         40
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16679,7 +16135,7 @@
         36
       ],
       "UnlockValues": [
-        20.0
+        20
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16698,7 +16154,7 @@
         36
       ],
       "UnlockValues": [
-        20.0
+        20
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16717,7 +16173,7 @@
         36
       ],
       "UnlockValues": [
-        30.0
+        30
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16736,7 +16192,7 @@
         36
       ],
       "UnlockValues": [
-        30.0
+        30
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16755,7 +16211,7 @@
         36
       ],
       "UnlockValues": [
-        40.0
+        40
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16934,8 +16390,8 @@
         18
       ],
       "UnlockValues": [
-        1.0,
-        5.0
+        1,
+        5
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16955,8 +16411,8 @@
         18
       ],
       "UnlockValues": [
-        2.0,
-        10.0
+        2,
+        10
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16977,9 +16433,9 @@
         19
       ],
       "UnlockValues": [
-        3.0,
-        10.0,
-        50.0
+        3,
+        10,
+        50
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17002,9 +16458,9 @@
         19
       ],
       "UnlockValues": [
-        3.0,
-        10.0,
-        50.0
+        3,
+        10,
+        50
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17025,9 +16481,9 @@
         19
       ],
       "UnlockValues": [
-        3.0,
-        10.0,
-        100.0
+        3,
+        10,
+        100
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17048,9 +16504,9 @@
         19
       ],
       "UnlockValues": [
-        4.0,
-        10.0,
-        100.0
+        4,
+        10,
+        100
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17071,9 +16527,9 @@
         19
       ],
       "UnlockValues": [
-        4.0,
-        10.0,
-        100.0
+        4,
+        10,
+        100
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17093,8 +16549,8 @@
         19
       ],
       "UnlockValues": [
-        10.0,
-        100.0
+        10,
+        100
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17116,10 +16572,10 @@
         31
       ],
       "UnlockValues": [
-        20.0,
-        100.0,
-        1000.0,
-        1000.0
+        20,
+        100,
+        1000,
+        1000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17141,10 +16597,10 @@
         31
       ],
       "UnlockValues": [
-        20.0,
-        100.0,
-        1000.0,
-        1000.0
+        20,
+        100,
+        1000,
+        1000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17163,7 +16619,7 @@
         29
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -17182,7 +16638,7 @@
         29
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17203,7 +16659,7 @@
         29
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17363,8 +16819,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -17384,8 +16840,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17405,8 +16861,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17426,8 +16882,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17447,8 +16903,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17468,8 +16924,8 @@
         25
       ],
       "UnlockValues": [
-        1.0,
-        1.0
+        1,
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17488,7 +16944,7 @@
         22
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -17507,7 +16963,7 @@
         22
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17526,7 +16982,7 @@
         22
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17545,7 +17001,7 @@
         22
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17564,7 +17020,7 @@
         23
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -17581,7 +17037,7 @@
         23
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17600,7 +17056,7 @@
         23
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17621,7 +17077,7 @@
         23
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17982,7 +17438,7 @@
         101
       ],
       "UnlockValues": [
-        3.0
+        3
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -18001,7 +17457,7 @@
         101
       ],
       "UnlockValues": [
-        6.0
+        6
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18020,7 +17476,7 @@
         101
       ],
       "UnlockValues": [
-        9.0
+        9
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18039,7 +17495,7 @@
         101
       ],
       "UnlockValues": [
-        12.0
+        12
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18058,7 +17514,7 @@
         101
       ],
       "UnlockValues": [
-        15.0
+        15
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18382,7 +17838,7 @@
         77
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -18401,7 +17857,7 @@
         78
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18420,7 +17876,7 @@
         78
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18439,7 +17895,7 @@
         78
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18458,7 +17914,7 @@
         77
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18477,7 +17933,7 @@
         77
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18496,7 +17952,7 @@
         77
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18515,7 +17971,7 @@
         80
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -18534,7 +17990,7 @@
         80
       ],
       "UnlockValues": [
-        4.0
+        4
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18553,7 +18009,7 @@
         79
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18572,7 +18028,7 @@
         79
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18591,7 +18047,7 @@
         79
       ],
       "UnlockValues": [
-        1.0
+        1
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18610,7 +18066,7 @@
         79
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18629,7 +18085,7 @@
         79
       ],
       "UnlockValues": [
-        2.0
+        2
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18949,7 +18405,7 @@
         26
       ],
       "UnlockValues": [
-        15.0
+        15
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18994,13 +18450,13 @@
         35
       ],
       "UnlockValues": [
-        9.0,
-        300.0,
+        9,
+        300,
         0.5,
-        1.0,
-        0.0,
-        1800.0,
-        20.0
+        1,
+        0,
+        1800,
+        20
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -20437,9 +19893,9 @@
         83
       ],
       "UnlockValues": [
-        3200000000.0,
-        4.0,
-        1000.0
+        3200000000,
+        4,
+        1000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -20458,7 +19914,7 @@
         2
       ],
       "UnlockValues": [
-        1600000.0
+        1600000
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -20534,7 +19990,7 @@
         101
       ],
       "UnlockValues": [
-        18.0
+        18
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -20553,7 +20009,7 @@
         101
       ],
       "UnlockValues": [
-        21.0
+        21
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -20572,7 +20028,7 @@
         101
       ],
       "UnlockValues": [
-        24.0
+        24
       ],
       "UnlockRecipes": [],
       "PreTechs": [
