@@ -1,4 +1,5 @@
 import type {CalculationSnapshot, LinearProgrammingIssue, NumericMap, SolverModel, SolverResults} from '@engine/types/domain';
+import {findLinearProgrammingBlockers} from './lpDiagnostics';
 
 export class LinearProgrammingError extends Error {
     issue: LinearProgrammingIssue;
@@ -10,16 +11,34 @@ export class LinearProgrammingError extends Error {
     }
 }
 
-function normalizeSolverResults(results: SolverResults, items: string[]): void {
+function formatBlockedItems(items: string[]): string {
+    if (items.length === 0) {
+        return '';
+    }
+    if (items.length <= 4) {
+        return items.join('、');
+    }
+    return `${items.slice(0, 4).join('、')} 等 ${items.length} 项`;
+}
+
+function normalizeSolverResults(results: SolverResults, model: SolverModel, lp_item_dict: NumericMap): void {
+    const lp_items = Object.keys(lp_item_dict);
     if ("result" in results) {
         delete results["result"];
     }
     if ("feasible" in results) {
         if (!results.feasible) {
+            const blockers = findLinearProgrammingBlockers(model, lp_item_dict);
+            const blocker_items = blockers.map(({item}) => item);
+            const issue_items = blocker_items.length > 0 ? blocker_items : lp_items;
+            const blocked_text = formatBlockedItems(blocker_items);
             throw new LinearProgrammingError({
                 kind: 'infeasible',
-                message: "线性规划无解，请检查红色物品的来源配方设置。",
-                items,
+                message: blocked_text
+                    ? `线性规划无解：${blocked_text} 有正需求，但当前配方链没有任何净正产出来源。请检查这些物品及其上游的增产设置。`
+                    : "线性规划无解，请检查红色物品的来源配方设置。",
+                items: issue_items,
+                blockers,
             });
         }
         delete results.feasible;
@@ -29,7 +48,7 @@ function normalizeSolverResults(results: SolverResults, items: string[]): void {
             throw new LinearProgrammingError({
                 kind: 'unbounded',
                 message: "线性规划目标函数无界，请检查红色物品的配方执行成本。",
-                items,
+                items: lp_items,
             });
         }
         delete results.bounded;
@@ -47,7 +66,7 @@ export function applyLinearProgrammingResults(
     const item_graph = snapshot.item_graph;
     const item_price = snapshot.item_price;
 
-    normalizeSolverResults(results, Object.keys(lp_item_dict));
+    normalizeSolverResults(results, model, lp_item_dict);
 
     const lp_products: NumericMap = {};
     for (const item in model.constraints) {

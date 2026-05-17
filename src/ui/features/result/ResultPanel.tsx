@@ -222,7 +222,7 @@ export function Result({
     const [calculated_result_dict, lp_surplus_list, lp_issue] = global_state.calculate(needs_list);
     const lp_issue_items = new Set(lp_issue?.items || []);
     const result_dict = lp_issue
-        ? Object.fromEntries((lp_issue.items || []).map(item => [item, needs_list[item] || 0]))
+        ? Object.fromEntries((lp_issue.blockers || []).map(({item, demand}) => [item, needs_list[item] || demand]))
         : calculated_result_dict;
 
     const fixed_num = settings.fixed_num;

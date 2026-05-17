@@ -261,6 +261,12 @@ export interface LinearProgrammingIssue {
     kind: 'infeasible' | 'unbounded';
     message: string;
     items: ItemName[];
+    blockers?: LinearProgrammingBlocker[];
+}
+
+export interface LinearProgrammingBlocker {
+    item: ItemName;
+    demand: number;
 }
 
 export interface RawFractionateOutputInfo {
