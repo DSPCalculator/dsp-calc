@@ -84,7 +84,8 @@ function NplRow({row, set_row, remove_row}) {
         <td><ProModeSelect recipe_id={recipe_id} choice={row["增产模式"]} onChange={set_row_prop("增产模式", true)}/>
         </td>
         {/* 所选增产剂 */}
-        <td><ProNumSelect choice={row["增产点数"]} onChange={set_row_prop("增产点数", true)}/></td>
+        <td>{row["增产模式"] !== 0 &&
+            <ProNumSelect choice={row["增产点数"]} onChange={set_row_prop("增产点数", true)}/>}</td>
         <td>
             {/* 所选工厂种类 */}
             <FactorySelect recipe_id={recipe_id} choice={row["建筑"]} onChange={set_row_prop("建筑", true)}/>

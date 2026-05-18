@@ -8,7 +8,7 @@ import {
     getLowFootprintProliferatorModeForRecipe,
     getPreferredProliferatorModeForRecipe
 } from '@engine/scheme/proliferatorMode';
-import type {NumericMap, SchemeData, Settings} from '@engine/types/domain';
+import type {NumericMap, RecipeScheme, SchemeData, Settings} from '@engine/types/domain';
 import type {HorizontalOption} from '@ui/types/ui';
 import {pro_mode_class} from './resultSelectorClasses';
 
@@ -86,9 +86,8 @@ export function BatchSetting({
     const scheme_data = global_state.scheme_data;
     const proliferator_price = global_state.proliferator_price;
 
-    const first_recipe_setting = scheme_data.scheme_for_recipe[0];
-    const pro_num = first_recipe_setting?.["增产点数"] ?? 0;
     const pro_mode = detectBatchProMode();
+    const pro_num = detectBatchProliferatorPoints();
 
     const pro_num_item = {};
     for (const data of game_data.proliferator_data) {
@@ -207,6 +206,18 @@ export function BatchSetting({
         }) ?? 3;
     }
 
+    function detectBatchProliferatorPoints(): number {
+        const active_points = scheme_data.scheme_for_recipe
+            .filter((recipe_setting: RecipeScheme) => recipe_setting["增产模式"] !== 0)
+            .map((recipe_setting: RecipeScheme) => recipe_setting["增产点数"])
+            .filter((points: number) => points > 0);
+        if (active_points.length === 0) {
+            return 0;
+        }
+        const first_points = active_points[0];
+        return active_points.every(points => points === first_points) ? first_points : -1;
+    }
+
     function change_pro_mode(pro_mode: BatchProMode) {
         captureComparisonBaseline({
             needs_list: structuredClone(needs_list),
@@ -238,8 +249,8 @@ export function BatchSetting({
 
     return <div className="batch-setting-panel mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center">
         <small className="fw-bold">批量预设</small>
-        <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
-                                     onChange={change_pro_num} no_gap={true} className={"raw-text-selection"}/>
+        {pro_mode !== 0 && <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
+                                                        onChange={change_pro_num} no_gap={true} className={"raw-text-selection"}/>}
         <HorizontalMultiButtonSelect choice={pro_mode} options={promode_options}
                                      onChange={change_pro_mode} no_gap={true} className={"raw-text-selection"}/>
         {factory_doms}
