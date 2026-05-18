@@ -3,7 +3,7 @@ import {useSetState} from 'ahooks';
 import {GlobalState} from '@engine/calculation/globalState';
 import {GameInfo} from '@engine/data/gameInfo';
 import {default_game_data} from '@engine/data/gameData';
-import {init_scheme_data} from '@engine/scheme/schemeData';
+import {init_low_footprint_scheme_data} from '@engine/scheme/defaultScheme';
 import type {GameData, SchemeData, Settings} from '@engine/types/domain';
 import type {ExpandedCalculatorUrlState} from '../urlState';
 import {
@@ -31,11 +31,19 @@ export function ContextProvider({
 }) {
     const [game_info, set_game_info] = useState(new GameInfo(initial_game_data));
     const [mod_selection, set_mod_selection] = useState<string[]>(initial_mods);
-    const [scheme_data, set_scheme_data] = useState<SchemeData>(() => initial_state?.scheme_data || init_scheme_data(initial_game_data));
     const [settings, set_settings] = useSetState<Settings>({
         ...get_default_settings_for_game_data(initial_game_data),
         ...(initial_state?.settings || {}),
     });
+    const [scheme_data, set_scheme_data] = useState<SchemeData>(() => (
+        initial_state?.scheme_data || init_low_footprint_scheme_data(
+            initial_game_data,
+            {
+                ...get_default_settings_for_game_data(initial_game_data),
+                ...(initial_state?.settings || {}),
+            }
+        )
+    ));
 
     const global_state = new GlobalState(game_info, scheme_data, settings);
 

@@ -16,7 +16,7 @@ import {
 } from '@engine/data/gameData';
 import {get_default_settings_for_game_data} from '@ui/app/providers/default-settings';
 import {hasActiveProduction, isSameModSelection, normalizeModSelection} from './modSelectionRules';
-import {init_scheme_data} from '@engine/scheme/schemeData';
+import {init_low_footprint_scheme_data} from '@engine/scheme/defaultScheme';
 
 export function GameVersion({needs_list, set_needs_list}) {
     const mod_options = get_mod_options();
@@ -45,9 +45,10 @@ export function GameVersion({needs_list, set_needs_list}) {
         if (request_id !== latest_request_id.current) {
             return;
         }
+        const default_settings = get_default_settings_for_game_data(game_data);
         set_game_data(game_data);
-        set_scheme_data(init_scheme_data(game_data));
-        set_settings(get_default_settings_for_game_data(game_data));
+        set_scheme_data(init_low_footprint_scheme_data(game_data, default_settings));
+        set_settings(default_settings);
     }
 
     return <div className="game-version-row d-flex gap-2 align-items-center">

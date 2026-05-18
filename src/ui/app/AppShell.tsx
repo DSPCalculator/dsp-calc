@@ -17,7 +17,7 @@ import type {ComparisonBaseline} from '@ui/features/result/BatchPresetControls';
 import {SchemeStorage} from '@ui/features/settings/SchemeStorageControls';
 import {get_default_settings_for_game_data} from './providers/default-settings';
 import {decode_mod_selection, default_game_data, encode_mod_selection, get_game_data} from '@engine/data/gameData';
-import {init_scheme_data} from '@engine/scheme/schemeData';
+import {init_low_footprint_scheme_data} from '@engine/scheme/defaultScheme';
 import type {GameData, NumericMap} from '@engine/types/domain';
 
 const BatchSetting = lazy(() => import('@ui/features/result/BatchPresetControls').then(module => ({default: module.BatchSetting})));
@@ -93,12 +93,13 @@ function AppWithContexts({initial_needs_list}: {initial_needs_list?: NumericMap}
     }
 
     useEffect(() => {
+        const default_settings = get_default_settings_for_game_data(global_state.game_data);
         writeCalculatorUrlState(compactCalculatorUrlState({
             mod_selection: encode_mod_selection(global_state.game_data.mod_guid_list),
             needs_list,
             settings,
             scheme_data: global_state.raw_scheme_data,
-        }, init_scheme_data(global_state.game_data), global_state.game_data, get_default_settings_for_game_data(global_state.game_data)));
+        }, init_low_footprint_scheme_data(global_state.game_data, default_settings), global_state.game_data, default_settings));
     }, [global_state.game_data, global_state.raw_scheme_data, needs_list, settings]);
 
     useLayoutEffect(() => {
@@ -199,7 +200,12 @@ export default function App() {
         if (!initial_game_data) {
             return undefined;
         }
-        return expandCalculatorUrlState(raw_url_state, init_scheme_data(initial_game_data), initial_game_data);
+        const default_settings = get_default_settings_for_game_data(initial_game_data);
+        return expandCalculatorUrlState(
+            raw_url_state,
+            init_low_footprint_scheme_data(initial_game_data, default_settings),
+            initial_game_data
+        );
     }, [initial_game_data, raw_url_state]);
 
     if (!initial_game_data) {
