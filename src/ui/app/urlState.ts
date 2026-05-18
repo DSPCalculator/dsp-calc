@@ -1,4 +1,5 @@
 import {deflateSync, inflateSync} from 'fflate';
+import {type BatchProMode, getPreferredProliferatorModeForRecipe} from '@engine/scheme/proliferatorMode';
 import type {CostWeight, GameData, NumericMap, RecipeScheme, SchemeData, Settings} from '@engine/types/domain';
 import {DEFAULT_SETTINGS} from './providers/default-settings';
 
@@ -25,7 +26,6 @@ type CompactRecipeScheme = [
     proliferator_points?: number | null,
     proliferator_mode?: number | null,
 ];
-type BatchProMode = 0 | 1 | 2 | 3;
 type CompactBatchOperation = string;
 
 interface CompactSchemeData {
@@ -225,22 +225,7 @@ function recipes_equal(left: RecipeScheme, right: RecipeScheme): boolean {
 }
 
 function get_batch_proliferator_mode(recipe_proliferator: number, batch_mode: BatchProMode): number {
-    if (batch_mode === 0) {
-        return 0;
-    }
-    if (batch_mode === 1) {
-        return recipe_proliferator & 1 ? 1 : 0;
-    }
-    if (batch_mode === 2) {
-        return recipe_proliferator & 2 ? 2 : 0;
-    }
-    if (recipe_proliferator & 2) {
-        return 2;
-    }
-    if (recipe_proliferator & 1) {
-        return 1;
-    }
-    return 0;
+    return getPreferredProliferatorModeForRecipe(recipe_proliferator, batch_mode);
 }
 
 function get_candidate_batch_proliferator_modes(recipe_proliferator: number, proliferator_mode: number): BatchProMode[] {

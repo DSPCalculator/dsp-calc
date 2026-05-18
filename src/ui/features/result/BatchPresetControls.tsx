@@ -2,11 +2,15 @@ import structuredClone from '@ungap/structured-clone';
 import {useContext} from 'react';
 import {GlobalStateContext, SchemeDataSetterContext} from '@ui/app/providers/app-contexts';
 import {HorizontalMultiButtonSelect} from '@ui/components/controls/HorizontalMultiButtonSelect';
+import {GlobalState} from '@engine/calculation/globalState';
+import {
+    type BatchProMode,
+    getLowFootprintProliferatorModeForRecipe,
+    getPreferredProliferatorModeForRecipe
+} from '@engine/scheme/proliferatorMode';
 import type {NumericMap, SchemeData, Settings} from '@engine/types/domain';
 import type {HorizontalOption} from '@ui/types/ui';
 import {pro_mode_class} from './resultSelectorClasses';
-
-type BatchProMode = 0 | 1 | 2 | 3;
 
 // TODO refactor to some other modules
 function updateSchemesForRecipes(old_scheme_data, should_update, updater) {
@@ -16,25 +20,6 @@ function updateSchemesForRecipes(old_scheme_data, should_update, updater) {
             should_update(idx) ? updater(recipe_setting, idx) : recipe_setting
         )),
     };
-}
-
-function getBatchProModeForRecipe(recipeProliferator: number, batchMode: BatchProMode): number {
-    if (batchMode === 0) {
-        return 0;
-    }
-    if (batchMode === 1) {
-        return recipeProliferator & 1 ? 1 : 0;
-    }
-    if (batchMode === 2) {
-        return recipeProliferator & 2 ? 2 : 0;
-    }
-    if (recipeProliferator & 2) {
-        return 2;
-    }
-    if (recipeProliferator & 1) {
-        return 1;
-    }
-    return 0;
 }
 
 function FactorySelect({captureComparisonBaseline, current_choice, list, needs_list}: {
@@ -171,11 +156,55 @@ export function BatchSetting({
         ));
     }
 
+    function buildPriorityExtraProductsScheme(source_scheme_data: SchemeData): SchemeData {
+        return {
+            ...source_scheme_data,
+            scheme_for_recipe: source_scheme_data.scheme_for_recipe.map((recipe_setting, index) => ({
+                ...recipe_setting,
+                "增产模式": getPreferredProliferatorModeForRecipe(game_data.recipe_data[index]["增产"], 3),
+            })),
+        };
+    }
+
+    function createLowFootprintContext(source_scheme_data: SchemeData): GlobalState {
+        return new GlobalState(
+            {
+                game_data: global_state.game_data,
+                item_data: global_state.item_data,
+                all_target_items: [],
+                icon_grid: {nrow: 0, ncol: 0, icons: []},
+            },
+            buildPriorityExtraProductsScheme(source_scheme_data),
+            global_state.settings
+        );
+    }
+
+    function getBatchProModeForRecipe(recipe_id: number, batch_mode: BatchProMode, low_footprint_state = global_state): number {
+        if (batch_mode === 4) {
+            return getLowFootprintProliferatorModeForRecipe({
+                game_data,
+                getEquivalentRecipe: (target_recipe_id, target_item, scheme_override) => (
+                    low_footprint_state.get_equivalent_recipe_for_recipe(target_item, target_recipe_id, scheme_override)
+                ),
+                item_price: low_footprint_state.snapshot.item_price,
+                recipe_id,
+                scheme_data: low_footprint_state.scheme_data,
+                settings: global_state.settings,
+            });
+        }
+        return getPreferredProliferatorModeForRecipe(game_data.recipe_data[recipe_id]["增产"], batch_mode);
+    }
+
     function detectBatchProMode(): BatchProMode {
-        const batch_modes: BatchProMode[] = [0, 1, 2, 3];
-        return batch_modes.find(batch_mode => game_data.recipe_data.every((recipe, index) => (
-            scheme_data.scheme_for_recipe[index]["增产模式"] === getBatchProModeForRecipe(recipe["增产"], batch_mode)
-        ))) ?? 3;
+        const batch_modes: BatchProMode[] = [0, 1, 2, 3, 4];
+        return batch_modes.find(batch_mode => {
+            const low_footprint_state = batch_mode === 4
+                ? createLowFootprintContext(global_state.raw_scheme_data)
+                : global_state;
+            return game_data.recipe_data.every((_recipe, index) => (
+                scheme_data.scheme_for_recipe[index]["增产模式"] === getBatchProModeForRecipe(index, batch_mode, low_footprint_state)
+            ));
+        }) ?? 3;
     }
 
     function change_pro_mode(pro_mode: BatchProMode) {
@@ -184,14 +213,19 @@ export function BatchSetting({
             scheme_data: structuredClone(global_state.raw_scheme_data),
             settings: structuredClone(global_state.settings),
         });
-        set_scheme_data(old_scheme_data => updateSchemesForRecipes(
-            old_scheme_data,
-            () => true,
-            (recipe_setting, idx) => ({
-                ...recipe_setting,
-                "增产模式": getBatchProModeForRecipe(game_data.recipe_data[idx]["增产"], pro_mode),
-            })
-        ));
+        set_scheme_data(old_scheme_data => {
+            const low_footprint_state = pro_mode === 4
+                ? createLowFootprintContext(old_scheme_data)
+                : global_state;
+            return updateSchemesForRecipes(
+                old_scheme_data,
+                () => true,
+                (recipe_setting, idx) => ({
+                    ...recipe_setting,
+                    "增产模式": getBatchProModeForRecipe(idx, pro_mode, low_footprint_state),
+                })
+            );
+        });
     }
 
     const promode_options: HorizontalOption<BatchProMode>[] = [
@@ -199,6 +233,7 @@ export function BatchSetting({
         {value: 1, label: "仅加速", className: pro_mode_class[1]},
         {value: 2, label: "仅增产", className: pro_mode_class[2]},
         {value: 3, label: "优先增产", className: pro_mode_class[2]},
+        {value: 4, label: "占地最小", className: pro_mode_class[1]},
     ];
 
     return <div className="batch-setting-panel mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center">
