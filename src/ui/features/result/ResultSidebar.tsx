@@ -99,24 +99,28 @@ export function ResultSidebar({
     }));
 
     function renderExternalProliferatorControls() {
-        return <div className="d-flex flex-column gap-1">
-            <div className="d-flex align-items-center justify-content-between gap-2">
-                <small className="text-nowrap">输入</small>
-                <ProNumSelect
-                    choice={Number(settings.external_input_proliferator_points || 0)}
-                    includeNone={true}
-                    no_gap={true}
-                    onChange={onChangeExternalInputProliferatorPoints}
-                />
+        return <div className="d-flex flex-column gap-2 external-proliferator-controls">
+            <div className="external-proliferator-row">
+                <span className="external-proliferator-label">输入</span>
+                <div className="external-proliferator-buttons">
+                    <ProNumSelect
+                        choice={Number(settings.external_input_proliferator_points || 0)}
+                        includeNone={true}
+                        no_gap={true}
+                        onChange={onChangeExternalInputProliferatorPoints}
+                    />
+                </div>
             </div>
-            <div className="d-flex align-items-center justify-content-between gap-2">
-                <small className="text-nowrap">输出</small>
-                <ProNumSelect
-                    choice={Number(settings.external_output_proliferator_points || 0)}
-                    includeNone={true}
-                    no_gap={true}
-                    onChange={onChangeExternalOutputProliferatorPoints}
-                />
+            <div className="external-proliferator-row">
+                <span className="external-proliferator-label">输出</span>
+                <div className="external-proliferator-buttons">
+                    <ProNumSelect
+                        choice={Number(settings.external_output_proliferator_points || 0)}
+                        includeNone={true}
+                        no_gap={true}
+                        onChange={onChangeExternalOutputProliferatorPoints}
+                    />
+                </div>
             </div>
         </div>;
     }
@@ -302,7 +306,7 @@ export function ResultSidebar({
         ? <table><tbody>{renderSurplusNamedRows(surplus_entries)}</tbody></table>
         : renderSurplusCompactRows(surplus_entries);
 
-    return <div className="result-sidebar align-self-start d-flex flex-column gap-2">
+    return <div className="result-sidebar align-self-start">
         {mineralize_doms.length > 0 &&
             <fieldset className="result-sidebar-card">
                 <legend><small>原矿化列表</small></legend>

@@ -38,7 +38,7 @@ export function Recipe({recipe}) {
     if (recipe["模型"] === "fractionate_raw") {
         const input_doms = Object.entries(recipe["原料"]).map(item_to_doms);
         const output_doms = (recipe["主产物"] || []).map(raw_fractionate_output_to_doms);
-        return <span className="d-inline-flex align-items-center">
+        return <span className="recipe-cell-content">
             {input_doms}
             <span className="mx-1 d-inline-flex flex-column align-items-center justify-content-center"
                   style={{transform: "translateY(2px)"}}>
@@ -57,7 +57,7 @@ export function Recipe({recipe}) {
     const output_doms = Object.entries(recipe["产物"]).map(item_to_doms);
     const time = Math.ceil(recipe["时间"] * 100) / 100;
 
-    return <span className="d-inline-flex">
+    return <span className="recipe-cell-content">
         {input_doms.length > 0 && <>
             {input_doms}
             <span className="me-1 d-inline-flex flex-column align-items-center justify-content-center"

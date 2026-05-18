@@ -1,5 +1,6 @@
 import {lazy, Suspense, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState} from 'react';
-import {FaCog, FaTrashAlt} from 'react-icons/fa';
+import {FaCog, FaSlidersH, FaTrashAlt} from 'react-icons/fa';
+import {Offcanvas} from 'react-bootstrap';
 import {ContextProvider} from './providers/AppProviders';
 import {GlobalStateContext, SettingsContext} from './providers/app-contexts';
 import {
@@ -53,26 +54,30 @@ function UserSettings({
     needs_list,
     set_needs_list,
     show,
+    onHide,
 }: {
     needs_list: NumericMap;
     set_needs_list: (next_needs_list: NumericMap) => void;
     show: boolean;
+    onHide: () => void;
 }) {
-    const class_show = show ? "" : "d-none";
-    return <div className={`calculator-settings-panel ${class_show}`}>
-        <fieldset className="calculator-settings-fieldset">
-            <legend><small>设置</small></legend>
+    return <Offcanvas show={show} onHide={onHide} placement="end" className="settings-offcanvas">
+        <Offcanvas.Header closeButton>
+            <Offcanvas.Title>采矿参数 &amp; 其他设置</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
             <Suspense fallback={<div className="small text-muted">加载设置中...</div>}>
                 <Settings needs_list={needs_list} set_needs_list={set_needs_list}/>
             </Suspense>
-        </fieldset>
-    </div>;
+        </Offcanvas.Body>
+    </Offcanvas>;
 }
 
 function AppWithContexts({initial_needs_list}: {initial_needs_list?: NumericMap}) {
     const global_state = useContext(GlobalStateContext);
     const settings = useContext(SettingsContext);
     const [misc_show, set_misc_show] = useState(false);
+    const [batch_show, set_batch_show] = useState(false);
     const [needs_list, set_needs_list] = useState<NumericMap>(() => initial_needs_list || {});
     const [comparison_baseline, set_comparison_baseline] = useState<ComparisonBaseline | null>(null);
     const toolbar_actions_ref = useRef<HTMLDivElement | null>(null);
@@ -141,6 +146,13 @@ function AppWithContexts({initial_needs_list}: {initial_needs_list?: NumericMap}
                  className={`calculator-toolbar-row calculator-toolbar-actions d-flex column-gap-4 row-gap-2 flex-wrap${toolbar_actions_mode === 'buttons-compact' ? ' calculator-toolbar-actions-buttons-compact' : ''}${toolbar_actions_mode === 'icons-only' ? ' calculator-toolbar-actions-icons-only' : ''}`}>
                 <SchemeStorage/>
                 <NeedsListStorage needs_list={needs_list} set_needs_list={update_needs_list}/>
+                <button className="btn btn-outline-primary btn-sm d-inline-flex align-items-center gap-1 mobile-icon-button"
+                        title="批量预设"
+                        aria-label="批量预设"
+                        onClick={() => set_batch_show(s => !s)}>
+                    <FaSlidersH/>
+                    <span className="mobile-icon-button-label">批量预设</span>
+                </button>
                 <button className="btn btn-outline-danger btn-sm d-inline-flex align-items-center gap-1 mobile-icon-button"
                         title="清空数据缓存"
                         aria-label="清空数据缓存"
@@ -158,12 +170,22 @@ function AppWithContexts({initial_needs_list}: {initial_needs_list?: NumericMap}
             </div>
         </div>
         {/*采矿参数&其他设置*/}
-        <UserSettings needs_list={needs_list} set_needs_list={update_needs_list} show={misc_show}/>
-        {/*添加需求、批量预设、计算结果*/}
+        <UserSettings needs_list={needs_list} set_needs_list={update_needs_list} show={misc_show} onHide={() => set_misc_show(false)}/>
+        {/*批量预设*/}
+        <Offcanvas show={batch_show} onHide={() => set_batch_show(false)} placement="end" className="batch-offcanvas">
+            <Offcanvas.Header closeButton>
+                <Offcanvas.Title>批量预设</Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+                <Suspense fallback={<div className="small text-muted">加载批量预设中...</div>}>
+                    <BatchSetting captureComparisonBaseline={set_comparison_baseline} needs_list={needs_list}/>
+                </Suspense>
+            </Offcanvas.Body>
+        </Offcanvas>
+        {/*添加需求、计算结果*/}
         <div className="calculator-main-stack">
             <NeedsList needs_list={needs_list} set_needs_list={update_needs_list}/>
             <Suspense fallback={<div className="small text-muted mt-2">加载计算模块中...</div>}>
-                <BatchSetting captureComparisonBaseline={set_comparison_baseline} needs_list={needs_list}/>
                 <Result
                     captureComparisonBaseline={set_comparison_baseline}
                     comparison_baseline={comparison_baseline}

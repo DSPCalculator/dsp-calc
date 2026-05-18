@@ -29,8 +29,8 @@ export function ResultTableRow({
         时间: settings.is_time_unit_minute ? 60 : 1,
     };
 
-    return <tr className={row.row_class}>
-        <td>
+    return <tr className={`result-row ${row.row_class}`}>
+        <td className="result-cell-action" data-label="操作">
             <div className="d-inline-flex flex-column gap-1">
                 {row.is_mineralized ?
                     <button className="btn btn-sm btn-outline-primary ssmall text-nowrap mineralize-btn"
@@ -49,7 +49,7 @@ export function ResultTableRow({
                 </button>
             </div>
         </td>
-        <td className="text-nowrap">
+        <td className="text-nowrap result-cell-demand" data-label="需求">
             <div className="d-inline-flex align-items-center gap-1">
                 <ItemIcon item={row.item_name} size={RESULT_ICON_SIZE}/>
                 <ResultRatioInput fixed_num={fixed_num}
@@ -63,7 +63,7 @@ export function ResultTableRow({
                 </div>
             ))}
         </td>
-        <td className="text-nowrap">
+        <td className="text-nowrap result-cell-factory" data-label="工厂">
             {row.is_mineralized ||
                 <div className="d-inline-flex align-items-center gap-1">
                     <ItemIcon item={row.factory_name} size={RESULT_ICON_SIZE}/>
@@ -74,21 +74,21 @@ export function ResultTableRow({
                 </div>
             }
         </td>
-        <td>
+        <td className="result-cell-recipe" data-label="配方">
             {row.is_mineralized ? <div className="px-2 py-0"><Recipe recipe={mineralized_recipe}/></div> :
                 <RecipeSelect item={row.item_name}
                               onChange={onChangeRecipe}
                               show_effective_recipe={settings.show_effective_recipe}
                               choice={row.recipe_choice}/>}
         </td>
-        <td>{row.is_mineralized ||
+        <td className="result-cell-pro-mode" data-label="增产模式">{row.is_mineralized ||
             <ProModeSelect recipe_id={row.recipe_id}
                            onChange={onChangeProMode}
                            choice={row.proliferator_mode}/>}</td>
-        <td>{row.is_mineralized || row.proliferator_mode === 0 ||
+        <td className="result-cell-pro-num" data-label="增产剂">{row.is_mineralized || row.proliferator_mode === 0 ||
             <ProNumSelect onChange={onChangeProNum}
                           choice={row.proliferator_points}/>}</td>
-        <td>{row.is_mineralized ||
+        <td className="result-cell-factory-type" data-label="工厂类型">{row.is_mineralized ||
             <FactorySelect recipe_id={row.recipe_id}
                            onChange={onChangeFactory}
                            choice={row.building_choice}/>}</td>

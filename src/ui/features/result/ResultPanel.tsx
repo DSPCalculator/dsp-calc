@@ -1,4 +1,6 @@
-import {type PointerEvent as ReactPointerEvent, useContext, useLayoutEffect, useRef} from 'react';
+import {type PointerEvent as ReactPointerEvent, useContext, useEffect, useLayoutEffect, useRef, useState} from 'react';
+import {Offcanvas} from 'react-bootstrap';
+import {FaChartBar} from 'react-icons/fa';
 import {GlobalState} from '@engine/calculation/globalState';
 import structuredClone from '@ungap/structured-clone';
 import {GameInfoContext, GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from '@ui/app/providers/app-contexts';
@@ -211,6 +213,20 @@ export function Result({
     const RESULT_ICON_SIZE = ITEM_ICON_CONTENT_SIZE;
     const result_layout_ref = useRef<HTMLDivElement | null>(null);
     const result_table_shell_ref = useRef<HTMLDivElement | null>(null);
+    const [is_mobile_sidebar, set_is_mobile_sidebar] = useState(() =>
+        typeof window !== 'undefined' && window.matchMedia('(max-width: 767.98px)').matches);
+    const [sidebar_show, set_sidebar_show] = useState(false);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const mql = window.matchMedia('(max-width: 767.98px)');
+        const handler = (e: MediaQueryListEvent) => {
+            set_is_mobile_sidebar(e.matches);
+            if (!e.matches) set_sidebar_show(false);
+        };
+        mql.addEventListener('change', handler);
+        return () => mql.removeEventListener('change', handler);
+    }, []);
 
     const game_info = useContext(GameInfoContext);
     const global_state = useContext(GlobalStateContext);
@@ -283,11 +299,12 @@ export function Result({
         const layout_left = layout.getBoundingClientRect().left;
         const start_width = table_shell.getBoundingClientRect().width;
         const splitter_width = event.currentTarget.getBoundingClientRect().width;
-        const min_table_width = 560;
-        const min_sidebar_width = 260;
+        const layout_width = layout.clientWidth;
+        const min_table_width = Math.max(280, Math.min(560, layout_width * 0.4));
+        const min_sidebar_width = Math.max(160, Math.min(260, layout_width * 0.2));
         const max_table_width = Math.max(
             min_table_width,
-            layout.clientWidth - splitter_width - min_sidebar_width
+            layout_width - splitter_width - min_sidebar_width
         );
 
         const resize = (move_event: PointerEvent) => {
@@ -551,57 +568,84 @@ export function Result({
             <span className="ms-2">{lp_issue.message}</span>
         </div>;
 
-    return <div ref={result_layout_ref} className="result-layout mt-2 mb-3">
-        <div ref={result_table_shell_ref} className="result-table-shell">
-            {lp_issue_alert}
-            <div className="result-table-scroll">
-                <table className="table table-sm align-middle w-auto result-table">
-                    <thead>
-                    <tr className="text-center text-nowrap">
-                        <th style={{width: 60}}>操作</th>
-                        <th style={{width: 140}}>需求</th>
-                        <th style={{width: 110}}>工厂</th>
-                        <th style={{width: 300}}>{settings.show_effective_recipe ? "等效配方" : "原始配方"}</th>
-                        <th style={{width: 180}}>增产模式</th>
-                        <th style={{width: 160}}>增产剂</th>
-                        <th style={{width: 170}}>工厂类型</th>
-                    </tr>
-                    </thead>
-                    <tbody className="table-group-divider">
-                    <NplRows/>
-                    {result_table_rows}
-                    </tbody>
-                </table>
+    const total_buildings = Object.values(building_list).reduce<number>((acc, v) => acc + Number(v || 0), 0);
+
+    const sidebar_node = <ResultSidebar
+        RESULT_ICON_SIZE={RESULT_ICON_SIZE}
+        building_list={building_list}
+        clear_mineralize_list={clear_mineralize_list}
+        energy_cost={energy_cost}
+        fixed_num={fixed_num}
+        IncreaseCostWhenSurplus={IncreaseCostWhenSurplus}
+        is_time_unit_minute={settings.is_time_unit_minute}
+        mineralize_list={mineralize_list}
+        miner_energy_cost={miner_energy_cost}
+        onChangeExternalInputProliferatorPoints={update_external_input_proliferator_points}
+        onChangeExternalOutputProliferatorPoints={update_external_output_proliferator_points}
+        previous_sidebar_metrics={previous_sidebar_metrics}
+        external_supply_entries={external_supply_entries}
+        raw_material_list={raw_material_list}
+        settings={settings}
+        show_item_names={settings.show_sidebar_item_names}
+        surplus_list={lp_surplus_list}
+        unmineralize={unmineralize}
+    />;
+
+    return <>
+        <div ref={result_layout_ref} className="result-layout mt-2 mb-3">
+            <div ref={result_table_shell_ref} className="result-table-shell">
+                {lp_issue_alert}
+                <div className="result-table-scroll">
+                    <table className="table table-sm align-middle w-auto result-table">
+                        <thead>
+                        <tr className="text-center text-nowrap">
+                            <th className="result-th-action">操作</th>
+                            <th className="result-th-demand">需求</th>
+                            <th className="result-th-factory">工厂</th>
+                            <th className="result-th-recipe">{settings.show_effective_recipe ? "等效配方" : "原始配方"}</th>
+                            <th className="result-th-pro-mode">增产模式</th>
+                            <th className="result-th-pro-num">增产剂</th>
+                            <th className="result-th-factory-type">工厂类型</th>
+                        </tr>
+                        </thead>
+                        <tbody className="table-group-divider">
+                        <NplRows/>
+                        {result_table_rows}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-        <div
-            aria-label="调整结果表和统计栏宽度"
-            className="result-splitter"
-            role="separator"
-            tabIndex={0}
-            onPointerDown={startResultPaneResize}
-        />
-        <div className="result-sidebar-shell">
-            <ResultSidebar
-                RESULT_ICON_SIZE={RESULT_ICON_SIZE}
-                building_list={building_list}
-                clear_mineralize_list={clear_mineralize_list}
-                energy_cost={energy_cost}
-                fixed_num={fixed_num}
-                IncreaseCostWhenSurplus={IncreaseCostWhenSurplus}
-                is_time_unit_minute={settings.is_time_unit_minute}
-                mineralize_list={mineralize_list}
-                miner_energy_cost={miner_energy_cost}
-                onChangeExternalInputProliferatorPoints={update_external_input_proliferator_points}
-                onChangeExternalOutputProliferatorPoints={update_external_output_proliferator_points}
-                previous_sidebar_metrics={previous_sidebar_metrics}
-                external_supply_entries={external_supply_entries}
-                raw_material_list={raw_material_list}
-                settings={settings}
-                show_item_names={settings.show_sidebar_item_names}
-                surplus_list={lp_surplus_list}
-                unmineralize={unmineralize}
+            <div
+                aria-label="调整结果表和统计栏宽度"
+                className="result-splitter"
+                role="separator"
+                tabIndex={0}
+                onPointerDown={startResultPaneResize}
             />
+            {!is_mobile_sidebar &&
+                <div className="result-sidebar-shell">
+                    {sidebar_node}
+                </div>}
         </div>
-    </div>;
+        {is_mobile_sidebar && <>
+            <button type="button"
+                    className="sidebar-fab"
+                    title="查看统计"
+                    aria-label="查看统计"
+                    onClick={() => set_sidebar_show(true)}>
+                <FaChartBar/>
+                <span>统计</span>
+                {total_buildings > 0 &&
+                    <span className="sidebar-fab-badge">{total_buildings}</span>}
+            </button>
+            <Offcanvas show={sidebar_show} onHide={() => set_sidebar_show(false)} placement="end" className="sidebar-offcanvas">
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>统计</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    {sidebar_node}
+                </Offcanvas.Body>
+            </Offcanvas>
+        </>}
+    </>;
 }
