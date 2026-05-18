@@ -399,11 +399,16 @@ legend {
     display: flex;
     gap: 0.75rem;
     align-items: flex-start;
+    max-height: var(--result-layout-available-height, none);
+    min-height: 0;
 }
 
 .result-table-shell {
     flex: 0 1 auto;
     min-width: 0;
+    max-height: var(--result-layout-available-height, none);
+    min-height: 0;
+    overflow-y: auto;
 }
 
 .result-table-scroll {
@@ -419,6 +424,9 @@ legend {
 
 .result-sidebar-shell {
     flex: 0 0 auto;
+    max-height: var(--result-layout-available-height, none);
+    min-height: 0;
+    overflow-y: auto;
 }
 
 .result-sidebar {

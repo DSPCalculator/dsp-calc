@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import {useContext, useLayoutEffect, useRef} from 'react';
 import {GlobalState} from '@engine/calculation/globalState';
 import structuredClone from '@ungap/structured-clone';
 import {GameInfoContext, GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from '@ui/app/providers/app-contexts';
@@ -209,6 +209,7 @@ export function Result({
     set_needs_list: (next_needs_list: NumericMap) => void;
 }) {
     const RESULT_ICON_SIZE = ITEM_ICON_CONTENT_SIZE;
+    const result_layout_ref = useRef<HTMLDivElement | null>(null);
 
     const game_info = useContext(GameInfoContext);
     const global_state = useContext(GlobalStateContext);
@@ -233,6 +234,41 @@ export function Result({
         : calculated_result_dict;
 
     const fixed_num = settings.fixed_num;
+
+    useLayoutEffect(() => {
+        const layout = result_layout_ref.current;
+        if (!layout) {
+            return;
+        }
+
+        let frame_id = 0;
+        const updateAvailableHeight = () => {
+            window.cancelAnimationFrame(frame_id);
+            frame_id = window.requestAnimationFrame(() => {
+                const viewport_height = window.visualViewport?.height ?? window.innerHeight;
+                const top = layout.getBoundingClientRect().top;
+                const bottom_gap = 12;
+                layout.style.setProperty(
+                    '--result-layout-available-height',
+                    `${Math.max(280, viewport_height - top - bottom_gap)}px`
+                );
+            });
+        };
+
+        const resize_observer = new ResizeObserver(updateAvailableHeight);
+        resize_observer.observe(document.body);
+        resize_observer.observe(layout);
+        window.addEventListener('resize', updateAvailableHeight);
+        window.visualViewport?.addEventListener('resize', updateAvailableHeight);
+        updateAvailableHeight();
+
+        return () => {
+            window.cancelAnimationFrame(frame_id);
+            resize_observer.disconnect();
+            window.removeEventListener('resize', updateAvailableHeight);
+            window.visualViewport?.removeEventListener('resize', updateAvailableHeight);
+        };
+    }, []);
 
     function rememberComparisonBaseline() {
         captureComparisonBaseline({
@@ -475,7 +511,7 @@ export function Result({
             <span className="ms-2">{lp_issue.message}</span>
         </div>;
 
-    return <div className="result-layout mt-2 mb-3">
+    return <div ref={result_layout_ref} className="result-layout mt-2 mb-3">
         <div className="result-table-shell">
             {lp_issue_alert}
             <div className="result-table-scroll">
