@@ -1,4 +1,4 @@
-import {useContext, useLayoutEffect, useRef} from 'react';
+import {type PointerEvent as ReactPointerEvent, useContext, useLayoutEffect, useRef} from 'react';
 import {GlobalState} from '@engine/calculation/globalState';
 import structuredClone from '@ungap/structured-clone';
 import {GameInfoContext, GlobalStateContext, SchemeDataSetterContext, SettingsSetterContext} from '@ui/app/providers/app-contexts';
@@ -210,6 +210,7 @@ export function Result({
 }) {
     const RESULT_ICON_SIZE = ITEM_ICON_CONTENT_SIZE;
     const result_layout_ref = useRef<HTMLDivElement | null>(null);
+    const result_table_shell_ref = useRef<HTMLDivElement | null>(null);
 
     const game_info = useContext(GameInfoContext);
     const global_state = useContext(GlobalStateContext);
@@ -269,6 +270,45 @@ export function Result({
             window.visualViewport?.removeEventListener('resize', updateAvailableHeight);
         };
     }, []);
+
+    function startResultPaneResize(event: ReactPointerEvent<HTMLDivElement>) {
+        const layout = result_layout_ref.current;
+        const table_shell = result_table_shell_ref.current;
+        if (!layout || !table_shell) {
+            return;
+        }
+
+        event.currentTarget.setPointerCapture(event.pointerId);
+        document.body.classList.add('result-pane-resizing');
+        const layout_left = layout.getBoundingClientRect().left;
+        const start_width = table_shell.getBoundingClientRect().width;
+        const splitter_width = event.currentTarget.getBoundingClientRect().width;
+        const min_table_width = 560;
+        const min_sidebar_width = 260;
+        const max_table_width = Math.max(
+            min_table_width,
+            layout.clientWidth - splitter_width - min_sidebar_width
+        );
+
+        const resize = (move_event: PointerEvent) => {
+            const next_width = Math.min(
+                max_table_width,
+                Math.max(min_table_width, move_event.clientX - layout_left - splitter_width / 2)
+            );
+            layout.style.setProperty('--result-table-shell-width', `${next_width}px`);
+        };
+        const stop = () => {
+            document.body.classList.remove('result-pane-resizing');
+            window.removeEventListener('pointermove', resize);
+            window.removeEventListener('pointerup', stop);
+            window.removeEventListener('pointercancel', stop);
+        };
+
+        layout.style.setProperty('--result-table-shell-width', `${start_width}px`);
+        window.addEventListener('pointermove', resize);
+        window.addEventListener('pointerup', stop);
+        window.addEventListener('pointercancel', stop);
+    }
 
     function rememberComparisonBaseline() {
         captureComparisonBaseline({
@@ -512,7 +552,7 @@ export function Result({
         </div>;
 
     return <div ref={result_layout_ref} className="result-layout mt-2 mb-3">
-        <div className="result-table-shell">
+        <div ref={result_table_shell_ref} className="result-table-shell">
             {lp_issue_alert}
             <div className="result-table-scroll">
                 <table className="table table-sm align-middle w-auto result-table">
@@ -534,6 +574,13 @@ export function Result({
                 </table>
             </div>
         </div>
+        <div
+            aria-label="调整结果表和统计栏宽度"
+            className="result-splitter"
+            role="separator"
+            tabIndex={0}
+            onPointerDown={startResultPaneResize}
+        />
         <div className="result-sidebar-shell">
             <ResultSidebar
                 RESULT_ICON_SIZE={RESULT_ICON_SIZE}

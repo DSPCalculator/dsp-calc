@@ -302,7 +302,7 @@ export function ResultSidebar({
         ? <table><tbody>{renderSurplusNamedRows(surplus_entries)}</tbody></table>
         : renderSurplusCompactRows(surplus_entries);
 
-    return <div className="result-sidebar sticky-top mt-3 align-self-start d-flex flex-column gap-2">
+    return <div className="result-sidebar align-self-start d-flex flex-column gap-2">
         {mineralize_doms.length > 0 &&
             <fieldset className="result-sidebar-card">
                 <legend><small>原矿化列表</small></legend>
