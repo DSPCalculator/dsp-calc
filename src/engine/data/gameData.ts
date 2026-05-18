@@ -163,6 +163,47 @@ function build_fractionate_outputs(
     });
 }
 
+const DARK_FOG_BASELINE_LEVEL = 30;
+const DARK_FOG_NORMAL_KILLS_PER_MINUTE = 900 * 0.8;
+
+const DARK_FOG_DROP_DATA_BY_ITEM_NAME: Record<string, {level: number; range: number; count: number}> = {
+    黑雾矩阵: {level: 4, range: 0.01, count: 2.5},
+    存储单元: {level: 4, range: 0.01, count: 2.5},
+    硅基神经元: {level: 6, range: 0.009, count: 1.5},
+    物质重组器: {level: 5, range: 0.008, count: 1.5},
+    负熵奇点: {level: 7, range: 0.006, count: 1.4},
+    核心素: {level: 8, range: 0.0065, count: 1.5},
+    虚粒子: {level: 8, range: 0.0065, count: 1.5},
+    能量碎片: {level: 1, range: 0.012, count: 2.5},
+};
+
+function get_dark_fog_drop_data(item: RawItemData): {level: number; range: number; count: number} {
+    if ((item.EnemyDropCount || 0) > 0) {
+        return {
+            level: item.EnemyDropLevel || 0,
+            range: item.EnemyDropRange?.[1] || 0,
+            count: item.EnemyDropCount || 0,
+        };
+    }
+    return DARK_FOG_DROP_DATA_BY_ITEM_NAME[item.Name] || {level: 0, range: 0, count: 0};
+}
+
+function get_dark_fog_drop_rate_per_minute(item: RawItemData, base_level = DARK_FOG_BASELINE_LEVEL): number {
+    const drop_data = get_dark_fog_drop_data(item);
+    const drop_probability = drop_data.range * 3;
+    const drop_count = drop_data.count;
+    const drop_level = drop_data.level;
+    if (drop_probability <= 0 || drop_count <= 0) {
+        return 0;
+    }
+    const effective_drop_level = Math.min(Math.trunc(base_level / 3), 8);
+    if (effective_drop_level < drop_level) {
+        return 0;
+    }
+    const average_drop_count = (1 + drop_level * 0.1) * drop_count * 2;
+    return DARK_FOG_NORMAL_KILLS_PER_MINUTE * drop_probability * average_drop_count;
+}
+
 const name_icon_list: Record<string, string> = {};
 
 const VanillaGUID = "Vanilla";
@@ -339,6 +380,24 @@ function build_game_data(mod_guid_list: string[], json_data: RawGameDataFile): G
         } else {
             recipe_data["模型"] = "normal";
         }
+        const factories_include_dark_fog_base = recipe.Factories.some(factory_id => get_item_by_id(factory_id)?.Name === "行星基地");
+        if (factories_include_dark_fog_base && Object.keys(原料).length === 0 && Object.keys(产物).length === 1) {
+            const output_item_id = recipe.Results[0];
+            const output_item = output_item_id === undefined ? undefined : get_item_by_id(output_item_id);
+            const dark_fog_drop_rate = output_item === undefined ? 0 : get_dark_fog_drop_rate_per_minute(output_item);
+            const dark_fog_drop_data = output_item === undefined
+                ? {level: 0, range: 0, count: 0}
+                : get_dark_fog_drop_data(output_item);
+            if (dark_fog_drop_rate > 0) {
+                const output_name = Object.keys(产物)[0];
+                recipe_data["产物"][output_name] = dark_fog_drop_rate / 60;
+            }
+            recipe_data["黑雾掉落"] = {
+                等级: dark_fog_drop_data.level,
+                概率: dark_fog_drop_data.range,
+                数量: dark_fog_drop_data.count,
+            };
+        }
         data.recipe_data.push(recipe_data);
     })
     //data.factory_data
@@ -360,6 +419,9 @@ function build_game_data(mod_guid_list: string[], json_data: RawGameDataFile): G
             factory["名称"] = item["Name"];
             factory["耗能"] = (item["WorkEnergyPerTick"] ?? 0) * 0.00006;
             factory["倍率"] = item["Speed"] ?? 0;
+            if (factory["名称"] === "行星基地") {
+                factory["倍率"] = 1;
+            }
             factory["产物倍率"] = item["MultipleOutput"] ?? 1;
             factory["占地"] = item["Space"] ?? 0;
             factories.push(factory);

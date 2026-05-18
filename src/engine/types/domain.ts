@@ -32,6 +32,11 @@ export interface RecipeData {
     副产物?: FractionateOutput[];
     建筑名称?: string;
     建筑倍率?: number;
+    黑雾掉落?: {
+        等级: number;
+        概率: number;
+        数量: number;
+    };
 }
 
 export interface ProliferatorEffect {
@@ -122,6 +127,7 @@ export interface Settings {
     mining_efficiency_large: number;
     mining_speed_multiple: number;
     enemy_drop_multiple: number;
+    dark_fog_base_level: number;
     icarus_manufacturing_speed: number;
     fractionating_speed: number;
     is_time_unit_minute: boolean;
@@ -292,6 +298,9 @@ export interface RawItemData {
     Speed?: number;
     MultipleOutput?: number;
     Space?: number;
+    EnemyDropLevel?: number;
+    EnemyDropRange?: [number, number];
+    EnemyDropCount?: number;
 }
 
 export interface RawRecipeData {

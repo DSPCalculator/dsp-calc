@@ -22,6 +22,7 @@ export const DEFAULT_SETTINGS: Settings = {
     mining_efficiency_large: 3.0,
     mining_speed_multiple: 1.0,
     enemy_drop_multiple: 1.0,
+    dark_fog_base_level: 30,
     icarus_manufacturing_speed: 1.0,
     fractionating_speed: 30,
 

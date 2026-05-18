@@ -42,6 +42,18 @@ function cancel_shared_items(recipe: RecipeData): void {
     });
 }
 
+export function get_dark_fog_base_level_multiplier(base_level: number): number {
+    const normalized_level = Math.min(Math.max(Math.trunc(base_level) || 1, 1), 30);
+    // 游戏随机掉落的期望数量项是 0.8 * (level / 12 + 2.5)，即 level / 15 + 2。
+    return normalized_level / 15 + 2;
+}
+
+const DARK_FOG_BASELINE_LEVEL = 30;
+
+function get_dark_fog_base_level_ratio(base_level: number): number {
+    return get_dark_fog_base_level_multiplier(base_level) / get_dark_fog_base_level_multiplier(DARK_FOG_BASELINE_LEVEL);
+}
+
 function simulate_fractionate_outputs(
     recipe: RecipeData,
     success_ratio: number,
@@ -133,6 +145,13 @@ function simulate_fractionate_outputs(
 
 export function build_effective_game_data(base_game_data: GameData, settings: Settings): GameData {
     const game_data = structuredClone(base_game_data);
+    game_data.recipe_data.forEach(recipe => {
+        if (recipe["黑雾掉落"] === undefined) {
+            return;
+        }
+        recipe["产物"] = scale_item_dict(recipe["产物"], get_dark_fog_base_level_ratio(settings.dark_fog_base_level));
+    });
+
     if (!game_data.TheyComeFromVoidEnable || !settings.blue_buff) {
         return game_data;
     }

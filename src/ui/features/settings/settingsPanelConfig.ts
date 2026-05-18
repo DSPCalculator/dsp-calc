@@ -53,6 +53,7 @@ export const MINING_BEHAVIOR_ROWS: BaseSettingRow[] = [
     {type: 'percent', label: '大矿机开采速度', key: 'mining_efficiency_large', step: 100, min: 100, unit: '%'},
     {type: 'percent', label: '采矿速度', key: 'mining_speed_multiple', step: 10, min: 100, unit: '%（科技面板右上）'},
     {type: 'percent', label: '残骸产出倍率', key: 'enemy_drop_multiple', step: 4, min: 100, unit: '%（科技面板右上）'},
+    {type: 'int', label: '黑雾基地等级', key: 'dark_fog_base_level', step: 1, min: 1, max: 30},
     {type: 'percent', label: '手动制造速度', key: 'icarus_manufacturing_speed', step: 50, min: 100, unit: '%'},
     {type: 'fractionating_speed', label: '分馏带速'},
 ];

@@ -40,16 +40,16 @@ export function Settings({
         inc_rate: Math.round(settings.inc_rate * 100),
     };
 
-    function changeIntSetting(raw_value, name, min_value) {
-        set_settings({[name]: normalizeIntValue(raw_value, DEFAULT_SETTINGS[name], min_value)});
+    function changeIntSetting(raw_value, name, min_value, max_value) {
+        set_settings({[name]: normalizeIntValue(raw_value, DEFAULT_SETTINGS[name], min_value, max_value)});
     }
 
-    function changeFloatSetting(raw_value, name, min_value) {
-        set_settings({[name]: normalizeFloatValue(raw_value, DEFAULT_SETTINGS[name], min_value)});
+    function changeFloatSetting(raw_value, name, min_value, max_value) {
+        set_settings({[name]: normalizeFloatValue(raw_value, DEFAULT_SETTINGS[name], min_value, max_value)});
     }
 
-    function changePercentSetting(raw_value, name, min_value) {
-        const val = normalizePercentValue(raw_value, DEFAULT_SETTINGS[name] * 100, min_value);
+    function changePercentSetting(raw_value, name, min_value, max_value) {
+        const val = normalizePercentValue(raw_value, DEFAULT_SETTINGS[name] * 100, min_value, max_value);
         set_settings({[name]: val / 100});
     }
 
@@ -87,11 +87,11 @@ export function Settings({
         const value = is_percent ? percent_val[row.key] : settings[row.key];
         const onChange = (e) => {
             if (row.type === 'int') {
-                changeIntSetting(e.target.value, row.key, row.min);
+                changeIntSetting(e.target.value, row.key, row.min, row.max);
             } else if (row.type === 'float') {
-                changeFloatSetting(e.target.value, row.key, row.min);
+                changeFloatSetting(e.target.value, row.key, row.min, row.max);
             } else if (row.type === 'percent') {
-                changePercentSetting(e.target.value, row.key, row.min);
+                changePercentSetting(e.target.value, row.key, row.min, row.max);
             }
         };
 
@@ -102,6 +102,8 @@ export function Settings({
                        className="settings-number-input"
                        value={value}
                        step={row.step}
+                       min={row.min}
+                       max={row.max}
                        style={{maxWidth: '5em'}}
                        onChange={onChange}/>
             </td>

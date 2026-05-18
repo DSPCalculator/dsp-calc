@@ -52,6 +52,7 @@ export interface BaseSettingRow<TKey extends keyof Settings = keyof Settings> {
     label?: string;
     step?: number;
     min?: number;
+    max?: number;
     unit?: string;
     enabledLabel?: string;
     disabledLabel?: string;
