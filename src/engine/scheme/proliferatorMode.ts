@@ -1,5 +1,6 @@
 import {get_equivalent_recipe_output_rate} from '@engine/calculation/equivalentRecipe';
 import type {GameData, ItemPrice, RecipeData, RecipeScheme, SchemeData, Settings} from '@engine/types/domain';
+import {calculateLowFootprintModeCost} from './proliferatorCost';
 
 export type BatchProMode = 0 | 1 | 2 | 3 | 4;
 
@@ -37,6 +38,13 @@ function getRecipeTargetItem(recipe: RecipeData): string | undefined {
     return Object.keys(recipe["产物"])[0];
 }
 
+function getMaterialCost(recipe: RecipeData, item_price: ItemPrice): number {
+    return Object.entries(recipe["原料"]).reduce((sum, [item, count]) => {
+        const material_price = item_price[item]?.["累计成本"] ?? item_price[item]?.["成本"] ?? 0;
+        return sum + count * material_price;
+    }, 0);
+}
+
 function getModeCost({
                          game_data,
                          getEquivalentRecipe,
@@ -54,7 +62,7 @@ function getModeCost({
     scheme_data: SchemeData;
     settings: Settings;
     target_item: string;
-    proliferator_mode: number;
+    proliferator_mode: 1 | 2;
 }): number {
     const recipe = game_data.recipe_data[recipe_id];
     const scheme_recipe = scheme_data.scheme_for_recipe[recipe_id];
@@ -63,24 +71,44 @@ function getModeCost({
         return Number.POSITIVE_INFINITY;
     }
 
-    const equivalent_recipe = getEquivalentRecipe(recipe_id, target_item, {"增产模式": proliferator_mode});
-    const target_output = equivalent_recipe["产物"][target_item];
-    const output_rate = get_equivalent_recipe_output_rate(equivalent_recipe, target_item);
-    if (!target_output || !output_rate || output_rate <= 0) {
+    const base_recipe = getEquivalentRecipe(recipe_id, target_item, {
+        "增产模式": 0,
+    });
+    const mode_recipe = getEquivalentRecipe(recipe_id, target_item, {"增产模式": proliferator_mode});
+    const base_target_output = base_recipe["产物"][target_item];
+    const mode_target_output = mode_recipe["产物"][target_item];
+    const base_output_rate = get_equivalent_recipe_output_rate(base_recipe, target_item);
+    if (!base_target_output || !mode_target_output || !base_output_rate || base_output_rate <= 0) {
         return Number.POSITIVE_INFINITY;
     }
 
-    // 用当前成本图近似上游连锁影响：加速降低本配方占地，增产降低单位原料需求。
-    const building_count_per_yield = 1 / output_rate / building_info["倍率"];
+    // 对齐硬核表口径：原料、设备/电力、喷涂成本先分项，再按加速/增产分别折算。
+    const material_cost = getMaterialCost(base_recipe, item_price) / base_target_output;
+    const spray_cost = Math.max(0, getMaterialCost(mode_recipe, item_price) - getMaterialCost(base_recipe, item_price))
+        / base_target_output;
+    const building_count_per_yield = 1 / base_output_rate / building_info["倍率"];
     const layer_count = building_info["名称"].endsWith("研究站") ? settings.stack_research_lab : 1;
-    let cost = building_count_per_yield * building_info["占地"] / layer_count;
+    const proliferator_points = scheme_recipe["增产点数"];
+    const energy_multiplier = game_data.proliferator_effect[proliferator_points]?.["耗电倍率"] ?? 1;
+    const facility_cost = building_count_per_yield * (
+        building_info["占地"] / layer_count
+        + building_info["耗能"] * energy_multiplier * scheme_data.cost_weight["电力"]
+    );
+    const speed_multiplier = proliferator_mode === 1
+        ? base_recipe["时间"] / mode_recipe["时间"]
+        : 1;
+    const output_multiplier = proliferator_mode === 2
+        ? mode_target_output / base_target_output
+        : 1;
 
-    Object.entries(equivalent_recipe["原料"]).forEach(([item, count]) => {
-        const material_price = item_price[item]?.["累计成本"] ?? item_price[item]?.["成本"] ?? 0;
-        cost += count / target_output * material_price;
+    return calculateLowFootprintModeCost({
+        material_cost,
+        facility_cost,
+        spray_cost,
+        output_multiplier,
+        speed_multiplier,
+        mode: proliferator_mode,
     });
-
-    return cost;
 }
 
 export function getLowFootprintProliferatorModeForRecipe({
