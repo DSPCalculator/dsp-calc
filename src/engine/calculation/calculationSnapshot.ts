@@ -59,7 +59,7 @@ function createItemCostGetter(snapshot: CalculationSnapshot) {
         }
         const equivalent_recipe = snapshot.getEquivalentRecipe(recipe_id, item);
         const building_info = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]];
-        const building_count_per_yield = 1 / get_equivalent_recipe_output_rate(equivalent_recipe, item) / building_info["倍率"];
+        const building_count_per_yield = 1 / get_equivalent_recipe_output_rate(equivalent_recipe, item);
         const layer_count = building_info["名称"].endsWith("研究站") ? stack_research_lab : 1;
         cost = Number(cost) + building_count_per_yield * scheme_data.cost_weight["占地"] * building_info["占地"] / layer_count;
         cost = Number(cost) + building_count_per_yield * scheme_data.cost_weight["电力"] * building_info["耗能"] * game_data.proliferator_effect[scheme_data.scheme_for_recipe[recipe_id]["增产点数"]]["耗电倍率"];

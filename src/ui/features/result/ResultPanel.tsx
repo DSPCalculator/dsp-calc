@@ -13,6 +13,7 @@ import {buildResultRowActions} from './resultRowActions';
 import {buildResultRowsViewModel} from './resultRowsViewModel';
 import {ResultTableRow} from './ResultTableRow';
 import {ceilFromDisplayed, roundToFixed} from '@lib/number';
+import {calculateRawFactoryNumber} from './factoryCount';
 import type {
     GameData,
     ItemDataIndex,
@@ -122,7 +123,7 @@ function collectResultMetrics({
         const factories_type = game_data.recipe_data[recipe_id]["设施"];
         const factory_info = game_data.factory_data[factories_type][scheme_recipe["建筑"]];
         const factory_name = factory_info["名称"];
-        const raw_build_number = amount / time_tick / item_graph[item]["产出倍率"] / factory_info["倍率"];
+        const raw_build_number = calculateRawFactoryNumber(amount, time_tick, item_graph[item]["产出倍率"]);
         const build_number = roundToFixed(raw_build_number, fixed_num);
         const building_count = ceilFromDisplayed(raw_build_number, fixed_num);
 
