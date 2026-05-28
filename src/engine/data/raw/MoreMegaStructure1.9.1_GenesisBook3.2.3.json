@@ -46,7 +46,7 @@
         1209
       ],
       "ItemCounts": [
-        0.008333333333333333
+        0.0083333333333333332
       ],
       "Results": [
         1101
@@ -62,8 +62,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "铁块",
       "Items": [
@@ -154,7 +154,7 @@
         1209
       ],
       "ItemCounts": [
-        0.008333333333333333
+        0.0083333333333333332
       ],
       "Results": [
         1104
@@ -170,8 +170,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "铜块",
       "Items": [
@@ -605,7 +605,7 @@
         1209
       ],
       "ItemCounts": [
-        0.008333333333333333
+        0.0083333333333333332
       ],
       "Results": [
         1109
@@ -621,8 +621,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "高能石墨",
       "Items": [
@@ -851,8 +851,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "铝块",
       "Items": [
@@ -875,8 +875,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "铝合金",
       "Items": [
@@ -970,7 +970,7 @@
         1209
       ],
       "ItemCounts": [
-        0.008333333333333333
+        0.0083333333333333332
       ],
       "Results": [
         1126
@@ -1042,8 +1042,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "钛化玻璃",
       "Items": [
@@ -1234,8 +1234,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "晶格硅",
       "Items": [
@@ -1614,8 +1614,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "玻璃",
       "Items": [
@@ -1899,7 +1899,7 @@
         1209
       ],
       "ItemCounts": [
-        0.008333333333333333
+        0.0083333333333333332
       ],
       "Results": [
         1105
@@ -1915,8 +1915,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "高纯硅块",
       "Items": [
@@ -1939,8 +1939,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "金刚石",
       "Items": [
@@ -1963,8 +1963,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "金刚石（高效）",
       "Items": [
@@ -1987,8 +1987,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "晶格硅（高效）",
       "Items": [
@@ -2011,8 +2011,8 @@
       "Type": 1,
       "Factories": [
         2302,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "钢材",
       "Items": [
@@ -2107,7 +2107,7 @@
         1209
       ],
       "ItemCounts": [
-        0.008333333333333333
+        0.0083333333333333332
       ],
       "Results": [
         1106
@@ -2123,8 +2123,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "钛块",
       "Items": [
@@ -2147,8 +2147,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "钛合金",
       "Items": [
@@ -4836,7 +4836,7 @@
         2318,
         6257
       ],
-      "Name": "引力发生装置Recipe",
+      "Name": "Gravity generatorRecipe",
       "Items": [
         1107,
         1127
@@ -4862,7 +4862,7 @@
         2318,
         6257
       ],
-      "Name": "位面约束环Recipe",
+      "Name": "Plane constraint ringRecipe",
       "Items": [
         1205,
         1119,
@@ -4890,7 +4890,7 @@
         2318,
         6257
       ],
-      "Name": "引力钻头Recipe",
+      "Name": "Graviton drillRecipe",
       "Items": [
         9480,
         9481,
@@ -4918,7 +4918,7 @@
         2318,
         6257
       ],
-      "Name": "隧穿激发装置Recipe",
+      "Name": "Tunneling exciterRecipe",
       "Items": [
         1303,
         1014
@@ -4944,7 +4944,7 @@
         2318,
         6257
       ],
-      "Name": "谐振盘Recipe",
+      "Name": "Resonant discRecipe",
       "Items": [
         9483,
         1113,
@@ -4972,7 +4972,7 @@
         2318,
         6257
       ],
-      "Name": "光子探针Recipe",
+      "Name": "Photon probeRecipe",
       "Items": [
         1404,
         1208
@@ -4998,7 +4998,7 @@
         2318,
         6257
       ],
-      "Name": "量子计算机Recipe",
+      "Name": "Quantum computerRecipe",
       "Items": [
         1305,
         1402,
@@ -5026,7 +5026,7 @@
         2318,
         6257
       ],
-      "Name": "星际组装厂组件Recipe",
+      "Name": "Interstellar assembly componentRecipe",
       "Items": [
         1125,
         2305,
@@ -5054,7 +5054,7 @@
         2318,
         6257
       ],
-      "Name": "物质解压器运载火箭Recipe",
+      "Name": "Matter decompressor carrier rocketRecipe",
       "Items": [
         9482,
         9484,
@@ -5082,7 +5082,7 @@
         2318,
         6257
       ],
-      "Name": "科学枢纽运载火箭Recipe",
+      "Name": "Science nexus carrier rocketRecipe",
       "Items": [
         9481,
         9486,
@@ -5110,7 +5110,7 @@
         2318,
         6257
       ],
-      "Name": "谐振发射器运载火箭Recipe",
+      "Name": "Resonant generator carrier rocketRecipe",
       "Items": [
         9480,
         9484,
@@ -5138,7 +5138,7 @@
         2318,
         6257
       ],
-      "Name": "星际组装厂运载火箭Recipe",
+      "Name": "Interstellar assembly carrier rocketRecipe",
       "Items": [
         9487,
         1802
@@ -5164,7 +5164,7 @@
         2318,
         6257
       ],
-      "Name": "晶体重构器运载火箭Recipe",
+      "Name": "Crystal reconstructor carrier rocketRecipe",
       "Items": [
         9485,
         1802,
@@ -6604,8 +6604,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "钛晶石（高效）",
       "Items": [
@@ -6723,8 +6723,8 @@
       "Type": 11,
       "Factories": [
         6230,
-        6258,
-        2319
+        2319,
+        6258
       ],
       "Name": "钛晶石",
       "Items": [
@@ -7733,7 +7733,7 @@
         2318,
         6260
       ],
-      "Name": null,
+      "Name": "天穹装配厂Recipe",
       "Items": [
         9500
       ],
@@ -7757,7 +7757,7 @@
         2318,
         6260
       ],
-      "Name": null,
+      "Name": "物质裂解塔Recipe",
       "Items": [
         9500
       ],
@@ -7781,7 +7781,7 @@
         2318,
         6260
       ],
-      "Name": null,
+      "Name": "埃克森美孚化工厂Recipe",
       "Items": [
         9500
       ],
@@ -7805,7 +7805,7 @@
         2318,
         6260
       ],
-      "Name": null,
+      "Name": "“工业先锋”精密加工中心Recipe",
       "Items": [
         9500
       ],
@@ -7829,7 +7829,7 @@
         2318,
         6260
       ],
-      "Name": null,
+      "Name": "物质分解设施Recipe",
       "Items": [
         9500
       ],
@@ -7853,7 +7853,7 @@
         2318,
         6260
       ],
-      "Name": null,
+      "Name": "“苍穹”粒子加速器Recipe",
       "Items": [
         9500
       ],
@@ -8109,7 +8109,7 @@
         1209
       ],
       "ItemCounts": [
-        0.008333333333333333
+        0.0083333333333333332
       ],
       "Results": [
         1014
@@ -8188,7 +8188,7 @@
         1209
       ],
       "ItemCounts": [
-        0.008333333333333333
+        0.0083333333333333332
       ],
       "Results": [
         1016
@@ -8678,7 +8678,7 @@
         1209
       ],
       "ItemCounts": [
-        0.008333333333333333
+        0.0083333333333333332
       ],
       "Results": [
         1208
@@ -9192,7 +9192,7 @@
       "Factories": [
         2
       ],
-      "Name": "[无中生有]多功能集成组件",
+      "Name": "[无中生有]Multi-functional integrated components",
       "Items": [],
       "ItemCounts": [],
       "Results": [
@@ -9912,693 +9912,1287 @@
       "Type": 1,
       "Name": "水",
       "GridIndex": 1111,
-      "IconName": "water"
+      "IconName": "water",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1001,
       "Type": 1,
       "Name": "铁矿",
       "GridIndex": 1216,
-      "IconName": "iron-ore"
+      "IconName": "iron-ore",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1002,
       "Type": 1,
       "Name": "铜矿",
       "GridIndex": 1316,
-      "IconName": "copper-ore"
+      "IconName": "copper-ore",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1003,
       "Type": 1,
       "Name": "硅石",
       "GridIndex": 1616,
-      "IconName": "silicium-ore"
+      "IconName": "silicium-ore",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1004,
       "Type": 1,
       "Name": "钛石",
       "GridIndex": 1716,
-      "IconName": "titanium-ore"
+      "IconName": "titanium-ore",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1005,
       "Type": 1,
       "Name": "石矿",
       "GridIndex": 1416,
-      "IconName": "stone-ore"
+      "IconName": "stone-ore",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1006,
       "Type": 1,
       "Name": "煤矿",
       "GridIndex": 1516,
-      "IconName": "coal-ore"
+      "IconName": "coal-ore",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1007,
       "Type": 1,
       "Name": "原油",
       "GridIndex": 1112,
-      "IconName": "oil"
+      "IconName": "oil",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1011,
       "Type": 1,
       "Name": "可燃冰",
       "GridIndex": 1117,
-      "IconName": "gas-hydrate"
+      "IconName": "gas-hydrate",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1012,
       "Type": 1,
       "Name": "金伯利矿石",
       "GridIndex": 1317,
-      "IconName": "diamond-ore"
+      "IconName": "diamond-ore",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1013,
       "Type": 1,
       "Name": "分形硅石",
       "GridIndex": 1417,
-      "IconName": "fractal-silica"
+      "IconName": "fractal-silica",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1014,
       "Type": 1,
       "Name": "光栅石",
       "GridIndex": 1517,
-      "IconName": "grating-ore"
+      "IconName": "grating-ore",
+      "EnemyDropLevel": 5,
+      "EnemyDropRange": [
+        0.006,
+        0.006
+      ],
+      "EnemyDropCount": 2.0
     },
     {
       "ID": 1015,
       "Type": 1,
       "Name": "刺笋结晶",
       "GridIndex": 1617,
-      "IconName": "bamboo-crystal"
+      "IconName": "bamboo-crystal",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1016,
       "Type": 1,
       "Name": "单极磁石",
       "GridIndex": 1217,
-      "IconName": "mono-mag-ore"
+      "IconName": "mono-mag-ore",
+      "EnemyDropLevel": 8,
+      "EnemyDropRange": [
+        0.012,
+        0.004
+      ],
+      "EnemyDropCount": 2.0
     },
     {
       "ID": 1030,
       "Type": 1,
       "Name": "木材",
       "GridIndex": 1615,
-      "IconName": "wood"
+      "IconName": "wood",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.003
+      ],
+      "EnemyDropCount": 4.0
     },
     {
       "ID": 1031,
       "Type": 1,
       "Name": "植物燃料",
       "GridIndex": 1715,
-      "IconName": "plant-fuel"
+      "IconName": "plant-fuel",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.003,
+        0.003
+      ],
+      "EnemyDropCount": 4.0
     },
     {
       "ID": 1099,
       "Type": 1,
       "Name": "沙土",
       "GridIndex": 0,
-      "IconName": "soil-pile"
+      "IconName": "soil-pile",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1101,
       "Type": 2,
       "Name": "铁块",
       "GridIndex": 1101,
-      "IconName": "iron-plate"
+      "IconName": "iron-plate",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.016,
+        0.01
+      ],
+      "EnemyDropCount": 2.0
     },
     {
       "ID": 1103,
       "Type": 2,
       "Name": "钢材",
       "GridIndex": 1201,
-      "IconName": "steel-plate"
+      "IconName": "steel-plate",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.0635,
+        0.007
+      ],
+      "EnemyDropCount": 1.6
     },
     {
       "ID": 1104,
       "Type": 2,
       "Name": "铜块",
       "GridIndex": 1102,
-      "IconName": "copper-plate"
+      "IconName": "copper-plate",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.026,
+        0.01
+      ],
+      "EnemyDropCount": 2.4
     },
     {
       "ID": 1105,
       "Type": 2,
       "Name": "高纯硅块",
       "GridIndex": 1104,
-      "IconName": "silicium-single-crystal"
+      "IconName": "silicium-single-crystal",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.036,
+        0.008
+      ],
+      "EnemyDropCount": 1.8
     },
     {
       "ID": 1106,
       "Type": 2,
       "Name": "钛块",
       "GridIndex": 1105,
-      "IconName": "titanium-plate"
+      "IconName": "titanium-plate",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.044,
+        0.008
+      ],
+      "EnemyDropCount": 2.2
     },
     {
       "ID": 1107,
       "Type": 2,
       "Name": "钛合金",
       "GridIndex": 1203,
-      "IconName": "titanium-alloy"
+      "IconName": "titanium-alloy",
+      "EnemyDropLevel": 4,
+      "EnemyDropRange": [
+        0.0705,
+        0.005
+      ],
+      "EnemyDropCount": 1.1
     },
     {
       "ID": 1108,
       "Type": 2,
       "Name": "石材",
       "GridIndex": 1205,
-      "IconName": "stone-brick"
+      "IconName": "stone-brick",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.052,
+        0.006
+      ],
+      "EnemyDropCount": 1.8
     },
     {
       "ID": 1109,
       "Type": 2,
       "Name": "高能石墨",
       "GridIndex": 1107,
-      "IconName": "graphite"
+      "IconName": "graphite",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.058,
+        0.0055
+      ],
+      "EnemyDropCount": 1.6
     },
     {
       "ID": 1110,
       "Type": 2,
       "Name": "玻璃",
       "GridIndex": 1501,
-      "IconName": "glass"
+      "IconName": "glass",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.0755,
+        0.006
+      ],
+      "EnemyDropCount": 1.7
     },
     {
       "ID": 1111,
       "Type": 2,
       "Name": "棱镜",
       "GridIndex": 1304,
-      "IconName": "prism"
+      "IconName": "prism",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.0855,
+        0.0055
+      ],
+      "EnemyDropCount": 1.4
     },
     {
       "ID": 1112,
       "Type": 2,
       "Name": "金刚石",
       "GridIndex": 1404,
-      "IconName": "diamond"
+      "IconName": "diamond",
+      "EnemyDropLevel": 2,
+      "EnemyDropRange": [
+        0.091,
+        0.004
+      ],
+      "EnemyDropCount": 1.0
     },
     {
       "ID": 1113,
       "Type": 2,
       "Name": "晶格硅",
       "GridIndex": 1405,
-      "IconName": "silicium-high-purity"
+      "IconName": "silicium-high-purity",
+      "EnemyDropLevel": 3,
+      "EnemyDropRange": [
+        0.095,
+        0.005
+      ],
+      "EnemyDropCount": 1.2
     },
     {
       "ID": 1114,
       "Type": 2,
       "Name": "焦油",
       "GridIndex": 4201,
-      "IconName": "refined-oil"
+      "IconName": "refined-oil",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1115,
       "Type": 2,
       "Name": "聚丙烯",
       "GridIndex": 4101,
-      "IconName": "plastic"
+      "IconName": "plastic",
+      "EnemyDropLevel": 2,
+      "EnemyDropRange": [
+        0.197,
+        0.003
+      ],
+      "EnemyDropCount": 1.0
     },
     {
       "ID": 1116,
       "Type": 2,
       "Name": "硫酸",
       "GridIndex": 4705,
-      "IconName": "sulphuric-acid"
+      "IconName": "sulphuric-acid",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1117,
       "Type": 2,
       "Name": "有机晶体",
       "GridIndex": 1717,
-      "IconName": "crystal-rubber"
+      "IconName": "crystal-rubber",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1118,
       "Type": 2,
       "Name": "钛晶石",
       "GridIndex": 1408,
-      "IconName": "titan-crystal"
+      "IconName": "titan-crystal",
+      "EnemyDropLevel": 3,
+      "EnemyDropRange": [
+        0.205,
+        0.003
+      ],
+      "EnemyDropCount": 0.8
     },
     {
       "ID": 1119,
       "Type": 2,
       "Name": "钛化玻璃",
       "GridIndex": 1502,
-      "IconName": "titan-glass"
+      "IconName": "titan-glass",
+      "EnemyDropLevel": 4,
+      "EnemyDropRange": [
+        0.0815,
+        0.004
+      ],
+      "EnemyDropCount": 1.4
     },
     {
       "ID": 1120,
       "Type": 2,
       "Name": "氢",
       "GridIndex": 1113,
-      "IconName": "hydrogen"
+      "IconName": "hydrogen",
+      "EnemyDropLevel": 3,
+      "EnemyDropRange": [
+        0.185,
+        0.004
+      ],
+      "EnemyDropCount": 1.5
     },
     {
       "ID": 1121,
       "Type": 2,
       "Name": "重氢",
       "GridIndex": 1114,
-      "IconName": "deuterium"
+      "IconName": "deuterium",
+      "EnemyDropLevel": 5,
+      "EnemyDropRange": [
+        0.189,
+        0.002
+      ],
+      "EnemyDropCount": 0.8
     },
     {
       "ID": 1122,
       "Type": 2,
       "Name": "反物质",
       "GridIndex": 1109,
-      "IconName": "anti-matter"
+      "IconName": "anti-matter",
+      "EnemyDropLevel": 7,
+      "EnemyDropRange": [
+        0.191,
+        0.002
+      ],
+      "EnemyDropCount": 0.3
     },
     {
       "ID": 1123,
       "Type": 2,
       "Name": "石墨烯",
       "GridIndex": 1406,
-      "IconName": "graphene"
+      "IconName": "graphene",
+      "EnemyDropLevel": 3,
+      "EnemyDropRange": [
+        0.2,
+        0.003
+      ],
+      "EnemyDropCount": 1.0
     },
     {
       "ID": 1124,
       "Type": 2,
       "Name": "碳纳米管",
       "GridIndex": 1407,
-      "IconName": "nanotube"
+      "IconName": "nanotube",
+      "EnemyDropLevel": 4,
+      "EnemyDropRange": [
+        0.203,
+        0.002
+      ],
+      "EnemyDropCount": 0.8
     },
     {
       "ID": 1125,
       "Type": 2,
       "Name": "框架材料",
       "GridIndex": 1711,
-      "IconName": "frame-material"
+      "IconName": "frame-material",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1126,
       "Type": 2,
       "Name": "卡西米尔晶体",
       "GridIndex": 1409,
-      "IconName": "casimir-crystal"
+      "IconName": "casimir-crystal",
+      "EnemyDropLevel": 5,
+      "EnemyDropRange": [
+        0.208,
+        0.003
+      ],
+      "EnemyDropCount": 0.55
     },
     {
       "ID": 1127,
       "Type": 2,
       "Name": "奇异物质",
       "GridIndex": 1605,
-      "IconName": "strange-matter-generator"
+      "IconName": "strange-matter-generator",
+      "EnemyDropLevel": 6,
+      "EnemyDropRange": [
+        0.1435,
+        0.0035
+      ],
+      "EnemyDropCount": 0.4
     },
     {
       "ID": 1128,
       "Type": 3,
       "Name": "燃烧单元",
       "GridIndex": 5401,
-      "IconName": "explosive"
+      "IconName": "explosive",
+      "EnemyDropLevel": 2,
+      "EnemyDropRange": [
+        0.211,
+        0.004
+      ],
+      "EnemyDropCount": 1.0
     },
     {
       "ID": 1129,
       "Type": 3,
       "Name": "爆破单元",
       "GridIndex": 5402,
-      "IconName": "high-explosive"
+      "IconName": "high-explosive",
+      "EnemyDropLevel": 4,
+      "EnemyDropRange": [
+        0.215,
+        0.003
+      ],
+      "EnemyDropCount": 0.7
     },
     {
       "ID": 1131,
       "Type": 3,
       "Name": "地基",
       "GridIndex": 1206,
-      "IconName": "terrain-tool"
+      "IconName": "terrain-tool",
+      "EnemyDropLevel": 2,
+      "EnemyDropRange": [
+        0.2435,
+        0.005
+      ],
+      "EnemyDropCount": 2.0
     },
     {
       "ID": 1143,
       "Type": 2,
       "Name": "增产剂",
       "GridIndex": 4504,
-      "IconName": "accelerator-3"
+      "IconName": "accelerator-3",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1202,
       "Type": 3,
       "Name": "磁线圈",
       "GridIndex": 1301,
-      "IconName": "magnetism-wire"
+      "IconName": "magnetism-wire",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.116,
+        0.007
+      ],
+      "EnemyDropCount": 2.0
     },
     {
       "ID": 1203,
       "Type": 3,
       "Name": "电动机",
       "GridIndex": 1601,
-      "IconName": "electric-motor"
+      "IconName": "electric-motor",
+      "EnemyDropLevel": 2,
+      "EnemyDropRange": [
+        0.123,
+        0.006
+      ],
+      "EnemyDropCount": 1.2
     },
     {
       "ID": 1204,
       "Type": 3,
       "Name": "电磁涡轮",
       "GridIndex": 1602,
-      "IconName": "mag-turbine"
+      "IconName": "mag-turbine",
+      "EnemyDropLevel": 3,
+      "EnemyDropRange": [
+        0.129,
+        0.0055
+      ],
+      "EnemyDropCount": 0.8
     },
     {
       "ID": 1205,
       "Type": 3,
       "Name": "超级磁场环",
       "GridIndex": 1603,
-      "IconName": "hyper-magnetism-ring"
+      "IconName": "hyper-magnetism-ring",
+      "EnemyDropLevel": 4,
+      "EnemyDropRange": [
+        0.1345,
+        0.005
+      ],
+      "EnemyDropCount": 0.5
     },
     {
       "ID": 1206,
       "Type": 3,
       "Name": "粒子容器",
       "GridIndex": 1411,
-      "IconName": "partical-capacitor"
+      "IconName": "partical-capacitor",
+      "EnemyDropLevel": 5,
+      "EnemyDropRange": [
+        0.1395,
+        0.004
+      ],
+      "EnemyDropCount": 0.4
     },
     {
       "ID": 1208,
       "Type": 2,
       "Name": "临界光子",
       "GridIndex": 1108,
-      "IconName": "photon-capacitor-full"
+      "IconName": "photon-capacitor-full",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1209,
       "Type": 3,
       "Name": "引力透镜",
       "GridIndex": 1606,
-      "IconName": "gravity-lens"
+      "IconName": "gravity-lens",
+      "EnemyDropLevel": 7,
+      "EnemyDropRange": [
+        0.22,
+        0.002
+      ],
+      "EnemyDropCount": 0.4
     },
     {
       "ID": 1210,
       "Type": 3,
       "Name": "空间翘曲器",
       "GridIndex": 1413,
-      "IconName": "space-warper"
+      "IconName": "space-warper",
+      "EnemyDropLevel": 7,
+      "EnemyDropRange": [
+        0.222,
+        0.002
+      ],
+      "EnemyDropCount": 0.3
     },
     {
       "ID": 1301,
       "Type": 3,
       "Name": "电路板",
       "GridIndex": 1302,
-      "IconName": "circuit-board"
+      "IconName": "circuit-board",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.147,
+        0.007
+      ],
+      "EnemyDropCount": 2.0
     },
     {
       "ID": 1302,
       "Type": 3,
       "Name": "微晶元件",
       "GridIndex": 1303,
-      "IconName": "micro-component"
+      "IconName": "micro-component",
+      "EnemyDropLevel": 2,
+      "EnemyDropRange": [
+        0.161,
+        0.007
+      ],
+      "EnemyDropCount": 1.0
     },
     {
       "ID": 1303,
       "Type": 3,
       "Name": "处理器",
       "GridIndex": 1412,
-      "IconName": "processor"
+      "IconName": "processor",
+      "EnemyDropLevel": 3,
+      "EnemyDropRange": [
+        0.154,
+        0.004
+      ],
+      "EnemyDropCount": 0.75
     },
     {
       "ID": 1304,
       "Type": 3,
       "Name": "位面过滤器",
       "GridIndex": 1607,
-      "IconName": "plane-filter"
+      "IconName": "plane-filter",
+      "EnemyDropLevel": 6,
+      "EnemyDropRange": [
+        0.168,
+        0.004
+      ],
+      "EnemyDropCount": 0.4
     },
     {
       "ID": 1305,
       "Type": 3,
       "Name": "量子芯片",
       "GridIndex": 1609,
-      "IconName": "quantum-processor"
+      "IconName": "quantum-processor",
+      "EnemyDropLevel": 7,
+      "EnemyDropRange": [
+        0.158,
+        0.003
+      ],
+      "EnemyDropCount": 0.25
     },
     {
       "ID": 1401,
       "Type": 3,
       "Name": "电浆激发器",
       "GridIndex": 1305,
-      "IconName": "plasma-generator"
+      "IconName": "plasma-generator",
+      "EnemyDropLevel": 2,
+      "EnemyDropRange": [
+        0.176,
+        0.0045
+      ],
+      "EnemyDropCount": 1.3
     },
     {
       "ID": 1402,
       "Type": 3,
       "Name": "粒子宽带",
       "GridIndex": 1608,
-      "IconName": "particle-wide-band"
+      "IconName": "particle-wide-band",
+      "EnemyDropLevel": 5,
+      "EnemyDropRange": [
+        0.172,
+        0.004
+      ],
+      "EnemyDropCount": 0.25
     },
     {
       "ID": 1403,
       "Type": 3,
       "Name": "湮灭约束球",
       "GridIndex": 1614,
-      "IconName": "fusion-capacitor"
+      "IconName": "fusion-capacitor",
+      "EnemyDropLevel": 7,
+      "EnemyDropRange": [
+        0.224,
+        0.0015
+      ],
+      "EnemyDropCount": 0.3
     },
     {
       "ID": 1404,
       "Type": 3,
       "Name": "光子合并器",
       "GridIndex": 1410,
-      "IconName": "photo-shifter"
+      "IconName": "photo-shifter",
+      "EnemyDropLevel": 3,
+      "EnemyDropRange": [
+        0.1805,
+        0.0045
+      ],
+      "EnemyDropCount": 1.4
     },
     {
       "ID": 1405,
       "Type": 3,
       "Name": "推进器",
       "GridIndex": 1210,
-      "IconName": "fuel-thruster"
+      "IconName": "fuel-thruster",
+      "EnemyDropLevel": 3,
+      "EnemyDropRange": [
+        0.2325,
+        0.006
+      ],
+      "EnemyDropCount": 0.6
     },
     {
       "ID": 1406,
       "Type": 3,
       "Name": "加力推进器",
       "GridIndex": 1211,
-      "IconName": "ion-thruster"
+      "IconName": "ion-thruster",
+      "EnemyDropLevel": 5,
+      "EnemyDropRange": [
+        0.2385,
+        0.005
+      ],
+      "EnemyDropCount": 0.3
     },
     {
       "ID": 1407,
       "Type": 3,
       "Name": "动力引擎",
       "GridIndex": 1209,
-      "IconName": "engine"
+      "IconName": "engine",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.2255,
+        0.007
+      ],
+      "EnemyDropCount": 1.0
     },
     {
       "ID": 1501,
       "Type": 4,
       "Name": "太阳帆",
       "GridIndex": 1710,
-      "IconName": "solar-collector"
+      "IconName": "solar-collector",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1502,
       "Type": 3,
       "Name": "戴森球组件",
       "GridIndex": 1712,
-      "IconName": "dyson-sphere-component"
+      "IconName": "dyson-sphere-component",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1503,
       "Type": 4,
       "Name": "小型运载火箭",
       "GridIndex": 1713,
-      "IconName": "rocket"
+      "IconName": "rocket",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1601,
       "Type": 4,
       "Name": "机枪弹箱",
       "GridIndex": 5301,
-      "IconName": "bullet"
+      "IconName": "bullet",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1603,
       "Type": 4,
       "Name": "超合金弹箱",
       "GridIndex": 5303,
-      "IconName": "bullet-titanium"
+      "IconName": "bullet-titanium",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1604,
       "Type": 4,
       "Name": "炮弹组",
       "GridIndex": 5501,
-      "IconName": "cannonball"
+      "IconName": "cannonball",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1605,
       "Type": 4,
       "Name": "高爆炮弹组",
       "GridIndex": 5502,
-      "IconName": "cannonball-cluster"
+      "IconName": "cannonball-cluster",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1607,
       "Type": 4,
       "Name": "等离子胶囊",
       "GridIndex": 5703,
-      "IconName": "capsule-energy"
+      "IconName": "capsule-energy",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1608,
       "Type": 4,
       "Name": "反物质胶囊",
       "GridIndex": 5704,
-      "IconName": "capsule-antimatter"
+      "IconName": "capsule-antimatter",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1609,
       "Type": 4,
       "Name": "导弹组",
       "GridIndex": 5601,
-      "IconName": "missile"
+      "IconName": "missile",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1610,
       "Type": 4,
       "Name": "超音速导弹组",
       "GridIndex": 5602,
-      "IconName": "missile-supersonic"
+      "IconName": "missile-supersonic",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1611,
       "Type": 4,
       "Name": "引力导弹组",
       "GridIndex": 5603,
-      "IconName": "missile-graviton"
+      "IconName": "missile-graviton",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1612,
       "Type": 4,
       "Name": "干扰胶囊",
       "GridIndex": 5701,
-      "IconName": "em-disturb"
+      "IconName": "em-disturb",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1613,
       "Type": 4,
       "Name": "压制胶囊",
       "GridIndex": 5702,
-      "IconName": "em-suppress"
+      "IconName": "em-suppress",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1801,
       "Type": 4,
       "Name": "液氢燃料棒",
       "GridIndex": 1505,
-      "IconName": "hydrogen-energy-fuel"
+      "IconName": "hydrogen-energy-fuel",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1802,
       "Type": 4,
       "Name": "氘核燃料棒",
       "GridIndex": 1510,
-      "IconName": "deuterium-energy-fuel"
+      "IconName": "deuterium-energy-fuel",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1803,
       "Type": 4,
       "Name": "反物质燃料棒",
       "GridIndex": 1513,
-      "IconName": "antimatter-energy-fuel"
+      "IconName": "antimatter-energy-fuel",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 1804,
       "Type": 4,
       "Name": "奇异湮灭燃料棒",
       "GridIndex": 1514,
-      "IconName": "virtual-energy-fuel"
+      "IconName": "virtual-energy-fuel",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2001,
       "Type": 5,
       "Name": "传送带",
       "GridIndex": 2201,
-      "IconName": "belt-1"
+      "IconName": "belt-1",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2002,
       "Type": 5,
       "Name": "高速传送带",
       "GridIndex": 2202,
-      "IconName": "belt-2"
+      "IconName": "belt-2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2003,
       "Type": 5,
       "Name": "极速传送带",
       "GridIndex": 2203,
-      "IconName": "belt-3"
+      "IconName": "belt-3",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2011,
       "Type": 5,
       "Name": "分拣器",
       "GridIndex": 2301,
-      "IconName": "inserter-1"
+      "IconName": "inserter-1",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2012,
       "Type": 5,
       "Name": "高速分拣器",
       "GridIndex": 2302,
-      "IconName": "inserter-2"
+      "IconName": "inserter-2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2013,
       "Type": 5,
       "Name": "极速分拣器",
       "GridIndex": 2303,
-      "IconName": "inserter-3"
+      "IconName": "inserter-3",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2014,
       "Type": 5,
       "Name": "集装分拣器",
       "GridIndex": 2304,
-      "IconName": "inserter-4"
+      "IconName": "inserter-4",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2020,
       "Type": 5,
       "Name": "四向分流器",
       "GridIndex": 2204,
-      "IconName": "splitter-4dir"
+      "IconName": "splitter-4dir",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2030,
       "Type": 5,
       "Name": "流速监测器",
       "GridIndex": 2206,
-      "IconName": "monitor"
+      "IconName": "monitor",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2040,
       "Type": 5,
       "Name": "自动集装机",
       "GridIndex": 2205,
-      "IconName": "piler"
+      "IconName": "piler",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2101,
       "Type": 5,
       "Name": "小型储物仓",
       "GridIndex": 2305,
-      "IconName": "storage-1"
+      "IconName": "storage-1",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2102,
       "Type": 5,
       "Name": "大型储物仓",
       "GridIndex": 2306,
-      "IconName": "storage-2"
+      "IconName": "storage-2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2103,
       "Type": 5,
       "Name": "行星内物流运输站",
       "GridIndex": 2211,
-      "IconName": "logistic-station"
+      "IconName": "logistic-station",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2104,
       "Type": 5,
       "Name": "星际物流运输站",
       "GridIndex": 2212,
-      "IconName": "interstellar-logistic-station"
+      "IconName": "interstellar-logistic-station",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2105,
@@ -10606,60 +11200,109 @@
       "Name": "轨道采集器",
       "GridIndex": 2213,
       "IconName": "orbital-collector",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 0,
       "BuildIndex": 606,
       "MultiLevel": false,
-      "Speed": 10,
-      "Space": 0
+      "Speed": 10.0,
+      "MultipleOutput": 1,
+      "Space": 0.0
     },
     {
       "ID": 2106,
       "Type": 5,
       "Name": "储液罐",
       "GridIndex": 2207,
-      "IconName": "storage-tank"
+      "IconName": "storage-tank",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2107,
       "Type": 5,
       "Name": "物流配送器",
       "GridIndex": 2209,
-      "IconName": "delivery-machine"
+      "IconName": "delivery-machine",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2201,
       "Type": 5,
       "Name": "电力感应塔",
       "GridIndex": 2101,
-      "IconName": "tesla-coil"
+      "IconName": "tesla-coil",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2202,
       "Type": 5,
       "Name": "无线输电塔",
       "GridIndex": 2102,
-      "IconName": "charging-pole"
+      "IconName": "charging-pole",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2203,
       "Type": 6,
       "Name": "风力涡轮机",
       "GridIndex": 2104,
-      "IconName": "wind-turbine"
+      "IconName": "wind-turbine",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2204,
       "Type": 6,
       "Name": "燃料电池发电厂",
       "GridIndex": 2105,
-      "IconName": "fuel-plant"
+      "IconName": "fuel-plant",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2205,
       "Type": 6,
       "Name": "太阳能板",
       "GridIndex": 2106,
-      "IconName": "solar-panel"
+      "IconName": "solar-panel",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2206,
@@ -10667,11 +11310,18 @@
       "Name": "蓄电器",
       "GridIndex": 2107,
       "IconName": "accumulator",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 0,
       "BuildIndex": 608,
       "MultiLevel": false,
-      "Speed": 1,
-      "Space": 4
+      "Speed": 1.0,
+      "MultipleOutput": 1,
+      "Space": 4.0
     },
     {
       "ID": 2207,
@@ -10679,11 +11329,18 @@
       "Name": "蓄电器（满）",
       "GridIndex": 2114,
       "IconName": "accumulator-full",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 0,
       "BuildIndex": 0,
       "MultiLevel": false,
-      "Speed": 1,
-      "Space": 4
+      "Speed": 1.0,
+      "MultipleOutput": 1,
+      "Space": 4.0
     },
     {
       "ID": 2208,
@@ -10691,10 +11348,17 @@
       "Name": "射线重构站",
       "GridIndex": 2110,
       "IconName": "ray-receiver",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 0,
       "BuildIndex": 803,
       "MultiLevel": false,
-      "Speed": 1,
+      "Speed": 1.0,
+      "MultipleOutput": 1,
       "Space": 54.82
     },
     {
@@ -10703,39 +11367,70 @@
       "Name": "能量枢纽",
       "GridIndex": 2314,
       "IconName": "energy-exchanger",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 0,
       "BuildIndex": 607,
       "MultiLevel": false,
-      "Speed": 1,
-      "Space": 64
+      "Speed": 1.0,
+      "MultipleOutput": 1,
+      "Space": 64.0
     },
     {
       "ID": 2210,
       "Type": 6,
       "Name": "“朱曦”K型人造恒星",
       "GridIndex": 2111,
-      "IconName": "fusion-reactor"
+      "IconName": "fusion-reactor",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2211,
       "Type": 6,
       "Name": "裂变能源发电站",
       "GridIndex": 2109,
-      "IconName": "fusion-power-station"
+      "IconName": "fusion-power-station",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2212,
       "Type": 5,
       "Name": "卫星配电站",
       "GridIndex": 2103,
-      "IconName": "orbital-substation"
+      "IconName": "orbital-substation",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2213,
       "Type": 6,
       "Name": "地热发电站",
       "GridIndex": 2108,
-      "IconName": "geothermal-power-station"
+      "IconName": "geothermal-power-station",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2301,
@@ -10743,11 +11438,18 @@
       "Name": "采矿机",
       "GridIndex": 2411,
       "IconName": "mining-drill",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 7000,
       "BuildIndex": 201,
       "MultiLevel": false,
-      "Speed": 1,
-      "Space": 15
+      "Speed": 1.0,
+      "MultipleOutput": 1,
+      "Space": 15.0
     },
     {
       "ID": 2302,
@@ -10755,10 +11457,17 @@
       "Name": "电弧熔炉",
       "GridIndex": 2405,
       "IconName": "smelter",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 501,
       "MultiLevel": false,
-      "Speed": 2,
+      "Speed": 2.0,
+      "MultipleOutput": 1,
       "Space": 5.76
     },
     {
@@ -10767,10 +11476,17 @@
       "Name": "基础制造台",
       "GridIndex": 2401,
       "IconName": "assembler-1",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 9000,
       "BuildIndex": 504,
       "MultiLevel": false,
-      "Speed": 2,
+      "Speed": 2.0,
+      "MultipleOutput": 1,
       "Space": 10.24
     },
     {
@@ -10779,10 +11495,17 @@
       "Name": "标准制造单元",
       "GridIndex": 2402,
       "IconName": "assembler-2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 18000,
       "BuildIndex": 505,
       "MultiLevel": false,
-      "Speed": 2,
+      "Speed": 2.0,
+      "MultipleOutput": 1,
       "Space": 10.24
     },
     {
@@ -10791,10 +11514,17 @@
       "Name": "高精度装配线",
       "GridIndex": 2403,
       "IconName": "assembler-3",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 36000,
       "BuildIndex": 506,
       "MultiLevel": false,
-      "Speed": 2,
+      "Speed": 2.0,
+      "MultipleOutput": 1,
       "Space": 10.24
     },
     {
@@ -10803,11 +11533,18 @@
       "Name": "抽水站",
       "GridIndex": 2308,
       "IconName": "water-pump",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 5000,
       "BuildIndex": 203,
       "MultiLevel": false,
-      "Speed": 2,
-      "Space": 12
+      "Speed": 2.0,
+      "MultipleOutput": 1,
+      "Space": 12.0
     },
     {
       "ID": 2307,
@@ -10815,11 +11552,18 @@
       "Name": "原油萃取站",
       "GridIndex": 2310,
       "IconName": "oil-extractor",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 14000,
       "BuildIndex": 205,
       "MultiLevel": false,
-      "Speed": 2,
-      "Space": 50
+      "Speed": 2.0,
+      "MultipleOutput": 1,
+      "Space": 50.0
     },
     {
       "ID": 2308,
@@ -10827,11 +11571,18 @@
       "Name": "原油精炼厂",
       "GridIndex": 2311,
       "IconName": "oil-refinery",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 16000,
       "BuildIndex": 507,
       "MultiLevel": false,
-      "Speed": 2,
-      "Space": 18
+      "Speed": 2.0,
+      "MultipleOutput": 1,
+      "Space": 18.0
     },
     {
       "ID": 2309,
@@ -10839,10 +11590,17 @@
       "Name": "化工厂",
       "GridIndex": 2409,
       "IconName": "chemical-plant",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 508,
       "MultiLevel": false,
-      "Speed": 4,
+      "Speed": 4.0,
+      "MultipleOutput": 1,
       "Space": 23.76
     },
     {
@@ -10851,10 +11609,17 @@
       "Name": "微型粒子对撞机",
       "GridIndex": 2413,
       "IconName": "hadron-collider",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 40000,
       "BuildIndex": 510,
       "MultiLevel": false,
-      "Speed": 4,
+      "Speed": 4.0,
+      "MultipleOutput": 1,
       "Space": 45.12
     },
     {
@@ -10862,21 +11627,39 @@
       "Type": 6,
       "Name": "电磁轨道弹射器",
       "GridIndex": 2315,
-      "IconName": "em-rail-ejector"
+      "IconName": "em-rail-ejector",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2312,
       "Type": 6,
       "Name": "垂直发射井",
       "GridIndex": 2316,
-      "IconName": "vertical-launching-silo"
+      "IconName": "vertical-launching-silo",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2313,
       "Type": 6,
       "Name": "喷涂机",
       "GridIndex": 2210,
-      "IconName": "spray-coater"
+      "IconName": "spray-coater",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2315,
@@ -10884,10 +11667,17 @@
       "Name": "位面熔炉",
       "GridIndex": 2407,
       "IconName": "smelter-2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 24000,
       "BuildIndex": 503,
       "MultiLevel": false,
-      "Speed": 2,
+      "Speed": 2.0,
+      "MultipleOutput": 1,
       "Space": 5.76
     },
     {
@@ -10896,11 +11686,18 @@
       "Name": "大型采矿机",
       "GridIndex": 2412,
       "IconName": "mining-drill-mk2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 49000,
       "BuildIndex": 202,
       "MultiLevel": false,
-      "Speed": 2,
-      "Space": 25
+      "Speed": 2.0,
+      "MultipleOutput": 1,
+      "Space": 25.0
     },
     {
       "ID": 2317,
@@ -10908,10 +11705,17 @@
       "Name": "先进化学反应釜",
       "GridIndex": 2410,
       "IconName": "chemical-plant-2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 24000,
       "BuildIndex": 509,
       "MultiLevel": false,
-      "Speed": 4,
+      "Speed": 4.0,
+      "MultipleOutput": 1,
       "Space": 23.76
     },
     {
@@ -10920,10 +11724,17 @@
       "Name": "物质重组工厂",
       "GridIndex": 2404,
       "IconName": "assembler-4",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 240000,
       "BuildIndex": 809,
       "MultiLevel": false,
-      "Speed": 8,
+      "Speed": 8.0,
+      "MultipleOutput": 1,
       "Space": 10.24
     },
     {
@@ -10932,19 +11743,31 @@
       "Name": "负熵熔炉",
       "GridIndex": 2408,
       "IconName": "smelter-3",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 240000,
       "BuildIndex": 808,
       "MultiLevel": false,
-      "Speed": 4,
-      "Space": 5.76,
-      "MultipleOutput": 2
+      "Speed": 4.0,
+      "MultipleOutput": 2,
+      "Space": 5.76
     },
     {
       "ID": 2401,
       "Type": 7,
       "Name": "全息信标",
       "GridIndex": 2114,
-      "IconName": "lighthouse"
+      "IconName": "lighthouse",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 2901,
@@ -10952,10 +11775,17 @@
       "Name": "矩阵研究站",
       "GridIndex": 2312,
       "IconName": "lab",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 8000,
       "BuildIndex": 801,
       "MultiLevel": true,
-      "Speed": 4,
+      "Speed": 4.0,
+      "MultipleOutput": 1,
       "Space": 20.25
     },
     {
@@ -10964,10 +11794,17 @@
       "Name": "自演化研究站",
       "GridIndex": 2313,
       "IconName": "lab-2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 32000,
       "BuildIndex": 807,
       "MultiLevel": true,
-      "Speed": 8,
+      "Speed": 8.0,
+      "MultipleOutput": 1,
       "Space": 20.25
     },
     {
@@ -10975,287 +11812,533 @@
       "Type": 8,
       "Name": "高斯机枪塔",
       "GridIndex": 5201,
-      "IconName": "turret-gauss"
+      "IconName": "turret-gauss",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 3002,
       "Type": 8,
       "Name": "高频激光塔",
       "GridIndex": 5202,
-      "IconName": "turret-laser"
+      "IconName": "turret-laser",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 3003,
       "Type": 8,
       "Name": "聚爆加农炮",
       "GridIndex": 5204,
-      "IconName": "turret-cannon"
+      "IconName": "turret-cannon",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 3004,
       "Type": 8,
       "Name": "磁化电浆炮",
       "GridIndex": 5208,
-      "IconName": "turret-plasma"
+      "IconName": "turret-plasma",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 3005,
       "Type": 8,
       "Name": "导弹防御塔",
       "GridIndex": 5206,
-      "IconName": "turret-missile"
+      "IconName": "turret-missile",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 3006,
       "Type": 8,
       "Name": "干扰塔",
       "GridIndex": 5212,
-      "IconName": "turret-disturb"
+      "IconName": "turret-disturb",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 3007,
       "Type": 9,
       "Name": "信号塔",
       "GridIndex": 5210,
-      "IconName": "turret-signal"
+      "IconName": "turret-signal",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 3008,
       "Type": 9,
       "Name": "行星护盾发生器",
       "GridIndex": 5211,
-      "IconName": "turret-shield"
+      "IconName": "turret-shield",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 3009,
       "Type": 9,
       "Name": "战场分析基站",
       "GridIndex": 5209,
-      "IconName": "battle-base"
+      "IconName": "battle-base",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 3010,
       "Type": 8,
       "Name": "近程电浆塔",
       "GridIndex": 5207,
-      "IconName": "turret-plasma-ground"
+      "IconName": "turret-plasma-ground",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 5001,
       "Type": 5,
       "Name": "物流运输机",
       "GridIndex": 1310,
-      "IconName": "logistic-drone"
+      "IconName": "logistic-drone",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 5002,
       "Type": 5,
       "Name": "星际物流运输船",
       "GridIndex": 1311,
-      "IconName": "logistic-vessel"
+      "IconName": "logistic-vessel",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 5003,
       "Type": 5,
       "Name": "配送运输机",
       "GridIndex": 1309,
-      "IconName": "delivery-drone"
+      "IconName": "delivery-drone",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 5101,
       "Type": 4,
       "Name": "原型机",
       "GridIndex": 5101,
-      "IconName": "fighter-shield"
+      "IconName": "fighter-shield",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 5102,
       "Type": 4,
       "Name": "精准无人机",
       "GridIndex": 5102,
-      "IconName": "fighter-plasma"
+      "IconName": "fighter-plasma",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 5103,
       "Type": 4,
       "Name": "攻击无人机",
       "GridIndex": 5103,
-      "IconName": "fighter-laser"
+      "IconName": "fighter-laser",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 5111,
       "Type": 4,
       "Name": "护卫舰",
       "GridIndex": 5104,
-      "IconName": "warship-plasma"
+      "IconName": "warship-plasma",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 5112,
       "Type": 4,
       "Name": "驱逐舰",
       "GridIndex": 5105,
-      "IconName": "warship-laser"
+      "IconName": "warship-laser",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 5201,
       "Type": 10,
       "Name": "黑雾矩阵",
       "GridIndex": 5217,
-      "IconName": "memory"
+      "IconName": "memory",
+      "EnemyDropLevel": 4,
+      "EnemyDropRange": [
+        0.2485,
+        0.01
+      ],
+      "EnemyDropCount": 2.5
     },
     {
       "ID": 5202,
       "Type": 10,
       "Name": "硅基神经元",
       "GridIndex": 5317,
-      "IconName": "silicon-neuron"
+      "IconName": "silicon-neuron",
+      "EnemyDropLevel": 6,
+      "EnemyDropRange": [
+        0.2585,
+        0.009
+      ],
+      "EnemyDropCount": 1.5
     },
     {
       "ID": 5203,
       "Type": 10,
       "Name": "物质重组器",
       "GridIndex": 5417,
-      "IconName": "reassembler"
+      "IconName": "reassembler",
+      "EnemyDropLevel": 5,
+      "EnemyDropRange": [
+        0.2675,
+        0.008
+      ],
+      "EnemyDropCount": 1.5
     },
     {
       "ID": 5204,
       "Type": 10,
       "Name": "负熵奇点",
       "GridIndex": 5517,
-      "IconName": "negentropy"
+      "IconName": "negentropy",
+      "EnemyDropLevel": 7,
+      "EnemyDropRange": [
+        0.2755,
+        0.006
+      ],
+      "EnemyDropCount": 1.4
     },
     {
       "ID": 5205,
       "Type": 10,
       "Name": "核心素",
       "GridIndex": 5617,
-      "IconName": "virtual-particle"
+      "IconName": "virtual-particle",
+      "EnemyDropLevel": 8,
+      "EnemyDropRange": [
+        0.2815,
+        0.0065
+      ],
+      "EnemyDropCount": 1.5
     },
     {
       "ID": 5206,
       "Type": 10,
       "Name": "能量碎片",
       "GridIndex": 5117,
-      "IconName": "energy-fragment"
+      "IconName": "energy-fragment",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.288,
+        0.012
+      ],
+      "EnemyDropCount": 2.5
     },
     {
       "ID": 6001,
       "Type": 11,
       "Name": "电磁矩阵",
       "GridIndex": 1701,
-      "IconName": "t-matrix"
+      "IconName": "t-matrix",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6002,
       "Type": 11,
       "Name": "能量矩阵",
       "GridIndex": 1702,
-      "IconName": "e-matrix"
+      "IconName": "e-matrix",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6003,
       "Type": 11,
       "Name": "结构矩阵",
       "GridIndex": 1704,
-      "IconName": "c-matrix"
+      "IconName": "c-matrix",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6004,
       "Type": 11,
       "Name": "信息矩阵",
       "GridIndex": 1705,
-      "IconName": "i-matrix"
+      "IconName": "i-matrix",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6005,
       "Type": 11,
       "Name": "引力矩阵",
       "GridIndex": 1707,
-      "IconName": "g-matrix"
+      "IconName": "g-matrix",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6006,
       "Type": 11,
       "Name": "宇宙矩阵",
       "GridIndex": 1709,
-      "IconName": "u-matrix"
+      "IconName": "u-matrix",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6201,
       "Type": 1,
       "Name": "铌矿",
       "GridIndex": 1515,
-      "IconName": "I铌矿"
+      "IconName": "I铌矿",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6202,
       "Type": 1,
       "Name": "铝矿",
       "GridIndex": 1215,
-      "IconName": "I铝矿"
+      "IconName": "I铝矿",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6203,
       "Type": 2,
       "Name": "铝块",
       "GridIndex": 1103,
-      "IconName": "I铝块"
+      "IconName": "I铝块",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.107,
+        0.009
+      ],
+      "EnemyDropCount": 2.0
     },
     {
       "ID": 6204,
       "Type": 2,
       "Name": "铝合金",
       "GridIndex": 1202,
-      "IconName": "I铝合金"
+      "IconName": "I铝合金",
+      "EnemyDropLevel": 1,
+      "EnemyDropRange": [
+        0.1,
+        0.007
+      ],
+      "EnemyDropCount": 1.4
     },
     {
       "ID": 6205,
       "Type": 1,
       "Name": "二氧化硫",
       "GridIndex": 4704,
-      "IconName": "I二氧化硫"
+      "IconName": "I二氧化硫",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6206,
       "Type": 1,
       "Name": "二氧化碳",
       "GridIndex": 4301,
-      "IconName": "I二氧化碳"
+      "IconName": "I二氧化碳",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6207,
       "Type": 1,
       "Name": "硫矿",
       "GridIndex": 1415,
-      "IconName": "I硫矿"
+      "IconName": "I硫矿",
+      "EnemyDropLevel": 3,
+      "EnemyDropRange": [
+        0.969,
+        0.006
+      ],
+      "EnemyDropCount": 0.8
     },
     {
       "ID": 6212,
       "Type": 2,
       "Name": "四氢双环戊二烯（JP-10）",
       "GridIndex": 4303,
-      "IconName": "I四氢双环戊二烯"
+      "IconName": "I四氢双环戊二烯",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6216,
       "Type": 4,
       "Name": "四氢双环戊二烯燃料棒",
       "GridIndex": 1506,
-      "IconName": "I四氢双环戊二烯燃料棒"
+      "IconName": "I四氢双环戊二烯燃料棒",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6217,
       "Type": 4,
       "Name": "焦油燃料棒",
       "GridIndex": 1504,
-      "IconName": "I焦油燃料棒"
+      "IconName": "I焦油燃料棒",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6220,
       "Type": 1,
       "Name": "氮",
       "GridIndex": 1115,
-      "IconName": "I氮"
+      "IconName": "I氮",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6221,
@@ -11263,39 +12346,70 @@
       "Name": "同位素温差发电机",
       "GridIndex": 2113,
       "IconName": "I同位素温差发电机",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 0,
       "BuildIndex": 109,
       "MultiLevel": false,
-      "Speed": 1,
-      "Space": 4
+      "Speed": 1.0,
+      "MultipleOutput": 1,
+      "Space": 4.0
     },
     {
       "ID": 6222,
       "Type": 1,
       "Name": "放射性矿物",
       "GridIndex": 1315,
-      "IconName": "I放射性矿物"
+      "IconName": "I放射性矿物",
+      "EnemyDropLevel": 4,
+      "EnemyDropRange": [
+        0.975,
+        0.005
+      ],
+      "EnemyDropCount": 1.2
     },
     {
       "ID": 6225,
       "Type": 1,
       "Name": "铀燃料",
       "GridIndex": 1212,
-      "IconName": "I铀燃料"
+      "IconName": "I铀燃料",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6226,
       "Type": 1,
       "Name": "钍燃料",
       "GridIndex": 1312,
-      "IconName": "I钍燃料"
+      "IconName": "I钍燃料",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6229,
       "Type": 5,
       "Name": "量子储液罐",
       "GridIndex": 2208,
-      "IconName": "I量子储液罐"
+      "IconName": "I量子储液罐",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6230,
@@ -11303,10 +12417,17 @@
       "Name": "等离子熔炉",
       "GridIndex": 2406,
       "IconName": "I等离子熔炉",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 12000,
       "BuildIndex": 502,
       "MultiLevel": false,
-      "Speed": 2,
+      "Speed": 2.0,
+      "MultipleOutput": 1,
       "Space": 5.76
     },
     {
@@ -11314,56 +12435,104 @@
       "Type": 5,
       "Name": "量子储物仓",
       "GridIndex": 2307,
-      "IconName": "I量子储物仓"
+      "IconName": "I量子储物仓",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6234,
       "Type": 1,
       "Name": "氦",
       "GridIndex": 1213,
-      "IconName": "I氦"
+      "IconName": "I氦",
+      "EnemyDropLevel": 4,
+      "EnemyDropRange": [
+        0.193,
+        0.002
+      ],
+      "EnemyDropCount": 0.5
     },
     {
       "ID": 6235,
       "Type": 2,
       "Name": "氦三",
       "GridIndex": 1214,
-      "IconName": "I氦三"
+      "IconName": "I氦三",
+      "EnemyDropLevel": 6,
+      "EnemyDropRange": [
+        0.984,
+        0.003
+      ],
+      "EnemyDropCount": 0.7
     },
     {
       "ID": 6241,
       "Type": 4,
       "Name": "钍燃料棒",
       "GridIndex": 1508,
-      "IconName": "I钍燃料棒"
+      "IconName": "I钍燃料棒",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6242,
       "Type": 4,
       "Name": "铀燃料棒",
       "GridIndex": 1507,
-      "IconName": "I铀燃料棒"
+      "IconName": "I铀燃料棒",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6243,
       "Type": 4,
       "Name": "MOX燃料棒",
       "GridIndex": 1509,
-      "IconName": "IMOX燃料棒"
+      "IconName": "IMOX燃料棒",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6244,
       "Type": 4,
       "Name": "氦三燃料棒",
       "GridIndex": 1511,
-      "IconName": "I氦三燃料棒"
+      "IconName": "I氦三燃料棒",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6245,
       "Type": 4,
       "Name": "氘氦混合燃料棒",
       "GridIndex": 1512,
-      "IconName": "I氘氦混合燃料棒"
+      "IconName": "I氘氦混合燃料棒",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6257,
@@ -11371,11 +12540,18 @@
       "Name": "天穹装配厂",
       "GridIndex": 2501,
       "IconName": "I天穹装配厂",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 375000,
       "BuildIndex": 1201,
       "MultiLevel": false,
-      "Speed": 30,
-      "Space": 50
+      "Speed": 30.0,
+      "MultipleOutput": 1,
+      "Space": 50.0
     },
     {
       "ID": 6258,
@@ -11383,11 +12559,18 @@
       "Name": "物质裂解塔",
       "GridIndex": 2502,
       "IconName": "I物质裂解塔",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 375000,
       "BuildIndex": 1202,
       "MultiLevel": false,
-      "Speed": 30,
-      "Space": 50
+      "Speed": 30.0,
+      "MultipleOutput": 1,
+      "Space": 50.0
     },
     {
       "ID": 6259,
@@ -11395,11 +12578,18 @@
       "Name": "埃克森美孚化工厂",
       "GridIndex": 2503,
       "IconName": "I埃克森美孚化工厂",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 375000,
       "BuildIndex": 1203,
       "MultiLevel": false,
-      "Speed": 30,
-      "Space": 50
+      "Speed": 30.0,
+      "MultipleOutput": 1,
+      "Space": 50.0
     },
     {
       "ID": 6260,
@@ -11407,25 +12597,44 @@
       "Name": "“工业先锋”精密加工中心",
       "GridIndex": 2504,
       "IconName": "I“工业先锋”精密加工中心",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 375000,
       "BuildIndex": 1205,
       "MultiLevel": false,
-      "Speed": 30,
-      "Space": 50
+      "Speed": 30.0,
+      "MultipleOutput": 1,
+      "Space": 50.0
     },
     {
       "ID": 6261,
       "Type": 6,
       "Name": "“湛曦”O型人造恒星",
       "GridIndex": 2112,
-      "IconName": "I“湛曦”O型人造恒星"
+      "IconName": "I“湛曦”O型人造恒星",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6263,
       "Type": 3,
       "Name": "氦闪约束器",
       "GridIndex": 1604,
-      "IconName": "I氦闪约束器"
+      "IconName": "I氦闪约束器",
+      "EnemyDropLevel": 6,
+      "EnemyDropRange": [
+        0.991,
+        0.003
+      ],
+      "EnemyDropCount": 0.7
     },
     {
       "ID": 6264,
@@ -11433,11 +12642,18 @@
       "Name": "物质分解设施",
       "GridIndex": 2505,
       "IconName": "I物质分解设施",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 500000,
       "BuildIndex": 1204,
       "MultiLevel": false,
-      "Speed": 30,
-      "Space": 50
+      "Speed": 30.0,
+      "MultipleOutput": 1,
+      "Space": 50.0
     },
     {
       "ID": 6265,
@@ -11445,11 +12661,18 @@
       "Name": "“苍穹”粒子加速器",
       "GridIndex": 2506,
       "IconName": "I“苍穹”粒子加速器",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 750000,
       "BuildIndex": 1206,
       "MultiLevel": false,
-      "Speed": 30,
-      "Space": 50
+      "Speed": 30.0,
+      "MultipleOutput": 1,
+      "Space": 50.0
     },
     {
       "ID": 6266,
@@ -11457,10 +12680,17 @@
       "Name": "聚束液体汲取设施",
       "GridIndex": 2309,
       "IconName": "fractionator",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 500000,
       "BuildIndex": 204,
       "MultiLevel": false,
-      "Speed": 20,
+      "Speed": 20.0,
+      "MultipleOutput": 1,
       "Space": 12.96
     },
     {
@@ -11469,39 +12699,70 @@
       "Name": "大气采集站",
       "GridIndex": 2214,
       "IconName": "I大气采集站",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 0,
       "BuildIndex": 605,
       "MultiLevel": false,
-      "Speed": 10,
-      "Space": 50
+      "Speed": 10.0,
+      "MultipleOutput": 1,
+      "Space": 50.0
     },
     {
       "ID": 6271,
       "Type": 2,
       "Name": "三元精金",
       "GridIndex": 1714,
-      "IconName": "I三元精金"
+      "IconName": "I三元精金",
+      "EnemyDropLevel": 8,
+      "EnemyDropRange": [
+        0.196,
+        0.001
+      ],
+      "EnemyDropCount": 0.3
     },
     {
       "ID": 6278,
       "Type": 11,
       "Name": "玻色矩阵",
       "GridIndex": 1703,
-      "IconName": "I玻色矩阵"
+      "IconName": "I玻色矩阵",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6279,
       "Type": 11,
       "Name": "耗散矩阵",
       "GridIndex": 1706,
-      "IconName": "I耗散矩阵"
+      "IconName": "I耗散矩阵",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6280,
       "Type": 11,
       "Name": "奇点矩阵",
       "GridIndex": 1708,
-      "IconName": "I奇点矩阵"
+      "IconName": "I奇点矩阵",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6501,
@@ -11509,515 +12770,954 @@
       "Name": "基础机械组件",
       "GridIndex": 1401,
       "IconName": "I基础机械组件",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0,
       "WorkEnergyPerTick": 0,
       "BuildIndex": 0,
       "MultiLevel": false,
-      "Speed": 1,
-      "Space": 25
+      "Speed": 1.0,
+      "MultipleOutput": 1,
+      "Space": 25.0
     },
     {
       "ID": 6502,
       "Type": 3,
       "Name": "先进机械组件",
       "GridIndex": 1402,
-      "IconName": "I先进机械组件"
+      "IconName": "I先进机械组件",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6503,
       "Type": 3,
       "Name": "尖端机械组件",
       "GridIndex": 1403,
-      "IconName": "I尖端机械组件"
+      "IconName": "I尖端机械组件",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6522,
       "Type": 1,
       "Name": "电力节约",
       "GridIndex": 4213,
-      "IconName": "I电力节约"
+      "IconName": "I电力节约",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6523,
       "Type": 1,
       "Name": "上传扩容",
       "GridIndex": 4214,
-      "IconName": "I上传扩容"
+      "IconName": "I上传扩容",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6524,
       "Type": 1,
       "Name": "燃料回收",
       "GridIndex": 4113,
-      "IconName": "I燃料回收"
+      "IconName": "I燃料回收",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6525,
       "Type": 1,
       "Name": "风力扩容",
       "GridIndex": 4114,
-      "IconName": "I风力扩容"
+      "IconName": "I风力扩容",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6526,
       "Type": 1,
       "Name": "光伏扩容",
       "GridIndex": 4115,
-      "IconName": "I光伏扩容"
+      "IconName": "I光伏扩容",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6527,
       "Type": 1,
       "Name": "热聚增效",
       "GridIndex": 4117,
-      "IconName": "I热聚增效"
+      "IconName": "I热聚增效",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6528,
       "Type": 1,
       "Name": "资源采掘",
       "GridIndex": 4215,
-      "IconName": "I资源采掘"
+      "IconName": "I资源采掘",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6529,
       "Type": 1,
       "Name": "裂变增效",
       "GridIndex": 4116,
-      "IconName": "I裂变增效"
+      "IconName": "I裂变增效",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6530,
       "Type": 1,
       "Name": "先进推进",
       "GridIndex": 4216,
-      "IconName": "I先进推进"
+      "IconName": "I先进推进",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6531,
       "Type": 1,
       "Name": "特征向量模拟",
       "GridIndex": 4313,
-      "IconName": "I特征向量模拟"
+      "IconName": "I特征向量模拟",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6532,
       "Type": 1,
       "Name": "中继信号干扰",
       "GridIndex": 4314,
-      "IconName": "I中继信号干扰"
+      "IconName": "I中继信号干扰",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6533,
       "Type": 1,
       "Name": "神经元重编程",
       "GridIndex": 4315,
-      "IconName": "I神经元重编程"
+      "IconName": "I神经元重编程",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 6534,
       "Type": 1,
       "Name": "异常代码分析",
       "GridIndex": 4316,
-      "IconName": "I异常代码分析"
+      "IconName": "I异常代码分析",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7002,
       "Type": 2,
       "Name": "氨",
       "GridIndex": 4701,
-      "IconName": "I氨"
+      "IconName": "I氨",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7006,
       "Type": 2,
       "Name": "苯",
       "GridIndex": 4202,
-      "IconName": "I苯"
+      "IconName": "I苯",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7008,
       "Type": 2,
       "Name": "甲烷",
       "GridIndex": 4304,
-      "IconName": "I甲烷"
+      "IconName": "I甲烷",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7009,
       "Type": 2,
       "Name": "丙烯",
       "GridIndex": 4203,
-      "IconName": "I丙烯"
+      "IconName": "I丙烯",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7014,
       "Type": 2,
       "Name": "盐酸",
       "GridIndex": 4501,
-      "IconName": "I盐酸"
+      "IconName": "I盐酸",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7015,
       "Type": 2,
       "Name": "三氯化铁",
       "GridIndex": 4503,
-      "IconName": "I三氯化铁"
+      "IconName": "I三氯化铁",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7017,
       "Type": 2,
       "Name": "硝酸",
       "GridIndex": 4702,
-      "IconName": "I硝酸"
+      "IconName": "I硝酸",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7018,
       "Type": 1,
       "Name": "海水",
       "GridIndex": 1110,
-      "IconName": "I海水"
+      "IconName": "I海水",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7019,
       "Type": 1,
       "Name": "氧",
       "GridIndex": 1116,
-      "IconName": "I氧"
+      "IconName": "I氧",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7020,
       "Type": 2,
       "Name": "氢氧化钠",
       "GridIndex": 4502,
-      "IconName": "I氢氧化钠"
+      "IconName": "I氢氧化钠",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7101,
       "Type": 2,
       "Name": "氯化钠",
       "GridIndex": 1313,
-      "IconName": "I氯化钠"
+      "IconName": "I氯化钠",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7501,
       "Type": 2,
       "Name": "塑料基板",
       "GridIndex": 1307,
-      "IconName": "I塑料基板"
+      "IconName": "I塑料基板",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7504,
       "Type": 2,
       "Name": "光学基板",
       "GridIndex": 1308,
-      "IconName": "I光学基板"
+      "IconName": "I光学基板",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7607,
       "Type": 4,
       "Name": "钢芯弹箱",
       "GridIndex": 5302,
-      "IconName": "I钢芯弹箱"
+      "IconName": "I钢芯弹箱",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7608,
       "Type": 4,
       "Name": "铌合金弹箱",
       "GridIndex": 5304,
-      "IconName": "I铌芯弹箱"
+      "IconName": "I铌芯弹箱",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7609,
       "Type": 4,
       "Name": "三元弹箱",
       "GridIndex": 5305,
-      "IconName": "I三元弹箱"
+      "IconName": "I三元弹箱",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7610,
       "Type": 3,
       "Name": "核能爆破单元",
       "GridIndex": 5403,
-      "IconName": "I核能爆破单元"
+      "IconName": "I核能爆破单元",
+      "EnemyDropLevel": 6,
+      "EnemyDropRange": [
+        0.218,
+        0.002
+      ],
+      "EnemyDropCount": 0.5
     },
     {
       "ID": 7611,
       "Type": 3,
       "Name": "反物质湮灭单元",
       "GridIndex": 5404,
-      "IconName": "I反物质湮灭单元"
+      "IconName": "I反物质湮灭单元",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7612,
       "Type": 4,
       "Name": "微型核弹组",
       "GridIndex": 5503,
-      "IconName": "I微型核弹组"
+      "IconName": "I微型核弹组",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7613,
       "Type": 4,
       "Name": "反物质炮弹组",
       "GridIndex": 5504,
-      "IconName": "I反物质炮弹组"
+      "IconName": "I反物质炮弹组",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7615,
       "Type": 4,
       "Name": "反物质导弹组",
       "GridIndex": 5604,
-      "IconName": "I反物质导弹组"
+      "IconName": "I反物质导弹组",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7616,
       "Type": 4,
       "Name": "湮灭弹箱",
       "GridIndex": 5306,
-      "IconName": "I湮灭弹箱"
+      "IconName": "I湮灭弹箱",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7617,
       "Type": 8,
       "Name": "电磁加农炮",
       "GridIndex": 5205,
-      "IconName": "I电磁加农炮"
+      "IconName": "I电磁加农炮",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7618,
       "Type": 8,
       "Name": "紫外激光塔",
       "GridIndex": 5203,
-      "IconName": "I紫外激光塔"
+      "IconName": "I紫外激光塔",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7705,
       "Type": 2,
       "Name": "铌块",
       "GridIndex": 1106,
-      "IconName": "I铌块"
+      "IconName": "I铌块",
+      "EnemyDropLevel": 5,
+      "EnemyDropRange": [
+        0.98,
+        0.004
+      ],
+      "EnemyDropCount": 0.25
     },
     {
       "ID": 7706,
       "Type": 2,
       "Name": "铌强化玻璃",
       "GridIndex": 1503,
-      "IconName": "I铌强化玻璃"
+      "IconName": "I铌强化玻璃",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7707,
       "Type": 2,
       "Name": "铌合金",
       "GridIndex": 1204,
-      "IconName": "I铌合金"
+      "IconName": "I铌合金",
+      "EnemyDropLevel": 6,
+      "EnemyDropRange": [
+        0.195,
+        0.001
+      ],
+      "EnemyDropCount": 0.4
     },
     {
       "ID": 7708,
       "Type": 2,
       "Name": "聚苯硫醚（PPS）",
       "GridIndex": 4102,
-      "IconName": "I聚苯硫醚"
+      "IconName": "I聚苯硫醚",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7709,
       "Type": 2,
       "Name": "聚酰亚胺（PI）",
       "GridIndex": 4103,
-      "IconName": "I聚酰亚胺"
+      "IconName": "I聚酰亚胺",
+      "EnemyDropLevel": 7,
+      "EnemyDropRange": [
+        0.994,
+        0.002
+      ],
+      "EnemyDropCount": 0.7
     },
     {
       "ID": 7803,
       "Type": 3,
       "Name": "光学处理器",
       "GridIndex": 1612,
-      "IconName": "I光学处理器"
+      "IconName": "I光学处理器",
+      "EnemyDropLevel": 8,
+      "EnemyDropRange": [
+        0.996,
+        0.003
+      ],
+      "EnemyDropCount": 0.1
     },
     {
       "ID": 7804,
       "Type": 3,
       "Name": "光学信息传输纤维",
       "GridIndex": 1611,
-      "IconName": "I光学信息传输纤维"
+      "IconName": "I光学信息传输纤维",
+      "EnemyDropLevel": 6,
+      "EnemyDropRange": [
+        0.987,
+        0.004
+      ],
+      "EnemyDropCount": 0.7
     },
     {
       "ID": 7805,
       "Type": 4,
       "Name": "量子计算主机",
       "GridIndex": 1610,
-      "IconName": "I量子计算主机"
+      "IconName": "I量子计算主机",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 7806,
       "Type": 4,
       "Name": "“超越”X-1型光学主机",
       "GridIndex": 1613,
-      "IconName": "I“超越”X-1型光学主机"
+      "IconName": "I“超越”X-1型光学主机",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9480,
       "Type": 3,
-      "Name": "引力发生装置",
+      "Name": "Gravity generator",
       "GridIndex": 3101,
-      "IconName": "gravitygenerator"
+      "IconName": "gravitygenerator",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9481,
       "Type": 3,
-      "Name": "位面约束环",
+      "Name": "Plane constraint ring",
       "GridIndex": 3102,
-      "IconName": "constrainring"
+      "IconName": "constrainring",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9482,
       "Type": 3,
-      "Name": "引力钻头",
+      "Name": "Graviton drill",
       "GridIndex": 3103,
-      "IconName": "gravitydrill2"
+      "IconName": "gravitydrill2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9483,
       "Type": 3,
-      "Name": "隧穿激发装置",
+      "Name": "Tunneling exciter",
       "GridIndex": 3104,
-      "IconName": "tunnelingexciter2"
+      "IconName": "tunnelingexciter2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9484,
       "Type": 3,
-      "Name": "谐振盘",
+      "Name": "Resonant disc",
       "GridIndex": 3105,
-      "IconName": "resonancedisc"
+      "IconName": "resonancedisc",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9485,
       "Type": 3,
-      "Name": "光子探针",
+      "Name": "Photon probe",
       "GridIndex": 3106,
-      "IconName": "photonprobeflipsmall"
+      "IconName": "photonprobeflipsmall",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9486,
       "Type": 3,
-      "Name": "量子计算机",
+      "Name": "Quantum computer",
       "GridIndex": 3107,
-      "IconName": "quantumcomputer3"
+      "IconName": "quantumcomputer3",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9487,
       "Type": 3,
-      "Name": "星际组装厂组件",
+      "Name": "Interstellar assembly component",
       "GridIndex": 3108,
-      "IconName": "iacomponent"
+      "IconName": "iacomponent",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9488,
       "Type": 4,
-      "Name": "物质解压器运载火箭",
+      "Name": "Matter decompressor carrier rocket",
       "GridIndex": 3301,
-      "IconName": "rocketMatter"
+      "IconName": "rocketMatter",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9489,
       "Type": 4,
-      "Name": "科学枢纽运载火箭",
+      "Name": "Science nexus carrier rocket",
       "GridIndex": 3302,
-      "IconName": "rocketScience"
+      "IconName": "rocketScience",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9490,
       "Type": 4,
-      "Name": "谐振发射器运载火箭",
+      "Name": "Resonant generator carrier rocket",
       "GridIndex": 3303,
-      "IconName": "rocketWarp"
+      "IconName": "rocketWarp",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9491,
       "Type": 4,
-      "Name": "星际组装厂运载火箭",
+      "Name": "Interstellar assembly carrier rocket",
       "GridIndex": 3304,
-      "IconName": "rocketAssembly"
+      "IconName": "rocketAssembly",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9492,
       "Type": 4,
-      "Name": "晶体重构器运载火箭",
+      "Name": "Crystal reconstructor carrier rocket",
       "GridIndex": 3305,
-      "IconName": "rocketCrystal"
+      "IconName": "rocketCrystal",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9500,
       "Type": 3,
-      "Name": "多功能集成组件",
+      "Name": "Multi-functional integrated components",
       "GridIndex": 3109,
-      "IconName": "integratedcomponents"
+      "IconName": "integratedcomponents",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9503,
       "Type": 3,
       "Name": "力场发生器",
       "GridIndex": 3201,
-      "IconName": "forceGen"
+      "IconName": "forceGen",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9504,
       "Type": 3,
       "Name": "复合态晶体",
       "GridIndex": 3202,
-      "IconName": "compoCrystal"
+      "IconName": "compoCrystal",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9505,
       "Type": 3,
       "Name": "电磁力抑制器",
       "GridIndex": 3203,
-      "IconName": "elemaginhibitor2"
+      "IconName": "elemaginhibitor2",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9506,
       "Type": 3,
       "Name": "胶子发生器",
       "GridIndex": 3204,
-      "IconName": "gluonGen"
+      "IconName": "gluonGen",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9507,
       "Type": 3,
       "Name": "强力过载装置",
       "GridIndex": 3205,
-      "IconName": "strIntOverloader"
+      "IconName": "strIntOverloader",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9508,
       "Type": 3,
       "Name": "导流框架",
       "GridIndex": 3206,
-      "IconName": "starcannonframe"
+      "IconName": "starcannonframe",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9509,
       "Type": 3,
       "Name": "恒星炮组件",
       "GridIndex": 3207,
-      "IconName": "starcannoncompo"
+      "IconName": "starcannoncompo",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9510,
       "Type": 4,
       "Name": "恒星炮运载火箭",
       "GridIndex": 3306,
-      "IconName": "rocketStarcannon"
+      "IconName": "rocketStarcannon",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9511,
       "Type": 4,
       "Name": "水滴",
       "GridIndex": 3707,
-      "IconName": "drop1"
+      "IconName": "drop1",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 9512,
       "Type": 5,
       "Name": "物资交换物流站",
       "GridIndex": 3409,
-      "IconName": "interstellar-logistic-station"
+      "IconName": "interstellar-logistic-station",
+      "EnemyDropLevel": 0,
+      "EnemyDropRange": [
+        0.0,
+        0.0
+      ],
+      "EnemyDropCount": 0.0
     },
     {
       "ID": 0,
@@ -12026,7 +13726,7 @@
       "GridIndex": -1,
       "IconName": "伊卡洛斯",
       "WorkEnergyPerTick": 1333.3333333333333,
-      "Speed": 10000,
+      "Speed": 10000.0,
       "MultipleOutput": 1,
       "Space": 0
     },
@@ -12036,8 +13736,8 @@
       "Name": "行星基地",
       "GridIndex": -1,
       "IconName": "行星基地",
-      "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "WorkEnergyPerTick": 0.0,
+      "Speed": 10000.0,
       "MultipleOutput": 1,
       "Space": 0
     },
@@ -12047,8 +13747,8 @@
       "Name": "巨构星际组装厂",
       "GridIndex": -1,
       "IconName": "巨构星际组装厂",
-      "WorkEnergyPerTick": 0,
-      "Speed": 10000,
+      "WorkEnergyPerTick": 0.0,
+      "Speed": 10000.0,
       "MultipleOutput": 1,
       "Space": 0
     }
@@ -12940,7 +14640,7 @@
         37
       ],
       "UnlockValues": [
-        2203
+        2203.0
       ],
       "UnlockRecipes": [
         63,
@@ -13168,7 +14868,7 @@
         8
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -13225,7 +14925,7 @@
         99
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -13304,7 +15004,7 @@
         37
       ],
       "UnlockValues": [
-        2316
+        2316.0
       ],
       "UnlockRecipes": [
         80,
@@ -13358,7 +15058,7 @@
         26
       ],
       "UnlockValues": [
-        15
+        15.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -13526,7 +15226,7 @@
         32
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [
         122,
@@ -13647,7 +15347,7 @@
         42
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [
         103
@@ -14055,8 +15755,8 @@
         78
       ],
       "UnlockValues": [
-        1,
-        4
+        1.0,
+        4.0
       ],
       "UnlockRecipes": [
         147
@@ -14121,8 +15821,8 @@
         80
       ],
       "UnlockValues": [
-        1,
-        4
+        1.0,
+        4.0
       ],
       "UnlockRecipes": [
         150
@@ -14282,9 +15982,9 @@
         82
       ],
       "UnlockValues": [
-        80000000,
-        30000,
-        1
+        80000000.0,
+        30000.0,
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -14304,10 +16004,10 @@
         83
       ],
       "UnlockValues": [
-        200000000,
-        30000,
-        1,
-        200
+        200000000.0,
+        30000.0,
+        1.0,
+        200.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14329,10 +16029,10 @@
         83
       ],
       "UnlockValues": [
-        400000000,
-        30000,
-        2,
-        200
+        400000000.0,
+        30000.0,
+        2.0,
+        200.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14354,10 +16054,10 @@
         83
       ],
       "UnlockValues": [
-        800000000,
-        30000,
-        2,
-        200
+        800000000.0,
+        30000.0,
+        2.0,
+        200.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14379,10 +16079,10 @@
         83
       ],
       "UnlockValues": [
-        1600000000,
-        30000,
-        2,
-        200
+        1600000000.0,
+        30000.0,
+        2.0,
+        200.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14403,9 +16103,9 @@
         83
       ],
       "UnlockValues": [
-        2400000000,
-        20000,
-        200
+        2400000000.0,
+        20000.0,
+        200.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14424,7 +16124,7 @@
         3
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -14443,7 +16143,7 @@
         3
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14464,7 +16164,7 @@
         3
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14485,7 +16185,7 @@
         3
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14506,7 +16206,7 @@
         3
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14527,7 +16227,7 @@
         3
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14548,7 +16248,7 @@
         3
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14569,7 +16269,7 @@
         3
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14590,7 +16290,7 @@
         5
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -14609,7 +16309,7 @@
         5
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14631,8 +16331,8 @@
         33
       ],
       "UnlockValues": [
-        1,
-        2
+        1.0,
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14655,9 +16355,9 @@
         33
       ],
       "UnlockValues": [
-        1,
-        1,
-        2
+        1.0,
+        1.0,
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14679,8 +16379,8 @@
         33
       ],
       "UnlockValues": [
-        2,
-        2
+        2.0,
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14702,8 +16402,8 @@
         33
       ],
       "UnlockValues": [
-        2,
-        2
+        2.0,
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14725,8 +16425,8 @@
         32
       ],
       "UnlockValues": [
-        2,
-        1
+        2.0,
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14745,7 +16445,7 @@
         1
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -14764,7 +16464,7 @@
         1
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14785,7 +16485,7 @@
         9
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14806,7 +16506,7 @@
         1
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14827,7 +16527,7 @@
         1
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14848,7 +16548,7 @@
         9
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14869,7 +16569,7 @@
         1
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14890,7 +16590,7 @@
         2
       ],
       "UnlockValues": [
-        200000
+        200000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -14909,7 +16609,7 @@
         2
       ],
       "UnlockValues": [
-        200000
+        200000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14930,7 +16630,7 @@
         2
       ],
       "UnlockValues": [
-        200000
+        200000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14951,7 +16651,7 @@
         2
       ],
       "UnlockValues": [
-        200000
+        200000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14972,7 +16672,7 @@
         2
       ],
       "UnlockValues": [
-        800000
+        800000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -14993,7 +16693,7 @@
         2
       ],
       "UnlockValues": [
-        1000000
+        1000000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15014,7 +16714,7 @@
         10
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15033,7 +16733,7 @@
         10
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15054,7 +16754,7 @@
         10
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15075,7 +16775,7 @@
         10
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15096,7 +16796,7 @@
         10
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15117,7 +16817,7 @@
         10
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15139,8 +16839,8 @@
         44
       ],
       "UnlockValues": [
-        450,
-        3600
+        450.0,
+        3600.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15160,8 +16860,8 @@
         44
       ],
       "UnlockValues": [
-        900,
-        7200
+        900.0,
+        7200.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15183,8 +16883,8 @@
         44
       ],
       "UnlockValues": [
-        1800,
-        14400
+        1800.0,
+        14400.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15206,8 +16906,8 @@
         44
       ],
       "UnlockValues": [
-        3600,
-        28800
+        3600.0,
+        28800.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15229,8 +16929,8 @@
         44
       ],
       "UnlockValues": [
-        1048576,
-        45000
+        1048576.0,
+        45000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15251,7 +16951,7 @@
         44
       ],
       "UnlockValues": [
-        1048576
+        1048576.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15274,9 +16974,9 @@
         66
       ],
       "UnlockValues": [
-        1,
-        2,
-        100000000
+        1.0,
+        2.0,
+        100000000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15297,7 +16997,7 @@
       ],
       "UnlockValues": [
         0.5,
-        200000000
+        200000000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15321,8 +17021,8 @@
       ],
       "UnlockValues": [
         0.5,
-        200000000,
-        1
+        200000000.0,
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15344,8 +17044,8 @@
         66
       ],
       "UnlockValues": [
-        1,
-        200000000
+        1.0,
+        200000000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15365,8 +17065,8 @@
         66
       ],
       "UnlockValues": [
-        1,
-        300000000
+        1.0,
+        300000000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15388,8 +17088,8 @@
         66
       ],
       "UnlockValues": [
-        1,
-        500000000
+        1.0,
+        500000000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15410,7 +17110,7 @@
         66
       ],
       "UnlockValues": [
-        500000000
+        500000000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15429,7 +17129,7 @@
         4
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15448,7 +17148,7 @@
         4
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15469,7 +17169,7 @@
         11
       ],
       "UnlockValues": [
-        1000
+        1000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15490,7 +17190,7 @@
         4
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15512,7 +17212,7 @@
         27
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15531,7 +17231,7 @@
         27
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15550,7 +17250,7 @@
         76
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15569,7 +17269,7 @@
         76
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15588,7 +17288,7 @@
         76
       ],
       "UnlockValues": [
-        6
+        6.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15607,7 +17307,7 @@
         76
       ],
       "UnlockValues": [
-        15
+        15.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15626,7 +17326,7 @@
         76
       ],
       "UnlockValues": [
-        30
+        30.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15645,7 +17345,7 @@
         76
       ],
       "UnlockValues": [
-        9999
+        9999.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15664,7 +17364,7 @@
         12
       ],
       "UnlockValues": [
-        300
+        300.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15683,7 +17383,7 @@
         12
       ],
       "UnlockValues": [
-        300
+        300.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15702,7 +17402,7 @@
         12
       ],
       "UnlockValues": [
-        600
+        600.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15721,7 +17421,7 @@
         12
       ],
       "UnlockValues": [
-        600
+        600.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15740,7 +17440,7 @@
         12
       ],
       "UnlockValues": [
-        900
+        900.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15759,7 +17459,7 @@
         12
       ],
       "UnlockValues": [
-        900
+        900.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15778,7 +17478,7 @@
         43
       ],
       "UnlockValues": [
-        240
+        240.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -15797,7 +17497,7 @@
         43
       ],
       "UnlockValues": [
-        120
+        120.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15816,7 +17516,7 @@
         43
       ],
       "UnlockValues": [
-        60
+        60.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15835,7 +17535,7 @@
         43
       ],
       "UnlockValues": [
-        30
+        30.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15854,7 +17554,7 @@
         43
       ],
       "UnlockValues": [
-        15
+        15.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -15873,7 +17573,7 @@
         43
       ],
       "UnlockValues": [
-        10
+        10.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16044,7 +17744,7 @@
         14
       ],
       "UnlockValues": [
-        4
+        4.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16063,7 +17763,7 @@
         14
       ],
       "UnlockValues": [
-        5
+        5.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16082,7 +17782,7 @@
         14
       ],
       "UnlockValues": [
-        6
+        6.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16101,7 +17801,7 @@
         14
       ],
       "UnlockValues": [
-        7
+        7.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16120,7 +17820,7 @@
         14
       ],
       "UnlockValues": [
-        8
+        8.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16140,8 +17840,8 @@
         40
       ],
       "UnlockValues": [
-        1,
-        1
+        1.0,
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16162,7 +17862,7 @@
         39
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16181,7 +17881,7 @@
         41
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16200,7 +17900,7 @@
         39
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16219,7 +17919,7 @@
         41
       ],
       "UnlockValues": [
-        4
+        4.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16238,7 +17938,7 @@
         39
       ],
       "UnlockValues": [
-        4
+        4.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16257,7 +17957,7 @@
         40
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16278,7 +17978,7 @@
         36
       ],
       "UnlockValues": [
-        20
+        20.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16297,7 +17997,7 @@
         36
       ],
       "UnlockValues": [
-        20
+        20.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16316,7 +18016,7 @@
         36
       ],
       "UnlockValues": [
-        30
+        30.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16335,7 +18035,7 @@
         36
       ],
       "UnlockValues": [
-        30
+        30.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16354,7 +18054,7 @@
         36
       ],
       "UnlockValues": [
-        40
+        40.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16446,7 +18146,7 @@
         0.3,
         0.15,
         0.5,
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16537,8 +18237,8 @@
         18
       ],
       "UnlockValues": [
-        1,
-        5
+        1.0,
+        5.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16558,8 +18258,8 @@
         18
       ],
       "UnlockValues": [
-        1,
-        5
+        1.0,
+        5.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16580,9 +18280,9 @@
         19
       ],
       "UnlockValues": [
-        2,
-        5,
-        100
+        2.0,
+        5.0,
+        100.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16605,9 +18305,9 @@
         19
       ],
       "UnlockValues": [
-        2,
-        10,
-        100
+        2.0,
+        10.0,
+        100.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16628,9 +18328,9 @@
         19
       ],
       "UnlockValues": [
-        2,
-        10,
-        100
+        2.0,
+        10.0,
+        100.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16651,9 +18351,9 @@
         19
       ],
       "UnlockValues": [
-        2,
-        10,
-        100
+        2.0,
+        10.0,
+        100.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16674,9 +18374,9 @@
         19
       ],
       "UnlockValues": [
-        2,
-        10,
-        200
+        2.0,
+        10.0,
+        200.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16696,8 +18396,8 @@
         19
       ],
       "UnlockValues": [
-        20,
-        200
+        20.0,
+        200.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16719,10 +18419,10 @@
         31
       ],
       "UnlockValues": [
-        20,
-        200,
-        1000,
-        2000
+        20.0,
+        200.0,
+        1000.0,
+        2000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16744,10 +18444,10 @@
         31
       ],
       "UnlockValues": [
-        20,
-        200,
-        1000,
-        2000
+        20.0,
+        200.0,
+        1000.0,
+        2000.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16766,7 +18466,7 @@
         29
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16785,7 +18485,7 @@
         29
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16806,7 +18506,7 @@
         29
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -16966,8 +18666,8 @@
         25
       ],
       "UnlockValues": [
-        1,
-        2
+        1.0,
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -16987,8 +18687,8 @@
         25
       ],
       "UnlockValues": [
-        1,
-        2
+        1.0,
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17008,8 +18708,8 @@
         25
       ],
       "UnlockValues": [
-        1,
-        2
+        1.0,
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17029,8 +18729,8 @@
         25
       ],
       "UnlockValues": [
-        1,
-        2
+        1.0,
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17050,8 +18750,8 @@
         25
       ],
       "UnlockValues": [
-        1,
-        2
+        1.0,
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17071,8 +18771,8 @@
         25
       ],
       "UnlockValues": [
-        1,
-        2
+        1.0,
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17091,7 +18791,7 @@
         22
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -17110,7 +18810,7 @@
         22
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17129,7 +18829,7 @@
         22
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17148,7 +18848,7 @@
         22
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17167,7 +18867,7 @@
         23
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -17184,7 +18884,7 @@
         23
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17203,7 +18903,7 @@
         23
       ],
       "UnlockValues": [
-        3
+        3.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17222,7 +18922,7 @@
         23
       ],
       "UnlockValues": [
-        4
+        4.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -17981,7 +19681,7 @@
         78
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -18000,7 +19700,7 @@
         78
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18019,7 +19719,7 @@
         77
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18038,7 +19738,7 @@
         78
       ],
       "UnlockValues": [
-        4
+        4.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18057,7 +19757,7 @@
         77
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18076,7 +19776,7 @@
         77
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18095,7 +19795,7 @@
         77
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18114,7 +19814,7 @@
         80
       ],
       "UnlockValues": [
-        4
+        4.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [],
@@ -18133,7 +19833,7 @@
         80
       ],
       "UnlockValues": [
-        4
+        4.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18152,7 +19852,7 @@
         79
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18171,7 +19871,7 @@
         79
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18190,7 +19890,7 @@
         79
       ],
       "UnlockValues": [
-        1
+        1.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18209,7 +19909,7 @@
         79
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
@@ -18228,7 +19928,7 @@
         79
       ],
       "UnlockValues": [
-        2
+        2.0
       ],
       "UnlockRecipes": [],
       "PreTechs": [
