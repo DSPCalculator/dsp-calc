@@ -1,8 +1,8 @@
 import {
+    buildDspEquivalentRecipe,
     build_effective_game_data,
-    get_equivalent_recipe,
-    get_equivalent_recipe_output_rate
-} from './equivalentRecipe';
+    getDspEquivalentRecipeOutputRate
+} from '@engine/adapters/dsp/equivalentRecipeAdapter';
 import {
     buildItemGraph,
     buildItemList,
@@ -25,7 +25,7 @@ import type {
 
 function createEquivalentRecipeGetter(snapshot: Omit<CalculationSnapshot, 'getEquivalentRecipe' | 'getEquivalentRecipeForItem' | 'getEquivalentRecipeForRecipe' | 'getEquivalentRecipeForNaturalLine' | 'getItemCost' | 'item_price' | 'item_graph' | 'multi_sources' | 'item_list' | 'key_item_list'> & Partial<CalculationSnapshot>) {
     return function (recipe_id: number, target_item: string, scheme_override?: Partial<RecipeScheme>): RecipeData {
-        return get_equivalent_recipe({
+        return buildDspEquivalentRecipe({
             game_data: snapshot.effective_game_data,
             scheme_data: snapshot.scheme_data,
             settings: snapshot.settings,
@@ -59,7 +59,7 @@ function createItemCostGetter(snapshot: CalculationSnapshot) {
         }
         const equivalent_recipe = snapshot.getEquivalentRecipe(recipe_id, item);
         const building_info = game_data.factory_data[game_data.recipe_data[recipe_id]["设施"]][scheme_data.scheme_for_recipe[recipe_id]["建筑"]];
-        const building_count_per_yield = 1 / get_equivalent_recipe_output_rate(equivalent_recipe, item);
+        const building_count_per_yield = 1 / getDspEquivalentRecipeOutputRate(equivalent_recipe, item);
         const layer_count = building_info["名称"].endsWith("研究站") ? stack_research_lab : 1;
         cost = Number(cost) + building_count_per_yield * scheme_data.cost_weight["占地"] * building_info["占地"] / layer_count;
         cost = Number(cost) + building_count_per_yield * scheme_data.cost_weight["电力"] * building_info["耗能"] * game_data.proliferator_effect[scheme_data.scheme_for_recipe[recipe_id]["增产点数"]]["耗电倍率"];

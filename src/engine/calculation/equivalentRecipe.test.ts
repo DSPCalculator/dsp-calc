@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {build_effective_game_data, get_dark_fog_base_level_multiplier} from './equivalentRecipe';
+import {build_effective_game_data, get_dark_fog_base_level_multiplier} from '@engine/adapters/dsp/equivalentRecipeAdapter';
 import type {GameData, Settings} from '@engine/types/domain';
 
 function test(name: string, fn: () => void): void {

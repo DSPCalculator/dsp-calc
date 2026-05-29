@@ -7,7 +7,7 @@
 - 这是一个基于 `Vite + React 18 + TypeScript` 的前端项目，用于戴森球计划量化计算。
 - 包管理与默认脚本入口以 `npm` 为准；除非用户明确要求，否则不要切换为 Yarn 作为主流程。
 - 当前源码已经按职责拆分为 `src/engine`、`src/ui`、`src/lib` 三层：
-  - `src/engine`：数据装配、方案数据、计算逻辑、求解器适配、业务类型
+  - `src/engine`：通用核心类型、游戏适配、数据装配、方案数据、计算逻辑、求解器适配、业务类型
   - `src/ui`：React 入口、Provider、页面功能、可复用组件、UI 类型
   - `src/lib`：无业务语义的小型通用工具
 - 当前没有 `test` 脚本；常用质量命令是：
@@ -130,6 +130,8 @@ npm run preview
 ```text
 src/
 ├── engine/
+│   ├── core/          # 通用计算核心类型，不绑定具体游戏机制
+│   ├── adapters/      # 各游戏到通用计算核心的适配层
 │   ├── calculation/   # 计算主链路
 │   ├── data/          # 游戏/模组数据装配
 │   ├── scheme/        # 方案与配方策略数据
@@ -166,6 +168,8 @@ src/
 | `src/ui/app/bootstrap.tsx` | 前端入口 |
 | `src/ui/app/AppShell.tsx` | 页面主装配 |
 | `src/ui/app/providers/AppProviders.tsx` | Context 与全局状态装配 |
+| `src/engine/core/equivalentRecipe.ts` | 通用等效配方类型 |
+| `src/engine/adapters/dsp/equivalentRecipeAdapter.ts` | DSP 等效配方适配入口 |
 | `src/engine/data/gameData.ts` | 游戏数据装配入口 |
 | `src/engine/scheme/schemeData.ts` | 方案数据入口 |
 | `src/engine/calculation/globalState.ts` | 计算总入口 |

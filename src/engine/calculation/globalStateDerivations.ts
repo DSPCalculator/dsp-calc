@@ -1,4 +1,4 @@
-import {get_equivalent_recipe_output_rate} from './equivalentRecipe';
+import {getDspEquivalentRecipeOutputRate} from '@engine/adapters/dsp/equivalentRecipeAdapter';
 import {getMineralizedItemNames, hasMineralizedItem} from './mineralizeState';
 import type {
     CalculationSnapshot,
@@ -245,7 +245,7 @@ export function buildItemGraph({
             continue;
         }
         const equivalent_recipe = getEquivalentRecipe(recipe_id, item);
-        item_graph[item]["产出倍率"] = get_equivalent_recipe_output_rate(equivalent_recipe, item);
+        item_graph[item]["产出倍率"] = getDspEquivalentRecipeOutputRate(equivalent_recipe, item);
         for (const material in equivalent_recipe["原料"]) {
             item_graph[item]["原料"][material] = equivalent_recipe["原料"][material] / equivalent_recipe["产物"][item];
         }

@@ -1,4 +1,4 @@
-import {get_equivalent_recipe_output_rate} from '@engine/calculation/equivalentRecipe';
+import {getDspEquivalentRecipeOutputRate} from '@engine/adapters/dsp/equivalentRecipeAdapter';
 import type {GameData, ItemPrice, RecipeData, RecipeScheme, SchemeData, Settings} from '@engine/types/domain';
 import {calculateLowFootprintModeCost} from './proliferatorCost';
 
@@ -77,7 +77,7 @@ function getModeCost({
     const mode_recipe = getEquivalentRecipe(recipe_id, target_item, {"增产模式": proliferator_mode});
     const base_target_output = base_recipe["产物"][target_item];
     const mode_target_output = mode_recipe["产物"][target_item];
-    const base_output_rate = get_equivalent_recipe_output_rate(base_recipe, target_item);
+    const base_output_rate = getDspEquivalentRecipeOutputRate(base_recipe, target_item);
     if (!base_target_output || !mode_target_output || !base_output_rate || base_output_rate <= 0) {
         return Number.POSITIVE_INFINITY;
     }
