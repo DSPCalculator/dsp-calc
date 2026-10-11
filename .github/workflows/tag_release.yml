@@ -1,29 +1,81 @@
-name: Deploy on tag to the main site
+name: Build tagged web release
 
 on:
   push:
     tags:
       - '*'
 
+permissions:
+  contents: read
+
+concurrency:
+  group: web-release-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build:
-
+    if: github.event.deleted == false
     runs-on: ubuntu-latest
-    environment: netlify dsp-calc.pro
-
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
-          node-version: 20
+          persist-credentials: false
 
-      - run: npm install
-      - run: npm run build
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24
+          cache: npm
 
-      - run: npm install netlify-cli -g
+      - name: Install locked dependencies
+        run: npm ci
 
-      - name: Deploy to netlify (main site)
+      - name: Lint, typecheck, test and build release
+        env:
+          VITE_BASE_PATH: /
+        run: |
+          npm run check
+          node scripts/verify-pages-build.mjs /
+
+      - name: Upload web release artifact
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: tagged-web-release
+          path: dist
+          if-no-files-found: error
+          retention-days: 14
+
+  deploy-upstream:
+    # This destination belongs to upstream, never publish fork artifacts there.
+    if: github.repository == 'DSPCalculator/dsp-calc'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: netlify dsp-calc.pro
+    concurrency:
+      group: upstream-netlify-production
+      cancel-in-progress: false
+    steps:
+      # Deliberately no checkout or project build in this credentialed job.
+      - name: Download this run's validated build
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: tagged-web-release
+          path: dist
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Install pinned Netlify CLI
+        run: npm install --global netlify-cli@27.10.2
+
+      - name: Deploy upstream main site
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
-        run: netlify deploy --dir dist --prod-if-unlocked
+        run: netlify deploy --dir dist --prod-if-unlocked --no-build

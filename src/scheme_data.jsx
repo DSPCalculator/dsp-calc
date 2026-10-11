@@ -1,8 +1,10 @@
-import {useContext, useEffect, useState} from 'react';
-import {GameInfoContext, GlobalStateContext, SchemeDataSetterContext} from './contexts.jsx';
-import {FaRegSave, FaRegFolderOpen, FaTrash} from 'react-icons/fa';
+import {useContext} from 'react';
+import {GlobalStateContext, PlanLoaderContext} from './contexts.jsx';
+import {SavedPresets} from './components/saved-presets.jsx';
+import {createStrategySnapshot} from './lib/plan-state.js';
 
 const DEFAULT_SCHEME_DATA = {
+    "pile_sorter_level": -1,
     "item_recipe_choices": {"氢": 1},
     "scheme_for_recipe": [{"建筑": 0, "增产点数": 0, "增产模式": 0}],
     // 这是示例,实际上cost_weight之后会在init_scheme_data中重置
@@ -60,7 +62,9 @@ export function init_scheme_data(game_data) {
         };
     }
     for (let item in item_data) {
-        scheme_data.item_recipe_choices[item] = 1;
+        const preferred = item_data[item].findIndex((recipe, choice) => choice > 0
+            && game_data.default_recipe_ids?.includes(game_data.recipe_ids[recipe]));
+        scheme_data.item_recipe_choices[item] = preferred > 0 ? preferred : 1;
     }
     for (var i = 0; i < game_data.recipe_data.length; i++) {
         scheme_data.scheme_for_recipe.push({"建筑": 0, "增产点数": 0, "增产模式": 0});
@@ -70,95 +74,12 @@ export function init_scheme_data(game_data) {
 
 export function SchemeStorage() {
     const global_state = useContext(GlobalStateContext);
-    const game_info = useContext(GameInfoContext);
-    const set_scheme_data = useContext(SchemeDataSetterContext);
-    let scheme_data = global_state.scheme_data;
-    let game_name = global_state.game_data.game_name;
+    const load_plan = useContext(PlanLoaderContext);
+    const game_name = global_state.game_data.game_name;
 
-    const all_saved = JSON.parse(localStorage.getItem("scheme_data")) || {};
-    const [all_scheme, set_all_scheme] = useState(all_saved[game_name] || {});
-    // TODO implement 实时保存
-
-    useEffect(() => {
-        let all_scheme_data = JSON.parse(localStorage.getItem("scheme_data")) || {};
-        let all_scheme_init = all_scheme_data[game_name] || {};
-        console.log("Loading storage", game_name, Object.keys(all_scheme_init));
-        set_all_scheme(all_scheme_init);
-    }, [game_info, game_name]);
-
-    useEffect(() => {
-        let all_scheme_saved = JSON.parse(localStorage.getItem("scheme_data")) || {};
-        all_scheme_saved[game_name] = all_scheme;
-        localStorage.setItem("scheme_data", JSON.stringify(all_scheme_saved));
-    }, [all_scheme, game_name])
-
-    //删除当前保存的策略
-    function delete_(name) {
-        if (name in all_scheme) {
-            if (!confirm(`即将删除名为${name}的方案，是否继续`)) {
-                return;// 用户取消保存
-            }
-            let all_scheme_copy = structuredClone(all_scheme);
-            delete all_scheme_copy[name];
-            set_all_scheme(all_scheme_copy);
-        }
-    }
-
-    //读取生产策略
-    function load(name) {
-        if (all_scheme[name]) {
-            set_scheme_data(all_scheme[name]);
-        } else {
-            alert(`未找到名为${name}的方案`);
-        }
-    }
-
-    //保存生产策略
-    function save() {
-        let name = prompt("输入方案名");
-        if (!name) return;
-        if (name in all_scheme) {
-            if (!confirm(`已存在名为${name}的方案，继续保存将覆盖原方案`)) {
-                return;// 用户取消保存
-            }
-        }
-        let all_scheme_copy = structuredClone(all_scheme);
-        all_scheme_copy[name] = structuredClone(scheme_data);
-        set_all_scheme(all_scheme_copy);
-    }
-
-    let dd_load_list = Object.keys(all_scheme).map(scheme_name => (
-        <li key={scheme_name}>
-            <a className="dropdown-item cursor-pointer"
-               onClick={() => load(scheme_name)}>{scheme_name}</a>
-        </li>));
-
-    let dd_delete_list = Object.keys(all_scheme).map(scheme_name => (
-        <li key={scheme_name}>
-            <a className="dropdown-item cursor-pointer"
-               onClick={() => delete_(scheme_name)}>{scheme_name}</a>
-        </li>));
-
-    return <div className="d-flex gap-2 align-items-center">
-        <div className="text-nowrap storage-label">生产策略</div>
-        <div className="input-group input-group-sm">
-            <button className="btn btn-outline-secondary d-inline-flex align-items-center gap-1"
-                    type="button" onClick={save} title="保存生产策略">
-                <FaRegSave className="compact-show"/>
-                <span className="compact-hide-text">保存</span>
-            </button>
-            <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
-                    type="button" data-bs-toggle="dropdown" aria-expanded="false" title="加载生产策略">
-                <FaRegFolderOpen className="compact-show"/>
-                <span className="compact-hide-text">加载</span>
-            </button>
-            <ul className="dropdown-menu">{dd_load_list}</ul>
-            <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
-                    type="button" data-bs-toggle="dropdown" aria-expanded="false" title="删除生产策略">
-                <FaTrash className="compact-show"/>
-                <span className="compact-hide-text">删除</span>
-            </button>
-            <ul className="dropdown-menu">{dd_delete_list}</ul>
-        </div>
-    </div>;
+    return <SavedPresets key={game_name} storageKey="scheme_data" scope={game_name}
+                         label="生产策略" noun="方案"
+                         saveDescription="保存配方、建筑、增产、物流估算与成本策略，以及独立现有产线。若要保存当前目标及配方分叉，请使用需求列表保存完整方案。"
+                         value={createStrategySnapshot(global_state.scheme_data, global_state.settings)}
+                         onLoad={saved => load_plan(saved, 'strategy')}/>;
 }

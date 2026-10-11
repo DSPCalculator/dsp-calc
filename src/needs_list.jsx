@@ -1,212 +1,156 @@
-import {useContext, useEffect, useRef, useState} from 'react';
-import {FaRegSave, FaRegFolderOpen, FaTrash, FaPlusCircle, FaPlusSquare, FaGem, FaIndustry} from 'react-icons/fa';
-import {GameInfoContext, GlobalStateContext, SettingsSetterContext} from './contexts';
-import {ItemIcon} from './icon';
-import {ItemSelect} from './item_select';
+import {useContext, useEffect, useId, useState} from 'react';
+import {Factory, Gem, Plus, PlusSquare, Target, Trash2, X} from 'lucide-react';
+import {GlobalStateContext, NeedsListContext, PlanLoaderContext, SettingsSetterContext} from './contexts.jsx';
+import {ItemIcon} from './icon.jsx';
+import {ItemSelect} from './item_select.jsx';
+import {Button} from './components/ui/button';
+import {Input} from './components/ui/input';
+import {Label} from './components/ui/label';
+import {Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle} from './components/ui/dialog';
+import {SavedPresets} from './components/saved-presets.jsx';
+import {createProductionSource, isItemRequired} from './production_sources.js';
+import {createNeedsPlanSnapshot} from './lib/plan-state.js';
 
-function get_item_data(game_data) {
-    //通过读取配方表得到配方中涉及的物品信息，item_data中的键名为物品名，键值为
-    //此物品在计算器中的id与用于生产此物品的配方在配方表中的序号
-    var item_data = {};
-    var i = 0;
-    for (var num = 0; num < game_data.recipe_data.length; num++) {
-        for (var item in game_data.recipe_data[num].产物) {
-            if (!(item in item_data)) {
-                item_data[item] = [i];
-                i++;
-            }
-            item_data[item].push(num);
-        }
-    }
-    return item_data;
+function isPositiveNumber(value) {
+    return String(value).trim() !== '' && Number.isFinite(Number(value)) && Number(value) > 0;
 }
 
-export function NeedsList({needs_list, set_needs_list, set_show_ore_popup, set_show_building_popup}) {
-    const global_state = useContext(GlobalStateContext);
-    const count_ref = useRef(60);
-    const set_settings = useContext(SettingsSetterContext);
-    let game_data = global_state.game_data;
-    let item_data = get_item_data(game_data);
-    let natural_production_line = global_state.settings.natural_production_line;
-    let needs_doms = Object.entries(needs_list).map(([item, count]) => {
-        function edit_count(e) {
-            let new_needs_list = structuredClone(needs_list);
-            new_needs_list[item] = Number(e.target.value);
-            set_needs_list(new_needs_list);
-        }
+function NeedRow({item, count, unit, onChange, onRemove}) {
+    const id = useId();
+    const [draft, setDraft] = useState(String(count));
+    useEffect(() => setDraft(String(count)), [count]);
+    const valid = isPositiveNumber(draft);
 
-        function remove() {
-            let new_needs_list = structuredClone(needs_list);
-            delete new_needs_list[item];
-            set_needs_list(new_needs_list);
-        }
-
-        return <div key={item} className="d-inline-flex align-items-center">
-            <ItemIcon item={item}/>
-            <span className="ms-1 me-2">x</span>
-            <div key={item} className="input-group input-group-sm w-fit d-inline-flex">
-                <input type="text" className="form-control" style={{width: "6em"}} value={count} onChange={edit_count}/>
-                <button className="btn btn-outline-danger d-inline-flex align-items-center" onClick={remove}>
-                    <FaTrash/>
-                </button>
-            </div>
-        </div>
-    });
-
-    function add_need(item) {
-        if (!(item in item_data)) {
-            alert("请输入或选择正确的物品名字！");
-            return;
-        }
-        let count = Number(count_ref.current.value);
-        let new_needs_list = structuredClone(needs_list);
-        new_needs_list[item] = (needs_list[item] || 0) + count;
-        set_needs_list(new_needs_list);
+    function update(value) {
+        setDraft(value);
+        if (isPositiveNumber(value)) onChange(Number(value));
     }
 
-    function add_npl(item) {
-        let new_npl = structuredClone(natural_production_line);
-        let count = Number(count_ref.current.value);
-        new_npl.push({
-            "目标物品": item,
-            "目标产量": count,
-            "建筑数量": 10, "配方id": 1, "增产点数": 0, "增产模式": 0, "建筑": 0
-        });
-        set_settings({"natural_production_line": new_npl});
-    }
-
-    const is_min = global_state.settings.is_time_unit_minute;
-
-    return <>
-        <div className="mt-3 d-flex align-items-center row-gap-1 flex-wrap">
-            <small className="me-3 fw-bold text-nowrap">添加需求</small>
-            <div className="input-group input-group-sm w-fit d-inline-flex me-5">
-                <input type="text" className="form-control" style={{width: "6em"}} ref={count_ref} defaultValue={60}/>
-                <span className="input-group-text">/{is_min ? "min" : "sec"}</span>
-                <button className="btn btn-sm btn-outline-danger d-inline-flex align-items-center gap-1 text-nowrap"
-                        onClick={() => set_needs_list({})} title="清空需求">
-                    <FaTrash/>
-                    <span className="compact-hide-text">清空需求</span>
-                </button>
-                <ItemSelect text="添加需求物品" set_item={add_need}
-                            icon={<FaPlusCircle className="compact-show"/>}/>
-                <ItemSelect text="添加现有产线" set_item={add_npl}
-                            icon={<FaPlusSquare className="compact-show"/>}
-                            btn_class="btn btn-sm btn-outline-success text-nowrap"/>
-            </div>
-
-            {Object.keys(needs_list).length == 0 ||
-                <div className="d-inline-flex flex-wrap gap-4 row-gap-0 align-items-center flex-grow-1">
-                    {needs_doms}
-                </div>
-            }
-
-            {/* 弹出面板按钮（narrow/mobile 下显示，compact/full 下 CSS 隐藏） */}
-            <div className="summary-popup-btn ms-auto d-inline-flex gap-1">
-                <button className="btn btn-sm btn-outline-secondary d-inline-flex align-items-center gap-1 summary-popup-btn-item"
-                        onClick={() => set_show_ore_popup(s => !s)}
-                        title="原矿化列表 & 多余产物">
-                    <FaGem/>
-                </button>
-                <button className="btn btn-sm btn-outline-secondary d-inline-flex align-items-center gap-1 summary-popup-btn-item"
-                        onClick={() => set_show_building_popup(s => !s)}
-                        title="建筑统计 & 预估电力">
-                    <FaIndustry/>
-                </button>
-            </div>
+    return <div className="flex min-w-0 items-center gap-3 rounded-xl border bg-background px-3 py-2.5 shadow-xs">
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted/60">
+            <ItemIcon item={item} size={30} tooltip={false}/>
+        </span>
+        <div className="min-w-0 flex-1">
+            <Label htmlFor={id} className="block truncate text-sm font-medium" title={item}>{item}</Label>
+            <span className="text-[11px] text-muted-foreground">目标产量 · {unit}</span>
         </div>
-    </>;
-}
-
-export function NeedsListStorage({needs_list, set_needs_list}) {
-    const global_state = useContext(GlobalStateContext);
-    const game_info = useContext(GameInfoContext);
-    let game_name = global_state.game_data.game_name;
-
-    const NEEDS_LIST_STORAGE_KEY = "needs_list";
-
-    const all_saved = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
-    const [all_scheme, set_all_scheme] = useState(all_saved[game_name] || {});
-    // TODO implement 实时保存
-
-    useEffect(() => {
-        let all_scheme_data = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
-        let all_scheme_init = all_scheme_data[game_name] || {};
-        console.log("Loading storage", game_name, Object.keys(all_scheme_init));
-        set_all_scheme(all_scheme_init);
-    }, [game_info, game_name]);
-
-    useEffect(() => {
-        let all_scheme_saved = JSON.parse(localStorage.getItem(NEEDS_LIST_STORAGE_KEY)) || {};
-        all_scheme_saved[game_name] = all_scheme;
-        localStorage.setItem(NEEDS_LIST_STORAGE_KEY, JSON.stringify(all_scheme_saved));
-    }, [all_scheme, game_name])
-
-    function delete_(name) {
-        if (name in all_scheme) {
-            if (!confirm(`即将删除名为${name}的需求列表，是否继续`)) {
-                return;// 用户取消保存
-            }
-            let all_scheme_copy = structuredClone(all_scheme);
-            delete all_scheme_copy[name];
-            set_all_scheme(all_scheme_copy);
-        }
-    }//删除当前保存的策略
-
-    function load(name) {
-        if (all_scheme[name]) {
-            set_needs_list(all_scheme[name]);
-        } else {
-            alert(`未找到名为${name}的需求列表`);
-        }
-    }//读取生产策略
-
-    function save() {
-        let name = prompt("输入需求列表名");
-        if (!name) return;
-        if (name in all_scheme) {
-            if (!confirm(`已存在名为${name}的需求列表，继续保存将覆盖原需求列表`)) {
-                return;// 用户取消保存
-            }
-        }
-        let all_scheme_copy = structuredClone(all_scheme);
-        all_scheme_copy[name] = structuredClone(needs_list);
-        set_all_scheme(all_scheme_copy);
-    }//保存生产策略
-
-    let dd_load_list = Object.keys(all_scheme).map(scheme_name => (
-        <li key={scheme_name}>
-            <a className="dropdown-item cursor-pointer"
-               onClick={() => load(scheme_name)}>{scheme_name}</a>
-        </li>));
-
-    let dd_delete_list = Object.keys(all_scheme).map(scheme_name => (
-        <li key={scheme_name}>
-            <a className="dropdown-item cursor-pointer"
-               onClick={() => delete_(scheme_name)}>{scheme_name}</a>
-        </li>));
-
-    return <div className="d-flex gap-2 align-items-center">
-        <div className="text-nowrap storage-label">需求列表</div>
-        <div className="input-group input-group-sm">
-            <button className="btn btn-outline-secondary d-inline-flex align-items-center gap-1"
-                    type="button" onClick={save} title="保存需求列表">
-                <FaRegSave className="compact-show"/>
-                <span className="compact-hide-text">保存</span>
-            </button>
-            <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
-                    type="button" data-bs-toggle="dropdown" aria-expanded="false" title="加载需求列表">
-                <FaRegFolderOpen className="compact-show"/>
-                <span className="compact-hide-text">加载</span>
-            </button>
-            <ul className="dropdown-menu">{dd_load_list}</ul>
-            <button className="btn btn-outline-secondary dropdown-toggle d-inline-flex align-items-center gap-1"
-                    type="button" data-bs-toggle="dropdown" aria-expanded="false" title="删除需求列表">
-                <FaTrash className="compact-show"/>
-                <span className="compact-hide-text">删除</span>
-            </button>
-            <ul className="dropdown-menu">{dd_delete_list}</ul>
-        </div>
+        <Input id={id} aria-label={`${item}目标产量`} type="number" inputMode="decimal" min="0" step="any" value={draft}
+               aria-invalid={!valid} className="h-9 w-24 shrink-0 text-right tabular-nums sm:w-28"
+               onChange={event => update(event.target.value)}
+               onBlur={() => { if (!valid) setDraft(String(count)); }}/>
+        <Button variant="ghost" size="icon" className="size-8 shrink-0 text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
+                aria-label={`移除${item}需求`} title={`移除${item}`} onClick={onRemove}>
+            <X className="size-4" aria-hidden="true"/>
+        </Button>
     </div>;
 }
 
+export function NeedsList({needs_list, set_needs_list, set_show_ore_popup, set_show_building_popup, onShowProductionSource}) {
+    const global_state = useContext(GlobalStateContext);
+    const set_settings = useContext(SettingsSetterContext);
+    const [count, setCount] = useState('60');
+    const [error, setError] = useState('');
+    const [sourceStatus, setSourceStatus] = useState('');
+    const [lastSourceItem, setLastSourceItem] = useState('');
+    const [clearOpen, setClearOpen] = useState(false);
+    const countId = useId();
+    const unit = global_state.settings.is_time_unit_minute ? '/ min' : '/ sec';
+    const validCount = isPositiveNumber(count);
+    const entries = Object.entries(needs_list);
+
+    function add_need(item) {
+        if (!validCount || !global_state.game_data.recipe_data.some(recipe => Object.hasOwn(recipe.产物, item))) {
+            setError('请选择有效物品，并输入大于 0 的有限产量。');
+            return false;
+        }
+        const next = (Number(needs_list[item]) || 0) + Number(count);
+        if (!Number.isFinite(next)) {
+            setError('产量过大，请输入较小的数值。');
+            return false;
+        }
+        set_needs_list({...needs_list, [item]: next});
+        setError('');
+    }
+
+    function add_npl(item) {
+        // An explicitly added unrelated line is an independent existing plant.
+        // A split of a required intermediate follows that demand plan instead.
+        const standalone = !isItemRequired(global_state, needs_list, item);
+        const source = {...createProductionSource(global_state, item, {standalone}), scope: standalone ? 'global' : 'plan'};
+        set_settings(previous => ({production_sources: [...(previous.production_sources || []), source]}));
+        setSourceStatus(`已为${item}添加产量为 0 的来源，请在生产总览的同物品分组中设置。`);
+        setLastSourceItem(item);
+        setError('');
+    }
+
+    function remove(item) {
+        const next = {...needs_list};
+        delete next[item];
+        set_needs_list(next);
+    }
+
+    return <section className="space-y-4" aria-label="生产目标">
+        <div className="flex flex-wrap items-end gap-3">
+            <div className="space-y-1.5">
+                <Label htmlFor={countId} className="text-xs text-muted-foreground">目标产量</Label>
+                <div className="relative w-32 sm:w-36">
+                    <Input id={countId} type="number" min="0" step="any" inputMode="decimal" value={count}
+                           aria-invalid={!validCount} aria-describedby={!validCount ? `${countId}-error` : undefined}
+                           className="pr-12 tabular-nums" onChange={event => { setCount(event.target.value); setError(''); }}/>
+                    <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">{unit}</span>
+                </div>
+            </div>
+            <ItemSelect text="添加需求物品" set_item={add_need} disabled={!validCount} icon={<Plus className="size-4" aria-hidden="true"/>}/>
+            <ItemSelect text="添加现有产线" set_item={add_npl} variant="outline"
+                        icon={<PlusSquare className="size-4" aria-hidden="true"/>}/>
+            <div className="ml-auto flex items-center gap-1">
+                {set_show_ore_popup && <Button variant="outline" size="icon" className="xl:hidden" aria-label="查看原矿化列表与多余产物"
+                                            title="原矿化列表与多余产物" onClick={() => set_show_ore_popup(true)}><Gem className="size-4"/></Button>}
+                {set_show_building_popup && <Button variant="outline" size="icon" className="xl:hidden" aria-label="查看建筑统计与预估电力"
+                                                 title="建筑统计与预估电力" onClick={() => set_show_building_popup(true)}><Factory className="size-4"/></Button>}
+                {entries.length > 0 && <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-destructive"
+                                              onClick={() => setClearOpen(true)}><Trash2 className="size-3.5" aria-hidden="true"/>清空需求</Button>}
+            </div>
+        </div>
+        {!validCount && <p id={`${countId}-error`} role="alert" className="text-xs text-destructive">请输入大于 0 的有效产量后选择物品。</p>}
+        {error && <p role="alert" className="text-xs text-destructive">{error}</p>}
+        {sourceStatus && <p role="status" className="text-sm text-muted-foreground">{sourceStatus} <a className="underline underline-offset-4 hover:text-foreground" href={`#production-sources-${encodeURIComponent(lastSourceItem)}`} onClick={event => {
+            if (onShowProductionSource) { event.preventDefault(); onShowProductionSource(lastSourceItem); }
+        }}>查看产线</a></p>}
+        {entries.length ? <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+            {entries.map(([item, amount]) => <NeedRow key={item} item={item} count={amount} unit={unit}
+                onChange={next => set_needs_list({...needs_list, [item]: next})} onRemove={() => remove(item)}/>)}
+        </div> : <div className="flex items-center gap-3 rounded-xl border border-dashed bg-muted/25 px-4 py-5">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full border bg-background"><Target className="size-4 text-muted-foreground" aria-hidden="true"/></span>
+            <div>
+                <p className="text-sm font-medium">从一个生产目标开始</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">设定每分钟或每秒的目标产量，再添加物品，即可计算完整产线。</p>
+            </div>
+        </div>}
+        <Dialog open={clearOpen} onOpenChange={setClearOpen}>
+            <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                    <DialogTitle>清空当前需求？</DialogTitle>
+                    <DialogDescription>将移除当前的 {entries.length} 项生产目标和绑定的配方分叉。已保存的需求列表与独立现有产线会保留。</DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                    <Button variant="outline" onClick={() => setClearOpen(false)}>取消</Button>
+                    <Button variant="destructive" onClick={() => { set_needs_list({}); setClearOpen(false); }}>清空需求</Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+    </section>;
+}
+
+export function NeedsListStorage() {
+    const global_state = useContext(GlobalStateContext);
+    const needs_list = useContext(NeedsListContext);
+    const load_plan = useContext(PlanLoaderContext);
+    const game_name = global_state.game_data.game_name;
+
+    return <SavedPresets key={game_name} storageKey="needs_list" scope={game_name}
+                         label="需求列表" noun="需求列表"
+                         saveDescription="保存当前目标、生产策略、计算设置和产线分配。加载时一起恢复，仅用于当前游戏版本。"
+                         value={createNeedsPlanSnapshot(needs_list, global_state.scheme_data, global_state.settings, game_name)}
+                         onLoad={saved => load_plan(saved, 'needs')}/>;
+}

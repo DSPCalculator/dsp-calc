@@ -1,56 +1,25 @@
-import {Nav, Navbar, OverlayTrigger, Tooltip} from 'react-bootstrap';
-import {FaInfoCircle, FaMoon, FaQq, FaReact, FaSun} from 'react-icons/fa';
-import {useTheme} from './ThemeContext.jsx';
+import { ArrowUpRight, Atom, Code2, Moon, Sun } from 'lucide-react';
+import { useTheme } from './ThemeContext.jsx';
+import { Button } from './components/ui/button';
+import { Badge } from './components/ui/badge';
+import { Tooltip, TooltipContent, TooltipTrigger } from './components/ui/tooltip';
 
 export function Header() {
-    const version = import.meta.env.VITE_APP_VERSION;
     const {theme, toggleTheme} = useTheme();
-    const renderTooltip = (props) => (
-        <Tooltip id="qq-tooltip" {...props}>
-            联系作者QQ:653524123<br/>
-            加入QQ群反馈:816367922
-        </Tooltip>
-    );
-    return (
-        <Navbar className="px-3 text-nowrap" bg="body-tertiary" expand="lg">
-            <Navbar.Brand href="#" className="d-inline-flex align-items-baseline">
-                <FaReact className="me-2 align-self-center"/>
-                <span className="me-1">戴森球计划量化计算器</span>
-                <span className="text-muted ssmall">v{version}</span>
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarNav"/>
-            <Navbar.Collapse id="navbarNav">
-                <Nav>
-                    <Nav.Link href="https://github.com/DSPCalculator/dsp-calc">开源仓库</Nav.Link>
-                    <Nav.Link href="https://www.bilibili.com/read/readlist/rl630834" target="_blank">逻辑原理</Nav.Link>
-                    <Nav.Link href="https://space.bilibili.com/16051534">联系作者</Nav.Link>
-                </Nav>
-                <Nav>
-                    <OverlayTrigger
-                        placement="bottom"
-                        delay={{show: 250, hide: 400}}
-                        overlay={renderTooltip}
-                    >
-                        <Nav.Link href="#" className="d-flex align-items-center">
-                            <FaQq className="mr-1"/> QQ
-                        </Nav.Link>
-                    </OverlayTrigger>
-                </Nav>
-
-                <span className="navbar-text ms-auto small me-3">
-                    <FaInfoCircle/> 若无法加载，尝试切换浏览器为Chrome/Edge
-                </span>
-                <Nav>
-                    <Nav.Link
-                        href="#"
-                        className="d-flex align-items-center"
-                        onClick={toggleTheme}
-                        title={theme === 'light' ? '切换到深色主题' : '切换到浅色主题'}
-                    >
-                        {theme === 'light' ? <FaMoon/> : <FaSun/>}
-                    </Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-    );
+    return <header className="sticky top-0 z-30 border-b bg-background/95 backdrop-blur-sm">
+        <div className="mx-auto flex h-16 max-w-[1800px] items-center justify-between gap-3 px-4 sm:px-8">
+            <a href="#main" className="group flex min-w-0 items-center gap-3 no-underline" aria-label="DSP Calc 首页">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground"><Atom className="size-5" strokeWidth={1.7}/></span>
+                <span className="text-lg font-semibold tracking-tight">DSP<span className="ml-1.5 font-normal text-muted-foreground">Calc</span></span>
+                <span className="mx-1 hidden h-5 border-l sm:block"/>
+                <span className="hidden text-sm text-muted-foreground sm:block">戴森球计划量化计算器</span>
+                <Badge variant="outline" className="hidden font-mono text-[10px] lg:inline-flex">v{import.meta.env.VITE_APP_VERSION}</Badge>
+            </a>
+            <nav aria-label="主要导航" className="flex items-center gap-1">
+                <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex"><a href="https://www.bilibili.com/read/readlist/rl630834" target="_blank" rel="noreferrer">计算原理<ArrowUpRight className="size-3.5"/></a></Button>
+                <Tooltip><TooltipTrigger asChild><Button variant="ghost" size="icon" asChild><a href="https://github.com/idkwhodatis/dsp-calc" target="_blank" rel="noreferrer" aria-label="打开 GitHub 仓库"><Code2 className="size-4"/></a></Button></TooltipTrigger><TooltipContent>开源仓库</TooltipContent></Tooltip>
+                <Tooltip><TooltipTrigger asChild><Button variant="ghost" size="icon" onClick={toggleTheme} aria-label={theme === 'light' ? '切换到深色主题' : '切换到浅色主题'}>{theme === 'light' ? <Moon className="size-4"/> : <Sun className="size-4"/>}</Button></TooltipTrigger><TooltipContent>{theme === 'light' ? '深色主题' : '浅色主题'}</TooltipContent></Tooltip>
+            </nav>
+        </div>
+    </header>;
 }

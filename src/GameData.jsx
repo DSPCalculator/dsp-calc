@@ -1,3 +1,6 @@
+import darkFogSynthesis from '../data/mods/DarkFogSynthesis.json';
+import {VANILLA_DARK_FOG_RECEIVING_REVISION} from './lib/game-data-migrations.js';
+
 /*
     GameData数据内容说明:
         recipe_data：配方表
@@ -33,6 +36,8 @@
                     面积定义为游戏中一纬线间隔的平方（即游戏内的约1.256637m），之后通过其他数据结构来给涉及物品数目不同的相同建筑通过算法将进出货物时的分拣
                     器与传送带的占地也考虑上，届时会有不同的铺设模式对应不同的分拣器传送带占地。建筑占地本身也会因是否使用建筑偏移而有所改动。
 */
+export const DarkFogSynthesisGUID = darkFogSynthesis.GUID;
+export const dark_fog_synthesis_description = "黑雾合成 · Dark Fog Synthesis v0.1.0（实验性）：在当前原版数据上追加 6 条制造配方，默认使用合成，保留黑雾掉落选项。和平与非和平模式配方相同，不模拟科技解锁。计算器目前仅提供单独启用配置；与其它模组的组合数据尚未核验，不代表游戏内互不兼容。";
 export const MoreMegaStructureGUID = "Gnimaerd.DSP.plugin.MoreMegaStructure";
 export const TheyComeFromVoidGUID = "com.ckcz123.DSP_Battle";
 export const GenesisBookGUID = "org.LoShin.GenesisBook";
@@ -49,6 +54,7 @@ const data_indices = Object.fromEntries(
         ))
 
 export const game_data_info_list = [
+    // Vanilla stays first: its position is part of the version display contract.
     {
         "GUID": "Vanilla",
         "name": "原版游戏",
@@ -74,6 +80,7 @@ export const game_data_info_list = [
         "name": "万物分馏",
         "version": "1.4.4",
     },
+    {GUID: DarkFogSynthesisGUID, name: darkFogSynthesis.name, version: darkFogSynthesis.version},
 ]
 
 export function get_mod_options() {
@@ -87,13 +94,28 @@ export function get_mod_options() {
     return mod_options;
 }
 
+/** One authoritative selection policy for the picker and restored settings. */
+export function normalize_mod_list(mods) {
+    const selected = Array.isArray(mods) ? mods : [];
+    // A stale/hand-edited unsupported combination must not construct a hybrid dataset.
+    if (selected.includes(DarkFogSynthesisGUID)) return [DarkFogSynthesisGUID];
+    const known = get_mod_options().map(option => option.value).filter(value => selected.includes(value));
+    if (known.includes(TheyComeFromVoidGUID) && !known.includes(MoreMegaStructureGUID)) known.unshift(MoreMegaStructureGUID);
+    return known;
+}
+
 export const default_game_data = get_game_data(["Vanilla"])
 export const vanilla_game_version = game_data_info_list[0].version;
+export const vanilla_data_description = `原版基础数据 v${vanilla_game_version}；仅原版追加已核验的 v0.10.34 全息信标与 v0.10.35 黑雾引力透镜制造配方，并追加黑雾透镜稳态光子接收（默认倍率）：满连续接收（至少 20 分钟）、戴森供能与接收条件充足时，每站 24 个/分钟，喷涂 Mk.I / II / III 为 30 / 36 / 48，透镜均为 0.1 个/分钟。合成面板布局另按已记录的界面参考排列；未模拟启动、断续接收、戴森功率与损耗，尚未完整适配 v0.10.35。模组组合仍使用各自原有数据`;
 
 var name_icon_list;
 
 export function get_game_data(modList) {
+    if (modList.includes(DarkFogSynthesisGUID) && modList.some(mod => mod !== DarkFogSynthesisGUID && mod !== 'Vanilla')) {
+        throw new Error('黑雾合成目前仅支持单独启用；与其它模组的组合数据尚未核验。');
+    }
     let data = {};
+    data.DarkFogSynthesisEnable = modList.includes(DarkFogSynthesisGUID);
     //根据mod列表，获取json文件名
     const mod_names = [];
     let json_file_name = "";
@@ -123,9 +145,21 @@ export function get_game_data(modList) {
     }
     json_file_name = json_file_name === "" ? "Vanilla" : json_file_name.substring(1);
     let json_data = data_indices[json_file_name];
+    if (data.DarkFogSynthesisEnable) {
+        // Append only. Preserve every vanilla ordinal, item slot and icon.
+        json_data = {...json_data, recipes: [...json_data.recipes, ...darkFogSynthesis.recipes]};
+        json_file_name = 'DarkFogSynthesis';
+        mod_names.push('DarkFogSynthesis');
+    }
     //将json转换为需要的数据结构
     data.mods = mod_names;
     data.game_name = json_file_name;
+    data.data_revision = data.DarkFogSynthesisEnable
+        ? `${VANILLA_DARK_FOG_RECEIVING_REVISION}+dark-fog-synthesis-${darkFogSynthesis.version}-${darkFogSynthesis.sourceCommit}`
+        : json_file_name === 'Vanilla' ? VANILLA_DARK_FOG_RECEIVING_REVISION : json_file_name;
+    data.recipe_ids = json_data.recipes.map(recipe => recipe.ID);
+    data.default_recipe_ids = data.DarkFogSynthesisEnable
+        ? darkFogSynthesis.recipes.map(recipe => recipe.ID) : [];
     data.item_grid = {};
     data.item_icon_name = {};
     data.recipe_data = [];

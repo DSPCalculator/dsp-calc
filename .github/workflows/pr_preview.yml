@@ -1,26 +1,48 @@
-name: Deploy external PR preview (https://b.dsp-calc.pro)
+name: Validate pull request preview
 
-on: [ pull_request ]
+on:
+  pull_request:
+
+# Pull-request code runs without deployment credentials or write permissions.
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    environment: branch-preview
-
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
-          node-version: 20
+          persist-credentials: false
 
-      - run: npm install
-      - run: npm run build
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24
+          cache: npm
 
-      - name: Create dist.zip
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Lint, typecheck, test and build preview
+        env:
+          VITE_BASE_PATH: /
         run: |
-          cd dist
-          zip -q -r ../dist.zip *
+          npm run check
+          node scripts/verify-pages-build.mjs /
 
-      - name: Deploy branch site (https://b.dsp-calc.pro)
-        run: "curl --fail --no-progress-meter --location 'https://publish.b.dsp-calc.pro/external/pr?branch=${{ github.ref_name }}' --form 'file=@dist.zip'"
+      # Download from this workflow run's Artifacts section and serve locally.
+      # Untrusted PR artifacts are never sent to Pages or upstream preview sites.
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: pr-preview-${{ github.event.pull_request.number }}
+          path: dist
+          if-no-files-found: error
+          retention-days: 7

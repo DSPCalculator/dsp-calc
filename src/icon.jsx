@@ -1,8 +1,10 @@
 import {useContext} from 'react';
 import {GlobalStateContext} from './contexts';
 import {get_icon_by_item} from "./GameData.jsx";
+import {Tooltip, TooltipContent, TooltipTrigger} from './components/ui/tooltip';
+import {createIconStyles} from './lib/icon-styles.js';
 
-const image_index_modules = import.meta.glob('../icon/*.json', {
+const image_index_modules = import.meta.glob(['../icon/*.json', '!../icon/*.assets.json'], {
     import: 'default',
     eager: true,
 });
@@ -14,21 +16,15 @@ const image_indices = Object.fromEntries(
             [module.replace(/^\.\.\/icon\/(.+)\.json/, "$1"), icons]
         ))
 
-export function IconStyles() {
-    function get_icon_style(mod_name) {
-        //console.log("mod_name", mod_name)
-        return `
-.icon-${mod_name} {
-    vertical-align: bottom;
-    display: inline-block;
-    background-image: url('icon/${mod_name}.png');
-    @supports (background-image: url('icon/${mod_name}.webp')) {
-        background-image: url('icon/${mod_name}.webp');
-    }
-}`;
-    }
+const image_asset_modules = import.meta.glob('../icon/*.assets.json', {
+    import: 'default',
+    eager: true,
+});
+const image_assets = Object.fromEntries(Object.entries(image_asset_modules).map(([module, assets]) =>
+    [module.replace(/^\.\.\/icon\/(.+)\.assets\.json$/, '$1'), assets]));
 
-    const styles = Object.keys(image_indices).map(get_icon_style).join("\n");
+export function IconStyles() {
+    const styles = createIconStyles(image_assets, import.meta.env.BASE_URL);
     return <style>{styles}</style>;
 }
 
@@ -44,7 +40,7 @@ function Icon({icon, size, mods}) {
             return icon2;
         }
     }
-    return <><span
+    return <><span role="img" aria-label={icon}
         style={{
             width: size, height: size,
             display: "inline-block",
@@ -69,7 +65,7 @@ function get_icon_from_one_mod(icon, size, mod) {
         const bgx = -x * scale, bgy = -y * scale;
 
         return <>
-            <div className={`icon-${mod}`}
+            <span className={`icon-${mod}`} role="img" aria-label={icon}
                  style={{
                      width: size, height: size,
                      backgroundPosition: `${bgx}px ${bgy}px`,
@@ -93,12 +89,18 @@ export function ItemIcon({item, size, tooltip}) {
 
     tooltip = tooltip === undefined ? true : tooltip;
     if (tooltip) {
-        let fontSize = Math.min(size / 2, 16);
-        return <span data-tooltip={item} className="fast-tooltip"
-                     style={{fontSize: fontSize}}>
-            {img}
-        </span>;
-    } else {
-        return img;
+        return <Tooltip>
+            <TooltipTrigger asChild>
+                <span className="inline-flex shrink-0 items-center align-middle">{img}</span>
+            </TooltipTrigger>
+            <TooltipContent side="top">{item}</TooltipContent>
+        </Tooltip>;
     }
+    return img;
+}
+
+// Recipe-grid artwork can differ from the ordinary product icon.
+export function GameIcon({icon, size = 40}) {
+    const global_state = useContext(GlobalStateContext);
+    return <Icon icon={icon} size={size} mods={global_state.game_data.mods}/>;
 }

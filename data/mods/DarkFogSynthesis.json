@@ -1,0 +1,14 @@
+{
+  "GUID": "idkwhodatis.darkfogsynthesis",
+  "name": "黑雾合成 · Dark Fog Synthesis",
+  "version": "0.1.0",
+  "sourceCommit": "8aeb354826c1996db230a011e9473cee329116d0",
+  "recipes": [
+    {"ID": 48101, "Type": 1, "Factories": [2302, 2315, 2319], "Name": "能量碎片合成", "EnglishName": "Energy Shard Synthesis", "Items": [1128, 1109, 1110], "ItemCounts": [1, 1, 1], "Results": [5206], "ResultCounts": [2], "TimeSpend": 120, "Proliferator": 3, "Handcraft": true},
+    {"ID": 48102, "Type": 15, "Factories": [2901, 2902], "Name": "黑雾矩阵合成", "EnglishName": "Dark Fog Matrix Synthesis", "Items": [1113, 1404, 1401, 1119], "ItemCounts": [2, 1, 1, 1], "Results": [5201], "ResultCounts": [1], "TimeSpend": 240, "Proliferator": 3, "Handcraft": true},
+    {"ID": 48103, "Type": 4, "Factories": [2303, 2304, 2305, 2318], "Name": "硅基神经元合成", "EnglishName": "Silicon-based Neuron Synthesis", "Items": [1302, 1107, 1113], "ItemCounts": [2, 2, 2], "Results": [5202], "ResultCounts": [1], "TimeSpend": 240, "Proliferator": 3, "Handcraft": true},
+    {"ID": 48104, "Type": 4, "Factories": [2303, 2304, 2305, 2318], "Name": "物质重组器合成", "EnglishName": "Matter Recombinator Synthesis", "Items": [1304, 1205, 1120, 1113], "ItemCounts": [1, 2, 2, 2], "Results": [5203], "ResultCounts": [1], "TimeSpend": 360, "Proliferator": 3, "Handcraft": true},
+    {"ID": 48105, "Type": 4, "Factories": [2303, 2304, 2305, 2318], "Name": "负熵奇点合成", "EnglishName": "Negentropy Singularity Synthesis", "Items": [1127, 1126, 1802, 1113], "ItemCounts": [1, 2, 1, 2], "Results": [5204], "ResultCounts": [1], "TimeSpend": 480, "Proliferator": 3, "Handcraft": true},
+    {"ID": 48106, "Type": 4, "Factories": [2303, 2304, 2305, 2318], "Name": "核心素合成", "EnglishName": "Core Element Synthesis", "Items": [1122, 1125, 1205, 1113], "ItemCounts": [2, 2, 2, 4], "Results": [5205], "ResultCounts": [1], "TimeSpend": 600, "Proliferator": 3, "Handcraft": true}
+  ]
+}

@@ -1,299 +1,166 @@
-import {useContext} from 'react';
+import {useContext, useEffect, useId, useState} from 'react';
+import {FlaskConical, Gauge, Info, Orbit, Pickaxe, Sparkles} from 'lucide-react';
 import {DefaultSettingsContext, GlobalStateContext, SettingsContext, SettingsSetterContext} from './contexts.jsx';
+import {Input} from './components/ui/input';
+import {Label} from './components/ui/label';
+import {Switch} from './components/ui/switch';
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from './components/ui/select';
+import {Tooltip, TooltipContent, TooltipTrigger} from './components/ui/tooltip';
+
+function SettingGroup({title, description, icon: Icon, children}) {
+    return <section className="space-y-4 rounded-xl border bg-card p-4 sm:p-5">
+        <div className="flex items-start gap-3">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+                <Icon className="size-4" aria-hidden="true"/>
+            </span>
+            <div>
+                <h3 className="text-sm font-semibold">{title}</h3>
+                {description && <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{description}</p>}
+            </div>
+        </div>
+        <div className="space-y-4">{children}</div>
+    </section>;
+}
+
+function NumberSetting({label, value, onChange, min = 0, max, step = 1, unit, fallback = value, integer = false}) {
+    const id = useId();
+    const [draft, setDraft] = useState(String(value));
+    useEffect(() => setDraft(String(value)), [value]);
+    const numeric = Number(draft);
+    const invalid = draft.trim() === '' || !Number.isFinite(numeric) || numeric < min || (max !== undefined && numeric > max);
+
+    function normalize(number) {
+        const bounded = Math.min(max ?? Infinity, Math.max(min, number));
+        return integer ? Math.floor(bounded) : Math.round(bounded * 10000) / 10000;
+    }
+
+    function update(next) {
+        setDraft(next);
+        const number = Number(next);
+        if (next.trim() !== '' && Number.isFinite(number) && number >= min && (max === undefined || number <= max)) {
+            onChange(normalize(number));
+        }
+    }
+
+    function finish() {
+        const next = normalize(draft.trim() !== '' && Number.isFinite(numeric) ? numeric : fallback);
+        setDraft(String(next));
+        onChange(next);
+    }
+
+    return <div className="grid grid-cols-[minmax(0,1fr)_7rem] items-center gap-x-3 gap-y-1">
+        <Label htmlFor={id} className="text-xs leading-relaxed sm:text-sm">{label}</Label>
+        <Input id={id} type="number" inputMode="decimal" min={min} max={max} step={step} value={draft}
+               aria-invalid={invalid} aria-describedby={unit ? `${id}-unit` : undefined}
+               onChange={event => update(event.target.value)} onBlur={finish}
+               className="h-9 text-right tabular-nums"/>
+        {unit && <span id={`${id}-unit`} className="col-span-2 text-right text-[11px] text-muted-foreground">{unit}</span>}
+    </div>;
+}
+
+function ToggleSetting({label, checked, onChange, description}) {
+    const id = useId();
+    return <div className="flex items-center justify-between gap-4">
+        <div className="space-y-1">
+            <Label htmlFor={id} className="text-xs leading-relaxed sm:text-sm">{label}</Label>
+            {description && <p className="text-xs leading-relaxed text-muted-foreground">{description}</p>}
+        </div>
+        <Switch id={id} checked={checked} onCheckedChange={onChange}/>
+    </div>;
+}
 
 export function Settings() {
     const settings = useContext(SettingsContext);
     const set_settings = useContext(SettingsSetterContext);
-    const DEFAULT_SETTINGS = useContext(DefaultSettingsContext);
+    const defaults = useContext(DefaultSettingsContext);
     const global_state = useContext(GlobalStateContext);
-    let GenesisBookEnable = global_state.game_data.GenesisBookEnable ? "" : "none";
-    let TheyComeFromVoidEnable = global_state.game_data.TheyComeFromVoidEnable ? "" : "none";
+    const minute = settings.is_time_unit_minute;
 
-    let percent_val = {
-        mining_efficiency_large: Math.round(settings.mining_efficiency_large * 100),
-        mining_speed_multiple: Math.round(settings.mining_speed_multiple * 100),
-        enemy_drop_multiple: Math.round(settings.enemy_drop_multiple * 100),
-        icarus_manufacturing_speed: Math.round(settings.icarus_manufacturing_speed * 100),
-        acc_rate: Math.round(settings.acc_rate * 100),
-        inc_rate: Math.round(settings.inc_rate * 100),
+    function number(name, label, options = {}) {
+        return <NumberSetting key={name} label={label} value={settings[name]} fallback={defaults[name]}
+                              onChange={value => set_settings({[name]: value})} {...options}/>;
     }
 
-    function change_int_setting(e, name, minVal) {
-        let val = Math.max(parseInt(e.target.value) || DEFAULT_SETTINGS[name], minVal);
-        set_settings({[name]: val});
+    function percent(name, label, step = 5, min = 100, unit = '%') {
+        return <NumberSetting key={name} label={label} value={Math.round(settings[name] * 100)}
+                              fallback={Math.round(defaults[name] * 100)} min={min} step={step} integer unit={unit}
+                              onChange={value => set_settings({[name]: value / 100})}/>;
     }
 
-    function change_float_setting(e, name, minVal) {
-        let val = Math.max(parseFloat(e.target.value) || DEFAULT_SETTINGS[name], minVal);
-        set_settings({[name]: Math.round(val * 10000) / 10000});//输入框最多四位小数
+    function toggle(name, label, description) {
+        return <ToggleSetting key={name} label={label} description={description} checked={settings[name]}
+                              onChange={checked => set_settings({[name]: checked})}/>;
     }
 
-    function change_percent_setting(e, name, minVal) {
-        let val = Math.max(parseInt(e.target.value) || (DEFAULT_SETTINGS[name] * 100), minVal);
-        percent_val[name] = val;
-        set_settings({[name]: val / 100});
-    }
+    const resources = [
+        ['mining_speed_oil', '原油面板', '/s · 单个油井'],
+        ['mining_speed_hydrogen', '巨星氢面板'],
+        ['mining_speed_deuterium', '巨星重氢面板'],
+        ['mining_speed_gas_hydrate', '巨星可燃冰面板'],
+    ];
+    const genesisResources = [
+        ['mining_speed_helium', '巨星氦面板'],
+        ['mining_speed_ammonia', '巨星氨面板'],
+        ['mining_speed_nitrogen', '行星氮面板'],
+        ['mining_speed_oxygen', '行星氧面板'],
+        ['mining_speed_carbon_dioxide', '行星二氧化碳面板'],
+        ['mining_speed_sulfur_dioxide', '行星二氧化硫面板'],
+    ];
 
-    function change_bool_setting(e, name) {
-        set_settings({[name]: !settings[name]});
-    }
-
-    const fractionating_speed = settings.is_time_unit_minute
-        ? settings.fractionating_speed * 60
-        : settings.fractionating_speed;
-
-    function change_fractionating_speed(e) {
-        let fractionating_speed = parseFloat(e.target.value) || (settings.is_time_unit_minute ? 1800 : 30);
-        if (settings.is_time_unit_minute) {
-            fractionating_speed /= 60;
-        }
-        set_settings({"fractionating_speed": fractionating_speed});
-    }
-
-    return <div style={{display: 'flex', flexWrap: 'wrap'}}>
-        <table>
-            <tbody>
-            <tr>
-                <td>原油面板</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_oil} step={0.10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_oil", 0.01)}/>
-                </td>
-                <td className="ps-2">{"/s（单个油井）"}</td>
-            </tr>
-            <tr>
-                <td>巨星氢面板</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_hydrogen} step={0.10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_hydrogen", 0.01)}/>
-                </td>
-                <td className="ps-2">{"/s（星球资源详情）"}</td>
-            </tr>
-            <tr>
-                <td>巨星重氢面板</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_deuterium} step={0.10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_deuterium", 0.01)}/>
-                </td>
-                <td className="ps-2">{"/s（星球资源详情）"}</td>
-            </tr>
-            <tr>
-                <td>巨星可燃冰面板</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_gas_hydrate} step={0.10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_gas_hydrate", 0.01)}/>
-                </td>
-                <td className="ps-2">{"/s（星球资源详情）"}</td>
-            </tr>
-            </tbody>
-            <tbody style={{display: GenesisBookEnable}}>
-            <tr>
-                <td>巨星氦面板</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_helium} step={0.10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_helium", 0.01)}/>
-                </td>
-                <td className="ps-2">{"/s（星球资源详情）"}</td>
-            </tr>
-            <tr>
-                <td>巨星氨面板</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_ammonia} step={0.10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_ammonia", 0.01)}/>
-                </td>
-                <td className="ps-2">{"/s（星球资源详情）"}</td>
-            </tr>
-            <tr>
-                <td>行星氮面板</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_nitrogen} step={0.10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_nitrogen", 0.01)}/>
-                </td>
-                <td className="ps-2">{"/s（星球资源详情）"}</td>
-            </tr>
-            <tr>
-                <td>行星氧面板</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_oxygen} step={0.10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_oxygen", 0.01)}/>
-                </td>
-                <td className="ps-2">{"/s（星球资源详情）"}</td>
-            </tr>
-            <tr>
-                <td>行星二氧化碳面板</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_carbon_dioxide}
-                           step={0.10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_carbon_dioxide", 0.01)}/>
-                </td>
-                <td className="ps-2">{"/s（星球资源详情）"}</td>
-            </tr>
-            <tr>
-                <td>行星二氧化硫面板</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.mining_speed_sulfur_dioxide}
-                           step={0.10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_float_setting(e, "mining_speed_sulfur_dioxide", 0.01)}/>
-                </td>
-                <td className="ps-2">{"/s（星球资源详情）"}</td>
-            </tr>
-            </tbody>
-        </table>
-        <table>
-            <tbody>
-            <tr>
-                <td>原矿显示</td>
-                <td className="ps-2">{settings.hide_mines ? "隐藏原矿" : "显示原矿"}</td>
-                <td className="ps-2">
-                    <button onClick={e => change_bool_setting(e, "hide_mines")}>
-                        {settings.hide_mines ? "显示原矿" : "隐藏原矿"}</button>
-                </td>
-            </tr>
-            <tr>
-                <td>小矿机覆盖矿脉数</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.covered_veins_small} step={1}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_int_setting(e, "covered_veins_small", 1)}/>
-                </td>
-            </tr>
-            <tr>
-                <td>大矿机覆盖矿脉数</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.covered_veins_large} step={1}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_int_setting(e, "covered_veins_large", 1)}/>
-                </td>
-            </tr>
-            <tr>
-                <td>大矿机开采速度</td>
-                <td className="ps-2">
-                    <input type="number" value={percent_val["mining_efficiency_large"]} step={100}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "mining_efficiency_large", 100)}/>
-                </td>
-                <td className="ps-2">{"%"}</td>
-            </tr>
-            <tr>
-                <td>采矿速度</td>
-                <td className="ps-2">
-                    <input type="number" value={percent_val["mining_speed_multiple"]} step={10}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "mining_speed_multiple", 100)}/>
-                </td>
-                <td className="ps-2">{"%（科技面板右上）"}</td>
-            </tr>
-            <tr>
-                <td>残骸产出倍率</td>
-                <td className="ps-2">
-                    <input type="number" value={percent_val["enemy_drop_multiple"]} step={4}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "enemy_drop_multiple", 100)}/>
-                </td>
-                <td className="ps-2">{"%（科技面板右上）"}</td>
-            </tr>
-            <tr>
-                <td>手动制造速度</td>
-                <td className="ps-2">
-                    <input type="number" value={percent_val["icarus_manufacturing_speed"]} step={50}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "icarus_manufacturing_speed", 100)}/>
-                </td>
-                <td className="ps-2">{"%"}</td>
-            </tr>
-            <tr>
-                <td>分馏带速</td>
-                <td className="ps-2">
-                    <input value={fractionating_speed} onChange={change_fractionating_speed}
-                           style={{maxWidth: '5em'}}/>
-                </td>
-                <td className="ps-2">{settings.is_time_unit_minute ? "/min" : "/sec"}</td>
-            </tr>
-            </tbody>
-        </table>
-        <table>
-            <tbody>
-            <tr>
-                <td>速率单位</td>
-                <td className="ps-2">{settings.is_time_unit_minute ? "个/min" : "个/sec"}</td>
-                <td className="ps-2">
-                    <button onClick={e => change_bool_setting(e, "is_time_unit_minute")}>
-                        {settings.is_time_unit_minute ? "转化为秒" : "转化为分"}</button>
-                </td>
-            </tr>
-            <tr>
-                <td>精度位数</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.fixed_num} step={1} style={{maxWidth: '5em'}}
-                           onChange={e => change_int_setting(e, "fixed_num", 0)}/>
-                </td>
-            </tr>
-            <tr>
-                <td>研究站层数</td>
-                <td className="ps-2">
-                    <input type="number" value={settings.stack_research_lab} step={1}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_int_setting(e, "stack_research_lab", 1)}/>
-                </td>
-            </tr>
-            <tr>
-                <td>增产剂自喷涂</td>
-                <td className="ps-2">{settings.proliferate_itself ? "启用" : "禁用"}</td>
-                <td className="ps-2">
-                    <button onClick={e => change_bool_setting(e, "proliferate_itself")}>
-                        {settings.proliferate_itself ? "改为禁用" : "改为启用"}</button>
-                </td>
-            </tr>
-            <tr>
-                <td>增产剂加速效率修正</td>
-                <td className="ps-2">
-                    <input type="number" value={percent_val["acc_rate"]} step={5}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "acc_rate", 1)}/>
-                </td>
-                <td className="ps-2">{"%"}</td>
-            </tr>
-            <tr>
-                <td>增产剂增产效率修正</td>
-                <td className="ps-2">
-                    <input type="number" value={percent_val["inc_rate"]} step={5}
-                           style={{maxWidth: '5em'}}
-                           onChange={e => change_percent_setting(e, "inc_rate", 1)}/>
-                </td>
-                <td className="ps-2">{"%"}</td>
-            </tr>
-            </tbody>
-        </table>
-        <table style={{display: TheyComeFromVoidEnable}}>
-            <tbody>
-            <tr>
-                <td colSpan={4}>【深空来敌元驱动】</td>
-            </tr>
-            <tr>
-                <td colSpan={4}>注意：更改任意元驱动状态后，必须重新选择MOD！</td>
-            </tr>
-            <tr>
-                <td colSpan={4}>PS：鼠标悬停在元驱动名称上以查看具体效果</td>
-            </tr>
-            <tr>
-                <td title="制造厂在制造原材料至少2种的配方时，每产出1个产物，会返还1个第1位置的原材料">蓝Buff</td>
-                <td className="ps-2">{settings.blue_buff ? "启用" : "禁用"}</td>
-                <td className="ps-2">
-                    <button onClick={e => change_bool_setting(e, "blue_buff")}>
-                        {settings.blue_buff ? "改为禁用" : "改为启用"}</button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+    return <div className="grid gap-4 md:grid-cols-2">
+        <SettingGroup title="资源面板" description="填写游戏中的资源采集面板数值" icon={Orbit}>
+            {global_state.game_data.mods?.every(mod => mod === 'DarkFogSynthesis') && <p className="text-xs text-muted-foreground">氢与重氢面板按同一气态巨星共享采集；可燃冰采集单独计算</p>}
+            {resources.map(([name, label, unit]) => number(name, label, {min: 0.01, step: 0.1, unit: unit || '/s · 星球资源详情'}))}
+            {global_state.game_data.GenesisBookEnable && genesisResources.map(([name, label]) =>
+                number(name, label, {min: 0.01, step: 0.1, unit: '/s · 星球资源详情'}))}
+        </SettingGroup>
+        <SettingGroup title="采矿与制造" description="配置矿脉覆盖、科技加成与运输能力" icon={Pickaxe}>
+            {number('covered_veins_small', '小矿机覆盖矿脉数', {min: 1, integer: true})}
+            {number('covered_veins_large', '大矿机覆盖矿脉数', {min: 1, integer: true})}
+            {percent('mining_efficiency_large', '大矿机开采速度', 100)}
+            {percent('mining_speed_multiple', '采矿速度', 10, 100, '% · 科技面板右上')}
+            {percent('enemy_drop_multiple', '残骸产出倍率', 4, 100, '% · 科技面板右上')}
+            {percent('icarus_manufacturing_speed', '手动制造速度', 50)}
+            <NumberSetting label="分馏带速" value={settings.fractionating_speed * (minute ? 60 : 1)}
+                           fallback={defaults.fractionating_speed * (minute ? 60 : 1)} min={0.01} step="any"
+                           unit={minute ? '个 / min' : '个 / sec'}
+                           onChange={value => set_settings({fractionating_speed: value / (minute ? 60 : 1)})}/>
+        </SettingGroup>
+        <SettingGroup title="计算与显示" description="统一产量单位与结果的显示方式" icon={Gauge}>
+            <div className="flex items-center justify-between gap-4">
+                <Label htmlFor="settings-time-unit" className="text-xs sm:text-sm">速率单位</Label>
+                <Select value={minute ? 'minute' : 'second'} onValueChange={value => set_settings({is_time_unit_minute: value === 'minute'})}>
+                    <SelectTrigger id="settings-time-unit" className="w-36"><SelectValue/></SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="minute">个 / min（分钟）</SelectItem>
+                        <SelectItem value="second">个 / sec（秒）</SelectItem>
+                    </SelectContent>
+                </Select>
+            </div>
+            {number('fixed_num', '精度位数', {min: 0, max: 100, integer: true})}
+            {number('stack_research_lab', '研究站层数', {min: 1, integer: true})}
+            {toggle('hide_mines', '隐藏原矿', '在生产需求表中隐藏原矿项目')}
+        </SettingGroup>
+        <SettingGroup title="增产剂" description="设置自喷涂及增产效果修正" icon={FlaskConical}>
+            {toggle('proliferate_itself', '增产剂自喷涂')}
+            {percent('acc_rate', '增产剂加速效率修正', 5, 1)}
+            {percent('inc_rate', '增产剂增产效率修正', 5, 1)}
+        </SettingGroup>
+        {global_state.game_data.TheyComeFromVoidEnable && <SettingGroup title="深空来敌 · 元驱动" icon={Sparkles}
+                                                                               description="更改元驱动后，请重新选择 MOD 以应用效果。">
+            <div className="flex items-center gap-2">
+                <div className="min-w-0 flex-1">{toggle('blue_buff', '蓝 Buff')}</div>
+                <Tooltip>
+                    <TooltipTrigger asChild>
+                        <button type="button" className="rounded-sm text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label="查看蓝 Buff 效果">
+                            <Info className="size-4"/>
+                        </button>
+                    </TooltipTrigger>
+                    <TooltipContent className="max-w-72 leading-relaxed">
+                        制造厂在制造原材料至少 2 种的配方时，每产出 1 个产物，会返还 1 个第 1 位置的原材料。
+                    </TooltipContent>
+                </Tooltip>
+            </div>
+        </SettingGroup>}
     </div>;
 }

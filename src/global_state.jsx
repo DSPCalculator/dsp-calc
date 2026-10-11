@@ -1,3 +1,7 @@
+import {ApplyBuildingMultiplier} from "./building_multipliers.js";
+import {calculateProductionSources} from "./production_sources.js";
+import {needsOrbitalCollectorCalculation} from "./orbital_collectors.js";
+export {ApplyBuildingMultiplier} from "./building_multipliers.js";
 import solver from "javascript-lp-solver";
 
 function uniq(arr) {
@@ -89,8 +93,8 @@ export class GlobalState {
 
     constructor(game_info, scheme_data, settings) {
         console.log("mods", game_info.game_data.mods);
-        this.game_data = game_info.game_data;
-        this.item_data = game_info.item_data;
+        this.game_data = structuredClone(game_info.game_data);
+        this.item_data = structuredClone(game_info.item_data);
         // 使用 scheme_data 的副本，避免直接 mutate React state 对象
         this.scheme_data = structuredClone(scheme_data);
         this.settings = settings;
@@ -453,8 +457,36 @@ export class GlobalState {
         return item_price;
     }
 
-    /** 主要计算逻辑 */
+    /** Automatic-only demand baseline for source activation and UI intent. */
+    calculateBaseline(needs_list) {
+        const legacy = this.#calculateLegacy(needs_list, true);
+        return needsOrbitalCollectorCalculation(this, legacy[0])
+            ? calculateProductionSources(this, needs_list, legacy, null, {automaticOnly: true}) : legacy;
+    }
+
+    /** Keep the original numerical path untouched for unrelated existing plans. */
     calculate(needs_list) {
+        if (!this.settings.production_sources?.length) {
+            const legacy = this.#calculateLegacy(needs_list);
+            return needsOrbitalCollectorCalculation(this, legacy[0])
+                ? calculateProductionSources(this, needs_list, legacy) : legacy;
+        }
+        // This pass provides the old dependency order only. A manual source can
+        // make an otherwise infeasible automatic-only chain feasible.
+        let legacy;
+        try {
+            legacy = this.#calculateLegacy(needs_list, true);
+        } catch {
+            legacy = [{}, {}];
+        }
+        return calculateProductionSources(this, needs_list, legacy, adjustedNeeds => {
+            const calculation = this.#calculateLegacy(adjustedNeeds, true);
+            return {production: calculation[0], feasible: this.last_legacy_solution_valid};
+        });
+    }
+
+    /** 主要计算逻辑（兼容未分配独立来源的既有方案） */
+    #calculateLegacy(needs_list, silent = false) {
         let game_data = this.game_data;
         let natural_production_line = this.settings.natural_production_line;
 
@@ -476,8 +508,13 @@ export class GlobalState {
         }//将需求目标添至计算的实际需求列表中
 
         for (let id in natural_production_line) {
-            let recipe = game_data.recipe_data[item_data[natural_production_line[id]["目标物品"]][natural_production_line[id]["配方id"]]];
-            let recipe_time = 60 * natural_production_line[id]["建筑数量"] * game_data.factory_data[recipe["设施"]][natural_production_line[id]["建筑"]]["倍率"] / recipe["时间"];
+            const target_item = natural_production_line[id]["目标物品"];
+            let recipe = game_data.recipe_data[item_data[target_item][natural_production_line[id]["配方id"]]];
+            const factory = game_data.factory_data[recipe["设施"]][natural_production_line[id]["建筑"]];
+            // Legacy fixed-building saves must use the same mining panels and
+            // fractionator belt speed as automatic and migrated source rows.
+            let recipe_time = ApplyBuildingMultiplier(60 * natural_production_line[id]["建筑数量"] * factory["倍率"] / recipe["时间"],
+                factory["名称"], target_item, this.settings);
             if ((natural_production_line[id]["增产点数"] == 0) || (natural_production_line[id]["增产模式"] == 0)) {
                 for (let item in recipe["原料"]) {
                     if (item in in_out_list) {
@@ -499,8 +536,10 @@ export class GlobalState {
                     num += recipe["原料"][item];
                 }
                 num = Number(num) * recipe_time;
-                if (natural_production_line[id]["增产模式"] == 1) {//加速
-                    let pro_time = game_data.proliferator_effect[natural_production_line[id]["增产点数"]]["加速效果"];
+                if (natural_production_line[id]["增产模式"] == 1 || natural_production_line[id]["增产模式"] == 4) {//加速或增产分馏
+                    let pro_time = natural_production_line[id]["增产模式"] == 4
+                        ? natural_production_line[id]["增产点数"] / 10
+                        : game_data.proliferator_effect[natural_production_line[id]["增产点数"]]["加速效果"];
                     for (let item in recipe["原料"]) {
                         if (item in in_out_list) {
                             in_out_list[item] = Number(in_out_list[item]) + recipe["原料"][item] * recipe_time * pro_time;
@@ -639,13 +678,13 @@ export class GlobalState {
                 }
             }
         }//将循环关键物品的总需求放入线性规划相关物品表
-        this.#get_linear_programming_list(lp_item_dict, result_dict, lp_surplus_list, item_price);
+        this.#get_linear_programming_list(lp_item_dict, result_dict, lp_surplus_list, item_price, silent);
 
         return [result_dict, lp_surplus_list];
     }
 
     /** 线性规划 */
-    #get_linear_programming_list(lp_item_dict, result_dict, lp_surplus_list, item_price) {
+    #get_linear_programming_list(lp_item_dict, result_dict, lp_surplus_list, item_price, silent = false) {
         let item_graph = this.item_graph;
         let scheme_data = this.scheme_data;
         /** 求解模型 */
@@ -691,16 +730,16 @@ export class GlobalState {
                         model.variables[item]["i" + sub_item] = Number(model.variables[item]["i" + sub_item]) - item_price[material]["原料"][sub_item] * item_graph[item]["原料"][material];
                         // console.log(material + model.variables[item]["i" + sub_item]);
                     }
-                    if ("副产物" in item_graph[sub_item] && !(sub_item in lp_item_dict)) {//遍历原料时，如果原料是线规相关物品那么将其视作原矿，不考虑生产时的副产物
-                        for (let sub_product in item_graph[sub_item]["副产物"]) {
-                            model.variables[item]["i" + sub_product] = Number(model.variables[item]["i" + sub_product]) + item_graph[sub_item]["副产物"][sub_product] * item_graph[item]["原料"][material] * item_price[material]["原料"][sub_item];
-                        }//否则生产这个配方时，其原料带来的必要副产物为：配方的此原料数*此原料成本中该物品的数量*单个该物品造成的副产物产出
-                    }
+                    // item_price already includes every nested byproduct as
+                    // negative demand. Adding its recipe's byproducts again
+                    // would double-count supply (for example fire-ice hydrogen
+                    // in the proliferator production chain; upstream #22).
                 }
             }
         }//完善求解器输入的模型
         // console.log(model);
         let results = solver.Solve(model);
+        this.last_legacy_solution_valid = results.feasible !== false && results.bounded !== false;
         //求解线性规划，解得满足需求时每个item对应的item_graph的执行次数
         console.log("model", model);
         console.log("results", results);
@@ -710,13 +749,13 @@ export class GlobalState {
             delete results["result"];
         }//记录线规目标函数结果
         if ("feasible" in results) {
-            if (!results.feasible) {
+            if (!results.feasible && !silent) {
                 alert("线性规划无解,请检查来源配方设定是否可能满足需求");
             }
             delete results.feasible;
         }//无解判断
         if ("bounded" in results) {
-            if (!results.bounded) {
+            if (!results.bounded && !silent) {
                 alert("线性规划目标函数无界,请检查配方执行成本是否合理");
             }
             delete results.bounded;
@@ -771,55 +810,4 @@ export class GlobalState {
 
         return lp_cost;//返回求解器求解结果
     }
-}
-
-/**
- * 根据建筑类型应用相应的倍率
- * @param {number} output_num - 当前产量
- * @param {string} building_name - 建筑名称
- * @param {string} item - 目标物品
- * @param {object} settings - 设置对象
- * @returns {number} 应用倍率后的产量
- */
-export function ApplyBuildingMultiplier(output_num, building_name, item, settings) {
-    if (building_name === "采矿机") {
-        output_num *= settings.mining_speed_multiple * settings.covered_veins_small;
-    } else if (building_name === "大型采矿机") {
-        output_num *= settings.mining_speed_multiple * settings.covered_veins_large * settings.mining_efficiency_large;
-    } else if (building_name === "原油萃取站") {
-        output_num *= settings.mining_speed_multiple * settings.mining_speed_oil;
-    } else if (building_name === "抽水站" || building_name === "聚束液体汲取设施") {
-        output_num *= settings.mining_speed_multiple;
-    } else if (building_name === "轨道采集器") {
-        output_num *= settings.mining_speed_multiple;
-        if (item === "氢") {
-            output_num *= settings.mining_speed_hydrogen;
-        } else if (item === "重氢") {
-            output_num *= settings.mining_speed_deuterium;
-        } else if (item === "可燃冰") {
-            output_num *= settings.mining_speed_gas_hydrate;
-        } else if (item === "氦") {
-            output_num *= settings.mining_speed_helium;
-        } else if (item === "氨") {
-            output_num *= settings.mining_speed_ammonia;
-        }
-    } else if (building_name === "大气采集站") {
-        output_num *= settings.mining_speed_multiple;
-        if (item === "氮") {
-            output_num *= settings.mining_speed_nitrogen;
-        } else if (item === "氧") {
-            output_num *= settings.mining_speed_oxygen;
-        } else if (item === "二氧化硫") {
-            output_num *= settings.mining_speed_carbon_dioxide;
-        } else if (item === "二氧化碳") {
-            output_num *= settings.mining_speed_sulfur_dioxide;
-        }
-    } else if (building_name === "行星基地") {
-        output_num *= settings.enemy_drop_multiple;
-    } else if (building_name.endsWith("分馏塔")) {
-        output_num *= settings.fractionating_speed;
-    } else if (building_name === "伊卡洛斯") {
-        output_num *= settings.icarus_manufacturing_speed;
-    } //Jimmy：“毫无意义，只是我想这么干”
-    return output_num;
 }

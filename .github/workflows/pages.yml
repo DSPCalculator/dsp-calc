@@ -1,0 +1,85 @@
+name: Validate and deploy GitHub Pages
+
+on:
+  # Listen to branch pushes; jobs below deploy only the current default branch.
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# PR checks cannot cancel a production deployment. Let an active Pages
+# deployment finish; GitHub keeps only the latest queued deployment.
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.event.pull_request.number) || github.ref_name == github.event.repository.default_branch && 'pages-production' || format('pages-ref-{0}', github.ref) }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: Lint, test and build
+    # Follow the repository default even if its branch is renamed again.
+    if: (github.event_name == 'pull_request' && github.base_ref == github.event.repository.default_branch) || (github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck UI primitives
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      # Pages must first be enabled in Settings > Pages > GitHub Actions.
+      # Do not request Pages access or upload deployable artifacts for PRs.
+      - name: Read Pages configuration
+        id: pages
+        if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+        uses: actions/configure-pages@v5
+
+      - name: Build and verify Pages assets
+        env:
+          # An empty Pages base_path is intentional for root/custom domains.
+          # PRs build under a repository subpath without calling the Pages API.
+          VITE_BASE_PATH: ${{ github.event_name == 'pull_request' && format('/{0}/', github.event.repository.name) || steps.pages.outputs.base_path }}
+        run: |
+          npm run build
+          node scripts/verify-pages-build.mjs "$VITE_BASE_PATH"
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy Pages
+    if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

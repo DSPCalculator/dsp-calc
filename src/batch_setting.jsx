@@ -1,138 +1,124 @@
-import {useContext} from 'react';
-import {CompactModeContext, GlobalStateContext, SchemeDataSetterContext} from './contexts';
-import {HorizontalMultiButtonSelect} from './recipe.jsx';
-import {pro_mode_class} from './result.jsx';
+import {useContext, useId} from 'react';
+import {GlobalStateContext, SchemeDataSetterContext} from './contexts.jsx';
+import {ItemIcon} from './icon.jsx';
+import {Button} from './components/ui/button';
+import {PILE_SORTER_LEVELS, pileSorterLabel, pileSorterLevel} from './lib/pile-sorter.js';
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from './components/ui/select';
 
-// TODO refactor to some other modules
-function FactorySelect({factory, list, icon_size}) {
+function FactorySelect({factory, list}) {
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
-    let game_data = global_state.game_data;
-    let scheme_data = global_state.scheme_data;
-
-    // 从 scheme_data 推导当前选中建筑（取该设施类型下第一个配方的建筑索引）
-    let cur = 0;
-    for (let i = 0; i < game_data.recipe_data.length; i++) {
-        if (game_data.recipe_data[i]["设施"] == factory) {
-            cur = scheme_data.scheme_for_recipe[i]["建筑"];
-            break;
-        }
-    }
-
-    const options = list.map((data, idx) => ({
-        value: idx, item_icon: data["名称"],
-        label: cur == idx ? <span className="mx-1 compact-hide-text">{data["名称"]}</span> : null
-    }));
+    const game_data = global_state.game_data;
+    const scheme_data = global_state.scheme_data;
+    const first = game_data.recipe_data.findIndex(recipe => recipe['设施'] === Number(factory));
+    const current = first >= 0 ? scheme_data.scheme_for_recipe[first]['建筑'] : 0;
 
     function set_factory(building) {
-        // 取本设施类型选中建筑的名称，用于跨设施类型匹配
-        const building_name = list[building]["名称"];
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
-            for (var i = 0; i < game_data.recipe_data.length; i++) {
-                const facility = game_data.recipe_data[i]["设施"];
-                const facility_list = game_data.factory_data[facility];
-                // 找同名建筑在该设施类型中的索引
-                const matched_idx = facility_list.findIndex(b => b["名称"] === building_name);
-                if (matched_idx !== -1) {
-                    scheme_data.scheme_for_recipe[i]["建筑"] = matched_idx;
-                }
-            }
-            return scheme_data;
+        const building_name = list[Number(building)]['名称'];
+        set_scheme_data(previous => {
+            const next = structuredClone(previous);
+            game_data.recipe_data.forEach((recipe, index) => {
+                const facility_list = game_data.factory_data[recipe['设施']];
+                const matched = facility_list.findIndex(entry => entry['名称'] === building_name);
+                if (matched !== -1) next.scheme_for_recipe[index]['建筑'] = matched;
+            });
+            return next;
         });
     }
 
-    return <HorizontalMultiButtonSelect choice={cur} options={options}
-                                        onChange={set_factory} no_gap={true} icon_size={icon_size}/>;
+    return <div className="min-w-0 space-y-1.5">
+        <p className="text-[11px] text-muted-foreground">{list[0]['名称']}</p>
+        <Select value={String(current)} onValueChange={set_factory}>
+            <SelectTrigger className="h-9 min-w-36 gap-2 bg-background text-xs" aria-label={`批量设置${list[0]['名称']}建筑`}>
+                <SelectValue/>
+            </SelectTrigger>
+            <SelectContent>
+                {list.map((data, index) => <SelectItem key={data['名称']} value={String(index)}>
+                    <span className="flex items-center gap-2"><ItemIcon item={data['名称']} size={22} tooltip={false}/>{data['名称']}</span>
+                </SelectItem>)}
+            </SelectContent>
+        </Select>
+    </div>;
 }
 
 export function BatchSetting() {
+    const pileSorterId = useId();
     const global_state = useContext(GlobalStateContext);
     const set_scheme_data = useContext(SchemeDataSetterContext);
-    const compact_mode = useContext(CompactModeContext);
-    let game_data = global_state.game_data;
-    let scheme_data = global_state.scheme_data;
-    let proliferator_price = global_state.proliferator_price;
+    const {game_data, scheme_data, proliferator_price} = global_state;
+    const first = scheme_data.scheme_for_recipe[0];
+    const pro_num = first?.['增产点数'] ?? 0;
+    const pro_mode = first?.['增产模式'] ?? 0;
+    const names = Object.fromEntries(game_data.proliferator_data.map(data => [data['增产点数'], data['增产点数'] === 0 ? '无' : data['名称']]));
+    const proliferators = game_data.proliferator_effect
+        .map((_effect, index) => index)
+        .filter(index => proliferator_price[index] !== -1);
+    const factories = Object.entries(game_data.factory_data).filter(([factory, list]) =>
+        list.length >= 2 && game_data.recipe_data.filter(recipe => recipe['设施'] === Number(factory)).length >= 3);
 
-    // 从 scheme_data 推导当前增产点数和增产模式（取第一个配方的值）
-    let pro_num = 0;
-    let pro_mode = 0;
-    if (scheme_data.scheme_for_recipe.length > 0) {
-        pro_num = scheme_data.scheme_for_recipe[0]["增产点数"];
-        pro_mode = scheme_data.scheme_for_recipe[0]["增产模式"];
-    }
-
-    const is_mobile = compact_mode === "mobile";
-    const mob_icon = is_mobile ? 22 : undefined;
-
-    let pro_num_item = {};
-    for (let data of game_data.proliferator_data) {
-        let pro_point = data["增产点数"];
-        pro_num_item[pro_point] = pro_point === 0 ? "无" : data["名称"];
-    }
-
-    let factory_doms = [];
-    // TODO rename to [factory_kind]
-    Object.keys(game_data.factory_data).forEach(factory => {
-        let list = game_data.factory_data[factory];
-        let used_num = game_data.recipe_data.filter(data => data["设施"] == factory).length;
-        //只有可选工厂类型大于等于2，并且这种工厂类型至少被3个配方使用时，才允许批量预设
-        if (list.length >= 2 && used_num >= 3) {
-            factory_doms.push(<FactorySelect key={factory} factory={factory} list={list} icon_size={mob_icon}/>);
-        }
-    });
-
-    let proliferate_options = [];
-    game_data.proliferator_effect.forEach((_data, idx) => {
-        if (proliferator_price[idx] != -1) {
-            let item = pro_num_item[idx];
-            if (item) {
-                proliferate_options.push({
-                    value: idx, label: idx == 0 ? "无" : null,
-                    item_icon: idx != 0 ? item : null
-                })
-            } else {
-                proliferate_options.push({value: idx, label: idx});
-            }
-        }
-    });
-
-    function change_pro_num(pro_num) {
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
-            for (var i = 0; i < game_data.recipe_data.length; i++) {
-                scheme_data.scheme_for_recipe[i]["增产点数"] = pro_num;
-            }
-            return scheme_data;
+    function change_pro_num(points) {
+        set_scheme_data(previous => {
+            const next = structuredClone(previous);
+            next.scheme_for_recipe.forEach(recipe => { recipe['增产点数'] = points; });
+            return next;
         });
     }
 
-    function change_pro_mode(pro_mode) {
-        set_scheme_data(old_scheme_data => {
-            let scheme_data = structuredClone(old_scheme_data);
-            for (var i = 0; i < game_data.recipe_data.length; i++) {
-                if (pro_mode != 0 && !(pro_mode & game_data.recipe_data[i]["增产"])) {
-                    continue;
-                }
-                scheme_data.scheme_for_recipe[i]["增产模式"] = Number(pro_mode);
-            }
-            return scheme_data;
+    function change_pro_mode(mode) {
+        set_scheme_data(previous => {
+            const next = structuredClone(previous);
+            game_data.recipe_data.forEach((recipe, index) => {
+                if (mode !== 0 && !(mode & recipe['增产'])) return;
+                next.scheme_for_recipe[index]['增产模式'] = mode;
+            });
+            return next;
         });
     }
 
-    const promode_options = [
-        {value: 0, label: "无"},
-        {value: 1, label: "加速", className: pro_mode_class[1]},
-        {value: 2, label: "增产", className: pro_mode_class[2]},
-    ];
-
-    return <div className="mt-3 d-inline-flex flex-wrap column-gap-3 row-gap-2 align-items-center batch-setting-container">
-        <small className="fw-bold">批量预设</small>
-        <HorizontalMultiButtonSelect choice={pro_num} options={proliferate_options}
-                                     onChange={change_pro_num} no_gap={true} className={"raw-text-selection"}
-                                     icon_size={mob_icon}/>
-        <HorizontalMultiButtonSelect choice={pro_mode} options={promode_options}
-                                     onChange={change_pro_mode} no_gap={true} className={"raw-text-selection"}/>
-        {factory_doms}
-    </div>;
+    return <section aria-label="批量预设">
+        <div className="flex flex-wrap items-end gap-x-4 gap-y-3">
+            <div className="space-y-1.5">
+                <p className="text-[11px] text-muted-foreground">增产剂</p>
+                <div className="flex min-h-9 flex-wrap items-center gap-1" role="group" aria-label="批量设置增产点数">
+                    {proliferators.map(points => <Button key={points} size="sm" variant={pro_num === points ? 'secondary' : 'outline'}
+                        className={`h-9 min-w-9 gap-1.5 px-2 ${pro_num === points ? 'ring-1 ring-border' : 'bg-background'}`}
+                        aria-pressed={pro_num === points} aria-label={names[points] || `${points} 点增产`} title={names[points] || `${points} 点增产`}
+                        onClick={() => change_pro_num(points)}>
+                        {points !== 0 && names[points] ? <ItemIcon item={names[points]} size={23} tooltip={false}/> : <span className="text-xs">{points === 0 ? '无' : points}</span>}
+                    </Button>)}
+                </div>
+            </div>
+            <div className="space-y-1.5">
+                <p className="text-[11px] text-muted-foreground">增产模式</p>
+                <div className="flex gap-1" role="group" aria-label="批量设置增产模式">
+                    {['无', '加速', '增产'].map((label, mode) => <Button key={mode} size="sm" variant={pro_mode === mode ? 'secondary' : 'outline'}
+                        className={`h-9 px-3 text-xs ${pro_mode === mode ? 'ring-1 ring-border' : 'bg-background'}`}
+                        aria-pressed={pro_mode === mode} onClick={() => change_pro_mode(mode)}>{label}</Button>)}
+                </div>
+            </div>
+            {factories.map(([factory, list]) => <FactorySelect key={factory} factory={factory} list={list}/>)}
+            <div className="min-w-0 space-y-1.5">
+                <p className="text-[11px] text-muted-foreground">分拣器</p>
+                <Select value={String(pileSorterLevel(scheme_data))} onValueChange={value => set_scheme_data(previous => {
+                    const next = {...previous};
+                    delete next.use_pile_sorter;
+                    return {...next, pile_sorter_level: Number(value)};
+                })}>
+                    <SelectTrigger className="h-9 min-w-36 gap-2 bg-background text-xs" aria-label="批量设置分拣器"
+                        aria-describedby={`${pileSorterId}-description`}>
+                        <SelectValue/>
+                    </SelectTrigger>
+                    <SelectContent>
+                        {PILE_SORTER_LEVELS.map(level => <SelectItem key={level} value={String(level)}>
+                            <span className="flex items-center gap-2">
+                                <span className="flex shrink-0" aria-hidden="true"><ItemIcon item={level === -1 ? '分拣器' : '集装分拣器'} size={22} tooltip={false}/></span>
+                                {pileSorterLabel(level)}
+                            </span>
+                        </SelectItem>)}
+                    </SelectContent>
+                </Select>
+            </div>
+        </div>
+        <span id={`${pileSorterId}-description`} className="sr-only">选择集装分拣器改良等级；仅影响理想物流参考，不改变产量或建筑数量</span>
+    </section>;
 }
